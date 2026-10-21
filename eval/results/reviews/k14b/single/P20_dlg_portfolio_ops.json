@@ -1,0 +1,73 @@
+{
+  "system": "single",
+  "doc_id": "P20_dlg_portfolio_ops",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "2. Invocation and reinstatement",
+      "rule_id": "DLD2025:24(iv)",
+      "issue": "The product document states that recovered amounts from loans on which DLG was invoked are used to top the DLG back up to its original level, which violates the rule that DLG amount once invoked shall not be reinstated, including through loan recovery.",
+      "doc_evidence": "When Meridian later recovers money from a loan on which DLG was invoked, the recovered amount is used to top the DLG back up to its original level.",
+      "severity": "high",
+      "fix": "Remove the provision allowing reinstatement of DLG through loan recovery.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "1. Cover",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The DLG cover provided is 4% of each quarterly portfolio, but the regulation requires that the total DLG cover on any outstanding portfolio shall not exceed 5% of the total amount disbursed out of that loan portfolio at any given time.",
+      "doc_evidence": "PayNest provides DLG cover of 4% of each quarterly portfolio as a bank guarantee in favour of Meridian Finance.",
+      "severity": "medium",
+      "fix": "Ensure that the DLG cover does not exceed 5% of the total amount disbursed out of the loan portfolio at any given time.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "1. Cover",
+      "rule_id": "DLD2025:22(i)",
+      "issue": "The DLG is provided as a bank guarantee, which is acceptable, but the regulation requires that DLG be accepted in one or more of the forms: cash deposited with the RE, fixed deposit with a Scheduled Commercial Bank with a lien marked in favour of the RE, or bank guarantee in favour of the RE. The product document does not specify the form of the bank guarantee, which may be a compliance gap.",
+      "doc_evidence": "PayNest provides DLG cover of 4% of each quarterly portfolio as a bank guarantee in favour of Meridian Finance.",
+      "severity": "low",
+      "fix": "Specify the form and details of the bank guarantee in the DLG arrangement.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "2. Invocation and reinstatement",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The product document states that Meridian invokes DLG at 90 days overdue, but the regulation requires that DLG be invoked within a maximum overdue period of 120 days.",
+      "doc_evidence": "Meridian invokes the DLG at 90 days overdue.",
+      "severity": "medium",
+      "fix": "Adjust the invocation period to be within the maximum overdue period of 120 days.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. Tenor",
+      "rule_id": "DLD2025:26(ii)",
+      "issue": "The DLG agreement runs for 12 months, while the loans in the portfolio have tenors of up to 24 months. The regulation requires that the DLG agreement period shall not be less than the longest tenor of the loan in the underlying loan portfolio.",
+      "doc_evidence": "The DLG agreement runs for 12 months, while loans in the portfolio have tenors of up to 24 months.",
+      "severity": "high",
+      "fix": "Ensure that the DLG agreement period is not less than the longest tenor of the loans in the underlying portfolio.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "5. Disclosure",
+      "rule_id": "DLD2025:27(i)",
+      "issue": "The product document states that PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter, but the regulation requires that LSPs with DLG arrangements publish this information on their website, and does not specify a frequency. However, the regulation does not explicitly prohibit quarterly publication, so this is not a direct violation.",
+      "doc_evidence": "PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter.",
+      "severity": "low",
+      "fix": "No action required. The regulation does not specify a frequency for disclosure, so quarterly publication is acceptable.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 1674,
+    "output_tokens": 959,
+    "llm_seconds": 66.1,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 66.2
+}

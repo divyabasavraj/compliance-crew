@@ -1,0 +1,102 @@
+{
+  "model": "qwen3:8b",
+  "tag": "k8b",
+  "split": "test",
+  "docs": 20,
+  "results": {
+    "single": {
+      "recall": 0.707,
+      "precision": 0.274,
+      "caught": 29,
+      "planted": 41,
+      "unique_flags": 106,
+      "false_alarms": 77,
+      "clean_doc_false_alarms": 17,
+      "citation_validity": 1.0,
+      "missed": [
+        "P13-b",
+        "P15-b",
+        "P16-b",
+        "P17-b",
+        "P19-b",
+        "P20-b",
+        "P20-d",
+        "P24-a",
+        "P25-a",
+        "P31-b",
+        "P32-b",
+        "P32-c"
+      ],
+      "sec_per_doc": 28.3,
+      "llm_calls_per_doc": 1.0,
+      "tokens_per_doc": 2810
+    },
+    "crew_no_verifier": {
+      "recall": 0.78,
+      "precision": 0.258,
+      "caught": 32,
+      "planted": 41,
+      "unique_flags": 124,
+      "false_alarms": 92,
+      "clean_doc_false_alarms": 25,
+      "citation_validity": 1.0,
+      "missed": [
+        "P13-a",
+        "P15-b",
+        "P17-b",
+        "P19-b",
+        "P20-a",
+        "P20-b",
+        "P20-d",
+        "P21-b",
+        "P32-b"
+      ],
+      "sec_per_doc": 80.2,
+      "llm_calls_per_doc": 19.1,
+      "tokens_per_doc": 11908
+    },
+    "crew": {
+      "recall": 0.756,
+      "precision": 0.463,
+      "caught": 31,
+      "planted": 41,
+      "unique_flags": 67,
+      "false_alarms": 36,
+      "clean_doc_false_alarms": 4,
+      "citation_validity": 1.0,
+      "missed": [
+        "P13-a",
+        "P15-b",
+        "P17-b",
+        "P19-b",
+        "P20-a",
+        "P20-b",
+        "P20-d",
+        "P21-b",
+        "P32-a",
+        "P32-b"
+      ],
+      "sec_per_doc": 80.2,
+      "llm_calls_per_doc": 19.1,
+      "tokens_per_doc": 11908,
+      "miss_stages": {
+        "not_retrieved": [
+          "P17-b",
+          "P19-b",
+          "P20-d"
+        ],
+        "analyst_missed": [
+          "P13-a",
+          "P15-b",
+          "P20-a",
+          "P20-b",
+          "P21-b",
+          "P32-b"
+        ],
+        "verifier_rejected": [
+          "P32-a"
+        ]
+      }
+    }
+  }
+}

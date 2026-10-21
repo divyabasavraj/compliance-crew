@@ -44,7 +44,18 @@ The benchmark has 32 synthetic product docs with 68 planted violations and 5 ful
 - The first crew version looked much better on the dev docs it was tuned on (0.85 vs 0.67 recall). On the held-out docs it was *worse* than the single agent (0.61 vs 0.63). The v2 fixes came from analysing that failure. See `docs/PROJECT_LOG.md`, Day 3.
 - Of the 9 crew misses on test, 3 come from retrieval, 6 from the Gap Analyst and 0 from the Verifier.
 
-Full tables (v1/v2 × dev/test/all): `uv run python eval/summarize.py`.
+### Does a bigger model help? Qwen3 14B vs 8B
+Same v2 code, same test split, run on Kaggle (free, 2× T4, one GPU per model) so both models share the hardware. All agents use the named model.
+
+| Crew + Verifier, test split | Recall | Precision | False alarms | Clean-doc alarms | Sec/doc (T4) |
+|---|---|---|---|---|---|
+| Qwen3 8B (control) | 0.76 (31/41) | 0.46 | 36 | 4 | 80 |
+| **Qwen3 14B** | **0.80 (33/41)** | **0.62** | **20** | **2** | 118 |
+
+- The 14B crew has **44% fewer false alarms** at 1.5× the time per doc. The recall gain is only +2 violations. The 8B runs on Kaggle and on the Mac differ by 1, so 2 is close to noise on 41 violations.
+- 14B fixes the Gap Analyst bottleneck: Gap Analyst misses fall from 6 to 1. But the Researcher's 14B search queries miss rules the 8B queries found, so retrieval misses rise from 3 to 6. **Retrieval is now the bottleneck.**
+
+Full tables (v1/v2/Kaggle 8B/14B × dev/test/all): `uv run python eval/summarize.py`.
 
 ### Security layer
 | Check | Result |

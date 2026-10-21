@@ -1,0 +1,160 @@
+{
+  "system": "crew",
+  "doc_id": "P19_dlg_driven_limits",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Product Offering",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature does not explicitly mention the disbursement of loans into the borrower's bank account. The feature only describes the loan amount and tenor, but does not specify that disbursement is made into the borrower's bank account, which is a requirement under DLD2025:9(i).",
+      "doc_evidence": "Product: One-time personal loans of ₹5,000 to ₹40,000, tenor 3 to 12 months.",
+      "severity": "medium",
+      "fix": "Update the product feature to explicitly state that loan disbursement is made into the borrower's bank account, in compliance with DLD2025:9(i).",
+      "verifier_note": "The RBI paragraph DLD2025:9(i) explicitly requires that loan disbursement must always be made into the borrower's bank account, except for specific exceptions not applicable here. The product feature does not mention how the loan is disbursed, which is a requirement under the RBI directions. Therefore, the feature fails to comply with the requirement of disbursing loans into the borrower's bank account."
+    },
+    {
+      "feature": "Credit Decision",
+      "rule_id": "DLD2025:19(ii)",
+      "issue": "The product feature states that Satpura Finance approves every applicant QuickLine sends without its own credit check. This implies that the DLG arrangement is acting as a substitute for credit appraisal requirements and robust credit underwriting standards, which is prohibited under DLD2025:19(ii).",
+      "doc_evidence": "Because QuickLine Tech's DLG covers losses, Satpura Finance approves every applicant QuickLine sends without its own credit check.",
+      "severity": "high",
+      "fix": "Revise the credit decision process to include independent credit checks by Satpura Finance, ensuring compliance with DLD2025:19(ii) and maintaining robust credit underwriting standards.",
+      "verifier_note": "The RBI paragraph explicitly prohibits DLG arrangements from acting as a substitute for credit appraisal requirements and robust credit underwriting standards. The product feature states that Satpura Finance approves every applicant without its own credit check, which directly implies that the DLG arrangement is substituting for credit appraisal and underwriting standards. This violates the requirement in DLD2025:19(ii)."
+    },
+    {
+      "feature": "Disbursal and Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature states that 'Loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.' This implies that repayment is made directly to Satpura Finance's account, which may not be the borrower's account. This could violate the requirement that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "Loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.",
+      "severity": "high",
+      "fix": "Modify the repayment process to ensure that all repayments are made directly into the borrower's bank account, in line with DLD2025:9(ii) and avoiding the use of third-party accounts.",
+      "verifier_note": "The RBI paragraph explicitly requires that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account, without any pass-through account or pool account of any third party, including the accounts of LSP. The product feature states that repayment is made directly to Satpura Finance's account, which is not the borrower's account. This directly violates the requirement that repayment must be executed directly in the RE’s bank account. The feature does not mention the RE’s bank account, and instead specifies a third-party account (Satpura Finance's account), which is not allowed under the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Product Offering",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature does not explicitly mention the disbursement of loans into the borrower's bank account. The feature only describes the loan amount and tenor, but does not specify that disbursement is made into the borrower's bank account, which is a requirement under DLD2025:9(i).",
+      "doc_evidence": "Product: One-time personal loans of ₹5,000 to ₹40,000, tenor 3 to 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph DLD2025:9(i) explicitly requires that loan disbursement must always be made into the borrower's bank account, except for specific exceptions not applicable here. The product feature does not mention how the loan is disbursed, which is a requirement under the RBI directions. Therefore, the feature fails to comply with the requirement of disbursing loans into the borrower's bank account."
+    },
+    {
+      "feature": "Credit Decision",
+      "rule_id": "DLD2025:19(ii)",
+      "issue": "The product feature states that Satpura Finance approves every applicant QuickLine sends without its own credit check. This implies that the DLG arrangement is acting as a substitute for credit appraisal requirements and robust credit underwriting standards, which is prohibited under DLD2025:19(ii).",
+      "doc_evidence": "Because QuickLine Tech's DLG covers losses, Satpura Finance approves every applicant QuickLine sends without its own credit check.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits DLG arrangements from acting as a substitute for credit appraisal requirements and robust credit underwriting standards. The product feature states that Satpura Finance approves every applicant without its own credit check, which directly implies that the DLG arrangement is substituting for credit appraisal and underwriting standards. This violates the requirement in DLD2025:19(ii)."
+    },
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The feature 'Default Loss Guarantee' states that QuickLine Tech provides a DLG of 5% of the disbursed portfolio as cash deposited with Satpura Finance, under a Board-approved DLG policy. This exceeds the cap on DLG as specified in [DLD2025:23(i)] which limits the total amount of DLG cover to five per cent of the total amount disbursed out of that loan portfolio at any given time.",
+      "doc_evidence": "DLG: QuickLine Tech provides a DLG of 5% of the disbursed portfolio as cash deposited with Satpura Finance, under a Board-approved DLG policy.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that QuickLine Tech provides a DLG of 5% of the disbursed portfolio as cash deposited with Satpura Finance, which is exactly in line with the cap specified in [DLD2025:23(i)]. The paragraph explicitly allows DLG cover up to five per cent of the total amount disbursed out of that loan portfolio at any given time. The feature does not exceed this limit and complies with the requirement. The claim that it exceeds the cap is therefore false."
+    },
+    {
+      "feature": "Disbursal and Repayment",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature states that 'Loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.' This implies that repayment is made directly to Satpura Finance's account, which may not be the borrower's account. This could violate the requirement that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "Loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly allows disbursal into the borrower's bank account and prohibits disbursal to third-party accounts, including LSP accounts, except for specific exceptions. The product feature states that loans are disbursed into the borrower's bank account, which complies with the RBI requirement. The feature also mentions repayment to Satpura Finance's account, which is not explicitly prohibited by the RBI paragraph. The paragraph does not specify that repayment must be directly to the borrower's account, so the feature does not violate the RBI directions."
+    },
+    {
+      "feature": "Disbursal and Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature states that 'Loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.' This implies that repayment is made directly to Satpura Finance's account, which may not be the borrower's account. This could violate the requirement that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "Loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account, without any pass-through account or pool account of any third party, including the accounts of LSP. The product feature states that repayment is made directly to Satpura Finance's account, which is not the borrower's account. This directly violates the requirement that repayment must be executed directly in the RE’s bank account. The feature does not mention the RE’s bank account, and instead specifies a third-party account (Satpura Finance's account), which is not allowed under the RBI paragraph."
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product feature states that borrowers can exit within 2 days by repaying the principal and proportionate APR without penalty. This complies with the requirement that the borrower shall be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial 'cooling-off period', as the cooling-off period is not less than one day.",
+      "doc_evidence": "Borrowers can exit within 2 days by repaying the principal and proportionate APR without penalty.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature allows borrowers to exit within 2 days, which is not less than the minimum one day required by the RBI paragraph. The feature explicitly states that borrowers can exit without penalty by repaying the principal and proportionate APR, which aligns with the requirement in the RBI paragraph. The paragraph does not prohibit this action and allows for a cooling-off period of at least one day. The feature does not violate the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the QuickLine product feature identified three key findings against the reviewed RBI rules. The first finding (medium severity) relates to the lack of explicit mention of loan disbursement into the borrower's bank account, which is required under DLD2025:9(i). The second and third findings (high severity) highlight non-compliance with DLD2025:19(ii) and DLD2025:9(ii), respectively. These findings indicate that the product feature may not meet the regulatory requirements for credit underwriting, disbursement, and repayment processes.",
+  "trace": {
+    "llm_calls": 19,
+    "prompt_tokens": 9512,
+    "output_tokens": 2265,
+    "llm_seconds": 79.1,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 6,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 26,
+    "retrieved": {
+      "0:Product Offering": [
+        "KFS2024:5",
+        "DLD2025:10(ii)",
+        "DLD2025:12(iv)",
+        "DLD2025:26(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)"
+      ],
+      "1:Credit Decision": [
+        "DLD2025:19(ii)",
+        "DLD2025:20(ii)",
+        "DLD2025:12(i)",
+        "DLD2025:20(i)",
+        "DLD2025:25(i)",
+        "DLD2025:7(ii)",
+        "KFS2024:10",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "KFS2024:7"
+      ],
+      "2:Default Loss Guarantee": [
+        "DLD2025:23(i)",
+        "DLD2025:19(i)",
+        "DLD2025:23(ii)",
+        "DLD2025:27(i)",
+        "DLD2025:22(i)",
+        "DLD2025:20(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:19(ii)",
+        "DLD2025:20(iii)",
+        "DLD2025:14(ii)"
+      ],
+      "3:Disbursal and Repayment": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(iv)"
+      ],
+      "4:Cooling-off Period": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:26(i)",
+        "KFS2024:5",
+        "KFS2024:7",
+        "DLD2025:27(ii)"
+      ]
+    }
+  },
+  "seconds": 79.5
+}

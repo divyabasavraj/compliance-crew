@@ -1,0 +1,73 @@
+{
+  "system": "single",
+  "doc_id": "P16_edu_marketplace",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Matching",
+      "rule_id": "DLD2025:6(ii)",
+      "issue": "The mechanism for matching borrowers with lenders is not consistent and not documented.",
+      "doc_evidence": "Which lenders are shown depends on a rule set the sales team adjusts weekly. Borrowers with the same profile may see different lenders on different days, and the rules are not written down anywhere.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Offer display",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The ranking of loan offers based on APR is considered promoting a particular product, which is not allowed.",
+      "doc_evidence": "Offers are ranked by APR, lowest first, and the app states this ranking rule at the top of the list.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is disbursed into the training institute's bank account, not the borrower's account, which is not allowed except for specific cases.",
+      "doc_evidence": "The course fee is paid by the lender directly into the training institute's bank account.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data storage",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "The RE does not disclose clear policy guidelines regarding the storage of customer data on its website and DLA.",
+      "doc_evidence": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data storage",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The data is stored on servers located within India, but there is no mention of data processed outside India being deleted and brought back within 24 hours.",
+      "doc_evidence": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data storage",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The borrower is not provided with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted, or request deletion of data.",
+      "doc_evidence": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2150,
+    "output_tokens": 611,
+    "llm_seconds": 20.8,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 20.9
+}

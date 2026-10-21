@@ -1,0 +1,152 @@
+{
+  "system": "crew",
+  "doc_id": "P27_merchant_paylater",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature states: \"Customers buying medicines at partner pharmacies can defer payment for 15 to 45 days, up to ₹10,000.\" This implies that the disbursal is made to the pharmacy or a third-party account, which is not allowed under DLD2025:9(i) as it requires disbursement to the borrower's bank account unless specifically mandated otherwise.",
+      "doc_evidence": "Customers buying medicines at partner pharmacies can defer payment for 15 to 45 days, up to ₹10,000.",
+      "severity": "high",
+      "fix": "Modify the disbursal process to ensure that funds are disbursed directly to the borrower's bank account, not to third-party accounts, in compliance with DLD2025:9(i).",
+      "verifier_note": "The RBI paragraph explicitly prohibits disbursal to third-party accounts, including the accounts of LSPs, unless specifically mandated. The product feature allows deferring payment to partner pharmacies, which are third parties, and does not mention any statutory or regulatory mandate that would permit this. Therefore, the feature violates the RBI directive by disbursing to a third-party account."
+    },
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:16(ii)",
+      "issue": "Mahanadi Finance treats these as merchant payment deferrals, not loans, and does not report them to credit information companies.",
+      "doc_evidence": "Mahanadi Finance treats these as merchant payment deferrals, not loans, and does not report them to credit information companies.",
+      "severity": "high",
+      "fix": "Update the credit bureau reporting process to include these merchant payment deferrals as loans, ensuring they are reported to credit information companies in accordance with DLD2025:16(ii).",
+      "verifier_note": "The RBI paragraph requires REs to report structured digital lending products, including deferred payments, to CICs. The product feature states that Mahanadi Finance does not report these as loans to credit information companies, which directly violates the requirement in the RBI paragraph. The paragraph does not allow treating these as non-loans or exempting them from reporting."
+    },
+    {
+      "feature": "Credit Limit Management",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The feature 'Credit Limit Management' where PharmaPay automatically increases each customer's pay-later limit by ₹1,000 every month if they repaid on time, without an explicit request from the borrower, violates the requirement that there should be no automatic increase in credit limit unless an explicit request is received, evaluated and kept on record from the borrower for such increase.",
+      "doc_evidence": "Every month, PharmaPay raises each customer's pay-later limit by ₹1,000 if they repaid on time; customers are informed by SMS after the increase.",
+      "severity": "high",
+      "fix": "Revise the 'Credit Limit Management' feature to require an explicit request from the borrower for any increase in the pay-later limit, and ensure that such requests are evaluated and documented as per DLD2025:7(ii).",
+      "verifier_note": "The product feature describes an automatic increase in the pay-later limit by ₹1,000 every month if the customer repaid on time. This is an automatic increase without an explicit request from the borrower. The RBI paragraph explicitly prohibits automatic increases in credit limits unless there is an explicit request, evaluation, and record-keeping. The feature does not mention any explicit request or evaluation process, thus violating the requirement."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature states: \"Customers buying medicines at partner pharmacies can defer payment for 15 to 45 days, up to ₹10,000.\" This implies that the disbursal is made to the pharmacy or a third-party account, which is not allowed under DLD2025:9(i) as it requires disbursement to the borrower's bank account unless specifically mandated otherwise.",
+      "doc_evidence": "Customers buying medicines at partner pharmacies can defer payment for 15 to 45 days, up to ₹10,000.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits disbursal to third-party accounts, including the accounts of LSPs, unless specifically mandated. The product feature allows deferring payment to partner pharmacies, which are third parties, and does not mention any statutory or regulatory mandate that would permit this. Therefore, the feature violates the RBI directive by disbursing to a third-party account."
+    },
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:16(ii)",
+      "issue": "Mahanadi Finance treats these as merchant payment deferrals, not loans, and does not report them to credit information companies.",
+      "doc_evidence": "Mahanadi Finance treats these as merchant payment deferrals, not loans, and does not report them to credit information companies.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires REs to report structured digital lending products, including deferred payments, to CICs. The product feature states that Mahanadi Finance does not report these as loans to credit information companies, which directly violates the requirement in the RBI paragraph. The paragraph does not allow treating these as non-loans or exempting them from reporting."
+    },
+    {
+      "feature": "Credit Limit Management",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The feature 'Credit Limit Management' where PharmaPay automatically increases each customer's pay-later limit by ₹1,000 every month if they repaid on time, without an explicit request from the borrower, violates the requirement that there should be no automatic increase in credit limit unless an explicit request is received, evaluated and kept on record from the borrower for such increase.",
+      "doc_evidence": "Every month, PharmaPay raises each customer's pay-later limit by ₹1,000 if they repaid on time; customers are informed by SMS after the increase.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes an automatic increase in the pay-later limit by ₹1,000 every month if the customer repaid on time. This is an automatic increase without an explicit request from the borrower. The RBI paragraph explicitly prohibits automatic increases in credit limits unless there is an explicit request, evaluation, and record-keeping. The feature does not mention any explicit request or evaluation process, thus violating the requirement."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature 'Repayment: Customers repay directly into Mahanadi Finance's account by UPI' complies with the requirement that all loan servicing, repayment, etc. is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "Repayment: Customers repay directly into Mahanadi Finance's account by UPI.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that customers repay directly into Mahanadi Finance's account by UPI. The RBI paragraph explicitly requires that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account or pool account of any third party, including the accounts of LSP. Since the feature describes repayment directly into the RE’s (Mahanadi Finance) account, it complies with the requirement. There is no mention of a pass-through account or third-party account involved in the repayment process. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app requests one-time camera access for KYC. No other permissions.",
+      "doc_evidence": "The app requests one-time camera access for KYC. No other permissions.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the RBI paragraph. The paragraph allows one-time access to camera for KYC purposes with explicit consent, and the feature does not request any other permissions. The feature does not violate the paragraph."
+    }
+  ],
+  "summary": "The compliance review of the TapLater product, which enables pay-later services at neighbourhood pharmacies, identified several critical non-compliance issues with the RBI rules. The product feature allowing deferral of payment to pharmacies or third-party accounts violates DLD2025:9(i), as disbursement must be made to the borrower's bank account. Additionally, the treatment of these deferrals as merchant payment deferrals rather than loans, without reporting to credit information companies, breaches DLD2025:16(ii). Furthermore, the automatic monthly increase in the credit limit without an explicit request from the borrower violates DLD2025:7(ii). These findings highlight significant gaps in compliance with the reviewed RBI rules.",
+  "trace": {
+    "llm_calls": 18,
+    "prompt_tokens": 9315,
+    "output_tokens": 1790,
+    "llm_seconds": 67.6,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 5,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 25,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:11(iv)",
+        "DLD2025:27(ii)",
+        "DLD2025:10(i)",
+        "KFS2024:7",
+        "DLD2025:26(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:19(i)",
+        "DLD2025:29(i)"
+      ],
+      "1:Credit Bureau Reporting": [
+        "DLD2025:16(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:29(i)",
+        "DLD2025:17(vi)",
+        "DLD2025:17(iii)",
+        "KFS2024:7",
+        "DLD2025:17(v)",
+        "KFS2024:10"
+      ],
+      "2:Credit Limit Management": [
+        "DLD2025:7(ii)",
+        "DLD2025:27(ii)",
+        "DLD2025:10(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:10(i)"
+      ],
+      "3:Repayment": [
+        "DLD2025:9(v)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)",
+        "DLD2025:5(ii)",
+        "DLD2025:8(iv)"
+      ],
+      "4:Data Collection": [
+        "DLD2025:12(i)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:10(ii)",
+        "DLD2025:5(ii)",
+        "DLD2025:6",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:12(iii)"
+      ]
+    }
+  },
+  "seconds": 67.9
+}

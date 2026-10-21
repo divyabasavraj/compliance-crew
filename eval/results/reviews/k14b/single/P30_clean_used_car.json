@@ -1,0 +1,118 @@
+{
+  "system": "single",
+  "doc_id": "P30_clean_used_car",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "2. Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is disbursed into the dealer's bank account, which is a third-party account, violating the requirement that loans be disbursed directly into the borrower's bank account, except for specific cases.",
+      "doc_evidence": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "severity": "high",
+      "fix": "Amend the product to ensure that the loan is disbursed directly into the borrower's bank account, unless explicitly mandated by statutory or regulatory requirements.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "2. Disbursal",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The loan is disbursed into the dealer's bank account, which is a third-party account, violating the requirement that loan servicing and repayment be executed directly into the RE’s bank account without any pass-through account.",
+      "doc_evidence": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "severity": "high",
+      "fix": "Ensure that all loan disbursements are made directly into the borrower's bank account, not into any third-party account, including the dealer's account.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "2. Disbursal",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The loan is disbursed into the dealer's bank account, which is a third-party account, violating the requirement that the flow of funds between the borrower and the RE must not be controlled by a third party.",
+      "doc_evidence": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "severity": "high",
+      "fix": "Ensure that the loan is disbursed directly into the borrower's bank account, not into any third-party account, to prevent third-party control over fund flow.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "3. Default loss guarantee",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The DLG is invoked within 90 days overdue, which is less than the maximum allowed period of 120 days, violating the requirement that DLG be invoked within a maximum overdue period of 120 days.",
+      "doc_evidence": "invoked within 90 days overdue",
+      "severity": "medium",
+      "fix": "Adjust the DLG invocation period to be within the maximum allowed period of 120 days overdue.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "3. Default loss guarantee",
+      "rule_id": "DLD2025:22(i)",
+      "issue": "The DLG is provided as cash deposited with Pench Bank, which is acceptable, but the document does not explicitly state that the DLG is accepted in one of the allowed forms (cash, fixed deposit, or bank guarantee).",
+      "doc_evidence": "DLG of 5% of each portfolio as cash deposited with Pench Bank",
+      "severity": "low",
+      "fix": "Explicitly state in the product document that the DLG is accepted in the form of cash deposited with the RE, as per RBI guidelines.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "3. Default loss guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The DLG cover is stated as 5% of each portfolio, which is compliant with the cap of 5% of the total amount disbursed out of that loan portfolio.",
+      "doc_evidence": "DLG of 5% of each portfolio as cash deposited with Pench Bank",
+      "severity": "low",
+      "fix": "No action required; this is compliant with the regulation.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "3. Default loss guarantee",
+      "rule_id": "DLD2025:23(ii)",
+      "issue": "The document does not explicitly state that the DLG portfolio is fixed and consists of identifiable and measurable loan assets, as required by the regulation.",
+      "doc_evidence": "CarKey publishes its DLG portfolios and amounts on its website every month within seven working days.",
+      "severity": "medium",
+      "fix": "Clarify in the product document that the DLG portfolio is fixed and consists of identifiable and measurable loan assets, as required by the regulation.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. Data",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The document mentions one-time access for camera and location during onboarding, but does not explicitly state that this access is for KYC purposes only and with explicit consent having an audit trail.",
+      "doc_evidence": "One-time camera and location access during onboarding for KYC and address checks, with consent.",
+      "severity": "medium",
+      "fix": "Explicitly state that the one-time access for camera and location is for KYC purposes only and that it is done with explicit consent having an audit trail.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. Data",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "The document does not explicitly state that clear policy guidelines regarding the storage of customer data are put in place and disclosed by the RE and LSP on their website and DLA.",
+      "doc_evidence": "Data is stored on servers in India.",
+      "severity": "medium",
+      "fix": "Include clear policy guidelines regarding the storage of customer data, including data retention, use, and destruction protocols, and disclose them on the website and DLA.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. Data",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "The document does not explicitly state that biometric data is not stored or collected unless allowed under extant statutory guidelines.",
+      "doc_evidence": "One-time camera and location access during onboarding for KYC and address checks, with consent.",
+      "severity": "medium",
+      "fix": "Explicitly state that biometric data is not stored or collected unless allowed under extant statutory guidelines.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "5. Credit reporting and grievances",
+      "rule_id": "DLD2025:16(ii)",
+      "issue": "The document states that all loans are reported to CICs, which is compliant with the regulation, but does not explicitly mention that LSPs associated with deferred payment credit products must abide by the extant outsourcing guidelines.",
+      "doc_evidence": "All loans are reported to CICs.",
+      "severity": "low",
+      "fix": "No action required; this is compliant with the regulation.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2209,
+    "output_tokens": 1507,
+    "llm_seconds": 103.6,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 103.8
+}

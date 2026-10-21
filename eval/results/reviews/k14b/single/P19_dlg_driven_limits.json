@@ -1,0 +1,55 @@
+{
+  "system": "single",
+  "doc_id": "P19_dlg_driven_limits",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Credit decision",
+      "rule_id": "DLD2025:19(ii)",
+      "issue": "The product document states that Satpura Finance approves every applicant QuickLine sends without its own credit check, which violates the requirement that DLG arrangements do not act as a substitute for credit appraisal and robust credit underwriting standards.",
+      "doc_evidence": "Because QuickLine Tech's DLG covers losses, Satpura Finance approves every applicant QuickLine sends without its own credit check.",
+      "severity": "high",
+      "fix": "Satpura Finance must implement its own credit appraisal and underwriting process, even if DLG is in place.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "DLG",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The product document states that QuickLine Tech provides a DLG of 5% of the disbursed portfolio, which exceeds the cap of 5% of the total amount disbursed out of that loan portfolio at any given time.",
+      "doc_evidence": "QuickLine Tech provides a DLG of 5% of the disbursed portfolio as cash deposited with Satpura Finance, under a Board-approved DLG policy.",
+      "severity": "high",
+      "fix": "The DLG cover must not exceed 5% of the total amount disbursed out of the loan portfolio at any given time.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Cooling-off",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "The product document states that borrowers can exit within 2 days by repaying the principal and proportionate APR without penalty, but does not mention whether a one-time processing fee may be retained if the customer exits during the cooling-off period.",
+      "doc_evidence": "Borrowers can exit within 2 days by repaying the principal and proportionate APR without penalty.",
+      "severity": "medium",
+      "fix": "The product document should disclose whether a one-time processing fee may be retained if the customer exits during the cooling-off period.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Credit decision",
+      "rule_id": "DLD2025:5(i)",
+      "issue": "The product document does not mention a contractual agreement between the RE and the LSP that clearly defines the respective roles, rights, and obligations of each party.",
+      "doc_evidence": "Because QuickLine Tech's DLG covers losses, Satpura Finance approves every applicant QuickLine sends without its own credit check.",
+      "severity": "medium",
+      "fix": "A contractual agreement between Satpura Finance and QuickLine Tech must be established, clearly defining the roles, rights, and obligations of each party.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2174,
+    "output_tokens": 604,
+    "llm_seconds": 43.2,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 43.4
+}

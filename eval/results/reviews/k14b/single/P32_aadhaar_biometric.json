@@ -1,0 +1,64 @@
+{
+  "system": "single",
+  "doc_id": "P32_aadhaar_biometric",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Fingerprint archive",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "Biometric data (fingerprints) is being stored by the LSP (IDFlow) without any mention of it being allowed under extant statutory guidelines.",
+      "doc_evidence": "IDFlow additionally saves a copy of each borrower's fingerprint scan on its own servers, to speed up repeat loans.",
+      "severity": "high",
+      "fix": "IDFlow must ensure that storing biometric data is allowed under extant statutory guidelines and obtain necessary approvals.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Statements",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The LSP (IDFlow) is collecting and storing personal data (bank statements and salary slips) without explicit consent from the borrower and without an audit trail.",
+      "doc_evidence": "IDFlow keeps full copies of borrowers' bank statements and salary slips on its servers after the loan is approved.",
+      "severity": "high",
+      "fix": "IDFlow must obtain explicit consent from the borrower before collecting and storing such data, and maintain an audit trail of the consent.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Retention",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product document does not mention providing the borrower with an option to revoke consent or delete data, which is required under the guidelines.",
+      "doc_evidence": "Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.",
+      "severity": "medium",
+      "fix": "The product must provide borrowers with the option to revoke consent and delete their data, as per the guidelines.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Retention",
+      "rule_id": "DLD2025:12(iv)",
+      "issue": "The product document does not mention obtaining explicit consent from the borrower before sharing personal information (bank statements and salary slips) with the LSP (IDFlow).",
+      "doc_evidence": "IDFlow keeps full copies of borrowers' bank statements and salary slips on its servers after the loan is approved.",
+      "severity": "high",
+      "fix": "Explicit consent must be obtained from the borrower before sharing personal information with the LSP.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Retention",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The product document does not mention that data is deleted from servers outside India within 24 hours of processing, even though it is stored in India.",
+      "doc_evidence": "All data is stored on servers in Hyderabad.",
+      "severity": "low",
+      "fix": "The product should ensure that if data is processed outside India, it is deleted from servers outside India within 24 hours of processing.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2478,
+    "output_tokens": 644,
+    "llm_seconds": 47.0,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 47.1
+}

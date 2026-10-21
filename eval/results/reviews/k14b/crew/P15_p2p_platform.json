@@ -1,0 +1,202 @@
+{
+  "system": "crew",
+  "doc_id": "P15_p2p_platform",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:20(iii)",
+      "issue": "LendCircle offers a default loss guarantee to lenders, which may constitute a DLG (default loss guarantee) arrangement. However, NBFC-P2P platforms are explicitly prohibited from entering into DLG arrangements for the loans facilitated over their platform, as per para 6(1)(iv) of the Master Direction - Non-Banking Financial Company – Peer to Peer Lending Platform (Reserve Bank) Directions, 2017, as amended from time to time.",
+      "doc_evidence": "2. Lender protection: To attract lenders, LendCircle offers a default loss guarantee: it will reimburse lenders for up to 3% of the principal in each loan pool that goes bad.",
+      "severity": "high",
+      "fix": "Discontinue the default loss guarantee arrangement and revise all marketing and product documentation to ensure compliance with RBI guidelines prohibiting DLG arrangements for NBFC-P2P platforms.",
+      "verifier_note": "The product feature describes LendCircle offering a default loss guarantee (DLG) to lenders, which aligns with the definition of a DLG arrangement. The RBI paragraph explicitly prohibits NBFC-P2P platforms from entering into DLG arrangements for loans facilitated over their platform. Since LendCircle is an NBFC-P2P platform and the feature describes it offering a DLG arrangement, this constitutes a violation of the specified RBI paragraph."
+    },
+    {
+      "feature": "Repayment Process",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product feature describes that borrowers repay into an escrow account maintained by a bank trustee, which implies the use of a third-party account. This directly contradicts the requirement that all loan servicing and repayment must be executed by the borrower directly into the RE’s bank account without any pass-through account or pool account of a third party, including LSPs.",
+      "doc_evidence": "3. Repayment: Borrowers repay into an escrow account maintained by a bank trustee, as required for P2P platforms.",
+      "severity": "high",
+      "fix": "Revise the repayment process to ensure that all borrower repayments are made directly into the RE’s bank account, eliminating the use of any third-party escrow or pass-through accounts.",
+      "verifier_note": "The RBI paragraph explicitly prohibits the use of any third-party account, including those maintained by a bank trustee, for loan repayment. The product feature describes the use of an escrow account maintained by a bank trustee, which constitutes a third-party account and thus violates the requirement."
+    },
+    {
+      "feature": "Marketing Claims",
+      "rule_id": "DLD2025:17(vi)",
+      "issue": "The product feature states: 'LendCircle: guaranteed returns, approved and backed by the RBI.' This implies that the RBI has endorsed or authorized the product, which is prohibited under the rule.",
+      "doc_evidence": "The app home screen says: \"LendCircle: guaranteed returns, approved and backed by the RBI.\"",
+      "severity": "high",
+      "fix": "Remove any statements implying RBI endorsement or authorization of the product from all marketing materials, websites, and communications.",
+      "verifier_note": "The product feature implies that the RBI has endorsed or authorized the product, which is prohibited under the rule. The RBI paragraph explicitly forbids misrepresentation in marketing materials that could suggest endorsement or authorization by the Reserve Bank."
+    },
+    {
+      "feature": "Product Structure",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The product feature does not explicitly mention the inclusion of required details such as the name of the RE, amount and tenor of loan, APR, monthly repayment obligation, and penal charges (if applicable) in the digital view of loan offers. This is necessary for enabling borrowers to make a fair comparison between various offers.",
+      "doc_evidence": "Product: Borrowers list loan requests of ₹10,000 to ₹5,00,000; individual lenders on the platform choose which requests to fund.",
+      "severity": "medium",
+      "fix": "Update the digital loan offer view to include mandatory details such as the name of the RE, loan amount, tenor, APR, monthly repayment, and penal charges (if applicable).",
+      "verifier_note": "The product feature describes a system where borrowers list loan requests and lenders choose which requests to fund. It does not explicitly mention the inclusion of required details such as the name of the RE, amount and tenor of loan, APR, monthly repayment obligation, and penal charges (if applicable) in the digital view of loan offers. The RBI paragraph [DLD2025:6(iii)] explicitly requires that these details be included in the digital view of loan offers to enable fair comparison. Since the product feature does not confirm that these details are included, it fails to meet the requirement specified in the paragraph."
+    },
+    {
+      "feature": "Product Structure",
+      "rule_id": "DLD2025:6(i)",
+      "issue": "The product feature does not mention the disclosure of the names of unmatched lenders in the digital view of loan offers, which is required by the RBI guidelines.",
+      "doc_evidence": "Product: Borrowers list loan requests of ₹10,000 to ₹5,00,000; individual lenders on the platform choose which requests to fund.",
+      "severity": "medium",
+      "fix": "Amend the digital loan offer view to disclose the names of unmatched lenders as required by RBI guidelines.",
+      "verifier_note": "The RBI paragraph requires that the digital view of loan offers must include the names of unmatched lenders. The product feature does not mention the disclosure of such names, which is a requirement under the guideline."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:20(iii)",
+      "issue": "LendCircle offers a default loss guarantee to lenders, which may constitute a DLG (default loss guarantee) arrangement. However, NBFC-P2P platforms are explicitly prohibited from entering into DLG arrangements for the loans facilitated over their platform, as per para 6(1)(iv) of the Master Direction - Non-Banking Financial Company – Peer to Peer Lending Platform (Reserve Bank) Directions, 2017, as amended from time to time.",
+      "doc_evidence": "2. Lender protection: To attract lenders, LendCircle offers a default loss guarantee: it will reimburse lenders for up to 3% of the principal in each loan pool that goes bad.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes LendCircle offering a default loss guarantee (DLG) to lenders, which aligns with the definition of a DLG arrangement. The RBI paragraph explicitly prohibits NBFC-P2P platforms from entering into DLG arrangements for loans facilitated over their platform. Since LendCircle is an NBFC-P2P platform and the feature describes it offering a DLG arrangement, this constitutes a violation of the specified RBI paragraph."
+    },
+    {
+      "feature": "Repayment Process",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product feature describes that borrowers repay into an escrow account maintained by a bank trustee, which implies the use of a third-party account. This directly contradicts the requirement that all loan servicing and repayment must be executed by the borrower directly into the RE’s bank account without any pass-through account or pool account of a third party, including LSPs.",
+      "doc_evidence": "3. Repayment: Borrowers repay into an escrow account maintained by a bank trustee, as required for P2P platforms.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits the use of any third-party account, including those maintained by a bank trustee, for loan repayment. The product feature describes the use of an escrow account maintained by a bank trustee, which constitutes a third-party account and thus violates the requirement."
+    },
+    {
+      "feature": "Marketing Claims",
+      "rule_id": "DLD2025:17(vi)",
+      "issue": "The product feature states: 'LendCircle: guaranteed returns, approved and backed by the RBI.' This implies that the RBI has endorsed or authorized the product, which is prohibited under the rule.",
+      "doc_evidence": "The app home screen says: \"LendCircle: guaranteed returns, approved and backed by the RBI.\"",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature implies that the RBI has endorsed or authorized the product, which is prohibited under the rule. The RBI paragraph explicitly forbids misrepresentation in marketing materials that could suggest endorsement or authorization by the Reserve Bank."
+    },
+    {
+      "feature": "Product Structure",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The product feature does not explicitly mention the inclusion of required details such as the name of the RE, amount and tenor of loan, APR, monthly repayment obligation, and penal charges (if applicable) in the digital view of loan offers. This is necessary for enabling borrowers to make a fair comparison between various offers.",
+      "doc_evidence": "Product: Borrowers list loan requests of ₹10,000 to ₹5,00,000; individual lenders on the platform choose which requests to fund.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a system where borrowers list loan requests and lenders choose which requests to fund. It does not explicitly mention the inclusion of required details such as the name of the RE, amount and tenor of loan, APR, monthly repayment obligation, and penal charges (if applicable) in the digital view of loan offers. The RBI paragraph [DLD2025:6(iii)] explicitly requires that these details be included in the digital view of loan offers to enable fair comparison. Since the product feature does not confirm that these details are included, it fails to meet the requirement specified in the paragraph."
+    },
+    {
+      "feature": "Product Structure",
+      "rule_id": "DLD2025:6(i)",
+      "issue": "The product feature does not mention the disclosure of the names of unmatched lenders in the digital view of loan offers, which is required by the RBI guidelines.",
+      "doc_evidence": "Product: Borrowers list loan requests of ₹10,000 to ₹5,00,000; individual lenders on the platform choose which requests to fund.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the digital view of loan offers must include the names of unmatched lenders. The product feature does not mention the disclosure of such names, which is a requirement under the guideline."
+    },
+    {
+      "feature": "Product Structure",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The product feature does not explicitly state that the LSP shall not use dark patterns or deceptive patterns to mislead borrowers into choosing a particular loan offer. This is a requirement under the RBI guidelines.",
+      "doc_evidence": "Product: Borrowers list loan requests of ₹10,000 to ₹5,00,000; individual lenders on the platform choose which requests to fund.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits the use of dark patterns or deceptive patterns to mislead borrowers into choosing a particular loan offer. However, the product feature does not mention anything about the use of dark patterns or deceptive patterns, nor does it confirm whether such practices are used or avoided. Since the claim relies on the absence of information in the product feature, and not on an explicit violation of the guideline, it does not constitute a violation as per the instructions."
+    },
+    {
+      "feature": "Product Structure",
+      "rule_id": "DLD2025:6(ii)",
+      "issue": "The product feature does not mention that the LSP must follow a consistent approach for similarly placed borrowers and products, or that any changes to the mechanism must be properly documented.",
+      "doc_evidence": "Product: Borrowers list loan requests of ₹10,000 to ₹5,00,000; individual lenders on the platform choose which requests to fund.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires the LSP to follow a consistent approach for similarly placed borrowers and products and to document any changes to the mechanism. The product feature does not explicitly mention these requirements, but it does not necessarily violate the paragraph if the mechanism used by the LSP inherently ensures consistency and documentation. However, the feature does not confirm that such consistency or documentation is in place, which could imply a violation based on the absence of confirmation."
+    },
+    {
+      "feature": "Product Structure",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "The product feature does not mention that the RE must maintain a website with details of its digital lending products, DLAs, LSPs, customer care, grievance redressal, and links to RBI’s CMS and Sachet Portal. This is a requirement under the RBI guidelines.",
+      "doc_evidence": "Product: Borrowers list loan requests of ₹10,000 to ₹5,00,000; individual lenders on the platform choose which requests to fund.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a platform where borrowers list loan requests and lenders choose to fund them. It does not mention anything about the RE maintaining a website with the required details as specified in the RBI paragraph. However, the paragraph applies to the RE (regulated entity), not to the product feature itself, which appears to be a description of a lending platform. The feature does not claim to be an RE, and the requirement in the RBI paragraph is specific to REs. Therefore, the feature is not in violation of the RBI paragraph because it is not an RE and the paragraph does not apply to it."
+    }
+  ],
+  "summary": "The compliance review of LendCircle: Peer-to-Peer Personal Loans identified several gaps against the RBI rules. A high-risk finding indicates that LendCircle offers a default loss guarantee to lenders, which is prohibited under the Master Direction for NBFC-P2P platforms. Another high-risk finding highlights the use of an escrow account maintained by a bank trustee, which violates the requirement that repayments must be made directly into the RE’s bank account. A third high-risk finding notes the implication of RBI endorsement in the product feature, which is explicitly prohibited. Medium-risk findings include the absence of required details in the digital view of loan offers and the lack of disclosure of unmatched lenders' names, both of which are mandated by RBI guidelines.",
+  "trace": {
+    "llm_calls": 21,
+    "prompt_tokens": 11367,
+    "output_tokens": 2631,
+    "llm_seconds": 187.0,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 8,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 28,
+    "retrieved": {
+      "0:Default Loss Guarantee": [
+        "DLD2025:6(iv)",
+        "DLD2025:8(v)",
+        "DLD2025:6(iii)",
+        "DLD2025:10(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:17(v)",
+        "DLD2025:20(iii)",
+        "DLD2025:14(i)"
+      ],
+      "1:Repayment Process": [
+        "DLD2025:9(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:5(ii)",
+        "DLD2025:20(iii)",
+        "DLD2025:19(ii)",
+        "DLD2025:8(ii)"
+      ],
+      "2:Marketing Claims": [
+        "DLD2025:6(iv)",
+        "DLD2025:14(i)",
+        "DLD2025:9(i)",
+        "DLD2025:17(vi)",
+        "DLD2025:19(i)",
+        "DLD2025:20(iii)",
+        "DLD2025:16(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:23(i)"
+      ],
+      "3:Data Collection": [
+        "DLD2025:12(i)",
+        "DLD2025:13(i)",
+        "DLD2025:8(iii)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:20(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:14(i)",
+        "DLD2025:5(ii)"
+      ],
+      "4:Product Structure": [
+        "DLD2025:8(iii)",
+        "DLD2025:6(iii)",
+        "DLD2025:6(iv)",
+        "DLD2025:6(ii)",
+        "DLD2025:6(i)",
+        "DLD2025:15(i)",
+        "DLD2025:20(iii)",
+        "DLD2025:8(iv)",
+        "DLD2025:7(ii)",
+        "DLD2025:5(ii)"
+      ]
+    }
+  },
+  "seconds": 187.5
+}

@@ -1,0 +1,64 @@
+{
+  "system": "single",
+  "doc_id": "P21_dla_reporting",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "CIMS reporting",
+      "rule_id": "DLD2025:17(i)",
+      "issue": "The product document states that only the bank's own app has been reported on the RBI CIMS portal, and the three partner LSP apps are not reported because they belong to the partners. This is a violation of the requirement that all DLAs, including those of LSPs, must be reported by the RE on the CIMS portal.",
+      "doc_evidence": "Only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners.",
+      "severity": "high",
+      "fix": "Vasant Bank must report all DLAs, including those of the LSPs (CashKart, EasyEMI, FarmFund, and StudyCash), on the RBI CIMS portal as required.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "CIMS reporting",
+      "rule_id": "DLD2025:17(ii)",
+      "issue": "The product document mentions that a fourth partner app, StudyCash, went live last month and that the bank will add it to its records at the next annual review. This is a violation of the requirement to update the CIMS portal as and when additional DLAs are deployed.",
+      "doc_evidence": "A fourth partner app, StudyCash, went live last month. The bank will add it to its records at the next annual review.",
+      "severity": "high",
+      "fix": "Vasant Bank must immediately report the new DLA (StudyCash) on the CIMS portal, rather than waiting for the next annual review.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "CIMS reporting",
+      "rule_id": "DLD2025:17(vii)",
+      "issue": "The product document does not mention whether the reporting of DLAs on the CIMS portal has been completed by June 15, 2025. This is a violation of the requirement to complete all DLA reporting by this date.",
+      "doc_evidence": "Only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners.",
+      "severity": "high",
+      "fix": "Vasant Bank must ensure that all DLAs, including those of LSPs, are reported on the CIMS portal by June 15, 2025.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Website",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "The product document states that the bank's website lists all four partner LSPs and their apps, but it does not explicitly confirm that the website includes the DLAs of the LSPs along with the details of the activities for which they have been engaged. This may be a violation of the requirement to list such details on the website.",
+      "doc_evidence": "The bank's website lists all its digital lending products, all four partner LSPs and their apps, the grievance officer's details and a link to RBI's CMS and Sachet portals.",
+      "severity": "medium",
+      "fix": "Vasant Bank should ensure that the website includes the DLAs of the LSPs along with the details of the activities for which they have been engaged.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Website",
+      "rule_id": "DLD2025:14(i)",
+      "issue": "The product document does not mention whether the LSPs have their own comprehensive privacy policies made available publicly on their websites. This is a violation of the requirement that both RE and LSPs must have a comprehensive privacy policy available on their respective websites.",
+      "doc_evidence": "The bank's website lists all its digital lending products, all four partner LSPs and their apps, the grievance officer's details and a link to RBI's CMS and Sachet portals.",
+      "severity": "medium",
+      "fix": "Vasant Bank must ensure that each LSP (CashKart, EasyEMI, FarmFund, StudyCash) has a comprehensive privacy policy available on their respective websites.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2179,
+    "output_tokens": 924,
+    "llm_seconds": 65.0,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 65.1
+}

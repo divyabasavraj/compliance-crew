@@ -1,0 +1,64 @@
+{
+  "system": "single",
+  "doc_id": "P24_third_party_sdks",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "2. Third-party SDKs",
+      "rule_id": "DLD2025:14(ii)",
+      "issue": "The privacy policy does not disclose the third parties (SDKs) that collect personal information through the DLA.",
+      "doc_evidence": "The privacy policy on the website does not name these third parties.",
+      "severity": "high",
+      "fix": "The privacy policy must explicitly disclose the names of the third-party SDKs (analytics, advertising, and device-fingerprinting) that collect personal information through the DLA.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "3. Device access",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app accesses the list of installed apps and reads files in the download folder, which is not permitted unless for one-time onboarding/KYC purposes with explicit consent.",
+      "doc_evidence": "For fraud checks, the app scans the list of installed apps and reads files in the download folder.",
+      "severity": "high",
+      "fix": "Access to installed apps and files in the download folder should be restricted to one-time onboarding/KYC purposes with explicit borrower consent and an audit trail.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "3. Device access",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app accesses mobile phone resources (installed apps and files in the download folder) without being limited to one-time access for onboarding/KYC purposes.",
+      "doc_evidence": "For fraud checks, the app scans the list of installed apps and reads files in the download folder.",
+      "severity": "high",
+      "fix": "Access to mobile phone resources like installed apps and files in the download folder should be limited to one-time access for onboarding/KYC purposes only, with explicit borrower consent.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. Data location",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The LSP (SwiftStack) is storing personal information of borrowers beyond basic minimal data, which is not allowed unless explicitly permitted by statutory guidelines.",
+      "doc_evidence": "All data, including SDK data, is stored on servers in Mumbai.",
+      "severity": "medium",
+      "fix": "The LSP should only store basic minimal data (name, address, contact details) and ensure that the RE (Nilgiri Bank) is responsible for data privacy and security.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. Data location",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "There is no mention of whether biometric data is stored or collected, which is prohibited unless allowed under extant statutory guidelines.",
+      "doc_evidence": "All data, including SDK data, is stored on servers in Mumbai.",
+      "severity": "low",
+      "fix": "The product document should explicitly state whether biometric data is collected or stored, and if so, confirm that it is allowed under extant statutory guidelines.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2220,
+    "output_tokens": 678,
+    "llm_seconds": 48.9,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 49.0
+}

@@ -1,0 +1,64 @@
+{
+  "system": "single",
+  "doc_id": "P23_consent_controls",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "2. Consent",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product does not allow the borrower to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent, or request deletion of data. The consent is given via a single 'I agree' button with no option to withdraw or specify data usage.",
+      "doc_evidence": "At signup, the shopkeeper taps one 'I agree' button that covers all uses of their data. There is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently.",
+      "severity": "high",
+      "fix": "Implement granular consent options allowing the borrower to give or deny consent for specific data uses, revoke consent, and request data deletion. Provide an audit trail for all consents.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "2. Consent",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product does not provide the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted, or request deletion of data.",
+      "doc_evidence": "At signup, the shopkeeper taps one 'I agree' button that covers all uses of their data. There is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently.",
+      "severity": "high",
+      "fix": "Implement an explicit consent mechanism that allows the borrower to control data usage, restrict disclosure, revoke consent, and request data deletion.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "2. Consent",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The purpose of obtaining borrowers’ consent is not disclosed at each stage of interface with the borrowers.",
+      "doc_evidence": "Later screens that ask for GST returns and bank statements do not say why they are needed.",
+      "severity": "medium",
+      "fix": "Clearly disclose the purpose of obtaining consent at each stage of the interface with the borrower.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "2. Consent",
+      "rule_id": "DLD2025:12(iv)",
+      "issue": "The product does not obtain explicit consent of the borrower before sharing personal information with any third party, and there is no mention of statutory or regulatory requirements for such sharing.",
+      "doc_evidence": "At signup, the shopkeeper taps one 'I agree' button that covers all uses of their data. There is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently.",
+      "severity": "high",
+      "fix": "Obtain explicit consent from the borrower before sharing personal information with third parties, and disclose if such sharing is required by statutory or regulatory mandates.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "3. Purpose of consent",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The purpose of obtaining borrowers’ consent is not disclosed at each stage of interface with the borrowers.",
+      "doc_evidence": "Later screens that ask for GST returns and bank statements do not say why they are needed.",
+      "severity": "medium",
+      "fix": "Clearly disclose the purpose of obtaining consent at each stage of the interface with the borrower.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2328,
+    "output_tokens": 777,
+    "llm_seconds": 55.5,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 55.6
+}

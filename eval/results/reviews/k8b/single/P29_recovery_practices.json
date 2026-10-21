@@ -1,0 +1,64 @@
+{
+  "system": "single",
+  "doc_id": "P29_recovery_practices",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Recovery agents",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "The product document does not communicate the recovery agent's details to the borrower before the recovery agent contacts the borrower for recovery.",
+      "doc_evidence": "Borrowers are not sent the agency's name or the agent's details before the first contact.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app reads the phone's contact list without prior and explicit consent of the borrower, which is not need-based.",
+      "doc_evidence": "During the loan, the app reads the phone's contact list so agents can reach family members if the borrower cannot be contacted.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The borrower is not provided with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data, or make the RE/LSP delete/forget the data.",
+      "doc_evidence": "During the loan, the app reads the phone's contact list so agents can reach family members if the borrower cannot be contacted.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The purpose of obtaining borrowers’ consent is not disclosed at each stage of interface with the borrowers.",
+      "doc_evidence": "During the loan, the app reads the phone's contact list so agents can reach family members if the borrower cannot be contacted.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan documents",
+      "rule_id": "DLD2025:8(iii)",
+      "issue": "The digitally signed documents, including KFS, summary of loan product, sanction letter, terms and conditions, account statements, privacy policies of the RE / LSP with respect to storage and usage of borrowers’ data, etc., are not automatically flowed to the borrower on the registered and verified email/SMS upon execution of the loan contract/transactions.",
+      "doc_evidence": "The KFS, sanction letter and terms are emailed and sent by SMS link automatically after signing.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2134,
+    "output_tokens": 550,
+    "llm_seconds": 19.6,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 19.7
+}

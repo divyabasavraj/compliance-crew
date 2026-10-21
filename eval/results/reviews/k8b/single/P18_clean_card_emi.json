@@ -1,0 +1,55 @@
+{
+  "system": "single",
+  "doc_id": "P18_clean_card_emi",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "EMI Conversion",
+      "rule_id": "DLD2025:29(i)",
+      "issue": "The product document states that EMI conversion on credit cards is governed by the Master Direction on Credit Card and Debit Card, which conflicts with RBI's requirement that such transactions are not covered under these Directions and should be governed by the stipulations laid down under the Master Direction on Credit Card and Debit Card – Issuance and Conduct, 2022 dated April 21, 2022.",
+      "doc_evidence": "EMI conversion on credit cards is governed by the Master Direction on Credit Card and Debit Card; the conversion terms, interest and processing fee are shown before the customer confirms.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "EMI Conversion",
+      "rule_id": "DLD2025:20(i)",
+      "issue": "The product document does not mention any DLG arrangements, but the RBI regulation prohibits REs from entering into DLG arrangements for revolving credit facilities offered through credit cards.",
+      "doc_evidence": "EMI conversion on credit cards is governed by the Master Direction on Credit Card and Debit Card; the conversion terms, interest and processing fee are shown before the customer confirms.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product document states that the app uses only the customer's existing card account data and does not request contacts, files, SMS or call logs, which is compliant with the requirement that REs ensure DLAs do not access mobile phone resources like file and media, contact list, call logs, telephony functions, etc.",
+      "doc_evidence": "The app uses only the customer's existing card account data. It does not request contacts, files, SMS or call logs.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The product document states that all data is stored on Konkan Bank's servers in Mumbai and Chennai, which is compliant with the requirement that data be stored only in servers located within India. However, the document does not mention the requirement to delete data processed outside India within 24 hours.",
+      "doc_evidence": "All data is stored on Konkan Bank's servers in Mumbai and Chennai.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2399,
+    "output_tokens": 555,
+    "llm_seconds": 20.8,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 20.9
+}

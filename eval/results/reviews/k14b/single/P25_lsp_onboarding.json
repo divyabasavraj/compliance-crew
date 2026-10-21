@@ -1,0 +1,73 @@
+{
+  "system": "single",
+  "doc_id": "P25_lsp_onboarding",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Arrangement",
+      "rule_id": "DLD2025:5(i)",
+      "issue": "No contractual agreement has been signed between the RE (Ganga Finance) and the LSP (FastFunds), which is a requirement for digital lending arrangements.",
+      "doc_evidence": "The two sides agreed the terms on a call and will start lending next week; no written contract has been signed.",
+      "severity": "high",
+      "fix": "A formal written contract must be established between Ganga Finance and FastFunds, clearly defining the roles, rights, and obligations of each party.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Due diligence",
+      "rule_id": "DLD2025:5(ii)",
+      "issue": "Ganga Finance did not conduct enhanced due diligence on FastFunds, including reviewing their technical capabilities, data privacy policies, past conduct, and ability to comply with regulations.",
+      "doc_evidence": "Ganga Finance did not review FastFunds' technology, data privacy policies or past conduct before agreeing, because FastFunds is a well-known brand.",
+      "severity": "high",
+      "fix": "Ganga Finance must perform a thorough due diligence process on FastFunds, including assessing their technical capabilities, data privacy policies, past conduct, and regulatory compliance.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Collections",
+      "rule_id": "DLD2025:5(v)",
+      "issue": "Ganga Finance has not provided any guidance or training to FastFunds on fair recovery practices, despite FastFunds acting as a recovery agent.",
+      "doc_evidence": "Ganga Finance has given FastFunds no guidance or training on fair recovery practices.",
+      "severity": "high",
+      "fix": "Ganga Finance must provide FastFunds with necessary guidance on fair recovery practices to ensure compliance with applicable instructions.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Collections",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "No information is provided on whether the recovery agent's details are communicated to the borrower before contact for recovery.",
+      "doc_evidence": "FastFunds will also act as the recovery agent for overdue loans.",
+      "severity": "medium",
+      "fix": "Ganga Finance must ensure that the details of the recovery agent (FastFunds) are communicated to the borrower via email/SMS before the recovery agent contacts the borrower.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Due diligence",
+      "rule_id": "DLD2025:5(vii)",
+      "issue": "The outsourcing agreement with FastFunds may dilute or absolve Ganga Finance of its obligations, as no written contract has been signed and due diligence was not performed.",
+      "doc_evidence": "The two sides agreed the terms on a call and will start lending next week; no written contract has been signed. Ganga Finance did not review FastFunds' technology, data privacy policies or past conduct before agreeing, because FastFunds is a well-known brand.",
+      "severity": "high",
+      "fix": "A formal written contract must be established, and due diligence must be conducted to ensure that Ganga Finance remains fully responsible and liable for all acts and omissions of FastFunds.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data",
+      "rule_id": "DLD2025:5(iii)",
+      "issue": "No mention is made of periodic reviews of FastFunds' conduct in compliance with the contractual agreement.",
+      "doc_evidence": "FastFunds keeps only the borrower's name, phone and address needed for collections.",
+      "severity": "medium",
+      "fix": "Ganga Finance must implement a process for periodic review of FastFunds' conduct vis-à-vis the terms of the contractual agreement and take appropriate action in case of deviations.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2091,
+    "output_tokens": 842,
+    "llm_seconds": 59.3,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 59.4
+}

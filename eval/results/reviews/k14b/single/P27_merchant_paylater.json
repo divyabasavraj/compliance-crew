@@ -1,0 +1,64 @@
+{
+  "system": "single",
+  "doc_id": "P27_merchant_paylater",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "2. Credit bureau reporting",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "The product does not report the deferred payments to Credit Information Companies (CICs), which is a requirement under RBI regulations.",
+      "doc_evidence": "Mahanadi Finance treats these as merchant payment deferrals, not loans, and does not report them to credit information companies.",
+      "severity": "high",
+      "fix": "Mahanadi Finance must report all deferred payments to CICs as per RBI guidelines.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "3. Limits",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The product automatically increases the credit limit without an explicit request from the borrower, which is not allowed under RBI regulations.",
+      "doc_evidence": "Every month, PharmaPay raises each customer's pay-later limit by ₹1,000 if they repaid on time; customers are informed by SMS after the increase.",
+      "severity": "high",
+      "fix": "The automatic increase in credit limit must be discontinued unless the borrower explicitly requests and approves the increase.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product allows repayment directly into the lender's account, which is compliant, but the feature does not explicitly state that no third-party accounts are involved, which is a requirement under RBI regulations.",
+      "doc_evidence": "Customers repay directly into Mahanadi Finance's account by UPI.",
+      "severity": "medium",
+      "fix": "The product documentation should explicitly state that all repayments are made directly into the lender's account without any pass-through or third-party accounts.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. Repayment",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product does not explicitly state that loan disbursement is made directly into the borrower's bank account, which is a requirement under RBI regulations.",
+      "doc_evidence": "Customers repay directly into Mahanadi Finance's account by UPI.",
+      "severity": "medium",
+      "fix": "The product documentation should explicitly state that loan disbursement is made directly into the borrower's bank account, except for specific regulatory mandates.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "2. Credit bureau reporting",
+      "rule_id": "DLD2025:16(ii)",
+      "issue": "The product does not report the deferred payments to CICs, which is a requirement for structured digital lending products involving deferred payments.",
+      "doc_evidence": "Mahanadi Finance treats these as merchant payment deferrals, not loans, and does not report them to credit information companies.",
+      "severity": "high",
+      "fix": "Mahanadi Finance must report all deferred payments to CICs as per RBI guidelines.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2273,
+    "output_tokens": 651,
+    "llm_seconds": 47.1,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 47.2
+}

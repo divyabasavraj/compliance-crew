@@ -1,0 +1,55 @@
+{
+  "system": "single",
+  "doc_id": "P17_shg_microloans",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "2. Grievances",
+      "rule_id": "DLD2025:11(iv)",
+      "issue": "The product document states that if a complaint is rejected, the app tells the borrower the decision is final; borrowers are not told they can escalate to the RBI Ombudsman through the CMS portal.",
+      "doc_evidence": "If a complaint is rejected, the app tells the borrower the decision is final; borrowers are not told they can escalate to the RBI Ombudsman through the CMS portal.",
+      "severity": "high",
+      "fix": "The product must inform borrowers that they can escalate unresolved complaints to the RBI Ombudsman through the CMS portal.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "3. Insurance partner",
+      "rule_id": "KFS2024:7",
+      "issue": "The product document states that members' names, phone numbers and loan amounts are sent to an insurance company without the borrower's consent.",
+      "doc_evidence": "Members' names, phone numbers and loan amounts are sent to an insurance company so it can call them with micro-insurance offers. Borrowers are not asked before this is shared.",
+      "severity": "high",
+      "fix": "The product must obtain explicit consent from borrowers before sharing their personal information with third-party service providers, including insurance companies.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. Privacy policy",
+      "rule_id": "DLD2025:14(i)",
+      "issue": "The product document states that Sakhi Digital has no privacy policy on its website and plans to publish one next year.",
+      "doc_evidence": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "severity": "high",
+      "fix": "The product must have a comprehensive privacy policy publicly available on its website immediately, in compliance with applicable laws and RBI guidelines.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "2. Grievances",
+      "rule_id": "DLD2025:11(i)",
+      "issue": "The product document does not explicitly mention that the LSP (Sakhi Digital) has designated a nodal grievance redressal officer.",
+      "doc_evidence": "Complaints go to a named nodal officer at the bank and at Sakhi Digital.",
+      "severity": "medium",
+      "fix": "The product must explicitly state that Sakhi Digital has designated a nodal grievance redressal officer for digital lending-related complaints.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2360,
+    "output_tokens": 558,
+    "llm_seconds": 41.0,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 41.2
+}

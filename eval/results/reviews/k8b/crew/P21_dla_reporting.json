@@ -1,0 +1,133 @@
+{
+  "system": "crew",
+  "doc_id": "P21_dla_reporting",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature does not explicitly mention the contact details of the nodal grievance redressal officers being prominently displayed on the DLA (partner LSP apps). The feature only mentions the bank's website listing the grievance officer's details, but does not confirm that this information is also prominently displayed on the DLA platforms (CashKart, EasyEMI, and FarmFund).",
+      "doc_evidence": "The bank's website lists all its digital lending products, all four partner LSPs and their apps, the grievance officer's details and a link to RBI's CMS and Sachet portals.",
+      "severity": "medium",
+      "fix": "Ensure that the contact details of the nodal grievance redressal officers are prominently displayed on all DLA platforms (CashKart, EasyEMI, and FarmFund) in addition to the bank's website.",
+      "verifier_note": "The RBI paragraph requires contact details of the nodal grievance redressal officers to be prominently displayed on the DLA (partner LSP apps) as well as on the websites of the RE, its LSP, and the DLA. The product feature mentions that the grievance officer's details are listed on the bank's website, but does not confirm that they are prominently displayed on the DLA platforms (CashKart, EasyEMI, and FarmFund). Since the feature does not explicitly mention the DLA platforms, it fails to comply with the requirement of the RBI paragraph."
+    },
+    {
+      "feature": "LSP App Compliance",
+      "rule_id": "DLD2025:17(i)",
+      "issue": "The feature states that only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners. This is a compliance gap as the RBI requires that all DLAs deployed/ joined by the RE, whether their own or those of the LSPs, must be reported on the CIMS portal.",
+      "doc_evidence": "Only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners.",
+      "severity": "high",
+      "fix": "Report all DLAs, including the three partner LSP apps, on the RBI CIMS portal as per the regulatory requirement, and ensure that the reporting is completed by June 15, 2025.",
+      "verifier_note": "The RBI paragraph requires that all DLAs deployed or joined by the RE, including those of LSPs, must be reported on the CIMS portal. The product feature states that only the bank's own app has been reported, while the three LSP apps are not reported because they belong to the partners. This directly violates the requirement to report all DLAs, including those of LSPs. The feature does not mention that the LSP apps have been reported, and the RBI paragraph explicitly requires reporting of all DLAs, regardless of ownership."
+    },
+    {
+      "feature": "LSP App Compliance",
+      "rule_id": "DLD2025:17(vii)",
+      "issue": "The feature states that only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners. This is a compliance gap as the RBI requires that the reporting in respect of all DLAs on the CIMS portal is completed by June 15, 2025.",
+      "doc_evidence": "Only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners.",
+      "severity": "high",
+      "fix": "Immediately report all DLAs, including the three partner LSP apps, on the RBI CIMS portal and ensure that the reporting is completed by June 15, 2025 to avoid regulatory penalties.",
+      "verifier_note": "The RBI paragraph requires that the reporting in respect of all DLAs on the CIMS portal is completed by June 15, 2025. The product feature states that only the bank's own app, Vasant Loans, has been reported, while the three partner LSP apps are not reported because they belong to the partners. This means that not all DLAs (the three partner LSP apps) are reported, which violates the requirement that all DLAs must be reported. The feature does not mention that the partner LSP apps are DLAs or that they are being reported, so the claim that this is a compliance gap is valid."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature does not explicitly mention the contact details of the nodal grievance redressal officers being prominently displayed on the DLA (partner LSP apps). The feature only mentions the bank's website listing the grievance officer's details, but does not confirm that this information is also prominently displayed on the DLA platforms (CashKart, EasyEMI, and FarmFund).",
+      "doc_evidence": "The bank's website lists all its digital lending products, all four partner LSPs and their apps, the grievance officer's details and a link to RBI's CMS and Sachet portals.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires contact details of the nodal grievance redressal officers to be prominently displayed on the DLA (partner LSP apps) as well as on the websites of the RE, its LSP, and the DLA. The product feature mentions that the grievance officer's details are listed on the bank's website, but does not confirm that they are prominently displayed on the DLA platforms (CashKart, EasyEMI, and FarmFund). Since the feature does not explicitly mention the DLA platforms, it fails to comply with the requirement of the RBI paragraph."
+    },
+    {
+      "feature": "LSP App Compliance",
+      "rule_id": "DLD2025:17(i)",
+      "issue": "The feature states that only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners. This is a compliance gap as the RBI requires that all DLAs deployed/ joined by the RE, whether their own or those of the LSPs, must be reported on the CIMS portal.",
+      "doc_evidence": "Only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that all DLAs deployed or joined by the RE, including those of LSPs, must be reported on the CIMS portal. The product feature states that only the bank's own app has been reported, while the three LSP apps are not reported because they belong to the partners. This directly violates the requirement to report all DLAs, including those of LSPs. The feature does not mention that the LSP apps have been reported, and the RBI paragraph explicitly requires reporting of all DLAs, regardless of ownership."
+    },
+    {
+      "feature": "LSP App Compliance",
+      "rule_id": "DLD2025:17(v)",
+      "issue": "The feature states that only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners. This is a compliance gap as the RBI requires that the RE shall ensure the correctness and timeliness of information regarding DLAs, as the data, as submitted by the RE on CIMS, shall be published on the website of RBI in an automated manner.",
+      "doc_evidence": "Only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the RE (Reporting Entity) ensures the correctness and timeliness of information regarding DLAs, and that the data submitted on CIMS is published on the RBI website in an automated manner. The product feature states that only the bank's own app, Vasant Loans, has been reported on CIMS, while the three partner LSP apps are not reported because they belong to the partners. This does not violate the RBI paragraph, as the paragraph does not require the RE to report data from third-party apps. The paragraph only requires the RE to ensure the correctness and timeliness of data submitted by the RE on CIMS. Since the partner LSP apps are not part of the RE's reporting, there is no violation."
+    },
+    {
+      "feature": "LSP App Compliance",
+      "rule_id": "DLD2025:17(vii)",
+      "issue": "The feature states that only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners. This is a compliance gap as the RBI requires that the reporting in respect of all DLAs on the CIMS portal is completed by June 15, 2025.",
+      "doc_evidence": "Only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the reporting in respect of all DLAs on the CIMS portal is completed by June 15, 2025. The product feature states that only the bank's own app, Vasant Loans, has been reported, while the three partner LSP apps are not reported because they belong to the partners. This means that not all DLAs (the three partner LSP apps) are reported, which violates the requirement that all DLAs must be reported. The feature does not mention that the partner LSP apps are DLAs or that they are being reported, so the claim that this is a compliance gap is valid."
+    }
+  ],
+  "summary": "The compliance review of the Digital Apps used by Vasant Bank identified several gaps against the reviewed RBI rules. The key findings include: (1) The product feature does not explicitly mention the contact details of the nodal grievance redressal officers being prominently displayed on the DLA (partner LSP apps), which is a medium severity issue. (2) The feature states that only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal, while the three partner LSP apps are not reported, which is a high severity issue. (3) The feature also fails to report the three partner LSP apps on the RBI CIMS portal, which is another high severity issue due to the deadline of June 15, 2025, for completing the reporting.",
+  "trace": {
+    "llm_calls": 15,
+    "prompt_tokens": 7886,
+    "output_tokens": 1978,
+    "llm_seconds": 68.5,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 4,
+      "gap_analyst": 4,
+      "verifier": 4,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 21,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(v)"
+      ],
+      "1:Grievance Redressal": [
+        "DLD2025:8(iv)",
+        "DLD2025:17(iv)",
+        "DLD2025:11(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:16(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:14(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:15(i)"
+      ],
+      "2:LSP App Compliance": [
+        "DLD2025:9(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:9(iii)",
+        "DLD2025:5(iv)",
+        "DLD2025:8(iv)",
+        "DLD2025:17(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:17(vii)",
+        "DLD2025:17(v)",
+        "DLD2025:16(ii)"
+      ],
+      "3:LSP App Compliance (3. New app)": [
+        "DLD2025:12(iii)",
+        "DLD2025:16(ii)",
+        "DLD2025:27(ii)",
+        "KFS2024:6",
+        "DLD2025:19(iii)",
+        "DLD2025:6",
+        "DLD2025:15(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:5(vii)"
+      ]
+    }
+  },
+  "seconds": 68.8
+}

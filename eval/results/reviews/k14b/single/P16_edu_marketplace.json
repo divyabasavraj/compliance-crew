@@ -1,0 +1,64 @@
+{
+  "system": "single",
+  "doc_id": "P16_edu_marketplace",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "2. Matching",
+      "rule_id": "DLD2025:6(ii)",
+      "issue": "The LSP does not follow a consistent approach for similarly placed borrowers and products, as the rules for matching lenders are not documented and are adjusted weekly by the sales team.",
+      "doc_evidence": "Which lenders are shown depends on a rule set the sales team adjusts weekly. Borrowers with the same profile may see different lenders on different days, and the rules are not written down anywhere.",
+      "severity": "high",
+      "fix": "Document the matching rules and ensure they are consistently applied across all similarly placed borrowers and products.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is disbursed directly into the training institute's bank account, which is a third-party account, and is not covered by any statutory or regulatory mandate, nor is it a co-lending transaction or a specific end-use loan.",
+      "doc_evidence": "The course fee is paid by the lender directly into the training institute's bank account.",
+      "severity": "high",
+      "fix": "Ensure that loan disbursements are made directly into the borrower's bank account, unless explicitly covered by a statutory or regulatory mandate.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "5. Data storage",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "Borrowers' data is stored on servers outside India (implied by the fact that Upskill Credit stores data on its own servers), and there is no mention of data being deleted and brought back to India within 24 hours of processing.",
+      "doc_evidence": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "severity": "high",
+      "fix": "Ensure that all data is stored only on servers located within India, and if processed outside India, it is deleted and brought back to India within 24 hours.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "5. Data storage",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "There is no mention of clear policy guidelines regarding the storage of customer data, including the type of data that can be stored, the length of time for which data can be stored, restrictions on the use of data, data destruction protocol, or standards for handling security breaches.",
+      "doc_evidence": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "severity": "medium",
+      "fix": "Disclose clear policy guidelines regarding the storage of customer data on the LSP's website and DLA at all times.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "5. Data storage",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "There is no mention of providing borrowers with an option to give or deny consent for the use of specific data, restrict disclosure to third parties, data retention, revoke consent, or request deletion of data.",
+      "doc_evidence": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "severity": "medium",
+      "fix": "Provide borrowers with an option to give or deny consent for the use of specific data, restrict disclosure to third parties, data retention, revoke consent, and request deletion of data.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2150,
+    "output_tokens": 789,
+    "llm_seconds": 54.9,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 55.1
+}

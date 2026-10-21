@@ -1,0 +1,106 @@
+{
+  "system": "crew",
+  "doc_id": "P24_third_party_sdks",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "data_collection",
+      "rule_id": "DLD2025:14(ii)",
+      "issue": "The privacy policy on the website does not name these third parties.",
+      "doc_evidence": "The privacy policy on the website does not name these third parties.",
+      "severity": "medium",
+      "fix": "Update the privacy policy to explicitly name all third parties that receive data from the borrower.",
+      "verifier_note": "The RBI paragraph [DLD2025:14(ii)] requires that the privacy policy disclose the details of third parties allowed to collect personal information through the DLA. The product feature explicitly states that the privacy policy does not name these third parties, which are the ones collecting personal information via the SDKs. This omission constitutes a failure to comply with the requirement stated in the paragraph."
+    },
+    {
+      "feature": "data_collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app scans the list of installed apps and reads files in the download folder.",
+      "doc_evidence": "For fraud checks, the app scans the list of installed apps and reads files in the download folder.",
+      "severity": "high",
+      "fix": "Discontinue the practice of scanning installed apps and reading files in the download folder, as it poses a significant data breach and privacy risk.",
+      "verifier_note": "The RBI paragraph explicitly prohibits DLA (Data Loss Agent) of RE/LSP from accessing mobile phone resources like file and media, contact list, call logs, telephony functions, etc. The feature describes that the app scans the list of installed apps and reads files in the download folder, which falls under the category of accessing mobile phone resources that are explicitly forbidden by the paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "data_collection",
+      "rule_id": "DLD2025:14(ii)",
+      "issue": "The privacy policy on the website does not name these third parties.",
+      "doc_evidence": "The privacy policy on the website does not name these third parties.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:14(ii)] requires that the privacy policy disclose the details of third parties allowed to collect personal information through the DLA. The product feature explicitly states that the privacy policy does not name these third parties, which are the ones collecting personal information via the SDKs. This omission constitutes a failure to comply with the requirement stated in the paragraph."
+    },
+    {
+      "feature": "data_collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app scans the list of installed apps and reads files in the download folder.",
+      "doc_evidence": "For fraud checks, the app scans the list of installed apps and reads files in the download folder.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits DLA (Data Loss Agent) of RE/LSP from accessing mobile phone resources like file and media, contact list, call logs, telephony functions, etc. The feature describes that the app scans the list of installed apps and reads files in the download folder, which falls under the category of accessing mobile phone resources that are explicitly forbidden by the paragraph."
+    }
+  ],
+  "summary": "The compliance review of the SwiftLoan: App Analytics and Partners product identified two findings. First, the privacy policy on the website does not name the third parties involved, which is a medium severity issue under DLD2025:14(ii). Second, the app scans the list of installed apps and reads files in the download folder, which is a high severity issue under DLD2025:12(i).",
+  "trace": {
+    "llm_calls": 13,
+    "prompt_tokens": 6370,
+    "output_tokens": 948,
+    "llm_seconds": 73.4,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 4,
+      "gap_analyst": 4,
+      "verifier": 2,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 19,
+    "retrieved": {
+      "0:data_collection": [
+        "DLD2025:14(ii)",
+        "DLD2025:12(iv)",
+        "DLD2025:12(ii)",
+        "DLD2025:17(vi)",
+        "KFS2024:7",
+        "DLD2025:12(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(v)",
+        "DLD2025:15(i)"
+      ],
+      "1:data_storage": [
+        "DLD2025:13(iv)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(i)",
+        "DLD2025:13(i)",
+        "DLD2025:17(v)",
+        "DLD2025:15(i)"
+      ],
+      "2:grievance_redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:11(i)",
+        "DLD2025:17(iv)",
+        "DLD2025:11(iii)",
+        "DLD2025:8(iv)",
+        "DLD2025:11(iv)",
+        "DLD2025:16(i)"
+      ],
+      "3:1. Product": [
+        "DLD2025:14(ii)",
+        "DLD2025:12(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:26(i)",
+        "DLD2025:12(iv)",
+        "DLD2025:15(i)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(ii)",
+        "DLD2025:16(ii)"
+      ]
+    }
+  },
+  "seconds": 73.6
+}

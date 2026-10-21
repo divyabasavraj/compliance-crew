@@ -171,4 +171,5 @@ Be ready for: "What was harder about securing agents than a single pipeline?" An
 - [x] Orchestration framework: plain Python
 - [x] First RBI domain: digital lending (DLD 2025 + KFS 2024); KYC / PPI / payment aggregators later if time allows
 - [ ] Deployment target for the demo. Free CPU hosting is too slow for an 8B crew (~3.5 min/review on M5). Options: Gemini/Groq-backed live demo (synthetic docs only), precomputed reports, or both
-- [ ] Bigger model for the Gap Analyst (now the bottleneck: 6 of 9 test misses): Qwen3 14B on Kaggle T4×2, or Gemini free tier
+- [x] Bigger model for the Gap Analyst: Qwen3 14B (all agents) on Kaggle T4×2, 2026-10-21. Test split vs an 8B control on the same hardware: precision 0.46 → 0.62, false alarms 36 → 20, recall 0.76 → 0.80 (+2, near noise), 1.5× slower. Gap Analyst misses 6 → 1, retrieval misses 3 → 6. Retrieval is the bottleneck now
+- [ ] Retrieval for the 14B crew: check whether a larger k, or more fixed per-section queries, gets back P13-a, P16-b, P25-a (found with 8B queries, lost with 14B queries)

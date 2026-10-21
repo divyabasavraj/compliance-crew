@@ -1,0 +1,137 @@
+{
+  "system": "crew",
+  "doc_id": "P13_payroll_advance",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "data_collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app reads the worker's SMS inbox for salary credit messages and bank alerts every week without explicitly obtaining prior and explicit consent from the borrower, and without ensuring that the access is need-based. Additionally, there is no mention of audit trail for such data collection.",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "high",
+      "fix": "Implement explicit opt-in consent for SMS inbox access, ensure need-based access, and maintain an audit trail of all data collected from the SMS inbox.",
+      "verifier_note": "The feature describes the app reading the worker's SMS inbox for salary credit messages and bank alerts every week. This data collection is not explicitly stated to have prior and explicit consent from the borrower, which is required by the RBI paragraph. Additionally, the paragraph mandates that data collection must be need-based and have an audit trail, neither of which is mentioned in the feature. Therefore, the feature does not comply with the requirements outlined in the RBI paragraph."
+    },
+    {
+      "feature": "terms_and_conditions_kfs",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "doc_evidence": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "severity": "medium",
+      "fix": "Provide the KFS in Hindi and Odia, and include a confirmation step (e.g., checkbox or button) to ensure the user has read and understood the terms before proceeding.",
+      "verifier_note": "The RBI paragraph requires that the KFS be provided in a language understood by the borrowers and that an acknowledgment be obtained that the borrower has understood the contents. The product feature states that the KFS is shown in English only, without translation, and without a step to confirm understanding. Since most users are Hindi- and Odia-speaking, the use of English only may not be a language they understand, and there is no step to confirm understanding, which violates the requirements in the paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is disbursed into the worker's own salary bank account, which complies with the requirement that disbursement should be made into the borrower's bank account. However, the feature states that Bridgework Labs deducts its ₹150 service fee from the loan amount before crediting it to the worker's account. This implies that the LSP (Bridgework Labs) is involved in the disbursement process by deducting a fee, which may be interpreted as a third-party involvement in the disbursement process, potentially violating the rule that disbursal should not be made to a third-party account.",
+      "doc_evidence": "The loan amount is credited to the worker's own salary bank account within 10 minutes. Bridgework Labs deducts its ₹150 service fee from the amount before it is credited, so the worker receives the loan minus the fee.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The feature describes that the loan is disbursed into the borrower's own salary bank account, which is explicitly allowed by the RBI paragraph. The deduction of a service fee by Bridgework Labs does not constitute a disbursement to a third-party account, as the loan amount is still credited directly to the borrower's account. The paragraph only prohibits disbursement to third-party accounts, not the deduction of fees by an LSP, as long as the loan is ultimately credited to the borrower's account. The feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "data_collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app reads the worker's SMS inbox for salary credit messages and bank alerts every week without explicitly obtaining prior and explicit consent from the borrower, and without ensuring that the access is need-based. Additionally, there is no mention of audit trail for such data collection.",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The feature describes the app reading the worker's SMS inbox for salary credit messages and bank alerts every week. This data collection is not explicitly stated to have prior and explicit consent from the borrower, which is required by the RBI paragraph. Additionally, the paragraph mandates that data collection must be need-based and have an audit trail, neither of which is mentioned in the feature. Therefore, the feature does not comply with the requirements outlined in the RBI paragraph."
+    },
+    {
+      "feature": "terms_and_conditions_kfs",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "doc_evidence": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the KFS be provided in a language understood by the borrowers and that an acknowledgment be obtained that the borrower has understood the contents. The product feature states that the KFS is shown in English only, without translation, and without a step to confirm understanding. Since most users are Hindi- and Odia-speaking, the use of English only may not be a language they understand, and there is no step to confirm understanding, which violates the requirements in the paragraph."
+    }
+  ],
+  "summary": "The compliance review of the PayDay Bridge: Salary Advance for Factory Workers product identified two key findings. First, the app accesses the worker's SMS inbox weekly for salary credit messages and bank alerts without obtaining explicit prior consent or ensuring need-based access, and there is no audit trail for this data collection, which violates DLD2025:12(i). Second, the KFS is displayed in English only, without translation or confirmation of understanding for Hindi- and Odia-speaking users, violating KFS2024:4.",
+  "trace": {
+    "llm_calls": 18,
+    "prompt_tokens": 10030,
+    "output_tokens": 1599,
+    "llm_seconds": 121.0,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 3,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 27,
+    "retrieved": {
+      "0:disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:10(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:10(i)",
+        "DLD2025:9(iii)"
+      ],
+      "1:repayment": [
+        "KFS2024:5",
+        "DLD2025:27(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:10(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:8(iv)",
+        "DLD2025:9(i)",
+        "DLD2025:5(ii)"
+      ],
+      "2:data_collection": [
+        "DLD2025:12(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:12(iii)",
+        "DLD2025:7(i)",
+        "DLD2025:12(i)",
+        "DLD2025:17(v)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:16(ii)",
+        "DLD2025:16(i)"
+      ],
+      "3:grievance_redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:11(i)",
+        "DLD2025:17(iv)",
+        "KFS2024:7",
+        "DLD2025:11(iii)",
+        "DLD2025:16(i)"
+      ],
+      "4:cooling_off_period": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:26(i)",
+        "KFS2024:5",
+        "DLD2025:11(iv)",
+        "DLD2025:15(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)"
+      ],
+      "5:terms_and_conditions_kfs": [
+        "KFS2024:4",
+        "KFS2024:6",
+        "KFS2024:8",
+        "KFS2024:5",
+        "DLD2025:13(iv)",
+        "DLD2025:15(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:27(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:5(ii)"
+      ]
+    }
+  },
+  "seconds": 121.5
+}

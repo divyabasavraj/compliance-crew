@@ -1,0 +1,37 @@
+{
+  "system": "single",
+  "doc_id": "P18_clean_card_emi",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:29(i)",
+      "issue": "The product document describes an EMI conversion program for credit card purchases, which is governed by the Master Direction on Credit Card and Debit Card. However, according to [DLD2025:29(i)], such EMI programs on credit cards are specifically governed by Para 6(b)(iii) 12 of the Master Direction and are not covered under these Directions. The product document does not clarify whether it is governed by the Master Direction or these Directions, which may lead to ambiguity.",
+      "doc_evidence": "Konkan Bank credit card holders can convert purchases above ₹2,500 into EMIs of 3 to 24 months inside the bank's app.",
+      "severity": "medium",
+      "fix": "Clarify in the product document that the EMI conversion program is governed by the Master Direction on Credit Card and Debit Card and not by these Directions.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "6. Data storage",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The product document states that all data is stored on Konkan Bank's servers in Mumbai and Chennai. However, [DLD2025:13(iv)] requires that all data be stored only in servers located within India, and if processed outside India, it must be deleted and brought back within 24 hours. While the document mentions servers in Mumbai and Chennai (both in India), it does not explicitly confirm compliance with the requirement for data processed outside India.",
+      "doc_evidence": "All data is stored on Konkan Bank's servers in Mumbai and Chennai.",
+      "severity": "low",
+      "fix": "Explicitly confirm in the product document that any data processed outside India is deleted and brought back to India within 24 hours, as required by [DLD2025:13(iv)].",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2399,
+    "output_tokens": 440,
+    "llm_seconds": 33.2,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 33.4
+}

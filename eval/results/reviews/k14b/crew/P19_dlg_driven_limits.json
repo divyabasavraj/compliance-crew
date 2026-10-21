@@ -1,0 +1,175 @@
+{
+  "system": "crew",
+  "doc_id": "P19_dlg_driven_limits",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Credit Decision Process",
+      "rule_id": "DLD2025:19(ii)",
+      "issue": "The product feature describes that Satpura Finance approves every applicant QuickLine sends without its own credit check. This implies that the DLG arrangement is acting as a substitute for credit appraisal requirements, which is explicitly prohibited by the RBI.",
+      "doc_evidence": "Because QuickLine Tech's DLG covers losses, Satpura Finance approves every applicant QuickLine sends without its own credit check.",
+      "severity": "high",
+      "fix": "Implement a mandatory credit appraisal process for all applicants, even those pre-approved by QuickLine, to ensure compliance with RBI guidelines and mitigate borrower harm and regulatory penalties.",
+      "verifier_note": "The product feature describes that Satpura Finance approves every applicant QuickLine sends without its own credit check. This implies that the DLG arrangement is acting as a substitute for credit appraisal requirements, which is explicitly prohibited by the RBI paragraph [DLD2025:19(ii)]."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Credit Decision Process",
+      "rule_id": "DLD2025:19(ii)",
+      "issue": "The product feature describes that Satpura Finance approves every applicant QuickLine sends without its own credit check. This implies that the DLG arrangement is acting as a substitute for credit appraisal requirements, which is explicitly prohibited by the RBI.",
+      "doc_evidence": "Because QuickLine Tech's DLG covers losses, Satpura Finance approves every applicant QuickLine sends without its own credit check.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes that Satpura Finance approves every applicant QuickLine sends without its own credit check. This implies that the DLG arrangement is acting as a substitute for credit appraisal requirements, which is explicitly prohibited by the RBI paragraph [DLD2025:19(ii)]."
+    },
+    {
+      "feature": "Disbursal and Repayment Process",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product feature states that repayment is made directly to Satpura Finance's account. However, the RBI paragraph explicitly requires that all loan servicing and repayment be executed by the borrower directly into the RE’s bank account without any pass-through account or pool account of a third party, including the LSP. This is compliant, so no finding is raised.",
+      "doc_evidence": "Loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that loan servicing and repayment be executed directly into the RE’s bank account without any pass-through or pool account of a third party. The product feature states that repayment is made directly to Satpura Finance's account, which is the RE’s own account. Therefore, the feature complies with the RBI requirement as it does not involve any third-party accounts."
+    },
+    {
+      "feature": "Disbursal and Repayment Process",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The product feature does not mention any third-party control over the flow of funds between the borrower and the RE. Therefore, no violation is found.",
+      "doc_evidence": "Loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph prohibits third-party control over the flow of funds between the borrower and the RE. The product feature states that loans are disbursed into the borrower's account and repaid directly to Satpura Finance's account. There is no mention of third-party involvement in controlling the flow of funds. Since the paragraph does not prohibit direct repayment to the lender (Satpura Finance) and the feature does not involve third-party control, it complies with the regulation."
+    },
+    {
+      "feature": "Disbursal and Repayment Process",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The product feature does not mention any fees or charges payable to the LSP. Therefore, no violation is found.",
+      "doc_evidence": "Loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:9(iv)] requires that fees, charges, reimbursements, etc., payable to the LSP are paid directly by the RE and not charged to or collected from the borrowers. The product feature does not mention any fees or charges payable to the LSP, nor does it indicate that such fees are being charged to or collected from the borrowers. Since the claim relies on the absence of information about fees and charges, and the paragraph does not prohibit the absence of such information, there is no violation."
+    },
+    {
+      "feature": "Disbursal and Repayment Process",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature states that loans are disbursed into the borrower's bank account, which is in compliance with the RBI requirement. No violation is found.",
+      "doc_evidence": "Loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that loans are disbursed into the borrower's bank account, which aligns with the RBI requirement that disbursement should be made into the borrower's bank account, except for specific exceptions. The feature does not mention any disbursement to third-party accounts, and it complies with the regulation as described. The claimed violation is incorrect as no violation is found."
+    },
+    {
+      "feature": "Disbursal and Repayment Process",
+      "rule_id": "DLD2025:9(v)",
+      "issue": "The product feature does not mention delinquent loans or cash recovery. Therefore, no violation is found.",
+      "doc_evidence": "Loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The paragraph discusses the handling of delinquent loans and cash recovery, but the product feature describes standard loan disbursal and repayment processes. The feature does not mention delinquent loans or cash recovery, and therefore does not conflict with the paragraph. The paragraph explicitly allows for standard repayment methods, and the feature complies with this."
+    },
+    {
+      "feature": "Disbursal and Repayment Process",
+      "rule_id": "DLD2025:20(iii)",
+      "issue": "The product feature does not mention any DLG arrangements or P2P lending. Therefore, no violation is found.",
+      "doc_evidence": "Loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature does not mention any DLG arrangements or P2P lending. The RBI paragraph specifically addresses restrictions on NBFC-P2P entering into DLG arrangements for loans facilitated over its platform. Since the feature does not involve DLG arrangements or P2P lending, it is not applicable, and the claimed violation is not valid."
+    },
+    {
+      "feature": "Disbursal and Repayment Process",
+      "rule_id": "DLD2025:5(ii)",
+      "issue": "The product feature does not mention due diligence on the LSP. Therefore, no violation is found.",
+      "doc_evidence": "Loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:5(ii)] requires REs to conduct enhanced due diligence on LSPs before entering into an agreement with them. The product feature describes the process of loan disbursal and repayment but does not mention anything about conducting due diligence on the LSP. Since the feature does not address the due diligence requirement, it does not violate the paragraph. The claim correctly notes that no violation is found because the feature does not mention due diligence on the LSP."
+    },
+    {
+      "feature": "Disbursal and Repayment Process",
+      "rule_id": "DLD2025:15(i)",
+      "issue": "The product feature does not mention technology standards or cybersecurity compliance. Therefore, no violation is found.",
+      "doc_evidence": "Loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the RE and LSPs comply with technology standards and cybersecurity requirements. The product feature describes the process of loan disbursal and repayment but does not mention anything about technology standards or cybersecurity compliance. Since the claim relies on the absence of information and not on an explicit violation, it does not constitute a violation as per the given instructions."
+    }
+  ],
+  "summary": "The compliance review of the product 'QuickLine: Instant Credit Backed by Partner Guarantee' identified a significant gap under [DLD2025:19(ii)]. The product feature indicates that Satpura Finance approves every applicant QuickLine sends without conducting its own credit check. This arrangement effectively bypasses credit appraisal requirements, which is explicitly prohibited by the Reserve Bank of India (RBI).",
+  "trace": {
+    "llm_calls": 22,
+    "prompt_tokens": 10574,
+    "output_tokens": 2287,
+    "llm_seconds": 163.3,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 9,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 29,
+    "retrieved": {
+      "0:Product Description": [
+        "KFS2024:5",
+        "DLD2025:10(ii)",
+        "DLD2025:12(iv)",
+        "DLD2025:26(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:10(i)",
+        "DLD2025:26(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:20(ii)"
+      ],
+      "1:Credit Decision Process": [
+        "DLD2025:19(ii)",
+        "DLD2025:20(ii)",
+        "DLD2025:12(i)",
+        "DLD2025:20(i)",
+        "DLD2025:25(i)",
+        "DLD2025:10(i)",
+        "DLD2025:15(i)",
+        "DLD2025:24(ii)",
+        "DLD2025:17(vi)",
+        "DLD2025:9(iii)"
+      ],
+      "2:Default Loss Guarantee (DLG)": [
+        "DLD2025:23(i)",
+        "DLD2025:19(i)",
+        "DLD2025:23(ii)",
+        "DLD2025:27(i)",
+        "DLD2025:22(i)",
+        "DLD2025:17(vi)",
+        "DLD2025:20(ii)",
+        "DLD2025:19(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:20(i)"
+      ],
+      "3:Disbursal and Repayment Process": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:20(iii)",
+        "DLD2025:5(ii)",
+        "DLD2025:15(i)"
+      ],
+      "4:Cooling-off Period": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:26(i)",
+        "KFS2024:5",
+        "KFS2024:7",
+        "DLD2025:15(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:9(ii)"
+      ]
+    }
+  },
+  "seconds": 163.8
+}

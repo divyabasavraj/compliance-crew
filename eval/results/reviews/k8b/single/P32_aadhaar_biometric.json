@@ -1,0 +1,55 @@
+{
+  "system": "single",
+  "doc_id": "P32_aadhaar_biometric",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Fingerprint archive",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "Biometric data is stored by the LSP, which is not allowed unless under statutory guidelines.",
+      "doc_evidence": "IDFlow additionally saves a copy of each borrower's fingerprint scan on its own servers, to speed up repeat loans.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Statements",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "DLA of LSP is accessing mobile phone resources like bank statements and salary slips, which is not allowed.",
+      "doc_evidence": "IDFlow keeps full copies of borrowers' bank statements and salary slips on its servers after the loan is approved.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Retention",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The borrower is not provided with an option to revoke consent for data retention or deletion.",
+      "doc_evidence": "Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data location",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "Data is stored on servers in Hyderabad, which is outside India, violating the requirement for data to be stored only in India.",
+      "doc_evidence": "All data is stored on servers in Hyderabad.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2478,
+    "output_tokens": 367,
+    "llm_seconds": 14.3,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 14.4
+}

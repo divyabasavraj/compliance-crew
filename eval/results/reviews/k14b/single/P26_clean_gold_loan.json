@@ -1,0 +1,73 @@
+{
+  "system": "single",
+  "doc_id": "P26_clean_gold_loan",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Data",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product document states that the app takes a one-time selfie for KYC with consent, but it does not explicitly mention that the DLA (GoldNow app) and LSP (AurumTech) desist from accessing mobile phone resources like file and media, contact list, call logs, telephony functions, etc., as required by the regulation.",
+      "doc_evidence": "The app takes a one-time selfie for KYC with consent. AurumTech stores only name, phone and loan reference; all other data is stored by the bank on servers in India.",
+      "severity": "medium",
+      "fix": "The product document should explicitly state that the DLA and LSP do not access mobile phone resources like file and media, contact list, call logs, telephony functions, etc., and that any access for KYC purposes is one-time and with explicit consent.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The product document does not explicitly state that all data is stored only in servers located within India, or that if data is processed outside India, it is deleted from servers outside India and brought back to India within 24 hours of processing.",
+      "doc_evidence": "AurumTech stores only name, phone and loan reference; all other data is stored by the bank on servers in India.",
+      "severity": "medium",
+      "fix": "The product document should explicitly state that all data is stored only in servers located within India, and that if data is processed outside India, it is deleted from servers outside India and brought back to India within 24 hours of processing.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS",
+      "rule_id": "KFS2024:4",
+      "issue": "The product document does not explicitly mention that the KFS is provided in a language understood by the borrower and that the contents of the KFS are explained to the borrower with an acknowledgment obtained that the borrower has understood the same.",
+      "doc_evidence": "A KFS in the customer's chosen language (English, Marathi, Kannada or Hindi) with a unique proposal number, APR computation sheet including all charges, and repayment schedule is shown before signing, and stays valid for 3 working days. It is included as a summary box in the agreement.",
+      "severity": "medium",
+      "fix": "The product document should explicitly state that the contents of the KFS are explained to the borrower and that an acknowledgment is obtained that the borrower has understood the same.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS",
+      "rule_id": "KFS2024:6",
+      "issue": "The product document does not explicitly mention that the KFS includes a computation sheet of the annual percentage rate (APR) and the amortisation schedule of the loan over the loan tenor.",
+      "doc_evidence": "A KFS in the customer's chosen language (English, Marathi, Kannada or Hindi) with a unique proposal number, APR computation sheet including all charges, and repayment schedule is shown before signing, and stays valid for 3 working days. It is included as a summary box in the agreement.",
+      "severity": "medium",
+      "fix": "The product document should explicitly state that the KFS includes a computation sheet of the annual percentage rate (APR) and the amortisation schedule of the loan over the loan tenor.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS",
+      "rule_id": "KFS2024:9",
+      "issue": "The product document does not explicitly mention that the KFS is included as a summary box to be exhibited as part of the loan agreement.",
+      "doc_evidence": "A KFS in the customer's chosen language (English, Marathi, Kannada or Hindi) with a unique proposal number, APR computation sheet including all charges, and repayment schedule is shown before signing, and stays valid for 3 working days. It is included as a summary box in the agreement.",
+      "severity": "medium",
+      "fix": "The product document should explicitly state that the KFS is included as a summary box to be exhibited as part of the loan agreement.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Cooling-off",
+      "rule_id": "KFS2024:5",
+      "issue": "The product document does not explicitly mention that the KFS has a validity period of at least three working days for loans having tenor of seven days or more, and a validity period of one working day for loans having tenor of less than seven days.",
+      "doc_evidence": "A KFS in the customer's chosen language (English, Marathi, Kannada or Hindi) with a unique proposal number, APR computation sheet including all charges, and repayment schedule is shown before signing, and stays valid for 3 working days. It is included as a summary box in the agreement.",
+      "severity": "medium",
+      "fix": "The product document should explicitly state that the KFS has a validity period of at least three working days for loans having tenor of seven days or more, and a validity period of one working day for loans having tenor of less than seven days.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2272,
+    "output_tokens": 1155,
+    "llm_seconds": 80.7,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 80.8
+}

@@ -1,0 +1,125 @@
+{
+  "system": "crew",
+  "doc_id": "P30_clean_used_car",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal Process",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is disbursed directly into the dealer's bank account, which may be considered a third-party account, unless explicitly permitted by the RBI for specific end-use scenarios. The paragraph explicitly states that disbursal should be made into the borrower's bank account, except in specific cases, and that it should not be made to a third-party account, including the LSP.",
+      "doc_evidence": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "severity": "high",
+      "fix": "Amend the disbursal process to ensure that loans are only disbursed into the borrower's bank account, unless explicitly permitted by RBI for specific end-use scenarios. Verify and document any exceptions in compliance with RBI guidelines.",
+      "verifier_note": "The product feature describes a scenario where the loan is disbursed directly into the dealer's bank account because the loan is for buying a car. According to the RBI paragraph, disbursal should be made into the borrower's bank account, except in specific cases such as statutory mandates, co-lending transactions, or specific end-use scenarios where the loan is disbursed directly into the end-beneficiary's account. In this case, the dealer may be considered a third-party account unless explicitly permitted by the RBI for specific end-use scenarios. The feature does not confirm that the dealer is the end-beneficiary or that the disbursement is under a specific end-use scenario permitted by the RBI. Therefore, the feature may be violating the RBI paragraph by disbursing the loan into a third-party account without explicit permission."
+    },
+    {
+      "feature": "Default Loss Guarantee (DLG)",
+      "rule_id": "DLD2025:23(ii)",
+      "issue": "The product feature describes the DLG portfolio as dynamic (updated monthly on the website), but the RBI paragraph requires that the DLG set remain fixed and not be dynamic.",
+      "doc_evidence": "CarKey publishes its DLG portfolios and amounts on its website every month within seven working days.",
+      "severity": "high",
+      "fix": "Revise the DLG portfolio to ensure it remains fixed as required by RBI, and discontinue the practice of updating it dynamically on the website. Maintain a static DLG set and ensure all stakeholders are informed of the change.",
+      "verifier_note": "The RBI paragraph explicitly states that the DLG set must remain fixed and not be dynamic. The product feature describes the DLG portfolio as being updated monthly on the website, which implies that the portfolio is dynamic. This directly contradicts the requirement in the RBI paragraph that the DLG set remain fixed."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal Process",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is disbursed directly into the dealer's bank account, which may be considered a third-party account, unless explicitly permitted by the RBI for specific end-use scenarios. The paragraph explicitly states that disbursal should be made into the borrower's bank account, except in specific cases, and that it should not be made to a third-party account, including the LSP.",
+      "doc_evidence": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a scenario where the loan is disbursed directly into the dealer's bank account because the loan is for buying a car. According to the RBI paragraph, disbursal should be made into the borrower's bank account, except in specific cases such as statutory mandates, co-lending transactions, or specific end-use scenarios where the loan is disbursed directly into the end-beneficiary's account. In this case, the dealer may be considered a third-party account unless explicitly permitted by the RBI for specific end-use scenarios. The feature does not confirm that the dealer is the end-beneficiary or that the disbursement is under a specific end-use scenario permitted by the RBI. Therefore, the feature may be violating the RBI paragraph by disbursing the loan into a third-party account without explicit permission."
+    },
+    {
+      "feature": "Default Loss Guarantee (DLG)",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The product feature states that the DLG is invoked within 90 days overdue, but the RBI paragraph requires that the DLG be invoked within a maximum overdue period of 120 days, unless the loan dues are made good by the borrower before that.",
+      "doc_evidence": "Default loss guarantee: CarKey Mobility, a company under the Companies Act, 2013, provides a DLG of 5% of each portfolio as cash deposited with Pench Bank, invoked within 90 days overdue, under a Board-approved policy.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph allows the invocation of DLG within a maximum overdue period of 120 days, unless the loan dues are made good by the borrower before that. The product feature states that the DLG is invoked within 90 days overdue, which is within the 120-day maximum allowed by the RBI paragraph. Therefore, the feature complies with the requirement."
+    },
+    {
+      "feature": "Default Loss Guarantee (DLG)",
+      "rule_id": "DLD2025:23(ii)",
+      "issue": "The product feature describes the DLG portfolio as dynamic (updated monthly on the website), but the RBI paragraph requires that the DLG set remain fixed and not be dynamic.",
+      "doc_evidence": "CarKey publishes its DLG portfolios and amounts on its website every month within seven working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that the DLG set must remain fixed and not be dynamic. The product feature describes the DLG portfolio as being updated monthly on the website, which implies that the portfolio is dynamic. This directly contradicts the requirement in the RBI paragraph that the DLG set remain fixed."
+    }
+  ],
+  "summary": "The compliance review of the CarKey: Used-Car Loans Through Dealers product identified two high-priority findings. First, the loan disbursement into the dealer's bank account may violate RBI guidelines unless explicitly permitted for specific end-use scenarios. Second, the dynamic nature of the DLG portfolio, which is updated monthly, does not comply with the RBI requirement that the DLG set remain fixed.",
+  "trace": {
+    "llm_calls": 16,
+    "prompt_tokens": 8333,
+    "output_tokens": 1390,
+    "llm_seconds": 105.8,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 3,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 23,
+    "retrieved": {
+      "0:Product Description": [
+        "KFS2024:5",
+        "DLD2025:6(iii)",
+        "DLD2025:26(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:26(i)",
+        "DLD2025:15(i)",
+        "DLD2025:16(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:17(v)",
+        "DLD2025:9(i)"
+      ],
+      "1:Disbursal Process": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:5(ii)"
+      ],
+      "2:Default Loss Guarantee (DLG)": [
+        "DLD2025:26(i)",
+        "DLD2025:23(i)",
+        "DLD2025:23(ii)",
+        "DLD2025:26(ii)",
+        "DLD2025:22(i)",
+        "DLD2025:17(vi)",
+        "DLD2025:15(i)",
+        "DLD2025:5(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:16(i)"
+      ],
+      "3:Data Collection and Storage": [
+        "DLD2025:13(iv)",
+        "DLD2025:12(i)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:17(v)",
+        "DLD2025:15(i)",
+        "DLD2025:14(i)"
+      ],
+      "4:Credit Bureau Reporting and Grievance Redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:11(i)",
+        "KFS2024:6",
+        "DLD2025:17(i)",
+        "DLD2025:11(iii)",
+        "DLD2025:17(iv)"
+      ]
+    }
+  },
+  "seconds": 106.1
+}

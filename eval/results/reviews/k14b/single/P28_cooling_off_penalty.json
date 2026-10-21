@@ -1,0 +1,37 @@
+{
+  "system": "single",
+  "doc_id": "P28_cooling_off_penalty",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "3. Unlisted charges",
+      "rule_id": "KFS2024:8",
+      "issue": "The product document states that a ₹199 'credit insights subscription' is added to every EMI after disbursal, and this charge is not mentioned in the KFS. This violates the requirement that any fees or charges not mentioned in the KFS cannot be charged to the borrower without explicit consent.",
+      "doc_evidence": "After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "high",
+      "fix": "Remove the unlisted charge or include it in the KFS and obtain explicit consent from the borrower.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "2. Cooling-off",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "The product document states that borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge. This implies that a processing fee is being retained, but it is not explicitly stated that this fee is disclosed upfront in the KFS as required.",
+      "doc_evidence": "Borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge.",
+      "severity": "medium",
+      "fix": "Ensure that the 4% foreclosure charge is explicitly disclosed in the KFS as a one-time processing fee.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2112,
+    "output_tokens": 353,
+    "llm_seconds": 27.1,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 27.3
+}

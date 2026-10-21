@@ -1,0 +1,64 @@
+{
+  "system": "single",
+  "doc_id": "P31_re_website",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "1. Website",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "The website does not list the LSPs (EduPay and MediQuick), their DLAs, or the activities for which they are engaged, nor does it provide a link to RBI's CMS or Sachet portal.",
+      "doc_evidence": "Saraswati Finance's website has a page listing its own app. It does not list EduPay, MediQuick or their apps, or what each is engaged for, and it has no link to RBI's CMS or Sachet portal.",
+      "severity": "high",
+      "fix": "Update the website to include details of all LSPs, their DLAs, the activities for which they are engaged, and provide links to RBI's CMS and Sachet portal.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "2. Grievance officer",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The contact details of the nodal grievance officer are not prominently displayed on the website or in the partner apps.",
+      "doc_evidence": "Saraswati Finance has a named nodal grievance officer. Their contact details are given only in the KFS; they are not shown on the website or in either partner app.",
+      "severity": "high",
+      "fix": "Display the contact details of the nodal grievance officer prominently on the website and in the partner apps.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "3. Complaints",
+      "rule_id": "DLD2025:11(iv)",
+      "issue": "The product does not provide a facility for lodging complaints on the website or in the partner apps, which is required under RBI guidelines.",
+      "doc_evidence": "Borrowers cannot lodge a complaint in the partner apps or on the website; they must visit a branch.",
+      "severity": "high",
+      "fix": "Implement a facility for lodging complaints directly on the website and in the partner apps, as required by RBI.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "3. Complaints",
+      "rule_id": "DLD2025:11(iii)",
+      "issue": "The facility of lodging complaints is not available on the DLA or on the website, which is required under RBI guidelines.",
+      "doc_evidence": "Borrowers cannot lodge a complaint in the partner apps or on the website; they must visit a branch.",
+      "severity": "high",
+      "fix": "Ensure that the facility for lodging complaints is available on the DLA and on the website.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "2. Grievance officer",
+      "rule_id": "DLD2025:17(iv)",
+      "issue": "The RE's website does not provide access to the DLA's grievance redressal mechanism, which is required under RBI guidelines.",
+      "doc_evidence": "Saraswati Finance has a named nodal grievance officer. Their contact details are given only in the KFS; they are not shown on the website or in either partner app.",
+      "severity": "medium",
+      "fix": "Ensure that the RE's website provides access to the DLA's grievance redressal mechanism, including the details of the nodal grievance officer for DLAs owned by LSPs.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2185,
+    "output_tokens": 743,
+    "llm_seconds": 53.3,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 53.4
+}

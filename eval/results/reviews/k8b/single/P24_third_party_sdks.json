@@ -1,0 +1,55 @@
+{
+  "system": "single",
+  "doc_id": "P24_third_party_sdks",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Third-party SDKs",
+      "rule_id": "DLD2025:14(i)",
+      "issue": "The privacy policy does not disclose third-party data collection, which is required for transparency.",
+      "doc_evidence": "The privacy policy on the website does not name these third parties.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Device access",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app accesses device files and installed apps without explicit consent, which is prohibited.",
+      "doc_evidence": "For fraud checks, the app scans the list of installed apps and reads files in the download folder.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data location",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The app stores data on servers in Mumbai, which is compliant with the requirement to store data only in India. However, the document does not mention whether the data is stored in India or not, which could be a compliance issue if the data is stored outside India.",
+      "doc_evidence": "All data, including SDK data, is stored on servers in Mumbai.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Grievances",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "The grievance redressal mechanism is not clearly stated or linked to the RE's website, which is required for transparency.",
+      "doc_evidence": "Nodal grievance officers of Nilgiri Bank and SwiftStack are named on both websites, in the app and in the KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2220,
+    "output_tokens": 392,
+    "llm_seconds": 14.8,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 14.9
+}

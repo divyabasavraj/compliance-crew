@@ -1,0 +1,64 @@
+{
+  "system": "single",
+  "doc_id": "P15_p2p_platform",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Marketing",
+      "rule_id": "DLD2025:20(iii)",
+      "issue": "The product document states that LendCircle is 'approved and backed by the RBI,' which may imply an endorsement or guarantee by the RBI, which is not permissible under RBI regulations.",
+      "doc_evidence": "The app home screen says: \"LendCircle: guaranteed returns, approved and backed by the RBI.\"",
+      "severity": "high",
+      "fix": "Remove any language suggesting RBI endorsement or guarantee. The platform should not imply any endorsement or backing by the RBI.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Lender protection",
+      "rule_id": "DLD2025:20(ii)",
+      "issue": "The product document mentions a default loss guarantee provided by LendCircle to lenders, which may be considered a DLG (Debt Loss Guarantee) arrangement. This is prohibited for NBFC-P2P platforms under RBI regulations.",
+      "doc_evidence": "To attract lenders, LendCircle offers a default loss guarantee: it will reimburse lenders for up to 3% of the principal in each loan pool that goes bad.",
+      "severity": "high",
+      "fix": "Remove the default loss guarantee feature as it violates RBI regulations for NBFC-P2P platforms.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product document states that borrowers repay into an escrow account maintained by a bank trustee, which may be considered a third-party account, violating the requirement that loan disbursement and repayment must be made directly into the borrower’s bank account.",
+      "doc_evidence": "Borrowers repay into an escrow account maintained by a bank trustee, as required for P2P platforms.",
+      "severity": "high",
+      "fix": "Modify the repayment process to ensure that borrowers repay directly into their own bank accounts, in compliance with RBI guidelines.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product document does not mention providing borrowers with an option to revoke consent or delete data, which is a requirement under RBI regulations.",
+      "doc_evidence": "Only name, address, phone, PAN and bank statements uploaded by the borrower are used. No phone permissions beyond one-time camera access for KYC.",
+      "severity": "medium",
+      "fix": "Add functionality and disclosure that allows borrowers to revoke consent and delete their data as required by RBI regulations.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product document does not explicitly mention that data collection is need-based and with prior and explicit consent of the borrower having an audit trail, which is a requirement under RBI regulations.",
+      "doc_evidence": "Only name, address, phone, PAN and bank statements uploaded by the borrower are used. No phone permissions beyond one-time camera access for KYC.",
+      "severity": "medium",
+      "fix": "Ensure that data collection is explicitly need-based and with prior and explicit consent of the borrower, with an audit trail.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2309,
+    "output_tokens": 713,
+    "llm_seconds": 50.2,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 50.3
+}

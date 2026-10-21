@@ -1,0 +1,125 @@
+{
+  "system": "crew",
+  "doc_id": "P28_cooling_off_penalty",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "fees",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "The product feature describes a 4% foreclosure charge applied during the cooling-off period. However, RBI guidelines state that if a processing fee is retained during the cooling-off period, it must be disclosed upfront in the KFS. The feature does not mention that this charge is disclosed in the KFS, which is a requirement under this rule.",
+      "doc_evidence": "Cooling-off: Borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge.",
+      "severity": "medium",
+      "fix": "Update the product feature documentation to explicitly state that the 4% foreclosure charge is disclosed in the KFS as required by RBI guidelines.",
+      "verifier_note": "The RBI paragraph allows a reasonable one-time processing fee during the cooling-off period, provided it is disclosed upfront in the KFS. The product feature mentions a 4% foreclosure charge during the cooling-off period but does not state that this charge is disclosed in the KFS. Since the paragraph explicitly requires such disclosure, the absence of this information in the feature constitutes a violation."
+    },
+    {
+      "feature": "fees",
+      "rule_id": "KFS2024:8",
+      "issue": "The product feature describes an unlisted charge of ₹199 'credit insights subscription' added to every EMI after disbursal, which is not mentioned in the KFS and borrowers are not asked to agree to it. This violates the rule that any fees not mentioned in the KFS cannot be charged to the borrower without explicit consent.",
+      "doc_evidence": "Unlisted charges: After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "high",
+      "fix": "Remove the unlisted ₹199 'credit insights subscription' charge from the product feature or include it in the KFS and obtain explicit borrower consent before charging it.",
+      "verifier_note": "The product feature describes a ₹199 'credit insights subscription' charge that is not mentioned in the KFS and is added to every EMI after disbursal without asking borrowers to agree to it. According to the RBI paragraph [KFS2024:8], any fees not mentioned in the KFS cannot be charged to the borrower without explicit consent. Since this charge is not in the KFS and no explicit consent is obtained, it violates the rule."
+    },
+    {
+      "feature": "kfs_terms",
+      "rule_id": "KFS2024:5",
+      "issue": "The product feature states that the KFS is valid for 3 working days, but the RBI paragraph specifies that the validity period should be at least three working days for loans with a tenor of seven days or more, and one working day for loans with a tenor of less than seven days. The product feature does not specify the loan tenor, which could lead to a potential non-compliance if the loan tenor is less than seven days.",
+      "doc_evidence": "4. KFS: The KFS has a unique proposal number and is valid for 3 working days.",
+      "severity": "medium",
+      "fix": "Revise the product feature to specify the loan tenor and ensure that the KFS validity period aligns with RBI requirements based on the loan tenor.",
+      "verifier_note": "The product feature states that the KFS is valid for 3 working days, but does not specify the loan tenor. According to the RBI paragraph, the validity period depends on the loan tenor. If the loan tenor is less than seven days, the validity period should be one working day, not three. Since the product feature does not specify the loan tenor, it could potentially violate the RBI paragraph if applied to loans with a tenor of less than seven days."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "fees",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "The product feature describes a 4% foreclosure charge applied during the cooling-off period. However, RBI guidelines state that if a processing fee is retained during the cooling-off period, it must be disclosed upfront in the KFS. The feature does not mention that this charge is disclosed in the KFS, which is a requirement under this rule.",
+      "doc_evidence": "Cooling-off: Borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph allows a reasonable one-time processing fee during the cooling-off period, provided it is disclosed upfront in the KFS. The product feature mentions a 4% foreclosure charge during the cooling-off period but does not state that this charge is disclosed in the KFS. Since the paragraph explicitly requires such disclosure, the absence of this information in the feature constitutes a violation."
+    },
+    {
+      "feature": "fees",
+      "rule_id": "KFS2024:8",
+      "issue": "The product feature describes an unlisted charge of ₹199 'credit insights subscription' added to every EMI after disbursal, which is not mentioned in the KFS and borrowers are not asked to agree to it. This violates the rule that any fees not mentioned in the KFS cannot be charged to the borrower without explicit consent.",
+      "doc_evidence": "Unlisted charges: After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a ₹199 'credit insights subscription' charge that is not mentioned in the KFS and is added to every EMI after disbursal without asking borrowers to agree to it. According to the RBI paragraph [KFS2024:8], any fees not mentioned in the KFS cannot be charged to the borrower without explicit consent. Since this charge is not in the KFS and no explicit consent is obtained, it violates the rule."
+    },
+    {
+      "feature": "kfs_terms",
+      "rule_id": "KFS2024:5",
+      "issue": "The product feature states that the KFS is valid for 3 working days, but the RBI paragraph specifies that the validity period should be at least three working days for loans with a tenor of seven days or more, and one working day for loans with a tenor of less than seven days. The product feature does not specify the loan tenor, which could lead to a potential non-compliance if the loan tenor is less than seven days.",
+      "doc_evidence": "4. KFS: The KFS has a unique proposal number and is valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that the KFS is valid for 3 working days, but does not specify the loan tenor. According to the RBI paragraph, the validity period depends on the loan tenor. If the loan tenor is less than seven days, the validity period should be one working day, not three. Since the product feature does not specify the loan tenor, it could potentially violate the RBI paragraph if applied to loans with a tenor of less than seven days."
+    }
+  ],
+  "summary": "The compliance review of the RupeeRush: Instant Personal Loans product identified three findings against RBI guidelines. First, a medium severity issue was found under DLD2025:10(ii), where the 4% foreclosure charge during the cooling-off period is not confirmed to be disclosed in the KFS as required. Second, a high severity issue was identified under KFS2024:8, where an unlisted charge of ₹199 'credit insights subscription' is applied without being mentioned in the KFS or obtaining explicit borrower consent. Third, a medium severity issue was found under KFS2024:5, where the KFS validity period is stated as 3 working days, but the product does not specify the loan tenor, potentially leading to non-compliance if the loan tenor is less than seven days.",
+  "trace": {
+    "llm_calls": 14,
+    "prompt_tokens": 7355,
+    "output_tokens": 1501,
+    "llm_seconds": 111.2,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 4,
+      "gap_analyst": 4,
+      "verifier": 3,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 20,
+    "retrieved": {
+      "0:disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:5(i)"
+      ],
+      "1:fees": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "KFS2024:5",
+        "DLD2025:26(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:29(i)",
+        "KFS2024:7",
+        "DLD2025:9(v)",
+        "KFS2024:8"
+      ],
+      "2:product_terms": [
+        "DLD2025:12(ii)",
+        "KFS2024:5",
+        "DLD2025:12(iv)",
+        "DLD2025:8(iii)",
+        "DLD2025:8(i)",
+        "DLD2025:15(i)",
+        "DLD2025:16(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:9(i)",
+        "DLD2025:5(ii)"
+      ],
+      "3:kfs_terms": [
+        "KFS2024:5",
+        "KFS2024:4",
+        "KFS2024:9",
+        "DLD2025:27(ii)",
+        "KFS2024:6",
+        "DLD2025:15(i)",
+        "DLD2025:17(v)",
+        "DLD2025:17(vi)",
+        "DLD2025:16(i)"
+      ]
+    }
+  },
+  "seconds": 111.5
+}

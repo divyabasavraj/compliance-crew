@@ -1,0 +1,145 @@
+{
+  "system": "crew",
+  "doc_id": "P14_ev_twowheeler",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is being disbursed into the bank account of the scooter dealer, which is a third-party account, and not directly into the bank account of the borrower (the end-beneficiary).",
+      "doc_evidence": "Vindhya Bank pays the loan directly into the bank account of the scooter dealer, since the loan is only for buying the scooter.",
+      "severity": "high",
+      "fix": "Disburse the loan directly into the borrower's bank account instead of the third-party scooter dealer's account to ensure that the funds reach the end-beneficiary, thereby complying with the guidelines and reducing the risk of misappropriation.",
+      "verifier_note": "The RBI paragraph explicitly states that loan disbursement should be made into the bank account of the borrower, except in specific cases such as statutory mandates, co-lending transactions, or specific end-use scenarios where the loan is disbursed directly into the end-beneficiary's account. In this case, the product feature describes disbursement into the scooter dealer's account, which is a third-party account and not the borrower's account. The feature does not mention any of the exceptions provided in the RBI paragraph, such as statutory mandates or specific end-use scenarios with direct disbursement to the end-beneficiary. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:20(ii)",
+      "issue": "The product feature involves a DLG arrangement on loans that are also covered under the CGFMU credit guarantee scheme, which is prohibited under this paragraph.",
+      "doc_evidence": "The portfolio includes loans that are also covered under the CGFMU credit guarantee scheme.",
+      "severity": "high",
+      "fix": "Revise the product feature to exclude loans covered under the CGFMU credit guarantee scheme from the DLG arrangement, as this combination is prohibited under RBI guidelines and may lead to regulatory penalties.",
+      "verifier_note": "The RBI paragraph explicitly prohibits RE from entering into DLG arrangements on loans covered by credit guarantee schemes administered by trust funds, including the CGFMU credit guarantee scheme. The product feature describes a DLG arrangement on loans that are covered under the CGFMU credit guarantee scheme, which directly violates the restriction outlined in the paragraph."
+    },
+    {
+      "feature": "Recovery",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "The product feature does not communicate the particulars of the recovery agent to the borrower before the recovery agent contacts them, which is a requirement under RBI guidelines.",
+      "doc_evidence": "When a loan defaults, ChargeRide assigns a field recovery agency. If the agency is changed, the new agent visits the borrower directly; the borrower is not told the agent's details beforehand.",
+      "severity": "medium",
+      "fix": "Update the loan documentation and communication materials to clearly disclose the identity and contact details of the recovery agent to the borrower prior to any recovery action being initiated.",
+      "verifier_note": "The product feature states that when the recovery agency is changed, the new agent visits the borrower directly without informing them of the agent's details beforehand. This directly contradicts the RBI paragraph [DLD2025:8(v)], which mandates that the particulars of the recovery agent must be communicated to the borrower through email/SMS before the recovery agent contacts them. The feature does not comply with this requirement."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is being disbursed into the bank account of the scooter dealer, which is a third-party account, and not directly into the bank account of the borrower (the end-beneficiary).",
+      "doc_evidence": "Vindhya Bank pays the loan directly into the bank account of the scooter dealer, since the loan is only for buying the scooter.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that loan disbursement should be made into the bank account of the borrower, except in specific cases such as statutory mandates, co-lending transactions, or specific end-use scenarios where the loan is disbursed directly into the end-beneficiary's account. In this case, the product feature describes disbursement into the scooter dealer's account, which is a third-party account and not the borrower's account. The feature does not mention any of the exceptions provided in the RBI paragraph, such as statutory mandates or specific end-use scenarios with direct disbursement to the end-beneficiary. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:20(ii)",
+      "issue": "The product feature involves a DLG arrangement on loans that are also covered under the CGFMU credit guarantee scheme, which is prohibited under this paragraph.",
+      "doc_evidence": "The portfolio includes loans that are also covered under the CGFMU credit guarantee scheme.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits RE from entering into DLG arrangements on loans covered by credit guarantee schemes administered by trust funds, including the CGFMU credit guarantee scheme. The product feature describes a DLG arrangement on loans that are covered under the CGFMU credit guarantee scheme, which directly violates the restriction outlined in the paragraph."
+    },
+    {
+      "feature": "Recovery",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "The product feature does not communicate the particulars of the recovery agent to the borrower before the recovery agent contacts them, which is a requirement under RBI guidelines.",
+      "doc_evidence": "When a loan defaults, ChargeRide assigns a field recovery agency. If the agency is changed, the new agent visits the borrower directly; the borrower is not told the agent's details beforehand.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that when the recovery agency is changed, the new agent visits the borrower directly without informing them of the agent's details beforehand. This directly contradicts the RBI paragraph [DLD2025:8(v)], which mandates that the particulars of the recovery agent must be communicated to the borrower through email/SMS before the recovery agent contacts them. The feature does not comply with this requirement."
+    }
+  ],
+  "summary": "The compliance review of the ChargeRide: Electric Scooter Loans at Dealerships product identified three key findings. First, the loan is being disbursed into the bank account of the scooter dealer, a third-party account, rather than directly into the borrower's account, which violates DLD2025:9(i). Second, the product involves a DLG arrangement on loans covered under the CGFMU credit guarantee scheme, which is prohibited under DLD2025:20(ii). Third, the product does not communicate the particulars of the recovery agent to the borrower prior to contact, violating DLD2025:8(v).",
+  "trace": {
+    "llm_calls": 18,
+    "prompt_tokens": 9693,
+    "output_tokens": 1478,
+    "llm_seconds": 111.6,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 3,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 27,
+    "retrieved": {
+      "0:Product": [
+        "KFS2024:5",
+        "DLD2025:26(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:8(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:6",
+        "DLD2025:9(i)",
+        "DLD2025:16(i)"
+      ],
+      "1:Disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:16(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:12(ii)"
+      ],
+      "2:Default loss guarantee": [
+        "DLD2025:22(i)",
+        "DLD2025:23(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:29(i)",
+        "DLD2025:23(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:16(i)",
+        "DLD2025:6"
+      ],
+      "3:Recovery": [
+        "DLD2025:8(v)",
+        "DLD2025:9(v)",
+        "DLD2025:9(ii)",
+        "DLD2025:5(v)",
+        "DLD2025:6(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)"
+      ],
+      "4:Data collection": [
+        "DLD2025:12(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(ii)",
+        "DLD2025:12(iv)",
+        "DLD2025:12(iii)",
+        "DLD2025:8(iv)",
+        "DLD2025:20(i)",
+        "DLD2025:15(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:16(i)"
+      ],
+      "5:Credit bureau reporting": [
+        "DLD2025:16(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:17(i)",
+        "KFS2024:10",
+        "KFS2024:6",
+        "DLD2025:17(v)"
+      ]
+    }
+  },
+  "seconds": 112.2
+}

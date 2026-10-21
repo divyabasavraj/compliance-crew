@@ -1,0 +1,55 @@
+{
+  "system": "single",
+  "doc_id": "P27_merchant_paylater",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Credit bureau reporting",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "The product does not report lending activities to Credit Information Companies (CICs), which is a regulatory requirement.",
+      "doc_evidence": "Mahanadi Finance treats these as merchant payment deferrals, not loans, and does not report them to credit information companies.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Limits",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The product automatically increases credit limits without an explicit request from the borrower, which is a violation of the requirement for explicit borrower consent.",
+      "doc_evidence": "Every month, PharmaPay raises each customer's pay-later limit by ₹1,000 if they repaid on time; customers are informed by SMS after the increase.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data",
+      "rule_id": "DLD2025:17(vi)",
+      "issue": "The product does not clarify that the inclusion of third-party DLAs (like PharmaPay) does not imply endorsement or authorization by the Reserve Bank.",
+      "doc_evidence": "The app requests one-time camera access for KYC. No other permissions.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product does not ensure that all loan servicing and repayment is executed directly into the RE’s bank account, which is a regulatory requirement.",
+      "doc_evidence": "Customers repay directly into Mahanadi Finance's account by UPI.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2273,
+    "output_tokens": 395,
+    "llm_seconds": 15.0,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 15.1
+}

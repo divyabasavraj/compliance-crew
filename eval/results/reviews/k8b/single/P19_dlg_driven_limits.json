@@ -1,0 +1,82 @@
+{
+  "system": "single",
+  "doc_id": "P19_dlg_driven_limits",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "DLG",
+      "rule_id": "DLD2025:19(i)",
+      "issue": "The product document does not mention that Satpura Finance, as the RE, must put in place a Board-approved policy before entering into any DLG arrangement. This policy must include eligibility criteria for DLG providers, nature and extent of DLG cover, process of monitoring and reviewing the DLG arrangement, and details of fees, if any, payable to/ received by the DLG provider.",
+      "doc_evidence": "QuickLine Tech provides a DLG of 5% of the disbursed portfolio as cash deposited with Satpura Finance, under a Board-approved DLG policy.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "DLG",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The product document does not specify that the total amount of DLG cover on any outstanding portfolio shall not exceed five per cent of the total amount disbursed out of that loan portfolio at any given time. It also does not mention that in case of implicit guarantee arrangements, the DLG Provider shall not bear performance risk of more than the equivalent amount of five per cent of the underlying loan portfolio.",
+      "doc_evidence": "QuickLine Tech provides a DLG of 5% of the disbursed portfolio as cash deposited with Satpura Finance, under a Board-approved DLG policy.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "DLG",
+      "rule_id": "DLD2025:23(ii)",
+      "issue": "The product document does not specify that the portfolio over which DLG can be offered shall consist of identifiable and measurable loan assets which have been sanctioned (the 'DLG set'). This portfolio shall remain fixed for the purpose of DLG cover and is not meant to be dynamic.",
+      "doc_evidence": "QuickLine Tech provides a DLG of 5% of the disbursed portfolio as cash deposited with Satpura Finance, under a Board-approved DLG policy.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Credit decision",
+      "rule_id": "DLD2025:19(ii)",
+      "issue": "The product document does not mention that the DLG arrangement does not act as a substitute for credit appraisal requirements and robust credit underwriting standards need to be put in place irrespective of the DLG cover.",
+      "doc_evidence": "Because QuickLine Tech's DLG covers losses, Satpura Finance approves every applicant QuickLine sends without its own credit check.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Credit decision",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product document does not mention that RE shall ensure that any collection of data by their DLA and DLA of their LSP is need-based and with prior and explicit consent of the borrower having audit trail. It also does not mention that DLA of RE/LSP desist from accessing mobile phone resources like file and media, contact list, call logs, telephony functions, etc.",
+      "doc_evidence": "The app collects only name, phone and PAN; age, occupation and income are not asked.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Cooling-off",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "The product document does not mention that the RE shall disclose upfront in KFS that a reasonable one-time processing fee may be retained if the customer exits the loan during the cooling-off period.",
+      "doc_evidence": "Borrowers can exit within 2 days by repaying the principal and proportionate APR without penalty.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "DLG",
+      "rule_id": "DLD2025:20(i)",
+      "issue": "The product document does not mention that RE shall not enter into DLG arrangements for revolving credit facilities offered through digital lending channel and credit cards as defined under Master Direction – Credit Card and Debit Card – Issuance and Conduct Directions, 2022 dated April 21, 2022.",
+      "doc_evidence": "QuickLine Tech provides a DLG of 5% of the disbursed portfolio as cash deposited with Satpura Finance, under a Board-approved DLG policy.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2174,
+    "output_tokens": 977,
+    "llm_seconds": 32.8,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 32.9
+}

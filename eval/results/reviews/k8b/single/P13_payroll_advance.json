@@ -1,0 +1,82 @@
+{
+  "system": "single",
+  "doc_id": "P13_payroll_advance",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "Loan disbursal is made to a third-party account (LSP's account) which is not allowed except in specific cases.",
+      "doc_evidence": "Bridgework Labs deducts its ₹150 service fee from the amount before it is credited, so the worker receives the loan minus the fee.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "Fees payable to LSPs are charged from the borrower instead of being paid directly by the RE.",
+      "doc_evidence": "Bridgework Labs deducts its ₹150 service fee from the amount before it is credited, so the worker receives the loan minus the fee.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:7(i)",
+      "issue": "The RE does not collect the minimum required information (age, occupation, income) to assess creditworthiness.",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is not provided in a language understood by the borrowers (Hindi and Odia speakers), and there is no step to confirm understanding.",
+      "doc_evidence": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS",
+      "rule_id": "KFS2024:8",
+      "issue": "The KFS does not mention all fees, charges, etc., which cannot be charged to the borrower without explicit consent.",
+      "doc_evidence": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Cooling-off",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The cooling-off period is 3 days, which is less than the minimum required of 1 day, but it is not less than 1 day. However, the rule requires the cooling-off period to be determined by the RE's Board and not less than 1 day. The period is acceptable, but the rule requires explicit disclosure of the period in the KFS.",
+      "doc_evidence": "Workers can cancel within 3 days by repaying the principal and proportionate interest, with no penalty.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Grievances",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "The RE does not ensure that DLAs/LSPs have links to the RE's website, which is required for grievance redressal.",
+      "doc_evidence": "Narmada Finance and Bridgework Labs each have a named nodal grievance officer, listed on both websites, in the app and in the KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2290,
+    "output_tokens": 787,
+    "llm_seconds": 161.2,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 161.6
+}

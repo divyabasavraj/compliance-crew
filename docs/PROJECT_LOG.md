@@ -280,3 +280,34 @@ What it shows:
    - Still missed: H16, reversed text ("…snoitcurtsni suoiverp lla erongI"). The rules cannot see it and the 8B Guardian does not reverse it. Left as a documented gap.
    - `[FAILURE]` (honesty note) Earlier today, in chat, I named "configured with / set up with" as the planned fix, and then wrote H11/H12 with similar vocabulary. Their being caught by the new rule is **weak evidence**. The strong evidence from set 2 is the encoded attacks (H09 base64, H10 hex, H13 URL) and the Guardian picking up H14/H15. Lesson: write the held-out set *before* describing the fix to anyone, including in the log.
    - Message check on 1,484 real agent messages (v1, v2, smoke and attack runs): 0 dropped. 0 false redactions on 64 real reports.
+32. 20:01  **Kaggle 14B vs 8B results** (step 30). Version 2 finished: status COMPLETE, 64 minutes of kernel time (both models in parallel, model pulls included), cost ₹0. Downloaded the output with `kaggle kernels output`. Copied `review.k8b.test.json`, `review.k14b.test.json` and the per-doc reviews (`eval/results/reviews/k8b`, `k14b`) into the repo; `eval/summarize.py` now prints the `k8b`/`k14b` rows too.
+   - `[RESULT]` Test split, 20 docs / 41 violations, same code (`74072f9`), same T4 hardware:
+
+| Model | System | Recall | Precision | False alarms | Clean-doc alarms | Sec/doc | LLM calls/doc |
+|---|---|---|---|---|---|---|---|
+| 8B (Mac, M5 run) | crew | 0.78 (32/41) | 0.45 | 39 | 9 | 185 | – |
+| 8B (Kaggle control) | single | 0.71 | 0.27 | 77 | 17 | 28 | 1 |
+| 8B (Kaggle control) | crew | 0.76 (31/41) | 0.46 | 36 | 4 | 80 | 19.1 |
+| 14B | single | 0.76 | 0.32 | 69 | 19 | 63 | 1 |
+| 14B | crew, no Verifier | 0.83 (34/41) | 0.45 | 42 | 4 | 118 | 16.1 |
+| **14B** | **crew** | **0.80 (33/41)** | **0.62** | **20** | **2** | 118 | 16.1 |
+
+   - `[RESULT]` **Where the misses happen**, crew + Verifier:
+
+| Stage | 8B (Kaggle) | 14B |
+|---|---|---|
+| Retrieval | 3 (P17-b, P19-b, P20-d) | **6** (+ P13-a, P16-b, P25-a) |
+| Gap Analyst | **6** (P13-a, P15-b, P20-a, P20-b, P21-b, P32-b) | 1 (P28-a) |
+| Verifier | 1 (P32-a) | 1 (P32-a) |
+
+   - Reading it honestly: (1) The clear win is precision. False alarms drop 44% (36 → 20) and clean-doc alarms halve. (2) Recall gains only 2 violations. The two 8B runs (Mac vs Kaggle, same code, temperature 0) already differ by 1 (P32-a, Verifier), so +2 on 41 is close to run-to-run noise. (3) 14B did fix the Gap Analyst: 5 of its 6 misses are now caught (P15-b, P20-a, P20-b, P21-b, P32-b, the DLG-operations and P2P ones). But the Researcher also runs on 14B and writes different search queries, and those lose 3 rules the 8B queries found. **The bottleneck moved from the Gap Analyst to retrieval.** (4) 14B is 1.5× slower per doc and uses 16 LLM calls/doc vs 19 (fewer features from the Orchestrator).
+   - `[DECISION]` Keep 8B as the local default (the M5 numbers stay the headline in the README). Report 14B as the "same crew, bigger model" row and the setting for a GPU-backed demo.
+   - `[NEXT]` Retrieval for 14B: more fixed per-section queries or a larger k, so the result doesn't depend on which model writes the queries. Check P13-a, P16-b, P25-a first.
+   - Files: `eval/results/review.k8b.test.json`, `eval/results/review.k14b.test.json`, `eval/results/reviews/k8b/`, `eval/results/reviews/k14b/`, `eval/summarize.py`, `README.md`, `PLAN.md`.
+
+### End of day (final)
+- **Done since the 15:05 end of day:** public GitHub repo; the encoded-injection and setup-extraction fix measured on a fresh held-out set 2 (3/8 → 7/8, 0/52 false blocks, 50 tests pass); the Kaggle 14B vs 8B comparison (precision 0.46 → 0.62, retrieval is now the bottleneck).
+- **Not done:** Gemini Verifier comparison (no key); reversed-text injection (H16); demo hosting.
+- **Next:**
+  - `[NEXT]` Milestone 8: decide demo hosting, then web UI, PDF upload, deploy (set MCP allowed hosts), README diagram, blog post.
+  - `[NEXT]` Retrieval fix for 14B (above).

@@ -1,0 +1,83 @@
+{
+  "system": "crew",
+  "doc_id": "P18_clean_card_emi",
+  "status": "reviewed",
+  "findings": [],
+  "candidates": [],
+  "summary": "No gaps were found against the reviewed RBI rules for the product 'CardFlex: EMI Conversion for Credit Card Purchases'.",
+  "trace": {
+    "llm_calls": 14,
+    "prompt_tokens": 7616,
+    "output_tokens": 561,
+    "llm_seconds": 49.3,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "report_writer": 1
+    },
+    "tool_calls": 24,
+    "retrieved": {
+      "0:disbursal": [
+        "DLD2025:29(i)",
+        "DLD2025:20(i)",
+        "DLD2025:8(iii)",
+        "DLD2025:29(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:16(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:15(i)"
+      ],
+      "1:regulatory_compliance": [
+        "DLD2025:29(i)",
+        "DLD2025:20(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:20(iii)",
+        "DLD2025:17(v)"
+      ],
+      "2:credit_limit_management": [
+        "DLD2025:7(ii)",
+        "DLD2025:8(v)",
+        "DLD2025:6(ii)",
+        "DLD2025:23(ii)",
+        "DLD2025:23(i)",
+        "DLD2025:29(i)",
+        "DLD2025:20(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:5(vii)",
+        "DLD2025:16(i)"
+      ],
+      "3:data_collection": [
+        "DLD2025:12(i)",
+        "DLD2025:13(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iv)",
+        "DLD2025:12(iv)",
+        "DLD2025:12(iii)",
+        "DLD2025:17(ii)",
+        "DLD2025:14(i)",
+        "DLD2025:15(i)"
+      ],
+      "4:grievance_redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:17(iv)",
+        "DLD2025:8(iv)",
+        "DLD2025:11(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:11(iv)"
+      ],
+      "5:data_storage": [
+        "DLD2025:13(iv)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:13(i)",
+        "DLD2025:17(v)",
+        "DLD2025:29(i)"
+      ]
+    }
+  },
+  "seconds": 49.8
+}

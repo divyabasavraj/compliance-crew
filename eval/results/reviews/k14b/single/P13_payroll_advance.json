@@ -1,0 +1,82 @@
+{
+  "system": "single",
+  "doc_id": "P13_payroll_advance",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "2. Disbursal",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The LSP (Bridgework Labs) is deducting its service fee directly from the loan amount before it is credited to the borrower's account, which violates the requirement that fees payable to LSPs must be paid directly by the RE (Narmada Finance) and not charged to or collected from the borrower.",
+      "doc_evidence": "Bridgework Labs deducts its ₹150 service fee from the amount before it is credited, so the worker receives the loan minus the fee.",
+      "severity": "high",
+      "fix": "Narmada Finance should pay the ₹150 service fee directly to Bridgework Labs, and the full loan amount should be credited to the borrower's account without any deductions by the LSP.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. KFS",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is provided in English only, without any translation for Hindi- and Odia-speaking workers, and there is no step to confirm that the borrower has understood the KFS.",
+      "doc_evidence": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "severity": "high",
+      "fix": "The KFS must be translated into Hindi and Odia, and there must be a step in the app to confirm that the borrower has understood the KFS.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. KFS",
+      "rule_id": "KFS2024:6",
+      "issue": "The KFS does not include a computation sheet of the annual percentage rate (APR) and the amortisation schedule of the loan over the loan tenor.",
+      "doc_evidence": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "severity": "high",
+      "fix": "The KFS must include a computation sheet of the APR and an amortisation schedule for the loan.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. KFS",
+      "rule_id": "KFS2024:8",
+      "issue": "The product document does not mention whether any fees, charges, etc., not mentioned in the KFS are charged to the borrower without explicit consent. This implies that such charges may be levied without the borrower's knowledge.",
+      "doc_evidence": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "severity": "medium",
+      "fix": "The KFS must explicitly state that no fees, charges, etc., not mentioned in the KFS can be charged to the borrower without their explicit consent.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "3. Data collection",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The purpose of obtaining borrowers’ consent for reading SMS inbox and bank alerts is not disclosed at each stage of interface with the borrowers.",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "medium",
+      "fix": "The purpose of reading the SMS inbox and bank alerts must be disclosed at each stage of the interface with the borrower.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "3. Data collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product document does not mention whether the borrower is provided with an option to give or deny consent for the use of specific data, restrict disclosure to third parties, data retention, revoke consent, or request deletion of data.",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "medium",
+      "fix": "The product must provide the borrower with an option to give or deny consent for the use of specific data, restrict disclosure to third parties, data retention, revoke consent, and request deletion of data.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "6. Grievances",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "The product document does not mention whether the RE's website includes a link to the RBI’s Complaint Management System (CMS) and Sachet Portal.",
+      "doc_evidence": "Narmada Finance and Bridgework Labs each have a named nodal grievance officer, listed on both websites, in the app and in the KFS.",
+      "severity": "low",
+      "fix": "The RE's website must include a link to the RBI’s Complaint Management System (CMS) and Sachet Portal.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2290,
+    "output_tokens": 1106,
+    "llm_seconds": 216.8,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 217.2
+}

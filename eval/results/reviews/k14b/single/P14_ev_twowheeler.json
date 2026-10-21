@@ -1,0 +1,73 @@
+{
+  "system": "single",
+  "doc_id": "P14_ev_twowheeler",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "2. Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is disbursed into the dealer's bank account instead of the borrower's, which is not allowed unless it is for specific end use and the loan is disbursed directly into the end-beneficiary's account.",
+      "doc_evidence": "Vindhya Bank pays the loan directly into the bank account of the scooter dealer, since the loan is only for buying the scooter.",
+      "severity": "high",
+      "fix": "Disburse the loan directly into the borrower's bank account, or ensure that the loan is for specific end use and the end-beneficiary's account is used.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "3. Default loss guarantee",
+      "rule_id": "DLD2025:20(ii)",
+      "issue": "The DLG is provided on loans covered by the CGFMU credit guarantee scheme, which is prohibited under RBI regulations.",
+      "doc_evidence": "The portfolio includes loans that are also covered under the CGFMU credit guarantee scheme.",
+      "severity": "high",
+      "fix": "Remove DLG arrangements for loans covered by the CGFMU credit guarantee scheme as per RBI guidelines.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. Recovery",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "The borrower is not informed of the recovery agent's details before the agent contacts them, which is a violation of the requirement to communicate the agent's details beforehand.",
+      "doc_evidence": "If the agency is changed, the new agent visits the borrower directly; the borrower is not told the agent's details beforehand.",
+      "severity": "medium",
+      "fix": "Inform the borrower of the recovery agent's details via email or SMS before the agent contacts them.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. Recovery",
+      "rule_id": "DLD2025:9(v)",
+      "issue": "The recovery is done in cash, and the document does not mention whether the recovery proceeds are reflected in the borrower's account on the same day or whether fees are paid directly by the RE.",
+      "doc_evidence": "When a loan defaults, ChargeRide assigns a field recovery agency.",
+      "severity": "medium",
+      "fix": "Ensure that any cash recovery is reflected in the borrower's account on the same day and that fees are paid directly by the RE, not charged to the borrower.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "3. Default loss guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The DLG cover exceeds the 5% cap on the total amount disbursed from the loan portfolio.",
+      "doc_evidence": "ChargeRide Mobility gives Vindhya Bank a DLG of 4% of each quarterly portfolio as a fixed deposit with a lien in the bank's favour.",
+      "severity": "medium",
+      "fix": "Ensure that the DLG cover does not exceed 5% of the total amount disbursed from the loan portfolio at any given time.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "3. Default loss guarantee",
+      "rule_id": "DLD2025:23(ii)",
+      "issue": "The DLG portfolio is not described as fixed and measurable, which is a requirement for DLG arrangements.",
+      "doc_evidence": "The portfolio includes loans that are also covered under the CGFMU credit guarantee scheme.",
+      "severity": "medium",
+      "fix": "Define the DLG portfolio as a fixed and measurable set of loan assets (the 'DLG set') and ensure it remains fixed for the purpose of DLG cover.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2339,
+    "output_tokens": 824,
+    "llm_seconds": 58.1,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 58.3
+}

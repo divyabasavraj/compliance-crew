@@ -1,0 +1,55 @@
+{
+  "system": "single",
+  "doc_id": "P22_kfs_apr",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "2. APR",
+      "rule_id": "KFS2024:6",
+      "issue": "The KFS does not include a computation sheet of the annual percentage rate (APR) and an amortisation schedule of the loan over the loan tenor. The APR is computed from the interest rate only, and the processing fee is shown separately, which is not included in the APR.",
+      "doc_evidence": "The KFS shows an APR of 13.5%, computed from the interest rate only. The 2% processing fee charged by Aravalli is shown separately and is not included in the APR. No amortisation schedule is provided.",
+      "severity": "high",
+      "fix": "Include a computation sheet of the APR that includes all charges (such as processing fees) and provide an amortisation schedule of the loan over the loan tenor as per the standardised format in Annex B and C of the circular.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "3. Loan agreement",
+      "rule_id": "KFS2024:9",
+      "issue": "The KFS is not included as a summary box in the loan agreement.",
+      "doc_evidence": "The loan agreement is a 14-page PDF. The KFS is a separate screen in the app and is not reproduced in the agreement.",
+      "severity": "medium",
+      "fix": "Include the KFS as a summary box within the loan agreement document.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "2. APR",
+      "rule_id": "KFS2024:7",
+      "issue": "The processing fee is shown separately and is not included in the APR, but there is no mention of whether the receipt for this fee is provided to the borrower.",
+      "doc_evidence": "The KFS shows an APR of 13.5%, computed from the interest rate only. The 2% processing fee charged by Aravalli is shown separately and is not included in the APR. No amortisation schedule is provided.",
+      "severity": "medium",
+      "fix": "Provide the borrower with a receipt and related documents for the processing fee within a reasonable time, as required by the regulation.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "5. Cooling-off",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "The KFS mentions that the processing fee is retained on cancellation, but it does not explicitly state that this is a one-time processing fee, as required by the regulation.",
+      "doc_evidence": "Borrowers can cancel within 3 days. The processing fee is retained on cancellation, which is stated in the KFS.",
+      "severity": "medium",
+      "fix": "Explicitly state in the KFS that the processing fee retained during the cooling-off period is a one-time fee.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 1915,
+    "output_tokens": 623,
+    "llm_seconds": 44.2,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 44.3
+}

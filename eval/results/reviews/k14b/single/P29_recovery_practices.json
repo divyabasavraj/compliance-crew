@@ -1,0 +1,64 @@
+{
+  "system": "single",
+  "doc_id": "P29_recovery_practices",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "2. Recovery agents",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "The product document does not communicate the details of the recovery agent to the borrower before the recovery agent contacts them, which is a requirement under RBI regulations.",
+      "doc_evidence": "When a borrower misses two EMIs, DriveFin assigns a recovery agency, which calls and visits the borrower. Borrowers are not sent the agency's name or the agent's details before the first contact.",
+      "severity": "high",
+      "fix": "The product must communicate the name and details of the recovery agent to the borrower via email or SMS before the recovery agent contacts them.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. Data collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product document indicates that the app reads the phone's contact list, which is not permitted under RBI regulations unless it is for on-boarding/KYC purposes and with explicit consent.",
+      "doc_evidence": "During the loan, the app reads the phone's contact list so agents can reach family members if the borrower cannot be contacted.",
+      "severity": "high",
+      "fix": "The product must not access the contact list unless it is for on-boarding/KYC purposes and with explicit consent from the borrower, and such access must be limited to a one-time use.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. Data collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product document does not mention providing the borrower with an option to give or deny consent for the use of specific data, such as the contact list.",
+      "doc_evidence": "During the loan, the app reads the phone's contact list so agents can reach family members if the borrower cannot be contacted.",
+      "severity": "medium",
+      "fix": "The product must provide the borrower with an option to give or deny consent for the use of specific data, including the contact list.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. Data collection",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The product document does not mention disclosing the purpose of obtaining the borrower's contact list at the time of data collection.",
+      "doc_evidence": "During the loan, the app reads the phone's contact list so agents can reach family members if the borrower cannot be contacted.",
+      "severity": "medium",
+      "fix": "The product must disclose the purpose of collecting the contact list at the time of data collection.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "4. Data collection",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The product document does not specify whether the LSP (DriveFin) stores personal information of the borrower beyond basic minimal data, which is a requirement under RBI regulations.",
+      "doc_evidence": "During the loan, the app reads the phone's contact list so agents can reach family members if the borrower cannot be contacted.",
+      "severity": "medium",
+      "fix": "The product must ensure that the LSP does not store personal information of the borrower beyond basic minimal data, such as name, address, and contact details.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2134,
+    "output_tokens": 723,
+    "llm_seconds": 51.5,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 51.6
+}

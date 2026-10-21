@@ -1,0 +1,131 @@
+{
+  "system": "crew",
+  "doc_id": "P23_consent_controls",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product does not allow the borrower to choose which data is used, revoke consent, or request data deletion. The data is kept permanently without options for data restriction or deletion.",
+      "doc_evidence": "At signup, the shopkeeper taps one \"I agree\" button that covers all uses of their data. There is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently.",
+      "severity": "high",
+      "fix": "Implement a data consent management system that allows borrowers to opt-in/out of data collection, revoke consent, and request data deletion. Ensure data is not retained permanently and provide options for data restriction.",
+      "verifier_note": "The product feature explicitly states that there is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently. This directly contradicts the RBI paragraph [DLD2025:12(ii)], which requires the borrower to be provided with an option to give or deny consent for use of specific data, revoke consent already granted, and request data deletion. The feature does not comply with these requirements."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The purpose of obtaining consent is not disclosed at each stage of the interface with the borrower.",
+      "doc_evidence": "Later screens that ask for GST returns and bank statements do not say why they are needed.",
+      "severity": "medium",
+      "fix": "Revise the user interface to clearly disclose the purpose of data collection at each stage. Ensure transparency by providing concise explanations of how the data will be used.",
+      "verifier_note": "The RBI paragraph requires that the purpose of obtaining borrowers’ consent be disclosed at each stage of the interface. The product feature describes a scenario where consent is given at signup with a single 'I agree' button, without specifying the purpose of data usage at that stage. Additionally, later screens that request sensitive information (like GST returns and bank statements) do not disclose the purpose of collecting this data. This failure to disclose the purpose of consent at each stage of the interface directly violates the requirement in the RBI paragraph."
+    },
+    {
+      "feature": "Product Description",
+      "rule_id": "DLD2025:8(i)",
+      "issue": "The product description does not mention the provision of a Key Fact Statement (KFS) to borrowers, which is a mandatory requirement under this RBI directive.",
+      "doc_evidence": "Product: Short-term loans of ₹10,000 to ₹1,00,000 for shopkeepers to buy stock, repaid in 60 days.",
+      "severity": "high",
+      "fix": "Update the product description to include a mandatory Key Fact Statement (KFS) as required by RBI. Ensure it is made available to borrowers in a clear and accessible format.",
+      "verifier_note": "The RBI paragraph mandates that RE (presumably referring to the lending institution) must provide a Key Fact Statement (KFS) to borrowers as per the specified circular. The product feature does not mention the provision of a KFS, which is a mandatory requirement under the directive. Since the feature does not confirm that a KFS is provided, it fails to meet the requirement stated in the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product does not allow the borrower to choose which data is used, revoke consent, or request data deletion. The data is kept permanently without options for data restriction or deletion.",
+      "doc_evidence": "At signup, the shopkeeper taps one \"I agree\" button that covers all uses of their data. There is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that there is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently. This directly contradicts the RBI paragraph [DLD2025:12(ii)], which requires the borrower to be provided with an option to give or deny consent for use of specific data, revoke consent already granted, and request data deletion. The feature does not comply with these requirements."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The purpose of obtaining consent is not disclosed at each stage of the interface with the borrower.",
+      "doc_evidence": "Later screens that ask for GST returns and bank statements do not say why they are needed.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the purpose of obtaining borrowers’ consent be disclosed at each stage of the interface. The product feature describes a scenario where consent is given at signup with a single 'I agree' button, without specifying the purpose of data usage at that stage. Additionally, later screens that request sensitive information (like GST returns and bank statements) do not disclose the purpose of collecting this data. This failure to disclose the purpose of consent at each stage of the interface directly violates the requirement in the RBI paragraph."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product feature states that repayments go directly into Tapti Finance's bank account. This complies with the requirement that all loan servicing and repayment is executed by the borrower directly into the RE’s bank account without any pass-through account or pool account of a third party, including the LSP.",
+      "doc_evidence": "Repayment: Repayments go directly into Tapti Finance's bank account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that repayments go directly into Tapti Finance's bank account, which aligns with the requirement in the RBI paragraph that all loan servicing and repayment must be executed directly into the RE’s bank account without any pass-through or pool account of a third party. The feature does not mention any third-party accounts being used, and thus complies with the regulation."
+    },
+    {
+      "feature": "Product Description",
+      "rule_id": "DLD2025:8(i)",
+      "issue": "The product description does not mention the provision of a Key Fact Statement (KFS) to borrowers, which is a mandatory requirement under this RBI directive.",
+      "doc_evidence": "Product: Short-term loans of ₹10,000 to ₹1,00,000 for shopkeepers to buy stock, repaid in 60 days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph mandates that RE (presumably referring to the lending institution) must provide a Key Fact Statement (KFS) to borrowers as per the specified circular. The product feature does not mention the provision of a KFS, which is a mandatory requirement under the directive. Since the feature does not confirm that a KFS is provided, it fails to meet the requirement stated in the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the Kirana Credit: Inventory Loans for Shopkeepers product identified three key findings. First, the product does not allow borrowers to choose which data is used, revoke consent, or request data deletion, violating the requirements under DLD2025:12(ii). Second, the purpose of obtaining consent is not disclosed at each stage of the interface, as required by DLD2025:12(iii). Third, the product description does not mention the provision of a Key Fact Statement (KFS), which is mandatory under DLD2025:8(i). These findings indicate significant gaps in compliance with the reviewed RBI rules.",
+  "trace": {
+    "llm_calls": 15,
+    "prompt_tokens": 7204,
+    "output_tokens": 1481,
+    "llm_seconds": 109.4,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 4,
+      "gap_analyst": 4,
+      "verifier": 4,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 21,
+    "retrieved": {
+      "0:Data Collection": [
+        "DLD2025:12(ii)",
+        "DLD2025:12(iii)",
+        "DLD2025:12(i)",
+        "DLD2025:12(iv)",
+        "DLD2025:13(i)",
+        "KFS2024:8",
+        "DLD2025:13(ii)"
+      ],
+      "1:Data Collection (4. Data collection)": [
+        "DLD2025:12(i)",
+        "DLD2025:12(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:8(iv)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iii)",
+        "DLD2025:16(i)"
+      ],
+      "2:Repayment": [
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)"
+      ],
+      "3:Product Description": [
+        "KFS2024:5",
+        "DLD2025:10(i)",
+        "DLD2025:8(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:16(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:15(i)",
+        "DLD2025:9(i)",
+        "DLD2025:5(ii)"
+      ]
+    }
+  },
+  "seconds": 109.6
+}

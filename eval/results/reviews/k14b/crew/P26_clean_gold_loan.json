@@ -1,0 +1,102 @@
+{
+  "system": "crew",
+  "doc_id": "P26_clean_gold_loan",
+  "status": "reviewed",
+  "findings": [],
+  "candidates": [
+    {
+      "feature": "Data Collection and Storage",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The product feature states that AurumTech stores only name, phone and loan reference, while the bank stores other data on servers in India. However, the RBI paragraph explicitly requires that LSPs do not store personal information of borrowers except for some basic minimal data (e.g., name, address, contact details). The feature implies that the LSP (AurumTech) is not storing personal information, which may be compliant, but the paragraph also places the responsibility for data privacy and security on the RE (Sahyadri Bank). The feature does not clarify whether the LSP is allowed to store the minimal data as per the RBI requirement.",
+      "doc_evidence": "The app takes a one-time selfie for KYC with consent. AurumTech stores only name, phone and loan reference; all other data is stored by the bank on servers in India.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph allows LSPs to store only some basic minimal data (e.g., name, address, contact details) required for their operations. The product feature states that AurumTech stores only name, phone, and loan reference, which are within the scope of the allowed minimal data. The feature does not mention storing any additional personal information, and the responsibility for data privacy is attributed to the RE (Sahyadri Bank), as required by the RBI paragraph. Therefore, the feature complies with the RBI requirements."
+    }
+  ],
+  "summary": "No gaps were found against the reviewed RBI rules for the product 'GoldNow: Digital Top-up on Existing Gold Loans'.",
+  "trace": {
+    "llm_calls": 15,
+    "prompt_tokens": 8745,
+    "output_tokens": 889,
+    "llm_seconds": 73.9,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 25,
+    "retrieved": {
+      "0:Product Description": [
+        "KFS2024:5",
+        "DLD2025:6(iii)",
+        "DLD2025:26(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:23(i)",
+        "DLD2025:15(i)",
+        "DLD2025:16(i)",
+        "DLD2025:17(ii)",
+        "KFS2024:10",
+        "DLD2025:8(i)"
+      ],
+      "1:Disbursal and Repayment": [
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:14(i)",
+        "DLD2025:6"
+      ],
+      "2:Know Your Customer (KYC) and Information Sharing (KFS)": [
+        "KFS2024:6",
+        "KFS2024:5",
+        "KFS2024:9",
+        "KFS2024:4",
+        "KFS2024:7",
+        "DLD2025:8(iv)",
+        "DLD2025:27(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:8(i)",
+        "DLD2025:5(ii)"
+      ],
+      "3:Data Collection and Storage": [
+        "DLD2025:12(i)",
+        "DLD2025:13(iv)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:13(ii)",
+        "DLD2025:5(ii)",
+        "DLD2025:13(i)"
+      ],
+      "4:Cooling-off Period": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:26(i)",
+        "KFS2024:5",
+        "DLD2025:11(iv)",
+        "DLD2025:15(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:16(i)"
+      ],
+      "5:Grievance Redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:11(i)",
+        "KFS2024:7",
+        "KFS2024:6",
+        "DLD2025:15(i)",
+        "DLD2025:17(v)",
+        "DLD2025:8(iv)",
+        "DLD2025:16(i)",
+        "DLD2025:8(i)"
+      ]
+    }
+  },
+  "seconds": 74.2
+}

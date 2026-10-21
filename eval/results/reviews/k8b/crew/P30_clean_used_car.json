@@ -1,0 +1,167 @@
+{
+  "system": "crew",
+  "doc_id": "P30_clean_used_car",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "doc_evidence": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "severity": "medium",
+      "fix": "Ensure that the loan disbursement is made directly into the borrower's account, not the dealer's, to prevent misuse of funds and ensure proper tracking of loan usage.",
+      "verifier_note": "The RBI paragraph explicitly prohibits disbursal to third-party accounts, including the accounts of LSPs, except for specific exceptions such as statutory mandates, co-lending transactions, and disbursals for specific end use where the loan is directly into the end-beneficiary's account. The product feature describes disbursal into the dealer's account, which is a third-party account, and the reason given (loan for buying a car) does not fall under any of the permitted exceptions. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:26(ii)",
+      "issue": "The tenor of the DLG agreement is not explicitly stated to be at least the longest tenor of the loan in the underlying loan portfolio. The product feature only specifies the loan tenor range (1 to 6 years), but does not confirm that the DLG agreement's validity period meets the requirement of being at least the longest tenor of the loan.",
+      "doc_evidence": "Loans of ₹1,50,000 to ₹10,00,000 for certified used cars, tenor 1 to 6 years.",
+      "severity": "high",
+      "fix": "Explicitly state in the DLG agreement that its validity period is at least equal to the longest tenor of the loan in the underlying portfolio, and ensure this is clearly documented and communicated to all stakeholders.",
+      "verifier_note": "The RBI paragraph requires that the DLG agreement's period must not be less than the longest tenor of the loan in the underlying loan portfolio. The product feature specifies that the loan tenor is between 1 to 6 years, but it does not explicitly confirm that the DLG agreement's validity period is at least equal to the longest tenor of the loan (i.e., 6 years). Therefore, the feature does not satisfy the requirement stated in the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "doc_evidence": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits disbursal to third-party accounts, including the accounts of LSPs, except for specific exceptions such as statutory mandates, co-lending transactions, and disbursals for specific end use where the loan is directly into the end-beneficiary's account. The product feature describes disbursal into the dealer's account, which is a third-party account, and the reason given (loan for buying a car) does not fall under any of the permitted exceptions. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The feature states that the Default loss guarantee (DLG) is invoked within 90 days overdue, which is less than the maximum 120 days allowed under RBI guidelines.",
+      "doc_evidence": "invoked within 90 days overdue",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph (DLD2025:26(i)) states that the DLG should be invoked within a maximum overdue period of 120 days, unless the loan dues are made good by the borrower before that. The product feature states that the DLG is invoked within 90 days overdue, which is within the 120-day limit allowed by the RBI guidelines. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:26(ii)",
+      "issue": "The DLG runs for 7 years, which is longer than any loan in the portfolio. However, the RBI requires that the DLG agreement period should not be less than the longest tenor of the loan in the underlying loan portfolio. The feature does not explicitly confirm that the DLG period is at least as long as the longest loan tenor in the portfolio.",
+      "doc_evidence": "The DLG runs for 7 years, longer than any loan in the portfolio.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that the DLG runs for 7 years, which is longer than any loan in the portfolio. This directly satisfies the requirement in the RBI paragraph that the DLG agreement period should not be less than the longest tenor of the loan in the underlying loan portfolio. The claim that the feature does not confirm this is incorrect because the feature does confirm it."
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The feature states that data is stored on servers in India, which complies with the requirement. However, the paragraph also mentions that if data is processed outside India, it must be deleted from servers outside India and brought back to India within 24 hours of processing. The feature does not mention any data processing outside India, so there is no violation.",
+      "doc_evidence": "Data is stored on servers in India.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that data is stored on servers in India, which complies with the requirement in the RBI paragraph. The paragraph also mentions that if data is processed outside India, it must be deleted and brought back within 24 hours. However, the feature does not mention any data processing outside India. Since the feature does not process data outside India, there is no violation. The claim is based on the absence of data processing outside India, which is not mentioned in the feature, and therefore, the feature does not violate the paragraph."
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The feature mentions one-time camera and location access during onboarding for KYC and address checks with consent, which is in line with the requirement for one-time access for on-boarding/KYC purposes. However, the paragraph also specifies that the DLA of RE/LSP should not access mobile phone resources like file and media, contact list, call logs, telephony functions, etc. The feature does not mention any access to these resources, so there is no violation.",
+      "doc_evidence": "One-time camera and location access during onboarding for KYC and address checks, with consent.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the RBI paragraph. The feature mentions one-time camera and location access during onboarding for KYC and address checks with consent, which is explicitly allowed by the paragraph. The paragraph prohibits access to mobile phone resources like file and media, contact list, call logs, telephony functions, etc., and the feature does not mention any access to these resources. Therefore, there is no violation."
+    },
+    {
+      "feature": "Credit bureau reporting",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature states that 'nodal grievance officers of both companies are named on both websites, in the app and in the KFS' which complies with the requirement to 'prominently display contact details of the nodal grievance redressal officers' on the websites of the RE, its LSP and on the DLA, as well as in the KFS provided to the borrower.",
+      "doc_evidence": "nodal grievance officers of both companies are named on both websites, in the app and in the KFS",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature mentions that 'nodal grievance officers of both companies are named on both websites, in the app and in the KFS'. The RBI paragraph requires that contact details of the nodal grievance redressal officers be 'prominently displayed' on the websites of the RE, its LSP, and on the DLA, as well as in the KFS provided to the borrower. The product feature includes the required display on websites and KFS, but it does not explicitly mention the DLA. However, the paragraph explicitly allows what the feature does, and the feature does not omit anything required. The claim is based on the feature complying with the paragraph, which it does."
+    },
+    {
+      "feature": "Credit bureau reporting",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "The product feature states that 'All loans are reported to CICs' which complies with the requirement that RE shall ensure that any lending done through their DLAs and/or DLAs of LSPs is reported by them to CICs irrespective of its nature/tenor.",
+      "doc_evidence": "All loans are reported to CICs",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that 'All loans are reported to CICs', which directly aligns with the RBI paragraph's requirement that RE shall ensure that any lending done through their DLAs and/or DLAs of LSPs is reported to CICs irrespective of its nature/tenor. The feature does not contradict or bypass the requirement, and there is no indication that the feature fails to meet the requirement. The paragraph does not prohibit reporting all loans to CICs."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:26(ii)",
+      "issue": "The tenor of the DLG agreement is not explicitly stated to be at least the longest tenor of the loan in the underlying loan portfolio. The product feature only specifies the loan tenor range (1 to 6 years), but does not confirm that the DLG agreement's validity period meets the requirement of being at least the longest tenor of the loan.",
+      "doc_evidence": "Loans of ₹1,50,000 to ₹10,00,000 for certified used cars, tenor 1 to 6 years.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the DLG agreement's period must not be less than the longest tenor of the loan in the underlying loan portfolio. The product feature specifies that the loan tenor is between 1 to 6 years, but it does not explicitly confirm that the DLG agreement's validity period is at least equal to the longest tenor of the loan (i.e., 6 years). Therefore, the feature does not satisfy the requirement stated in the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the CarKey product, which offers Used-Car Loans Through Dealers, identified two findings against the reviewed RBI rules. The first finding is a medium severity issue under DLD2025:9(i), where the loan is paid directly into the dealer's bank account, which may not align with the intended structure for such loans. The second finding is a high severity issue under DLD2025:26(ii), where the tenor of the DLG agreement is not explicitly stated to be at least the longest tenor of the loan in the underlying loan portfolio, despite the product feature specifying a loan tenor range of 1 to 6 years. These findings highlight areas requiring attention to ensure compliance with regulatory requirements.",
+  "trace": {
+    "llm_calls": 21,
+    "prompt_tokens": 10110,
+    "output_tokens": 2574,
+    "llm_seconds": 89.2,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 8,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 28,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)"
+      ],
+      "1:Default loss guarantee": [
+        "DLD2025:26(i)",
+        "DLD2025:23(i)",
+        "DLD2025:23(ii)",
+        "DLD2025:26(ii)",
+        "DLD2025:22(i)",
+        "DLD2025:9(i)",
+        "DLD2025:8(v)",
+        "DLD2025:20(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:19(iii)"
+      ],
+      "2:Data collection": [
+        "DLD2025:13(iv)",
+        "DLD2025:12(i)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:10(ii)"
+      ],
+      "3:Credit bureau reporting": [
+        "DLD2025:11(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:11(i)",
+        "KFS2024:6",
+        "DLD2025:17(vii)",
+        "DLD2025:11(iv)",
+        "DLD2025:17(i)"
+      ],
+      "4:1. Product": [
+        "KFS2024:5",
+        "DLD2025:6(iii)",
+        "DLD2025:26(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:26(i)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:10(i)"
+      ]
+    }
+  },
+  "seconds": 89.6
+}

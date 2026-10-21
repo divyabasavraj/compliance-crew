@@ -1,0 +1,73 @@
+{
+  "system": "single",
+  "doc_id": "P28_cooling_off_penalty",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Cooling-off",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The cooling-off period is less than one day, which is not allowed.",
+      "doc_evidence": "Borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Unlisted charges",
+      "rule_id": "KFS2024:8",
+      "issue": "A charge is added after disbursal without explicit borrower consent, which is not allowed.",
+      "doc_evidence": "After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Unlisted charges",
+      "rule_id": "KFS2024:7",
+      "issue": "The charge is not disclosed in the KFS and is not part of the APR, which is not allowed.",
+      "doc_evidence": "After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is not provided to prospective borrowers in a language they understand, which is not allowed.",
+      "doc_evidence": "The KFS has a unique proposal number and is valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS",
+      "rule_id": "KFS2024:9",
+      "issue": "The KFS is not included as a summary box in the loan agreement, which is not allowed.",
+      "doc_evidence": "The KFS has a unique proposal number and is valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS",
+      "rule_id": "KFS2024:6",
+      "issue": "The KFS does not include a computation sheet of APR and amortisation schedule, which is not allowed.",
+      "doc_evidence": "The KFS has a unique proposal number and is valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2112,
+    "output_tokens": 564,
+    "llm_seconds": 19.9,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 20.0
+}

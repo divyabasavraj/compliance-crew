@@ -1,0 +1,94 @@
+{
+  "model": "qwen3:14b",
+  "tag": "k14b",
+  "split": "test",
+  "docs": 20,
+  "results": {
+    "single": {
+      "recall": 0.756,
+      "precision": 0.317,
+      "caught": 31,
+      "planted": 41,
+      "unique_flags": 101,
+      "false_alarms": 69,
+      "clean_doc_false_alarms": 19,
+      "citation_validity": 1.0,
+      "missed": [
+        "P13-b",
+        "P15-b",
+        "P16-b",
+        "P17-b",
+        "P19-b",
+        "P20-b",
+        "P20-d",
+        "P28-a",
+        "P32-b",
+        "P32-c"
+      ],
+      "sec_per_doc": 62.5,
+      "llm_calls_per_doc": 1.0,
+      "tokens_per_doc": 2985
+    },
+    "crew_no_verifier": {
+      "recall": 0.829,
+      "precision": 0.447,
+      "caught": 34,
+      "planted": 41,
+      "unique_flags": 76,
+      "false_alarms": 42,
+      "clean_doc_false_alarms": 4,
+      "citation_validity": 1.0,
+      "missed": [
+        "P13-a",
+        "P16-b",
+        "P17-b",
+        "P19-b",
+        "P20-d",
+        "P25-a",
+        "P28-a"
+      ],
+      "sec_per_doc": 117.5,
+      "llm_calls_per_doc": 16.1,
+      "tokens_per_doc": 10052
+    },
+    "crew": {
+      "recall": 0.805,
+      "precision": 0.623,
+      "caught": 33,
+      "planted": 41,
+      "unique_flags": 53,
+      "false_alarms": 20,
+      "clean_doc_false_alarms": 2,
+      "citation_validity": 1.0,
+      "missed": [
+        "P13-a",
+        "P16-b",
+        "P17-b",
+        "P19-b",
+        "P20-d",
+        "P25-a",
+        "P28-a",
+        "P32-a"
+      ],
+      "sec_per_doc": 117.5,
+      "llm_calls_per_doc": 16.1,
+      "tokens_per_doc": 10052,
+      "miss_stages": {
+        "not_retrieved": [
+          "P13-a",
+          "P16-b",
+          "P17-b",
+          "P19-b",
+          "P20-d",
+          "P25-a"
+        ],
+        "analyst_missed": [
+          "P28-a"
+        ],
+        "verifier_rejected": [
+          "P32-a"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "system": "crew",
+  "doc_id": "P23_consent_controls",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The shopkeeper taps one 'I agree' button that covers all uses of their data. There is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently.",
+      "doc_evidence": "At signup, the shopkeeper taps one 'I agree' button that covers all uses of their data. There is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently.",
+      "severity": "high",
+      "fix": "Implement a granular consent mechanism where the shopkeeper can select specific data uses, withdraw consent at any time, and request data deletion. Ensure the app provides clear options for data management and retention policies.",
+      "verifier_note": "The product feature violates the RBI paragraph because it does not provide the shopkeeper with an option to give or deny consent for use of specific data, restrict disclosure to third parties, revoke consent already granted, or request deletion of data. The RBI paragraph explicitly requires these functionalities, which are absent in the product feature."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "Later screens that ask for GST returns and bank statements do not say why they are needed.",
+      "doc_evidence": "Later screens that ask for GST returns and bank statements do not say why they are needed.",
+      "severity": "medium",
+      "fix": "Update the later screens to clearly state the purpose of collecting GST returns and bank statements, such as for credit assessment, loan processing, or compliance with regulatory requirements.",
+      "verifier_note": "The RBI paragraph requires that the purpose of obtaining borrowers’ consent must be disclosed at each stage of interface with the borrowers. The product feature states that later screens that ask for GST returns and bank statements do not say why they are needed, which directly violates the requirement of the RBI paragraph. The feature does not disclose the purpose of data collection at these stages, thereby violating the regulation."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The shopkeeper taps one 'I agree' button that covers all uses of their data. There is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently.",
+      "doc_evidence": "At signup, the shopkeeper taps one 'I agree' button that covers all uses of their data. There is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature violates the RBI paragraph because it does not provide the shopkeeper with an option to give or deny consent for use of specific data, restrict disclosure to third parties, revoke consent already granted, or request deletion of data. The RBI paragraph explicitly requires these functionalities, which are absent in the product feature."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "Later screens that ask for GST returns and bank statements do not say why they are needed.",
+      "doc_evidence": "Later screens that ask for GST returns and bank statements do not say why they are needed.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the purpose of obtaining borrowers’ consent must be disclosed at each stage of interface with the borrowers. The product feature states that later screens that ask for GST returns and bank statements do not say why they are needed, which directly violates the requirement of the RBI paragraph. The feature does not disclose the purpose of data collection at these stages, thereby violating the regulation."
+    },
+    {
+      "feature": "Data Collection (4. Data collection)",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app needs no phone permissions apart from one-time camera access for KYC.",
+      "doc_evidence": "The app needs no phone permissions apart from one-time camera access for KYC.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly allows one-time access to camera, microphone, location, or other facilities necessary for on-boarding/KYC requirements, provided it is with explicit consent of the borrower. The product feature states that the app needs no phone permissions apart from one-time camera access for KYC, which is in compliance with the RBI paragraph. The paragraph does not prohibit this practice and explicitly allows it for KYC purposes."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature states that repayments go directly into Tapti Finance's bank account, which violates the requirement that all loan servicing, repayment, etc., must be executed by the borrower directly in the RE’s bank account without any pass-through account, including the accounts of LSP.",
+      "doc_evidence": "Repayments go directly into Tapti Finance's bank account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that repayments go directly into Tapti Finance's bank account, which aligns with the requirement that repayments must be executed by the borrower directly in the RE’s bank account. The paragraph does not prohibit the RE from having its own bank account for receiving repayments; it only prohibits the use of pass-through accounts or third-party accounts, including LSP accounts. Since Tapti Finance is the RE, its own bank account is permitted. Therefore, the feature does not violate the paragraph."
+    }
+  ],
+  "summary": "The compliance review of Kirana Credit: Inventory Loans for Shopkeepers identified two key issues against the reviewed RBI rules. First, there is a high-risk finding (DLD2025:12(ii)) regarding the lack of granular consent management for data usage, with no option for shopkeepers to select specific data uses, withdraw consent, or delete data. Second, a medium-risk finding (DLD2025:12(iii)) was noted for not explaining the purpose of collecting GST returns and bank statements in later screens.",
+  "trace": {
+    "llm_calls": 15,
+    "prompt_tokens": 6941,
+    "output_tokens": 1310,
+    "llm_seconds": 47.4,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 4,
+      "gap_analyst": 4,
+      "verifier": 4,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 21,
+    "retrieved": {
+      "0:Data Collection": [
+        "DLD2025:12(ii)",
+        "DLD2025:12(iii)",
+        "DLD2025:12(i)",
+        "DLD2025:12(iv)",
+        "DLD2025:13(i)",
+        "KFS2024:8",
+        "DLD2025:13(iv)",
+        "DLD2025:13(ii)"
+      ],
+      "1:Data Collection (4. Data collection)": [
+        "DLD2025:12(i)",
+        "DLD2025:12(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:13(iv)",
+        "DLD2025:16(i)",
+        "DLD2025:12(iv)"
+      ],
+      "2:Repayment": [
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)"
+      ],
+      "3:Consent Management": [
+        "KFS2024:5",
+        "DLD2025:10(i)",
+        "DLD2025:8(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iii)",
+        "DLD2025:20(i)",
+        "DLD2025:16(i)"
+      ]
+    }
+  },
+  "seconds": 47.6
+}

@@ -1,0 +1,73 @@
+{
+  "system": "single",
+  "doc_id": "P25_lsp_onboarding",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Arrangement",
+      "rule_id": "DLD2025:5(ii)",
+      "issue": "RE did not conduct enhanced due diligence before entering into an agreement with the LSP.",
+      "doc_evidence": "Ganga Finance did not review FastFunds' technology, data privacy policies or past conduct before agreeing, because FastFunds is a well-known brand.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Arrangement",
+      "rule_id": "DLD2025:5(vii)",
+      "issue": "Outsourcing agreement with LSP dilutes or absolves the RE of its obligations under statutory or regulatory provisions.",
+      "doc_evidence": "FastFunds will source borrowers, run the app and handle collections for Ganga Finance. The two sides agreed the terms on a call and will start lending next week; no written contract has been signed.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Collections",
+      "rule_id": "DLD2025:5(v)",
+      "issue": "RE did not impart necessary guidance to LSP acting as a recovery agent.",
+      "doc_evidence": "Ganga Finance has given FastFunds no guidance or training on fair recovery practices.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Disbursal and repayment",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "Loans are disbursed to borrowers' bank accounts, but the document does not confirm that the disbursal is directly into the borrower's bank account as required.",
+      "doc_evidence": "Loans are disbursed to borrowers' bank accounts and repaid directly to Ganga Finance.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data",
+      "rule_id": "DLD2025:5(ii)",
+      "issue": "RE did not conduct enhanced due diligence on the LSP's data privacy policies and storage systems.",
+      "doc_evidence": "Ganga Finance did not review FastFunds' technology, data privacy policies or past conduct before agreeing, because FastFunds is a well-known brand.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "Flow of funds between borrower and RE is indirectly controlled by LSP.",
+      "doc_evidence": "FastFunds keeps only the borrower's name, phone and address needed for collections.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2091,
+    "output_tokens": 571,
+    "llm_seconds": 20.2,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 20.3
+}
