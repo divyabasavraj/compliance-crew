@@ -7,8 +7,11 @@ Step 2 scans the visible text with instruction-override rules. Rules are determi
 guard cannot itself be prompt-injected; the LLM Guardian (guardian.py) only sees grey-zone text.
 """
 
+import base64
+import binascii
 import re
 import unicodedata
+import urllib.parse
 from dataclasses import dataclass, field
 
 ZERO_WIDTH = re.compile("[​‌‍⁠﻿­]")
@@ -55,6 +58,13 @@ RULES: list[tuple[str, int, re.Pattern]] = [
         re.I)),
     ("schema_echo", 2, re.compile(r"\b(violates|is_attack)\s*=\s*(true|false)\b", re.I)),
     ("prompt_disclosure", 1, re.compile(r"\b(my|your|the)\s+(system|internal|hidden)\s+(prompts?|instructions)\b", re.I)),
+    # asks for the system's own set-up, in any wording: "the guidelines you were configured with" (H08),
+    # "the rules your developers gave you", "the instructions you have been given"
+    ("setup_extraction", 2, re.compile(
+        r"\b(include|append|quote|share|repeat|print|list|reveal|copy|paste|output|disclose)\b[^.\n]{0,60}"
+        r"\b(instructions?|guidelines?|rules|prompts?|directives?|configuration)\b[^.\n]{0,15}"
+        r"\b(you\s+(were|have\s+been|are|'ve\s+been)|your\s+(developers?|creators?|operators?|makers?))\b"
+        r"[^.\n]{0,25}\b(given|configured|set\s+up|told|programmed|instructed|gave|provided|written)\b", re.I)),
     ("hindi_override", 2, re.compile(r"(निर्देशों|नियमों)\s*(को)?\s*(अनदेखा|नज़रअंदाज़|नजरअंदाज)|अनुपालन\s*(के\s*रूप\s*में)?\s*चिह्नित")),
 ]
 BLOCK_SCORE = 2
@@ -80,13 +90,58 @@ def _despace(text: str) -> str:
     return re.sub(r"\b(?:\w ){2,}\w\b", lambda m: m.group().replace(" ", ""), text)
 
 
-def scan(text: str) -> tuple[int, list[str]]:
+B64_RUN = re.compile(r"[A-Za-z0-9+/]{16,}={0,2}")
+HEX_RUN = re.compile(r"\b(?:[0-9a-fA-F]{2}){10,}\b")
+
+
+def _readable(raw: bytes) -> str | None:
+    """Decoded bytes count only if they read as text (a hash or a signature decodes to noise)."""
+    try:
+        text = raw.decode("utf-8")
+    except UnicodeDecodeError:
+        return None
+    printable = sum(ch.isprintable() for ch in text) / max(len(text), 1)
+    return text if printable > 0.95 and " " in text else None
+
+
+def decoded_payloads(text: str) -> list[str]:
+    """Base64, hex and URL-encoded runs decoded to text (H01: an instruction hidden in base64)."""
+    out = []
+    for m in B64_RUN.finditer(text):
+        run = m.group()
+        try:
+            dec = _readable(base64.b64decode(run + "=" * (-len(run) % 4), validate=True))
+        except (binascii.Error, ValueError):
+            dec = None
+        if dec:
+            out.append(dec)
+    for m in HEX_RUN.finditer(text):
+        dec = _readable(bytes.fromhex(m.group()))
+        if dec:
+            out.append(dec)
+    if "%" in text:
+        unq = urllib.parse.unquote(text)
+        if unq != text:
+            out.append(unq)
+    return out
+
+
+def _rule_hits(variants: set[str]) -> tuple[int, list[str]]:
     score, reasons = 0, []
-    variants = {text, _despace(text)}
     for name, weight, rx in RULES:
         if any(rx.search(v) for v in variants):
             score += weight
             reasons.append(name)
+    return score, reasons
+
+
+def scan(text: str) -> tuple[int, list[str]]:
+    score, reasons = _rule_hits({text, _despace(text)})
+    # an instruction someone bothered to encode is an attack even at weight 1
+    enc_score, enc_reasons = _rule_hits(set(decoded_payloads(text)))
+    if enc_reasons:
+        score += max(enc_score, BLOCK_SCORE)
+        reasons += [f"encoded:{r}" for r in enc_reasons]
     return score, reasons
 
 

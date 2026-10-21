@@ -62,23 +62,26 @@ def input_eval(use_guardian: bool) -> dict:
         run(b["id"], (ATT / f"{b['id']}.md").read_text(), "tricky_benign")
     for p in sorted((ROOT / "bench" / "docs").glob("*.md")):
         run(p.stem, p.read_text(), "benchmark")
-    for a in MANIFEST["heldout_attacks"]:
-        run(a["id"], (ATT / f"{a['id']}.md").read_text(), "heldout_attack:" + a["technique"])
-    for b in MANIFEST["heldout_benign"]:
-        run(b["id"], (ATT / f"{b['id']}.md").read_text(), "heldout_benign")
+    for set_name in ("heldout", "heldout2"):
+        for a in MANIFEST.get(f"{set_name}_attacks", []):
+            run(a["id"], (ATT / f"{a['id']}.md").read_text(), f"{set_name}_attack:" + a["technique"])
+        for b in MANIFEST.get(f"{set_name}_benign", []):
+            run(b["id"], (ATT / f"{b['id']}.md").read_text(), f"{set_name}_benign")
 
-    held = [r for r in rows if r["kind"].startswith("heldout")]
+    def held_stats(set_name: str) -> dict:
+        h_att = [r for r in rows if r["kind"].startswith(f"{set_name}_attack")]
+        h_ben = [r for r in rows if r["kind"] == f"{set_name}_benign"]
+        return {
+            "attacks": len(h_att), "blocked": sum(r["action"] == "block" for r in h_att),
+            "blocked_by_rules": sum(r["rule_action"] == "block" for r in h_att),
+            "grey_by_rules": sum(r["rule_action"] == "grey" for r in h_att),
+            "benign": len(h_ben), "false_blocks": sum(r["action"] == "block" for r in h_ben),
+            "missed": [r["id"] + ":" + r["kind"].split(":")[1] for r in h_att if r["action"] != "block"],
+            "false_blocked": [r["id"] for r in h_ben if r["action"] == "block"],
+        }
+
+    heldout, heldout2 = held_stats("heldout"), held_stats("heldout2")
     rows_all, rows = rows, [r for r in rows if not r["kind"].startswith("heldout")]
-    h_att = [r for r in held if r["kind"].startswith("heldout_attack")]
-    h_ben = [r for r in held if r["kind"] == "heldout_benign"]
-    heldout = {
-        "attacks": len(h_att), "blocked": sum(r["action"] == "block" for r in h_att),
-        "blocked_by_rules": sum(r["rule_action"] == "block" for r in h_att),
-        "grey_by_rules": sum(r["rule_action"] == "grey" for r in h_att),
-        "benign": len(h_ben), "false_blocks": sum(r["action"] == "block" for r in h_ben),
-        "missed": [r["id"] + ":" + r["kind"].split(":")[1] for r in h_att if r["action"] != "block"],
-        "false_blocked": [r["id"] for r in h_ben if r["action"] == "block"],
-    }
 
     attacks = [r for r in rows if r["kind"].startswith("attack")]
     benign = [r for r in rows if not r["kind"].startswith("attack")]
@@ -95,6 +98,7 @@ def input_eval(use_guardian: bool) -> dict:
         "missed_attacks": [r["id"] + ":" + r["kind"] for r in attacks if r["action"] != "block"],
         "false_blocked": [r["id"] for r in benign if r["action"] == "block"],
         "heldout": heldout,
+        "heldout2": heldout2,
         "rows": rows_all,
     }
 
@@ -195,20 +199,22 @@ def output_eval() -> dict:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--guardian", action="store_true", help="send grey-zone docs to the Guardian LLM")
+    ap.add_argument("--guardian", action="store_true", help="also run the Guardian LLM on every doc the rules pass")
+    ap.add_argument("--label", default="", help="suffix for the result file, e.g. before_fix")
     args = ap.parse_args()
     res = {"input": input_eval(args.guardian), "pii": pii_eval(), "message": message_eval(), "output": output_eval()}
-    name = f"security{'.guardian' if args.guardian else ''}.json"
+    name = f"security{'.guardian' if args.guardian else ''}{'.' + args.label if args.label else ''}.json"
     (OUT / name).write_text(json.dumps(res, indent=2, ensure_ascii=False))
     i, p, m, o = res["input"], res["pii"], res["message"], res["output"]
     print(f"input : {i['blocked_final']}/{i['attacks']} attacks blocked ({i['blocked_by_rules']} by rules, "
           f"{i['grey_by_rules']} grey), {i['false_blocks']}/{i['benign_docs']} benign falsely blocked "
           f"({i['benign_grey_by_rules']} benign grey)")
     print(f"        missed: {i['missed_attacks']}  false: {i['false_blocked']}")
-    h = i["heldout"]
-    print(f"held-out: {h['blocked']}/{h['attacks']} attacks blocked ({h['blocked_by_rules']} by rules, "
-          f"{h['grey_by_rules']} grey), {h['false_blocks']}/{h['benign']} benign falsely blocked; "
-          f"missed {h['missed']} false {h['false_blocked']}")
+    for name in ("heldout", "heldout2"):
+        h = i[name]
+        print(f"{name}: {h['blocked']}/{h['attacks']} attacks blocked ({h['blocked_by_rules']} by rules, "
+              f"{h['grey_by_rules']} grey), {h['false_blocks']}/{h['benign']} benign falsely blocked; "
+              f"missed {h['missed']} false {h['false_blocked']}")
     print(f"pii   : {p['masked']}/{p['planted']} planted masked, {p['decoys_masked']}/{p['decoys']} decoys masked, "
           f"benchmark docs with masks: {p['benchmark_docs_with_masks']}; missed {p['missed']}")
     print(f"msg   : {m['poisoned_blocked']}/{m['poisoned']} poisoned blocked, {m['false_drops']}/{m['real_messages']} "
