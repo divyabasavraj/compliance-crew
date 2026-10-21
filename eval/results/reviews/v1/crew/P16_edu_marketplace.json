@@ -1,0 +1,106 @@
+{
+  "system": "crew",
+  "doc_id": "P16_edu_marketplace",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature states that 'The course fee is paid by the lender directly into the training institute's bank account.' This directly contravenes RBI's requirement that disbursement of loan by the RE shall always be made into the bank account of the borrower, except for disbursals covered exclusively under statutory or regulatory mandate, flow of money between REs for co-lending transactions, and disbursals for specific end use, provided the loan is disbursed directly into the bank account of the end-beneficiary. The training institute's bank account is a third-party account, and the disbursement is made to it, which is not allowed unless it is a specific end use and the end-beneficiary's account.",
+      "doc_evidence": "The course fee is paid by the lender directly into the training institute's bank account.",
+      "severity": "high",
+      "fix": "Modify the disbursement process to ensure that loan funds are directly disbursed into the borrower's bank account. If disbursement to the training institute is required, ensure it is under a specific end-use scenario and that the end-beneficiary's account is used.",
+      "verifier_note": "The product feature describes disbursing the loan directly into the training institute's bank account, which is considered a third-party account. According to the RBI paragraph, disbursement should always be made into the borrower's bank account, except for specific exceptions such as statutory mandates, co-lending transactions, or specific end use where the loan is disbursed directly into the end-beneficiary's account. The feature does not establish that the training institute is the end-beneficiary or that this disbursement falls under any of the allowed exceptions. Therefore, the feature violates the RBI requirement."
+    },
+    {
+      "feature": "Offer Display",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The feature does not include a link to the KFS in respect of each of the RE.",
+      "doc_evidence": "Each offer shows the lender's name, loan amount, tenor, APR, monthly instalment and penal charges.",
+      "severity": "medium",
+      "fix": "Integrate a link to the KFS (Know Your Customer File) for each RE in the offer display section to ensure transparency and compliance with RBI guidelines.",
+      "verifier_note": "The RBI paragraph explicitly requires that a link to the KFS be provided in respect of each of the RE. The product feature does not mention providing such a link, which constitutes a violation of the requirement."
+    },
+    {
+      "feature": "Matching",
+      "rule_id": "DLD2025:6(ii)",
+      "issue": "The feature text states: 'Borrowers with the same profile may see different lenders on different days, and the rules are not written down anywhere.' This directly violates the requirement that the mechanism adopted by the LSP and any subsequent changes to this mechanism shall be properly documented.",
+      "doc_evidence": "Borrowers with the same profile may see different lenders on different days, and the rules are not written down anywhere.",
+      "severity": "high",
+      "fix": "Document the matching mechanism in detail, including the rules and logic used to determine which lenders are shown to borrowers, and ensure that these rules are updated and maintained in line with regulatory requirements.",
+      "verifier_note": "The product feature describes a mechanism where the sales team adjusts rules weekly, and the rules are not written down. This directly contradicts the RBI requirement that the mechanism and any changes must be properly documented. The feature does not meet the documentation requirement, hence it violates the regulation."
+    },
+    {
+      "feature": "Product",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The feature does not provide the digital view of loan offers with the name(s) of the RE(s) extending the loan offer, amount and tenor of loan, APR, monthly repayment obligation and penal charges (if applicable), in a way which enables the borrower to make a fair comparison between various offers. A link to the KFS shall also be provided in respect of each of the RE.",
+      "doc_evidence": "Learners choose a course and see loan offers from partner lenders for the course fee, ₹20,000 to ₹3,00,000.",
+      "severity": "high",
+      "fix": "Update the product display to include all required details such as RE name, loan amount, tenor, APR, monthly repayment, and penal charges, along with a link to the KFS for each RE, to enable fair comparison for borrowers.",
+      "verifier_note": "The product feature does not explicitly mention providing the name(s) of the RE(s), amount and tenor of loan, APR, monthly repayment obligation, penal charges (if applicable), or a link to the KFS as required by the RBI paragraph. Therefore, the feature does not comply with the requirements specified in the paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature states that 'The course fee is paid by the lender directly into the training institute's bank account.' This directly contravenes RBI's requirement that disbursement of loan by the RE shall always be made into the bank account of the borrower, except for disbursals covered exclusively under statutory or regulatory mandate, flow of money between REs for co-lending transactions, and disbursals for specific end use, provided the loan is disbursed directly into the bank account of the end-beneficiary. The training institute's bank account is a third-party account, and the disbursement is made to it, which is not allowed unless it is a specific end use and the end-beneficiary's account.",
+      "doc_evidence": "The course fee is paid by the lender directly into the training institute's bank account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes disbursing the loan directly into the training institute's bank account, which is considered a third-party account. According to the RBI paragraph, disbursement should always be made into the borrower's bank account, except for specific exceptions such as statutory mandates, co-lending transactions, or specific end use where the loan is disbursed directly into the end-beneficiary's account. The feature does not establish that the training institute is the end-beneficiary or that this disbursement falls under any of the allowed exceptions. Therefore, the feature violates the RBI requirement."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "doc_evidence": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that all data be stored only in servers located within India. The product feature states that data is stored on its own servers, which implies the servers are located in India. However, the feature also mentions that data is stored for three years, which is not explicitly addressed in the RBI paragraph. The paragraph does not prohibit storing data for a certain period, so the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Offer Display",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The feature does not include a link to the KFS in respect of each of the RE.",
+      "doc_evidence": "Each offer shows the lender's name, loan amount, tenor, APR, monthly instalment and penal charges.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires that a link to the KFS be provided in respect of each of the RE. The product feature does not mention providing such a link, which constitutes a violation of the requirement."
+    },
+    {
+      "feature": "Matching",
+      "rule_id": "DLD2025:6(ii)",
+      "issue": "The feature text states: 'Borrowers with the same profile may see different lenders on different days, and the rules are not written down anywhere.' This directly violates the requirement that the mechanism adopted by the LSP and any subsequent changes to this mechanism shall be properly documented.",
+      "doc_evidence": "Borrowers with the same profile may see different lenders on different days, and the rules are not written down anywhere.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a mechanism where the sales team adjusts rules weekly, and the rules are not written down. This directly contradicts the RBI requirement that the mechanism and any changes must be properly documented. The feature does not meet the documentation requirement, hence it violates the regulation."
+    },
+    {
+      "feature": "Product",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The feature does not provide the digital view of loan offers with the name(s) of the RE(s) extending the loan offer, amount and tenor of loan, APR, monthly repayment obligation and penal charges (if applicable), in a way which enables the borrower to make a fair comparison between various offers. A link to the KFS shall also be provided in respect of each of the RE.",
+      "doc_evidence": "Learners choose a course and see loan offers from partner lenders for the course fee, ₹20,000 to ₹3,00,000.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature does not explicitly mention providing the name(s) of the RE(s), amount and tenor of loan, APR, monthly repayment obligation, penal charges (if applicable), or a link to the KFS as required by the RBI paragraph. Therefore, the feature does not comply with the requirements specified in the paragraph."
+    }
+  ],
+  "summary": "The compliance review of the SkillLoan product, a marketplace for course loans, identified several gaps against the reviewed RBI rules. The key findings include: (1) A high-risk violation of DLD2025:9(i) where loan disbursement is made directly into the training institute's bank account instead of the borrower's account, which is not permitted unless it is a specific end use. (2) A medium-risk issue under DLD2025:6(iii) where there is no link to the KFS for each RE. (3) High-risk violations under DLD2025:6(ii) and DLD2025:6(iii) regarding the lack of proper documentation of the loan matching mechanism and the absence of a digital view of loan offers with necessary details for borrower comparison, along with missing KFS links. These findings highlight significant non-compliance with RBI regulations.",
+  "trace": {
+    "llm_calls": 18,
+    "prompt_tokens": 8364,
+    "output_tokens": 1882,
+    "llm_seconds": 173.2,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 5,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 25
+  },
+  "seconds": 174.2
+}

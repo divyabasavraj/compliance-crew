@@ -1,0 +1,115 @@
+{
+  "system": "crew",
+  "doc_id": "P05_facefin_biometric",
+  "findings": [
+    {
+      "feature": "Authentication and Biometric Data",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "The feature 'Face login: To make login fast and secure, FaceFin stores each customer's face template and fingerprint data on its servers and uses them for every login and loan approval' [doc_evidence] violates the requirement that RE shall ensure no biometric data is stored/collected by the RE and LSP, unless allowed under extant statutory guidelines.",
+      "doc_evidence": "Face login: To make login fast and secure, FaceFin stores each customer's face template and fingerprint data on its servers and uses them for every login and loan approval.",
+      "severity": "high",
+      "fix": "Stop storing biometric data on servers and ensure that biometric data is processed and stored in compliance with statutory guidelines. Implement a secure, encrypted method for biometric data processing without storing it on servers.",
+      "verifier_note": "The product feature explicitly states that FaceFin stores each customer's face template and fingerprint data on its servers, which is biometric data. The RBI paragraph [DLD2025:13(iii)] prohibits the storage or collection of biometric data by the RE and LSP unless allowed under extant statutory guidelines. Since the feature does not mention compliance with statutory guidelines and directly involves storing biometric data, it violates the requirement."
+    },
+    {
+      "feature": "Data Hosting and Jurisdiction",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The feature 'Data hosting: Our analytics and core lending systems run on a cloud provider's Singapore data centre, chosen for lower cost. A copy of the data is synced to India every quarter.' violates the requirement that all data must be stored only in servers located within India. The data is stored in Singapore, which is outside India, and although a copy is synced to India every quarter, the primary storage is outside India, which is not compliant with the regulation.",
+      "doc_evidence": "Data hosting: Our analytics and core lending systems run on a cloud provider's Singapore data centre, chosen for lower cost. A copy of the data is synced to India every quarter.",
+      "severity": "high",
+      "fix": "Move all data storage to servers located within India. Ensure that any data processed outside India is deleted from foreign servers within 24 hours and brought back to India for storage.",
+      "verifier_note": "The RBI paragraph requires that all data must be stored only in servers located within India. The product feature states that the analytics and core lending systems run on a cloud provider's Singapore data centre, which is outside India. Although a copy of the data is synced to India every quarter, the primary storage is in Singapore, which violates the requirement that all data must be stored only in India. The feature does not ensure that data is stored only in India, and the paragraph explicitly forbids storing data outside India. Therefore, the feature violates the regulation."
+    },
+    {
+      "feature": "Privacy Policy and Data Practices",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The feature does not provide the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data and if required, make the RE/LSP delete/ forget the data.",
+      "doc_evidence": "5. Privacy policy: A full privacy policy is published on the website and in the app, listing the third parties that collect data through the app and the data storage, retention and destruction rules.",
+      "severity": "medium",
+      "fix": "Revise the privacy policy to include clear options for borrowers to give or deny consent for data usage, restrict data sharing, manage data retention, and revoke consent. Ensure the policy is updated and easily accessible to all borrowers.",
+      "verifier_note": "The product feature provides a privacy policy that lists third parties and data retention rules, but it does not explicitly give the borrower an option to give or deny consent for specific data, restrict disclosure, revoke consent, or request deletion. The RBI paragraph requires these specific options to be provided to the borrower, which the feature does not fulfill."
+    },
+    {
+      "feature": "Privacy Policy and Data Practices",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The feature does not specify that all data is stored only in servers located within India, while ensuring compliance with statutory obligations/ regulatory instructions. Further, in case the data is processed outside India, the same shall be deleted from servers outside India and brought back to India within 24 hours of processing.",
+      "doc_evidence": "5. Privacy policy: A full privacy policy is published on the website and in the app, listing the third parties that collect data through the app and the data storage, retention and destruction rules.",
+      "severity": "high",
+      "fix": "Update the privacy policy to explicitly state that all data is stored only in India. Implement a process to delete data from foreign servers within 24 hours of processing and ensure it is brought back to India for storage.",
+      "verifier_note": "The product feature mentions a privacy policy that includes data storage, retention, and destruction rules, but it does not explicitly state that all data is stored only in servers located within India or specify the 24-hour deletion and repatriation requirement for data processed outside India. The paragraph requires specific actions that are not clearly addressed in the feature."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Authentication and Biometric Data",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "The feature 'Face login: To make login fast and secure, FaceFin stores each customer's face template and fingerprint data on its servers and uses them for every login and loan approval' [doc_evidence] violates the requirement that RE shall ensure no biometric data is stored/collected by the RE and LSP, unless allowed under extant statutory guidelines.",
+      "doc_evidence": "Face login: To make login fast and secure, FaceFin stores each customer's face template and fingerprint data on its servers and uses them for every login and loan approval.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that FaceFin stores each customer's face template and fingerprint data on its servers, which is biometric data. The RBI paragraph [DLD2025:13(iii)] prohibits the storage or collection of biometric data by the RE and LSP unless allowed under extant statutory guidelines. Since the feature does not mention compliance with statutory guidelines and directly involves storing biometric data, it violates the requirement."
+    },
+    {
+      "feature": "Data Hosting and Jurisdiction",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The feature 'Data hosting: Our analytics and core lending systems run on a cloud provider's Singapore data centre, chosen for lower cost. A copy of the data is synced to India every quarter.' violates the requirement that all data must be stored only in servers located within India. The data is stored in Singapore, which is outside India, and although a copy is synced to India every quarter, the primary storage is outside India, which is not compliant with the regulation.",
+      "doc_evidence": "Data hosting: Our analytics and core lending systems run on a cloud provider's Singapore data centre, chosen for lower cost. A copy of the data is synced to India every quarter.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that all data must be stored only in servers located within India. The product feature states that the analytics and core lending systems run on a cloud provider's Singapore data centre, which is outside India. Although a copy of the data is synced to India every quarter, the primary storage is in Singapore, which violates the requirement that all data must be stored only in India. The feature does not ensure that data is stored only in India, and the paragraph explicitly forbids storing data outside India. Therefore, the feature violates the regulation."
+    },
+    {
+      "feature": "Data Consent and Control",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The feature 'Consent controls: In the Privacy Centre, borrowers can switch off consent for specific data uses, block sharing with third parties, choose how long data is kept, withdraw consent, and request deletion of their data.' does not explicitly mention the requirement to 'make the RE/LSP delete/forget the data' as mandated by [DLD2025:12(ii)].",
+      "doc_evidence": "Consent controls: In the Privacy Centre, borrowers can switch off consent for specific data uses, block sharing with third parties, choose how long data is kept, withdraw consent, and request deletion of their data.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly includes the ability to 'request deletion of their data', which aligns with the requirement in [DLD2025:12(ii)] to 'make the RE/LSP delete/forget the data'. The feature meets the requirement, so the claim of violation is not valid."
+    },
+    {
+      "feature": "Privacy Policy and Data Practices",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The feature does not provide the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data and if required, make the RE/LSP delete/ forget the data.",
+      "doc_evidence": "5. Privacy policy: A full privacy policy is published on the website and in the app, listing the third parties that collect data through the app and the data storage, retention and destruction rules.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature provides a privacy policy that lists third parties and data retention rules, but it does not explicitly give the borrower an option to give or deny consent for specific data, restrict disclosure, revoke consent, or request deletion. The RBI paragraph requires these specific options to be provided to the borrower, which the feature does not fulfill."
+    },
+    {
+      "feature": "Privacy Policy and Data Practices",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The feature does not specify that all data is stored only in servers located within India, while ensuring compliance with statutory obligations/ regulatory instructions. Further, in case the data is processed outside India, the same shall be deleted from servers outside India and brought back to India within 24 hours of processing.",
+      "doc_evidence": "5. Privacy policy: A full privacy policy is published on the website and in the app, listing the third parties that collect data through the app and the data storage, retention and destruction rules.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature mentions a privacy policy that includes data storage, retention, and destruction rules, but it does not explicitly state that all data is stored only in servers located within India or specify the 24-hour deletion and repatriation requirement for data processed outside India. The paragraph requires specific actions that are not clearly addressed in the feature."
+    },
+    {
+      "feature": "Creditworthiness Assessment",
+      "rule_id": "DLD2025:7(i)",
+      "issue": "The feature 'Creditworthiness: Before every loan we collect and keep on record the borrower's age, occupation, employer and monthly income from salary slips.' does not comply with [DLD2025:7(i)], which requires RE to obtain the necessary information relating to the economic profile of the borrower, including at a minimum, age, occupation and income details. The feature includes additional information (employer) which is not explicitly required by the regulation, but the feature does not clearly break the requirement. However, the feature does not explicitly state that the information is kept on record for audit purposes, which is a mandatory requirement under [DLD2025:7(i)].",
+      "doc_evidence": "Creditworthiness: Before every loan we collect and keep on record the borrower's age, occupation, employer and monthly income from salary slips.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature collects age, occupation, and income details (which are required by the regulation), and it also keeps the information on record. The regulation does not prohibit collecting additional information beyond the minimum requirements. The feature does not explicitly state that the information is kept on record for audit purposes, but the regulation requires that the information be kept on record for audit purposes, not necessarily that the purpose be explicitly stated in the feature. The feature does comply with the requirement to keep the information on record, even if the purpose is not explicitly mentioned. Therefore, the feature does not violate the regulation."
+    }
+  ],
+  "summary": "The compliance review of the product 'FaceFin: One-Look Personal Loans' identified several gaps against the reviewed RBI rules. The key findings include: (1) The storage of biometric data (face and fingerprint) on the RE's servers violates the requirement to not collect or store biometric data unless permitted by statutory guidelines. (2) The use of a Singapore-based cloud provider for data hosting, with only quarterly synchronization to India, violates the rule that all data must be stored exclusively in India. (3) The product lacks mechanisms for borrowers to manage their data consent, including granting, restricting, revoking, or deleting data. (4) The product does not explicitly state that data stored outside India must be deleted and brought back within 24 hours of processing. These findings indicate significant non-compliance with RBI regulations.",
+  "trace": {
+    "llm_calls": 21,
+    "prompt_tokens": 11352,
+    "output_tokens": 2418,
+    "llm_seconds": 220.8,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 6,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 30
+  },
+  "seconds": 222.5
+}

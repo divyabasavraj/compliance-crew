@@ -1,0 +1,63 @@
+{
+  "system": "single",
+  "doc_id": "P06_shopease_checkout",
+  "findings": [
+    {
+      "feature": "Credit bureau reporting",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "Failure to report all lending done through DLAs and/or DLAs of LSPs to CICs, including small, short-term deferred payments.",
+      "doc_evidence": "Because these are small, short-term deferred payments, Coastal Finance does not report them to credit information companies. Only loans above ₹25,000 or longer than 6 months are reported.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Fees",
+      "rule_id": "KFS2024:8",
+      "issue": "Charging fees not mentioned in the KFS without explicit consent of the borrower.",
+      "doc_evidence": "ShopEase later plans to add a monthly 'account maintenance fee' of ₹49 for active users; this is not in the KFS and will be added to the bill automatically.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Marketing",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "Use of misleading or deceptive language in marketing, including claiming RBI approval for a DLG arrangement.",
+      "doc_evidence": "App store listing and ads say: 'ShopEase PayLater: an RBI-approved credit app.'",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data sharing",
+      "rule_id": "DLD2025:16(ii)",
+      "issue": "Sharing of borrower data with advertising partners without explicit consent, which may violate outsourcing guidelines and CIC reporting requirements.",
+      "doc_evidence": "Purchase and repayment history is shared with ShopEase's advertising partners to show personalised offers. Users are not asked separately; this is covered by accepting the app's terms of use.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Cooling-off",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "Failure to disclose a one-time processing fee for exiting the loan during the cooling-off period, if applicable.",
+      "doc_evidence": "Shoppers who change their mind can cancel within 2 days of purchase by paying back the principal with no extra charge.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2861,
+    "output_tokens": 513,
+    "llm_seconds": 48.0,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 48.3
+}

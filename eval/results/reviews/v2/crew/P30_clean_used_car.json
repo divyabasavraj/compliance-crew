@@ -1,0 +1,222 @@
+{
+  "system": "crew",
+  "doc_id": "P30_clean_used_car",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "doc_evidence": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "severity": "medium",
+      "fix": "Ensure that the loan is disbursed directly into the borrower's account, not the dealer's, to prevent misuse of funds and ensure transparency in the disbursement process.",
+      "verifier_note": "The RBI paragraph explicitly prohibits disbursal to a third-party account, including the accounts of LSP, except as provided for. The product feature describes disbursal to the dealer's bank account, which is a third-party account. The feature does not mention any exception or statutory/regulatory mandate that would justify this action. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The feature does not specify what data is stored beyond stating that data is stored on servers in India. The paragraph requires that LSPs do not store personal information of the borrower except for some basic minimal data (name, address, contact details, etc.). The feature does not specify the type of data stored, so there is a potential compliance gap.",
+      "doc_evidence": "Data is stored on servers in India.",
+      "severity": "high",
+      "fix": "Specify the exact type of data stored (e.g., name, address, contact details, PAN, etc.) and ensure that only minimal personal data is stored, in compliance with RBI guidelines.",
+      "verifier_note": "The product feature states that data is stored on servers in India, but it does not specify the type of data stored. The RBI paragraph explicitly requires that LSPs may only store basic minimal data (name, address, contact details, etc.) and prohibits storing personal information beyond that. Since the feature does not specify the type of data stored, it fails to meet the requirement of the paragraph, creating a potential compliance gap."
+    },
+    {
+      "feature": "Credit bureau reporting",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature states that 'nodal grievance officers of both companies are named on both websites, in the app and in the KFS.' This complies with the requirement to 'prominently display contact details of the nodal grievance redressal officers' on the websites of the RE, its LSP, and on the DLA, as well as in the KFS provided to the borrower.",
+      "doc_evidence": "nodal grievance officers of both companies are named on both websites, in the app and in the KFS",
+      "severity": "low",
+      "fix": "Verify that the nodal grievance officers' contact details are clearly and prominently displayed on all required platforms, including the KFS, to ensure compliance with RBI regulations.",
+      "verifier_note": "The product feature mentions that 'nodal grievance officers of both companies are named on both websites, in the app and in the KFS.' The RBI paragraph requires that contact details of the nodal grievance redressal officers be 'prominently displayed' on the websites of the RE, its LSP, and on the DLA, as well as in the KFS. The product feature does not explicitly mention 'contact details' (such as phone numbers, email addresses, etc.) and instead only mentions the names of the officers. The paragraph requires the display of contact details, not just names. Therefore, the feature does not fully comply with the requirement."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:26(ii)",
+      "issue": "The tenor of the DLG agreement is not explicitly stated to be at least the longest tenor of the loan in the underlying loan portfolio. The product feature does not mention the invocation of DLG or its duration in relation to the loan tenor.",
+      "doc_evidence": "Loans of ₹1,50,000 to ₹10,00,000 for certified used cars, tenor 1 to 6 years.",
+      "severity": "high",
+      "fix": "Explicitly state the duration of the DLG agreement and ensure it is at least as long as the longest tenor of the loan in the underlying portfolio, in line with RBI requirements.",
+      "verifier_note": "The RBI paragraph requires that the DLG agreement's duration must be at least as long as the longest tenor of the loans in the underlying portfolio. The product feature specifies loan tenors of 1 to 6 years but does not explicitly state that the DLG agreement's duration meets this requirement. Since the feature does not mention the invocation of DLG or its duration in relation to the loan tenor, it fails to comply with the requirement in the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "doc_evidence": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits disbursal to a third-party account, including the accounts of LSP, except as provided for. The product feature describes disbursal to the dealer's bank account, which is a third-party account. The feature does not mention any exception or statutory/regulatory mandate that would justify this action. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The feature states that the Default loss guarantee (DLG) is invoked within 90 days overdue, which is less than the maximum overdue period of 120 days required by [DLD2025:26(i)].",
+      "doc_evidence": "invoked within 90 days overdue",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:26(i)] requires that the DLG be invoked within a maximum overdue period of 120 days, unless the loan dues are made good by the borrower before that. The product feature states that the DLG is invoked within 90 days overdue, which is less than the 120-day maximum allowed by the RBI paragraph. Therefore, the feature complies with the requirement and does not violate it."
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:22(i)",
+      "issue": "The feature mentions that the DLG is provided as cash deposited with Pench Bank, which is one of the acceptable forms of DLG as per [DLD2025:22(i)], but the feature does not explicitly state that the cash is deposited with the RE (Pench Bank) as required. However, since the cash is deposited with Pench Bank, which is the RE, this may be compliant. No violation is found here.",
+      "doc_evidence": "provides a DLG of 5% of each portfolio as cash deposited with Pench Bank",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:22(i)] specifies that RE shall accept DLG only in the form of 'Cash deposited with the RE' or 'Fixed Deposit maintained with a Scheduled Commercial Bank with a lien marked in favour of the RE' or 'Bank Guarantee in favour of the RE'. The product feature states that the DLG is provided as 'cash deposited with Pench Bank', which is identified as the RE. Since the cash is deposited with the RE (Pench Bank), it satisfies the requirement of 'Cash deposited with the RE'. The feature does not need to explicitly state that the cash is deposited with the RE if it is clear from context that Pench Bank is the RE. Therefore, the feature complies with the RBI paragraph."
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The feature states that the DLG is 5% of each portfolio, which is in line with the cap of 5% of the total amount disbursed as per [DLD2025:23(i)].",
+      "doc_evidence": "provides a DLG of 5% of each portfolio",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:23(i)] specifies that the total amount of DLG cover on any outstanding portfolio shall not exceed five per cent of the total amount disbursed out of that loan portfolio at any given time. The product feature states that the DLG is 5% of each portfolio, which aligns with the cap of 5% of the total amount disbursed. The feature does not exceed the cap and complies with the requirement. The claim that this is a violation is therefore false."
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:26(ii)",
+      "issue": "The feature states that the DLG runs for 7 years, which is longer than any loan in the portfolio. This complies with [DLD2025:26(ii)], which requires the DLG agreement to remain in force for a period not less than the longest tenor of the loan in the underlying loan portfolio.",
+      "doc_evidence": "The DLG runs for 7 years, longer than any loan in the portfolio.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:26(ii)] requires the DLG agreement to remain in force for a period not less than the longest tenor of the loan in the underlying loan portfolio. The product feature states that the DLG runs for 7 years, which is longer than any loan in the portfolio. This satisfies the requirement of the RBI paragraph, as the DLG period is not less than the longest tenor of the loan. Therefore, the feature complies with the paragraph."
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature does not mention how the loan is disbursed. However, since the product is a used-car loan through dealers, it is possible that the loan is disbursed to the dealer's account, which may violate [DLD2025:9(i)] that requires the loan to be disbursed into the borrower's bank account. However, the feature does not explicitly state that the loan is disbursed to a third-party account, so no violation is found here.",
+      "doc_evidence": "Default loss guarantee: CarKey Mobility, a company under the Companies Act, 2013, provides a DLG of 5% of each portfolio as cash deposited with Pench Bank, invoked within 90 days overdue, under a Board-approved policy.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph [DLD2025:9(i)] explicitly prohibits disbursement to third-party accounts, including the accounts of LSPs, except for specific exceptions. The product feature does not mention how the loan is disbursed. Since the feature does not state that the loan is disbursed to a third-party account, and the claim relies on an assumption not stated in the feature, there is no explicit violation. However, the claim's assumption that the loan may be disbursed to the dealer's account is not confirmed by the feature, and thus the claim cannot be confirmed as a violation based on the provided information."
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The feature states that data is stored on servers in India, which complies with the requirement. However, the paragraph also mentions that if data is processed outside India, it must be deleted from servers outside India and brought back to India within 24 hours of processing. The feature does not mention any data processing outside India, so there is no violation.",
+      "doc_evidence": "Data is stored on servers in India.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that data is stored on servers in India, which complies with the requirement in the RBI paragraph. The paragraph also mentions that if data is processed outside India, it must be deleted and brought back within 24 hours. However, the feature does not mention any data processing outside India. Since the feature does not process data outside India, there is no violation. The claim is based on the absence of data processing outside India, which is not mentioned in the feature, and therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The feature mentions one-time camera and location access during onboarding for KYC and address checks with consent, which is in line with the requirement for one-time access for on-boarding/KYC purposes. However, the paragraph also specifies that the DLA should not access mobile phone resources like file and media, contact list, call logs, telephony functions, etc. The feature does not mention any access to these resources, so there is no violation.",
+      "doc_evidence": "One-time camera and location access during onboarding for KYC and address checks, with consent.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the RBI paragraph. The feature mentions one-time camera and location access during onboarding for KYC and address checks with consent, which is explicitly allowed by the paragraph. The paragraph prohibits access to mobile phone resources like file and media, contact list, call logs, telephony functions, etc., and the feature does not mention any access to these resources. Therefore, there is no violation."
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The feature does not specify what data is stored beyond stating that data is stored on servers in India. The paragraph requires that LSPs do not store personal information of the borrower except for some basic minimal data (name, address, contact details, etc.). The feature does not specify the type of data stored, so there is a potential compliance gap.",
+      "doc_evidence": "Data is stored on servers in India.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that data is stored on servers in India, but it does not specify the type of data stored. The RBI paragraph explicitly requires that LSPs may only store basic minimal data (name, address, contact details, etc.) and prohibits storing personal information beyond that. Since the feature does not specify the type of data stored, it fails to meet the requirement of the paragraph, creating a potential compliance gap."
+    },
+    {
+      "feature": "Credit bureau reporting",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature states that 'nodal grievance officers of both companies are named on both websites, in the app and in the KFS.' This complies with the requirement to 'prominently display contact details of the nodal grievance redressal officers' on the websites of the RE, its LSP, and on the DLA, as well as in the KFS provided to the borrower.",
+      "doc_evidence": "nodal grievance officers of both companies are named on both websites, in the app and in the KFS",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature mentions that 'nodal grievance officers of both companies are named on both websites, in the app and in the KFS.' The RBI paragraph requires that contact details of the nodal grievance redressal officers be 'prominently displayed' on the websites of the RE, its LSP, and on the DLA, as well as in the KFS. The product feature does not explicitly mention 'contact details' (such as phone numbers, email addresses, etc.) and instead only mentions the names of the officers. The paragraph requires the display of contact details, not just names. Therefore, the feature does not fully comply with the requirement."
+    },
+    {
+      "feature": "Credit bureau reporting",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "The product feature states that 'All loans are reported to CICs.' This complies with the requirement that RE shall ensure that any lending done through their DLAs and/or DLAs of LSPs is reported by them to CICs irrespective of its nature/tenor.",
+      "doc_evidence": "All loans are reported to CICs",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that 'All loans are reported to CICs,' which aligns with the RBI paragraph's requirement that RE shall ensure any lending through DLAs and/or DLAs of LSPs is reported to CICs irrespective of its nature/tenor. The feature does not contradict the paragraph and complies with the requirement. The paragraph does not prohibit reporting all loans to CICs, and the feature does not mention anything that would violate the paragraph."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:26(ii)",
+      "issue": "The tenor of the DLG agreement is not explicitly stated to be at least the longest tenor of the loan in the underlying loan portfolio. The product feature does not mention the invocation of DLG or its duration in relation to the loan tenor.",
+      "doc_evidence": "Loans of ₹1,50,000 to ₹10,00,000 for certified used cars, tenor 1 to 6 years.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the DLG agreement's duration must be at least as long as the longest tenor of the loans in the underlying portfolio. The product feature specifies loan tenors of 1 to 6 years but does not explicitly state that the DLG agreement's duration meets this requirement. Since the feature does not mention the invocation of DLG or its duration in relation to the loan tenor, it fails to comply with the requirement in the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the CarKey product, which facilitates Used-Car Loans Through Dealers, identified several findings against the reviewed RBI rules. The key findings include: (1) A medium risk finding related to the direct payment of the loan into the dealer's bank account, which may not align with the requirement for loan disbursement to the borrower. (2) A high risk finding regarding the lack of specificity in data storage details, which may lead to a potential compliance gap with the requirement to store only minimal personal information. (3) A high risk finding concerning the absence of explicit mention of the DLG agreement's tenor in relation to the loan tenor, which may not meet the regulatory requirement. The low risk finding related to the display of nodal grievance officers was found to be compliant with the RBI rules.",
+  "trace": {
+    "llm_calls": 25,
+    "prompt_tokens": 12527,
+    "output_tokens": 3690,
+    "llm_seconds": 226.5,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 12,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 32,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)"
+      ],
+      "1:Default loss guarantee": [
+        "DLD2025:26(i)",
+        "DLD2025:23(i)",
+        "DLD2025:23(ii)",
+        "DLD2025:26(ii)",
+        "DLD2025:22(i)",
+        "DLD2025:9(i)",
+        "DLD2025:8(v)",
+        "DLD2025:20(ii)",
+        "DLD2025:19(iii)",
+        "DLD2025:20(i)"
+      ],
+      "2:Data collection": [
+        "DLD2025:13(iv)",
+        "DLD2025:12(i)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(i)",
+        "DLD2025:14(ii)"
+      ],
+      "3:Credit bureau reporting": [
+        "DLD2025:11(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:11(i)",
+        "KFS2024:6",
+        "DLD2025:17(vii)",
+        "DLD2025:11(iv)",
+        "DLD2025:17(i)"
+      ],
+      "4:1. Product": [
+        "KFS2024:5",
+        "DLD2025:6(iii)",
+        "DLD2025:26(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:26(i)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)"
+      ]
+    }
+  },
+  "seconds": 227.8
+}

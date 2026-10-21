@@ -1,0 +1,171 @@
+{
+  "system": "crew",
+  "doc_id": "P17_shg_microloans",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The feature 'Insurance partner: Members' names, phone numbers and loan amounts are sent to an insurance company so it can call them with micro-insurance offers. Borrowers are not asked before this is shared.' clearly breaks the requirement that data collection by DLA and DLA of their LSP must be need-based and with prior and explicit consent of the borrower having audit trail.",
+      "doc_evidence": "Insurance partner: Members' names, phone numbers and loan amounts are sent to an insurance company so it can call them with micro-insurance offers. Borrowers are not asked before this is shared.",
+      "severity": "high",
+      "fix": "Implement a consent mechanism where borrowers are explicitly asked for permission before sharing their personal data with insurance partners, with a clear audit trail of all consents.",
+      "verifier_note": "The product feature sends borrowers' names, phone numbers, and loan amounts to an insurance company without prior and explicit consent, which violates the RBI requirement that data collection must be need-based and with prior and explicit consent of the borrower. The feature does not mention obtaining explicit consent, and it does not provide an audit trail as required."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(iv)",
+      "issue": "The feature states that if a complaint is rejected, the app tells the borrower the decision is final; borrowers are not told they can escalate to the RBI Ombudsman through the CMS portal.",
+      "doc_evidence": "If a complaint is rejected, the app tells the borrower the decision is final; borrowers are not told they can escalate to the RBI Ombudsman through the CMS portal.",
+      "severity": "medium",
+      "fix": "Update the grievance redressal feature to inform borrowers they can escalate complaints to the RBI Ombudsman via the CMS portal, and provide a clear link or instructions for doing so.",
+      "verifier_note": "The RBI paragraph explicitly states that if a complaint is rejected wholly or partly by the RE, or the borrower is not satisfied with the reply, the borrower can lodge a complaint over the CMS portal under the RB-IOS. The product feature, however, does not inform the borrower of this right to escalate to the RBI Ombudsman through the CMS portal, thereby violating the requirement of the RBI paragraph."
+    },
+    {
+      "feature": "4. Privacy policy",
+      "rule_id": "DLD2025:14(i)",
+      "issue": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "doc_evidence": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "severity": "high",
+      "fix": "Publish a comprehensive privacy policy on the website immediately, ensuring it covers data collection, usage, sharing, and borrower rights, and make it easily accessible to all users.",
+      "verifier_note": "The RBI paragraph requires RE and LSPs to have a comprehensive privacy policy that is made available publicly on their website. The product feature states that Sakhi Digital has no privacy policy on its website and plans to publish one next year. This directly violates the requirement of having a privacy policy available publicly on the website, as the feature indicates the policy is not currently available. The paragraph does not allow for a future plan to publish a policy; it mandates the policy to be available now."
+    },
+    {
+      "feature": "4. Privacy policy",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "doc_evidence": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "severity": "high",
+      "fix": "Publish a comprehensive privacy policy on the website immediately, ensuring it covers data collection, usage, sharing, and borrower rights, and make it easily accessible to all users.",
+      "verifier_note": "The RBI paragraph requires REs to maintain a website with privacy policies and other details as required under extant guidelines. The product feature states that Sakhi Digital has no privacy policy on its website and plans to publish one next year. Since the feature does not confirm that the privacy policy will be published by the time the website is required to be updated, it does not fully comply with the RBI requirement. The feature does not mention whether the privacy policy will be published before the website is required to be updated, which is a requirement under the RBI paragraph. Therefore, the feature does not fully comply with the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature describes disbursal of loans into the bank account of the borrower, which complies with the requirement that disbursement shall always be made into the bank account of the borrower, except for specific exceptions. No compliance gap is found.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly states that loan disbursement must always be made into the borrower's bank account, except for specific exceptions such as statutory mandates, co-lending transactions, and specific end-use disbursals to end-beneficiaries. The product feature describes disbursal into the borrower's bank account, which is in compliance with the requirement. There is no indication that the feature involves disbursal to a third-party account or any exception not explicitly allowed. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature 'Weekly repayments go directly from the member's bank account to Godavari SFB by UPI autopay' does not comply with RBI paragraph DLD2025:9(ii), which requires that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account or pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "Weekly repayments go directly from the member's bank account to Godavari SFB by UPI autopay.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes repayments going directly from the member's bank account to Godavari SFB via UPI autopay. The RBI paragraph DLD2025:9(ii) requires that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account or pool account of any third party, including the accounts of LSP. The feature does not mention any third-party pass-through account or pool account, and the repayment is directly from the member's account to the RE’s bank account (Godavari SFB). Therefore, the feature complies with the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The feature 'Insurance partner: Members' names, phone numbers and loan amounts are sent to an insurance company so it can call them with micro-insurance offers. Borrowers are not asked before this is shared.' clearly breaks the requirement that data collection by DLA and DLA of their LSP must be need-based and with prior and explicit consent of the borrower having audit trail.",
+      "doc_evidence": "Insurance partner: Members' names, phone numbers and loan amounts are sent to an insurance company so it can call them with micro-insurance offers. Borrowers are not asked before this is shared.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature sends borrowers' names, phone numbers, and loan amounts to an insurance company without prior and explicit consent, which violates the RBI requirement that data collection must be need-based and with prior and explicit consent of the borrower. The feature does not mention obtaining explicit consent, and it does not provide an audit trail as required."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(iv)",
+      "issue": "The feature states that if a complaint is rejected, the app tells the borrower the decision is final; borrowers are not told they can escalate to the RBI Ombudsman through the CMS portal.",
+      "doc_evidence": "If a complaint is rejected, the app tells the borrower the decision is final; borrowers are not told they can escalate to the RBI Ombudsman through the CMS portal.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that if a complaint is rejected wholly or partly by the RE, or the borrower is not satisfied with the reply, the borrower can lodge a complaint over the CMS portal under the RB-IOS. The product feature, however, does not inform the borrower of this right to escalate to the RBI Ombudsman through the CMS portal, thereby violating the requirement of the RBI paragraph."
+    },
+    {
+      "feature": "4. Privacy policy",
+      "rule_id": "DLD2025:14(i)",
+      "issue": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "doc_evidence": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires RE and LSPs to have a comprehensive privacy policy that is made available publicly on their website. The product feature states that Sakhi Digital has no privacy policy on its website and plans to publish one next year. This directly violates the requirement of having a privacy policy available publicly on the website, as the feature indicates the policy is not currently available. The paragraph does not allow for a future plan to publish a policy; it mandates the policy to be available now."
+    },
+    {
+      "feature": "4. Privacy policy",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "doc_evidence": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires REs to maintain a website with privacy policies and other details as required under extant guidelines. The product feature states that Sakhi Digital has no privacy policy on its website and plans to publish one next year. Since the feature does not confirm that the privacy policy will be published by the time the website is required to be updated, it does not fully comply with the RBI requirement. The feature does not mention whether the privacy policy will be published before the website is required to be updated, which is a requirement under the RBI paragraph. Therefore, the feature does not fully comply with the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of SakhiCredit's product found several gaps against the reviewed RBI rules. The feature 'Insurance partner: Members' names, phone numbers and loan amounts are sent to an insurance company without prior and explicit consent of the borrower, violating the requirement for need-based data collection with an audit trail. Additionally, the product lacks a privacy policy on its website, which is planned to be published next year. The app also does not inform borrowers of their right to escalate rejected complaints to the RBI Ombudsman through the CMS portal.",
+  "trace": {
+    "llm_calls": 19,
+    "prompt_tokens": 10263,
+    "output_tokens": 2202,
+    "llm_seconds": 194.5,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 6,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 27,
+    "retrieved": {
+      "0:Disbursal": [
+        "KFS2024:5",
+        "DLD2025:6(iv)",
+        "DLD2025:24(ii)",
+        "DLD2025:26(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:29(i)",
+        "DLD2025:9(v)",
+        "KFS2024:6"
+      ],
+      "1:Repayment": [
+        "DLD2025:9(v)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)",
+        "DLD2025:10(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:5(ii)"
+      ],
+      "2:Data Collection": [
+        "KFS2024:7",
+        "KFS2024:4",
+        "DLD2025:8(v)",
+        "DLD2025:6(iii)",
+        "DLD2025:6(ii)",
+        "DLD2025:12(i)",
+        "DLD2025:12(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(i)",
+        "DLD2025:13(ii)"
+      ],
+      "3:Grievance Redressal": [
+        "DLD2025:11(iv)",
+        "DLD2025:17(iv)",
+        "DLD2025:11(i)",
+        "DLD2025:17(iii)",
+        "DLD2025:8(iv)",
+        "DLD2025:11(iii)",
+        "DLD2025:17(v)",
+        "DLD2025:11(ii)"
+      ],
+      "4:4. Privacy policy": [
+        "DLD2025:14(i)",
+        "DLD2025:14(ii)",
+        "DLD2025:8(iv)",
+        "DLD2025:27(i)",
+        "DLD2025:13(ii)",
+        "DLD2025:5(ii)",
+        "DLD2025:12(ii)"
+      ]
+    }
+  },
+  "seconds": 195.8
+}

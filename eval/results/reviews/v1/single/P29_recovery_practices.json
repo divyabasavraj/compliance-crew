@@ -1,0 +1,45 @@
+{
+  "system": "single",
+  "doc_id": "P29_recovery_practices",
+  "findings": [
+    {
+      "feature": "Recovery agents",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "The product document does not communicate the recovery agent's details to the borrower before the recovery agent contacts the borrower for recovery.",
+      "doc_evidence": "Borrowers are not sent the agency's name or the agent's details before the first contact.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product document allows the app to access the phone's contact list without explicit consent from the borrower.",
+      "doc_evidence": "During the loan, the app reads the phone's contact list so agents can reach family members if the borrower cannot be contacted.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Recovery agents",
+      "rule_id": "DLD2025:9(v)",
+      "issue": "The product document does not mention that fees, charges, etc., payable to LSPs for recovery are paid directly by the RE and are not charged by LSP to the borrower either directly or indirectly from the recovery proceeds.",
+      "doc_evidence": "Borrowers are not sent the agency's name or the agent's details before the first contact.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2482,
+    "output_tokens": 309,
+    "llm_seconds": 33.3,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 33.5
+}

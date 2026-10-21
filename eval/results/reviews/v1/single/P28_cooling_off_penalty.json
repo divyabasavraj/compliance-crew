@@ -1,0 +1,54 @@
+{
+  "system": "single",
+  "doc_id": "P28_cooling_off_penalty",
+  "findings": [
+    {
+      "feature": "Cooling-off",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The cooling-off period is less than one day, which is not compliant with the requirement of a minimum of one day.",
+      "doc_evidence": "Borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Unlisted charges",
+      "rule_id": "DLD2025:9(v)",
+      "issue": "The 'credit insights subscription' charge is not disclosed in the KFS and is not explained to the borrower, which violates the requirement that all charges be disclosed and agreed upon by the borrower.",
+      "doc_evidence": "After disbursal, a ₹199 'credit insights subscription' is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is valid for 3 working days, which is compliant with the requirement for loans with a tenor of seven days or more to have a validity period of at least three working days. However, the KFS does not explicitly state that it is valid for 3 working days as required by KFS2024:5.",
+      "doc_evidence": "The KFS has a unique proposal number and is valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The product document does not mention whether fees, charges, reimbursements, etc., payable to LSP are paid directly by the RE and not charged to or collected from the borrowers separately by LSP.",
+      "doc_evidence": "Loans are disbursed into the borrower's bank account.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2433,
+    "output_tokens": 471,
+    "llm_seconds": 42.6,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 43.0
+}

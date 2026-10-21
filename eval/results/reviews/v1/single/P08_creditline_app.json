@@ -1,0 +1,90 @@
+{
+  "system": "single",
+  "doc_id": "P08_creditline_app",
+  "findings": [
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The DLG cover exceeds the permissible limit of 5% of the disbursed amount.",
+      "doc_evidence": "FlexLine Fintech provides Indus Valley Bank a DLG of 5% on the credit line portfolio, as a cash deposit with the bank.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Grievances",
+      "rule_id": "DLD2025:11(i)",
+      "issue": "The RE and LSP are not designating nodal grievance redressal officers as required.",
+      "doc_evidence": "Complaints can be emailed to support@flexline.example. There is no named grievance officer; the support team handles all issues, and contact details are not included in the KFS.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Grievances",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "Contact details of the nodal grievance redressal officers are not prominently displayed on the websites of the RE, LSP, or DLA.",
+      "doc_evidence": "Complaints can be emailed to support@flexline.example. There is no named grievance officer; the support team handles all issues, and contact details are not included in the KFS.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan documents",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is not provided to borrowers in a language they understand before executing the loan contract.",
+      "doc_evidence": "Borrowers can download the KFS, sanction letter and terms from the app's Documents tab if they wish. Documents are not sent by email or SMS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan documents",
+      "rule_id": "KFS2024:5",
+      "issue": "The KFS does not have a validity period as required for loans with a tenor of seven days or more.",
+      "doc_evidence": "Borrowers can download the KFS, sanction letter and terms from the app's Documents tab if they wish. Documents are not sent by email or SMS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan documents",
+      "rule_id": "KFS2024:7",
+      "issue": "The KFS does not disclose charges recovered from borrowers by the RE on behalf of third-party service providers, such as insurance or legal charges.",
+      "doc_evidence": "Borrowers can download the KFS, sanction letter and terms from the app's Documents tab if they wish. Documents are not sent by email or SMS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan documents",
+      "rule_id": "KFS2024:9",
+      "issue": "The KFS is not included as a summary box to be exhibited as part of the loan agreement.",
+      "doc_evidence": "Borrowers can download the KFS, sanction letter and terms from the app's Documents tab if they wish. Documents are not sent by email or SMS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Location tracking",
+      "rule_id": "DLD2025:1",
+      "issue": "The product involves continuous location tracking, which may breach data privacy and user consent requirements.",
+      "doc_evidence": "For fraud prevention, the app tracks the user's location continuously while the credit line is active.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2956,
+    "output_tokens": 821,
+    "llm_seconds": 80.7,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 81.1
+}

@@ -1,0 +1,106 @@
+{
+  "system": "crew",
+  "doc_id": "P13_payroll_advance",
+  "findings": [
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The app reads the worker's SMS inbox for salary credit messages and bank alerts every week without providing the borrower with an option to give or deny consent for use of specific data.",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "high",
+      "fix": "Implement a consent mechanism within the app that allows the borrower to explicitly agree or deny the use of their SMS inbox data for salary credit messages and bank alerts. Ensure that this consent is documented and stored securely.",
+      "verifier_note": "The product feature reads the worker's SMS inbox for salary credit messages and bank alerts every week, which is a use of specific data. The RBI paragraph requires that the borrower be provided with an option to give or deny consent for use of specific data. Since the feature does not mention providing such an option, it violates the requirement."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:Annex III#3",
+      "issue": "The feature describes a loan where repayment is from the corporate employer by deducting the amount from the borrower’s salary, which is allowed under DLD2025:Annex III#3. However, it must be ensured that LSPs do not have any control over the flow of funds directly or indirectly in such transactions and that repayment is directly from the bank account of the employer to the RE. The feature does not explicitly state that the LSP has no control over the flow of funds or that repayment is directly from the employer to the RE, which could potentially violate the requirement.",
+      "doc_evidence": "Workers at partner factories can borrow up to 50% of their monthly salary for up to 30 days. The loan is repaid in one instalment on salary day.",
+      "severity": "medium",
+      "fix": "Update the feature description to explicitly state that the LSP has no control over the flow of funds and that repayment is directly from the employer’s bank account to the RE. Include this in the app’s documentation and user interface.",
+      "verifier_note": "The product feature describes a loan where repayment is from the corporate employer by deducting the amount from the borrower’s salary, which aligns with the allowed scenario in DLD2025:Annex III#3. However, the feature does not explicitly state that LSPs have no control over the flow of funds or that repayment is directly from the employer to the RE. The paragraph requires these conditions to be explicitly ensured. Since the feature does not mention these requirements, it could potentially violate the requirement. Therefore, the claim is valid."
+    },
+    {
+      "feature": "Know Your Customer (KFS) and Information Disclosure",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "doc_evidence": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "severity": "high",
+      "fix": "Provide the KFS form in Hindi and Odia, and include a confirmation step to ensure the borrower understands the information. Allow the borrower to acknowledge comprehension before proceeding with the loan application.",
+      "verifier_note": "The RBI paragraph requires that the KFS be provided in a language understood by the borrowers and that an acknowledgement be obtained that the borrower has understood the contents. The product feature shows the KFS in English only, which may not be understood by Hindi- and Odia-speaking users, and does not include a step to confirm understanding. This violates the requirement of the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature states that 'Bridgework Labs deducts its ₹150 service fee from the amount before it is credited', which implies that the LSP (Bridgework Labs) is collecting fees from the borrower's loan amount. This violates RBI's requirement that 'all loan servicing, repayment, etc. is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP'.",
+      "doc_evidence": "Bridgework Labs deducts its ₹150 service fee from the amount before it is credited, so the worker receives the loan minus the fee.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits the use of any third-party accounts, including those of LSPs, for loan servicing and repayment. The product feature describes the loan amount being credited to the worker's own salary bank account, which is not a third-party account. The deduction of the service fee by the LSP (Bridgework Labs) occurs before the loan is credited to the borrower's account, and this does not involve the use of a third-party account for loan servicing or repayment. Therefore, the feature does not violate the RBI requirement."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The app reads the worker's SMS inbox for salary credit messages and bank alerts every week without providing the borrower with an option to give or deny consent for use of specific data.",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature reads the worker's SMS inbox for salary credit messages and bank alerts every week, which is a use of specific data. The RBI paragraph requires that the borrower be provided with an option to give or deny consent for use of specific data. Since the feature does not mention providing such an option, it violates the requirement."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:Annex III#3",
+      "issue": "The feature describes a loan where repayment is from the corporate employer by deducting the amount from the borrower’s salary, which is allowed under DLD2025:Annex III#3. However, it must be ensured that LSPs do not have any control over the flow of funds directly or indirectly in such transactions and that repayment is directly from the bank account of the employer to the RE. The feature does not explicitly state that the LSP has no control over the flow of funds or that repayment is directly from the employer to the RE, which could potentially violate the requirement.",
+      "doc_evidence": "Workers at partner factories can borrow up to 50% of their monthly salary for up to 30 days. The loan is repaid in one instalment on salary day.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a loan where repayment is from the corporate employer by deducting the amount from the borrower’s salary, which aligns with the allowed scenario in DLD2025:Annex III#3. However, the feature does not explicitly state that LSPs have no control over the flow of funds or that repayment is directly from the employer to the RE. The paragraph requires these conditions to be explicitly ensured. Since the feature does not mention these requirements, it could potentially violate the requirement. Therefore, the claim is valid."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The feature states that 'Narmada Finance and Bridgework Labs each have a named nodal grievance officer, listed on both websites, in the app and in the KFS.' However, the RBI paragraph requires that the contact details of the nodal grievance redressal officers shall be 'prominently displayed' on the websites of the RE, its LSP and on the DLA, as well as in the KFS provided to the borrower. The feature does not explicitly mention that the contact details are prominently displayed, which may imply that they are not clearly visible or accessible to the borrower.",
+      "doc_evidence": "Narmada Finance and Bridgework Labs each have a named nodal grievance officer, listed on both websites, in the app and in the KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature mentions that the nodal grievance officers are 'listed on both websites, in the app and in the KFS', which aligns with the requirement to display contact details on the websites of the RE, its LSP, and in the KFS. The RBI paragraph does not explicitly require the term 'prominently displayed' to be used in the feature, and the feature does not contradict the requirement. The claim relies on an interpretation that 'listed' implies a lack of prominence, which is not necessarily supported by the text. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The feature 'Cooling-off: Workers can cancel within 3 days by repaying the principal and proportionate interest, with no penalty' complies with the requirement that the borrower shall be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial 'cooling-off period'. The cooling-off period is set to 3 days, which is not less than one day as required.",
+      "doc_evidence": "Workers can cancel within 3 days by repaying the principal and proportionate interest, with no penalty.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature provides a cooling-off period of 3 days, which is not less than the minimum one day required by the RBI paragraph. It also allows the borrower to exit the loan by repaying the principal and proportionate interest without penalty, which aligns with the requirement. The paragraph does not prohibit this, and the feature complies with the stated requirements."
+    },
+    {
+      "feature": "Know Your Customer (KFS) and Information Disclosure",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "doc_evidence": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the KFS be provided in a language understood by the borrowers and that an acknowledgement be obtained that the borrower has understood the contents. The product feature shows the KFS in English only, which may not be understood by Hindi- and Odia-speaking users, and does not include a step to confirm understanding. This violates the requirement of the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the PayDay Bridge: Salary Advance for Factory Workers product identified several gaps against the reviewed RBI rules. The app reads the worker's SMS inbox for salary credit messages and bank alerts every week without providing the borrower with an option to give or deny consent for use of specific data, which is a high-risk issue under DLD2025:12(ii). Additionally, the feature describing a loan where repayment is from the corporate employer by deducting the amount from the borrower’s salary does not explicitly state that the LSP has no control over the flow of funds or that repayment is directly from the employer to the RE, which could potentially violate DLD2025:Annex III#3. Lastly, the KFS is shown in English only, and there is no translation or step to confirm the worker has understood it, which is a high-risk issue under KFS2024:4. These findings highlight the need for immediate corrective actions to ensure compliance with the RBI rules.",
+  "trace": {
+    "llm_calls": 21,
+    "prompt_tokens": 10936,
+    "output_tokens": 2513,
+    "llm_seconds": 209.3,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 6,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 30
+  },
+  "seconds": 210.5
+}

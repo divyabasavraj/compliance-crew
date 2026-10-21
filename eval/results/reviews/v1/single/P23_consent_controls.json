@@ -1,0 +1,63 @@
+{
+  "system": "single",
+  "doc_id": "P23_consent_controls",
+  "findings": [
+    {
+      "feature": "Consent",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product does not provide the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, revoke consent already granted, or request deletion of data.",
+      "doc_evidence": "At signup, the shopkeeper taps one \"I agree\" button that covers all uses of their data. There is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Consent",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The purpose of obtaining borrowers’ consent is not disclosed at each stage of interface with the borrowers.",
+      "doc_evidence": "Later screens that ask for GST returns and bank statements do not say why they are needed.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product does not ensure that data collection by their DLA and DLA of their LSP is need-based and with prior and explicit consent of the borrower having audit trail.",
+      "doc_evidence": "The app needs no phone permissions apart from one-time camera access for KYC.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The product does not ensure that LSP engaged by them do not store personal information of borrower except some basic minimal data.",
+      "doc_evidence": "The app needs no phone permissions apart from one-time camera access for KYC.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product does not ensure that disbursement of loan is made into the bank account of the borrower, except for disbursals covered exclusively under statutory or regulatory mandate.",
+      "doc_evidence": "Repayments go directly into Tapti Finance's bank account.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 3031,
+    "output_tokens": 516,
+    "llm_seconds": 39.7,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 39.8
+}

@@ -1,0 +1,115 @@
+{
+  "system": "crew",
+  "doc_id": "P30_clean_used_car",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "doc_evidence": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "severity": "medium",
+      "fix": "Ensure that the loan disbursement is made directly to the borrower's account, not the dealer's, to prevent misuse of funds and ensure transparency in the loan usage.",
+      "verifier_note": "The RBI paragraph explicitly prohibits disbursal to third-party accounts, including the accounts of LSPs, except for specific cases like co-lending transactions or when the loan is disbursed directly into the end-beneficiary's account. The product feature describes disbursing the loan into the dealer's account, which is a third-party account, and does not mention the end-beneficiary. This violates the RBI directive as the feature does not ensure the loan is disbursed directly into the end-beneficiary's account."
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The feature does not mention that the borrower is provided with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data, or make the RE/LSP delete/forget the data. This is a non-compliance with the requirement.",
+      "doc_evidence": "One-time camera and location access during onboarding for KYC and address checks, with consent.",
+      "severity": "high",
+      "fix": "Update the data collection process to include clear options for borrowers to give or deny consent for data usage, restrict disclosure, manage data retention, revoke consent, and request deletion of their data, in compliance with the Personal Data Protection Act (PDPA).",
+      "verifier_note": "The product feature mentions that data is accessed with consent during onboarding for KYC and address checks, which implies the borrower has given consent. However, the paragraph requires the borrower to be provided with an option to give or deny consent for use of specific data, restrict disclosure, data retention, revoke consent, and request deletion. The feature does not explicitly mention these additional options, which are required by the paragraph. Therefore, the feature does not fully comply with the paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "doc_evidence": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits disbursal to third-party accounts, including the accounts of LSPs, except for specific cases like co-lending transactions or when the loan is disbursed directly into the end-beneficiary's account. The product feature describes disbursing the loan into the dealer's account, which is a third-party account, and does not mention the end-beneficiary. This violates the RBI directive as the feature does not ensure the loan is disbursed directly into the end-beneficiary's account."
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The feature states that the Default Loss Guarantee (DLG) is invoked within 90 days overdue, whereas RBI requires the invocation of DLG to be within a maximum overdue period of 120 days.",
+      "doc_evidence": "The DLG runs for 7 years, longer than any loan in the portfolio.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature invokes the DLG within 90 days overdue, which is within the RBI's maximum allowed period of 120 days. The RBI paragraph does not prohibit invoking DLG before 120 days, so the feature complies with the requirement."
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The feature states that the DLG is 5% of each portfolio as cash deposited with Pench Bank, but the RBI requires that the DLG cover shall not exceed five per cent of the total amount disbursed out of that loan portfolio at any given time.",
+      "doc_evidence": "CarKey Mobility, a company under the Companies Act, 2013, provides a DLG of 5% of each portfolio as cash deposited with Pench Bank, invoked within 90 days overdue, under a Board-approved policy.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that the DLG is 5% of each portfolio as cash deposited with Pench Bank, which aligns with the RBI requirement that the DLG cover shall not exceed five per cent of the total amount disbursed out of that loan portfolio at any given time. The feature does not exceed the cap and complies with the RBI regulation."
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The feature states that data is stored on servers in India, which complies with the requirement. However, the paragraph requires that if data is processed outside India, it must be deleted from servers outside India and brought back to India within 24 hours of processing. The feature does not mention any processing outside India, so this paragraph does not apply.",
+      "doc_evidence": "Data is stored on servers in India.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that data is stored on servers in India, which complies with the requirement in the RBI paragraph. The paragraph also mentions that if data is processed outside India, it must be deleted and brought back within 24 hours. However, the feature does not mention any processing outside India, so the condition in the paragraph does not apply. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The feature mentions one-time camera and location access during onboarding for KYC and address checks with consent, which is compliant with the requirement for one-time access for on-boarding/KYC purposes. However, the paragraph also requires that the DLA of RE/LSP should not access mobile phone resources like file and media, contact list, call logs, telephony functions, etc. The feature does not mention any access to these resources, so this paragraph does not apply.",
+      "doc_evidence": "One-time camera and location access during onboarding for KYC and address checks, with consent.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the RBI paragraph by allowing one-time access to camera and location for onboarding/KYC purposes with explicit consent. The paragraph explicitly prohibits access to mobile phone resources like file and media, contact list, call logs, telephony functions, etc. Since the feature does not mention access to these resources, it does not violate the paragraph. The claim that the paragraph does not apply is correct."
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The feature does not mention that the borrower is provided with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data, or make the RE/LSP delete/forget the data. This is a non-compliance with the requirement.",
+      "doc_evidence": "One-time camera and location access during onboarding for KYC and address checks, with consent.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature mentions that data is accessed with consent during onboarding for KYC and address checks, which implies the borrower has given consent. However, the paragraph requires the borrower to be provided with an option to give or deny consent for use of specific data, restrict disclosure, data retention, revoke consent, and request deletion. The feature does not explicitly mention these additional options, which are required by the paragraph. Therefore, the feature does not fully comply with the paragraph."
+    },
+    {
+      "feature": "Credit bureau reporting",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The feature states that 'nodal grievance officers of both companies are named on both websites, in the app and in the KFS.' This complies with the requirement to 'prominently display contact details of the nodal grievance redressal officers' on the websites of the RE, its LSP, and on the DLA, as well as in the KFS provided to the borrower.",
+      "doc_evidence": "nodal grievance officers of both companies are named on both websites, in the app and in the KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature mentions that the nodal grievance officers are named on the websites (which aligns with the requirement to 'prominently display contact details'), in the app (which is not explicitly mentioned in the RBI paragraph), and in the KFS. The RBI paragraph requires the contact details to be displayed on the websites of the RE, its LSP, and the DLA, as well as in the KFS. The feature does not mention the DLA, but it does mention the websites and KFS. The app is an additional medium not specified in the RBI paragraph. Since the feature does not explicitly violate the RBI paragraph and may comply with the requirements, the claim is not a violation."
+    },
+    {
+      "feature": "Credit bureau reporting",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "The feature states that 'All loans are reported to CICs.' This complies with the requirement that RE shall ensure that any lending done through their DLAs and/or DLAs of LSPs is reported by them to CICs irrespective of its nature/tenor.",
+      "doc_evidence": "All loans are reported to CICs.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that 'All loans are reported to CICs,' which aligns with the RBI requirement that RE shall ensure that any lending done through their DLAs and/or DLAs of LSPs is reported to CICs irrespective of its nature/tenor. The feature does not contradict the RBI paragraph and meets the requirement. The claim that this complies with the requirement is valid."
+    }
+  ],
+  "summary": "The compliance review of the CarKey product, 'Used-Car Loans Through Dealers,' identified two findings. The first finding is a medium severity issue related to DLD2025:9(i), where the loan is paid directly into the dealer's bank account, which may not align with the intended purpose of the loan. The second finding is a high severity issue related to DLD2025:12(ii), where the feature does not provide borrowers with the necessary options regarding data consent, disclosure, retention, revocation, and data deletion, resulting in non-compliance with the requirement.",
+  "trace": {
+    "llm_calls": 21,
+    "prompt_tokens": 10189,
+    "output_tokens": 2458,
+    "llm_seconds": 228.2,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 8,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 28
+  },
+  "seconds": 229.7
+}

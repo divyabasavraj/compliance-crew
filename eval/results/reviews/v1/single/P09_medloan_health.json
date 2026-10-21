@@ -1,0 +1,63 @@
+{
+  "system": "single",
+  "doc_id": "P09_medloan_health",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is disbursed into the hospital's bank account, which is a third-party account, violating the requirement that disbursement must be made into the borrower's bank account.",
+      "doc_evidence": "The loan is paid directly into the hospital's bank account against the final bill.",
+      "severity": "high",
+      "fix": "Disburse the loan directly into the borrower's bank account, not into the hospital's account.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "APR and charges",
+      "rule_id": "KFS2024:3(c)",
+      "issue": "The APR shown in the KFS does not include mandatory health insurance premiums, which are charges associated with the credit facility and should be included in the APR.",
+      "doc_evidence": "The APR shown in the KFS covers interest and processing fee. Health insurance premium, which is mandatory and recovered by Arogya Finance on behalf of the insurer, is collected separately and is not included in the APR.",
+      "severity": "high",
+      "fix": "Include all mandatory charges, including health insurance premiums, in the APR calculation and disclosure.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data storage at LSP",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "HealthPay Systems stores full copies of borrowers' medical records, bank statements, and credit bureau reports, which is not disclosed as part of the data storage policy and may violate data privacy and storage guidelines.",
+      "doc_evidence": "HealthPay Systems keeps a full copy of each borrower's medical records, bank statements and credit bureau report on its own servers to speed up repeat loans.",
+      "severity": "high",
+      "fix": "Ensure that data storage policies are clearly disclosed on the website and DLA, and that data is stored in compliance with RBI guidelines.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Cooling-off",
+      "rule_id": "KFS2024:5",
+      "issue": "The cooling-off period is 3 days, which is valid for loans with a tenor of seven days or more, but the document does not specify the validity period for loans with a tenor of less than seven days, which should be one working day.",
+      "doc_evidence": "Patients can exit within 3 days by repaying principal and proportionate APR, with no penalty.",
+      "severity": "medium",
+      "fix": "Specify the validity period for loans with a tenor of less than seven days as one working day.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Consent",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "The document mentions that data is shared with the insurer only after explicit consent, but it does not clearly state that the data storage policy and usage are disclosed prominently on the website and DLA as required.",
+      "doc_evidence": "Each consent screen explains why the data is being asked for at that step. Data is shared with the insurer only after the borrower gives explicit consent.",
+      "severity": "medium",
+      "fix": "Ensure that the data storage policy and usage are clearly disclosed on the website and DLA, and that the borrower is informed of how their data is stored and used.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2748,
+    "output_tokens": 732,
+    "llm_seconds": 67.9,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 68.3
+}

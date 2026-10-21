@@ -1,0 +1,63 @@
+{
+  "system": "single",
+  "doc_id": "P15_p2p_platform",
+  "findings": [
+    {
+      "feature": "Lender protection",
+      "rule_id": "DLD2025:4(iv)",
+      "issue": "The product document refers to a 'default loss guarantee' which is defined as a contractual arrangement between the RE and another entity, but the product document describes a guarantee provided by the platform itself, which may not be compliant with the definition of DLG.",
+      "doc_evidence": "To attract lenders, LendCircle offers a default loss guarantee: it will reimburse lenders for up to 3% of the principal in each loan pool that goes bad.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Marketing",
+      "rule_id": "DLD2025:4(iv)",
+      "issue": "The marketing statement claims the platform is 'approved and backed by the RBI', which may be misleading as the RBI does not approve or back P2P platforms, and such a statement could be considered an implicit guarantee.",
+      "doc_evidence": "The app home screen says: 'LendCircle: guaranteed returns, approved and backed by the RBI.'",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Lender protection",
+      "rule_id": "DLD2025:20(iii)",
+      "issue": "The product document describes a default loss guarantee (DLG) offered by the platform to lenders, which is a prohibited arrangement under RBI regulations as NBFC-P2P entities are not allowed to enter into DLG arrangements for loans facilitated over their platform.",
+      "doc_evidence": "To attract lenders, LendCircle offers a default loss guarantee: it will reimburse lenders for up to 3% of the principal in each loan pool that goes bad.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product document states that borrowers repay into an escrow account maintained by a bank trustee, which may not comply with the requirement that all loan servicing, repayment, etc., must be executed directly into the borrower's RE bank account without any pass-through account or third-party account.",
+      "doc_evidence": "Borrowers repay into an escrow account maintained by a bank trustee, as required for P2P platforms.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product document does not provide borrowers with an option to give or deny consent for the use of specific data, restrict disclosure to third parties, revoke consent already granted, or request deletion of their data, which is a mandatory requirement under RBI regulations.",
+      "doc_evidence": "Only name, address, phone, PAN and bank statements uploaded by the borrower are used. No phone permissions beyond one-time camera access for KYC.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2886,
+    "output_tokens": 639,
+    "llm_seconds": 34.4,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 34.7
+}

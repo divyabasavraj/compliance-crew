@@ -1,0 +1,88 @@
+{
+  "system": "crew",
+  "doc_id": "P22_kfs_apr",
+  "findings": [
+    {
+      "feature": "Product Offering",
+      "rule_id": "KFS2024:5",
+      "issue": "The product feature does not mention a validity period for the KFS, which is required for loans with a tenor of seven days or more. The KFS must have a validity period of at least three working days.",
+      "doc_evidence": "Product: Home repair loans of ₹50,000 to ₹5,00,000, tenor 1 to 5 years.",
+      "severity": "high",
+      "fix": "Update the product offering to explicitly mention the validity period of the KFS, ensuring it is at least three working days for loans with a tenor of seven days or more.",
+      "verifier_note": "The product feature describes a home repair loan with a tenor of 1 to 5 years, which is significantly longer than the seven-day tenor mentioned in the RBI paragraph. Since the product's tenor is more than seven days, the RBI paragraph requires a validity period of at least three working days for such loans. However, the product feature does not specify a validity period for the KFS. Therefore, the product feature does not comply with the requirement for loans with a tenor of seven days or more, which is a violation."
+    },
+    {
+      "feature": "Loan Agreement and Documentation",
+      "rule_id": "KFS2024:9",
+      "issue": "The KFS is a separate screen in the app and is not reproduced in the agreement.",
+      "doc_evidence": "The loan agreement is a 14-page PDF. The KFS is a separate screen in the app and is not reproduced in the agreement.",
+      "severity": "medium",
+      "fix": "Integrate the KFS content into the loan agreement document and ensure it is reproduced accurately in the app and the physical copy provided to the borrower.",
+      "verifier_note": "The RBI paragraph requires the KFS to be included as a summary box in the loan agreement. The product feature states that the KFS is a separate screen in the app and is not reproduced in the agreement, which directly violates the requirement. The feature does not comply with the paragraph's requirement."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Product Offering",
+      "rule_id": "KFS2024:5",
+      "issue": "The product feature does not mention a validity period for the KFS, which is required for loans with a tenor of seven days or more. The KFS must have a validity period of at least three working days.",
+      "doc_evidence": "Product: Home repair loans of ₹50,000 to ₹5,00,000, tenor 1 to 5 years.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a home repair loan with a tenor of 1 to 5 years, which is significantly longer than the seven-day tenor mentioned in the RBI paragraph. Since the product's tenor is more than seven days, the RBI paragraph requires a validity period of at least three working days for such loans. However, the product feature does not specify a validity period for the KFS. Therefore, the product feature does not comply with the requirement for loans with a tenor of seven days or more, which is a violation."
+    },
+    {
+      "feature": "Interest Rates and APR",
+      "rule_id": "KFS2024:6",
+      "issue": "The KFS shows an APR of 13.5%, computed from the interest rate only. The 2% processing fee charged by Aravalli is shown separately and is not included in the APR. No amortisation schedule is provided.",
+      "doc_evidence": "The KFS shall also include a computation sheet of annual percentage rate (APR), and the amortisation schedule of the loan over the loan tenor. APR will include all charges which are levied by the RE.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "quoted evidence not found in the product document"
+    },
+    {
+      "feature": "Loan Agreement and Documentation",
+      "rule_id": "KFS2024:9",
+      "issue": "The KFS is a separate screen in the app and is not reproduced in the agreement.",
+      "doc_evidence": "The loan agreement is a 14-page PDF. The KFS is a separate screen in the app and is not reproduced in the agreement.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires the KFS to be included as a summary box in the loan agreement. The product feature states that the KFS is a separate screen in the app and is not reproduced in the agreement, which directly violates the requirement. The feature does not comply with the paragraph's requirement."
+    },
+    {
+      "feature": "Key Facts Statement (KFS) Validity",
+      "rule_id": "KFS2024:5",
+      "issue": "The KFS validity period of 3 working days for loans with a tenor of seven days or more complies with the requirement of at least three working days. However, the feature does not specify whether the validity period is tied to the loan tenor, which is a key aspect of the regulation. The feature as described does not clearly break the requirement, but it lacks specificity.",
+      "doc_evidence": "Each KFS has a unique proposal number and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that each KFS has a unique proposal number and stays valid for 3 working days. The RBI paragraph requires a validity period of at least three working days for loans with a tenor of seven days or more. The feature does not explicitly tie the validity period to the loan tenor, which is a key aspect of the regulation. However, the feature does not violate the requirement because it meets the minimum validity period of three working days. The claim that the feature lacks specificity is valid, but it does not constitute a violation of the RBI paragraph."
+    },
+    {
+      "feature": "Cancellation and Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The feature states that borrowers can cancel within 3 days. However, according to [DLD2025:10(i)], the cooling-off period shall be determined by the Board of the RE as laid down in their loan policy, subject to the period so determined not being less than one day. The feature does not specify the cooling-off period as determined by the RE's loan policy, which is a requirement under this paragraph.",
+      "doc_evidence": "Cooling-off: Borrowers can cancel within 3 days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that borrowers can cancel within 3 days, which is a specific duration. The RBI paragraph [DLD2025:10(i)] requires that the cooling-off period be determined by the Board of the RE as per their loan policy, with the minimum period being one day. The feature does not mention that the cooling-off period is determined by the RE's loan policy, but it does specify a duration of 3 days, which is more than the minimum one day. Since the paragraph allows for the cooling-off period to be set by the RE's policy (as long as it is at least one day), and the feature provides a specific period (3 days) that meets the minimum requirement, the feature does not necessarily violate the paragraph. The claim relies on the assumption that the cooling-off period must be determined by the RE's policy, but the paragraph allows for a specific period as long as it meets the minimum requirement. Therefore, the feature does not violate the paragraph."
+    }
+  ],
+  "summary": "The compliance review of the HomeFix Loans: Key Facts Statement Design identified two findings against the reviewed RBI rules. The first finding is a high severity issue where the product feature does not mention a validity period for the KFS, which is required for loans with a tenor of seven days or more. The KFS must have a validity period of at least three working days. The second finding is a medium severity issue where the KFS is presented as a separate screen in the app and is not reproduced in the agreement.",
+  "trace": {
+    "llm_calls": 17,
+    "prompt_tokens": 8601,
+    "output_tokens": 1760,
+    "llm_seconds": 112.8,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 4,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 25
+  },
+  "seconds": 113.7
+}

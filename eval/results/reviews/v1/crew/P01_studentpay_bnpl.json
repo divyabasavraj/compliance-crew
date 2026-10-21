@@ -1,0 +1,151 @@
+{
+  "system": "crew",
+  "doc_id": "P01_studentpay_bnpl",
+  "findings": [
+    {
+      "feature": "Onboarding and KYC",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The feature does not mention that the borrower is provided with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data and if required, make the RE/LSP delete/forget the data. This is a compliance gap as per RBI guidelines.",
+      "doc_evidence": "Students sign up with their mobile number and complete video KYC. During KYC the app asks once for camera and microphone access, with an explicit consent screen explaining why. We collect age, college name, course, and the student's monthly allowance or stipend as income details.",
+      "severity": "high",
+      "fix": "Implement a clear and user-friendly consent management interface that allows borrowers to give, deny, restrict, revoke, or delete data usage permissions as per RBI guidelines.",
+      "verifier_note": "The product feature does not explicitly mention providing the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted, or make the RE/LSP delete/forget the data. These are required by the RBI paragraph, and the feature does not address them."
+    },
+    {
+      "feature": "Credit Scoring",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The feature 'Smarter credit scoring: To approve students with thin credit files, the app reads the phone's contact list and call logs in the background and checks how many contacts are already StudentPay customers. Students with many repaying friends get a higher limit.' violates the requirement that DLA of RE/LSP desist from accessing mobile phone resources like contact list, call logs, etc. as per [DLD2025:12(i)]",
+      "doc_evidence": "the app reads the phone's contact list and call logs in the background and checks how many contacts are already StudentPay customers.",
+      "severity": "high",
+      "fix": "Modify the credit scoring feature to discontinue access to mobile phone resources like contact lists and call logs, and use alternative data sources for assessing creditworthiness.",
+      "verifier_note": "The product feature involves accessing the borrower's contact list and call logs, which is explicitly prohibited by [DLD2025:12(i)]. The paragraph states that DLA of RE/LSP must desist from accessing mobile phone resources like contact list and call logs, except for one-time access for on-boarding/KYC purposes. The feature accesses these resources in the background for credit scoring, which is not allowed under the RBI regulation."
+    },
+    {
+      "feature": "Credit Limit Growth",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The feature 'Credit Limit Growth' allows for an automatic increase in credit limit every three months if the student has repaid on time, without an explicit request from the borrower. This violates the requirement that there should be no automatic increase in credit limit unless an explicit request is received, evaluated, and kept on record from the borrower for such increase.",
+      "doc_evidence": "Every three months, if the student has repaid on time, the app automatically raises their credit limit by 25% and sends a congratulations notification. No action is needed from the student.",
+      "severity": "high",
+      "fix": "Introduce a manual request process for credit limit growth, requiring explicit borrower consent, evaluation, and documentation before any automatic increase in credit limit.",
+      "verifier_note": "The product feature allows for an automatic increase in credit limit every three months based on timely repayment, without requiring an explicit request from the borrower. This directly violates the RBI paragraph which mandates that automatic increases in credit limit are not allowed unless there is an explicit request, evaluation, and record-keeping. The feature does not involve any explicit request from the borrower, thus violating the requirement."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature states that for course fees, the loan amount is paid directly into the bank account of the college or coaching institute. This is a third-party account, which is not allowed under DLD2025:9(i) as disbursal should be made into the borrower's bank account unless covered under statutory or regulatory mandate, co-lending transactions, or specific end use with direct disbursement to the end-beneficiary.",
+      "doc_evidence": "For course fees, the loan amount is paid directly into the bank account of the college or coaching institute. For laptops, the amount goes directly to the merchant's bank account at checkout.",
+      "severity": "high",
+      "fix": "Ensure that all loan disbursements for course fees are made directly into the borrower's bank account, unless explicitly covered under statutory mandates, co-lending, or direct end-use disbursement.",
+      "verifier_note": "The product feature disbursements to the college or coaching institute (third-party accounts) for course fees are not explicitly covered under statutory or regulatory mandate, co-lending transactions, or specific end use with direct disbursement to the end-beneficiary. The RBI paragraph explicitly prohibits disbursal to third-party accounts unless these exceptions apply. The feature does not demonstrate that these exceptions apply, thus violating the RBI paragraph."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:8(iii)",
+      "issue": "The feature states that 'Statements, the KFS and the sanction letter are emailed and sent by SMS automatically as soon as the loan is booked.' However, the RBI requires that digitally signed documents, including the KFS, summary of loan product, sanction letter, terms and conditions, account statements, privacy policies, etc., shall automatically flow to the borrower on the registered and verified email/SMS upon execution of the loan contract/transactions. The feature does not explicitly mention the summary of loan product, terms and conditions, privacy policies, or other required documents, which may constitute a compliance gap.",
+      "doc_evidence": "Statements, the KFS and the sanction letter are emailed and sent by SMS automatically as soon as the loan is booked.",
+      "severity": "high",
+      "fix": "Update the repayment feature to automatically send digitally signed documents, including the summary of loan product, terms and conditions, privacy policies, and other required documents, to the borrower's verified email and SMS.",
+      "verifier_note": "The product feature mentions the automatic emailing and SMS of the KFS and sanction letter, which are required by the RBI paragraph. However, the paragraph also requires the summary of loan product, terms and conditions, account statements, and privacy policies to be automatically sent. The feature does not mention these additional documents, which may constitute a compliance gap. Therefore, the feature does not fully comply with the RBI requirements."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "KFS2024:6",
+      "issue": "The feature does not mention the inclusion of a computation sheet of annual percentage rate (APR) or an amortisation schedule of the loan over the loan tenor. The RBI requires that the KFS shall include these details, which are essential for transparency and borrower understanding.",
+      "doc_evidence": "Statements, the KFS and the sanction letter are emailed and sent by SMS automatically as soon, the loan is booked.",
+      "severity": "high",
+      "fix": "Include a computation sheet of annual percentage rate (APR) and an amortisation schedule in the KFS to ensure transparency and clarity for the borrower.",
+      "verifier_note": "The product feature does not mention the inclusion of a computation sheet of annual percentage rate (APR) or an amortisation schedule of the loan over the loan tenor. The RBI paragraph explicitly requires these elements to be included in the KFS, and the feature fails to address this requirement."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Onboarding and KYC",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The feature states that during KYC the app asks once for camera and microphone access, with an explicit consent screen explaining why. However, the RBI requires that DLA of RE/LSP desist from accessing mobile phone resources like file and media, contact list, call logs, telephony functions, etc. A one-time access can be taken for camera, microphone, location or any other facility necessary for the purpose of on-boarding/KYC requirements only, with the explicit consent of the borrower. The feature does not mention whether the app desists from accessing other mobile phone resources beyond camera and microphone, which may be a compliance gap.",
+      "doc_evidence": "During KYC the app asks once for camera and microphone access, with an explicit consent screen explaining why.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the RBI paragraph. The feature explicitly mentions that during KYC, the app asks once for camera and microphone access with an explicit consent screen. The RBI paragraph allows one-time access to camera, microphone, and other facilities necessary for on-boarding/KYC, provided there is explicit consent. The feature does not mention accessing other mobile phone resources like file and media, contact list, call logs, or telephony functions, which the RBI paragraph explicitly forbids. Since the feature does not access these resources, it does not violate the RBI paragraph. The claim relies on an assumption that the feature may access other resources, but there is no evidence of such access in the feature description."
+    },
+    {
+      "feature": "Onboarding and KYC",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The feature does not mention that the borrower is provided with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data and if required, make the RE/LSP delete/forget the data. This is a compliance gap as per RBI guidelines.",
+      "doc_evidence": "Students sign up with their mobile number and complete video KYC. During KYC the app asks once for camera and microphone access, with an explicit consent screen explaining why. We collect age, college name, course, and the student's monthly allowance or stipend as income details.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature does not explicitly mention providing the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted, or make the RE/LSP delete/forget the data. These are required by the RBI paragraph, and the feature does not address them."
+    },
+    {
+      "feature": "Credit Scoring",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The feature 'Smarter credit scoring: To approve students with thin credit files, the app reads the phone's contact list and call logs in the background and checks how many contacts are already StudentPay customers. Students with many repaying friends get a higher limit.' violates the requirement that DLA of RE/LSP desist from accessing mobile phone resources like contact list, call logs, etc. as per [DLD2025:12(i)]",
+      "doc_evidence": "the app reads the phone's contact list and call logs in the background and checks how many contacts are already StudentPay customers.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature involves accessing the borrower's contact list and call logs, which is explicitly prohibited by [DLD2025:12(i)]. The paragraph states that DLA of RE/LSP must desist from accessing mobile phone resources like contact list and call logs, except for one-time access for on-boarding/KYC purposes. The feature accesses these resources in the background for credit scoring, which is not allowed under the RBI regulation."
+    },
+    {
+      "feature": "Credit Limit Growth",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The feature 'Credit Limit Growth' allows for an automatic increase in credit limit every three months if the student has repaid on time, without an explicit request from the borrower. This violates the requirement that there should be no automatic increase in credit limit unless an explicit request is received, evaluated, and kept on record from the borrower for such increase.",
+      "doc_evidence": "Every three months, if the student has repaid on time, the app automatically raises their credit limit by 25% and sends a congratulations notification. No action is needed from the student.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature allows for an automatic increase in credit limit every three months based on timely repayment, without requiring an explicit request from the borrower. This directly violates the RBI paragraph which mandates that automatic increases in credit limit are not allowed unless there is an explicit request, evaluation, and record-keeping. The feature does not involve any explicit request from the borrower, thus violating the requirement."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature states that for course fees, the loan amount is paid directly into the bank account of the college or coaching institute. This is a third-party account, which is not allowed under DLD2025:9(i) as disbursal should be made into the borrower's bank account unless covered under statutory or regulatory mandate, co-lending transactions, or specific end use with direct disbursement to the end-beneficiary.",
+      "doc_evidence": "For course fees, the loan amount is paid directly into the bank account of the college or coaching institute. For laptops, the amount goes directly to the merchant's bank account at checkout.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature disbursements to the college or coaching institute (third-party accounts) for course fees are not explicitly covered under statutory or regulatory mandate, co-lending transactions, or specific end use with direct disbursement to the end-beneficiary. The RBI paragraph explicitly prohibits disbursal to third-party accounts unless these exceptions apply. The feature does not demonstrate that these exceptions apply, thus violating the RBI paragraph."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:8(iii)",
+      "issue": "The feature states that 'Statements, the KFS and the sanction letter are emailed and sent by SMS automatically as soon as the loan is booked.' However, the RBI requires that digitally signed documents, including the KFS, summary of loan product, sanction letter, terms and conditions, account statements, privacy policies, etc., shall automatically flow to the borrower on the registered and verified email/SMS upon execution of the loan contract/transactions. The feature does not explicitly mention the summary of loan product, terms and conditions, privacy policies, or other required documents, which may constitute a compliance gap.",
+      "doc_evidence": "Statements, the KFS and the sanction letter are emailed and sent by SMS automatically as soon as the loan is booked.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature mentions the automatic emailing and SMS of the KFS and sanction letter, which are required by the RBI paragraph. However, the paragraph also requires the summary of loan product, terms and conditions, account statements, and privacy policies to be automatically sent. The feature does not mention these additional documents, which may constitute a compliance gap. Therefore, the feature does not fully comply with the RBI requirements."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "KFS2024:6",
+      "issue": "The feature does not mention the inclusion of a computation sheet of annual percentage rate (APR) or an amortisation schedule of the loan over the loan tenor. The RBI requires that the KFS shall include these details, which are essential for transparency and borrower understanding.",
+      "doc_evidence": "Statements, the KFS and the sanction letter are emailed and sent by SMS automatically as soon, the loan is booked.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature does not mention the inclusion of a computation sheet of annual percentage rate (APR) or an amortisation schedule of the loan over the loan tenor. The RBI paragraph explicitly requires these elements to be included in the KFS, and the feature fails to address this requirement."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The feature states that 'Contact details of the nodal grievance redressal officers shall be prominently displayed on the websites of the RE, its LSP and on the DLA, as well as in the KFS provided to the borrower.' However, the product description only mentions that the contact details are shown on the app's Help screen, on both websites and in the KFS. It does not explicitly confirm that the contact details are prominently displayed on the websites of the RE and its LSP, which is a requirement under DLD2025:11(ii).",
+      "doc_evidence": "Kaveri Finance and EduTech Labs have each appointed a nodal grievance redressal officer, whose name, email and phone number are shown on the app's Help screen, on both websites and in the KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature mentions that contact details are shown on the websites of the RE and its LSP, which aligns with the requirement in DLD2025:11(ii) to 'prominently display' contact details on these websites. The claim that the feature does not explicitly confirm 'prominent display' is not supported by the feature text, which does state that the details are shown on the websites. The term 'prominently displayed' is not explicitly defined in the feature, but the feature does indicate that the details are made available on the websites, which could reasonably be interpreted as meeting the requirement. The paragraph does not explicitly prohibit the feature's approach."
+    }
+  ],
+  "summary": "The compliance review of the StudentPay product, a Buy Now Pay Later service for college students, identified multiple gaps against the reviewed RBI rules. The key findings include: (1) The product does not provide borrowers with the necessary options to manage data consent, which is a violation of DLD2025:12(ii). (2) The 'Smarter credit scoring' feature accesses mobile phone resources, which is prohibited under DLD2025:12(i). (3) The 'Credit Limit Growth' feature automatically increases credit limits without explicit borrower consent, violating DLD2025:7(ii). (4) Loan disbursement into third-party accounts, such as college or coaching institute accounts, is not allowed under DLD2025:9(i). (5) The feature does not ensure that all required digitally signed documents, including the summary of loan product, terms and conditions, and privacy policies, are automatically provided to the borrower, as required by DLD2025:8(iii). (6) The KFS does not include a computation sheet of APR or an amortisation schedule, which is mandatory under KFS2024:6. These findings indicate significant compliance gaps that require immediate attention and corrective actions.",
+  "trace": {
+    "llm_calls": 25,
+    "prompt_tokens": 14164,
+    "output_tokens": 3259,
+    "llm_seconds": 294.4,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 7,
+      "gap_analyst": 7,
+      "verifier": 8,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 36
+  },
+  "seconds": 296.7
+}

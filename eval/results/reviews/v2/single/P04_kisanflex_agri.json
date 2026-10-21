@@ -1,0 +1,73 @@
+{
+  "system": "single",
+  "doc_id": "P04_kisanflex_agri",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "Loan disbursement is made into the account of the agri-input dealer, which is a third-party account, violating the requirement that loans must be disbursed directly into the borrower's bank account.",
+      "doc_evidence": "Credit is paid directly into the bank account of the agri-input dealer when the farmer buys inputs, against an invoice uploaded in the app.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Repayment collection",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "Loan servicing and repayment are executed through a pooled collection account run by the LSP (AgriNext), which is a third-party account, violating the requirement that all servicing and repayment must be executed directly in the RE’s bank account.",
+      "doc_evidence": "Farmers repay into a pooled collection account run by AgriNext, which sweeps the money to Godavari Rural Bank every Friday.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Repayment collection",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "Fees, charges, or reimbursements payable to the LSP (AgriNext) are collected from the borrower indirectly through the pooled collection account, violating the requirement that such fees must be paid directly by the RE and not charged to or collected from the borrower.",
+      "doc_evidence": "Farmers repay into a pooled collection account run by AgriNext, which sweeps the money to Godavari Rural Bank every Friday.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Field recovery",
+      "rule_id": "DLD2025:9(v)",
+      "issue": "Recovery by cash is conducted by the LSP (AgriNext), and the recovery fee is deducted from the cash collected before depositing the rest into the borrower's account, which may indirectly charge the borrower for the recovery process, violating the requirement that fees, charges, etc., payable to LSPs for such recovery must be paid directly by the RE and not charged by LSP to the borrower.",
+      "doc_evidence": "AgriNext deducts its 5% recovery fee from the cash collected before depositing the rest.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Recovery agent communication",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "The farmer receives the agent's name and ID card details by SMS before the first visit, but the requirement is to communicate the particulars of the recovery agent to the borrower through email/SMS before the recovery agent contacts the borrower for recovery. The current communication is not explicitly stated to occur before the first visit, which may not fully comply with the requirement.",
+      "doc_evidence": "When a loan becomes overdue, the assigned recovery agent visits the farmer. The farmer receives the agent's name and ID card details by SMS before the first visit.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Credit bureau reporting",
+      "rule_id": "DLD2025:16(ii)",
+      "issue": "The product document states that all loans are reported to credit information companies (CICs) by the RE (Godavari Rural Bank) every month, which complies with the requirement. However, the document does not explicitly state that the LSP (AgriNext) associated with the product is abiding by the extant outsourcing guidelines issued by the RBI, which is a requirement under DLD2025:16(ii).",
+      "doc_evidence": "All loans, irrespective of tenor or amount, are reported by Godavari Rural Bank to all four credit information companies every month.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2276,
+    "output_tokens": 843,
+    "llm_seconds": 76.4,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 76.7
+}

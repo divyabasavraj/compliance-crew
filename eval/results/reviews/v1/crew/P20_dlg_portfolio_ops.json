@@ -1,0 +1,70 @@
+{
+  "system": "crew",
+  "doc_id": "P20_dlg_portfolio_ops",
+  "findings": [
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The DLG agreement runs for 12 months, while loans in the portfolio have tenors of up to 24 months. The RBI requires that the DLG agreement must remain in force for a period not less than the longest tenor of the loan in the underlying loan portfolio. The feature text is: \"The DLG agreement runs for 12 months, while loans in the portfolio have tenors of up to 24 months.\"",
+      "doc_evidence": "The DLG agreement runs for 12 months, while loans in the portfolio have tenors of up to 24 months.",
+      "severity": "high",
+      "fix": "Extend the duration of the DLG agreement to match the longest loan tenor in the portfolio, which is 24 months. Update the feature text to reflect this change.",
+      "verifier_note": "The RBI paragraph requires that the DLG agreement must remain in force for a period not less than the longest tenor of the loan in the underlying loan portfolio. The product feature states that the DLG agreement runs for 12 months, while loans have tenors of up to 24 months. This directly violates the requirement that the DLG agreement must cover the longest loan tenor, which is 24 months. Therefore, the feature does not comply with the RBI paragraph."
+    },
+    {
+      "feature": "Disclosure",
+      "rule_id": "DLD2025:27(i)",
+      "issue": "The feature 'Disclosure: PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter' does not fully comply with the requirement in [DLD2025:27(i)] which mandates that LSPs publish the total number of portfolios and the respective amount of each portfolio on which DLG has been offered. The feature only mentions publishing the number of portfolios and the amount covered, but does not specify the respective amount of each portfolio.",
+      "doc_evidence": "PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter.",
+      "severity": "medium",
+      "fix": "Update the disclosure feature to include the respective amount of each portfolio on which DLG has been offered, in addition to the number of portfolios and the total amount covered.",
+      "verifier_note": "The RBI paragraph requires LSPs to publish the total number of portfolios and the respective amount of each portfolio on which DLG has been offered. The product feature states that PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter. The feature does not explicitly mention publishing the respective amount of each portfolio, which is a specific requirement in the RBI paragraph. However, the feature does mention publishing the amount covered, which could be interpreted as the total amount covered across all portfolios. The paragraph allows for the name of the RE to be omitted, and the feature does not mention the RE's name. The claim that the feature does not fully comply is based on the interpretation that 'amount covered' refers to the total amount rather than the respective amount of each portfolio. The feature does not explicitly state that it publishes the respective amount of each portfolio, which is a specific requirement in the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The feature states that PayNest provides DLG cover of 4% of each quarterly portfolio, which exceeds the RBI's cap of 5% of the total amount disbursed. The feature text is: \"PayNest provides DLG cover of 4% of each quarterly portfolio as a bank guarantee in favour of Meridian Finance.\"",
+      "doc_evidence": "PayNest provides DLG cover of 4% of each quarterly portfolio as a bank guarantee in favour of Meridian Finance.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph specifies that the total amount of DLG cover on any outstanding portfolio shall not exceed five per cent of the total amount disbursed out of that loan portfolio at any given time. The product feature states that PayNest provides DLG cover of 4% of each quarterly portfolio, which is below the 5% cap. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The DLG agreement runs for 12 months, while loans in the portfolio have tenors of up to 24 months. The RBI requires that the DLG agreement must remain in force for a period not less than the longest tenor of the loan in the underlying loan portfolio. The feature text is: \"The DLG agreement runs for 12 months, while loans in the portfolio have tenors of up to 24 months.\"",
+      "doc_evidence": "The DLG agreement runs for 12 months, while loans in the portfolio have tenors of up to 24 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the DLG agreement must remain in force for a period not less than the longest tenor of the loan in the underlying loan portfolio. The product feature states that the DLG agreement runs for 12 months, while loans have tenors of up to 24 months. This directly violates the requirement that the DLG agreement must cover the longest loan tenor, which is 24 months. Therefore, the feature does not comply with the RBI paragraph."
+    },
+    {
+      "feature": "Disclosure",
+      "rule_id": "DLD2025:27(i)",
+      "issue": "The feature 'Disclosure: PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter' does not fully comply with the requirement in [DLD2025:27(i)] which mandates that LSPs publish the total number of portfolios and the respective amount of each portfolio on which DLG has been offered. The feature only mentions publishing the number of portfolios and the amount covered, but does not specify the respective amount of each portfolio.",
+      "doc_evidence": "PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires LSPs to publish the total number of portfolios and the respective amount of each portfolio on which DLG has been offered. The product feature states that PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter. The feature does not explicitly mention publishing the respective amount of each portfolio, which is a specific requirement in the RBI paragraph. However, the feature does mention publishing the amount covered, which could be interpreted as the total amount covered across all portfolios. The paragraph allows for the name of the RE to be omitted, and the feature does not mention the RE's name. The claim that the feature does not fully comply is based on the interpretation that 'amount covered' refers to the total amount rather than the respective amount of each portfolio. The feature does not explicitly state that it publishes the respective amount of each portfolio, which is a specific requirement in the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the DLG Operations Manual for Meridian Finance x PayNest identified two findings against the reviewed RBI rules. The first finding is a high severity issue where the DLG agreement duration of 12 months does not meet the RBI requirement of remaining in force for at least the longest loan tenor in the portfolio, which is up to 24 months. The second finding is a medium severity issue where the disclosure feature does not fully comply with the requirement to publish the total number of portfolios and the respective amount of each portfolio, as it only mentions the number of portfolios and the total amount covered.",
+  "trace": {
+    "llm_calls": 10,
+    "prompt_tokens": 5239,
+    "output_tokens": 1268,
+    "llm_seconds": 62.3,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 2,
+      "gap_analyst": 2,
+      "verifier": 3,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 11
+  },
+  "seconds": 63.0
+}

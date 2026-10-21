@@ -1,0 +1,54 @@
+{
+  "system": "single",
+  "doc_id": "P21_dla_reporting",
+  "findings": [
+    {
+      "feature": "CIMS reporting",
+      "rule_id": "DLD2025:17(i)",
+      "issue": "The RE failed to report all DLAs, including those of the LSPs, on the CIMS portal.",
+      "doc_evidence": "Only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "CIMS reporting",
+      "rule_id": "DLD2025:17(vii)",
+      "issue": "The RE did not complete the reporting of all DLAs on the CIMS portal by June 15, 2025.",
+      "doc_evidence": "The three partner LSP apps are not reported because they belong to the partners. A fourth partner app, StudyCash, went live last month. The bank will add it to its records at the next annual review.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Grievance redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The RE did not prominently display contact details of the nodal grievance redressal officers on the DLA.",
+      "doc_evidence": "The bank's website lists all its digital lending products, all four partner LSPs and their apps, the grievance officer's details and a link to RBI's CMS and Sachet portals.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Website",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "The RE did not ensure that DLAs/LSPs have links to the RE's website.",
+      "doc_evidence": "The bank's website lists all its digital lending products, all four partner LSPs and their apps, the grievance officer's details and a link to RBI's CMS and Sachet portals.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2426,
+    "output_tokens": 460,
+    "llm_seconds": 31.3,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 31.6
+}

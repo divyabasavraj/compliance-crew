@@ -1,0 +1,63 @@
+{
+  "system": "single",
+  "doc_id": "P07_dlg_partnership",
+  "findings": [
+    {
+      "feature": "DLG cover",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "DLG cover exceeds the maximum permissible limit of 5% of disbursed amount.",
+      "doc_evidence": "CredBridge will cover losses up to 10% of the total amount disbursed in each quarterly portfolio.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Form of DLG",
+      "rule_id": "DLD2025:22(i)",
+      "issue": "DLG is provided in the form of a corporate guarantee from CredBridge's parent company, which is not one of the permitted forms (cash, fixed deposit, or bank guarantee).",
+      "doc_evidence": "The DLG will be given as a corporate guarantee from CredBridge's parent company, rather than cash or a bank guarantee.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Invocation",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "DLG is invoked after 180 days of overdue, which exceeds the maximum allowed period of 120 days.",
+      "doc_evidence": "Coastal Finance will invoke the DLG once a loan has been overdue for 180 days.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Tenor",
+      "rule_id": "DLD2025:26(ii)",
+      "issue": "The DLG agreement is valid for 5 years, which is longer than the longest loan tenor in the portfolio (3 years), but the rule requires the DLG agreement to remain in force for at least the longest tenor of the loan in the portfolio.",
+      "doc_evidence": "The DLG agreement stays in force for 5 years, longer than the longest loan tenor in the portfolio (3 years).",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Disclosure",
+      "rule_id": "DLD2025:27(i)",
+      "issue": "CredBridge publishes the number of portfolios and the amount of each portfolio covered by DLG, but the rule requires the RE (Coastal Finance) to ensure that LSPs with whom they have a DLG arrangement publish this information on their website. The disclosure is made by the LSP (CredBridge), not the RE (Coastal Finance).",
+      "doc_evidence": "CredBridge publishes on its website, every month within seven working days, the number of portfolios and the amount of each portfolio covered by DLG.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2306,
+    "output_tokens": 589,
+    "llm_seconds": 56.6,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 56.9
+}

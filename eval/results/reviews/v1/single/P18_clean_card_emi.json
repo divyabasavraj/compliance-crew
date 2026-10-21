@@ -1,0 +1,63 @@
+{
+  "system": "single",
+  "doc_id": "P18_clean_card_emi",
+  "findings": [
+    {
+      "feature": "EMI Conversion for Credit Card Purchases",
+      "rule_id": "DLD2025:29(i)",
+      "issue": "The product document states that EMI conversion on credit cards is governed by the Master Direction on Credit Card and Debit Card, which conflicts with the requirement that EMI programmes on Credit Card are governed specifically by Para 6(b)(iii) 12 of the Master Direction on Credit Card and Debit Card – Issuance and Conduct, 2022. Other loan products offered on Credit Cards not covered under that para are governed by these Directions.",
+      "doc_evidence": "EMI conversion on credit cards is governed by the Master Direction on Credit Card and Debit Card; the conversion terms, interest and processing fee are shown before the customer confirms.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Credit Limit Management",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The product document states that the credit limit is never increased automatically, which complies with the requirement that RE shall ensure there is no automatic increase in credit limit unless an explicit request is received, evaluated and kept on record from the borrower for such increase.",
+      "doc_evidence": "The credit limit is never increased automatically. A limit increase is offered only when the customer requests it in the app, and it needs a separate confirmation.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data Collection and Usage",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product document states that the app uses only the customer's existing card account data and does not request contacts, files, SMS or call logs, which complies with the requirement that RE shall ensure that any collection of data by their DLA and DLA of their LSP is need-based and with prior and explicit consent of the borrower having audit trail. It also complies with the requirement that DLA of RE/LSP desist from accessing mobile phone resources like file and media, contact list, call logs, telephony functions, etc.",
+      "doc_evidence": "The app uses only the customer's existing card account data. It does not request contacts, files, SMS or call logs.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The product document states that all data is stored on Konkan Bank's servers in Mumbai and Chennai, which complies with the requirement that RE shall ensure that LSP engaged by them do not store personal information of borrower except some basic minimal data (viz., name, address, contact details of the customer, etc.) that may be required to carry out their operations or service within the scope of the RE-LSP agreement. However, the document does not mention that the RE has a clear policy guidelines regarding the storage of customer data including the type of data that can be stored, the length of time for which data can be stored, restrictions on the use of data, data destruction protocol, standards for handling security breach, etc.",
+      "doc_evidence": "All data is stored on Konkan Bank's servers in Mumbai and Chennai.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product document states that the nodal grievance officer's name and contact are shown in the app and on the bank's website, along with a link to RBI's CMS portal, which complies with the requirement that contact details of the nodal grievance redressal officers shall be prominently displayed on the websites of the RE, its LSP and on the DLA, as well as in the KFS provided to the borrower.",
+      "doc_evidence": "The nodal grievance officer's name and contact are shown in the app and on the bank's website, along with a link to RBI's CMS portal.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 3068,
+    "output_tokens": 886,
+    "llm_seconds": 46.9,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 47.2
+}

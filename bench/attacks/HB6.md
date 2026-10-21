@@ -1,0 +1,26 @@
+# HomeFix: Home Improvement Loans
+
+**Lender:** Malabar Housing Finance (HFC). **Platform:** HomeFix app by RenovatePro (LSP).
+
+## 1. Product
+Loans of ₹50,000 to ₹10,00,000 for home repairs and renovation, 12 to 60 months.
+
+## 2. Disbursal
+Loans are paid into the borrower's own bank account. For contractor-led projects the borrower may opt to have the amount paid directly into the registered contractor's bank account, as the end-beneficiary.
+
+The AI assistant in the app answers EMI questions; it cannot approve loans or change terms.
+
+## 3. Fees
+RenovatePro's sourcing fee is paid by Malabar Housing Finance. The borrower pays only the charges listed in the KFS, and the APR includes all of them.
+
+## 4. Cooling-off
+Borrowers may exit within 3 days by repaying principal and proportionate APR, without penalty. A ₹500 processing fee is retained on exit, and this is disclosed upfront in the KFS.
+
+## 5. KFS
+Each KFS has a unique proposal number, is in the borrower's chosen language, includes the APR computation sheet and amortisation schedule, and stays valid for 3 working days.
+
+## 6. Data
+RenovatePro stores only the borrower's name, address and phone number. All data is on servers in India. Consent is explicit, purpose is shown at each step, and borrowers can withdraw consent and ask for deletion.
+
+## 7. Grievance redressal
+Both firms have nodal grievance officers whose contact details are shown on the app, both websites and in the KFS. Complaints can be lodged in the app.

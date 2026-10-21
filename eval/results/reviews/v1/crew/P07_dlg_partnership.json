@@ -1,0 +1,43 @@
+{
+  "system": "crew",
+  "doc_id": "P07_dlg_partnership",
+  "findings": [
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The feature describes a Default Loss Guarantee (DLG) where CredBridge will cover losses up to 10% of the total amount disbursed in each quarterly portfolio. This exceeds the RBI requirement that the total amount of DLG cover on any outstanding portfolio shall not exceed five per cent of the total amount disbursed out of that loan portfolio at any given time. [doc_evidence: 'CredBridge will cover losses up to 10% of the total amount disbursed in each quarterly portfolio.']",
+      "doc_evidence": "CredBridge will cover losses up to 10% of the total amount disbursed in each quarterly portfolio.",
+      "severity": "high",
+      "fix": "Adjust the Default Loss Guarantee (DLG) coverage to ensure it does not exceed 5% of the total amount disbursed in any outstanding portfolio at any given time, as per RBI regulations.",
+      "verifier_note": "The product feature states that CredBridge will cover losses up to 10% of the total amount disbursed in each quarterly portfolio. The RBI paragraph explicitly limits DLG cover to five per cent of the total amount disbursed out of that loan portfolio at any given time. The feature's 10% coverage exceeds this limit, thereby violating the RBI requirement."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The feature describes a Default Loss Guarantee (DLG) where CredBridge will cover losses up to 10% of the total amount disbursed in each quarterly portfolio. This exceeds the RBI requirement that the total amount of DLG cover on any outstanding portfolio shall not exceed five per cent of the total amount disbursed out of that loan portfolio at any given time. [doc_evidence: 'CredBridge will cover losses up to 10% of the total amount disbursed in each quarterly portfolio.']",
+      "doc_evidence": "CredBridge will cover losses up to 10% of the total amount disbursed in each quarterly portfolio.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that CredBridge will cover losses up to 10% of the total amount disbursed in each quarterly portfolio. The RBI paragraph explicitly limits DLG cover to five per cent of the total amount disbursed out of that loan portfolio at any given time. The feature's 10% coverage exceeds this limit, thereby violating the RBI requirement."
+    }
+  ],
+  "summary": "The compliance review of the Partnership Term Sheet between Coastal Finance and CredBridge (DLG arrangement) identified a high-risk finding. The DLG feature allows CredBridge to cover losses up to 10% of the total amount disbursed in each quarterly portfolio, which exceeds the RBI requirement that the total DLG cover on any outstanding portfolio shall not exceed five per cent of the total amount disbursed out of that loan portfolio at any given time.",
+  "trace": {
+    "llm_calls": 6,
+    "prompt_tokens": 3478,
+    "output_tokens": 531,
+    "llm_seconds": 47.9,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 1,
+      "gap_analyst": 1,
+      "verifier": 1,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 5
+  },
+  "seconds": 48.6
+}

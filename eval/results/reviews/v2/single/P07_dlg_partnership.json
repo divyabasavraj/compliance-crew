@@ -1,0 +1,64 @@
+{
+  "system": "single",
+  "doc_id": "P07_dlg_partnership",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Form of DLG",
+      "rule_id": "DLD2025:22(i)",
+      "issue": "DLG is not provided in the forms specified by RBI regulations.",
+      "doc_evidence": "The DLG will be given as a corporate guarantee from CredBridge's parent company, rather than cash or a bank guarantee.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Invocation",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "DLG is invoked after a longer overdue period than permitted by RBI regulations.",
+      "doc_evidence": "Coastal Finance will invoke the DLG once a loan has been overdue for 180 days.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "DLG cover",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "DLG cover exceeds the maximum allowed limit of 5% of the total amount disbursed.",
+      "doc_evidence": "CredBridge will cover losses up to 10% of the total amount disbursed in each quarterly portfolio.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Disclosure",
+      "rule_id": "DLD2025:27(i)",
+      "issue": "Disclosure is made by the DLG provider (CredBridge) rather than the RE (Coastal Finance), which is not in compliance with the requirement for the RE to make the disclosure.",
+      "doc_evidence": "CredBridge publishes on its website, every month within seven working days, the number of portfolios and the amount of each portfolio covered by DLG.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Tenor",
+      "rule_id": "DLD2025:26(ii)",
+      "issue": "The DLG agreement's tenor is longer than the longest loan tenor in the portfolio, which is not a violation, but the regulation requires the DLG agreement to remain in force for at least the longest loan tenor, which is satisfied here.",
+      "doc_evidence": "The DLG agreement stays in force for 5 years, longer than the longest loan tenor in the portfolio (3 years).",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 1934,
+    "output_tokens": 517,
+    "llm_seconds": 46.7,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 47.0
+}

@@ -1,0 +1,64 @@
+{
+  "system": "single",
+  "doc_id": "P24_third_party_sdks",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Third-party SDKs",
+      "rule_id": "DLD2025:14(i)",
+      "issue": "The privacy policy does not disclose third-party SDKs that collect personal data, which is a violation of the requirement for a comprehensive privacy policy.",
+      "doc_evidence": "The privacy policy on the website does not name these third parties.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Third-party SDKs",
+      "rule_id": "DLD2025:14(ii)",
+      "issue": "Details of third parties (SDKs) that collect personal information are not disclosed in the privacy policy.",
+      "doc_evidence": "The privacy policy on the website does not name these third parties.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Device access",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app accesses device files and installed apps without explicit consent, which violates the requirement to ensure data collection is need-based and with prior and explicit consent.",
+      "doc_evidence": "For fraud checks, the app scans the list of installed apps and reads files in the download folder.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data location",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The data is stored on servers in Mumbai, which is within India, so this does not violate the requirement. However, the requirement is to ensure that data processed outside India is deleted within 24 hours, which is not applicable here.",
+      "doc_evidence": "All data, including SDK data, is stored on servers in Mumbai.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Grievances",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "The grievance mechanism is mentioned, but the requirement is for the RE to ensure that DLAs/LSPs have links to the RE's website, which is not explicitly stated in the product document.",
+      "doc_evidence": "Nodal grievance officers of Nilgiri Bank and SwiftStack are named on both websites, in the app and in the KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2220,
+    "output_tokens": 510,
+    "llm_seconds": 45.0,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 45.4
+}

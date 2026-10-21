@@ -1,0 +1,90 @@
+{
+  "system": "single",
+  "doc_id": "P26_clean_gold_loan",
+  "findings": [
+    {
+      "feature": "KFS (Key Facts Statement)",
+      "rule_id": "KFS2024:5",
+      "issue": "The KFS validity period for loans with a tenor of seven days or more is not explicitly stated as being at least three working days.",
+      "doc_evidence": "KFS shall be provided with a unique proposal number and shall have a validity period of at least three working days for loans having tenor of seven days or more, and a validity period of one working day for loans having tenor of less than seven days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS (Key Facts Statement)",
+      "rule_id": "KFS2024:9",
+      "issue": "The KFS is not explicitly stated to be included as a summary box to be exhibited as part of the loan agreement.",
+      "doc_evidence": "The KFS shall also be included as a summary box to be exhibited as part of the loan agreement.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data Collection and Sharing",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The document does not explicitly state that data collection by the DLA and DLA of the LSP is need-based and with prior and explicit consent of the borrower having audit trail.",
+      "doc_evidence": "The app takes a one-time selfie for KYC with consent. AurumTech stores only name, phone and loan reference; all other data is stored by the bank on servers in India.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The document does not explicitly state that all data is stored only in servers located within India, while ensuring compliance with statutory obligations/ regulatory instructions.",
+      "doc_evidence": "AurumTech stores only name, phone and loan reference; all other data is stored by the bank on servers in India.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The document does not explicitly state that the loan is disbursed directly into the bank account of the end-beneficiary, except as provided for in these Directions.",
+      "doc_evidence": "Top-ups are credited to the customer's bank account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan Servicing and Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The document does not explicitly state that all loan servicing, repayment, etc. is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "Repayments go directly to Sahyadri Bank's account; AurumTech never handles funds and is paid its fee by the bank.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan Servicing and Repayment",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The document does not explicitly state that any fees, charges, reimbursements, etc. payable to LSP are paid directly by the RE and are not charged to or collected from the borrowers separately by LSP.",
+      "doc_evidence": "AurumTech never handles funds and is paid its fee by the bank.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "KFS2024:5",
+      "issue": "The document does not explicitly state that the KFS has a validity period of at least three working days for loans with a tenor of seven days or more.",
+      "doc_evidence": "The KFS shall be provided with a unique proposal number and shall have a validity period of at least three working days for loans having tenor of seven days or more, and a validity period of one working day for loans having tenor of less than seven days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2788,
+    "output_tokens": 922,
+    "llm_seconds": 70.8,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 71.1
+}

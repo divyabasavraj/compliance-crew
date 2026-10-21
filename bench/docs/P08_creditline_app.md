@@ -1,0 +1,21 @@
+# FlexLine: Revolving Credit Line App
+
+**Lender:** Indus Valley Bank. **Platform:** FlexLine app by FlexLine Fintech (LSP).
+
+## 1. Product
+A revolving credit line of ₹10,000 to ₹2,00,000 that users can draw from and repay any time.
+
+## 2. Default loss guarantee
+FlexLine Fintech provides Indus Valley Bank a DLG of 5% on the credit line portfolio, as a cash deposit with the bank.
+
+## 3. Grievances
+Complaints can be emailed to support@flexline.example. There is no named grievance officer; the support team handles all issues, and contact details are not included in the KFS.
+
+## 4. Loan documents
+Borrowers can download the KFS, sanction letter and terms from the app's Documents tab if they wish. Documents are not sent by email or SMS.
+
+## 5. Location tracking
+For fraud prevention, the app tracks the user's location continuously while the credit line is active.
+
+## 6. Repayment
+Repayments go directly into Indus Valley Bank's account via UPI or net banking. FlexLine never handles borrower funds.

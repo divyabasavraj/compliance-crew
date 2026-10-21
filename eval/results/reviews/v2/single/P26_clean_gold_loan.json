@@ -1,0 +1,118 @@
+{
+  "system": "single",
+  "doc_id": "P26_clean_gold_loan",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "KFS (Know Your Finance Statement)",
+      "rule_id": "KFS2024:5",
+      "issue": "The validity period of the KFS is not aligned with the requirement for loans with a tenor of seven days or more, which must have a validity period of at least three working days.",
+      "doc_evidence": "A KFS in the customer's chosen language (English, Marathi, Kannada or Hindi) with a unique proposal number, APR computation sheet including all charges, and repayment schedule is shown before signing, and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS",
+      "rule_id": "KFS2024:6",
+      "issue": "The KFS does not include a computation sheet of annual percentage rate (APR) and the amortisation schedule of the loan over the loan tenor.",
+      "doc_evidence": "A KFS in the customer's chosen language (English, Marathi, Kannada or Hindi) with a unique proposal number, APR computation sheet including all charges, and repayment schedule is shown before signing, and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS",
+      "rule_id": "KFS2024:9",
+      "issue": "The KFS is not included as a summary box to be exhibited as part of the loan agreement.",
+      "doc_evidence": "A KFS in the customer's chosen language (English, Marathi, Kannada or Hindi) with a unique proposal number, APR computation sheet including all charges, and repayment schedule is shown before signing, and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data Collection and Sharing",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product document does not explicitly state that data collection by the DLA and DLA of the LSP is need-based and with prior and explicit consent of the borrower having audit trail.",
+      "doc_evidence": "The app takes a one-time selfie for KYC with consent. AurumTech stores only name, phone and loan reference; all other data is stored by the bank on servers in India.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The product document does not explicitly state that all data is stored only in servers located within India, while ensuring compliance with statutory obligations/ regulatory instructions.",
+      "doc_evidence": "AurumTech stores only name, phone and loan reference; all other data is stored by the bank on servers in India.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The product document does not mention the invocation of DLG within a maximum overdue period of 120 days, unless the loan dues are made good by the borrower before that.",
+      "doc_evidence": "Customers can exit within 3 days by repaying principal and proportionate APR without penalty.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan Disbursement and Repayment",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product document does not explicitly state that the disbursement of loan by the RE shall always be made into the bank account of the borrower, except for disbursals covered exclusively under statutory or regulatory mandate.",
+      "doc_evidence": "Top-ups are credited to the customer's bank account. Repayments go directly to Sahyadri Bank's account; AurumTech never handles funds and is paid its fee by the bank.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan Disbursement and Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product document does not explicitly state that all loan servicing, repayment, etc. is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "Top-ups are credited to the customer's bank account. Repayments go directly to Sahyadri Bank's account; AurumTech never handles funds and is paid its fee by the bank.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan Disbursement and Repayment",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The product document does not explicitly state that the flow of funds between the bank accounts of the borrower and the RE shall not be controlled either directly or indirectly by a third-party, including the LSP.",
+      "doc_evidence": "Top-ups are credited to the customer's bank account. Repayments go directly to Sahyadri Bank's account; AurumTech never handles funds and is paid its fee by the bank.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan Disbursement and Repayment",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The product document does not explicitly state that any fees, charges, reimbursements, etc. payable to LSP are paid directly by the RE and are not charged to or collected from the borrowers separately by LSP.",
+      "doc_evidence": "Top-ups are credited to the customer's bank account. Repayments go directly to Sahyadri Bank's account; AurumTech never handles funds and is paid its fee by the bank.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data Collection and Sharing",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product document does not explicitly state that the DLA of RE/LSP desist from accessing mobile phone resources like file and media, contact list, call logs, telephony functions, etc.",
+      "doc_evidence": "The app takes a one-time selfie for KYC with consent. AurumTech stores only name, phone and loan reference; all other data is stored by the bank on servers in India.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2272,
+    "output_tokens": 1389,
+    "llm_seconds": 115.8,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 116.1
+}

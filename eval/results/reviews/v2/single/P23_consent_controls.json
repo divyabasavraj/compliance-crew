@@ -1,0 +1,82 @@
+{
+  "system": "single",
+  "doc_id": "P23_consent_controls",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Consent",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product document does not provide for prior and explicit consent with audit trail for data collection, and does not restrict access to mobile phone resources beyond one-time camera access for KYC.",
+      "doc_evidence": "At signup, the shopkeeper taps one \"I agree\" button that covers all uses of their data. There is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Consent",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product document does not provide the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, revoke consent, or request deletion of data.",
+      "doc_evidence": "At signup, the shopkeeper taps one \"I agree\" button that covers all uses of their data. There is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Purpose of consent",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The product document does not disclose the purpose of obtaining borrowers’ consent at each stage of interface with the borrowers.",
+      "doc_evidence": "Later screens that ask for GST returns and bank statements do not say why they are needed.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The product document does not restrict LSPs from storing personal information of the borrower beyond basic minimal data (name, address, contact details, etc.).",
+      "doc_evidence": "The app needs no phone permissions apart from one-time camera access for KYC.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "The product document does not ensure that no biometric data is stored or collected by the RE and LSP, unless allowed under extant statutory guidelines.",
+      "doc_evidence": "The app needs no phone permissions apart from one-time camera access for KYC.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product document does not ensure that loan disbursal is made directly into the borrower's bank account, and does not exclude third-party accounts, including LSPs, except as provided for in the Directions.",
+      "doc_evidence": "Repayments go directly into Tapti Finance's bank account.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product document does not ensure that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account or pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "Repayments go directly into Tapti Finance's bank account.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2328,
+    "output_tokens": 773,
+    "llm_seconds": 68.3,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 68.6
+}

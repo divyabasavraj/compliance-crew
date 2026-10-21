@@ -1,0 +1,63 @@
+{
+  "system": "single",
+  "doc_id": "P22_kfs_apr",
+  "findings": [
+    {
+      "feature": "APR Calculation",
+      "rule_id": "KFS2024:3(c)",
+      "issue": "The APR does not include all charges levied by the RE, including the 2% processing fee.",
+      "doc_evidence": "The KFS shows an APR of 13.5%, computed from the interest rate only. The 2% processing fee charged by Aravalli is shown separately and is not included in the APR.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Amortisation Schedule",
+      "rule_id": "KFS2024:6",
+      "issue": "The KFS does not include an amortisation schedule of the loan over the loan tenor.",
+      "doc_evidence": "No amortisation schedule is provided.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS in Loan Agreement",
+      "rule_id": "KFS2024:9",
+      "issue": "The KFS is not included as a summary box in the loan agreement.",
+      "doc_evidence": "The loan agreement is a 14-page PDF. The KFS is a separate screen in the app and is not reproduced in the agreement.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS Validity",
+      "rule_id": "KFS2024:5",
+      "issue": "The KFS validity period is not specified for loans with a tenor of less than seven days.",
+      "doc_evidence": "Each KFS has a unique proposal number and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The cooling-off period is not stated to be at least one day, which is a minimum requirement.",
+      "doc_evidence": "Borrowers can cancel within 3 days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2356,
+    "output_tokens": 454,
+    "llm_seconds": 32.3,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 32.5
+}

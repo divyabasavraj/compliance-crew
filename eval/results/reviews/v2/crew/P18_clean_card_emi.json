@@ -1,0 +1,149 @@
+{
+  "system": "crew",
+  "doc_id": "P18_clean_card_emi",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature states that 'The nodal grievance officer's name and contact are shown in the app and on the bank's website, along with a link to RBI's CMS portal.' However, the RBI paragraph requires that contact details of the nodal grievance redressal officers be 'prominently displayed on the websites of the RE, its LSP and on the DLA, as well as in the KFS provided to the borrower.' The feature does not explicitly mention the DLA or the KFS, which are required under the paragraph.",
+      "doc_evidence": "The nodal grievance officer's name and contact are shown in the app and on the bank's website, along with a link to RBI's CMS portal.",
+      "severity": "medium",
+      "fix": "Update the product feature to explicitly include the display of the nodal grievance officer's contact details on the DLA and in the KFS provided to the borrower, in addition to the app and the bank's website.",
+      "verifier_note": "The product feature displays the nodal grievance officer's name and contact on the bank's website, which is one of the required locations per the RBI paragraph. However, the RBI paragraph also requires the contact details to be prominently displayed on the websites of the RE, its LSP, and the DLA, as well as in the KFS provided to the borrower. The product feature does not mention the DLA or the KFS, which are explicitly required by the RBI paragraph. Therefore, the feature fails to meet the full requirements of the paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Product Offering",
+      "rule_id": "DLD2025:8(iii)",
+      "issue": "The product feature does not mention any digitally signed documents such as KFS, summary of loan product, sanction letter, terms and conditions, account statements, privacy policies of the RE / LSP with respect to storage and usage of borrowers’ data, etc. being automatically sent to the borrower on the registered and verified email/SMS upon execution of the loan contract/transactions.",
+      "doc_evidence": "Konkan Bank credit card holders can convert purchases above ₹2,500 into EMIs of 3 to 24 months inside the bank's app.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that digitally signed documents be automatically sent to borrowers upon execution of a loan contract. The product feature describes a credit card EMI conversion facility, which is unrelated to loan contracts or digitally signed documents. The claim relies on the absence of mention of digitally signed documents in the product feature, but the feature does not involve loan contracts or the sending of such documents. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Regulatory Compliance",
+      "rule_id": "DLD2025:29(i)",
+      "issue": "The feature describes EMI conversion on credit cards, which is governed by Para 6(b)(iii) 12 of the Master Direction on Credit Card and Debit Card. However, the product feature does not explicitly state that the conversion terms, interest and processing fee are shown before the customer confirms, which is a requirement under the RBI paragraph.",
+      "doc_evidence": "EMI conversion on credit cards is governed by the Master Direction on Credit Card and Debit Card; the conversion terms, interest and processing fee are shown before the customer confirms.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that EMI programmes on Credit Cards are governed by Para 6(b)(iii) 12 of the Master Direction and are not covered under these Directions. However, the product feature correctly states that EMI conversion on credit cards is governed by the Master Direction, and it also mentions that conversion terms, interest, and processing fee are shown before the customer confirms. The claim that the feature does not explicitly state this is incorrect, as the feature does mention it. Therefore, the feature complies with the RBI paragraph."
+    },
+    {
+      "feature": "Credit Limit Management",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The feature 'Credit Limit Management' states that 'The credit limit is never increased automatically. A limit increase is offered only when the customer requests it in the app, and it needs a separate confirmation.' This complies with the requirement that there is no automatic increase in credit limit unless an explicit request is received, evaluated and kept on record from the borrower for such increase.",
+      "doc_evidence": "The credit limit is never increased automatically. A limit increase is offered only when the customer requests it in the app, and it needs a separate confirmation.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that the credit limit is never increased automatically and that a limit increase is only offered when the customer requests it in the app with separate confirmation. This aligns with the RBI requirement that there should be no automatic increase in credit limit unless an explicit request is received, evaluated, and kept on record. The feature does not violate the paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app uses only the customer's existing card account data. It does not request contacts, files, SMS or call logs.",
+      "doc_evidence": "The app uses only the customer's existing card account data. It does not request contacts, files, SMS or call logs.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the RBI paragraph. The paragraph prohibits accessing mobile phone resources like contacts, files, call logs, etc., and the feature explicitly states that the app does not request these. The feature also aligns with the requirement of using only existing card account data, which is permissible under the paragraph. There is no violation."
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The feature 'Data Storage: All data is stored on Konkan Bank's servers in Mumbai and Chennai' does not comply with RBI paragraph DLD2025:13(iv), which requires that all data is stored only in servers located within India, while ensuring compliance with statutory obligations/ regulatory instructions. Further, in case the data is processed outside India, the same shall be deleted from servers outside India and brought back to India within 24 hours of processing.",
+      "doc_evidence": "Data Storage: All data is stored on Konkan Bank's servers in Mumbai and Chennai.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that all data is stored on Konkan Bank's servers in Mumbai and Chennai, both of which are located within India. This complies with the requirement in RBI paragraph DLD2025:13(iv) that data be stored only in servers located within India. The feature does not mention any data being processed outside India, so the additional requirement about deleting and bringing back data processed outside India is not applicable here. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature states that 'The nodal grievance officer's name and contact are shown in the app and on the bank's website, along with a link to RBI's CMS portal.' However, the RBI paragraph requires that contact details of the nodal grievance redressal officers be 'prominently displayed on the websites of the RE, its LSP and on the DLA, as well as in the KFS provided to the borrower.' The feature does not explicitly mention the DLA or the KFS, which are required under the paragraph.",
+      "doc_evidence": "The nodal grievance officer's name and contact are shown in the app and on the bank's website, along with a link to RBI's CMS portal.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature displays the nodal grievance officer's name and contact on the bank's website, which is one of the required locations per the RBI paragraph. However, the RBI paragraph also requires the contact details to be prominently displayed on the websites of the RE, its LSP, and the DLA, as well as in the KFS provided to the borrower. The product feature does not mention the DLA or the KFS, which are explicitly required by the RBI paragraph. Therefore, the feature fails to meet the full requirements of the paragraph."
+    }
+  ],
+  "summary": "The compliance review of the CardFlex product's EMI Conversion feature for credit card purchases identified a medium severity gap. The feature mentions the nodal grievance officer's name and contact details on the app and the bank's website, along with a link to RBI's CMS portal. However, it does not explicitly display the contact details on the DLA (Designated Local Authority) or in the KFS (Know Your Customer Form) provided to the borrower, which are required under RBI regulation DLD2025:11(ii).",
+  "trace": {
+    "llm_calls": 21,
+    "prompt_tokens": 10807,
+    "output_tokens": 2144,
+    "llm_seconds": 196.2,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 6,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 30,
+    "retrieved": {
+      "0:Product Offering": [
+        "DLD2025:29(i)",
+        "DLD2025:20(i)",
+        "DLD2025:8(iii)",
+        "DLD2025:29(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:16(i)"
+      ],
+      "1:Regulatory Compliance": [
+        "DLD2025:29(i)",
+        "DLD2025:20(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:27(ii)",
+        "DLD2025:27(i)"
+      ],
+      "2:Credit Limit Management": [
+        "DLD2025:7(ii)",
+        "DLD2025:8(v)",
+        "DLD2025:6(ii)",
+        "DLD2025:23(ii)",
+        "DLD2025:23(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:29(i)",
+        "DLD2025:20(i)",
+        "DLD2025:16(i)"
+      ],
+      "3:Data Collection": [
+        "DLD2025:12(i)",
+        "DLD2025:13(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iv)",
+        "DLD2025:29(i)",
+        "DLD2025:13(iii)",
+        "DLD2025:14(i)"
+      ],
+      "4:Data Storage": [
+        "DLD2025:13(iv)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:13(i)",
+        "DLD2025:17(v)",
+        "DLD2025:29(i)",
+        "DLD2025:12(i)"
+      ],
+      "5:Grievance Redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:17(iv)",
+        "DLD2025:8(iv)",
+        "DLD2025:11(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:11(iii)",
+        "DLD2025:11(iv)",
+        "DLD2025:29(i)",
+        "DLD2025:20(i)"
+      ]
+    }
+  },
+  "seconds": 197.9
+}

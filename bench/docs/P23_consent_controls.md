@@ -1,0 +1,18 @@
+# Kirana Credit: Inventory Loans for Shopkeepers
+
+**Lender:** Tapti Finance (NBFC). **Platform:** Kirana Credit app by StockUp Pvt Ltd (LSP).
+
+## 1. Product
+Short-term loans of ₹10,000 to ₹1,00,000 for shopkeepers to buy stock, repaid in 60 days.
+
+## 2. Consent
+At signup, the shopkeeper taps one "I agree" button that covers all uses of their data. There is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently.
+
+## 3. Purpose of consent
+Later screens that ask for GST returns and bank statements do not say why they are needed.
+
+## 4. Data collection
+GST returns and bank statements are uploaded by the shopkeeper. The app needs no phone permissions apart from one-time camera access for KYC.
+
+## 5. Repayment
+Repayments go directly into Tapti Finance's bank account.

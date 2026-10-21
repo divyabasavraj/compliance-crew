@@ -1,0 +1,72 @@
+{
+  "system": "single",
+  "doc_id": "P02_quickcash_payday",
+  "findings": [
+    {
+      "feature": "Pricing",
+      "rule_id": "KFS2024:8",
+      "issue": "Platform fee is not mentioned in the KFS and cannot be charged without explicit consent of the borrower.",
+      "doc_evidence": "QuickCash also charges the borrower a platform fee of 3% of the loan amount, collected by QC Technologies from the borrower's account at disbursal, for the use of the app.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Disbursal flow",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "Loan is disbursed into the QuickCash wallet held by QC Technologies, which is a third-party account, violating the requirement that disbursement must be made directly into the borrower's bank account.",
+      "doc_evidence": "Approved amounts are first credited to the QuickCash wallet held by QC Technologies, and the user can move the money to their bank account at any time with one tap.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan offer and KFS",
+      "rule_id": "KFS2024:5",
+      "issue": "The validity period of the KFS is 30 minutes, which is less than the required minimum of three working days for loans with a tenor of seven days or more.",
+      "doc_evidence": "For speed, the offer and KFS expire 30 minutes after they are shown; after that the user must apply again.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Cooling-off",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The cooling-off period is 3 days, which is less than the minimum required period of one day, but the rule allows for a period not less than one day, so this is compliant.",
+      "doc_evidence": "Borrowers can cancel the loan within 3 days by repaying the principal and proportionate interest.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Cooling-off",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "A one-time processing fee of ₹99 is retained on cancellation, which is disclosed in the KFS, so this is compliant.",
+      "doc_evidence": "A one-time processing fee of ₹99, which is shown in the KFS, is retained on cancellation.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data",
+      "rule_id": "DLD2025:16(ii)",
+      "issue": "The product involves structured digital lending products, which require reporting to CICs by the RE. The document does not mention reporting to CICs.",
+      "doc_evidence": "All app data is stored on AWS Mumbai region servers. QC Technologies keeps only the borrower's name, address and phone number, which it needs to service the loan; all other data sits with Sahyadri Capital.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2997,
+    "output_tokens": 675,
+    "llm_seconds": 64.5,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 65.0
+}

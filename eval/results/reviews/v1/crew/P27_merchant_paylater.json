@@ -1,0 +1,79 @@
+{
+  "system": "crew",
+  "doc_id": "P27_merchant_paylater",
+  "findings": [
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "The feature 'Credit Bureau Reporting' as described by Mahanadi Finance treats these as merchant payment deferrals, not loans, and does not report them to credit information companies. This directly contradicts RBI's requirement that any lending done through their DLAs and/or DLAs of LSPs is reported by them to CICs irrespective of its nature/tenor. [doc_evidence: Mahanadi Finance treats these as merchant payment deferrals, not loans, and does not report them to credit information companies.]",
+      "doc_evidence": "Mahanadi Finance treats these as merchant payment deferrals, not loans, and does not report them to credit information companies.",
+      "severity": "high",
+      "fix": "Mahanadi Finance must ensure that all lending activities through DLAs and DLAs of LSPs are reported to credit information companies (CICs) as per RBI guidelines. This includes implementing a system to capture and report all such transactions, regardless of their nature or tenure.",
+      "verifier_note": "The RBI paragraph requires that any lending through DLAs or DLAs of LSPs must be reported to CICs regardless of nature/tenor. The product feature states that Mahanadi Finance treats these as merchant payment deferrals (not loans) and does not report them. This directly contradicts the RBI requirement, as it fails to report lending activities. The feature does not comply with the RBI's mandate."
+    },
+    {
+      "feature": "Credit Limit and Limits",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The feature describes that PharmaPay raises each customer's pay-later limit by ₹1,000 every month if they repaid on time, without an explicit request from the borrower. This violates the requirement that there should be no automatic increase in credit limit unless an explicit request is received, evaluated, and kept on record from the borrower for such increase.",
+      "doc_evidence": "Every month, PharmaPay raises each customer's pay-later limit by ₹1,000 if they repaid on time; customers are informed by SMS after the increase.",
+      "severity": "high",
+      "fix": "PharmaPay must stop automatically increasing credit limits without an explicit request from the borrower. Instead, the system should prompt the borrower for an explicit request, evaluate it, and maintain a record of any approved limit increases.",
+      "verifier_note": "The product feature describes an automatic increase in the pay-later limit by ₹1,000 every month if the customer repaid on time, without an explicit request from the borrower. This directly violates the RBI requirement that there should be no automatic increase in credit limit unless an explicit request is received, evaluated, and kept on record from the borrower. The feature does not mention any process of obtaining an explicit request, evaluation, or record-keeping, which are explicitly required by the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "The feature 'Credit Bureau Reporting' as described by Mahanadi Finance treats these as merchant payment deferrals, not loans, and does not report them to credit information companies. This directly contradicts RBI's requirement that any lending done through their DLAs and/or DLAs of LSPs is reported by them to CICs irrespective of its nature/tenor. [doc_evidence: Mahanadi Finance treats these as merchant payment deferrals, not loans, and does not report them to credit information companies.]",
+      "doc_evidence": "Mahanadi Finance treats these as merchant payment deferrals, not loans, and does not report them to credit information companies.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that any lending through DLAs or DLAs of LSPs must be reported to CICs regardless of nature/tenor. The product feature states that Mahanadi Finance treats these as merchant payment deferrals (not loans) and does not report them. This directly contradicts the RBI requirement, as it fails to report lending activities. The feature does not comply with the RBI's mandate."
+    },
+    {
+      "feature": "Credit Limit and Limits",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The feature describes that PharmaPay raises each customer's pay-later limit by ₹1,000 every month if they repaid on time, without an explicit request from the borrower. This violates the requirement that there should be no automatic increase in credit limit unless an explicit request is received, evaluated, and kept on record from the borrower for such increase.",
+      "doc_evidence": "Every month, PharmaPay raises each customer's pay-later limit by ₹1,000 if they repaid on time; customers are informed by SMS after the increase.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes an automatic increase in the pay-later limit by ₹1,000 every month if the customer repaid on time, without an explicit request from the borrower. This directly violates the RBI requirement that there should be no automatic increase in credit limit unless an explicit request is received, evaluated, and kept on record from the borrower. The feature does not mention any process of obtaining an explicit request, evaluation, or record-keeping, which are explicitly required by the RBI paragraph."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature 'Repayment: Customers repay directly into Mahanadi Finance's account by UPI' complies with the requirement that all loan servicing, repayment, etc. is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "RE shall ensure that all loan servicing, repayment, etc. is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "quoted evidence not found in the product document"
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app requests one-time camera access for KYC. No other permissions.",
+      "doc_evidence": "The app requests one-time camera access for KYC. No other permissions.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the RBI paragraph. The paragraph allows one-time access to camera for KYC purposes with explicit consent, and the feature does not request any other permissions. The claim does not identify any violation."
+    }
+  ],
+  "summary": "The compliance review of the product 'TapLater: Pay-Later at Neighbourhood Pharmacies' identified two significant gaps against the reviewed RBI rules. First, the feature 'Credit Bureau Reporting' does not report the transactions to credit information companies, which is a violation of RBI's requirement for lending through DLAs and/or DLAs of LSPs. Second, the automatic monthly increase in the customer's pay-later limit by ₹1,000 without an explicit request from the borrower violates the requirement for explicit borrower consent for credit limit increases.",
+  "trace": {
+    "llm_calls": 16,
+    "prompt_tokens": 9367,
+    "output_tokens": 1460,
+    "llm_seconds": 136.5,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 3,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 24
+  },
+  "seconds": 137.8
+}

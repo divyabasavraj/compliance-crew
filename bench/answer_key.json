@@ -1,0 +1,544 @@
+{
+  "_note": "Planted violations per product doc. A finding counts as catching a violation if it cites any of the listed rule ids. Docs with an empty list are clean and measure false alarms. P01-P12 = dev split (used while tuning prompts), P13-P32 = test split (held out, written 2026-10-21 before any v2 change was run on them).",
+  "P01_studentpay_bnpl": [
+    {
+      "id": "P01-a",
+      "rules": [
+        "DLD2025:12(i)"
+      ],
+      "what": "Reads contacts and call logs for credit scoring"
+    },
+    {
+      "id": "P01-b",
+      "rules": [
+        "DLD2025:7(ii)"
+      ],
+      "what": "Automatic credit limit increase without borrower request"
+    }
+  ],
+  "P02_quickcash_payday": [
+    {
+      "id": "P02-a",
+      "rules": [
+        "DLD2025:9(iv)"
+      ],
+      "what": "LSP charges borrower a platform fee"
+    },
+    {
+      "id": "P02-b",
+      "rules": [
+        "DLD2025:9(i)"
+      ],
+      "what": "Disbursal into the LSP's wallet"
+    },
+    {
+      "id": "P02-c",
+      "rules": [
+        "KFS2024:5"
+      ],
+      "what": "KFS valid only 30 minutes for loans of 7+ days"
+    }
+  ],
+  "P03_loanbazaar_marketplace": [
+    {
+      "id": "P03-a",
+      "rules": [
+        "DLD2025:6(iii)"
+      ],
+      "what": "Offer view omits APR and penal charges"
+    },
+    {
+      "id": "P03-b",
+      "rules": [
+        "DLD2025:6(i)"
+      ],
+      "what": "Unmatched lenders not disclosed"
+    },
+    {
+      "id": "P03-c",
+      "rules": [
+        "DLD2025:6(iv)"
+      ],
+      "what": "Highest-commission lender pinned and pre-selected (dark pattern)"
+    }
+  ],
+  "P04_kisanflex_agri": [
+    {
+      "id": "P04-a",
+      "rules": [
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)"
+      ],
+      "what": "Repayment through LSP pooled account"
+    },
+    {
+      "id": "P04-b",
+      "rules": [
+        "DLD2025:9(v)"
+      ],
+      "what": "Cash recovery credited after 7 days and LSP fee deducted from proceeds"
+    }
+  ],
+  "P05_facefin_biometric": [
+    {
+      "id": "P05-a",
+      "rules": [
+        "DLD2025:13(iii)"
+      ],
+      "what": "Stores face templates and fingerprints"
+    },
+    {
+      "id": "P05-b",
+      "rules": [
+        "DLD2025:13(iv)"
+      ],
+      "what": "Data stored in Singapore, synced to India quarterly"
+    }
+  ],
+  "P06_shopease_checkout": [
+    {
+      "id": "P06-a",
+      "rules": [
+        "DLD2025:16(i)",
+        "DLD2025:16(ii)"
+      ],
+      "what": "Small deferred-payment loans not reported to CICs"
+    },
+    {
+      "id": "P06-b",
+      "rules": [
+        "KFS2024:8"
+      ],
+      "what": "Maintenance fee not in KFS added without consent"
+    },
+    {
+      "id": "P06-c",
+      "rules": [
+        "DLD2025:17(vi)"
+      ],
+      "what": "Marketed as RBI-approved"
+    },
+    {
+      "id": "P06-d",
+      "rules": [
+        "DLD2025:12(iv)"
+      ],
+      "what": "Data shared with ad partners without explicit consent"
+    }
+  ],
+  "P07_dlg_partnership": [
+    {
+      "id": "P07-a",
+      "rules": [
+        "DLD2025:23(i)"
+      ],
+      "what": "DLG cover of 10% exceeds 5% cap"
+    },
+    {
+      "id": "P07-b",
+      "rules": [
+        "DLD2025:22(i)"
+      ],
+      "what": "DLG as corporate guarantee, not an allowed form"
+    },
+    {
+      "id": "P07-c",
+      "rules": [
+        "DLD2025:26(i)"
+      ],
+      "what": "DLG invoked at 180 days overdue, above 120-day maximum"
+    }
+  ],
+  "P08_creditline_app": [
+    {
+      "id": "P08-a",
+      "rules": [
+        "DLD2025:20(i)"
+      ],
+      "what": "DLG on a revolving credit facility"
+    },
+    {
+      "id": "P08-b",
+      "rules": [
+        "DLD2025:11(i)",
+        "DLD2025:11(ii)"
+      ],
+      "what": "No nodal grievance officer; contact not in KFS"
+    },
+    {
+      "id": "P08-c",
+      "rules": [
+        "DLD2025:8(iii)"
+      ],
+      "what": "Loan documents not automatically sent to borrower"
+    },
+    {
+      "id": "P08-d",
+      "rules": [
+        "DLD2025:12(i)"
+      ],
+      "what": "Continuous location tracking"
+    }
+  ],
+  "P09_medloan_health": [
+    {
+      "id": "P09-a",
+      "rules": [
+        "KFS2024:7",
+        "KFS2024:6"
+      ],
+      "what": "Mandatory insurance recovered by RE excluded from APR"
+    },
+    {
+      "id": "P09-b",
+      "rules": [
+        "DLD2025:13(i)"
+      ],
+      "what": "LSP stores full medical, bank and bureau data"
+    }
+  ],
+  "P10_gigworker_loans": [
+    {
+      "id": "P10-a",
+      "rules": [
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)"
+      ],
+      "what": "Repayments held in LSP account, swept weekly"
+    },
+    {
+      "id": "P10-b",
+      "rules": [
+        "DLD2025:10(i)"
+      ],
+      "what": "No cooling-off period"
+    }
+  ],
+  "P11_clean_homeimprove": [],
+  "P12_clean_msme_invoice": [],
+  "P13_payroll_advance": [
+    {
+      "id": "P13-a",
+      "rules": [
+        "DLD2025:9(iv)"
+      ],
+      "what": "LSP fee deducted from disbursal, paid by borrower"
+    },
+    {
+      "id": "P13-b",
+      "rules": [
+        "DLD2025:12(i)"
+      ],
+      "what": "Weekly SMS inbox reading"
+    },
+    {
+      "id": "P13-c",
+      "rules": [
+        "KFS2024:4"
+      ],
+      "what": "KFS only in English for borrowers who do not understand it, no acknowledgement"
+    }
+  ],
+  "P14_ev_twowheeler": [
+    {
+      "id": "P14-a",
+      "rules": [
+        "DLD2025:20(ii)"
+      ],
+      "what": "DLG on loans covered by a credit guarantee scheme"
+    },
+    {
+      "id": "P14-b",
+      "rules": [
+        "DLD2025:8(v)"
+      ],
+      "what": "Recovery agent particulars not communicated before contact"
+    }
+  ],
+  "P15_p2p_platform": [
+    {
+      "id": "P15-a",
+      "rules": [
+        "DLD2025:20(iii)"
+      ],
+      "what": "NBFC-P2P offering DLG"
+    },
+    {
+      "id": "P15-b",
+      "rules": [
+        "DLD2025:17(vi)"
+      ],
+      "what": "Marketed as RBI-approved and backed"
+    }
+  ],
+  "P16_edu_marketplace": [
+    {
+      "id": "P16-a",
+      "rules": [
+        "DLD2025:6(ii)"
+      ],
+      "what": "Matching mechanism inconsistent for similar borrowers and undocumented"
+    },
+    {
+      "id": "P16-b",
+      "rules": [
+        "DLD2025:13(i)"
+      ],
+      "what": "LSP stores bank statements, salary slips and bureau reports"
+    }
+  ],
+  "P17_shg_microloans": [
+    {
+      "id": "P17-a",
+      "rules": [
+        "DLD2025:11(iv)"
+      ],
+      "what": "Borrowers not told about escalation to RB-IOS / CMS"
+    },
+    {
+      "id": "P17-b",
+      "rules": [
+        "DLD2025:12(iv)"
+      ],
+      "what": "Personal data shared with insurer without explicit consent"
+    },
+    {
+      "id": "P17-c",
+      "rules": [
+        "DLD2025:14(i)"
+      ],
+      "what": "No public privacy policy"
+    }
+  ],
+  "P18_clean_card_emi": [],
+  "P19_dlg_driven_limits": [
+    {
+      "id": "P19-a",
+      "rules": [
+        "DLD2025:19(ii)"
+      ],
+      "what": "DLG used as a substitute for credit appraisal"
+    },
+    {
+      "id": "P19-b",
+      "rules": [
+        "DLD2025:7(i)"
+      ],
+      "what": "Age, occupation and income not collected"
+    }
+  ],
+  "P20_dlg_portfolio_ops": [
+    {
+      "id": "P20-a",
+      "rules": [
+        "DLD2025:24(iv)"
+      ],
+      "what": "Invoked DLG reinstated through recoveries"
+    },
+    {
+      "id": "P20-b",
+      "rules": [
+        "DLD2025:24(ii)"
+      ],
+      "what": "Invoked DLG set off against borrower liability"
+    },
+    {
+      "id": "P20-c",
+      "rules": [
+        "DLD2025:26(ii)"
+      ],
+      "what": "DLG tenor shorter than longest loan tenor"
+    },
+    {
+      "id": "P20-d",
+      "rules": [
+        "DLD2025:27(ii)"
+      ],
+      "what": "DLG disclosure quarterly, not monthly"
+    }
+  ],
+  "P21_dla_reporting": [
+    {
+      "id": "P21-a",
+      "rules": [
+        "DLD2025:17(i)"
+      ],
+      "what": "Partner LSP DLAs not reported on CIMS"
+    },
+    {
+      "id": "P21-b",
+      "rules": [
+        "DLD2025:17(ii)"
+      ],
+      "what": "New DLA not updated on CIMS"
+    }
+  ],
+  "P22_kfs_apr": [
+    {
+      "id": "P22-a",
+      "rules": [
+        "KFS2024:6"
+      ],
+      "what": "APR excludes processing fee, no amortisation schedule"
+    },
+    {
+      "id": "P22-b",
+      "rules": [
+        "KFS2024:9"
+      ],
+      "what": "KFS not included as summary box in loan agreement"
+    }
+  ],
+  "P23_consent_controls": [
+    {
+      "id": "P23-a",
+      "rules": [
+        "DLD2025:12(ii)"
+      ],
+      "what": "No option to deny, revoke consent or delete data"
+    },
+    {
+      "id": "P23-b",
+      "rules": [
+        "DLD2025:12(iii)"
+      ],
+      "what": "Purpose of consent not disclosed at each stage"
+    }
+  ],
+  "P24_third_party_sdks": [
+    {
+      "id": "P24-a",
+      "rules": [
+        "DLD2025:14(ii)"
+      ],
+      "what": "Third parties collecting data not disclosed in privacy policy"
+    },
+    {
+      "id": "P24-b",
+      "rules": [
+        "DLD2025:12(i)"
+      ],
+      "what": "Accesses files and installed apps"
+    }
+  ],
+  "P25_lsp_onboarding": [
+    {
+      "id": "P25-a",
+      "rules": [
+        "DLD2025:5(i)"
+      ],
+      "what": "No written contractual agreement with LSP"
+    },
+    {
+      "id": "P25-b",
+      "rules": [
+        "DLD2025:5(ii)"
+      ],
+      "what": "No enhanced due diligence on LSP"
+    },
+    {
+      "id": "P25-c",
+      "rules": [
+        "DLD2025:5(v)"
+      ],
+      "what": "No guidance to LSP acting as recovery agent"
+    }
+  ],
+  "P26_clean_gold_loan": [],
+  "P27_merchant_paylater": [
+    {
+      "id": "P27-a",
+      "rules": [
+        "DLD2025:16(ii)",
+        "DLD2025:16(i)"
+      ],
+      "what": "Merchant deferred-payment credit not reported to CICs"
+    },
+    {
+      "id": "P27-b",
+      "rules": [
+        "DLD2025:7(ii)"
+      ],
+      "what": "Automatic credit limit increase"
+    }
+  ],
+  "P28_cooling_off_penalty": [
+    {
+      "id": "P28-a",
+      "rules": [
+        "DLD2025:10(i)"
+      ],
+      "what": "Cooling-off exit charged penalty and full interest"
+    },
+    {
+      "id": "P28-b",
+      "rules": [
+        "KFS2024:8"
+      ],
+      "what": "Charge not in KFS added without consent"
+    }
+  ],
+  "P29_recovery_practices": [
+    {
+      "id": "P29-a",
+      "rules": [
+        "DLD2025:8(v)"
+      ],
+      "what": "Recovery agent details not communicated before contact"
+    },
+    {
+      "id": "P29-b",
+      "rules": [
+        "DLD2025:12(i)"
+      ],
+      "what": "Contact list access"
+    }
+  ],
+  "P30_clean_used_car": [],
+  "P31_re_website": [
+    {
+      "id": "P31-a",
+      "rules": [
+        "DLD2025:8(iv)"
+      ],
+      "what": "RE website missing LSPs, DLAs and CMS/Sachet links"
+    },
+    {
+      "id": "P31-b",
+      "rules": [
+        "DLD2025:11(ii)"
+      ],
+      "what": "Grievance officer contact not on websites/DLA"
+    },
+    {
+      "id": "P31-c",
+      "rules": [
+        "DLD2025:11(iii)"
+      ],
+      "what": "No complaint facility on DLA or website"
+    }
+  ],
+  "P32_aadhaar_biometric": [
+    {
+      "id": "P32-a",
+      "rules": [
+        "DLD2025:13(iii)"
+      ],
+      "what": "LSP stores fingerprint scans"
+    },
+    {
+      "id": "P32-b",
+      "rules": [
+        "DLD2025:13(i)"
+      ],
+      "what": "LSP stores full bank statements and salary slips"
+    },
+    {
+      "id": "P32-c",
+      "rules": [
+        "DLD2025:13(ii)"
+      ],
+      "what": "No data storage/retention policy disclosed"
+    }
+  ]
+}

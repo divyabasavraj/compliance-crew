@@ -1,0 +1,115 @@
+{
+  "system": "crew",
+  "doc_id": "P20_dlg_portfolio_ops",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Default Loss Guarantee (3. Borrower accounts)",
+      "rule_id": "DLD2025:26(ii)",
+      "issue": "The DLG agreement runs for 12 months, while loans in the portfolio have tenors of up to 24 months. This violates the requirement that the period for which the DLG agreement remains in force shall not be less than the longest tenor of the loan in the underlying loan portfolio.",
+      "doc_evidence": "The DLG agreement runs for 12 months, while loans in the portfolio have tenors of up to 24 months.",
+      "severity": "high",
+      "fix": "Extend the duration of the DLG agreement to match the longest loan tenor in the portfolio, which is 24 months. Review and update all DLG agreements to ensure they are aligned with the loan tenors.",
+      "verifier_note": "The RBI paragraph requires that the DLG agreement's period must not be less than the longest tenor of the loans in the portfolio. The product feature states that the DLG agreement runs for 12 months, while loans have tenors up to 24 months. This directly violates the requirement because 12 months is less than the longest tenor of 24 months. The feature does not mention any exception or justification for this shorter duration."
+    },
+    {
+      "feature": "Disclosure",
+      "rule_id": "DLD2025:27(i)",
+      "issue": "The product feature states that PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter. However, the RBI requires that LSPs publish the total number of portfolios and the respective amount of each portfolio on which DLG has been offered. The feature does not specify the amount covered for each individual portfolio, which is a requirement under [DLD2025:27(i)].",
+      "doc_evidence": "PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter.",
+      "severity": "medium",
+      "fix": "Update the product disclosure to specify the amount covered for each individual portfolio, in addition to the total number of portfolios and the total amount covered. Ensure this information is published quarterly on the website as required.",
+      "verifier_note": "The RBI paragraph requires LSPs to publish the total number of portfolios and the respective amount of each portfolio on which DLG has been offered. The product feature states that PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter. However, the feature does not specify the amount covered for each individual portfolio, which is a requirement under [DLD2025:27(i)]. The feature fails to meet the requirement of disclosing the respective amount of each portfolio, thus violating the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The product feature states that PayNest provides DLG cover of 4% of each quarterly portfolio as a bank guarantee in favour of Meridian Finance. This exceeds the RBI's cap of five per cent of the total amount disbursed out of that loan portfolio at any given time.",
+      "doc_evidence": "PayNest provides DLG cover of 4% of each quarterly portfolio as a bank guarantee in favour of Meridian Finance.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph (DLD2025:23(i)) sets a cap of five per cent on DLG cover as a percentage of the total amount disbursed out of the loan portfolio at any given time. The product feature states that PayNest provides DLG cover of 4% of each quarterly portfolio. Since 4% is less than the 5% cap, the feature does not exceed the RBI's limit. Therefore, the claim that the feature violates the cap is false."
+    },
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The product feature states that Meridian invokes the DLG at 90 days overdue. This is earlier than the RBI's requirement of invoking DLG within a maximum overdue period of 120 days.",
+      "doc_evidence": "Meridian invokes the DLG at 90 days overdue.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that DLG be invoked within a maximum overdue period of 120 days. The product feature states that Meridian invokes the DLG at 90 days overdue, which is earlier than the 120-day limit. This does not violate the RBI's requirement because the paragraph does not prohibit invoking DLG before 120 days; it only sets a maximum period. The feature does not exceed the allowed period and thus complies with the RBI's requirement."
+    },
+    {
+      "feature": "Default Loss Guarantee (3. Borrower accounts)",
+      "rule_id": "DLD2025:26(ii)",
+      "issue": "The DLG agreement runs for 12 months, while loans in the portfolio have tenors of up to 24 months. This violates the requirement that the period for which the DLG agreement remains in force shall not be less than the longest tenor of the loan in the underlying loan portfolio.",
+      "doc_evidence": "The DLG agreement runs for 12 months, while loans in the portfolio have tenors of up to 24 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the DLG agreement's period must not be less than the longest tenor of the loans in the portfolio. The product feature states that the DLG agreement runs for 12 months, while loans have tenors up to 24 months. This directly violates the requirement because 12 months is less than the longest tenor of 24 months. The feature does not mention any exception or justification for this shorter duration."
+    },
+    {
+      "feature": "Disclosure",
+      "rule_id": "DLD2025:27(i)",
+      "issue": "The product feature states that PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter. However, the RBI requires that LSPs publish the total number of portfolios and the respective amount of each portfolio on which DLG has been offered. The feature does not specify the amount covered for each individual portfolio, which is a requirement under [DLD2025:27(i)].",
+      "doc_evidence": "PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires LSPs to publish the total number of portfolios and the respective amount of each portfolio on which DLG has been offered. The product feature states that PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter. However, the feature does not specify the amount covered for each individual portfolio, which is a requirement under [DLD2025:27(i)]. The feature fails to meet the requirement of disclosing the respective amount of each portfolio, thus violating the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the DLG Operations Manual for Meridian Finance x PayNest identified two key findings. First, the DLG agreement is set to run for 12 months, which is shorter than the maximum loan tenor of 24 months, violating the requirement that the DLG agreement must remain in force for at least the longest tenor of the loan portfolio. Second, the product feature does not meet the RBI's requirement to publish the total number of portfolios and the respective amount of each portfolio on which DLG has been offered, as it only provides aggregated data without specifying individual portfolio amounts.",
+  "trace": {
+    "llm_calls": 13,
+    "prompt_tokens": 6314,
+    "output_tokens": 1448,
+    "llm_seconds": 125.0,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 3,
+      "gap_analyst": 3,
+      "verifier": 4,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 18,
+    "retrieved": {
+      "0:Default Loss Guarantee": [
+        "DLD2025:23(i)",
+        "DLD2025:23(ii)",
+        "DLD2025:21(i)",
+        "DLD2025:27(i)",
+        "DLD2025:22(i)",
+        "DLD2025:26(i)",
+        "DLD2025:25(ii)",
+        "DLD2025:19(iii)",
+        "DLD2025:26(ii)",
+        "DLD2025:19(i)"
+      ],
+      "1:Default Loss Guarantee (3. Borrower accounts)": [
+        "DLD2025:24(ii)",
+        "DLD2025:25(ii)",
+        "DLD2025:24(iii)",
+        "DLD2025:24(iv)",
+        "DLD2025:23(i)",
+        "DLD2025:26(ii)",
+        "DLD2025:23(ii)",
+        "KFS2024:5",
+        "DLD2025:27(i)",
+        "DLD2025:26(i)"
+      ],
+      "2:Disclosure": [
+        "DLD2025:27(i)",
+        "DLD2025:19(iii)",
+        "DLD2025:23(i)",
+        "DLD2025:21(i)",
+        "DLD2025:25(ii)",
+        "DLD2025:19(i)",
+        "DLD2025:23(ii)"
+      ]
+    }
+  },
+  "seconds": 125.7
+}

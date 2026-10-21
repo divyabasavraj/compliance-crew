@@ -1,0 +1,64 @@
+{
+  "system": "single",
+  "doc_id": "P11_clean_homeimprove",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "Disbursement to a third-party account (contractor's bank account) is not allowed unless it is for specific end use and directly into the end-beneficiary's account. The product document allows disbursal to a contractor's account, which may not be compliant if the contractor is not the end-beneficiary.",
+      "doc_evidence": "Loans are paid into the borrower's own bank account. For contractor-led projects the borrower may opt to have the amount paid directly into the registered contractor's bank account, as the end-beneficiary.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Fees",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The product document states that the LSP's fees are paid by the RE, which is compliant. However, the document does not explicitly state that the RE ensures that any fees, charges, reimbursements, etc., payable to the LSP are paid directly by the RE and not charged to or collected from the borrowers. This is a compliance requirement that must be explicitly stated.",
+      "doc_evidence": "RenovatePro's sourcing fee is paid by Malabar Housing Finance. The borrower pays only the charges listed in the KFS, and the APR includes all of them.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Cooling-off",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "The product document states that a ₹500 processing fee is retained on exit, which is disclosed upfront in the KFS. This is compliant with the requirement that the RE may retain a reasonable one-time processing fee if the customer exits the loan during the cooling-off period, provided it is disclosed upfront in the KFS.",
+      "doc_evidence": "Borrowers may exit within 3 days by repaying principal and proportionate APR, without penalty. A ₹500 processing fee is retained on exit, and this is disclosed upfront in the KFS.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS",
+      "rule_id": "KFS2024:5",
+      "issue": "The product document states that each KFS has a validity period of 3 working days, which is correct for loans with a tenor of seven days or more. However, the document does not explicitly state that the validity period is at least three working days for loans with a tenor of seven days or more, as required by the regulation.",
+      "doc_evidence": "Each KFS has a unique proposal number, is in the borrower's chosen language, includes the APR computation sheet and amortisation schedule, and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product document states that consent is explicit, purpose is shown at each step, and borrowers can withdraw consent and ask for deletion. However, the document does not explicitly state that the DLA of the RE/LSP desists from accessing mobile phone resources like file and media, contact list, call logs, telephony functions, etc., except for a one-time access for camera, microphone, location, or any other facility necessary for on-boarding/KYC requirements with the explicit consent of the borrower.",
+      "doc_evidence": "RenovatePro stores only the borrower's name, address and phone number. All data is on servers in India. Consent is explicit, purpose is shown at each step, and borrowers can withdraw consent and ask for deletion.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2336,
+    "output_tokens": 820,
+    "llm_seconds": 74.7,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 75.0
+}

@@ -1,0 +1,55 @@
+{
+  "system": "single",
+  "doc_id": "P32_aadhaar_biometric",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Fingerprint archive",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "Storage of biometric data is prohibited unless allowed under extant statutory guidelines.",
+      "doc_evidence": "IDFlow additionally saves a copy of each borrower's fingerprint scan on its own servers, to speed up repeat loans.",
+      "severity": "high",
+      "fix": "Do not store biometric data unless explicitly permitted under statutory guidelines.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Statements",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "DLAs are not allowed to access mobile phone resources like file and media, contact list, call logs, telephony functions, etc.",
+      "doc_evidence": "IDFlow keeps full copies of borrowers' bank statements and salary slips on its servers after the loan is approved.",
+      "severity": "medium",
+      "fix": "Ensure that DLAs do not access or store mobile phone resources beyond what is necessary for on-boarding/KYC.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Retention",
+      "rule_id": "DLD2025:12(iv)",
+      "issue": "Explicit consent is required before sharing personal information with any third party, except for statutory or regulatory requirements.",
+      "doc_evidence": "Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.",
+      "severity": "high",
+      "fix": "Implement a data retention and deletion policy with explicit consent for data storage and sharing.",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data location",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "Data must be stored only in servers located within India, and if processed outside India, it must be deleted from servers outside India and brought back to India within 24 hours of processing.",
+      "doc_evidence": "All data is stored on servers in Hyderabad.",
+      "severity": "medium",
+      "fix": "Ensure that data is stored only in India, and if processed outside India, it is deleted from servers outside India and brought back within 24 hours.",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2478,
+    "output_tokens": 487,
+    "llm_seconds": 37.0,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 37.3
+}

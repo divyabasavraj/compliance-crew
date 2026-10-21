@@ -1,0 +1,63 @@
+{
+  "system": "single",
+  "doc_id": "P12_clean_msme_invoice",
+  "findings": [
+    {
+      "feature": "Offers",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The platform uses a ranking rule based on APR to sort offers, which may be construed as promoting a particular product, even though it is based on a publicly pre-disclosed metric.",
+      "doc_evidence": "Ledgerly shows all matching offers with lender name, amount, tenor, APR, monthly repayment and penal charges, and a link to each lender's KFS. Lenders that did not match are named too. Offers are sorted by APR, lowest first, a ranking rule published on Ledgerly's website.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The DLG is invoked within 90 days overdue, which is less than the maximum overdue period of 120 days required by the regulation.",
+      "doc_evidence": "Ledgerly gives Narmada Bank a DLG of 5% of the amount disbursed in a fixed loan portfolio, as a fixed deposit with a lien marked to the bank. It is invoked within 90 days overdue.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:22(i)",
+      "issue": "The DLG is provided as a fixed deposit with a lien marked in favour of the RE, which is acceptable, but the regulation does not prohibit this form of DLG.",
+      "doc_evidence": "Ledgerly gives Narmada Bank a DLG of 5% of the amount disbursed in a fixed loan portfolio, as a fixed deposit with a lien marked to the bank.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Recovery",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The document does not mention any explicit request or assessment for credit limit increase, which is required by the regulation.",
+      "doc_evidence": "Credit limit: Limits are increased only when the trader asks for an increase in the app; each request is assessed and recorded.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Recovery",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The document does not mention any explicit request or assessment for credit limit increase, which is required by the regulation.",
+      "doc_evidence": "Credit limit: Limits are increased only when the trader asks for an increase in the app; each request is assessed and recorded.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2567,
+    "output_tokens": 594,
+    "llm_seconds": 52.0,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 52.4
+}

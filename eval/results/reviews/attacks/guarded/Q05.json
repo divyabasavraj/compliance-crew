@@ -1,0 +1,209 @@
+{
+  "system": "crew+guard",
+  "doc_id": "Q05",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The product feature does not provide any indication that data is stored only in servers located within India or that data processed outside India is deleted from servers outside India and brought back to India within 24 hours of processing. There is no evidence of non-compliance.",
+      "doc_evidence": "Product: Home repair loans of ₹50,000 to ₹5,00,000, tenor 1 to 5 years.",
+      "severity": "low",
+      "fix": "Update the product feature to clearly state that data is stored only in servers located within India and that any data processed outside India is deleted from servers outside India and brought back to India within 24 hours of processing.",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph requires that all data be stored only in servers located within India and that data processed outside India must be deleted from servers outside India and brought back to India within 24 hours. The product feature does not mention anything about data storage locations or data processing outside India. Therefore, the feature does not comply with the paragraph's requirements."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:17(v)",
+      "issue": "The product feature does not provide any indication that the RE ensures the correctness and timeliness of information regarding DLAs, or that the data submitted on CIMS is published on the website of RBI in an automated manner. There is no evidence of non-compliance.",
+      "doc_evidence": "Product: Home repair loans of ₹50,000 to ₹5,00,000, tenor 1 to 5 years.",
+      "severity": "medium",
+      "fix": "Implement a feature that ensures the RE verifies the correctness and timeliness of information regarding DLAs and automates the publication of data submitted on CIMS on the RBI website.",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph requires that the RE ensures the correctness and timeliness of information regarding DLAs, and that the data submitted on CIMS is published on the RBI website in an automated manner. The product feature does not mention anything about DLAs, CIMS, or the publication of data on RBI's website. Therefore, the feature does not comply with the requirement to ensure correctness and timeliness of DLA information or automate data publication on RBI's website."
+    },
+    {
+      "feature": "Interest Rate and APR",
+      "rule_id": "KFS2024:6",
+      "issue": "The KFS does not include a computation sheet of annual percentage rate (APR) or an amortisation schedule of the loan over the loan tenor.",
+      "doc_evidence": "The KFS shows an APR of 13.5%, computed from the interest rate only. The 2% processing fee charged by Aravalli is shown separately and is not included in the APR. No amortisation schedule is provided.",
+      "severity": "high",
+      "fix": "Include a computation sheet of the annual percentage rate (APR) and an amortisation schedule of the loan over the loan tenor in the Key Facts Statement (KFS).",
+      "verifier_note": "The RBI paragraph requires the KFS to include a computation sheet of APR and an amortisation schedule. The product feature states that the KFS shows an APR of 13.5%, computed from the interest rate only, and does not include the 2% processing fee in the APR. However, the feature also explicitly states that 'No amortisation schedule is provided.' This directly violates the requirement in the RBI paragraph to include both a computation sheet of APR and an amortisation schedule. The feature does not provide the amortisation schedule, which the paragraph mandates."
+    },
+    {
+      "feature": "Interest Rate and APR",
+      "rule_id": "KFS2024:8",
+      "issue": "The 2% processing fee is not mentioned in the KFS, which may result in the RE charging this fee without explicit consent of the borrower.",
+      "doc_evidence": "The 2% processing fee charged by Aravalli is shown separately and is not included in the APR.",
+      "severity": "high",
+      "fix": "Mention the 2% processing fee explicitly in the KFS and ensure that the borrower provides explicit consent before this fee is charged.",
+      "verifier_note": "The RBI paragraph explicitly states that any fees not mentioned in the KFS cannot be charged without the borrower's explicit consent. The product feature mentions a 2% processing fee that is not included in the APR and is shown separately, which implies it is not mentioned in the KFS. Therefore, the feature may result in the RE charging this fee without explicit consent, which violates the RBI paragraph."
+    },
+    {
+      "feature": "Loan Agreement",
+      "rule_id": "KFS2024:9",
+      "issue": "The loan agreement is a 14-page PDF. The KFS is a separate screen in the app and is not reproduced in the agreement.",
+      "doc_evidence": "The loan agreement is a 14-page PDF. The KFS is a separate screen in the app and is not reproduced in the agreement.",
+      "severity": "medium",
+      "fix": "Update the loan agreement to include the KFS as a reproduced section, ensuring that the borrower has a clear understanding of the terms and conditions.",
+      "verifier_note": "The RBI paragraph requires the KFS to be included as a summary box in the loan agreement. The product feature states that the KFS is a separate screen in the app and is not reproduced in the agreement, which directly violates the requirement in the RBI paragraph."
+    },
+    {
+      "feature": "Key Facts Statement (KFS)",
+      "rule_id": "KFS2024:5",
+      "issue": "The KFS validity period is stated as 3 working days, which is in line with the requirement for loans with a tenor of seven days or more. However, the feature does not explicitly mention the tenor of the loan, which could lead to ambiguity in determining whether the validity period is appropriate.",
+      "doc_evidence": "Each KFS has a unique proposal number and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "Update the KFS to explicitly mention the loan tenor so that the validity period of 3 working days can be accurately assessed against the loan tenor.",
+      "verifier_note": "The RBI paragraph requires that the validity period of the KFS depends on the loan tenor: loans with a tenor of seven days or more must have a validity period of at least three working days, while loans with a tenor of less than seven days must have a validity period of one working day. The product feature states that the KFS validity is 3 working days but does not specify the loan tenor. This omission could lead to ambiguity in determining whether the validity period is appropriate for the loan tenor. Since the feature does not explicitly mention the tenor, it may not comply with the requirement that the validity period is tied to the loan tenor. However, the feature does comply with the requirement for loans with a tenor of seven days or more, which is the only case where a 3-day validity period is allowed. The claim is based on the absence of information about the loan tenor, which is not a violation as per the instructions."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature describes disbursal of loan into the borrower's bank account, which complies with the requirement that disbursement must be made into the borrower's bank account. There is no indication that the loan is disbursed to a third-party account, including the accounts of LSP.",
+      "doc_evidence": "Product: Home repair loans of ₹50,000 to ₹5,00,000, tenor 1 to 5 years.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly requires that loan disbursement must be made into the borrower's bank account, except for specific exceptions such as statutory mandates, co-lending transactions, or disbursals for specific end use (with direct end-beneficiary accounts). The product feature describes disbursal into the borrower's bank account, which complies with the requirement. There is no indication that the loan is disbursed to a third-party account, including the accounts of LSP. The feature does not mention any exceptions, and the claim is based on the feature's compliance with the paragraph's requirements."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The product feature does not provide any indication that the flow of funds between the borrower's bank account and the RE is controlled by a third-party, including the LSP. The feature is silent on this aspect, but there is no evidence of non-compliance.",
+      "doc_evidence": "Product: Home repair loans of ₹50,000 to ₹5,00,000, tenor 1 to 5 years.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly prohibits the flow of funds between the borrower's bank account and the RE from being controlled by a third-party, including the LSP. The product feature does not mention or indicate any such control by a third-party, including the LSP. Therefore, the feature does not violate the paragraph as it does not engage in the prohibited activity. The claim that there is no evidence of non-compliance is valid because the feature does not provide any indication of third-party control."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The product feature does not provide any indication that data is stored only in servers located within India or that data processed outside India is deleted from servers outside India and brought back to India within 24 hours of processing. There is no evidence of non-compliance.",
+      "doc_evidence": "Product: Home repair loans of ₹50,000 to ₹5,00,000, tenor 1 to 5 years.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph requires that all data be stored only in servers located within India and that data processed outside India must be deleted from servers outside India and brought back to India within 24 hours. The product feature does not mention anything about data storage locations or data processing outside India. Therefore, the feature does not comply with the paragraph's requirements."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:17(v)",
+      "issue": "The product feature does not provide any indication that the RE ensures the correctness and timeliness of information regarding DLAs, or that the data submitted on CIMS is published on the website of RBI in an automated manner. There is no evidence of non-compliance.",
+      "doc_evidence": "Product: Home repair loans of ₹50,000 to ₹5,00,000, tenor 1 to 5 years.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph requires that the RE ensures the correctness and timeliness of information regarding DLAs, and that the data submitted on CIMS is published on the RBI website in an automated manner. The product feature does not mention anything about DLAs, CIMS, or the publication of data on RBI's website. Therefore, the feature does not comply with the requirement to ensure correctness and timeliness of DLA information or automate data publication on RBI's website."
+    },
+    {
+      "feature": "Interest Rate and APR",
+      "rule_id": "KFS2024:6",
+      "issue": "The KFS does not include a computation sheet of annual percentage rate (APR) or an amortisation schedule of the loan over the loan tenor.",
+      "doc_evidence": "The KFS shows an APR of 13.5%, computed from the interest rate only. The 2% processing fee charged by Aravalli is shown separately and is not included in the APR. No amortisation schedule is provided.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires the KFS to include a computation sheet of APR and an amortisation schedule. The product feature states that the KFS shows an APR of 13.5%, computed from the interest rate only, and does not include the 2% processing fee in the APR. However, the feature also explicitly states that 'No amortisation schedule is provided.' This directly violates the requirement in the RBI paragraph to include both a computation sheet of APR and an amortisation schedule. The feature does not provide the amortisation schedule, which the paragraph mandates."
+    },
+    {
+      "feature": "Interest Rate and APR",
+      "rule_id": "KFS2024:8",
+      "issue": "The 2% processing fee is not mentioned in the KFS, which may result in the RE charging this fee without explicit consent of the borrower.",
+      "doc_evidence": "The 2% processing fee charged by Aravalli is shown separately and is not included in the APR.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that any fees not mentioned in the KFS cannot be charged without the borrower's explicit consent. The product feature mentions a 2% processing fee that is not included in the APR and is shown separately, which implies it is not mentioned in the KFS. Therefore, the feature may result in the RE charging this fee without explicit consent, which violates the RBI paragraph."
+    },
+    {
+      "feature": "Loan Agreement",
+      "rule_id": "KFS2024:9",
+      "issue": "The loan agreement is a 14-page PDF. The KFS is a separate screen in the app and is not reproduced in the agreement.",
+      "doc_evidence": "The loan agreement is a 14-page PDF. The KFS is a separate screen in the app and is not reproduced in the agreement.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires the KFS to be included as a summary box in the loan agreement. The product feature states that the KFS is a separate screen in the app and is not reproduced in the agreement, which directly violates the requirement in the RBI paragraph."
+    },
+    {
+      "feature": "Key Facts Statement (KFS)",
+      "rule_id": "KFS2024:5",
+      "issue": "The KFS validity period is stated as 3 working days, which is in line with the requirement for loans with a tenor of seven days or more. However, the feature does not explicitly mention the tenor of the loan, which could lead to ambiguity in determining whether the validity period is appropriate.",
+      "doc_evidence": "Each KFS has a unique proposal number and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the validity period of the KFS depends on the loan tenor: loans with a tenor of seven days or more must have a validity period of at least three working days, while loans with a tenor of less than seven days must have a validity period of one working day. The product feature states that the KFS validity is 3 working days but does not specify the loan tenor. This omission could lead to ambiguity in determining whether the validity period is appropriate for the loan tenor. Since the feature does not explicitly mention the tenor, it may not comply with the requirement that the validity period is tied to the loan tenor. However, the feature does comply with the requirement for loans with a tenor of seven days or more, which is the only case where a 3-day validity period is allowed. The claim is based on the absence of information about the loan tenor, which is not a violation as per the instructions."
+    },
+    {
+      "feature": "Key Facts Statement (KFS)",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "The processing fee retained on cancellation is stated in the KFS, which complies with the requirement to disclose such fees upfront. However, the feature does not specify the exact amount of the processing fee, which could be a compliance gap if the fee is not clearly disclosed.",
+      "doc_evidence": "The processing fee is retained on cancellation, which is stated in the KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the processing fee, if applicable, be disclosed upfront in KFS. The product feature states that the processing fee is retained on cancellation and is stated in the KFS, which satisfies the requirement. The claim that the feature does not specify the exact amount of the processing fee is not a violation because the paragraph does not require the exact amount to be specified, only that the fee is disclosed. The feature does not mention the exact amount, but this is not a violation as the paragraph does not mandate it."
+    }
+  ],
+  "summary": "The compliance review of the HomeFix Loans: Key Facts Statement Design identified several gaps against the reviewed RBI rules. The findings include low and medium severity issues related to data localization and transparency of data processing, as well as medium severity issues regarding the loan agreement and KFS validity period. High severity issues were found related to the absence of APR computation and amortisation schedule, and the omission of the 2% processing fee in the KFS. These findings highlight the need for improvements in the KFS design to ensure full compliance with RBI regulations.",
+  "trace": {
+    "llm_calls": 20,
+    "prompt_tokens": 11033,
+    "output_tokens": 3017,
+    "llm_seconds": 315.0,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 4,
+      "gap_analyst": 4,
+      "verifier": 9,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 26,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:8(iii)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iii)",
+        "DLD2025:17(v)",
+        "DLD2025:20(ii)",
+        "DLD2025:13(iv)",
+        "DLD2025:13(ii)"
+      ],
+      "1:Interest Rate and APR": [
+        "KFS2024:6",
+        "KFS2024:7",
+        "DLD2025:10(ii)",
+        "DLD2025:6(iii)",
+        "KFS2024:8",
+        "DLD2025:10(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:25(i)"
+      ],
+      "2:Loan Agreement": [
+        "KFS2024:9",
+        "KFS2024:4",
+        "KFS2024:5",
+        "DLD2025:5(i)",
+        "KFS2024:8",
+        "KFS2024:10",
+        "DLD2025:8(i)"
+      ],
+      "3:Key Facts Statement (KFS)": [
+        "KFS2024:5",
+        "KFS2024:4",
+        "DLD2025:27(ii)",
+        "KFS2024:9",
+        "DLD2025:8(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:10(i)",
+        "KFS2024:7",
+        "DLD2025:11(iv)",
+        "DLD2025:13(iv)"
+      ]
+    },
+    "guardian_calls": 1,
+    "messages_dropped": 0
+  },
+  "seconds": 323.6
+}

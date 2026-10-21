@@ -1,0 +1,63 @@
+{
+  "system": "single",
+  "doc_id": "P17_shg_microloans",
+  "findings": [
+    {
+      "feature": "Grievances",
+      "rule_id": "DLD2025:11(i)",
+      "issue": "Borrowers are not informed they can escalate complaints to the RBI Ombudsman through the CMS portal.",
+      "doc_evidence": "Complaints go to a named nodal officer at the bank and at Sakhi Digital. If a complaint is rejected, the app tells the borrower the decision is final; borrowers are not told they can escalate to the RBI Ombudsman through the CMS portal.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Insurance partner",
+      "rule_id": "KFS2024:3(a)",
+      "issue": "Borrowers are not asked before their personal data is shared with an insurance company.",
+      "doc_evidence": "Members' names, phone numbers and loan amounts are sent to an insurance company so it can call them with micro-insurance offers. Borrowers are not asked before this is shared.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Privacy policy",
+      "rule_id": "DLD2025:17(iv)",
+      "issue": "Sakhi Digital has no privacy policy on its website.",
+      "doc_evidence": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "Repayment is executed through the RE’s bank account, but the document does not specify that the repayment is directly from the borrower’s account.",
+      "doc_evidence": "Weekly repayments go directly from the member's bank account to Godavari SFB by UPI autopay.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data",
+      "rule_id": "DLD2025:17(iv)",
+      "issue": "The app requests one-time location access during onboarding to verify the business address, but the privacy policy is not disclosed.",
+      "doc_evidence": "The app requests one-time location access during onboarding to verify the business address, with consent.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 3061,
+    "output_tokens": 505,
+    "llm_seconds": 28.4,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 28.6
+}

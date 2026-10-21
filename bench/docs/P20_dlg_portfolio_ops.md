@@ -1,0 +1,18 @@
+# DLG Operations Manual: Meridian Finance x PayNest
+
+**Regulated entity:** Meridian Finance (NBFC). **DLG provider:** PayNest Pvt Ltd (LSP, incorporated under the Companies Act, 2013).
+
+## 1. Cover
+PayNest provides DLG cover of 4% of each quarterly portfolio as a bank guarantee in favour of Meridian Finance.
+
+## 2. Invocation and reinstatement
+Meridian invokes the DLG at 90 days overdue. When Meridian later recovers money from a loan on which DLG was invoked, the recovered amount is used to top the DLG back up to its original level.
+
+## 3. Borrower accounts
+Once DLG is invoked for a loan, Meridian marks the borrower's outstanding as reduced by the invoked amount.
+
+## 4. Tenor
+The DLG agreement runs for 12 months, while loans in the portfolio have tenors of up to 24 months.
+
+## 5. Disclosure
+PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter.

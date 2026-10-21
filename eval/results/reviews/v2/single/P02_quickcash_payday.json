@@ -1,0 +1,91 @@
+{
+  "system": "single",
+  "doc_id": "P02_quickcash_payday",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Pricing",
+      "rule_id": "KFS2024:8",
+      "issue": "Charges not mentioned in the KFS cannot be charged to the borrower without explicit consent.",
+      "doc_evidence": "QuickCash also charges the borrower a platform fee of 3% of the loan amount, collected by QC Technologies from the borrower's account at disbursal, for the use of the app.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Disbursal flow",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "Disbursement of loan must be made into the borrower's bank account, not to a third-party account including LSPs.",
+      "doc_evidence": "Approved amounts are first credited to the QuickCash wallet held by QC Technologies, and the user can move the money to their bank account at any time with one tap.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan offer and KFS",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS must be provided to all prospective borrowers in a language they understand, with contents explained and an acknowledgment obtained.",
+      "doc_evidence": "After approval the user sees the Key Facts Statement with the APR, repayment schedule and all charges. For speed, the offer and KFS expire 30 minutes after they are shown; after that the user must apply again.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Cooling-off",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "The cooling-off period must be disclosed upfront in the KFS, which it is, but the processing fee must be disclosed in the KFS as well.",
+      "doc_evidence": "Borrowers can cancel the loan within 3 days by repaying the principal and proportionate interest. A one-time processing fee of ₹99, which is shown in the KFS, is retained on cancellation.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The flow of funds between the borrower's account and the RE must not be controlled by a third-party, including the LSP.",
+      "doc_evidence": "All app data is stored on AWS Mumbai region servers. QC Technologies keeps only the borrower's name, address and phone number, which it needs to service the loan; all other data sits with Sahyadri Capital.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan offer and KFS",
+      "rule_id": "KFS2024:6",
+      "issue": "The KFS must include a computation sheet of APR and an amortisation schedule, which is not explicitly mentioned.",
+      "doc_evidence": "After approval the user sees the Key Facts Statement with the APR, repayment schedule and all charges. For speed, the offer and KFS expire 30 minutes after they are shown; after that the user must apply again.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan offer and KFS",
+      "rule_id": "KFS2024:7",
+      "issue": "Charges recovered on behalf of third-party service providers must be disclosed separately in the KFS and receipts provided to the borrower.",
+      "doc_evidence": "After approval the user sees the Key Facts Statement with the APR, repayment schedule and all charges. For speed, the offer and KFS expire 30 minutes after they are shown; after that the user must apply again.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Disbursal flow",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "All loan servicing and repayment must be executed directly in the RE’s bank account, without any pass-through account or third-party account.",
+      "doc_evidence": "Approved amounts are first credited to the QuickCash wallet held by QC Technologies, and the user can move the money to their bank account at any time with one tap.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2308,
+    "output_tokens": 922,
+    "llm_seconds": 76.3,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 76.5
+}

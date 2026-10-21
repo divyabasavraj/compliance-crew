@@ -1,0 +1,72 @@
+{
+  "system": "single",
+  "doc_id": "P05_facefin_biometric",
+  "findings": [
+    {
+      "feature": "Data hosting",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "Data is stored in servers located outside India, which violates the requirement to store data only in servers located within India.",
+      "doc_evidence": "Our analytics and core lending systems run on a cloud provider's Singapore data centre, chosen for lower cost. A copy of the data is synced to India every quarter.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Face login",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "FaceFin stores each customer's face template and fingerprint data on its servers, which may involve accessing mobile phone resources like camera, microphone, location, etc., without explicit consent for purposes beyond on-boarding/KYC.",
+      "doc_evidence": "To make login fast and secure, FaceFin stores each customer's face template and fingerprint data on its servers and uses them for every login and loan approval.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Consent controls",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product document does not explicitly mention that borrowers are provided with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data, and make the RE/LSP delete/forget the data.",
+      "doc_evidence": "In the Privacy Centre, borrowers can switch off consent for specific data uses, block sharing with third parties, choose how long data is kept, withdraw consent, and request deletion of their data.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Privacy policy",
+      "rule_id": "DLD2025:14(i)",
+      "issue": "The privacy policy is published on the website and in the app, but it is not explicitly stated whether it is compliant with applicable laws, associated regulations, and RBI guidelines.",
+      "doc_evidence": "A full privacy policy is published on the website and in the app, listing the third parties that collect data through the app and the data storage, retention and destruction rules.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Face login",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The purpose of obtaining borrowers’ consent is not disclosed at each stage of interface with the borrowers.",
+      "doc_evidence": "To make login fast and secure, FaceFin stores each customer's face template and fingerprint data on its servers and uses them for every login and loan approval.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Face login",
+      "rule_id": "DLD2025:12(iv)",
+      "issue": "Explicit consent of the borrower is not taken before sharing personal information with any third party, except for cases where such sharing is required as per statutory or regulatory requirement.",
+      "doc_evidence": "To make login fast and secure, FaceFin stores each customer's face template and fingerprint data on its servers and uses them for every login and loan approval.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 3038,
+    "output_tokens": 705,
+    "llm_seconds": 62.8,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 63.1
+}

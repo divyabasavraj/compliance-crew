@@ -1,0 +1,82 @@
+{
+  "system": "single",
+  "doc_id": "P28_cooling_off_penalty",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Cooling-off",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The cooling-off period is not at least one day, and the foreclosure charge is not disclosed upfront in the KFS.",
+      "doc_evidence": "Borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Unlisted charges",
+      "rule_id": "KFS2024:8",
+      "issue": "A charge (₹199 'credit insights subscription') is added to every EMI after disbursal, which is not mentioned in the KFS and borrowers are not asked to agree to it.",
+      "doc_evidence": "After disbursal, a ₹199 'credit insights subscription' is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Unlisted charges",
+      "rule_id": "KFS2024:7",
+      "issue": "The charge (₹199 'credit insights subscription') is not disclosed separately in the KFS and the APR, and receipts are not provided to the borrower.",
+      "doc_evidence": "After disbursal, a ₹199 'credit insights subscription' is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS does not include a computation sheet of APR and an amortisation schedule as required.",
+      "doc_evidence": "The KFS has a unique proposal number and is valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS",
+      "rule_id": "KFS2024:6",
+      "issue": "The KFS does not include a computation sheet of APR and an amortisation schedule as required.",
+      "doc_evidence": "The KFS has a unique proposal number and is valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS",
+      "rule_id": "KFS2024:9",
+      "issue": "The KFS is not included as a summary box to be exhibited as part of the loan agreement.",
+      "doc_evidence": "The KFS has a unique proposal number and is valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS",
+      "rule_id": "KFS2024:5",
+      "issue": "The KFS validity period is not specified for loans with a tenor of less than seven days, which is required to be one working day.",
+      "doc_evidence": "The KFS has a unique proposal number and is valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2112,
+    "output_tokens": 696,
+    "llm_seconds": 33.8,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 34.1
+}

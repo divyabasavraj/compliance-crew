@@ -1,0 +1,55 @@
+{
+  "system": "single",
+  "doc_id": "P31_re_website",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Website",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "Website does not list LSPs, their DLAs, or the activities for which they are engaged, and lacks links to RBI's CMS and Sachet portal.",
+      "doc_evidence": "Saraswati Finance's website has a page listing its own app. It does not list EduPay, MediQuick or their apps, or what each is engaged for, and it has no link to RBI's CMS or Sachet portal.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Grievance officer",
+      "rule_id": "DLD2025:11(iii)",
+      "issue": "Contact details of the nodal grievance redressal officer are not prominently displayed on the DLA or the website.",
+      "doc_evidence": "Saraswati Finance has a named nodal grievance officer. Their contact details are given only in the KFS; they are not shown on the website or in either partner app.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Complaints",
+      "rule_id": "DLD2025:11(iv)",
+      "issue": "Borrowers cannot lodge a complaint on the website or partner apps, and must visit a branch.",
+      "doc_evidence": "Borrowers cannot lodge a complaint in the partner apps or on the website; they must visit a branch.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product document does not mention whether the disbursal is made into the borrower's bank account, which is required by the regulation.",
+      "doc_evidence": "All loans go directly into borrowers' bank accounts.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2185,
+    "output_tokens": 428,
+    "llm_seconds": 24.9,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 25.1
+}

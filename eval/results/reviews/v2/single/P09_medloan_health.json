@@ -1,0 +1,55 @@
+{
+  "system": "single",
+  "doc_id": "P09_medloan_health",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "Loan is disbursed into the hospital's bank account, which is a third-party account, violating the requirement to disburse directly into the borrower's bank account.",
+      "doc_evidence": "The loan is paid directly into the hospital's bank account against the final bill.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "APR and charges",
+      "rule_id": "KFS2024:7",
+      "issue": "Health insurance premium, which is recovered by Arogya Finance on behalf of the insurer, is not included in the APR, violating the requirement to disclose all charges in APR.",
+      "doc_evidence": "Health insurance premium, which is mandatory and recovered by Arogya Finance on behalf of the insurer, is collected separately and is not included in the APR.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data storage at LSP",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "HealthPay Systems stores full copies of borrowers' medical records, bank statements, and credit bureau reports, which is beyond the minimal data allowed and violates data privacy and security responsibilities of the RE.",
+      "doc_evidence": "HealthPay Systems keeps a full copy of each borrower's medical records, bank statements and credit bureau report on its own servers to speed up repeat loans.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Cooling-off",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "The cooling-off period is 3 days, which is less than the reasonable period required by the regulation, and the processing fee is not mentioned in the KFS.",
+      "doc_evidence": "Patients can exit within 3 days by repaying principal and proportionate APR, with no penalty.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2207,
+    "output_tokens": 444,
+    "llm_seconds": 42.4,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 42.6
+}

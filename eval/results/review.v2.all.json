@@ -1,0 +1,115 @@
+{
+  "model": "qwen3:8b",
+  "tag": "v2",
+  "split": "all",
+  "docs": 32,
+  "results": {
+    "single": {
+      "recall": 0.706,
+      "precision": 0.281,
+      "caught": 48,
+      "planted": 68,
+      "unique_flags": 178,
+      "false_alarms": 128,
+      "clean_doc_false_alarms": 31,
+      "citation_validity": 1.0,
+      "missed": [
+        "P02-a",
+        "P02-c",
+        "P05-a",
+        "P06-c",
+        "P06-d",
+        "P08-a",
+        "P08-d",
+        "P10-a",
+        "P13-a",
+        "P13-b",
+        "P15-b",
+        "P16-b",
+        "P17-b",
+        "P19-b",
+        "P20-b",
+        "P20-d",
+        "P25-a",
+        "P31-b",
+        "P32-b",
+        "P32-c"
+      ],
+      "sec_per_doc": 55.3,
+      "llm_calls_per_doc": 1.0,
+      "tokens_per_doc": 2870
+    },
+    "crew_no_verifier": {
+      "recall": 0.853,
+      "precision": 0.286,
+      "caught": 58,
+      "planted": 68,
+      "unique_flags": 210,
+      "false_alarms": 150,
+      "clean_doc_false_alarms": 45,
+      "citation_validity": 1.0,
+      "missed": [
+        "P07-b",
+        "P13-a",
+        "P15-b",
+        "P17-b",
+        "P19-b",
+        "P20-a",
+        "P20-b",
+        "P20-d",
+        "P21-b",
+        "P32-b"
+      ],
+      "sec_per_doc": 197.4,
+      "llm_calls_per_doc": 20.1,
+      "tokens_per_doc": 12806
+    },
+    "crew": {
+      "recall": 0.824,
+      "precision": 0.513,
+      "caught": 56,
+      "planted": 68,
+      "unique_flags": 113,
+      "false_alarms": 55,
+      "clean_doc_false_alarms": 12,
+      "citation_validity": 1.0,
+      "missed": [
+        "P02-a",
+        "P02-b",
+        "P07-b",
+        "P13-a",
+        "P15-b",
+        "P17-b",
+        "P19-b",
+        "P20-a",
+        "P20-b",
+        "P20-d",
+        "P21-b",
+        "P32-b"
+      ],
+      "sec_per_doc": 197.4,
+      "llm_calls_per_doc": 20.1,
+      "tokens_per_doc": 12806,
+      "miss_stages": {
+        "not_retrieved": [
+          "P17-b",
+          "P19-b",
+          "P20-d"
+        ],
+        "analyst_missed": [
+          "P07-b",
+          "P13-a",
+          "P15-b",
+          "P20-a",
+          "P20-b",
+          "P21-b",
+          "P32-b"
+        ],
+        "verifier_rejected": [
+          "P02-a",
+          "P02-b"
+        ]
+      }
+    }
+  }
+}

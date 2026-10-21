@@ -1,0 +1,73 @@
+{
+  "system": "single",
+  "doc_id": "P08_creditline_app",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:22(i)",
+      "issue": "The DLG is not in the forms specified by RBI.",
+      "doc_evidence": "FlexLine Fintech provides Indus Valley Bank a DLG of 5% on the credit line portfolio, as a cash deposit with the bank.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Grievances",
+      "rule_id": "DLD2025:11(i)",
+      "issue": "The LSP is not designating a nodal grievance redressal officer.",
+      "doc_evidence": "Complaints can be emailed to support@flexline.example. There is no named grievance officer; the support team handles all issues, and contact details are not included in the KFS.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Grievances",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "Contact details of the nodal grievance redressal officers are not prominently displayed on the LSP's website or the DLA.",
+      "doc_evidence": "Complaints can be emailed to support@flexline.example. There is no named grievance officer; the support team handles all issues, and contact details are not included in the KFS.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan documents",
+      "rule_id": "DLD2025:8(iii)",
+      "issue": "Digitally signed documents are not automatically sent to the borrower via email or SMS.",
+      "doc_evidence": "Borrowers can download the KFS, sanction letter and terms from the app's Documents tab if they wish. Documents are not sent by email or SMS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Loan documents",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is not provided to prospective borrowers in a language they understand before executing the loan contract.",
+      "doc_evidence": "Borrowers can download the KFS, sanction letter and terms from the app's Documents tab if they wish. Documents are not sent by email or SMS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Location tracking",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The flow of funds between the borrower's account and the RE is indirectly controlled by the LSP through location tracking.",
+      "doc_evidence": "For fraud prevention, the app tracks the user's location continuously while the credit line is active. Repayments go directly into Indus Valley Bank's account via UPI or net banking. FlexLine never handles borrower funds.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2307,
+    "output_tokens": 635,
+    "llm_seconds": 58.1,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 58.3
+}

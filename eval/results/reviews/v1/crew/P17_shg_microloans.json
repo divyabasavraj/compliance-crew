@@ -1,0 +1,142 @@
+{
+  "system": "crew",
+  "doc_id": "P17_shg_microloans",
+  "findings": [
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The feature 'Insurance partner: Members' names, phone numbers and loan amounts are sent to an insurance company so it can call them with micro-insurance offers. Borrowers are not asked before this is shared.' violates the requirement that data collection must be need-based and with prior and explicit consent of the borrower having audit trail.",
+      "doc_evidence": "The app requests one-time location access during onboarding to verify the business address, with consent.",
+      "severity": "high",
+      "fix": "Implement a consent mechanism where borrowers are explicitly asked for permission before sharing their data with the insurance partner, with a clear audit trail of consent given.",
+      "verifier_note": "The product feature sends members' names, phone numbers, and loan amounts to an insurance company without prior and explicit consent, which violates the RBI requirement that data collection must be need-based and with prior and explicit consent of the borrower. The feature does not mention obtaining explicit consent or maintaining an audit trail, which are explicitly required by the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The feature 'Insurance partner: Members' names, phone numbers and loan amounts are sent to an insurance company so it can call them with micro-insurance offers. Borrowers are not asked before this is shared.' violates the requirement that the purpose of obtaining borrowers’ consent needs to be disclosed at each stage of interface with the borrowers.",
+      "doc_evidence": "The app requests one-time location access during onboarding to verify the business address, with consent.",
+      "severity": "high",
+      "fix": "Update the interface to clearly disclose the purpose of data collection at each stage, ensuring borrowers understand why their data is being shared with the insurance partner.",
+      "verifier_note": "The RBI paragraph requires that the purpose of obtaining borrowers’ consent must be disclosed at each stage of interaction. The product feature does not disclose the purpose of sharing data with the insurance company at the time of sharing, and it does not ask for borrower consent before sharing. This violates the requirement to disclose the purpose and obtain consent at each stage."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(iv)",
+      "issue": "The feature 'Insurance partner: Members' names, phone and numbers and loan amounts are sent to an insurance company so it can call them with micro-insurance offers. Borrowers are not asked before this is shared.' violates the requirement that explicit consent of the borrower shall be taken before sharing personal information with any third party, except for cases where such sharing is required as per statutory or regulatory requirement.",
+      "doc_evidence": "The app requests one-time location access during onboarding to verify the business address, with consent.",
+      "severity": "high",
+      "fix": "Obtain explicit consent from borrowers before sharing their personal information with third parties, and document this consent in a secure and accessible audit trail.",
+      "verifier_note": "The product feature sends borrowers' personal information (names, phone numbers, loan amounts) to a third party (insurance company) without obtaining explicit consent from the borrower. This directly violates the RBI paragraph which mandates explicit consent before sharing personal information with any third party, except in cases of statutory or regulatory requirements. The feature does not mention any statutory or regulatory requirement that would justify this sharing without consent."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(iv)",
+      "issue": "The feature states that if a complaint is rejected, the app tells the borrower the decision is final; borrowers are not told they can escalate to the RBI Ombudsman through the CMS portal.",
+      "doc_evidence": "If a complaint is rejected, the app tells the borrower the decision is final; borrowers are not told they can escalate to the RBI Ombudsman through the CMS portal.",
+      "severity": "medium",
+      "fix": "Update the grievance redressal feature to inform borrowers that they can escalate complaints to the RBI Ombudsman through the CMS portal, even if the initial decision is final.",
+      "verifier_note": "The RBI paragraph explicitly states that if a complaint is rejected wholly or partly by the RE, or the borrower is not satisfied with the reply, or has not received any reply within 30 days, the borrower can lodge a complaint over the CMS portal under the RB-IOS. The product feature fails to inform borrowers of this right to escalate to the RBI Ombudsman, thereby violating the requirement in the RBI paragraph."
+    },
+    {
+      "feature": "4. Privacy policy",
+      "rule_id": "DLD2025:14(i)",
+      "issue": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "doc_evidence": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "severity": "high",
+      "fix": "Publish a comprehensive privacy policy on the website immediately, detailing how borrower data is collected, used, shared, and protected, in compliance with RBI and data protection regulations.",
+      "verifier_note": "The RBI paragraph requires RE and LSPs to have a comprehensive privacy policy that is made available publicly on their website. The product feature states that Sakhi Digital has no privacy policy on its website and plans to publish one next year. Since the policy is not yet available, it violates the requirement of the RBI paragraph which mandates the policy to be made available publicly. The claim that Sakhi Digital has no privacy policy on its website is accurate and thus constitutes a violation."
+    },
+    {
+      "feature": "4. Privacy policy",
+      "rule_id": "DLD2025:8(iii)",
+      "issue": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "doc_evidence": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "severity": "high",
+      "fix": "Publish a privacy policy on the website immediately, ensuring it covers all data collection and sharing practices, including with third-party partners like the insurance company.",
+      "verifier_note": "The RBI paragraph requires that digitally signed documents, including privacy policies of the RE/LSP with respect to storage and usage of borrowers’ data, must automatically flow to the borrower upon execution of the loan contract. The product feature states that Sakhi Digital has no privacy policy on its website and plans to publish one next year. Since the feature does not mention the privacy policy being provided to the borrower upon execution of the loan contract, it does not comply with the requirement in the RBI paragraph. The feature also does not indicate that the privacy policy will be made available to borrowers at the time of contract execution, which is a key requirement in the paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature 'Weekly repayments go directly from the member's bank account to Godavari SFB by UPI autopay' does not comply with RBI's requirement that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "Weekly repayments go directly from the member's bank account to Godavari SFB by UPI autopay.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes repayments going directly from the member's bank account to Godavari SFB via UPI autopay. The RBI paragraph requires that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account or pool account of any third party, including the accounts of LSP. The feature does not mention a third-party pass-through account or pool account, and it appears to comply with the requirement by having repayments go directly to the RE’s bank account (Godavari SFB). Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The feature 'Insurance partner: Members' names, phone numbers and loan amounts are sent to an insurance company so it can call them with micro-insurance offers. Borrowers are not asked before this is shared.' violates the requirement that data collection must be need-based and with prior and explicit consent of the borrower having audit trail.",
+      "doc_evidence": "The app requests one-time location access during onboarding to verify the business address, with consent.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature sends members' names, phone numbers, and loan amounts to an insurance company without prior and explicit consent, which violates the RBI requirement that data collection must be need-based and with prior and explicit consent of the borrower. The feature does not mention obtaining explicit consent or maintaining an audit trail, which are explicitly required by the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The feature 'Insurance partner: Members' names, phone numbers and loan amounts are sent to an insurance company so it can call them with micro-insurance offers. Borrowers are not asked before this is shared.' violates the requirement that the purpose of obtaining borrowers’ consent needs to be disclosed at each stage of interface with the borrowers.",
+      "doc_evidence": "The app requests one-time location access during onboarding to verify the business address, with consent.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the purpose of obtaining borrowers’ consent must be disclosed at each stage of interaction. The product feature does not disclose the purpose of sharing data with the insurance company at the time of sharing, and it does not ask for borrower consent before sharing. This violates the requirement to disclose the purpose and obtain consent at each stage."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(iv)",
+      "issue": "The feature 'Insurance partner: Members' names, phone and numbers and loan amounts are sent to an insurance company so it can call them with micro-insurance offers. Borrowers are not asked before this is shared.' violates the requirement that explicit consent of the borrower shall be taken before sharing personal information with any third party, except for cases where such sharing is required as per statutory or regulatory requirement.",
+      "doc_evidence": "The app requests one-time location access during onboarding to verify the business address, with consent.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature sends borrowers' personal information (names, phone numbers, loan amounts) to a third party (insurance company) without obtaining explicit consent from the borrower. This directly violates the RBI paragraph which mandates explicit consent before sharing personal information with any third party, except in cases of statutory or regulatory requirements. The feature does not mention any statutory or regulatory requirement that would justify this sharing without consent."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(iv)",
+      "issue": "The feature states that if a complaint is rejected, the app tells the borrower the decision is final; borrowers are not told they can escalate to the RBI Ombudsman through the CMS portal.",
+      "doc_evidence": "If a complaint is rejected, the app tells the borrower the decision is final; borrowers are not told they can escalate to the RBI Ombudsman through the CMS portal.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that if a complaint is rejected wholly or partly by the RE, or the borrower is not satisfied with the reply, or has not received any reply within 30 days, the borrower can lodge a complaint over the CMS portal under the RB-IOS. The product feature fails to inform borrowers of this right to escalate to the RBI Ombudsman, thereby violating the requirement in the RBI paragraph."
+    },
+    {
+      "feature": "4. Privacy policy",
+      "rule_id": "DLD2025:14(i)",
+      "issue": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "doc_evidence": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires RE and LSPs to have a comprehensive privacy policy that is made available publicly on their website. The product feature states that Sakhi Digital has no privacy policy on its website and plans to publish one next year. Since the policy is not yet available, it violates the requirement of the RBI paragraph which mandates the policy to be made available publicly. The claim that Sakhi Digital has no privacy policy on its website is accurate and thus constitutes a violation."
+    },
+    {
+      "feature": "4. Privacy policy",
+      "rule_id": "DLD2025:8(iii)",
+      "issue": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "doc_evidence": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that digitally signed documents, including privacy policies of the RE/LSP with respect to storage and usage of borrowers’ data, must automatically flow to the borrower upon execution of the loan contract. The product feature states that Sakhi Digital has no privacy policy on its website and plans to publish one next year. Since the feature does not mention the privacy policy being provided to the borrower upon execution of the loan contract, it does not comply with the requirement in the RBI paragraph. The feature also does not indicate that the privacy policy will be made available to borrowers at the time of contract execution, which is a key requirement in the paragraph."
+    }
+  ],
+  "summary": "The compliance review of SakhiCredit's product identified several gaps against the reviewed RBI rules. Key findings include: (1) The sharing of members' personal data with an insurance partner without prior explicit consent and disclosure of purpose violates data protection requirements. (2) The absence of a privacy policy on the website, despite plans to publish one next year, is a significant compliance gap. (3) Borrowers are not informed of their right to escalate rejected complaints to the RBI Ombudsman through the CMS portal. These issues require immediate attention to ensure compliance with RBI regulations.",
+  "trace": {
+    "llm_calls": 20,
+    "prompt_tokens": 11311,
+    "output_tokens": 2408,
+    "llm_seconds": 232.0,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 7,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 27
+  },
+  "seconds": 233.2
+}

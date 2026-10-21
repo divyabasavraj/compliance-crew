@@ -1,0 +1,82 @@
+{
+  "system": "single",
+  "doc_id": "P12_clean_msme_invoice",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Offers",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The product uses a ranking rule based on APR, which may be interpreted as promoting a particular product, potentially violating the requirement for unbiased and objective content.",
+      "doc_evidence": "Ledgerly shows all matching offers with lender name, amount, tenor, APR, monthly repayment and penal charges, and a link to each lender's KFS. Lenders that did not match are named too. Offers are sorted by APR, lowest first, a ranking rule published on Ledgerly's website.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The DLG cover is set at 5% of the amount disbursed, which is compliant with the requirement that DLG cover shall not exceed five per cent of the total amount disbursed out of that loan portfolio at any given time.",
+      "doc_evidence": "Ledgerly gives Narmada Bank a DLG of 5% of the amount disbursed in a fixed loan portfolio, as a fixed deposit with a lien marked to the bank.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The DLG is invoked within 90 days overdue, which is less than the maximum allowed 120 days overdue period.",
+      "doc_evidence": "Ledgerly gives Narmada Bank a DLG of 5% of the amount disbursed in a fixed loan portfolio, as a fixed deposit with a lien marked to the bank. It is invoked within 90 days overdue.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:24(ii)",
+      "issue": "The document does not explicitly state that the amount of DLG invoked shall not be set off against the underlying individual loans, which is a requirement under DLD2025:24(ii).",
+      "doc_evidence": "Ledgerly gives Narmada Bank a DLG of 5% of the amount disbursed in a fixed loan portfolio, as a fixed deposit with a lien marked to the bank. It is invoked within 90 days overdue.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Reporting",
+      "rule_id": "DLD2025:16(ii)",
+      "issue": "The document states that Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies, which is compliant with the requirement for RE to report structured digital lending products to CICs.",
+      "doc_evidence": "Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Credit limit",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The product states that limits are increased only when the trader asks for an increase in the app; each request is assessed and recorded, which is compliant with the requirement that there should be no automatic increase in credit limit unless an explicit request is received, evaluated and kept on record.",
+      "doc_evidence": "Limits are increased only when the trader asks for an increase in the app; each request is assessed and recorded.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Credit limit",
+      "rule_id": "DLD2025:7(i)",
+      "issue": "The product does not explicitly state that the necessary information relating to the economic profile of the borrower, including age, occupation and income details, is obtained before extending any loan, which is a requirement under DLD2025:7(i).",
+      "doc_evidence": "Limits are increased only when the trader asks for an increase in the app; each request is assessed and recorded.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2161,
+    "output_tokens": 910,
+    "llm_seconds": 76.5,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 76.8
+}

@@ -1,0 +1,72 @@
+{
+  "system": "single",
+  "doc_id": "P03_loanbazaar_marketplace",
+  "findings": [
+    {
+      "feature": "Offer screen",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The digital view of loan offers does not include APR, penal charges, and a link to the KFS, which is required for fair comparison.",
+      "doc_evidence": "Offers are shown as cards with the lender name, loan amount, tenor and EMI. To keep the screen simple, the APR and penal charges are not shown on the card; borrowers can find them in the KFS after they choose an offer.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Recommended lender",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The platform promotes a particular lender through a 'Best for you' badge and pre-selection, which may be considered indirect promotion or use of dark patterns.",
+      "doc_evidence": "The offer from FastLend NBFC, which pays LoanBazaar the highest commission, is pinned at the top with a \"Best for you\" badge and is pre-selected, so the borrower only has to press Continue.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Offer screen",
+      "rule_id": "DLD2025:6(i)",
+      "issue": "The digital view does not disclose the names of lenders that did not make an offer, which is required for transparency.",
+      "doc_evidence": "Lenders that did not make an offer are not listed.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Offer screen",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is not provided to borrowers before executing the loan contract, which is required for informed decision-making.",
+      "doc_evidence": "To keep the screen simple, the APR and penal charges are not shown on the card; borrowers can find them in the KFS after they choose an offer.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Recommended lender",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The platform may be using dark patterns or deceptive practices by pre-selecting an offer based on commission, which could mislead borrowers.",
+      "doc_evidence": "The offer from FastLend NBFC, which pays LoanBazaar the highest commission, is pinned at the top with a \"Best for you\" badge and is pre-selected, so the borrower only has to press Continue.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Website disclosures",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "The lenders' websites do not include a link to the RE's website, which is required for transparency and accessibility of information.",
+      "doc_evidence": "Each lender's website lists LoanBazaar as an LSP, describes what LoanBazaar does for it, and links to the RBI Complaint Management System and Sachet portal. LoanBazaar's app links to each lender's website.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2471,
+    "output_tokens": 680,
+    "llm_seconds": 60.8,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 61.1
+}

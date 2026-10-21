@@ -1,0 +1,115 @@
+{
+  "system": "crew",
+  "doc_id": "P12_clean_msme_invoice",
+  "findings": [
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:17(vii)",
+      "issue": "The feature states that 'Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.' However, the RBI directive DLD2025:17(vii) requires that the reporting in respect of all DLAs on the CIMS portal is completed by June 15, 2025. The feature does not specify the date by which the reporting was completed, which is a requirement under this paragraph.",
+      "doc_evidence": "Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.",
+      "severity": "medium",
+      "fix": "Update the feature to include the specific date by which the reporting was completed on the RBI CIMS portal, ensuring compliance with DLD2025:17(vii).",
+      "verifier_note": "The RBI directive DLD2025:17(vii) requires that reporting in respect of all DLAs on the CIMS portal is completed by June 15, 2025. The product feature states that Narmada Bank has reported the TradeCredit app on the RBI CIMS portal but does not specify the date by which the reporting was completed. Since the feature does not provide the required date, it fails to comply with the directive's requirement. Therefore, the feature violates the RBI directive."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature describes the disbursal of term loans into the borrower's bank account, which complies with the requirement that disbursement must always be made into the borrower's bank account, except for specific exceptions. There is no indication that the disbursal is made to a third-party account, including the LSP's account, which would be a non-compliance. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Term loans of ₹1,00,000 to ₹20,00,000 for traders, based on GST returns and bank statements.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes disbursal into the borrower's bank account, which aligns with the RBI requirement that disbursement must always be made into the borrower's account, except for specific exceptions. There is no mention of disbursal to third-party accounts, including LSP accounts, which is explicitly prohibited. The feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Offer Presentation",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The feature does not explicitly mention that the APR is computed in accordance with the KFS guidelines, which require the APR to include all charges levied by the RE and to be disclosed in a computation sheet. The feature only states that APR is displayed but does not confirm compliance with the KFS computation requirements.",
+      "doc_evidence": "Ledgerly shows all matching offers with lender name, amount, tenor, APR, monthly repayment and penal charges, and a link to each lender's KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the digital view of loan offers includes APR and penal charges, and a link to the KFS. The product feature displays APR and includes a link to each lender's KFS. The paragraph does not explicitly require the APR to be computed in accordance with KFS guidelines, only that it is displayed. The claim relies on an external requirement (KFS guidelines) not mentioned in the RBI paragraph. Therefore, the feature complies with the paragraph as described."
+    },
+    {
+      "feature": "Offer Presentation",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The feature mentions that offers are sorted by APR, lowest first, based on a ranking rule published on Ledgerly's website. While this is allowed under the rule, the rule also prohibits any direct or indirect promotion of a particular product, including through dark patterns. The feature does not confirm that the ranking mechanism is free from any such promotional intent.",
+      "doc_evidence": "Offers are sorted by APR, lowest first, a ranking rule published on Ledgerly's website.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly allows ranking of loan offers based on a publicly pre-disclosed metric for such ranking, as long as it does not directly or indirectly promote a particular product. The product feature states that offers are sorted by APR, lowest first, based on a ranking rule published on Ledgerly's website, which aligns with the allowed ranking mechanism. The claim that the feature does not confirm the ranking mechanism is free from promotional intent is not supported by the text of the feature, which does not mention any promotional intent. The paragraph also explicitly allows such ranking as long as it is based on a publicly disclosed metric. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Credit Limit Management",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The feature 'Credit Limit Management' states that 'Limits are increased only when the trader asks for an increase in the app; each request is assessed and recorded.' This complies with the requirement that there is no automatic increase in credit limit unless an explicit request is received, evaluated and kept on record from the borrower for such increase.",
+      "doc_evidence": "Limits are increased only when the trader asks for an increase in the app; each request is assessed and recorded.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that credit limits are only increased when the trader requests an increase, and each request is assessed and recorded. This directly aligns with the RBI requirement that there should be no automatic increase in credit limit unless an explicit request is received, evaluated, and kept on record. The feature does not allow for automatic increases, which is what the RBI paragraph prohibits. Therefore, the feature complies with the requirement."
+    },
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The feature describes a Default Loss Guarantee (DLG) of 5% of the amount disbursed, which is within the permissible cap. However, the feature does not explicitly state that the DLG cover shall not exceed five per cent of the total amount disbursed out of that loan portfolio at any given time. The feature only mentions a fixed deposit with a lien marked to the bank, which may not fully comply with the requirement to ensure the DLG cover does not exceed five per cent of the total amount disbursed.",
+      "doc_evidence": "Default Loss Guarantee (DLG): A contractual arrangement, called by whatever name, between the RE and another entity, under which the latter guarantees to compensate the RE, for the loss due to default up to a certain percentage of the loan portfolio of the RE, specified upfront.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "quoted evidence not found in the product document"
+    },
+    {
+      "feature": "Recovery Process",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "The feature states: \"If a loan defaults, the trader is told by SMS and email who the recovery agent is before the agent makes contact.\" This directly complies with the requirement that the particulars of the recovery agent be communicated to the borrower through email/SMS before the agent contacts the borrower for recovery.",
+      "doc_evidence": "If a loan defaults, the trader is told by SMS and email who the recovery agent is before the agent makes contact.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that the borrower (referred to as 'trader') is informed via SMS and email about the recovery agent before the agent contacts them, which directly aligns with the requirement in the RBI paragraph. The feature does not violate the regulation as it fulfills the communication requirement."
+    },
+    {
+      "feature": "Recovery Process",
+      "rule_id": "DLD2025:9(v)",
+      "issue": "The feature states: \"Any cash recovered is credited to the loan account the same day, and Narmada Bank pays the agent's fee.\" This complies with the requirement that any recovery by cash shall be duly reflected in full in the borrower’s account on the same day and that fees payable to LSPs for such recovery are paid directly by the RE and are not charged by LSP to the borrower.",
+      "doc_evidence": "Any cash recovered is credited to the loan account the same day, and Narmada Bank pays the agent's fee.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature aligns with the RBI paragraph. The feature states that cash recovered is credited to the loan account the same day, which complies with the requirement that recovery by cash shall be duly reflected in full in the borrower’s account on the same day. Additionally, it specifies that Narmada Bank pays the agent's fee, which corresponds to the requirement that fees payable to LSPs for such recovery are paid directly by the RE and are not charged by LSP to the borrower. The feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:17(vii)",
+      "issue": "The feature states that 'Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.' However, the RBI directive DLD2025:17(vii) requires that the reporting in respect of all DLAs on the CIMS portal is completed by June 15, 2025. The feature does not specify the date by which the reporting was completed, which is a requirement under this paragraph.",
+      "doc_evidence": "Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI directive DLD2025:17(vii) requires that reporting in respect of all DLAs on the CIMS portal is completed by June 15, 2025. The product feature states that Narmada Bank has reported the TradeCredit app on the RBI CIMS portal but does not specify the date by which the reporting was completed. Since the feature does not provide the required date, it fails to comply with the directive's requirement. Therefore, the feature violates the RBI directive."
+    },
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "The feature states that 'Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.' However, the RBI directive DLD2025:16(i) requires that any lending done through their DLAs and/or DLAs of LSPs is reported by them to CICs irrespective of its nature/tenor. The feature does not explicitly state that all loans are reported to CICs, which is a requirement under this paragraph.",
+      "doc_evidence": "Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that Narmada Bank reports all loans to credit information companies, which directly complies with the requirement in DLD2025:16(i) that lending through DLAs and/or DLAs of LSPs is reported to CICs irrespective of nature/tenor. The feature does not fail to meet the requirement, and the claim that it does not explicitly state this is incorrect."
+    }
+  ],
+  "summary": "The compliance review of the TradeCredit product, specifically the Working Capital Loans for Small Traders, identified one medium severity finding. The feature states that 'Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.' However, this does not specify the date by which the reporting was completed, which is a requirement under RBI directive DLD2025:17(vii) that mandates completion of reporting by June 15, 2025. No other gaps were found against the reviewed RBI rules.",
+  "trace": {
+    "llm_calls": 23,
+    "prompt_tokens": 12478,
+    "output_tokens": 2813,
+    "llm_seconds": 259.2,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 8,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 33
+  },
+  "seconds": 261.2
+}

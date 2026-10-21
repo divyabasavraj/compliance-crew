@@ -1,0 +1,63 @@
+{
+  "system": "single",
+  "doc_id": "P24_third_party_sdks",
+  "findings": [
+    {
+      "feature": "Third-party SDKs",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product document does not disclose the names of third parties collecting personal information through the DLA, which is a violation of the requirement to disclose third parties in the privacy policy.",
+      "doc_evidence": "The privacy policy on the website does not name these third parties.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Device access",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app accesses mobile phone resources like file and media, contact list, call logs, telephony functions, which is not allowed unless for on-boarding/KYC purposes with explicit consent.",
+      "doc_evidence": "For fraud checks, the app scans the list of installed apps and reads files in the download folder.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data location",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "The product document does not mention whether biometric data is stored or collected, which is a violation of the requirement to ensure that no biometric data is stored or collected unless allowed under extant statutory guidelines.",
+      "doc_evidence": "All data, including SDK data, is stored on servers in Mumbai.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Third-party SDKs",
+      "rule_id": "DLD2025:14(ii)",
+      "issue": "The product document does not disclose details of third parties allowed to collect personal information through the DLA, which is a violation of the requirement to disclose such details in the privacy policy.",
+      "doc_evidence": "The privacy policy on the website does not name these third parties.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data location",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "The product document does not mention whether biometric data is stored or collected, which is a violation of the requirement to ensure that no biometric data is stored or collected unless allowed under extant statutory guidelines.",
+      "doc_evidence": "All data, including SDK data, is stored on servers in Mumbai.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2644,
+    "output_tokens": 521,
+    "llm_seconds": 39.1,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 39.3
+}

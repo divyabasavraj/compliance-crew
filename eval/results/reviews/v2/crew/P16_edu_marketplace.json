@@ -1,0 +1,185 @@
+{
+  "system": "crew",
+  "doc_id": "P16_edu_marketplace",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The course fee is paid by the lender directly into the training institute's bank account.",
+      "doc_evidence": "The course fee is paid by the lender directly into the training institute's bank account.",
+      "severity": "high",
+      "fix": "Ensure that the lender's disbursement process complies with RBI guidelines by verifying that the course fee is paid directly to the training institute's account and that the borrower is not required to make any upfront payments.",
+      "verifier_note": "The RBI paragraph prohibits disbursal to third-party accounts, including the accounts of LSPs, except for specific exceptions. The product feature describes disbursal into the training institute's bank account, which is a third-party account. Unless the training institute is explicitly exempted (e.g., as an end-beneficiary for a specific end use), this would violate the RBI directive. The feature does not mention any exception or exemption, so it appears to violate the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "doc_evidence": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "severity": "medium",
+      "fix": "Implement a secure data storage solution that complies with RBI and data protection regulations, and ensure that data is retained only for the required period and is encrypted and access-controlled.",
+      "verifier_note": "The RBI paragraph requires RE and LSP to put in place and disclose clear policy guidelines regarding the storage of customer data, including the type of data that can be stored, the length of time for storage, restrictions on use, data destruction protocol, and security breach handling. The product feature states that Upskill Credit stores specific documents (bank statements, salary slips, credit bureau reports) on its own servers for three years to improve matching models. The feature does not mention whether these actions are part of a clear policy, whether the policy is disclosed on the website and DLA, or whether it includes data destruction protocols or security breach handling. Since the feature does not provide the required disclosures or policy guidelines, it may violate the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "doc_evidence": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "severity": "medium",
+      "fix": "Ensure that data collection and retention practices are documented and reviewed periodically to ensure compliance with RBI guidelines and data protection laws.",
+      "verifier_note": "The RBI paragraph prohibits LSPs from storing personal information of borrowers except for some basic minimal data. The product feature mentions storing bank statements, salary slips, and credit bureau reports, which are not considered basic minimal data. The paragraph explicitly states that the responsibility for data privacy and security lies with the RE, and the feature does not mention any exception or justification for storing such data. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Matching",
+      "rule_id": "DLD2025:6(ii)",
+      "issue": "The feature 'Matching' describes that the sales team adjusts the rule set weekly to determine which lenders are shown, and the rules are not written down anywhere. This violates the requirement that the mechanism adopted by the LSP and any subsequent changes to this mechanism shall be properly documented.",
+      "doc_evidence": "Borrowers with the same profile may see different lenders on different days, and the rules are not written down anywhere.",
+      "severity": "high",
+      "fix": "Document all rules and changes to the matching mechanism in writing and maintain a version-controlled record to ensure transparency and accountability.",
+      "verifier_note": "The product feature describes a mechanism where the sales team adjusts the rule set weekly and the rules are not written down. This directly violates the RBI paragraph's requirement that the mechanism adopted by the LSP and any subsequent changes to this mechanism shall be properly documented. The feature does not meet the documentation requirement, which the paragraph explicitly mandates."
+    },
+    {
+      "feature": "Product",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The product feature does not provide the name(s) of the RE(s) extending the loan offer, amount and tenor of loan, APR, monthly repayment obligation and penal charges (if applicable), in a way which enables the borrower to make a fair comparison between various offers. A link to the KFS shall also be provided in respect of each of the RE.",
+      "doc_evidence": "Learners choose a course and see loan offers from partner lenders for the course fee, ₹20,000 to ₹3,00,000.",
+      "severity": "high",
+      "fix": "Update the product feature to clearly display all loan terms, including the name of the RE, loan amount, tenor, APR, monthly repayment, and penal charges, along with a direct link to the KFS for each loan offer.",
+      "verifier_note": "The product feature does not explicitly mention providing the name(s) of the RE(s), amount and tenor of loan, APR, monthly repayment obligation, penal charges (if applicable), or a link to the KFS for each loan offer. The RBI paragraph requires these details to be included in the digital view of loan offers. Since the feature does not include these required elements, it violates the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The course fee is paid by the lender directly into the training institute's bank account.",
+      "doc_evidence": "The course fee is paid by the lender directly into the training institute's bank account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph prohibits disbursal to third-party accounts, including the accounts of LSPs, except for specific exceptions. The product feature describes disbursal into the training institute's bank account, which is a third-party account. Unless the training institute is explicitly exempted (e.g., as an end-beneficiary for a specific end use), this would violate the RBI directive. The feature does not mention any exception or exemption, so it appears to violate the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "doc_evidence": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that all data be stored only in servers located within India. The product feature states that Upskill Credit stores data on its own servers for three years, which implies the servers are located in India. However, the paragraph also requires that data processed outside India must be deleted and brought back within 24 hours. The feature does not mention any data being processed outside India, so there is no violation. The feature complies with the requirement to store data in India."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "doc_evidence": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires RE and LSP to put in place and disclose clear policy guidelines regarding the storage of customer data, including the type of data that can be stored, the length of time for storage, restrictions on use, data destruction protocol, and security breach handling. The product feature states that Upskill Credit stores specific documents (bank statements, salary slips, credit bureau reports) on its own servers for three years to improve matching models. The feature does not mention whether these actions are part of a clear policy, whether the policy is disclosed on the website and DLA, or whether it includes data destruction protocols or security breach handling. Since the feature does not provide the required disclosures or policy guidelines, it may violate the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "doc_evidence": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph prohibits LSPs from storing personal information of borrowers except for some basic minimal data. The product feature mentions storing bank statements, salary slips, and credit bureau reports, which are not considered basic minimal data. The paragraph explicitly states that the responsibility for data privacy and security lies with the RE, and the feature does not mention any exception or justification for storing such data. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Offer Display",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The feature 'Offer display' ranks loan offers by APR, lowest first, which is a publicly pre-disclosed metric for such ranking. While this is permissible under the regulation, the feature does not explicitly state that the ranking is based on a publicly pre-disclosed metric, which could be interpreted as potentially misleading borrowers.",
+      "doc_evidence": "Offers are ranked by APR, lowest first, and the app states this ranking rule at the top of the list.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly allows ranking of loan offers based on a publicly pre-disclosed metric, as long as it is not construed as promoting a particular product. The product feature states that offers are ranked by APR, lowest first, and this ranking rule is disclosed at the top of the list. The claim that the feature does not explicitly state that the ranking is based on a publicly pre-disclosed metric is not a violation because the paragraph allows such ranking as long as it is not misleading. The feature does comply with the regulation."
+    },
+    {
+      "feature": "Matching",
+      "rule_id": "DLD2025:6(ii)",
+      "issue": "The feature 'Matching' describes that the sales team adjusts the rule set weekly to determine which lenders are shown, and the rules are not written down anywhere. This violates the requirement that the mechanism adopted by the LSP and any subsequent changes to this mechanism shall be properly documented.",
+      "doc_evidence": "Borrowers with the same profile may see different lenders on different days, and the rules are not written down anywhere.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a mechanism where the sales team adjusts the rule set weekly and the rules are not written down. This directly violates the RBI paragraph's requirement that the mechanism adopted by the LSP and any subsequent changes to this mechanism shall be properly documented. The feature does not meet the documentation requirement, which the paragraph explicitly mandates."
+    },
+    {
+      "feature": "Product",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The product feature does not provide the name(s) of the RE(s) extending the loan offer, amount and tenor of loan, APR, monthly repayment obligation and penal charges (if applicable), in a way which enables the borrower to make a fair comparison between various offers. A link to the KFS shall also be provided in respect of each of the RE.",
+      "doc_evidence": "Learners choose a course and see loan offers from partner lenders for the course fee, ₹20,000 to ₹3,00,000.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature does not explicitly mention providing the name(s) of the RE(s), amount and tenor of loan, APR, monthly repayment obligation, penal charges (if applicable), or a link to the KFS for each loan offer. The RBI paragraph requires these details to be included in the digital view of loan offers. Since the feature does not include these required elements, it violates the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the SkillLoan product against the reviewed RBI rules identified several gaps. The course fee being paid directly into the training institute's bank account (DLD2025:9(i)) is a high-risk issue. Additionally, the lack of documentation for the 'Matching' feature's rule set (DLD2025:6(ii)) and the absence of required loan offer details for borrowers (DLD2025:6(iii)) are also high-risk findings. There are also medium-risk issues related to the retention of borrower data on internal servers for three years (DLD2025:13(i) and DLD2025:13(ii)).",
+  "trace": {
+    "llm_calls": 20,
+    "prompt_tokens": 9810,
+    "output_tokens": 2320,
+    "llm_seconds": 201.5,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 7,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 27,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iii)"
+      ],
+      "1:Data Collection": [
+        "DLD2025:13(iv)",
+        "DLD2025:13(ii)",
+        "KFS2024:5",
+        "DLD2025:8(iii)",
+        "DLD2025:16(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:10(i)",
+        "DLD2025:13(i)"
+      ],
+      "2:Offer Display": [
+        "DLD2025:6(iii)",
+        "KFS2024:6",
+        "DLD2025:6(iv)",
+        "KFS2024:7",
+        "DLD2025:6(i)",
+        "DLD2025:16(ii)"
+      ],
+      "3:Matching": [
+        "DLD2025:6(iii)",
+        "DLD2025:6(ii)",
+        "DLD2025:6(i)",
+        "DLD2025:6(iv)",
+        "DLD2025:7(i)",
+        "KFS2024:7",
+        "DLD2025:16(i)",
+        "DLD2025:29(i)",
+        "DLD2025:9(i)"
+      ],
+      "4:Product": [
+        "DLD2025:6(iii)",
+        "DLD2025:6(i)",
+        "DLD2025:6(iv)",
+        "DLD2025:10(ii)",
+        "DLD2025:6(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(ii)",
+        "DLD2025:13(iv)",
+        "DLD2025:13(ii)"
+      ]
+    }
+  },
+  "seconds": 202.8
+}

@@ -1,0 +1,46 @@
+{
+  "system": "single",
+  "doc_id": "P27_merchant_paylater",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Credit bureau reporting",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "The product does not report lending activities to credit information companies, which is a violation of the requirement to report all lending done through DLAs and/or DLAs of LSPs to CICs.",
+      "doc_evidence": "Mahanadi Finance treats these as merchant payment deferrals, not loans, and does not report them to credit information companies.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Limits",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The product automatically increases the credit limit without an explicit request from the borrower, which is a violation of the requirement to ensure no automatic increase in credit limit unless an explicit request is received, evaluated, and kept on record.",
+      "doc_evidence": "Every month, PharmaPay raises each customer's pay-later limit by ₹1,000 if they repaid on time; customers are informed by SMS after the increase.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data",
+      "rule_id": "DLD2025:17(vi)",
+      "issue": "The product does not explicitly state that the inclusion of third-party DLAs (like TapLater) does not confer any form of registration, authorization, or endorsement by the Reserve Bank, which is a violation of the requirement to ensure such inclusion is not misrepresented.",
+      "doc_evidence": "The app requests one-time camera access for KYC. No other permissions.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2273,
+    "output_tokens": 365,
+    "llm_seconds": 40.4,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 40.7
+}

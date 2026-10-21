@@ -1,0 +1,73 @@
+{
+  "system": "single",
+  "doc_id": "P21_dla_reporting",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "CIMS Reporting",
+      "rule_id": "DLD2025:17(i)",
+      "issue": "The RE has not reported all DLAs, including those of LSPs, on the CIMS portal.",
+      "doc_evidence": "Only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "CIMS Reporting",
+      "rule_id": "DLD2025:17(ii)",
+      "issue": "The RE has not updated the list of DLAs when new DLAs are deployed.",
+      "doc_evidence": "A fourth partner app, StudyCash, went live last month. The bank will add it to its records at the next annual review.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "CIMS Reporting",
+      "rule_id": "DLD2025:17(vii)",
+      "issue": "The RE has not ensured that the reporting in respect of all DLAs on the CIMS portal is completed by June 15, 2025.",
+      "doc_evidence": "A fourth partner app, StudyCash, went live last month. The bank will add it to its records at the next annual review.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Website",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "The RE has not provided a link to its privacy policies on the website.",
+      "doc_evidence": "The bank's website lists all its digital lending products, all four partner LSPs and their apps, the grievance officer's details and a link to RBI's CMS and Sachet portals.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Website",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The RE has not prominently displayed the contact details of the nodal grievance redressal officers on the DLA.",
+      "doc_evidence": "The bank's website lists all its digital lending products, all four partner LSPs and their apps, the grievance officer's details and a link to RBI's CMS and Sachet portals.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Website",
+      "rule_id": "DLD2025:14(i)",
+      "issue": "The RE has not made a comprehensive privacy policy publicly available on the website of the LSPs.",
+      "doc_evidence": "The bank's website lists all its digital lending products, all four partner LSPs and their apps, the grievance officer's details and a link to RBI's CMS and Sachet portals.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2179,
+    "output_tokens": 638,
+    "llm_seconds": 52.7,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 53.0
+}

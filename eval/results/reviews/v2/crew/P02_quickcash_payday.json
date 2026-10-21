@@ -1,0 +1,172 @@
+{
+  "system": "crew",
+  "doc_id": "P02_quickcash_payday",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature describes that approved amounts are first credited to the QuickCash wallet held by QC Technologies, and the user can move the money to their bank account at any time with one tap. This implies that the loan servicing and repayment are executed through a third-party account (the QuickCash wallet), which is prohibited under DLD2025:9(ii).",
+      "doc_evidence": "Approved amounts are first credited to the QuickCash wallet held by QC Technologies, and the user can move the money to their bank account at any time with one tap.",
+      "severity": "high",
+      "fix": "Reconfigure the disbursal process to ensure that loan amounts are directly disbursed to the borrower's bank account, bypassing the QuickCash wallet. This will align with DLD2025:9(ii) and eliminate the third-party account usage.",
+      "verifier_note": "The RBI paragraph DLD2025:9(ii) explicitly prohibits the use of any third-party account, including pass-through or pool accounts, for loan servicing and repayment. The product feature describes that approved amounts are first credited to a third-party wallet (QuickCash wallet held by QC Technologies), which is a third-party account. This directly violates the prohibition in DLD2025:9(ii)."
+    },
+    {
+      "feature": "Loan Offer and Key Facts Statement (KFS)",
+      "rule_id": "KFS2024:5",
+      "issue": "The feature states that the loan offer and KFS expire 30 minutes after they are shown, which is less than the required validity period of at least three working days for loans with a tenor of seven days or more. This violates the requirement for the KFS to have a validity period of at least three working days.",
+      "doc_evidence": "After approval the user sees the Key Facts Statement with the APR, repayment schedule and all charges. For speed, the offer and KFS expire 30 minutes after they are shown; after that the user must apply again.",
+      "severity": "high",
+      "fix": "Extend the validity period of the loan offer and Key Facts Statement (KFS) to at least three working days for loans with a tenor of seven days or more. Update the system and user interface to reflect this extended validity period.",
+      "verifier_note": "The RBI paragraph requires that the KFS have a validity period of at least three working days for loans with a tenor of seven days or more. The product feature states that the loan offer and KFS expire 30 minutes after they are shown, which is significantly less than the required three working days. This directly violates the requirement specified in the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature describes that approved amounts are first credited to the QuickCash wallet held by QC Technologies, and the user can move the money to their bank account at any time with one tap. This implies that the loan is disbursed into a third-party account (the QuickCash wallet) rather than directly into the borrower's bank account, which is prohibited under DLD2025:9(i).",
+      "doc_evidence": "Approved amounts are first credited to the QuickCash wallet held by QC Technologies, and the user can move the money to their bank account at any time with one tap.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly allows disbursals into third-party accounts if the loan is disbursed directly into the bank account of the end-beneficiary. The product feature describes that the loan amount is first credited to a QuickCash wallet, but the user can move the money to their bank account at any time. This means the loan is ultimately disbursed into the borrower's bank account, which complies with the RBI directions. The feature does not disburse the loan into a third-party account directly, and the paragraph allows such a flow as long as the end-beneficiary receives the funds directly."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature describes that approved amounts are first credited to the QuickCash wallet held by QC Technologies, and the user can move the money to their bank account at any time with one tap. This implies that the loan servicing and repayment are executed through a third-party account (the QuickCash wallet), which is prohibited under DLD2025:9(ii).",
+      "doc_evidence": "Approved amounts are first credited to the QuickCash wallet held by QC Technologies, and the user can move the money to their bank account at any time with one tap.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph DLD2025:9(ii) explicitly prohibits the use of any third-party account, including pass-through or pool accounts, for loan servicing and repayment. The product feature describes that approved amounts are first credited to a third-party wallet (QuickCash wallet held by QC Technologies), which is a third-party account. This directly violates the prohibition in DLD2025:9(ii)."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The feature describes that approved amounts are first credited to the QuickCash wallet held by QC Technologies, and the user can move the money to their bank account at any time with one tap. This implies that the flow of funds between the borrower's bank account and the RE is controlled indirectly by a third-party (QC Technologies), which is prohibited under DLD2025:9(iii).",
+      "doc_evidence": "Approved amounts are first credited to the QuickCash wallet held by QC Technologies, and the user can move the money to their bank account at any time with one tap.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph prohibits the flow of funds between the borrower's bank account and the RE from being controlled directly or indirectly by a third-party, including the LSP. The product feature describes that approved amounts are first credited to the QuickCash wallet (held by QC Technologies), and the user can move the money to their bank account at any time. This implies that QC Technologies (a third-party) is facilitating the movement of funds, which could be seen as indirect control over the flow of funds. However, the paragraph explicitly allows for the flow of funds to be controlled by the RE, and the feature does not indicate that QC Technologies is acting on behalf of the RE or that the RE is involved in the movement of funds. Therefore, the feature does not necessarily violate the RBI paragraph."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature describes that approved amounts are first credited to the QuickCash wallet held by QC Technologies, and the user can move the money to their bank account at any time with one tap. This implies that fees, charges, reimbursements, etc., payable to LSPs (QC Technologies) are not directly paid by the RE but are potentially charged to or collected from the borrowers, which is prohibited under DLD2025:9(iv).",
+      "doc_evidence": "Approved amounts are first credited to the QuickCash wallet held by QC Technologies, and the user can move the money to their bank account at any time with one tap.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph (DLD2025:9(iv)) explicitly prohibits LSPs from charging fees, charges, reimbursements, etc., to or from borrowers. The product feature does not mention any fees, charges, or reimbursements being charged to or collected from borrowers. It only describes the flow of funds to a QuickCash wallet and the user's ability to transfer money to their bank account. Since the feature does not indicate that fees or charges are being passed on to borrowers, it does not violate the RBI regulation. The claim relies on an assumption not supported by the feature text."
+    },
+    {
+      "feature": "Pricing and Charges",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The platform fee of 3% of the loan amount, collected by QC Technologies from the borrower's account at disbursal, is a charge payable to the LSP and is being collected directly from the borrower, which is not allowed. The RE shall ensure that any fees, charges, reimbursements, etc. payable to LSP are paid directly by the RE and are not charged to or collected from the borrowers separately by LSP.",
+      "doc_evidence": "QuickCash also charges the borrower a platform fee of 3% of the loan amount, collected by QC Technologies from the borrower's account at disbursal, for the use of the app.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph prohibits any fees, charges, reimbursements, etc. payable to LSP from being charged to or collected from the borrowers separately by LSP. The product feature states that the platform fee is collected by QC Technologies from the borrower's account at disbursal. If QC Technologies is the LSP, then this directly violates the RBI paragraph. However, the feature does not explicitly state that QC Technologies is the LSP. Therefore, the claim relies on an assumption not stated in the feature text."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The feature states that 'all app data is stored on AWS Mumbai region servers', which is within India. However, it does not mention whether data processed outside India is deleted from servers outside India and brought back to India within 24 hours of processing. This creates a compliance gap as the requirement for data processed outside India is not explicitly addressed.",
+      "doc_evidence": "All app data is stored on AWS Mumbai region servers. QC Technologies keeps only the borrower's name, address and phone number, which it needs to service the loan; all other data sits with Sahyadri Capital.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that data processed outside India must be deleted from servers outside India and brought back to India within 24 hours. The product feature does not mention any data being processed outside India, nor does it address the deletion and repatriation of such data. Since the feature does not involve data processing outside India, the requirement is not applicable, and there is no violation."
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "The product feature states that a one-time processing fee of ₹99 is retained on cancellation, which is shown in the KFS. This complies with the requirement that the RE may retain a reasonable one-time processing fee if the customer exits the loan during the cooling-off period, provided it is disclosed upfront in KFS.",
+      "doc_evidence": "Borrowers can cancel the loan within 3 days by repaying the principal and proportionate interest. A one-time processing fee of ₹99, which is shown in the KFS, is retained on cancellation.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the RBI paragraph. The feature states that a one-time processing fee of ₹99 is retained on cancellation, which is shown in the KFS. This aligns with the RBI requirement that the RE may retain a reasonable one-time processing fee if the customer exits the loan during the cooling-off period, provided it is disclosed upfront in KFS. The feature does not violate the paragraph."
+    },
+    {
+      "feature": "Loan Offer and Key Facts Statement (KFS)",
+      "rule_id": "KFS2024:5",
+      "issue": "The feature states that the loan offer and KFS expire 30 minutes after they are shown, which is less than the required validity period of at least three working days for loans with a tenor of seven days or more. This violates the requirement for the KFS to have a validity period of at least three working days.",
+      "doc_evidence": "After approval the user sees the Key Facts Statement with the APR, repayment schedule and all charges. For speed, the offer and KFS expire 30 minutes after they are shown; after that the user must apply again.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the KFS have a validity period of at least three working days for loans with a tenor of seven days or more. The product feature states that the loan offer and KFS expire 30 minutes after they are shown, which is significantly less than the required three working days. This directly violates the requirement specified in the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the QuickCash: Instant Salary Advance product identified two significant gaps against the reviewed RBI rules. First, the feature's description implies that loan servicing and repayment are executed through a third-party account (the QuickCash wallet), which is prohibited under DLD2025:9(ii). Second, the loan offer and KFS expire within 30 minutes, which is less than the required validity period of at least three working days for loans with a tenor of seven days or more, violating KFS2024:5.",
+  "trace": {
+    "llm_calls": 21,
+    "prompt_tokens": 11095,
+    "output_tokens": 2898,
+    "llm_seconds": 221.8,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 8,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 29,
+    "retrieved": {
+      "0:Disbursal": [
+        "KFS2024:5",
+        "DLD2025:9(v)",
+        "DLD2025:27(ii)",
+        "DLD2025:10(i)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:5(i)"
+      ],
+      "1:Pricing and Charges": [
+        "KFS2024:8",
+        "DLD2025:9(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:10(ii)",
+        "KFS2024:6",
+        "DLD2025:5(ii)",
+        "DLD2025:6(iv)"
+      ],
+      "2:Data Collection": [
+        "DLD2025:13(iv)",
+        "DLD2025:13(i)",
+        "DLD2025:13(ii)",
+        "DLD2025:12(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:5(ii)",
+        "DLD2025:5(i)",
+        "DLD2025:16(i)"
+      ],
+      "3:Cooling-off Period": [
+        "DLD2025:10(ii)",
+        "DLD2025:10(i)",
+        "KFS2024:5",
+        "DLD2025:26(i)",
+        "DLD2025:11(iv)",
+        "DLD2025:13(iv)"
+      ],
+      "4:Loan Offer and Key Facts Statement (KFS)": [
+        "KFS2024:6",
+        "KFS2024:5",
+        "KFS2024:8",
+        "KFS2024:7",
+        "KFS2024:4",
+        "DLD2025:26(i)",
+        "DLD2025:11(iv)",
+        "DLD2025:10(i)",
+        "DLD2025:8(i)",
+        "DLD2025:6(iii)"
+      ]
+    }
+  },
+  "seconds": 222.8
+}

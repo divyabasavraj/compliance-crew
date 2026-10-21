@@ -1,0 +1,64 @@
+{
+  "system": "single",
+  "doc_id": "P10_gigworker_loans",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "Loans are being disbursed into the LSP's account (GigWorks) rather than directly into the borrower's bank account.",
+      "doc_evidence": "Daily repayments are deducted from the worker's earnings by GigWorks and held in GigWorks' account, which transfers the total to Deccan Small Finance Bank at the end of each week.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Cooling-off",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product does not provide a cooling-off period as required by RBI regulations.",
+      "doc_evidence": "There is no cooling-off period. A loan, once taken, can be prepaid only after 3 months, with a 2% prepayment charge.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Underwriting",
+      "rule_id": "DLD2025:7(i)",
+      "issue": "The product does not explicitly mention storing age, occupation, and income details for audit purposes, even though it mentions using these for credit decisions.",
+      "doc_evidence": "Credit decisions use earnings history on the gig platform, age, occupation and declared income, all stored for audit.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data location",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "The product does not disclose the policy guidelines regarding the storage of customer data, including the type of data that can be stored, the length of time for which data can be stored, restrictions on the use of data, data destruction protocol, standards for handling security breach, etc.",
+      "doc_evidence": "All data is stored on servers in India. A fraud-scoring vendor processes some data in Ireland; the data is deleted there and returned to India within 24 hours.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "App permissions",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product does not explicitly mention that the DLA of RE/LSP desist from accessing mobile phone resources like file and media, contact list, call logs, telephony functions, etc., even though it mentions one-time location access for KYC.",
+      "doc_evidence": "The app asks for one-time location access during onboarding to verify the worker's city for KYC, with explicit consent. It does not access contacts, call logs or files.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2279,
+    "output_tokens": 588,
+    "llm_seconds": 57.3,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 57.6
+}

@@ -1,0 +1,148 @@
+{
+  "system": "crew",
+  "doc_id": "P24_third_party_sdks",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Product Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature describes the disbursement of personal loans through the SwiftLoan app, which is an LSP. However, RBI Direction DLD2025:9(i) mandates that loan disbursement must always be made into the borrower's bank account, except for specific statutory or regulatory mandates, co-lending transactions, or specific end-use disbursals where the loan is directly into the end-beneficiary's account. The feature does not explicitly state that the loan is disbursed directly into the borrower's bank account, which could imply that the LSP (SwiftStack Pvt Ltd) is involved in the disbursement process, potentially violating the requirement.",
+      "doc_evidence": "Product: Personal loans of ₹20,000 to ₹3,00,000 through the SwiftLoan app.",
+      "severity": "high",
+      "fix": "Update the disbursement feature to explicitly state that the loan is disbursed directly into the borrower's bank account, in compliance with RBI Direction DLD2025:9(i).",
+      "verifier_note": "The RBI paragraph explicitly prohibits disbursement to third-party accounts, including LSPs, except for specific exceptions. The product feature describes disbursement through the SwiftLoan app, which is an LSP. Since the feature does not explicitly state that the disbursement is made directly into the borrower's bank account (which is required unless an exception applies), it could imply that the LSP is involved in the disbursement process, which is prohibited unless an exception is met. The feature does not mention any exception that would justify disbursement through an LSP."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:14(ii)",
+      "issue": "The privacy policy on the website does not name these third parties.",
+      "doc_evidence": "The privacy policy on the website does not name these third parties.",
+      "severity": "medium",
+      "fix": "Revise the privacy policy to clearly list all third-party entities that collect or process personal data, ensuring transparency and compliance with data protection regulations.",
+      "verifier_note": "The RBI paragraph requires that details of third parties allowed to collect personal information through the DLA be disclosed in the privacy policy. The product feature states that the privacy policy does not name these third parties, which violates the requirement. The feature does not mention the third parties, and the paragraph explicitly requires their disclosure."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app scans the list of installed apps and reads files in the download folder for fraud checks, which may involve accessing mobile phone resources like file and media, which is prohibited unless for on-boarding/KYC purposes.",
+      "doc_evidence": "For fraud checks, the app scans the list of installed apps and reads files in the download folder.",
+      "severity": "high",
+      "fix": "Restrict the app's access to mobile phone resources such as files and media to only on-boarding/KYC purposes, and ensure that all data collection activities are explicitly justified and documented.",
+      "verifier_note": "The RBI paragraph explicitly prohibits DLA of RE/LSP from accessing mobile phone resources like file and media, contact list, call logs, telephony functions, etc., except for a one-time access for camera, microphone, location or any other facility necessary for the purpose of on-boarding/KYC requirements. The product feature states that the app scans the list of installed apps and reads files in the download folder for fraud checks, which involves accessing mobile phone resources like file and media. This is prohibited unless for on-boarding/KYC purposes, which is not the case here. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature states: \"Nodal grievance officers of Nilgiri Bank and SwiftStack are named on both websites, in the app and in the KFS.\" This does not explicitly mention that the contact details of the nodal grievance redressal officers are prominently displayed, which is a requirement under DLD2025:11(ii).",
+      "doc_evidence": "Nodal grievance officers of Nilgiri Bank and SwiftStack are named on both websites, in the app and in the KFS.",
+      "severity": "medium",
+      "fix": "Ensure that the contact details of the nodal grievance redressal officers are prominently displayed on the website, app, and KFS, in compliance with DLD2025:11(ii).",
+      "verifier_note": "The product feature mentions that the nodal grievance officers are named on the websites, in the app, and in the KFS. However, the RBI paragraph explicitly requires that the contact details of the nodal grievance redressal officers be prominently displayed. The feature does not mention contact details, only names. Therefore, the feature fails to meet the requirement of prominently displaying contact details, which is a specific requirement under DLD2025:11(ii)."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Product Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature describes the disbursement of personal loans through the SwiftLoan app, which is an LSP. However, RBI Direction DLD2025:9(i) mandates that loan disbursement must always be made into the borrower's bank account, except for specific statutory or regulatory mandates, co-lending transactions, or specific end-use disbursals where the loan is directly into the end-beneficiary's account. The feature does not explicitly state that the loan is disbursed directly into the borrower's bank account, which could imply that the LSP (SwiftStack Pvt Ltd) is involved in the disbursement process, potentially violating the requirement.",
+      "doc_evidence": "Product: Personal loans of ₹20,000 to ₹3,00,000 through the SwiftLoan app.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits disbursement to third-party accounts, including LSPs, except for specific exceptions. The product feature describes disbursement through the SwiftLoan app, which is an LSP. Since the feature does not explicitly state that the disbursement is made directly into the borrower's bank account (which is required unless an exception applies), it could imply that the LSP is involved in the disbursement process, which is prohibited unless an exception is met. The feature does not mention any exception that would justify disbursement through an LSP."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:14(ii)",
+      "issue": "The privacy policy on the website does not name these third parties.",
+      "doc_evidence": "The privacy policy on the website does not name these third parties.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that details of third parties allowed to collect personal information through the DLA be disclosed in the privacy policy. The product feature states that the privacy policy does not name these third parties, which violates the requirement. The feature does not mention the third parties, and the paragraph explicitly requires their disclosure."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app scans the list of installed apps and reads files in the download folder for fraud checks, which may involve accessing mobile phone resources like file and media, which is prohibited unless for on-boarding/KYC purposes.",
+      "doc_evidence": "For fraud checks, the app scans the list of installed apps and reads files in the download folder.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits DLA of RE/LSP from accessing mobile phone resources like file and media, contact list, call logs, telephony functions, etc., except for a one-time access for camera, microphone, location or any other facility necessary for the purpose of on-boarding/KYC requirements. The product feature states that the app scans the list of installed apps and reads files in the download folder for fraud checks, which involves accessing mobile phone resources like file and media. This is prohibited unless for on-boarding/KYC purposes, which is not the case here. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The feature 'Data location: All data, including SDK data, is stored on servers in Mumbai.' does not comply with [DLD2025:13(iv)] which requires that all data is stored only in servers located within India, while ensuring compliance with statutory obligations/ regulatory instructions. Further, in case the data is processed outside India, the same shall be deleted from servers outside India and brought back to India within 24 hours of processing.",
+      "doc_evidence": "Data location: All data, including SDK data, is stored on servers in Mumbai.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that all data, including SDK data, is stored on servers in Mumbai, which is within India. This complies with the requirement in [DLD2025:13(iv)] that data is stored only in servers located within India. The feature does not mention any data being processed outside India, so the additional requirement about deleting and bringing back data processed outside India is not applicable here. The feature does not violate the paragraph."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature states: \"Nodal grievance officers of Nilgiri Bank and SwiftStack are named on both websites, in the app and in the KFS.\" This does not explicitly mention that the contact details of the nodal grievance redressal officers are prominently displayed, which is a requirement under DLD2025:11(ii).",
+      "doc_evidence": "Nodal grievance officers of Nilgiri Bank and SwiftStack are named on both websites, in the app and in the KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature mentions that the nodal grievance officers are named on the websites, in the app, and in the KFS. However, the RBI paragraph explicitly requires that the contact details of the nodal grievance redressal officers be prominently displayed. The feature does not mention contact details, only names. Therefore, the feature fails to meet the requirement of prominently displaying contact details, which is a specific requirement under DLD2025:11(ii)."
+    }
+  ],
+  "summary": "The compliance review of the SwiftLoan product, focusing on App Analytics and Partners, identified several gaps against the reviewed RBI rules. The key findings include: (1) A high-risk issue where the loan disbursement feature does not explicitly state that the loan is disbursed into the borrower's bank account, potentially violating RBI Direction DLD2025:9(i). (2) A medium-risk issue where the privacy policy does not name third parties, violating DLD2025:14(ii). (3) A high-risk issue where the app accesses mobile phone resources for fraud checks without a clear on-boarding/KYC justification, violating DLD2025:12(i). (4) A medium-risk issue where the nodal grievance officers' contact details are not prominently displayed, violating DLD2025:11(ii).",
+  "trace": {
+    "llm_calls": 16,
+    "prompt_tokens": 8220,
+    "output_tokens": 1946,
+    "llm_seconds": 164.6,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 4,
+      "gap_analyst": 4,
+      "verifier": 5,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 22,
+    "retrieved": {
+      "0:Product Disbursal": [
+        "DLD2025:14(ii)",
+        "DLD2025:12(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:26(i)",
+        "DLD2025:12(iv)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(v)",
+        "DLD2025:9(ii)"
+      ],
+      "1:Data Collection": [
+        "DLD2025:14(ii)",
+        "DLD2025:12(iv)",
+        "DLD2025:12(ii)",
+        "DLD2025:17(vi)",
+        "KFS2024:7",
+        "DLD2025:12(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(v)",
+        "DLD2025:12(iii)"
+      ],
+      "2:Data Storage": [
+        "DLD2025:13(iv)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(i)",
+        "DLD2025:13(i)",
+        "DLD2025:17(iv)"
+      ],
+      "3:Grievance Redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:11(i)",
+        "DLD2025:17(iv)",
+        "DLD2025:11(iii)",
+        "DLD2025:8(iv)",
+        "DLD2025:11(iv)"
+      ]
+    }
+  },
+  "seconds": 165.9
+}

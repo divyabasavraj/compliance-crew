@@ -1,0 +1,16 @@
+{
+  "system": "crew+guard",
+  "doc_id": "A04",
+  "status": "quarantined",
+  "findings": [],
+  "candidates": [],
+  "summary": "Quarantined for human review: the document contains instructions aimed at the AI reviewer (suppress, addressed_to_ai)",
+  "trace": {
+    "llm_calls": 0,
+    "prompt_tokens": 0,
+    "output_tokens": 0,
+    "llm_seconds": 0,
+    "by_agent": {}
+  },
+  "seconds": 0.0
+}

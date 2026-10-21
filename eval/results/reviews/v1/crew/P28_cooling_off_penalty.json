@@ -1,0 +1,97 @@
+{
+  "system": "crew",
+  "doc_id": "P28_cooling_off_penalty",
+  "findings": [
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The feature 'Cooling-off: Borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge' does not comply with the requirement that the borrower shall be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial 'cooling-off period'. The feature imposes a penalty (4% foreclosure charge) and requires payment of the full first month's interest, which is not allowed under the RBI guidelines.",
+      "doc_evidence": "Cooling-off: Borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge.",
+      "severity": "high",
+      "fix": "Remove the 4% foreclosure charge and the requirement to pay full first month's interest during the cooling-off period. Instead, allow borrowers to exit by paying the principal and proportionate APR without penalty. Ensure the cooling-off period is clearly communicated and the exit option is explicitly provided in the loan agreement.",
+      "verifier_note": "The product feature imposes a 4% foreclosure charge and requires payment of the full first month's interest, which violates the RBI requirement that the borrower shall be given an explicit option to exit by paying the principal and the proportionate APR without any penalty during the cooling-off period. The feature does not comply with the requirement of no penalty and proportionate APR."
+    },
+    {
+      "feature": "Unlisted Charges",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature 'Unlisted charges' as described violates the requirement that fees, charges, reimbursements, etc., payable to LSPs must be paid directly by the RE and not charged to or collected from the borrowers separately by LSPs. The 'credit insights subscription' of ₹199 is added to every EMI without being in the KFS and borrowers are not asked to agree to it, which is a clear violation.",
+      "doc_evidence": "After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "high",
+      "fix": "Stop charging the 'credit insights subscription' fee directly to borrowers. Instead, ensure that all fees payable to LSPs are paid directly by the RE. Update the KFS to include all charges and obtain explicit borrower consent for any additional charges before disbursing the loan.",
+      "verifier_note": "The product feature adds a charge (₹199 'credit insights subscription') to every EMI without it being in the KFS and without borrower consent. This directly violates the RBI requirement that fees, charges, etc., payable to LSPs must be paid directly by the RE and not charged to borrowers separately by LSPs. The feature does not comply with the requirement that such charges must be paid directly by the RE and not collected from borrowers."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The feature does not mention providing the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data, or make the RE/LSP delete/forget the data.",
+      "doc_evidence": "Product: Personal loans of ₹5,000 to ₹1,00,000 for 3 to 12 months.",
+      "severity": "high",
+      "fix": "Implement a clear and explicit data consent mechanism that allows borrowers to give, deny, restrict, revoke, or delete their data. Ensure that the RE or LSP provides detailed information on data usage, retention, and third-party sharing, and obtain explicit consent for each data-related activity.",
+      "verifier_note": "The RBI paragraph explicitly requires the borrower to be provided with options to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted, and make the RE/LSP delete/forget the data. The product feature does not mention any of these requirements, hence it violates the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature states that 'Loans are disbursed into the borrower's bank account.' This complies with the requirement that disbursement should be made into the borrower's bank account, except for specific exceptions. There is no indication that the disbursal is made to a third-party account, including the LSP's account. Therefore, this feature does not violate the rule.",
+      "doc_evidence": "Loans are disbursed into the borrower's bank account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that loans are disbursed into the borrower's bank account, which aligns with the RBI paragraph's requirement. The paragraph allows for exceptions such as statutory mandates, co-lending transactions, and specific end-use disbursals, but the feature does not indicate any such exceptions. Since the feature complies with the requirement and does not involve third-party accounts, there is no violation."
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The feature 'Cooling-off: Borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge' does not comply with the requirement that the borrower shall be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial 'cooling-off period'. The feature imposes a penalty (4% foreclosure charge) and requires payment of the full first month's interest, which is not allowed under the RBI guidelines.",
+      "doc_evidence": "Cooling-off: Borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature imposes a 4% foreclosure charge and requires payment of the full first month's interest, which violates the RBI requirement that the borrower shall be given an explicit option to exit by paying the principal and the proportionate APR without any penalty during the cooling-off period. The feature does not comply with the requirement of no penalty and proportionate APR."
+    },
+    {
+      "feature": "Unlisted Charges",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature 'Unlisted charges' as described violates the requirement that fees, charges, reimbursements, etc., payable to LSPs must be paid directly by the RE and not charged to or collected from the borrowers separately by LSPs. The 'credit insights subscription' of ₹199 is added to every EMI without being in the KFS and borrowers are not asked to agree to it, which is a clear violation.",
+      "doc_evidence": "After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature adds a charge (₹199 'credit insights subscription') to every EMI without it being in the KFS and without borrower consent. This directly violates the RBI requirement that fees, charges, etc., payable to LSPs must be paid directly by the RE and not charged to borrowers separately by LSPs. The feature does not comply with the requirement that such charges must be paid directly by the RE and not collected from borrowers."
+    },
+    {
+      "feature": "Loan Agreement and Proposal",
+      "rule_id": "KFS2024:5",
+      "issue": "The feature states that the KFS has a unique proposal number and is valid for 3 working days. This complies with the requirement that the KFS shall be provided with a unique proposal number and have a validity period of at least three working days for loans with a tenor of seven days or more. However, the feature does not specify the loan tenor, which is a requirement under KFS2024:5. Therefore, the feature does not fully comply with the paragraph.",
+      "doc_evidence": "KFS has a unique proposal number and is valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature provides a unique proposal number and a validity period of 3 working days, which complies with the requirement for loans with a tenor of seven days or more. The paragraph does not explicitly require the feature to specify the loan tenor, as the validity period is already tied to the tenor in the regulation. The feature does not violate the paragraph, as it meets the stated requirements for the specified loan tenor. The claim that the feature does not fully comply is unfounded because the paragraph does not mandate the inclusion of loan tenor in the feature description."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The feature does not mention providing the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data, or make the RE/LSP delete/forget the data.",
+      "doc_evidence": "Product: Personal loans of ₹5,000 to ₹1,00,000 for 3 to 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires the borrower to be provided with options to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted, and make the RE/LSP delete/forget the data. The product feature does not mention any of these requirements, hence it violates the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the product 'RupeeRush: Instant Personal Loans' identified several non-compliance issues with the Reserve Bank of India (RBI) guidelines. The key findings include: (1) The 'Cooling-off' feature imposes a penalty and requires payment of full first month's interest, which is not allowed under RBI guidelines. (2) The 'Unlisted charges' feature violates the requirement that fees payable to LSPs must be paid directly by the RE and not charged to borrowers. (3) The product does not provide borrowers with the necessary options regarding data consent, disclosure, retention, and revocation as required by RBI rules.",
+  "trace": {
+    "llm_calls": 18,
+    "prompt_tokens": 9672,
+    "output_tokens": 1994,
+    "llm_seconds": 187.1,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 5,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 25
+  },
+  "seconds": 188.3
+}

@@ -1,0 +1,64 @@
+{
+  "system": "single",
+  "doc_id": "P06_shopease_checkout",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Credit bureau reporting",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "Failure to report lending done through DLAs and/or DLAs of LSPs to CICs",
+      "doc_evidence": "Because these are small, short-term deferred payments, Coastal Finance does not report them to credit information companies. Only loans above ₹25,000 or longer than 6 months are reported.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Fees",
+      "rule_id": "KFS2024:8",
+      "issue": "Charging fees not mentioned in the KFS without explicit consent",
+      "doc_evidence": "ShopEase later plans to add a monthly 'account maintenance fee' of ₹49 for active users; this is not in the KFS and will be added to the bill automatically.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Marketing",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "Use of misleading or deceptive language suggesting RBI approval",
+      "doc_evidence": "App store listing and ads say: 'ShopEase PayLater: an RBI-approved credit app.'",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Cooling-off",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "Failure to disclose one-time processing fee for exiting during cooling-off period",
+      "doc_evidence": "Shoppers who change their mind can cancel within 2 days of purchase by paying back the principal with no extra charge.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data sharing",
+      "rule_id": "DLD2025:16(ii)",
+      "issue": "Failure to ensure LSPs abide by outsourcing guidelines",
+      "doc_evidence": "Purchase and repayment history is shared with ShopEase's advertising partners to show personalised offers. Users are not asked separately; this is covered by accepting the app's terms of use.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2163,
+    "output_tokens": 474,
+    "llm_seconds": 45.4,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 45.9
+}

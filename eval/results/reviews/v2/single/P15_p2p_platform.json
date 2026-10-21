@@ -1,0 +1,55 @@
+{
+  "system": "single",
+  "doc_id": "P15_p2p_platform",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Lender protection",
+      "rule_id": "DLD2025:20(iii)",
+      "issue": "LendCircle offers a default loss guarantee to lenders, which constitutes entering into a DLG (Debt Ledger Guarantee) arrangement, which is prohibited for NBFC-P2P platforms.",
+      "doc_evidence": "To attract lenders, LendCircle offers a default loss guarantee: it will reimburse lenders for up to 3% of the principal in each loan pool that goes bad.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Marketing",
+      "rule_id": "DLD2025:14(i)",
+      "issue": "The app home screen states that LendCircle is 'approved and backed by the RBI', which is misleading as NBFC-P2P platforms are not approved by RBI but are registered.",
+      "doc_evidence": "The app home screen says: 'LendCircle: guaranteed returns, approved and backed by the RBI.'",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "Borrowers repay into an escrow account maintained by a bank trustee, which is not allowed as disbursement must be directly into the borrower's bank account.",
+      "doc_evidence": "Borrowers repay into an escrow account maintained by a bank trustee, as required for P2P platforms.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The document states that only name, address, phone, PAN and bank statements are used, but it does not explicitly state that the collection of data is done with prior and explicit consent having an audit trail, which is required by RBI regulations.",
+      "doc_evidence": "Only name, address, phone, PAN and bank statements uploaded by the borrower are used. No phone permissions beyond one-time camera access for KYC.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2309,
+    "output_tokens": 465,
+    "llm_seconds": 38.5,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 38.7
+}

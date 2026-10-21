@@ -1,0 +1,21 @@
+# MedLoan: Hospital Bill Financing
+
+**Lender:** Arogya Finance (NBFC). **Platform:** MedLoan, run by HealthPay Systems (LSP).
+
+## 1. Product
+Patients can finance hospital bills of ₹10,000 to ₹5,00,000 over 3 to 24 months.
+
+## 2. Disbursal
+The loan is paid directly into the hospital's bank account against the final bill.
+
+## 3. APR and charges
+The APR shown in the KFS covers interest and processing fee. Health insurance premium, which is mandatory and recovered by Arogya Finance on behalf of the insurer, is collected separately and is not included in the APR.
+
+## 4. Data storage at LSP
+HealthPay Systems keeps a full copy of each borrower's medical records, bank statements and credit bureau report on its own servers to speed up repeat loans.
+
+## 5. Cooling-off
+Patients can exit within 3 days by repaying principal and proportionate APR, with no penalty.
+
+## 6. Consent
+Each consent screen explains why the data is being asked for at that step. Data is shared with the insurer only after the borrower gives explicit consent.

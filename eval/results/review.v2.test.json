@@ -1,0 +1,99 @@
+{
+  "model": "qwen3:8b",
+  "tag": "v2",
+  "split": "test",
+  "docs": 20,
+  "results": {
+    "single": {
+      "recall": 0.707,
+      "precision": 0.266,
+      "caught": 29,
+      "planted": 41,
+      "unique_flags": 109,
+      "false_alarms": 80,
+      "clean_doc_false_alarms": 19,
+      "citation_validity": 1.0,
+      "missed": [
+        "P13-a",
+        "P13-b",
+        "P15-b",
+        "P16-b",
+        "P17-b",
+        "P19-b",
+        "P20-b",
+        "P20-d",
+        "P25-a",
+        "P31-b",
+        "P32-b",
+        "P32-c"
+      ],
+      "sec_per_doc": 50.3,
+      "llm_calls_per_doc": 1.0,
+      "tokens_per_doc": 2836
+    },
+    "crew_no_verifier": {
+      "recall": 0.78,
+      "precision": 0.254,
+      "caught": 32,
+      "planted": 41,
+      "unique_flags": 126,
+      "false_alarms": 94,
+      "clean_doc_false_alarms": 27,
+      "citation_validity": 1.0,
+      "missed": [
+        "P13-a",
+        "P15-b",
+        "P17-b",
+        "P19-b",
+        "P20-a",
+        "P20-b",
+        "P20-d",
+        "P21-b",
+        "P32-b"
+      ],
+      "sec_per_doc": 185.1,
+      "llm_calls_per_doc": 19.2,
+      "tokens_per_doc": 11981
+    },
+    "crew": {
+      "recall": 0.78,
+      "precision": 0.451,
+      "caught": 32,
+      "planted": 41,
+      "unique_flags": 71,
+      "false_alarms": 39,
+      "clean_doc_false_alarms": 9,
+      "citation_validity": 1.0,
+      "missed": [
+        "P13-a",
+        "P15-b",
+        "P17-b",
+        "P19-b",
+        "P20-a",
+        "P20-b",
+        "P20-d",
+        "P21-b",
+        "P32-b"
+      ],
+      "sec_per_doc": 185.1,
+      "llm_calls_per_doc": 19.2,
+      "tokens_per_doc": 11981,
+      "miss_stages": {
+        "not_retrieved": [
+          "P17-b",
+          "P19-b",
+          "P20-d"
+        ],
+        "analyst_missed": [
+          "P13-a",
+          "P15-b",
+          "P20-a",
+          "P20-b",
+          "P21-b",
+          "P32-b"
+        ],
+        "verifier_rejected": []
+      }
+    }
+  }
+}

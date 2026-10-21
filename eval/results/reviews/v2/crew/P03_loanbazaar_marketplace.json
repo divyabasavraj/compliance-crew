@@ -1,0 +1,152 @@
+{
+  "system": "crew",
+  "doc_id": "P03_loanbazaar_marketplace",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Loan Matching and Offer Display",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The offer screen does not include the APR and penal charges (if applicable) in the digital view of loan offers from matching lenders, which is required by the RBI.",
+      "doc_evidence": "Offers are shown as cards with the lender name, loan amount, tenor and EMI. To keep the screen simple, the APR and penal charges are not shown on the card; borrowers can find them in the KFS after they choose an offer.",
+      "severity": "high",
+      "fix": "Update the offer screen to include the APR and penal charges in the digital view of loan offers from matching lenders.",
+      "verifier_note": "The RBI paragraph requires that the digital view of loan offers must include APR and penal charges (if applicable) in a way that enables the borrower to make a fair comparison. The product feature explicitly states that APR and penal charges are not shown on the card and are only available in the KFS after the borrower chooses an offer. This omission violates the requirement of the RBI paragraph."
+    },
+    {
+      "feature": "Loan Matching and Offer Display",
+      "rule_id": "DLD2025:6(i)",
+      "issue": "The digital view of loan offers does not disclose the name of the unmatched lenders, which is required by the RBI.",
+      "doc_evidence": "Lenders that did not make an offer are not listed.",
+      "severity": "high",
+      "fix": "Modify the digital view of loan offers to disclose the name of the unmatched lenders as required by the RBI.",
+      "verifier_note": "The RBI paragraph requires that the digital view of loan offers must disclose the names of unmatched lenders. The product feature does not list the names of lenders that did not make an offer, thereby failing to comply with the requirement. The feature does not mention or disclose the names of unmatched lenders, which is a violation."
+    },
+    {
+      "feature": "Loan Matching and Offer Display (3. Recommended lender)",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The feature 'Recommended lender: The offer from FastLend NBFC, which pays LoanBazaar the highest commission, is pinned at the top with a \"Best for you\" badge and is pre-selected, so the borrower only has to press Continue.' breaks the requirement that the content displayed by the LSP shall be unbiased, objective and shall not directly/indirectly promote or push a product of a particular RE, including the use of dark patterns/deceptive patterns designed to mislead borrowers into choosing a particular loan offer.",
+      "doc_evidence": "The offer from FastLend NBFC, which pays LoanBazaar the highest commission, is pinned at the top with a \"Best for you\" badge and is pre-selected, so the borrower only has to press Continue.",
+      "severity": "high",
+      "fix": "Remove the 'Best for you' badge and pre-selection of FastLend NBFC to ensure unbiased and objective display of loan offers.",
+      "verifier_note": "The feature promotes a specific lender (FastLend NBFC) based on the commission it pays to LoanBazaar, which is a financial incentive rather than a publicly pre-disclosed metric for ranking. This constitutes indirect promotion and may involve dark patterns by pre-selecting an offer, thereby misleading borrowers into choosing that particular loan offer. The RBI paragraph explicitly prohibits such practices, and the feature does not meet the exception of using a publicly pre-disclosed metric for ranking."
+    },
+    {
+      "feature": "Website Disclosures and LSP Identification",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "The feature states that 'Each lender's website lists LoanBazaar as an LSP, describes what LoanBazaar does for it, and links to the RBI Complaint Management System and Sachet portal.' This meets the requirement of linking to the RBI Complaint Management System and Sachet Portal, but it does not explicitly mention the RE's own website being linked from the DLA. The RBI requires DLAs to have links to the RE’s website, which is not clearly stated in the feature description.",
+      "doc_evidence": "Each lender's website lists LoanBazaar as an LSP, describes what LoanBazaar does for it, and links to the RBI Complaint Management System and Sachet portal.",
+      "severity": "medium",
+      "fix": "Update the feature to explicitly mention the RE's own website being linked from the DLA as required by the RBI.",
+      "verifier_note": "The RBI paragraph requires that REs maintain a website and ensure that DLAs/LSPs have links to the RE’s website. The product feature states that each lender's website links to the RBI Complaint Management System and Sachet Portal, but it does not explicitly mention that the RE’s own website is linked from the DLA. The feature does not confirm that the DLA includes a link to the RE’s website, which is a requirement under the RBI paragraph. Therefore, the feature does not fully comply with the requirement."
+    },
+    {
+      "feature": "Website Disclosures and LSP Identification",
+      "rule_id": "DLD2025:17(iv)",
+      "issue": "The feature states that 'LoanBazaar's app links to each lender's website.' However, the RBI requires DLAs to have a link to the RE’s website, not just the lender's website. The feature does not explicitly mention a link to the RE’s website, which is a requirement under DLD2025:17(iv).",
+      "doc_evidence": "LoanBazaar's app links to each lender's website.",
+      "severity": "high",
+      "fix": "Add a direct link to the RE’s website in the LoanBazaar app, in addition to the link to each lender's website, as required by DLD2025:17(iv).",
+      "verifier_note": "The RBI paragraph requires DLAs to have a link to the RE’s website, not just the lender's website. The product feature mentions that LoanBazaar's app links to each lender's website, but does not explicitly mention a link to the RE’s website. Since the feature does not mention the RE’s website, it does not fully comply with the requirement in DLD2025:17(iv)."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Loan Matching and Offer Display",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The offer screen does not include the APR and penal charges (if applicable) in the digital view of loan offers from matching lenders, which is required by the RBI.",
+      "doc_evidence": "Offers are shown as cards with the lender name, loan amount, tenor and EMI. To keep the screen simple, the APR and penal charges are not shown on the card; borrowers can find them in the KFS after they choose an offer.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the digital view of loan offers must include APR and penal charges (if applicable) in a way that enables the borrower to make a fair comparison. The product feature explicitly states that APR and penal charges are not shown on the card and are only available in the KFS after the borrower chooses an offer. This omission violates the requirement of the RBI paragraph."
+    },
+    {
+      "feature": "Loan Matching and Offer Display",
+      "rule_id": "DLD2025:6(i)",
+      "issue": "The digital view of loan offers does not disclose the name of the unmatched lenders, which is required by the RBI.",
+      "doc_evidence": "Lenders that did not make an offer are not listed.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the digital view of loan offers must disclose the names of unmatched lenders. The product feature does not list the names of lenders that did not make an offer, thereby failing to comply with the requirement. The feature does not mention or disclose the names of unmatched lenders, which is a violation."
+    },
+    {
+      "feature": "Loan Matching and Offer Display (3. Recommended lender)",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The feature 'Recommended lender: The offer from FastLend NBFC, which pays LoanBazaar the highest commission, is pinned at the top with a \"Best for you\" badge and is pre-selected, so the borrower only has to press Continue.' breaks the requirement that the content displayed by the LSP shall be unbiased, objective and shall not directly/indirectly promote or push a product of a particular RE, including the use of dark patterns/deceptive patterns designed to mislead borrowers into choosing a particular loan offer.",
+      "doc_evidence": "The offer from FastLend NBFC, which pays LoanBazaar the highest commission, is pinned at the top with a \"Best for you\" badge and is pre-selected, so the borrower only has to press Continue.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The feature promotes a specific lender (FastLend NBFC) based on the commission it pays to LoanBazaar, which is a financial incentive rather than a publicly pre-disclosed metric for ranking. This constitutes indirect promotion and may involve dark patterns by pre-selecting an offer, thereby misleading borrowers into choosing that particular loan offer. The RBI paragraph explicitly prohibits such practices, and the feature does not meet the exception of using a publicly pre-disclosed metric for ranking."
+    },
+    {
+      "feature": "Website Disclosures and LSP Identification",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "The feature states that 'Each lender's website lists LoanBazaar as an LSP, describes what LoanBazaar does for it, and links to the RBI Complaint Management System and Sachet portal.' This meets the requirement of linking to the RBI Complaint Management System and Sachet Portal, but it does not explicitly mention the RE's own website being linked from the DLA. The RBI requires DLAs to have links to the RE’s website, which is not clearly stated in the feature description.",
+      "doc_evidence": "Each lender's website lists LoanBazaar as an LSP, describes what LoanBazaar does for it, and links to the RBI Complaint Management System and Sachet portal.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that REs maintain a website and ensure that DLAs/LSPs have links to the RE’s website. The product feature states that each lender's website links to the RBI Complaint Management System and Sachet Portal, but it does not explicitly mention that the RE’s own website is linked from the DLA. The feature does not confirm that the DLA includes a link to the RE’s website, which is a requirement under the RBI paragraph. Therefore, the feature does not fully comply with the requirement."
+    },
+    {
+      "feature": "Website Disclosures and LSP Identification",
+      "rule_id": "DLD2025:17(iv)",
+      "issue": "The feature states that 'LoanBazaar's app links to each lender's website.' However, the RBI requires DLAs to have a link to the RE’s website, not just the lender's website. The feature does not explicitly mention a link to the RE’s website, which is a requirement under DLD2025:17(iv).",
+      "doc_evidence": "LoanBazaar's app links to each lender's website.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires DLAs to have a link to the RE’s website, not just the lender's website. The product feature mentions that LoanBazaar's app links to each lender's website, but does not explicitly mention a link to the RE’s website. Since the feature does not mention the RE’s website, it does not fully comply with the requirement in DLD2025:17(iv)."
+    }
+  ],
+  "summary": "The compliance review of LoanBazaar: Personal Loan Marketplace identified several gaps against the reviewed RBI rules. The key findings include: (1) The offer screen does not include the APR and penal charges in the digital view of loan offers, which is a high-risk issue. (2) The digital view of loan offers does not disclose the name of unmatched lenders, another high-risk issue. (3) The feature that pins the offer from FastLend NBFC at the top with a 'Best for you' badge and pre-selects it is considered a high-risk issue as it promotes a particular RE and may mislead borrowers. (4) The feature does not explicitly mention a link to the RE’s website, which is a requirement under DLD2025:17(iv), and is also a high-risk issue. (5) While the feature links to the RBI Complaint Management System and Sachet Portal, it does not explicitly mention the RE’s own website, which is a medium-risk issue. Overall, the product has multiple compliance gaps that require immediate attention.",
+  "trace": {
+    "llm_calls": 14,
+    "prompt_tokens": 8409,
+    "output_tokens": 1888,
+    "llm_seconds": 174.5,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 3,
+      "gap_analyst": 3,
+      "verifier": 5,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 19,
+    "retrieved": {
+      "0:Loan Matching and Offer Display": [
+        "DLD2025:6(iii)",
+        "DLD2025:6(ii)",
+        "DLD2025:6(i)",
+        "DLD2025:7(i)",
+        "DLD2025:12(iii)",
+        "KFS2024:6",
+        "KFS2024:8",
+        "KFS2024:4",
+        "DLD2025:6(iv)",
+        "DLD2025:8(iii)"
+      ],
+      "1:Loan Matching and Offer Display (3. Recommended lender)": [
+        "DLD2025:10(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:6(iv)",
+        "DLD2025:8(v)",
+        "DLD2025:7(i)",
+        "DLD2025:6(ii)",
+        "DLD2025:8(iv)",
+        "KFS2024:4",
+        "DLD2025:9(v)",
+        "KFS2024:5"
+      ],
+      "2:Website Disclosures and LSP Identification": [
+        "DLD2025:8(iv)",
+        "DLD2025:17(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:27(i)",
+        "DLD2025:17(i)",
+        "DLD2025:14(i)",
+        "DLD2025:13(i)",
+        "DLD2025:16(i)"
+      ]
+    }
+  },
+  "seconds": 175.5
+}

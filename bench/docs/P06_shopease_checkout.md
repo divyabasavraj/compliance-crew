@@ -1,0 +1,21 @@
+# ShopEase PayLater: Checkout Financing for E-commerce
+
+**Lender:** Coastal Finance (NBFC). **Platform:** ShopEase PayLater, run by ShopEase Commerce Pvt Ltd (LSP).
+
+## 1. Product
+Shoppers can split purchases of ₹1,000 to ₹25,000 into 3 interest-free monthly payments. ShopEase earns a merchant discount from sellers.
+
+## 2. Credit bureau reporting
+Because these are small, short-term deferred payments, Coastal Finance does not report them to credit information companies. Only loans above ₹25,000 or longer than 6 months are reported.
+
+## 3. Fees
+There is no interest. A late payment fee of ₹250 is shown in the KFS. ShopEase later plans to add a monthly "account maintenance fee" of ₹49 for active users; this is not in the KFS and will be added to the bill automatically.
+
+## 4. Marketing
+App store listing and ads say: "ShopEase PayLater: an RBI-approved credit app." ShopEase is listed on the RBI CIMS portal by Coastal Finance.
+
+## 5. Cooling-off
+Shoppers who change their mind can cancel within 2 days of purchase by paying back the principal with no extra charge.
+
+## 6. Data sharing
+Purchase and repayment history is shared with ShopEase's advertising partners to show personalised offers. Users are not asked separately; this is covered by accepting the app's terms of use.

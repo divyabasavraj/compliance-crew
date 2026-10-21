@@ -1,0 +1,91 @@
+{
+  "system": "single",
+  "doc_id": "P03_loanbazaar_marketplace",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Offer screen",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The digital view of loan offers does not include APR, penal charges, and a link to the KFS, which are required for fair comparison.",
+      "doc_evidence": "Offers are shown as cards with the lender name, loan amount, tenor and EMI. To keep the screen simple, the APR and penal charges are not shown on the card; borrowers can find them in the KFS after they choose an offer.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Recommended lender",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The platform promotes a particular lender through a 'Best for you' badge and pre-selection, which may be considered indirect promotion or use of dark patterns.",
+      "doc_evidence": "The offer from FastLend NBFC, which pays LoanBazaar the highest commission, is pinned at the top with a \"Best for you\" badge and is pre-selected, so the borrower only has to press Continue.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Offer screen",
+      "rule_id": "DLD2025:6(i)",
+      "issue": "The digital view does not disclose the name of the unmatched lenders, which is required for transparency.",
+      "doc_evidence": "Lenders that did not make an offer are not listed.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Offer screen",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is not provided on the offer screen, and borrowers are not explained the contents of the KFS, which is required for informed decision-making.",
+      "doc_evidence": "To keep the screen simple, the APR and penal charges are not shown on the card; borrowers can find them in the KFS after they choose an offer.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Recommended lender",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The platform pre-selects an offer, which may be considered indirect promotion or use of dark patterns.",
+      "doc_evidence": "The offer from FastLend NBFC, which pays LoanBazaar the highest commission, is pinned at the top with a \"Best for you\" badge and is pre-selected, so the borrower only has to press Continue.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Website disclosures",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "The lenders' websites do not include details of all digital lending products, DLAs, LSPs, customer care, grievance redressal mechanisms, and links to RBI CMS and Sachet Portal, which are required for transparency.",
+      "doc_evidence": "Each lender's website lists LoanBazaar as an LSP, describes what LoanBazaar does for it, and links to the RBI Complaint Management System and Sachet portal.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Website disclosures",
+      "rule_id": "DLD2025:17(iv)",
+      "issue": "The lenders' websites do not include details of DLAs, customer care, grievance redressal mechanisms, and links to Sachet Portal, which are required for transparency.",
+      "doc_evidence": "Each lender's website lists LoanBazaar as an LSP, describes what LoanBazaar does for it, and links to the RBI Complaint Management System and Sachet portal.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Website disclosures",
+      "rule_id": "DLD2025:17(i)",
+      "issue": "The lenders' websites do not report all DLAs deployed or joined by them on the RBI CIMS portal, which is required for reporting.",
+      "doc_evidence": "Each lender's website lists LoanBazaar as an LSP, describes what LoanBazaar does for it, and links to the RBI Complaint Management System and Sachet portal.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2019,
+    "output_tokens": 918,
+    "llm_seconds": 80.5,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 80.8
+}

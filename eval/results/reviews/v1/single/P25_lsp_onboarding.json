@@ -1,0 +1,72 @@
+{
+  "system": "single",
+  "doc_id": "P25_lsp_onboarding",
+  "findings": [
+    {
+      "feature": "Arrangement",
+      "rule_id": "DLD2025:5(i)",
+      "issue": "No contractual agreement exists between the RE and the LSP, which is required to define roles, rights, and obligations.",
+      "doc_evidence": "FastFunds will source borrowers, run the app and handle collections for Ganga Finance. The two sides agreed the terms on a call and will start lending next week; no written contract has been signed.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Due diligence",
+      "rule_id": "DLD2025:5(ii)",
+      "issue": "Ganga Finance did not conduct enhanced due diligence on FastFunds, including technical capabilities, data privacy policies, and past conduct.",
+      "doc_evidence": "Ganga Finance did not review FastFunds' technology, data privacy policies or past conduct before agreeing, because FastFunds is a well-known brand.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Collections",
+      "rule_id": "DLD2025:5(v)",
+      "issue": "Ganga Finance has not provided any guidance or training to FastFunds on fair recovery practices, which is required for LSPs acting as recovery agents.",
+      "doc_evidence": "FastFunds will also act as the recovery agent for overdue loans. Ganga Finance has given FastFunds no guidance or training on fair recovery practices.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Due diligence",
+      "rule_id": "DLD2025:5(vii)",
+      "issue": "The outsourcing agreement with FastFunds may dilute or absolve Ganga Finance of its obligations under statutory or regulatory provisions, which is not allowed.",
+      "doc_evidence": "Ganga Finance did not review FastFunds' technology, data privacy policies or past conduct before agreeing, because FastFunds is a well-known brand.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Disbursal and repayment",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "Loans are disbursed to borrowers' bank accounts, which is compliant, but the document does not mention whether the disbursement is directly into the borrower's account as required.",
+      "doc_evidence": "Loans are disbursed to borrowers' bank accounts and repaid directly to Ganga Finance.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data",
+      "rule_id": "DLD2025:5(ii)",
+      "issue": "FastFunds retains more data than necessary for collections, which may breach data privacy requirements.",
+      "doc_evidence": "FastFunds keeps only the borrower's name, phone and address needed for collections.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 3018,
+    "output_tokens": 629,
+    "llm_seconds": 47.9,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 48.3
+}

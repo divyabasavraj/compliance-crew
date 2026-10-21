@@ -1,0 +1,61 @@
+{
+  "system": "crew",
+  "doc_id": "P21_dla_reporting",
+  "findings": [
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The feature states that 'the bank's website lists all its digital lending products, all four partner LSPs and their apps, the grievance officer's details and a link to RBI's CMS and Sachet portals.' However, the RBI paragraph [DLD2025:11(ii)] requires that 'contact details of the nodal grievance redressal officers shall be prominently displayed on the websites of the RE, its LSP and on the DLA, as well as in the KFS provided to the borrower.' The feature does not explicitly mention the display of contact details of the nodal grievance redressal officers on the DLA, which is a requirement under [DLD2025:11(ii)].",
+      "doc_evidence": "the bank's website lists all its digital lending products, all four partner LSPs and their apps, the grievance officer's details and a link to RBI's CMS and Sachet portals.",
+      "severity": "medium",
+      "fix": "Display the contact details of the nodal grievance redressal officers prominently on the DLA (Digital Lending Aggregator) website as required by [DLD2025:11(ii)].",
+      "verifier_note": "The product feature mentions the display of grievance officer's details on the bank's website, which is one of the required locations under [DLD2025:11(ii)]. However, the paragraph explicitly requires the display of contact details on the DLA (Digital Lending Application) as well. The feature does not mention the DLA, so it fails to meet the requirement of displaying contact details on the DLA. Therefore, the feature does not fully comply with the RBI paragraph."
+    },
+    {
+      "feature": "LSP App Compliance",
+      "rule_id": "DLD2025:17(i)",
+      "issue": "The feature states that only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners. This is a compliance gap as per [DLD2025:17(i)], which requires RE to report all DLAs deployed/joined by them, whether their own or those of the LSPs, on the CIMS portal.",
+      "doc_evidence": "Only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners.",
+      "severity": "high",
+      "fix": "Register all DLAs, including those of partner LSPs, on the RBI CIMS portal as mandated by [DLD2025:17(i)].",
+      "verifier_note": "The RBI paragraph [DLD2025:17(i)] requires RE to report all DLAs deployed/joined by them, whether their own or those of the LSPs. The product feature explicitly states that only the bank's own app has been reported, and the three LSP apps are not reported because they belong to the partners. This directly violates the requirement to report all DLAs, including those of LSPs. The feature does not comply with the RBI directive."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The feature states that 'the bank's website lists all its digital lending products, all four partner LSPs and their apps, the grievance officer's details and a link to RBI's CMS and Sachet portals.' However, the RBI paragraph [DLD2025:11(ii)] requires that 'contact details of the nodal grievance redressal officers shall be prominently displayed on the websites of the RE, its LSP and on the DLA, as well as in the KFS provided to the borrower.' The feature does not explicitly mention the display of contact details of the nodal grievance redressal officers on the DLA, which is a requirement under [DLD2025:11(ii)].",
+      "doc_evidence": "the bank's website lists all its digital lending products, all four partner LSPs and their apps, the grievance officer's details and a link to RBI's CMS and Sachet portals.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature mentions the display of grievance officer's details on the bank's website, which is one of the required locations under [DLD2025:11(ii)]. However, the paragraph explicitly requires the display of contact details on the DLA (Digital Lending Application) as well. The feature does not mention the DLA, so it fails to meet the requirement of displaying contact details on the DLA. Therefore, the feature does not fully comply with the RBI paragraph."
+    },
+    {
+      "feature": "LSP App Compliance",
+      "rule_id": "DLD2025:17(i)",
+      "issue": "The feature states that only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners. This is a compliance gap as per [DLD2025:17(i)], which requires RE to report all DLAs deployed/joined by them, whether their own or those of the LSPs, on the CIMS portal.",
+      "doc_evidence": "Only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:17(i)] requires RE to report all DLAs deployed/joined by them, whether their own or those of the LSPs. The product feature explicitly states that only the bank's own app has been reported, and the three LSP apps are not reported because they belong to the partners. This directly violates the requirement to report all DLAs, including those of LSPs. The feature does not comply with the RBI directive."
+    }
+  ],
+  "summary": "The compliance review of the Digital Apps used by Vasant Bank identified two key findings against the reviewed RBI rules. First, the feature does not explicitly mention the display of contact details of the nodal grievance redressal officers on the DLA, which is a requirement under [DLD2025:11(ii)]. Second, the feature states that only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal, while the three partner LSP apps are not reported, which is a compliance gap as per [DLD2025:17(i)].",
+  "trace": {
+    "llm_calls": 11,
+    "prompt_tokens": 5735,
+    "output_tokens": 1208,
+    "llm_seconds": 61.6,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 3,
+      "gap_analyst": 3,
+      "verifier": 2,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 14
+  },
+  "seconds": 62.2
+}

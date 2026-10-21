@@ -1,0 +1,88 @@
+{
+  "system": "crew",
+  "doc_id": "P18_clean_card_emi",
+  "findings": [
+    {
+      "feature": "Regulatory Compliance",
+      "rule_id": "DLD2025:20(i)",
+      "issue": "The feature describes EMI conversion on credit card purchases, which is explicitly prohibited under [DLD2025:20(i)] as RE shall not enter into DLG arrangements for revolving credit facilities offered through digital lending channel and credit cards as defined under Master Direction – Credit Card and Debit Card – Issuance and Conduct Directions, 2022 dated April 21, 2022.",
+      "doc_evidence": "EMI conversion on credit cards is governed by the Master Direction on Credit Card and Debit Card; the conversion terms, interest and processing fee are shown before the customer confirms.",
+      "severity": "high",
+      "fix": "Remove or disable the EMI conversion feature for credit card purchases as it is explicitly prohibited under DLD2025:20(i). Ensure that the feature is not available in any form within the app or on the website.",
+      "verifier_note": "The RBI paragraph explicitly prohibits RE from entering into DLG arrangements for revolving credit facilities offered through credit cards as defined under the Master Direction on Credit Card and Debit Card. The product feature describes EMI conversion on credit cards, which is governed by the same Master Direction. Since EMI conversion is part of the credit card facility and falls under the prohibited DLG arrangements, the feature violates the restriction in [DLD2025:20(i)]."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The feature states that 'The nodal grievance officer's name and contact are shown in the app and on the bank's website, along with a link to RBI's CMS portal.' However, the RBI paragraph [DLD2025:11(ii)] requires that contact details of the nodal grievance redressal officers shall be 'prominently displayed on the websites of the RE, its LSP and on the DLA, as well as in the KFS provided to the borrower.' The feature does not explicitly mention the KFS (Know Your Customer Form) or confirm that the details are prominently displayed in the KFS, which is a requirement under the paragraph.",
+      "doc_evidence": "The nodal grievance officer's name and contact are shown in the app and on the bank's website, along with a link to RBI's CMS portal.",
+      "severity": "medium",
+      "fix": "Update the KFS (Know Your Customer Form) to prominently display the nodal grievance officer's name and contact details. Ensure that the details are also clearly visible on the RE's website, LSP's website, and DLA's website as required by DLD2025:11(ii).",
+      "verifier_note": "The product feature mentions the display of the nodal grievance officer's name and contact on the app and the bank's website, which partially complies with the requirement to display contact details on the websites of the RE, its LSP, and the DLA. However, the RBI paragraph explicitly requires the contact details to also be included in the KFS provided to the borrower. The product feature does not mention the KFS, which is a specific requirement under the paragraph. Therefore, the feature does not fully comply with the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Regulatory Compliance",
+      "rule_id": "DLD2025:20(i)",
+      "issue": "The feature describes EMI conversion on credit card purchases, which is explicitly prohibited under [DLD2025:20(i)] as RE shall not enter into DLG arrangements for revolving credit facilities offered through digital lending channel and credit cards as defined under Master Direction – Credit Card and Debit Card – Issuance and Conduct Directions, 2022 dated April 21, 2022.",
+      "doc_evidence": "EMI conversion on credit cards is governed by the Master Direction on Credit Card and Debit Card; the conversion terms, interest and processing fee are shown before the customer confirms.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits RE from entering into DLG arrangements for revolving credit facilities offered through credit cards as defined under the Master Direction on Credit Card and Debit Card. The product feature describes EMI conversion on credit cards, which is governed by the same Master Direction. Since EMI conversion is part of the credit card facility and falls under the prohibited DLG arrangements, the feature violates the restriction in [DLD2025:20(i)]."
+    },
+    {
+      "feature": "Credit Limit Management",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The feature 'Credit Limit Management' states that 'The credit limit is never increased automatically. A limit increase is offered only when the customer requests it in the app, and it needs a separate confirmation.' This directly complies with the requirement that there is no automatic increase in credit limit unless an explicit request is received, evaluated and kept on record from the borrower for such increase.",
+      "doc_evidence": "The credit limit is never increased automatically. A limit increase is offered only when the customer requests it in the app, and it needs a separate confirmation.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that the credit limit is never increased automatically and that a limit increase is only offered when the customer requests it in the app with separate confirmation. This aligns with the RBI requirement that there should be no automatic increase in credit limit unless an explicit request is received, evaluated, and kept on record. The feature does not violate the paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app uses only the customer's existing card account data. It does not request contacts, files, SMS or call logs.",
+      "doc_evidence": "The app uses only the customer's existing card account data. It does not request contacts, files, SMS or call logs.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the RBI paragraph. The paragraph prohibits accessing mobile phone resources like contacts, call logs, files, etc., and the feature explicitly states that the app does not request these. The feature also aligns with the requirement of using only existing card account data, which is permissible under the paragraph."
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The feature states that 'All data is stored on Konkan Bank's servers in Mumbai and Chennai.' This complies with the requirement that data must be stored only in servers located within India. However, the paragraph also mentions that if data is processed outside India, it must be deleted from servers outside India and brought back to India within 24 hours of processing. The feature does not mention any data processing outside India, so this requirement does not apply here.",
+      "doc_evidence": "All data is stored on Konkan Bank's servers in Mumbai and Chennai.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that all data is stored on servers located in Mumbai and Chennai, both of which are within India. This complies with the requirement in the RBI paragraph that data must be stored only in servers located within India. The paragraph also mentions processing outside India, but the feature does not mention any such processing. Since the feature does not involve processing outside India, the additional requirement about deleting and bringing data back within 24 hours does not apply. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The feature states that 'The nodal grievance officer's name and contact are shown in the app and on the bank's website, along with a link to RBI's CMS portal.' However, the RBI paragraph [DLD2025:11(ii)] requires that contact details of the nodal grievance redressal officers shall be 'prominently displayed on the websites of the RE, its LSP and on the DLA, as well as in the KFS provided to the borrower.' The feature does not explicitly mention the KFS (Know Your Customer Form) or confirm that the details are prominently displayed in the KFS, which is a requirement under the paragraph.",
+      "doc_evidence": "The nodal grievance officer's name and contact are shown in the app and on the bank's website, along with a link to RBI's CMS portal.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature mentions the display of the nodal grievance officer's name and contact on the app and the bank's website, which partially complies with the requirement to display contact details on the websites of the RE, its LSP, and the DLA. However, the RBI paragraph explicitly requires the contact details to also be included in the KFS provided to the borrower. The product feature does not mention the KFS, which is a specific requirement under the paragraph. Therefore, the feature does not fully comply with the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the CardFlex: EMI Conversion for Credit Card Purchases feature identified two key findings against the reviewed RBI rules. First, the feature allows EMI conversion on credit card purchases, which is explicitly prohibited under DLD2025:20(i). Second, while the feature mentions the nodal grievance officer's contact details on the app and website, it does not explicitly mention the Know Your Customer Form (KFS) or confirm that the details are prominently displayed in the KFS, which is a requirement under DLD2025:11(ii).",
+  "trace": {
+    "llm_calls": 20,
+    "prompt_tokens": 10725,
+    "output_tokens": 1988,
+    "llm_seconds": 179.1,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 5,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 29
+  },
+  "seconds": 180.8
+}

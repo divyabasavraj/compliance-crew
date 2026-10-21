@@ -1,0 +1,55 @@
+{
+  "system": "single",
+  "doc_id": "P20_dlg_portfolio_ops",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Invocation and reinstatement",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The product document allows invocation of DLG at 90 days overdue, which is earlier than the required 120 days overdue.",
+      "doc_evidence": "Meridian invokes the DLG at 90 days overdue.",
+      "severity": "high",
+      "fix": "Adjust the invocation period to 120 days overdue as per DLD2025:26(i).",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Invocation and reinstatement",
+      "rule_id": "DLD2025:24(iv)",
+      "issue": "The product document allows reinstatement of DLG through loan recovery, which is prohibited by DLD2025:24(iv).",
+      "doc_evidence": "When Meridian later recovers money from a loan on which DLG was invoked, the recovered amount is used to top the DLG back up to its original level.",
+      "severity": "high",
+      "fix": "Remove the reinstatement of DLG through loan recovery as per DLD2025:24(iv).",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Tenor",
+      "rule_id": "DLD2025:26(ii)",
+      "issue": "The DLG agreement runs for 12 months, which is shorter than the longest tenor of the loan portfolio (up to 24 months).",
+      "doc_evidence": "The DLG agreement runs for 12 months, while loans in the portfolio have tenors of up to 24 months.",
+      "severity": "high",
+      "fix": "Extend the DLG agreement period to at least 24 months as per DLD2025:26(ii).",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Disclosure",
+      "rule_id": "DLD2025:27(i)",
+      "issue": "PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter, which does not meet the requirement of publishing this information regularly, not just once every quarter.",
+      "doc_evidence": "PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter.",
+      "severity": "medium",
+      "fix": "Ensure that PayNest publishes the number of DLG portfolios and the amount covered on its website on a regular basis as per DLD2025:27(i).",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 1674,
+    "output_tokens": 562,
+    "llm_seconds": 44.2,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 44.5
+}

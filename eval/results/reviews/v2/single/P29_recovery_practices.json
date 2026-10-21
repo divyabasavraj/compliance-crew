@@ -1,0 +1,64 @@
+{
+  "system": "single",
+  "doc_id": "P29_recovery_practices",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Recovery agents",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "The product document does not communicate the recovery agent's details to the borrower before the recovery agent contacts the borrower for recovery.",
+      "doc_evidence": "Borrowers are not sent the agency's name or the agent's details before the first contact.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app reads the phone's contact list without prior and explicit consent of the borrower, which violates the need-based data collection requirement.",
+      "doc_evidence": "During the loan, the app reads the phone's contact list so agents can reach family members if the borrower cannot be contacted.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product document does not provide the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data, or make the RE/LSP delete/forget the data.",
+      "doc_evidence": "During the loan, the app reads the phone's contact list so agents can reach family members if the borrower cannot be contacted.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The purpose of obtaining borrowers’ consent is not disclosed at each stage of interface with the borrowers.",
+      "doc_evidence": "During the loan, the app reads the phone's contact list so agents can reach family members if the borrower cannot be contacted.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Recovery agents",
+      "rule_id": "DLD2025:9(v)",
+      "issue": "The product document does not mention that any recovery by cash shall be duly reflected in full in the borrower’s account on the same day, and that fees, charges, etc., payable to LSPs for such recovery are paid directly by the RE and are not charged by LSP to the borrower either directly or indirectly from the recovery proceeds.",
+      "doc_evidence": "Borrowers are not sent the agency's name or the agent's details before the first contact.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2134,
+    "output_tokens": 556,
+    "llm_seconds": 29.0,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 29.4
+}

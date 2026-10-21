@@ -1,0 +1,40 @@
+{"q": "Can our lending app read the user's phone contacts to score their creditworthiness?", "relevant": ["DLD2025:12(i)"]}
+{"q": "Is it okay to ask for location access once during onboarding for KYC?", "relevant": ["DLD2025:12(i)"]}
+{"q": "Can the borrower withdraw consent and ask us to delete their personal data?", "relevant": ["DLD2025:12(ii)"]}
+{"q": "Do we need consent before passing borrower information to a marketing partner?", "relevant": ["DLD2025:12(iv)"]}
+{"q": "Can we host borrower data on cloud servers in Singapore?", "relevant": ["DLD2025:13(iv)"]}
+{"q": "Can we save users' fingerprints or face templates for faster login?", "relevant": ["DLD2025:13(iii)"]}
+{"q": "What borrower information is the lending service provider allowed to keep on its own systems?", "relevant": ["DLD2025:13(i)"]}
+{"q": "Can the loan amount be credited first to the fintech partner's escrow account and then to the customer?", "relevant": ["DLD2025:9(i)"]}
+{"q": "Can EMIs be collected through a pooled collection account run by our tech partner?", "relevant": ["DLD2025:9(ii)", "DLD2025:9(iii)"]}
+{"q": "Can the platform charge the customer a separate convenience fee for arranging the loan?", "relevant": ["DLD2025:9(iv)"]}
+{"q": "Are field agents allowed to collect overdue EMIs in cash?", "relevant": ["DLD2025:9(v)"]}
+{"q": "For an education loan, can we pay the college directly instead of the student?", "relevant": ["DLD2025:9(i)"]}
+{"q": "How long must the free exit window after taking a digital loan be?", "relevant": ["DLD2025:10(i)"]}
+{"q": "If a borrower cancels the loan in the first few days, can we keep a processing fee?", "relevant": ["DLD2025:10(ii)"]}
+{"q": "Can we automatically raise a customer's credit line when they repay on time?", "relevant": ["DLD2025:7(ii)"]}
+{"q": "What minimum details about the borrower's income and job must be collected before lending?", "relevant": ["DLD2025:7(i)"]}
+{"q": "Who must handle borrower complaints and where should their contact details be shown?", "relevant": ["DLD2025:11(i)", "DLD2025:11(ii)"]}
+{"q": "What can a customer do if we do not answer their complaint within a month?", "relevant": ["DLD2025:11(iv)"]}
+{"q": "Do we have to tell the borrower before a collection agent calls them?", "relevant": ["DLD2025:8(v)"]}
+{"q": "Which documents must be emailed to the borrower automatically once the loan is signed?", "relevant": ["DLD2025:8(iii)"]}
+{"q": "What information must the lender publish on its own website about its lending apps and partners?", "relevant": ["DLD2025:8(iv)"]}
+{"q": "On a loan marketplace with many lenders, which offers must be shown to the borrower?", "relevant": ["DLD2025:6(i)", "DLD2025:6(iii)"]}
+{"q": "Can our aggregator highlight one partner bank's offer as 'Recommended for you'?", "relevant": ["DLD2025:6(iv)"]}
+{"q": "Is sorting loan offers by lowest APR allowed on a comparison platform?", "relevant": ["DLD2025:6(iv)"]}
+{"q": "Must small buy-now-pay-later loans be reported to credit bureaus?", "relevant": ["DLD2025:16(i)", "DLD2025:16(ii)"]}
+{"q": "Can we advertise that our app is approved by RBI because it is listed in the CIMS directory?", "relevant": ["DLD2025:17(vi)"]}
+{"q": "Where do we report our digital lending apps to the regulator?", "relevant": ["DLD2025:17(i)", "DLD2025:17(ii)"]}
+{"q": "What is the maximum first-loss guarantee a fintech partner can give the lender?", "relevant": ["DLD2025:23(i)"]}
+{"q": "Can the default loss guarantee be given as a corporate guarantee from the parent company?", "relevant": ["DLD2025:22(i)"]}
+{"q": "Can we have a first loss guarantee on a revolving credit line product?", "relevant": ["DLD2025:20(i)"]}
+{"q": "Within how many days of overdue must the lender invoke the default loss guarantee?", "relevant": ["DLD2025:26(i)"]}
+{"q": "What does the partner offering DLG have to disclose publicly every month?", "relevant": ["DLD2025:27(i)", "DLD2025:27(ii)"]}
+{"q": "Is the lender still liable for what its lending service provider does?", "relevant": ["DLD2025:5(vii)"]}
+{"q": "What checks are needed before signing up a new lending service provider?", "relevant": ["DLD2025:5(ii)"]}
+{"q": "How long should the loan offer in the key facts statement stay valid?", "relevant": ["KFS2024:5"]}
+{"q": "Do insurance premiums collected with the loan have to be included in the APR?", "relevant": ["KFS2024:7"]}
+{"q": "Can we add a fee later that was not shown in the key facts statement?", "relevant": ["KFS2024:8"]}
+{"q": "In what language must the key facts statement be given and does the borrower have to acknowledge it?", "relevant": ["KFS2024:4"]}
+{"q": "Does the KFS need an APR calculation and repayment schedule?", "relevant": ["KFS2024:6"]}
+{"q": "Do the key facts statement rules apply to credit card dues?", "relevant": ["KFS2024:10"]}

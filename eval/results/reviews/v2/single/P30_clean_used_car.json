@@ -1,0 +1,73 @@
+{
+  "system": "single",
+  "doc_id": "P30_clean_used_car",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "Loan is disbursed into the dealer's bank account, which is a third-party account, violating the requirement that disbursement must be made into the borrower's bank account.",
+      "doc_evidence": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The DLG cover is 5% of each portfolio, which is within the limit, but the DLG is invoked within 90 days, which is less than the 120-day maximum allowed by the RBI.",
+      "doc_evidence": "CarKey Mobility ... provides a DLG of 5% of each portfolio ... invoked within 90 days overdue.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The DLG period is 7 years, which is longer than the longest tenor of the loan in the portfolio, but the DLG must remain in force for at least the longest tenor of the loan in the underlying loan portfolio.",
+      "doc_evidence": "CarKey Mobility ... provides a DLG of 5% of each portfolio ... invoked within 90 days overdue, under a Board-approved policy. The DLG runs for 7 years, longer than any loan in the portfolio.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The document does not mention whether data processed outside India is deleted within 24 hours and brought back to India, which is a requirement under DLD2025:13(iv).",
+      "doc_evidence": "Data is stored on servers in India.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Credit reporting and grievances",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The product document does not mention that the digital view of loan offers includes the name(s) of the RE(s), amount, tenor, APR, monthly repayment obligation, penal charges, and a link to the KFS for each RE.",
+      "doc_evidence": "Not applicable",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Credit reporting and grievances",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product document does not mention that the borrower is provided with an option to restrict disclosure to third parties, revoke consent, or request deletion of data.",
+      "doc_evidence": "Not applicable",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2209,
+    "output_tokens": 657,
+    "llm_seconds": 32.3,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 32.6
+}

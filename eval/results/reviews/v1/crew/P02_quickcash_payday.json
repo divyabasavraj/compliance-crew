@@ -1,0 +1,115 @@
+{
+  "system": "crew",
+  "doc_id": "P02_quickcash_payday",
+  "findings": [
+    {
+      "feature": "Pricing and Charges",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "QuickCash charges the borrower a platform fee of 3% of the loan amount, collected by QC Technologies from the borrower's account at disbursal, for the use of the app. This is a fee payable to the LSP and is being charged to the borrower separately, which is not allowed as per DLD2025:9(iv).",
+      "doc_evidence": "QuickCash also charges the borrower a platform fee of 3% of the loan amount, collected by QC Technologies from the borrower's account at disbursal, for the use of the app.",
+      "severity": "high",
+      "fix": "Modify the pricing structure to ensure that the platform fee is not charged separately from the borrower. Instead, the fee should be included in the loan amount or disclosed as part of the total cost, in compliance with DLD2025:9(iv).",
+      "verifier_note": "The RBI paragraph DLD2025:9(iv) prohibits RE from charging borrowers directly for fees payable to LSP. The product feature states that the platform fee is collected from the borrower's account at disbursal, which implies it is being charged to the borrower separately. The claim correctly identifies this as a violation of the RBI regulation."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "The feature does not mention any clear policy guidelines regarding the storage of customer data including the type of data that can be stored, the length of time for which data can be stored, restrictions on the use of data, data destruction protocol, standards for handling security breach, etc. [doc_evidence: QC Technologies keeps only the borrower's name, address and phone number, which it needs to service the loan; all other data sits with Sahyadri Capital.]",
+      "doc_evidence": "QC Technologies keeps only the borrower's name, address and phone number, which it needs to service the loan; all other data sits with Sahyadri Capital.",
+      "severity": "medium",
+      "fix": "Update the data collection policy to clearly state the types of data stored, retention period, usage restrictions, data destruction protocol, and security breach handling standards. Ensure this policy is communicated to borrowers and documented for audit purposes.",
+      "verifier_note": "The product feature does not mention any clear policy guidelines regarding the storage of customer data, including the type of data that can be stored, the length of time for which data can be stored, restrictions on the use of data, data destruction protocol, or standards for handling security breaches. The feature only states where data is stored and what data is retained, but it does not provide the required policy guidelines as specified in the RBI paragraph."
+    },
+    {
+      "feature": "Loan Offer and Key Facts Statement (KFS)",
+      "rule_id": "KFS2024:5",
+      "issue": "The feature states that the offer and KFS expire 30 minutes after they are shown, which is less than the required validity period of at least three working days for loans with a tenor of seven days or more. The feature does not comply with the requirement for a validity period of at least three working days.",
+      "doc_evidence": "For speed, the offer and KFS expire 30 minutes after they are shown; after that the user must apply again.",
+      "severity": "high",
+      "fix": "Extend the validity period of the loan offer and Key Facts Statement (KFS) to at least three working days, as required by KFS2024:5. Update the feature to reflect this change and ensure compliance with regulatory requirements.",
+      "verifier_note": "The RBI paragraph specifies that the validity period for loans with a tenor of seven days or more must be at least three working days. The product feature states that the offer and KFS expire 30 minutes after being shown, which is significantly less than the required three working days. Therefore, the feature violates the requirement."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature describes that the loan amount is first credited to the QuickCash wallet held by QC Technologies (LSP), and the user can move the money to their bank account at any time. This implies that the loan is disbursed into a third-party account (the LSP's wallet) rather than directly into the borrower's bank account, which violates the requirement that disbursement must always be made into the borrower's bank account unless specifically allowed by regulatory mandates.",
+      "doc_evidence": "Disbursement of loan by the RE shall always be made into the bank account of the borrower except for disbursals covered exclusively under statutory or regulatory mandate (of RBI or of any other regulator), flow of money between REs for co-lending transactions 6 and disbursals for specific end use, provided the loan is disbursed directly into the bank account of the end-beneficiary 7 . RE shall ensure that in no case, disbursal is made to a third-party account, including the accounts of LSP, except as provided for in these Directions.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "quoted evidence not found in the product document"
+    },
+    {
+      "feature": "Pricing and Charges",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "QuickCash charges the borrower a platform fee of 3% of the loan amount, collected by QC Technologies from the borrower's account at disbursal, for the use of the app. This is a fee payable to the LSP and is being charged to the borrower separately, which is not allowed as per DLD2025:9(iv).",
+      "doc_evidence": "QuickCash also charges the borrower a platform fee of 3% of the loan amount, collected by QC Technologies from the borrower's account at disbursal, for the use of the app.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph DLD2025:9(iv) prohibits RE from charging borrowers directly for fees payable to LSP. The product feature states that the platform fee is collected from the borrower's account at disbursal, which implies it is being charged to the borrower separately. The claim correctly identifies this as a violation of the RBI regulation."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "QC Technologies keeps only the borrower's name, address and phone number, which it needs to service the loan; all other data sits with Sahyadri Capital. [doc_evidence: QC Technologies keeps only the borrower's name, address and phone number, which it needs to service the loan; all other data sits with Sahyadri Capital.]",
+      "doc_evidence": "QC Technologies keeps only the borrower's name, address and phone number, which it needs to service the loan; all other data sits with Sahyadri Capital.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that QC Technologies only keeps the borrower's name, address, and phone number, which are the minimal data required for servicing the loan. All other data is stored with Sahyadri Capital. This complies with the RBI paragraph which requires that LSPs do not store personal information of the borrower except for basic minimal data required for their operations. The responsibility for data privacy and security is on the RE (which in this case would be Sahyadri Capital). The feature does not store additional personal information beyond what is required, and the data is stored with the RE. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "The feature does not mention any clear policy guidelines regarding the storage of customer data including the type of data that can be stored, the length of time for which data can be stored, restrictions on the use of data, data destruction protocol, standards for handling security breach, etc. [doc_evidence: QC Technologies keeps only the borrower's name, address and phone number, which it needs to service the loan; all other data sits with Sahyadri Capital.]",
+      "doc_evidence": "QC Technologies keeps only the borrower's name, address and phone number, which it needs to service the loan; all other data sits with Sahyadri Capital.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature does not mention any clear policy guidelines regarding the storage of customer data, including the type of data that can be stored, the length of time for which data can be stored, restrictions on the use of data, data destruction protocol, or standards for handling security breaches. The feature only states where data is stored and what data is retained, but it does not provide the required policy guidelines as specified in the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:17(v)",
+      "issue": "The feature does not mention the name of the Grievance Redressal Officer, email id, telephone number, or mobile number of the Grievance Redressal Officer, nor does it provide a link to the DLA on the app store. [doc_evidence: QC Technologies keeps only the borrower's name, address and phone number, which it needs to service the loan; all other data sits with Sahyadri Capital.]",
+      "doc_evidence": "QC Technologies keeps only the borrower's name, address and phone number, which it needs to service the loan; all other data sits with Sahyadri Capital.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the RE (which in this context is QC Technologies) must address and deal with customer grievances concerning DLAs directly. The product feature states that QC Technologies only keeps the borrower's name, address, and phone number, and all other data is with Sahyadri Capital. This implies that QC Technologies is not retaining any additional contact information for grievance redressal, which may be a violation if the RBI paragraph requires such information to be available. However, the paragraph does not explicitly state that the RE must provide the name, email, phone number, or mobile number of the Grievance Redressal Officer or a link to the DLA on the app store. Therefore, the claim relies on facts not in the feature text or on something the feature does not mention."
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "The feature states that a one-time processing fee of ₹99 is retained on cancellation, which is shown in the KFS. This is in line with the requirement that the RE may retain a reasonable one-time processing fee if the customer exits the loan during the cooling-off period, provided it is disclosed upfront in KFS.",
+      "doc_evidence": "A one-time processing fee of ₹99, which is shown in the KFS, is retained on cancellation.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the RBI paragraph. The feature states that a one-time processing fee of ₹99 is retained on cancellation, which is shown in the KFS. This aligns with the requirement in the RBI paragraph that the RE may retain a reasonable one-time processing fee if the customer exits the loan during the cooling-off period, provided it is disclosed upfront in KFS. There is no violation."
+    },
+    {
+      "feature": "Loan Offer and Key Facts Statement (KFS)",
+      "rule_id": "KFS2024:5",
+      "issue": "The feature states that the offer and KFS expire 30 minutes after they are shown, which is less than the required validity period of at least three working days for loans with a tenor of seven days or more. The feature does not comply with the requirement for a validity period of at least three working days.",
+      "doc_evidence": "For speed, the offer and KFS expire 30 minutes after they are shown; after that the user must apply again.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph specifies that the validity period for loans with a tenor of seven days or more must be at least three working days. The product feature states that the offer and KFS expire 30 minutes after being shown, which is significantly less than the required three working days. Therefore, the feature violates the requirement."
+    }
+  ],
+  "summary": "The compliance review of the QuickCash: Instant Salary Advance product identified several gaps against the reviewed RBI rules. A high severity issue was found under DLD2025:9(iv) regarding the platform fee charged to the borrower, which is not allowed. Another high severity issue was identified under KFS2024:5 for the short validity period of the offer and KFS, which does not meet the required minimum validity period. A medium severity issue was noted under DLD2025:13(ii) for the lack of clear policy guidelines on customer data storage and handling.",
+  "trace": {
+    "llm_calls": 19,
+    "prompt_tokens": 10237,
+    "output_tokens": 2598,
+    "llm_seconds": 228.3,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 6,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 27
+  },
+  "seconds": 230.8
+}

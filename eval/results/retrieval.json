@@ -1,0 +1,29 @@
+{
+  "n_questions": 40,
+  "results": {
+    "bm25": {
+      "recall@1": 0.4,
+      "recall@3": 0.637,
+      "recall@5": 0.65,
+      "mrr": 0.558
+    },
+    "dense": {
+      "recall@1": 0.575,
+      "recall@3": 0.65,
+      "recall@5": 0.7,
+      "mrr": 0.649
+    },
+    "hybrid": {
+      "recall@1": 0.463,
+      "recall@3": 0.738,
+      "recall@5": 0.825,
+      "mrr": 0.63
+    },
+    "hybrid_rerank": {
+      "recall@1": 0.5,
+      "recall@3": 0.662,
+      "recall@5": 0.762,
+      "mrr": 0.636
+    }
+  }
+}

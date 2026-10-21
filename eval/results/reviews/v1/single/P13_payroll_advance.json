@@ -1,0 +1,63 @@
+{
+  "system": "single",
+  "doc_id": "P13_payroll_advance",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is disbursed into the worker's salary bank account, but the LSP (Bridgework Labs) deducts its service fee from the loan amount before crediting it, which is not allowed as per the regulation.",
+      "doc_evidence": "The loan amount is credited to the worker's own salary bank account within 10 minutes. Bridgework Labs deducts its ₹150 service fee from the amount before it is credited, so the worker receives the loan minus the fee.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The app reads the worker's SMS inbox for salary credit messages and bank alerts without providing the borrower with an option to give or deny consent for the use of specific data.",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "KFS",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is shown in English only, and there is no translation or step to confirm the worker has understood it, which violates the requirement to provide the KFS in a language understood by the borrower and to obtain an acknowledgment of understanding.",
+      "doc_evidence": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Cooling-off",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "Workers can cancel within 3 days by repaying the principal and proportionate interest, with no penalty. However, the regulation allows for a one-time processing fee if the customer exits the loan during the cooling-off period, which is not mentioned here.",
+      "doc_evidence": "Workers can cancel within 3 days by repaying the principal and proportionate interest, with no penalty.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The purpose of obtaining borrowers’ consent is not disclosed at each stage of interface with the borrowers, which is a violation of the requirement to disclose the purpose of obtaining consent at each stage.",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2984,
+    "output_tokens": 622,
+    "llm_seconds": 40.6,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 40.9
+}

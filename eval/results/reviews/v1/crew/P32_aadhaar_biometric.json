@@ -1,0 +1,88 @@
+{
+  "system": "crew",
+  "doc_id": "P32_aadhaar_biometric",
+  "findings": [
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "The feature 'Retention: Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.' [doc_evidence] violates RBI paragraph DLD2025:13(ii), which requires RE to ensure clear policy guidelines regarding the storage of customer data, including the length of time for which data can be stored, and to disclose these policies prominently on their website and DLA.",
+      "doc_evidence": "Retention: Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.",
+      "severity": "high",
+      "fix": "Implement a clear data retention and deletion policy, specifying the duration for which data will be stored, and publish this policy prominently on the bank's website and DLA.",
+      "verifier_note": "The feature 'Retention' explicitly states that there is no data retention or deletion policy and data is kept indefinitely, which directly violates the requirement in RBI paragraph DLD2025:13(ii) that RE must ensure clear policy guidelines regarding the storage of customer data, including the length of time for which data can be stored, and disclose these policies prominently. The feature does not comply with the requirement to have and disclose such policies."
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:14(i)",
+      "issue": "The feature 'Retention: Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.' [doc_evidence] violates RBI paragraph DLD2025:14(i), which requires RE and LSPs to have a comprehensive privacy policy compliant with applicable laws, associated regulations, and RBI guidelines, made available publicly on their websites.",
+      "doc_evidence": "Retention: Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.",
+      "severity": "high",
+      "fix": "Develop and publish a comprehensive privacy policy that complies with applicable laws, regulations, and RBI guidelines, and ensure it is made available on the bank's website.",
+      "verifier_note": "The RBI paragraph DLD2025:14(i) requires RE and LSPs to have a comprehensive privacy policy that is compliant with applicable laws, regulations, and RBI guidelines, and to make it publicly available on their websites. The feature 'Retention' explicitly states that there is no data retention or deletion policy, and data is kept indefinitely with nothing published about storage. This directly contradicts the requirement of having a comprehensive privacy policy that includes data retention and deletion policies and makes them publicly available. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The feature 'Retention: Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.' [doc_evidence] violates RBI paragraph DLD2025:12(ii), which requires the borrower to be provided with an option to give or deny consent for data retention and to revoke consent already granted.",
+      "doc_evidence": "Retention: Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.",
+      "severity": "high",
+      "fix": "Provide borrowers with an option to give or revoke consent for data retention, and ensure this functionality is clearly communicated and implemented in the system.",
+      "verifier_note": "The RBI paragraph DLD2025:12(ii) requires borrowers to be provided with an option to give or deny consent for data retention and to revoke consent already granted. The feature 'Retention' explicitly states that there is no data retention or deletion policy and data is kept indefinitely, which does not provide the borrower with the required options to consent or revoke consent. Therefore, the feature violates the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "The feature 'Fingerprint archive: IDFlow additionally saves a copy of each borrower's fingerprint scan on its own servers, to speed up repeat loans.' [doc_evidence] violates RBI paragraph DLD2025:13(iii), which states that RE shall ensure that no biometric data is stored/collected by the RE and LSP unless allowed under extant statutory guidelines.",
+      "doc_evidence": "Fingerprint archive: IDFlow additionally saves a copy of each borrower's fingerprint scan on its own servers, to speed up repeat loans.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph DLD2025:13(iii) prohibits the storage or collection of biometric data by RE and LSP unless allowed under extant statutory guidelines. The product feature 'Fingerprint archive' involves storing biometric data (fingerprints) by IDFlow, which is an LSP. The claim states that this violates the RBI paragraph, but the feature does not mention whether storing biometric data is allowed under extant statutory guidelines. Therefore, the claim relies on facts not in the feature text."
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "The feature 'Retention: Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.' [doc_evidence] violates RBI paragraph DLD2025:13(ii), which requires RE to ensure clear policy guidelines regarding the storage of customer data, including the length of time for which data can be stored, and to disclose these policies prominently on their website and DLA.",
+      "doc_evidence": "Retention: Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The feature 'Retention' explicitly states that there is no data retention or deletion policy and data is kept indefinitely, which directly violates the requirement in RBI paragraph DLD2025:13(ii) that RE must ensure clear policy guidelines regarding the storage of customer data, including the length of time for which data can be stored, and disclose these policies prominently. The feature does not comply with the requirement to have and disclose such policies."
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:14(i)",
+      "issue": "The feature 'Retention: Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.' [doc_evidence] violates RBI paragraph DLD2025:14(i), which requires RE and LSPs to have a comprehensive privacy policy compliant with applicable laws, associated regulations, and RBI guidelines, made available publicly on their websites.",
+      "doc_evidence": "Retention: Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph DLD2025:14(i) requires RE and LSPs to have a comprehensive privacy policy that is compliant with applicable laws, regulations, and RBI guidelines, and to make it publicly available on their websites. The feature 'Retention' explicitly states that there is no data retention or deletion policy, and data is kept indefinitely with nothing published about storage. This directly contradicts the requirement of having a comprehensive privacy policy that includes data retention and deletion policies and makes them publicly available. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The feature 'Retention: Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.' [doc_evidence] violates RBI paragraph DLD2025:12(ii), which requires the borrower to be provided with an option to give or deny consent for data retention and to revoke consent already granted.",
+      "doc_evidence": "Retention: Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph DLD2025:12(ii) requires borrowers to be provided with an option to give or deny consent for data retention and to revoke consent already granted. The feature 'Retention' explicitly states that there is no data retention or deletion policy and data is kept indefinitely, which does not provide the borrower with the required options to consent or revoke consent. Therefore, the feature violates the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the KYCFast product, which includes Video KYC and Biometric Onboarding, identified several high-risk violations against RBI guidelines. The primary issue relates to the absence of a data retention or deletion policy, with data being stored indefinitely and no public disclosure of storage practices. This violates RBI paragraphs DLD2025:13(ii), DLD2025:14(i), and DLD2025:12(ii). These paragraphs require RE and LSPs to establish clear data retention policies, ensure public availability of privacy policies, and provide customers with the option to consent or revoke consent for data retention. No other gaps were found against the reviewed RBI rules.",
+  "trace": {
+    "llm_calls": 13,
+    "prompt_tokens": 6678,
+    "output_tokens": 1578,
+    "llm_seconds": 147.2,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 3,
+      "gap_analyst": 3,
+      "verifier": 4,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 16
+  },
+  "seconds": 147.9
+}

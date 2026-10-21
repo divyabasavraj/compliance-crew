@@ -1,0 +1,73 @@
+{
+  "model": "qwen3:8b",
+  "tag": "v1",
+  "split": "dev",
+  "docs": 12,
+  "results": {
+    "single": {
+      "recall": 0.667,
+      "precision": 0.323,
+      "caught": 18,
+      "planted": 27,
+      "unique_flags": 65,
+      "false_alarms": 44,
+      "clean_doc_false_alarms": 9,
+      "citation_validity": 1.0,
+      "missed": [
+        "P02-a",
+        "P05-a",
+        "P06-c",
+        "P06-d",
+        "P08-a",
+        "P08-c",
+        "P08-d",
+        "P09-a",
+        "P09-b"
+      ],
+      "sec_per_doc": 64.0,
+      "llm_calls_per_doc": 1.0,
+      "tokens_per_doc": 3515
+    },
+    "crew_no_verifier": {
+      "recall": 0.852,
+      "precision": 0.352,
+      "caught": 23,
+      "planted": 27,
+      "unique_flags": 71,
+      "false_alarms": 46,
+      "clean_doc_false_alarms": 17,
+      "citation_validity": 1.0,
+      "missed": [
+        "P06-b",
+        "P07-b",
+        "P07-c",
+        "P08-a"
+      ],
+      "sec_per_doc": 210.5,
+      "llm_calls_per_doc": 19.3,
+      "tokens_per_doc": 12900
+    },
+    "crew": {
+      "recall": 0.741,
+      "precision": 0.611,
+      "caught": 20,
+      "planted": 27,
+      "unique_flags": 36,
+      "false_alarms": 14,
+      "clean_doc_false_alarms": 2,
+      "citation_validity": 1.0,
+      "missed": [
+        "P02-b",
+        "P03-c",
+        "P06-b",
+        "P07-b",
+        "P07-c",
+        "P08-a",
+        "P09-a"
+      ],
+      "sec_per_doc": 210.5,
+      "llm_calls_per_doc": 19.3,
+      "tokens_per_doc": 12900
+    }
+  }
+}

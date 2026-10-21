@@ -1,0 +1,54 @@
+{
+  "system": "single",
+  "doc_id": "P16_edu_marketplace",
+  "findings": [
+    {
+      "feature": "Matching",
+      "rule_id": "DLD2025:6(ii)",
+      "issue": "The LSP does not follow a consistent approach for similarly placed borrowers and products, and the mechanism adopted is not properly documented.",
+      "doc_evidence": "Which lenders are shown depends on a rule set the sales team adjusts weekly. Borrowers with the same profile may see different lenders on different days, and the rules are not written down anywhere.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Offer display",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The LSP uses ranking based on APR, which is considered promoting a particular product, and does not disclose the ranking metric in a pre-disclosed manner.",
+      "doc_evidence": "Offers are ranked by APR, lowest first, and the app states this ranking rule at the top of the list.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is disbursed into the training institute's bank account, which is a third-party account, violating the requirement to disburse directly into the borrower's bank account.",
+      "doc_evidence": "The course fee is paid by the lender directly into the training institute's bank account.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data storage",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "The RE does not disclose clear policy guidelines regarding the storage of customer data, including the type of data that can be stored, the length of time for which data can be stored, restrictions on the use of data, data destruction protocol, standards for handling security breach, etc., on their website and DLA.",
+      "doc_evidence": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2203,
+    "output_tokens": 458,
+    "llm_seconds": 24.1,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 24.2
+}

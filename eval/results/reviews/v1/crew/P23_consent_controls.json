@@ -1,0 +1,88 @@
+{
+  "system": "crew",
+  "doc_id": "P23_consent_controls",
+  "findings": [
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The feature describes that the shopkeeper taps one \"I agree\" button that covers all uses of their data. There is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently. This does not provide the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data and if required, make the RE/LSP delete/ forget the data.",
+      "doc_evidence": "At signup, the shopkeeper taps one \"I agree\" button that covers all uses of their data. There is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently.",
+      "severity": "high",
+      "fix": "Implement a granular consent mechanism that allows borrowers to select specific data types for collection, withdraw consent at any time, and request deletion of their data. Ensure the app does not retain data permanently and provides clear options for data management.",
+      "verifier_note": "The product feature does not provide the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted, or make the RE/LSP delete/forget the data. It instead allows the shopkeeper to agree to all data uses at signup with no options, no way to withdraw consent, and no option to delete data. This directly violates the RBI paragraph which mandates these specific rights."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The later screens that ask for GST returns and bank statements do not say why they are needed. The purpose of obtaining borrowers’ consent needs to be disclosed at each stage of interface with the borrowers.",
+      "doc_evidence": "Later screens that ask for GST returns and bank statements do not say why they are needed.",
+      "severity": "medium",
+      "fix": "Update the interface to clearly state the purpose of collecting GST returns and bank statements at each stage. This includes explaining how the data will be used, who it will be shared with, and the legal basis for collection.",
+      "verifier_note": "The product feature explicitly states that later screens asking for GST returns and bank statements do not say why they are needed, which directly violates the RBI paragraph's requirement that the purpose of obtaining borrowers’ consent must be disclosed at each stage of interface with the borrowers."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The app collects GST returns and bank statements, which are personal information of the borrower. The RE shall ensure that LSP engaged by them do not store personal information of borrower except some basic minimal data (viz., name, address, contact details of the customer, etc.) that may be required to carry out their operations or service within the scope of the RE-LSP agreement.",
+      "doc_evidence": "GST returns and bank statements are uploaded by the shopkeeper. The app needs no phone permissions apart from one-time camera access for KYC.",
+      "severity": "high",
+      "fix": "Review and enforce data minimization policies with the LSP to ensure they only collect and store the minimal personal data required for their operations. Implement strict data retention policies and ensure data is deleted when no longer needed.",
+      "verifier_note": "The product feature collects GST returns and bank statements, which are considered personal information of the borrower. The RBI paragraph explicitly states that LSPs should not store personal information of the borrower except for some basic minimal data. The app's collection and storage of GST returns and bank statements violate this requirement. The RE is responsible for ensuring that LSPs do not store such personal information beyond the minimal data required. The feature does not comply with the RBI paragraph's requirement to limit data storage to basic minimal data."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The feature describes that the shopkeeper taps one \"I agree\" button that covers all uses of their data. There is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently. This does not provide the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data and if required, make the RE/LSP delete/ forget the data.",
+      "doc_evidence": "At signup, the shopkeeper taps one \"I agree\" button that covers all uses of their data. There is no way to choose which data is used, to withdraw consent later, or to ask for data to be deleted; the app keeps the data permanently.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature does not provide the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted, or make the RE/LSP delete/forget the data. It instead allows the shopkeeper to agree to all data uses at signup with no options, no way to withdraw consent, and no option to delete data. This directly violates the RBI paragraph which mandates these specific rights."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The later screens that ask for GST returns and bank statements do not say why they are needed. The purpose of obtaining borrowers’ consent needs to be disclosed at each stage of interface with the borrowers.",
+      "doc_evidence": "Later screens that ask for GST returns and bank statements do not say why they are needed.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that later screens asking for GST returns and bank statements do not say why they are needed, which directly violates the RBI paragraph's requirement that the purpose of obtaining borrowers’ consent must be disclosed at each stage of interface with the borrowers."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The app collects GST returns and bank statements, which are personal information of the borrower. The RE shall ensure that LSP engaged by them do not store personal information of borrower except some basic minimal data (viz., name, address, contact details of the customer, etc.) that may be required to carry out their operations or service within the scope of the RE-LSP agreement.",
+      "doc_evidence": "GST returns and bank statements are uploaded by the shopkeeper. The app needs no phone permissions apart from one-time camera access for KYC.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature collects GST returns and bank statements, which are considered personal information of the borrower. The RBI paragraph explicitly states that LSPs should not store personal information of the borrower except for some basic minimal data. The app's collection and storage of GST returns and bank statements violate this requirement. The RE is responsible for ensuring that LSPs do not store such personal information beyond the minimal data required. The feature does not comply with the RBI paragraph's requirement to limit data storage to basic minimal data."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature states that 'Repayments go directly into Tapti Finance's bank account.' This directly contradicts RBI's requirement that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account, including the accounts of LSP. [doc_evidence: Repayments go directly into Tapti Finance's bank account.]",
+      "doc_evidence": "Repayments go directly into Tapti Finance's bank account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that repayments go directly into Tapti Finance's bank account, which aligns with the RBI requirement that repayments are executed by the borrower directly in the RE’s bank account. There is no mention of a pass-through account or third-party account, so the feature complies with the RBI directive."
+    }
+  ],
+  "summary": "The compliance review of Kirana Credit: Inventory Loans for Shopkeepers identified several gaps against the reviewed RBI rules. The app fails to provide borrowers with the ability to give or deny consent for specific data usage, restrict disclosure, revoke consent, or request data deletion, which is a high-risk issue under DLD2025:12(ii). Additionally, the app does not disclose the purpose of collecting GST returns and bank statements at the time of collection, which is a medium-risk issue under DLD2025:12(iii). The app also collects personal information beyond the minimal data required, violating DLD2025:13(i). These findings highlight significant non-compliance with data privacy and consent management requirements.",
+  "trace": {
+    "llm_calls": 13,
+    "prompt_tokens": 6992,
+    "output_tokens": 1527,
+    "llm_seconds": 111.5,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 3,
+      "gap_analyst": 3,
+      "verifier": 4,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 16
+  },
+  "seconds": 112.3
+}

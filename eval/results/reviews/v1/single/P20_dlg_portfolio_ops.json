@@ -1,0 +1,54 @@
+{
+  "system": "single",
+  "doc_id": "P20_dlg_portfolio_ops",
+  "findings": [
+    {
+      "feature": "Invocation and reinstatement",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The product document allows invocation of DLG at 90 days overdue, which is earlier than the required 120 days overdue.",
+      "doc_evidence": "Meridian invokes the DLG at 90 days overdue.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Invocation and reinstatement",
+      "rule_id": "DLD2025:24(iv)",
+      "issue": "The product document allows reinstatement of DLG through loan recovery, which is prohibited as DLG amount once invoked shall not be reinstated.",
+      "doc_evidence": "When Meridian later recovers money from a loan on which DLG was invoked, the recovered amount is used to top the DLG back up to its original level.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Tenor",
+      "rule_id": "DLD2025:26(ii)",
+      "issue": "The DLG agreement runs for 12 months, which is shorter than the longest tenor of the loan in the underlying loan portfolio (up to 24 months).",
+      "doc_evidence": "The DLG agreement runs for 12 months, while loans in the portfolio have tenors of up to 24 months.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Disclosure",
+      "rule_id": "DLD2025:27(i)",
+      "issue": "The product document does not specify that PayNest publishes the name of Meridian Finance as part of the disclosure, which is optional but should be included if disclosed.",
+      "doc_evidence": "PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 1974,
+    "output_tokens": 426,
+    "llm_seconds": 27.3,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 27.5
+}

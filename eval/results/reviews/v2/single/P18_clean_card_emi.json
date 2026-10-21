@@ -1,0 +1,46 @@
+{
+  "system": "single",
+  "doc_id": "P18_clean_card_emi",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "EMI Conversion",
+      "rule_id": "DLD2025:29(i)",
+      "issue": "The product document states that EMI conversion on credit cards is governed by the Master Direction on Credit Card and Debit Card, which conflicts with RBI's requirement that such transactions are not covered under these Directions and are instead governed by the Master Direction on Credit Card and Debit Card – Issuance and Conduct, 2022.",
+      "doc_evidence": "EMI conversion on credit cards is governed by the Master Direction on Credit Card and Debit Card; the conversion terms, interest and processing fee are shown before the customer confirms.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product document states that the app uses only the customer's existing card account data, but it does not explicitly state that prior and explicit consent is obtained for data collection, which is a requirement under RBI regulations.",
+      "doc_evidence": "The app uses only the customer's existing card account data. It does not request contacts, files, SMS or call logs.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The product document states that all data is stored on Konkan Bank's servers in Mumbai and Chennai, but it does not explicitly state that data processed outside India is deleted from servers outside India and brought back to India within 24 hours of processing, which is a requirement under RBI regulations.",
+      "doc_evidence": "All data is stored on Konkan Bank's servers in Mumbai and Chennai.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2399,
+    "output_tokens": 399,
+    "llm_seconds": 34.3,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 34.6
+}

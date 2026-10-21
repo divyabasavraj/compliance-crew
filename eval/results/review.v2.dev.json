@@ -1,0 +1,75 @@
+{
+  "model": "qwen3:8b",
+  "tag": "v2",
+  "split": "dev",
+  "docs": 12,
+  "results": {
+    "single": {
+      "recall": 0.704,
+      "precision": 0.304,
+      "caught": 19,
+      "planted": 27,
+      "unique_flags": 69,
+      "false_alarms": 48,
+      "clean_doc_false_alarms": 12,
+      "citation_validity": 1.0,
+      "missed": [
+        "P02-a",
+        "P02-c",
+        "P05-a",
+        "P06-c",
+        "P06-d",
+        "P08-a",
+        "P08-d",
+        "P10-a"
+      ],
+      "sec_per_doc": 63.4,
+      "llm_calls_per_doc": 1.0,
+      "tokens_per_doc": 2926
+    },
+    "crew_no_verifier": {
+      "recall": 0.963,
+      "precision": 0.333,
+      "caught": 26,
+      "planted": 27,
+      "unique_flags": 84,
+      "false_alarms": 56,
+      "clean_doc_false_alarms": 18,
+      "citation_validity": 1.0,
+      "missed": [
+        "P07-b"
+      ],
+      "sec_per_doc": 217.8,
+      "llm_calls_per_doc": 21.5,
+      "tokens_per_doc": 14182
+    },
+    "crew": {
+      "recall": 0.889,
+      "precision": 0.619,
+      "caught": 24,
+      "planted": 27,
+      "unique_flags": 42,
+      "false_alarms": 16,
+      "clean_doc_false_alarms": 3,
+      "citation_validity": 1.0,
+      "missed": [
+        "P02-a",
+        "P02-b",
+        "P07-b"
+      ],
+      "sec_per_doc": 217.8,
+      "llm_calls_per_doc": 21.5,
+      "tokens_per_doc": 14182,
+      "miss_stages": {
+        "not_retrieved": [],
+        "analyst_missed": [
+          "P07-b"
+        ],
+        "verifier_rejected": [
+          "P02-a",
+          "P02-b"
+        ]
+      }
+    }
+  }
+}

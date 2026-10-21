@@ -1,0 +1,64 @@
+{
+  "system": "single",
+  "doc_id": "P05_facefin_biometric",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Data hosting",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "Data is stored in servers located outside India, which violates the requirement to store data only in servers located within India.",
+      "doc_evidence": "Our analytics and core lending systems run on a cloud provider's Singapore data centre, chosen for lower cost. A copy of the data is synced to India every quarter.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Face login",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product collects and stores biometric data (face template and fingerprint) without explicit consent for purposes beyond onboarding/KYC, which is not allowed.",
+      "doc_evidence": "To make login fast and secure, FaceFin stores each customer's face template and fingerprint data on its servers and uses them for every login and loan approval.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Consent controls",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product provides borrowers with the option to give or deny consent for data use, restrict disclosure, revoke consent, and request deletion, which is compliant. No violation here.",
+      "doc_evidence": "In the Privacy Centre, borrowers can switch off consent for specific data uses, block sharing with third parties, choose how long data is kept, withdraw consent, and request deletion of their data.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Privacy policy",
+      "rule_id": "DLD2025:14(i)",
+      "issue": "The product has a comprehensive privacy policy published on the website and in the app, which is compliant. No violation here.",
+      "doc_evidence": "A full privacy policy is published on the website and in the app, listing the third parties that collect data through the app and the data storage, retention and destruction rules.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Creditworthiness",
+      "rule_id": "DLD2025:7(i)",
+      "issue": "The product collects age, occupation, employer, and monthly income from salary slips, which is compliant with the requirement to collect at a minimum age, occupation, and income details. No violation here.",
+      "doc_evidence": "Before every loan we collect and keep on record the borrower's age, occupation, employer and monthly income from salary slips.",
+      "severity": "low",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2140,
+    "output_tokens": 562,
+    "llm_seconds": 53.2,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 53.5
+}

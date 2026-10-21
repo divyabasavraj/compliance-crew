@@ -1,0 +1,24 @@
+# Partnership Term Sheet: Coastal Finance x CredBridge (DLG arrangement)
+
+**Regulated entity:** Coastal Finance (NBFC). **Partner:** CredBridge Technologies Pvt Ltd (LSP, incorporated under the Companies Act, 2013).
+
+## 1. Scope
+CredBridge sources personal loans of ₹25,000 to ₹2,00,000 for Coastal Finance and provides a default loss guarantee (DLG) on the portfolio.
+
+## 2. DLG cover
+CredBridge will cover losses up to 10% of the total amount disbursed in each quarterly portfolio.
+
+## 3. Form of DLG
+The DLG will be given as a corporate guarantee from CredBridge's parent company, rather than cash or a bank guarantee.
+
+## 4. Invocation
+Coastal Finance will invoke the DLG once a loan has been overdue for 180 days.
+
+## 5. Board policy and due diligence
+Coastal Finance's Board approved a DLG policy covering eligibility of DLG providers, extent of cover, monitoring and fees. CredBridge gives an auditor-certified declaration of its total DLG outstanding and past default rates at signing and at every renewal.
+
+## 6. Tenor
+The DLG agreement stays in force for 5 years, longer than the longest loan tenor in the portfolio (3 years).
+
+## 7. Disclosure
+CredBridge publishes on its website, every month within seven working days, the number of portfolios and the amount of each portfolio covered by DLG.

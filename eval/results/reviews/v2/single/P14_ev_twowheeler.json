@@ -1,0 +1,55 @@
+{
+  "system": "single",
+  "doc_id": "P14_ev_twowheeler",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "Loan is disbursed into the scooter dealer's account instead of the borrower's account.",
+      "doc_evidence": "Vindhya Bank pays the loan directly into the bank account of the scooter dealer, since the loan is only for buying the scooter.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:20(ii)",
+      "issue": "DLG is provided for loans that are also covered under the CGFMU credit guarantee scheme.",
+      "doc_evidence": "The portfolio includes loans that are also covered under the CGFMU credit guarantee scheme.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Recovery",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "Borrower is not informed of the recovery agent's details before the agent contacts them.",
+      "doc_evidence": "If the agency is changed, the new agent visits the borrower directly; the borrower is not told the agent's details beforehand.",
+      "severity": "high",
+      "fix": "",
+      "verifier_note": ""
+    },
+    {
+      "feature": "Credit reporting",
+      "rule_id": "DLD2025:16(ii)",
+      "issue": "The product document does not specify that the RE (Vindhya Bank) ensures that LSPs (ChargeRide Mobility) abide by the extant outsourcing guidelines issued by the Reserve Bank.",
+      "doc_evidence": "All loans are reported to the four credit information companies every month.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": ""
+    }
+  ],
+  "candidates": [],
+  "summary": "",
+  "trace": {
+    "llm_calls": 1,
+    "prompt_tokens": 2339,
+    "output_tokens": 378,
+    "llm_seconds": 35.8,
+    "by_agent": {
+      "single_agent": 1
+    }
+  },
+  "seconds": 36.1
+}
