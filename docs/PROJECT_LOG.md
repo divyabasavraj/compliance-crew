@@ -346,3 +346,12 @@ What it shows:
    - `[DECISION]` **Static Space, with the guards running in the visitor's browser.** `input_guard.py` and `pii.py` are pure stdlib, so the page loads them unchanged into Pyodide: the security check on the demo is the project's real Python code, not a JavaScript copy, and nothing is uploaded. PDFs are read in the browser with pdf.js, using a JavaScript port of the `pdf_text.py` heading rule (font size only; pdf.js does not expose bold reliably). When a server answers `/api/config`, the same page uses the server instead (and shows full live reviews if a model is configured).
    - `[RESULT]` Static mode in Playwright, locally and then on the deployed Space: pasted doc passes with 1 phone masked; the P13 PDF yields its 6 sections; a hidden-comment injection is blocked (`hidden:override`, `hidden:verdict_steer`); no page errors.
 12. 12:14  **Deployed: https://huggingface.co/spaces/Divya52/compliance-crew** (static, public, ₹0; page at `divya52-compliance-crew.static.hf.space`). `deploy/push_space.sh` stages `index.html`, `demo.json`, the two guard modules and the Space README, and uploads them. `[NEXT]` A host for full live reviews (needs a server with the embedding model + a free-tier LLM key); the code path (`CC_LLM=gemini`, jobs, rate limit) is built and tested with stubs.
+13. 12:20  README: demo link, a Mermaid architecture diagram (text version kept), web UI and deploy commands, MCP host note. Blog draft in `docs/BLOG_DRAFT.md` (v3 section marked TODO). UI review: the outcome colour now lives only in the tags (the thick coloured side borders repeated them), and the margin uses two type sizes (15 px content, 12 px metadata) instead of three close ones. Redeployed the Space.
+14. 12:27  Kaggle v3 run (step 4) still RUNNING. Work paused here; everything is committed and pushed.
+
+### End of day (so far)
+- **Done:** retrieval fix v3 (diagnosed, tested, launched on Kaggle); milestone 8: PDF upload, web UI, static demo live on Hugging Face, MCP allowed hosts, Gemini provider, README diagram, blog draft. 55 tests pass.
+- **Not done:** v3 results (Kaggle still running); Gemini path not run against the real API (no key); no host for full live reviews.
+- **Next:**
+  - `[NEXT]` Download the v3 output (`uvx kaggle kernels output divyabasavraj25/compliance-crew-14b -p <dir>`), rescore `k8b3`/`k14b3` per split, compare with `k8b`/`k14b`, then update README, `web/demo.json` and the blog draft.
+  - `[NEXT]` Decide whether to host full live reviews (needs a server + free LLM key) or keep the demo static.
