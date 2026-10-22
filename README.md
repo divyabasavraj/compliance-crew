@@ -4,6 +4,8 @@ A multi-agent system that reviews an Indian fintech product document **before la
 
 Runs fully locally on Qwen3 8B (Ollama). Cost: ₹0.
 
+**Demo:** https://huggingface.co/spaces/Divya52/compliance-crew. Browse the real crew reviews of all 32 benchmark docs, each finding marked against the answer key, or run the security check on your own PDF. The check runs this repo's Python guard code in your browser, so nothing is uploaded.
+
 > Decision support only, not legal advice.
 
 ## Why
@@ -13,6 +15,22 @@ Fintech teams check every new feature against RBI directions by hand. Existing o
 3. **A measured single-agent vs multi-agent comparison**, plus a measured security layer.
 
 ## Architecture
+```mermaid
+flowchart LR
+    doc([Product doc<br>PDF or markdown]) --> c1[1 Input check<br>rules + Guardian] --> pii[PII masking]
+    pii --> orch[Orchestrator<br>features, ≤2 sections each]
+    subgraph perfeature [per feature, every message checked: checkpoint 2]
+        res[Researcher] --> gap[Gap Analyst] --> ver[Verifier]
+    end
+    orch --> res
+    res -- search_corpus --> corpus[(RBI corpus<br>3 normative only, hash-pinned)]
+    ver -- get_paragraph --> corpus
+    ver --> risk[Risk Assessor] --> wr[Report Writer] --> c4[4 Output check] --> rep([Cited report])
+    c1 -. quarantine .-> human([Human review])
+    audit[[5 Audit log: every check, pass or fail, with caller id]]
+```
+
+The same flow as text:
 ```
 product doc ─▶ [1 input check + Guardian] ─▶ PII masking ─▶ Orchestrator (features, ≤2 sections each)
                                                                │  per feature
@@ -25,7 +43,7 @@ product doc ─▶ [1 input check + Guardian] ─▶ PII masking ─▶ Orchestr
 ```
 - **Agents** are plain Python functions, each with its own prompt and JSON schema. There is no framework, because the flow is fixed.
 - **Tool allow-lists are enforced in code**: only the Researcher can search, and only the Verifier can fetch a paragraph by id.
-- **Retrieval** is BM25 + bge-small embeddings fused with RRF (Recall@5 = 0.825 on 40 labelled questions; a reranker lowered it).
+- **Retrieval** is BM25 + bge-small embeddings fused with RRF (Recall@5 = 0.825 on 40 labelled questions; a reranker lowered it). The Researcher runs one fixed search per section (no model involved) plus up to 3 model-written queries.
 
 ## Results
 Model: Qwen3 8B (Q4, Ollama) on an Apple M5 with 16 GB. Temperature 0. Cost ₹0.
@@ -89,6 +107,15 @@ uv run python eval/eval_attacks_e2e.py
 uv run pytest
 ```
 
+### Web UI
+```bash
+uv run python eval/build_demo.py --run "Qwen3 8B=v2" --run "Qwen3 14B=k14b"   # web/demo.json from cached reviews
+uv run compliance-crew serve        # http://localhost:8000: benchmark reviews, security check, live review (local Ollama: CC_LIVE=1)
+CC_LLM=gemini GEMINI_API_KEY=... uv run compliance-crew serve   # live reviews on the Gemini free tier (synthetic docs only)
+deploy/push_space.sh                # the static demo (no server; guards run in the browser)
+```
+Without a server the page is static: it loads `input_guard.py` and `pii.py` into Pyodide and reads PDFs with pdf.js. Hugging Face only hosts static Spaces for free, so the hosted demo has no live crew review.
+
 ### As an API / MCP tool for other agents
 ```bash
 uv run compliance-crew keygen partner-a        # prints a secret + the hash line for CC_API_KEYS
@@ -96,6 +123,7 @@ CC_API_KEYS="partner-a:<hash>" uv run compliance-crew serve
 curl -X POST localhost:8000/review -H "x-api-key: <secret>" -H 'content-type: application/json' \
      -d '{"doc_id": "p1", "text": "# My product ..."}'
 # MCP (streamable HTTP): http://localhost:8000/mcp/ , tool `review_product_doc`, same x-api-key header
+# deployed: set CC_ALLOWED_HOSTS=<public host>, or the MCP SDK's DNS-rebinding check rejects it (421)
 ```
 
 ## Layout
@@ -106,6 +134,9 @@ curl -X POST localhost:8000/review -H "x-api-key: <secret>" -H 'content-type: ap
 | `src/compliance_crew/tools.py` | tool allow-lists, normative filter, citation normaliser, evidence check |
 | `src/compliance_crew/security/` | input guard, Guardian, PII masking, message guard, output guard, audit log |
 | `src/compliance_crew/api.py` | REST + MCP endpoint with API keys |
+| `src/compliance_crew/web.py`, `web/` | demo UI routes, security check, rate-limited live review jobs; the page and `demo.json` |
+| `src/compliance_crew/pdf_text.py` | PDF upload to `#`/`##` markdown (headings by font size) |
+| `deploy/` | static Hugging Face Space push script |
 | `bench/docs`, `bench/answer_key.json` | 32 product docs, 68 planted violations, 5 clean docs |
 | `bench/attacks/` | attack, held-out attack, tricky-benign and PII docs |
 | `eval/` | retrieval, review, security and end-to-end attack evaluations |

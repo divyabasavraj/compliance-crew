@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ComplianceCrew</title>
+<meta name="description" content="A multi-agent RBI digital lending compliance review, with the findings marked against a planted-violation answer key.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --page: #E9EDF1; --sheet: #FFFFFF; --ink: #1D2733; --muted: #5B6775; --rule: #CDD4DC;
+  --mark: #FFE27A; --mark-active: #FFC93C;
+  --caught: #25744A; --caught-bg: #E3F2E9; --false: #B42318; --false-bg: #FBE8E6;
+  --missed: #9A5B00; --missed-bg: #FBF0DC; --link: #1F5FA8; --focus: #1F5FA8;
+  --serif: "Source Serif 4", Georgia, serif; --sans: "Public Sans", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #141A21; --sheet: #1C242D; --ink: #E4E9EE; --muted: #9AA6B2; --rule: #333F4B;
+    --mark: #6B5A1A; --mark-active: #8C7420;
+    --caught: #6CC795; --caught-bg: #1C3327; --false: #F08A80; --false-bg: #3A2120;
+    --missed: #E7B25C; --missed-bg: #362A17; --link: #8DB8EB; --focus: #8DB8EB;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #141A21; --sheet: #1C242D; --ink: #E4E9EE; --muted: #9AA6B2; --rule: #333F4B;
+  --mark: #6B5A1A; --mark-active: #8C7420;
+  --caught: #6CC795; --caught-bg: #1C3327; --false: #F08A80; --false-bg: #3A2120;
+  --missed: #E7B25C; --missed-bg: #362A17; --link: #8DB8EB; --focus: #8DB8EB;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 15px/1.5 var(--sans); }
+a { color: var(--link); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+button, select, textarea, input { font: inherit; color: inherit; }
+
+header { max-width: 1240px; margin: 0 auto; padding: 28px 16px 8px; }
+h1 { font: 700 26px/1.2 var(--sans); margin: 0 0 6px; letter-spacing: -0.01em; }
+.intro { max-width: 70ch; margin: 0; color: var(--muted); }
+nav { display: flex; gap: 4px; margin-top: 20px; border-bottom: 1px solid var(--rule); overflow-x: auto; }
+nav button { background: none; border: 0; padding: 10px 14px; cursor: pointer; color: var(--muted);
+  border-bottom: 3px solid transparent; margin-bottom: -1px; font-weight: 600; white-space: nowrap; }
+nav button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+
+main { max-width: 1240px; margin: 0 auto; padding: 16px 16px 64px; }
+.controls { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin-bottom: 16px; }
+.controls label { display: flex; gap: 8px; align-items: center; color: var(--muted); max-width: 100%; }
+select { background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 6px 8px; max-width: 100%; min-width: 0; }
+.score { color: var(--muted); }
+.score b { color: var(--ink); }
+
+.review { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 20px; align-items: start; }
+.sheet { background: var(--sheet); border-radius: 4px; padding: 40px 48px; box-shadow: 0 1px 0 var(--rule); }
+.doc { font: 17px/1.65 var(--serif); max-width: 68ch; }
+.doc h2 { font: 600 24px/1.25 var(--serif); margin: 0 0 16px; }
+.doc h3 { font: 600 17px/1.3 var(--sans); margin: 28px 0 6px; }
+.doc p { margin: 0 0 10px; }
+mark { background: var(--mark); color: inherit; padding: 1px 0; border-radius: 2px; cursor: pointer; }
+mark.active { background: var(--mark-active); }
+mark sup { font: 600 11px var(--sans); margin-left: 2px; }
+
+.margin { display: flex; flex-direction: column; gap: 12px; }
+.summary { font-size: 14px; color: var(--muted); margin: 0 0 4px; }
+.note { background: var(--sheet); border-left: 4px solid var(--rule); border-radius: 0 4px 4px 0; padding: 12px 14px; }
+.note.caught { border-left-color: var(--caught); }
+.note.false { border-left-color: var(--false); }
+.note.missed { border-left-color: var(--missed); }
+.note.active { box-shadow: 0 0 0 2px var(--mark-active); }
+.note h4 { margin: 0 0 4px; font: 600 14px/1.35 var(--sans); display: flex; gap: 8px; align-items: baseline; justify-content: space-between; }
+.note p { margin: 4px 0 0; font-size: 14px; }
+.tag { font: 600 12px var(--sans); padding: 1px 7px; border-radius: 10px; white-space: nowrap; }
+.tag.caught { color: var(--caught); background: var(--caught-bg); }
+.tag.false { color: var(--false); background: var(--false-bg); }
+.tag.missed { color: var(--missed); background: var(--missed-bg); }
+.tag.sev { color: var(--muted); border: 1px solid var(--rule); }
+details { margin-top: 6px; font-size: 13px; color: var(--muted); }
+summary { cursor: pointer; }
+blockquote { margin: 6px 0 0; padding-left: 10px; border-left: 2px solid var(--rule); font: 14px/1.5 var(--serif); }
+
+.live { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.panel { background: var(--sheet); border-radius: 4px; padding: 24px; }
+.panel h2 { font: 600 18px/1.3 var(--sans); margin: 0 0 8px; }
+.panel p { margin: 0 0 12px; color: var(--muted); max-width: 65ch; }
+textarea { width: 100%; min-height: 260px; background: var(--page); border: 1px solid var(--rule); border-radius: 6px; padding: 10px; font: 14px/1.5 var(--serif); }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 12px 0; }
+input[type="file"] { max-width: 100%; }
+.btn { background: var(--ink); color: var(--sheet); border: 0; border-radius: 6px; padding: 9px 16px; font-weight: 600; cursor: pointer; }
+.btn.secondary { background: none; color: var(--ink); border: 1px solid var(--rule); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.verdict { font-weight: 600; }
+.verdict.block { color: var(--false); }
+.verdict.pass { color: var(--caught); }
+.verdict.grey { color: var(--missed); }
+pre { white-space: pre-wrap; word-break: break-word; font: 13px/1.5 var(--serif); background: var(--page); padding: 12px; border-radius: 6px; max-height: 360px; overflow: auto; }
+.status { color: var(--muted); }
+.disclaimer { color: var(--muted); font-size: 13px; margin-top: 24px; }
+[hidden] { display: none !important; }
+
+@media (max-width: 900px) {
+  .review, .live { grid-template-columns: 1fr; }
+  .sheet { padding: 24px 20px; }
+  .doc { font-size: 16px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  mark, .note { transition: background-color .15s, box-shadow .15s; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>ComplianceCrew</h1>
+  <p class="intro">Six agents read a fintech product document and check it against the RBI Digital Lending Directions 2025 and the KFS circular. Each benchmark document below has violations planted on purpose, so you can see what the crew caught, what it flagged wrongly and what it missed.</p>
+  <nav role="tablist">
+    <button role="tab" id="tab-bench" aria-selected="true" aria-controls="view-bench">Benchmark reviews</button>
+    <button role="tab" id="tab-live" aria-selected="false" aria-controls="view-live">Check your own document</button>
+  </nav>
+</header>
+
+<main>
+  <section id="view-bench" role="tabpanel" aria-labelledby="tab-bench">
+    <div class="controls">
+      <label>Document <select id="doc"></select></label>
+      <label>Model <select id="run"></select></label>
+      <span class="score" id="score" aria-live="polite"></span>
+    </div>
+    <div class="review">
+      <article class="sheet"><div class="doc" id="doctext"></div></article>
+      <aside class="margin" id="notes" aria-label="Findings"></aside>
+    </div>
+  </section>
+
+  <section id="view-live" role="tabpanel" aria-labelledby="tab-live" hidden>
+    <div class="live">
+      <div class="panel">
+        <h2>Your product document</h2>
+        <p>Upload a PDF or markdown file, or paste text. Use synthetic documents only: this demo is public and may send text to a free-tier model.</p>
+        <div class="row"><input type="file" id="file" accept=".pdf,.md,.txt,application/pdf,text/markdown,text/plain" aria-label="Upload a PDF or markdown file"></div>
+        <textarea id="paste" aria-label="Or paste the document"># My lending app
+## 1. Disbursal
+The loan is credited to the borrower's bank account. Our LSP deducts a ₹200 platform fee before crediting.
+## 2. Data
+The app reads the phone's contact list to find guarantors. Support line: 9876543210.</textarea>
+        <div class="row">
+          <button class="btn" id="check">Run security check</button>
+          <button class="btn secondary" id="review" hidden>Run full review</button>
+          <span class="status" id="status" aria-live="polite"></span>
+        </div>
+        <p id="livenote"></p>
+      </div>
+      <div class="panel" id="result" aria-live="polite">
+        <h2>Result</h2>
+        <p>The security check runs the input rules and Indian PII masking that guard every review. It shows what the agents would be allowed to see.</p>
+      </div>
+    </div>
+  </section>
+  <p class="disclaimer">Decision support only, not legal advice. Source and evaluation: <a href="https://github.com/divyabasavraj/compliance-crew">github.com/divyabasavraj/compliance-crew</a>.</p>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const norm = (s) => s.replace(/\*\*/g, "").replace(/\s+/g, " ").trim();
+let data, paragraphs = {};
+
+function renderDoc(md, quotes) {
+  // headings + paragraphs; bold markers dropped so quoted evidence matches the text exactly
+  let html = md.split("\n").map((l) => l.trim()).filter(Boolean).map((l) => {
+    if (l.startsWith("## ")) return `<h3>${esc(norm(l.slice(3)))}</h3>`;
+    if (l.startsWith("# ")) return `<h2>${esc(norm(l.slice(2)))}</h2>`;
+    return `<p>${esc(norm(l))}</p>`;
+  }).join("");
+  // findings that quote the same sentence share one highlight
+  const byText = new Map();
+  quotes.forEach(({ text, n }) => {
+    const q = esc(norm(text));
+    if (q) byText.set(q, [...(byText.get(q) || []), n]);
+  });
+  byText.forEach((ns, q) => {
+    if (html.includes(q)) html = html.replace(q, `<mark data-n="${ns.join(" ")}">${q}<sup>${ns.join(",")}</sup></mark>`);
+  });
+  return html;
+}
+
+function ruleLink(id) {
+  const p = paragraphs[id];
+  if (!p) return `<p>${esc(id)}</p>`;
+  return `<details><summary>${esc(id)}${p.title ? ", " + esc(p.title) : ""}</summary><blockquote>${esc(p.text)}</blockquote>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">Read on rbi.org.in</a>` : ""}</details>`;
+}
+
+function showDoc() {
+  const doc = data.docs.find((d) => d.id === $("doc").value);
+  const run = doc.runs[$("run").value];
+  if (!run) {
+    $("doctext").innerHTML = renderDoc(doc.markdown, []);
+    $("notes").innerHTML = `<p class="summary">This model was only run on the held-out test documents (P13 to P32). Pick another model or document.</p>`;
+    $("score").textContent = "";
+    return;
+  }
+  $("doctext").innerHTML = renderDoc(doc.markdown, run.findings.map((f, i) => ({ text: f.doc_evidence, n: i + 1 })));
+  const planted = Object.fromEntries(doc.planted.map((v) => [v.id, v]));
+  const notes = run.findings.map((f, i) => {
+    const ok = !!f.match;
+    return `<div class="note ${ok ? "caught" : "false"}" data-n="${i + 1}" tabindex="0">
+      <h4><span>${i + 1}. ${esc(f.feature)}</span><span class="tag ${ok ? "caught" : "false"}">${ok ? "Caught " + esc(f.match) : "False alarm"}</span></h4>
+      <p>${esc(f.issue)}</p>
+      ${ok ? `<p><b>Planted:</b> ${esc(planted[f.match].what)}</p>` : ""}
+      <p><span class="tag sev">${esc(f.severity)} severity</span> ${esc(f.fix)}</p>
+      ${ruleLink(f.rule_id)}
+      <details><summary>Why the Verifier kept it</summary><p>${esc(f.verifier_note)}</p></details>
+    </div>`;
+  });
+  run.missed.forEach((m) => notes.push(`<div class="note missed"><h4><span>${esc(planted[m.id].what)}</span><span class="tag missed">Missed ${esc(m.id)}</span></h4>
+      <p>Where it was lost: ${esc(m.why)}.</p>${planted[m.id].rules.map(ruleLink).join("")}</div>`));
+  if (!doc.planted.length) notes.unshift(`<p class="summary">This document is fully compliant. Every finding on it is a false alarm.</p>`);
+  if (!run.findings.length && !run.missed.length) notes.push(`<p class="summary">No findings.</p>`);
+  $("notes").innerHTML = `<p class="summary">${esc(run.summary)}</p>` + notes.join("");
+  const caught = new Set(run.findings.filter((f) => f.match).map((f) => f.match)).size;
+  const falseAlarms = run.findings.filter((f) => !f.match).length;
+  $("score").innerHTML = `${doc.split === "test" ? "Held-out test doc" : "Dev doc (seen while tuning)"}. Caught <b>${caught} of ${doc.planted.length}</b>, <b>${falseAlarms}</b> false alarm${falseAlarms === 1 ? "" : "s"}, ${Math.round(run.seconds)} s on ${esc($("run").value)}.`;
+}
+
+function focusNote(n) {
+  document.querySelectorAll("mark, .note").forEach((el) => el.classList.toggle("active", (el.dataset.n || "").split(" ").includes(n)));
+}
+$("doctext").addEventListener("click", (e) => {
+  const m = e.target.closest("mark"); if (!m) return;
+  const n = m.dataset.n.split(" ")[0];
+  focusNote(n);
+  document.querySelector(`.note[data-n="${n}"]`)?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+});
+$("notes").addEventListener("focusin", (e) => { const n = e.target.closest(".note"); if (n?.dataset.n) focusNote(n.dataset.n); });
+$("notes").addEventListener("mouseover", (e) => { const n = e.target.closest(".note"); if (n?.dataset.n) focusNote(n.dataset.n); });
+
+document.querySelectorAll("nav button").forEach((b) => b.addEventListener("click", () => {
+  document.querySelectorAll("nav button").forEach((x) => x.setAttribute("aria-selected", x === b));
+  $("view-bench").hidden = b.id !== "tab-bench";
+  $("view-live").hidden = b.id !== "tab-live";
+}));
+
+async function init() {
+  data = await (await fetch("demo.json")).json();
+  paragraphs = data.paragraphs;
+  $("run").innerHTML = data.runs.map((r) => `<option>${esc(r)}</option>`).join("");
+  const groups = { test: "Held-out test docs", dev: "Dev docs (seen while tuning)" };
+  $("doc").innerHTML = Object.entries(groups).map(([split, label]) => `<optgroup label="${label}">` +
+    data.docs.filter((d) => d.split === split).map((d) => `<option value="${d.id}">${esc(d.id.slice(0, 3))} ${esc(d.title)}${d.planted.length ? "" : " (compliant)"}</option>`).join("") + "</optgroup>").join("");
+  $("doc").value = "P13_payroll_advance";
+  $("doc").onchange = $("run").onchange = showDoc;
+  showDoc();
+  server = await fetch("api/config").then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  $("review").hidden = !server?.live;
+  $("livenote").textContent = server?.live
+    ? `Full reviews run the guarded crew on ${server.model}, up to ${server.live_per_hour} per hour across all visitors, and take a few minutes.`
+    : server
+      ? "Full reviews are off on this deployment (no model is attached). The benchmark reviews show the real crew output."
+      : "This page is static: the security check runs in your browser (the project's own Python guard code, through Pyodide), and nothing is uploaded. Full reviews need the crew server; see the repository to run it.";
+}
+
+// ---------- static mode: no server, the Python guards run in the browser ----------
+let server = null, pyodide = null;
+const PYODIDE = "https://cdn.jsdelivr.net/pyodide/v0.27.2/full/";
+const PDFJS = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/";
+
+async function loadPython() {
+  if (pyodide) return pyodide;
+  $("status").textContent = "Loading Python in your browser (first time only)…";
+  await new Promise((ok, fail) => { const s = document.createElement("script"); s.src = PYODIDE + "pyodide.js"; s.onload = ok; s.onerror = fail; document.head.append(s); });
+  pyodide = await loadPyodide({ indexURL: PYODIDE });
+  for (const mod of ["input_guard", "pii"]) pyodide.FS.writeFile(`${mod}.py`, await (await fetch(`py/${mod}.py`)).text());
+  pyodide.runPython(`
+import json, input_guard, pii
+def check(doc):
+    res = input_guard.check(doc)
+    masked = pii.mask(res.text)
+    return json.dumps({
+        "markdown": doc,
+        "sections": [l[3:].strip() for l in doc.splitlines() if l.startswith("## ")],
+        "input": {"action": res.action, "reasons": res.reasons,
+                  "stripped": [{"kind": k, "text": t[:200]} for k, t in res.stripped]},
+        "pii": {"counts": masked.counts(), "masked_text": masked.text},
+    })`);
+  return pyodide;
+}
+
+async function pdfToMarkdown(buf) {
+  // same rule as src/compliance_crew/pdf_text.py: a heading is >= 1.5 pt above the body size;
+  // consecutive heading lines of one size are a wrapped heading; the first heading is the title
+  const pdfjs = await import(PDFJS + "pdf.min.mjs");
+  pdfjs.GlobalWorkerOptions.workerSrc = PDFJS + "pdf.worker.min.mjs";
+  const pdf = await pdfjs.getDocument({ data: buf }).promise;
+  const lines = [];
+  for (let i = 1; i <= Math.min(pdf.numPages, 30); i++) {
+    const rows = new Map();
+    for (const it of (await (await pdf.getPage(i)).getTextContent()).items) {
+      if (!it.str.trim()) continue;
+      const y = Math.round(it.transform[5]);
+      const row = rows.get(y) || { text: [], size: 0 };
+      row.text.push(it.str.trim()); row.size = Math.max(row.size, Math.hypot(it.transform[2], it.transform[3]));
+      rows.set(y, row);
+    }
+    [...rows.entries()].sort((a, b) => b[0] - a[0]).forEach(([, r]) => lines.push({ text: r.text.join(" ").normalize("NFKC"), size: r.size }));
+  }
+  if (!lines.length) throw new Error("no text found in the PDF (scanned PDFs are not supported)");
+  const counts = {}; lines.forEach((l) => { const k = Math.round(l.size); counts[k] = (counts[k] || 0) + 1; });
+  const body = +Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
+  const md = []; let titled = false, prev = null;
+  for (const l of lines) {
+    const heading = l.text.length <= 90 && l.size >= body + 1.5;
+    if (heading && prev !== null && Math.abs(l.size - prev) < 0.5) md[md.length - 1] += " " + l.text;
+    else if (heading) { md.push(`\n${titled ? "##" : "#"} ${l.text}`); titled = true; }
+    else md.push(l.text);
+    prev = heading ? l.size : null;
+  }
+  return md.join("\n").replace(/\n{3,}/g, "\n\n").trim() + "\n";
+}
+
+async function checkInBrowser() {
+  const f = $("file").files[0];
+  let doc = $("paste").value;
+  if (f) doc = (f.type === "application/pdf" || f.name.toLowerCase().endsWith(".pdf")) ? await pdfToMarkdown(await f.arrayBuffer()) : await f.text();
+  if (!doc.trim()) throw new Error("send a file or text");
+  if (doc.length > 50000) throw new Error("document longer than 50000 characters");
+  const py = await loadPython();
+  $("status").textContent = "Checking…";
+  return JSON.parse(py.globals.get("check")(doc));
+}
+
+function formData() {
+  const fd = new FormData();
+  const f = $("file").files[0];
+  if (f) fd.append("file", f); else fd.append("text", $("paste").value);
+  return fd;
+}
+async function post(url) {
+  const r = await fetch(url, { method: "POST", body: formData() });
+  const body = await r.json();
+  if (!r.ok) throw new Error(body.detail || r.statusText);
+  return body;
+}
+const verdicts = {
+  block: "Blocked: this document would be quarantined for a human, and no agent would read it.",
+  grey: "Flagged: suspicious wording, sent to the Guardian model for a second opinion.",
+  pass: "Passed: no instructions aimed at the AI reviewer.",
+};
+
+$("check").onclick = async () => {
+  $("status").textContent = "Checking…";
+  try {
+    const r = server ? await post("api/check") : await checkInBrowser();
+    const counts = Object.entries(r.pii.counts);
+    $("result").innerHTML = `<h2>Security check</h2>
+      <p class="verdict ${r.input.action}">${verdicts[r.input.action]}</p>
+      ${r.input.reasons.length ? `<p>Rules matched: ${esc(r.input.reasons.join(", "))}</p>` : ""}
+      ${r.input.stripped.length ? `<p>Hidden content removed before review:</p><pre>${esc(r.input.stripped.map((s) => s.kind + ": " + s.text).join("\n"))}</pre>` : ""}
+      <p>${r.sections.length} sections found${r.sections.length ? ": " + esc(r.sections.join(", ")) : ". Use headings so the crew can split the document into features."}</p>
+      <p>${counts.length ? "Personal data masked before any model sees it: " + esc(counts.map(([k, v]) => `${v} ${k}`).join(", ")) : "No personal data found."}</p>
+      <details><summary>Text the agents would receive</summary><pre>${esc(r.pii.masked_text)}</pre></details>`;
+    $("status").textContent = "";
+  } catch (e) { $("status").textContent = e.message; }
+};
+
+$("review").onclick = async () => {
+  $("review").disabled = true;
+  $("status").textContent = "Starting the review…";
+  try {
+    const { job } = await post("api/review");
+    const t0 = Date.now();
+    for (;;) {
+      await new Promise((ok) => setTimeout(ok, 4000));
+      const j = await (await fetch(`api/review/${job}`)).json();
+      if (j.status === "error") throw new Error(j.error);
+      if (j.status === "done") { showLive(j); break; }
+      $("status").textContent = `Agents are working (${Math.round((Date.now() - t0) / 1000)} s)…`;
+    }
+    $("status").textContent = "";
+  } catch (e) { $("status").textContent = e.message; }
+  $("review").disabled = false;
+};
+
+function showLive(j) {
+  const r = j.review;
+  if (r.status === "quarantined") {
+    $("result").innerHTML = `<h2>Review</h2><p class="verdict block">${esc(r.summary)}</p>`;
+    return;
+  }
+  $("result").innerHTML = `<h2>Review</h2><p>${esc(r.summary)}</p>` + (r.findings.map((f, i) => `
+    <div class="note"><h4><span>${i + 1}. ${esc(f.feature)}</span><span class="tag sev">${esc(f.severity)}</span></h4>
+    <p>${esc(f.issue)}</p><blockquote>${esc(f.doc_evidence)}</blockquote><p>${esc(f.fix)}</p>${ruleLink(f.rule_id)}</div>`).join("") || "<p>No gaps found against the reviewed RBI rules.</p>") +
+    `<details><summary>Audit log (${j.audit.length} checks)</summary><pre>${esc(j.audit.map((a) => `${a.checkpoint}  ${a.agent}  ${a.decision}  ${a.reason}`).join("\n"))}</pre></details>`;
+}
+
+init().catch((e) => { $("notes").textContent = "Could not load the benchmark reviews: " + e.message; });
+</script>
+</body>
+</html>

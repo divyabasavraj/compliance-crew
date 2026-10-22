@@ -139,3 +139,23 @@ def test_researcher_cap_never_drops_llm_query_hits(monkeypatch):
     assert len(ids) <= crew.MAX_PARAGRAPHS
     assert {"llm-0", "llm-1", "llm-2"} <= set(ids)  # both LLM queries return llm-0..2 (deduplicated)
     assert ids[:5] == [f"A-{i}" for i in range(5)] and "B-9" in ids
+
+
+def test_pdf_upload_keeps_title_and_sections():
+    import pymupdf
+
+    from compliance_crew.pdf_text import pdf_to_markdown
+
+    doc = pymupdf.open()
+    page = doc.new_page()
+    y = 72
+    for text, size, font in [("QuickCash Payday Loans", 18, "hebo"), ("A short-term loan app.", 10, "helv"),
+                             ("1. Disbursal", 14, "hebo"), ("Money goes to the QuickCash wallet.", 10, "helv"),
+                             ("2. Data", 14, "hebo"), ("Contacts are read once.", 10, "helv")]:
+        page.insert_text((72, y), text, fontsize=size, fontname=font)
+        y += 30
+    md = pdf_to_markdown(doc.tobytes())
+    secs = split_sections(md)
+    assert md.startswith("# QuickCash Payday Loans")
+    assert [s.heading for s in secs[1:]] == ["1. Disbursal", "2. Data"]
+    assert "QuickCash wallet" in secs[1].text

@@ -21,7 +21,7 @@ from pathlib import Path
 from fastapi import Depends, FastAPI, Header, HTTPException
 from pydantic import BaseModel, Field
 
-from . import crew
+from . import crew, web
 from .schemas import Review
 from .security import output_guard
 from .security.audit import AuditLog
@@ -70,7 +70,7 @@ def _toolbox():
     return Toolbox(Retriever(use_reranker=False))
 
 
-def run_review(doc_id: str, text: str, caller: str) -> tuple[Review, str]:
+def _run(doc_id: str, text: str, caller: str) -> tuple[Review, str, AuditLog]:
     from .security.secure import secure_review
 
     if len(text) > MAX_DOC_CHARS:
@@ -78,6 +78,11 @@ def run_review(doc_id: str, text: str, caller: str) -> tuple[Review, str]:
     review, audit = secure_review(doc_id, text, _toolbox(), caller=caller)
     md = output_guard.check_markdown(crew.render_markdown(review, _toolbox()), crew.DISCLAIMER, audit)
     audit.write(AUDIT_PATH)
+    return review, md, audit
+
+
+def run_review(doc_id: str, text: str, caller: str) -> tuple[Review, str]:
+    review, md, _ = _run(doc_id, text, caller)
     return review, md
 
 
@@ -143,9 +148,24 @@ def require_key(x_api_key: str | None = Header(default=None)) -> str:
     return caller
 
 
+def _transport_security():
+    """DNS-rebinding protection for /mcp. A deployment lists its public host in CC_ALLOWED_HOSTS
+    (e.g. "user-space.hf.space"); without it only localhost is accepted, as the SDK default."""
+    from mcp.server.transport_security import TransportSecuritySettings
+
+    hosts = [h.strip() for h in os.getenv("CC_ALLOWED_HOSTS", "").split(",") if h.strip()]
+    local = ["127.0.0.1:*", "localhost:*", "[::1]:*"]
+    return TransportSecuritySettings(
+        enable_dns_rebinding_protection=True,
+        allowed_hosts=local + hosts + [f"{h}:*" for h in hosts],
+        allowed_origins=[f"http://{h}" for h in local] + [f"https://{h}" for h in hosts],
+    )
+
+
 def create_app() -> FastAPI:
     mcp = build_mcp()
-    mcp_app = mcp.streamable_http_app(streamable_http_path="/", stateless_http=True, json_response=True)
+    mcp_app = mcp.streamable_http_app(streamable_http_path="/", stateless_http=True, json_response=True,
+                                      transport_security=_transport_security())
 
     @contextlib.asynccontextmanager
     async def lifespan(_):
@@ -167,4 +187,5 @@ def create_app() -> FastAPI:
         return ReviewResponse(review=r, report_markdown=md)
 
     app.mount("/mcp", APIKeyMiddleware(mcp_app))
+    app.include_router(web.router)
     return app

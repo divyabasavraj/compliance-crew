@@ -1,4 +1,7 @@
-"""Kaggle job: Qwen3 14B vs Qwen3 8B (same hardware) on the held-out test split.
+"""Kaggle job: Qwen3 14B vs Qwen3 8B (same hardware), crew only, all 32 docs.
+
+Run 1 (2026-10-21, commit 74072f9, tags k8b/k14b): v2 code on the test split.
+Run 2 (2026-10-22, tags k8b3/k14b3): v3 retrieval (section k=10, two-tier cap of 24).
 
 Two T4 GPUs, one Ollama server per GPU, both runs in parallel. Results land in
 /kaggle/working/results (download with: kaggle kernels output divyabasavraj25/compliance-crew-14b).
@@ -11,11 +14,11 @@ import time
 from pathlib import Path
 
 REPO = "https://github.com/divyabasavraj/compliance-crew.git"
-COMMIT = "74072f9b5ee6fdeec3759191fd5b166ddb293af4"  # pinned: the code that produced the M5 v2 results
+COMMIT = "bfed9df12f28fa64314f84dcb8304fb60bb907ad"  # pinned: the v3 retrieval commit
 WORK = Path("/kaggle/working")
 SRC = Path("/tmp/compliance-crew")
 OUT = WORK / "results"
-RUNS = [("k8b", "qwen3:8b", 11434, "0"), ("k14b", "qwen3:14b", 11435, "1")]
+RUNS = [("k8b3", "qwen3:8b", 11434, "0"), ("k14b3", "qwen3:14b", 11435, "1")]
 
 
 def sh(cmd: str, **kw) -> None:
@@ -54,7 +57,7 @@ def main() -> None:
         env = os.environ | {"OLLAMA_URL": f"http://127.0.0.1:{port}", "CC_MODEL": model}
         log = open(WORK / f"{tag}.log", "w")
         procs.append(subprocess.Popen(
-            ["uv", "run", "python", "eval/eval_review.py", "--tag", tag, "--split", "test"],
+            ["uv", "run", "python", "eval/eval_review.py", "--tag", tag, "--split", "all", "--systems", "crew"],
             cwd=SRC, env=env, stdout=log, stderr=subprocess.STDOUT))
     codes = [p.wait() for p in procs]
     for f in (SRC / "eval" / "results").glob("review.k*.json"):
