@@ -62,22 +62,20 @@ mark.active { background: var(--mark-active); }
 mark sup { font: 600 11px var(--sans); margin-left: 2px; }
 
 .margin { display: flex; flex-direction: column; gap: 12px; }
-.summary { font-size: 14px; color: var(--muted); margin: 0 0 4px; }
-.note { background: var(--sheet); border-left: 4px solid var(--rule); border-radius: 0 4px 4px 0; padding: 12px 14px; }
-.note.caught { border-left-color: var(--caught); }
-.note.false { border-left-color: var(--false); }
-.note.missed { border-left-color: var(--missed); }
-.note.active { box-shadow: 0 0 0 2px var(--mark-active); }
-.note h4 { margin: 0 0 4px; font: 600 14px/1.35 var(--sans); display: flex; gap: 8px; align-items: baseline; justify-content: space-between; }
-.note p { margin: 4px 0 0; font-size: 14px; }
+/* two type steps in the margin: 15px content, 12px metadata; outcome colour lives in the tag only */
+.summary { font-size: 15px; color: var(--muted); margin: 0 0 4px; }
+.note { background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; padding: 12px 14px; }
+.note.active { border-color: var(--mark-active); box-shadow: 0 0 0 1px var(--mark-active); }
+.note h4 { margin: 0 0 4px; font: 600 15px/1.35 var(--sans); display: flex; gap: 8px; align-items: baseline; justify-content: space-between; }
+.note p { margin: 4px 0 0; font-size: 15px; }
 .tag { font: 600 12px var(--sans); padding: 1px 7px; border-radius: 10px; white-space: nowrap; }
 .tag.caught { color: var(--caught); background: var(--caught-bg); }
 .tag.false { color: var(--false); background: var(--false-bg); }
 .tag.missed { color: var(--missed); background: var(--missed-bg); }
 .tag.sev { color: var(--muted); border: 1px solid var(--rule); }
-details { margin-top: 6px; font-size: 13px; color: var(--muted); }
+details { margin-top: 6px; font-size: 12px; color: var(--muted); }
 summary { cursor: pointer; }
-blockquote { margin: 6px 0 0; padding-left: 10px; border-left: 2px solid var(--rule); font: 14px/1.5 var(--serif); }
+blockquote { margin: 6px 0 0; padding-left: 10px; border-left: 2px solid var(--rule); font: 15px/1.5 var(--serif); }
 
 .live { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; align-items: start; }
 .panel { background: var(--sheet); border-radius: 4px; padding: 24px; }
