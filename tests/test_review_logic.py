@@ -121,3 +121,21 @@ def test_orchestrator_caps_feature_size_and_covers_every_section(monkeypatch):
     groups = [[s.number for s in part] for _, part in features]
     assert groups == [[2, 3], [4, 5], [6], [1]]
     assert all(len(g) <= crew.MAX_SECTIONS_PER_FEATURE for g in groups)
+
+
+def test_researcher_cap_never_drops_llm_query_hits(monkeypatch):
+    # v2 bug: two section queries filled the old cap of 10, so every LLM-query hit was cut
+    from compliance_crew import crew
+    from compliance_crew.ingest import Chunk
+
+    class FakeBox:
+        def call(self, agent, tool, query, k):
+            prefix = "llm" if query.startswith("q") else query.split(":")[0]
+            return [Chunk(f"{prefix}-{i}", "DLD2025", "", "", "", "t", "") for i in range(k)]
+
+    monkeypatch.setattr(crew, "chat", lambda *a, **k: crew.Queries(queries=["q1", "q2"]))
+    secs = split_sections("# T\nctx\n\n## A\nx\n\n## B\ny\n")[1:]
+    ids = [c.id for c in crew.research("ctx", secs, FakeBox(), tracer=None)]
+    assert len(ids) <= crew.MAX_PARAGRAPHS
+    assert {"llm-0", "llm-1", "llm-2"} <= set(ids)  # both LLM queries return llm-0..2 (deduplicated)
+    assert ids[:5] == [f"A-{i}" for i in range(5)] and "B-9" in ids

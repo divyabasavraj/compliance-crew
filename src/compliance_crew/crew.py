@@ -22,7 +22,8 @@ from .schemas import Finding, Review, Severity
 from .security.message_guard import NoGuard
 from .tools import Toolbox, best_matching_sentence, evidence_in_doc, normalize_rule_id
 
-MAX_PARAGRAPHS = 10
+MAX_PARAGRAPHS = 24  # v3 (was 10); paragraphs average ~90 tokens, so 24 fit the 8k context
+SECTION_K = 10  # v3 (was 5): model-free section queries reach 39/41 test rules at k=10 vs 34 at k=5
 MAX_SECTIONS_PER_FEATURE = 2  # v2: one merged 6-section DLG feature hid 2 of 3 violations in P07
 DISCLAIMER = "Decision support only, not legal advice. Findings need review by a compliance officer."
 
@@ -84,13 +85,19 @@ def research(context: str, secs: list[Section], toolbox: Toolbox, tracer: Tracer
     feature_text = "\n".join(f"{s.heading}: {s.text}" for s in secs)
     q = chat(RESEARCH_SYSTEM, f"Product context:\n{context}\n\nFeature:\n{feature_text}", Queries,
              agent="researcher", tracer=tracer)
-    found: dict[str, Chunk] = {}
     # one query per section (a merged query loses rules for all but the dominant section), then the LLM queries
     llm_queries = [query for query in q.queries[:3] if guard.allow("researcher", "query", query)]
-    queries = [(f"{s.heading}: {s.text}", 5) for s in secs] + [(query, 3) for query in llm_queries]
-    for query, k in queries:
-        for chunk in toolbox.call("researcher", "search_corpus", query=query, k=k):
-            found.setdefault(chunk.id, chunk)
+    section_hits = [toolbox.call("researcher", "search_corpus", query=f"{s.heading}: {s.text}", k=SECTION_K)
+                    for s in secs]
+    llm_hits = [toolbox.call("researcher", "search_corpus", query=query, k=3) for query in llm_queries]
+    # v3: two tiers, so the cap can only cut the deeper section hits. In v2 two section queries
+    # filled the old cap of 10 and silently dropped every LLM-query result (lost P25-a with 14B).
+    found: dict[str, Chunk] = {}
+    tiers = [[h[:5] for h in section_hits] + llm_hits, [h[5:] for h in section_hits]]
+    for tier in tiers:
+        for hits in tier:
+            for chunk in hits:
+                found.setdefault(chunk.id, chunk)
     return list(found.values())[:MAX_PARAGRAPHS]
 
 
