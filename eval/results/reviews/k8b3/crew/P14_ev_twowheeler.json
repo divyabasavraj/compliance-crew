@@ -1,0 +1,197 @@
+{
+  "system": "crew",
+  "doc_id": "P14_ev_twowheeler",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:20(ii)",
+      "issue": "ChargeRide Mobility gives Vindhya Bank a DLG of 4% of each quarterly portfolio as a fixed deposit with a lien in the bank's favour. The portfolio includes loans that are also covered under the CGFMU credit guarantee scheme.",
+      "doc_evidence": "ChargeRide Mobility gives Vindhya Bank a DLG of 4% of each quarterly portfolio as a fixed deposit with a lien in the bank's favour. The portfolio includes loans that are also covered under the CGFMU credit guarantee scheme.",
+      "severity": "high",
+      "fix": "Ensure that the DLG is clearly structured to avoid double coverage under the CGFMU credit guarantee scheme. Amend the agreement to specify that the DLG is only applicable to loans not covered under the CGFMU scheme.",
+      "verifier_note": "The RBI paragraph explicitly prohibits entering into DLG arrangements on loans covered by credit guarantee schemes administered by trust funds as specified under para 2 of the Review of Prudential Norms – Risk Weights for Exposures guaranteed by Credit Guarantee Schemes (CGS) dated September 07, 2022. The product feature states that the portfolio includes loans covered under the CGFMU credit guarantee scheme, which is likely one of the trust funds mentioned in the RBI paragraph. Therefore, the feature violates the RBI paragraph by entering into a DLG arrangement on such loans."
+    },
+    {
+      "feature": "Recovery",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "The product feature states that 'If the agency is changed, the new agent visits the borrower directly; the borrower is not told the agent's details beforehand.' This directly contradicts the requirement in [DLD2025:8(v)] which mandates that the particulars of the recovery agent must be communicated to the borrower through email/SMS before the agent contacts the borrower for recovery.",
+      "doc_evidence": "If the agency is changed, the new agent visits the borrower directly; the borrower is not told the agent's details beforehand.",
+      "severity": "high",
+      "fix": "Update the product feature to require that the borrower is informed via email/SMS of the recovery agent's details before any contact is made. Ensure that this communication is documented and verified as part of the recovery process.",
+      "verifier_note": "The product feature does not communicate the recovery agent's details to the borrower through email/SMS before the agent contacts the borrower for recovery, which directly violates the requirement in [DLD2025:8(v)] that such communication is mandatory."
+    },
+    {
+      "feature": "Credit bureau reporting",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "The feature 'Credit bureau reporting: All loans are reported to the four credit information companies every month.' does not explicitly mention that the reporting is done by the RE or LSPs as required by RBI. The feature only states that the loans are reported, but it does not clarify who is responsible for the reporting, which is a key requirement under DLD2025:16(i).",
+      "doc_evidence": "Credit bureau reporting: All loans are reported to the four credit information companies every month.",
+      "severity": "medium",
+      "fix": "Revise the credit bureau reporting feature to explicitly state that the reporting is done by the RE or LSPs as mandated by RBI. Include this detail in the feature description and ensure it is reflected in all relevant documentation.",
+      "verifier_note": "The RBI paragraph (DLD2025:16(i)) explicitly requires that lending done through DLAs and/or DLAs of LSPs is reported by 'them' (i.e., RE or LSPs) to CICs. The product feature states that 'all loans are reported to the four credit information companies every month,' but it does not specify who is responsible for the reporting. Since the paragraph requires that the reporting is done by RE or LSPs, and the feature does not clarify this, it fails to meet the requirement of the paragraph. Therefore, the feature does not fully comply with the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature 'Disbursal: Vindhya Bank pays the loan directly into the bank account of the scooter dealer, since the loan is only for buying the scooter.' breaks the requirement that disbursement of loan by the RE shall always be made into the bank account of the borrower, except for disbursals covered exclusively under statutory or regulatory mandate, flow of money between REs for co-lending transactions, and disbursals for specific end use, provided the loan is disbursed directly into the bank account of the end-beneficiary. The feature describes disbursal to the scooter dealer, which is a third-party account, and does not clearly indicate that the end-beneficiary (the borrower) receives the funds directly.",
+      "doc_evidence": "Disbursal: Vindhya Bank pays the loan directly into the bank account of the scooter dealer, since the loan is only for buying the scooter.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly allows disbursals for specific end use, provided the loan is disbursed directly into the bank account of the end-beneficiary. The product feature states that the loan is disbursed into the bank account of the scooter dealer, which is described as the end-beneficiary. Therefore, the feature complies with the requirement that the loan is disbursed directly into the end-beneficiary's account. The claim that this is a violation is unfounded because the feature does not disburse to a third-party account but rather to the end-beneficiary."
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:20(ii)",
+      "issue": "ChargeRide Mobility gives Vindhya Bank a DLG of 4% of each quarterly portfolio as a fixed deposit with a lien in the bank's favour. The portfolio includes loans that are also covered under the CGFMU credit guarantee scheme.",
+      "doc_evidence": "ChargeRide Mobility gives Vindhya Bank a DLG of 4% of each quarterly portfolio as a fixed deposit with a lien in the bank's favour. The portfolio includes loans that are also covered under the CGFMU credit guarantee scheme.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits entering into DLG arrangements on loans covered by credit guarantee schemes administered by trust funds as specified under para 2 of the Review of Prudential Norms – Risk Weights for Exposures guaranteed by Credit Guarantee Schemes (CGS) dated September 07, 2022. The product feature states that the portfolio includes loans covered under the CGFMU credit guarantee scheme, which is likely one of the trust funds mentioned in the RBI paragraph. Therefore, the feature violates the RBI paragraph by entering into a DLG arrangement on such loans."
+    },
+    {
+      "feature": "Recovery",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "The product feature states that 'If the agency is changed, the new agent visits the borrower directly; the borrower is not told the agent's details beforehand.' This directly contradicts the requirement in [DLD2025:8(v)] which mandates that the particulars of the recovery agent must be communicated to the borrower through email/SMS before the agent contacts the borrower for recovery.",
+      "doc_evidence": "If the agency is changed, the new agent visits the borrower directly; the borrower is not told the agent's details beforehand.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature does not communicate the recovery agent's details to the borrower through email/SMS before the agent contacts the borrower for recovery, which directly violates the requirement in [DLD2025:8(v)] that such communication is mandatory."
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app takes a one-time photo of the borrower and their PAN card for KYC, with consent. No other phone permissions are requested.",
+      "doc_evidence": "The app takes a one-time photo of the borrower and their PAN card for KYC, with consent. No other phone permissions are requested.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the RBI paragraph. The feature states that the app takes a one-time photo for KYC with consent, which is explicitly allowed under the RBI paragraph. Additionally, the feature mentions that no other phone permissions are requested, which aligns with the prohibition in the RBI paragraph against accessing mobile phone resources like contact list, call logs, telephony functions, etc. The RBI paragraph allows one-time access to camera for KYC purposes, which the feature adheres to."
+    },
+    {
+      "feature": "Credit bureau reporting",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "The feature 'Credit bureau reporting: All loans are reported to the four credit information companies every month.' does not explicitly mention that the reporting is done by the RE or LSPs as required by RBI. The feature only states that the loans are reported, but it does not clarify who is responsible for the reporting, which is a key requirement under DLD2025:16(i).",
+      "doc_evidence": "Credit bureau reporting: All loans are reported to the four credit information companies every month.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph (DLD2025:16(i)) explicitly requires that lending done through DLAs and/or DLAs of LSPs is reported by 'them' (i.e., RE or LSPs) to CICs. The product feature states that 'all loans are reported to the four credit information companies every month,' but it does not specify who is responsible for the reporting. Since the paragraph requires that the reporting is done by RE or LSPs, and the feature does not clarify this, it fails to meet the requirement of the paragraph. Therefore, the feature does not fully comply with the RBI paragraph."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature describes that the loan is disbursed into the borrower's bank account, which complies with the requirement that disbursement must always be made into the borrower's bank account. Therefore, no finding is applicable.",
+      "doc_evidence": "Loans of ₹60,000 to ₹1,50,000 for electric scooters, tenor 12 to 36 months, applied for in the dealer showroom.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that disbursement must always be made into the borrower's bank account, except for specific exceptions. The product feature does not mention how the loan is disbursed. Since the claim relies on what the feature leaves out (i.e., whether the loan is disbursed into the borrower's account), it is not a violation. The feature does not confirm or deny the disbursement method, so the claim cannot be verified as compliant or non-compliant based on the provided information."
+    }
+  ],
+  "summary": "The compliance review of ChargeRide: Electric Scooter Loans at Dealerships identified three key findings against the reviewed RBI rules. First, the DLG provided to Vindhya Bank as a fixed deposit with a lien in the bank's favor includes loans covered under the CGFMU credit guarantee scheme, which may conflict with DLD2025:20(ii). Second, the product feature that allows the new agent to visit the borrower without prior communication violates DLD2025:8(v), as it fails to inform the borrower of the recovery agent's details beforehand. Third, the credit bureau reporting feature does not explicitly state that the reporting is done by the RE or LSPs, as required by DLD2025:16(i).",
+  "trace": {
+    "llm_calls": 21,
+    "prompt_tokens": 13653,
+    "output_tokens": 2340,
+    "llm_seconds": 121.3,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 6,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 30,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:8(iii)",
+        "DLD2025:11(iv)",
+        "DLD2025:12(i)",
+        "DLD2025:10(i)",
+        "DLD2025:6(iv)"
+      ],
+      "1:Default loss guarantee": [
+        "DLD2025:22(i)",
+        "DLD2025:23(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:29(i)",
+        "DLD2025:23(ii)",
+        "DLD2025:20(i)",
+        "DLD2025:16(i)",
+        "DLD2025:19(ii)",
+        "DLD2025:17(v)",
+        "DLD2025:27(i)",
+        "DLD2025:19(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:21(i)",
+        "DLD2025:29(ii)"
+      ],
+      "2:Recovery": [
+        "DLD2025:8(v)",
+        "DLD2025:9(v)",
+        "DLD2025:9(ii)",
+        "DLD2025:5(v)",
+        "DLD2025:6(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:27(i)",
+        "DLD2025:24(iii)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(i)",
+        "DLD2025:11(iv)",
+        "DLD2025:6(i)"
+      ],
+      "3:Data collection": [
+        "DLD2025:12(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(ii)",
+        "DLD2025:12(iv)",
+        "DLD2025:12(iii)",
+        "DLD2025:13(iv)",
+        "DLD2025:13(iii)",
+        "DLD2025:13(i)",
+        "DLD2025:8(iii)",
+        "DLD2025:8(iv)",
+        "KFS2024:10",
+        "DLD2025:17(iii)"
+      ],
+      "4:Credit bureau reporting": [
+        "DLD2025:16(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:17(i)",
+        "KFS2024:10",
+        "KFS2024:6",
+        "DLD2025:17(v)",
+        "DLD2025:9(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:17(vii)",
+        "DLD2025:17(ii)",
+        "DLD2025:29(i)"
+      ],
+      "5:1. Product": [
+        "KFS2024:5",
+        "DLD2025:26(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:8(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "KFS2024:10",
+        "DLD2025:14(i)",
+        "DLD2025:6(iv)",
+        "DLD2025:15(i)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(ii)",
+        "DLD2025:26(i)",
+        "DLD2025:29(i)",
+        "DLD2025:20(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:8(ii)"
+      ]
+    }
+  },
+  "seconds": 121.8
+}

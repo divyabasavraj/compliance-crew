@@ -1,0 +1,129 @@
+{
+  "system": "crew",
+  "doc_id": "P26_clean_gold_loan",
+  "status": "reviewed",
+  "findings": [],
+  "candidates": [
+    {
+      "feature": "Data Collection and Storage",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The LSP (AurumTech) stores more than just basic minimal data (name, address, contact details) as required by the RBI. The product feature states that AurumTech stores 'name, phone and loan reference', which goes beyond the minimal data allowed for LSPs.",
+      "doc_evidence": "The app takes a one-time selfie for KYC with consent. AurumTech stores only name, phone and loan reference; all other data is stored by the bank on servers in India.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly allows LSPs to store 'some basic minimal data' such as 'name, address, contact details of the customer, etc.' The product feature states that AurumTech stores 'name, phone and loan reference.' While 'phone' can be considered part of contact details, 'loan reference' is not explicitly mentioned in the RBI paragraph as an allowed data point. However, the paragraph allows for 'some basic minimal data that may be required to carry out their operations or service within the scope of the RE-LSP agreement.' If 'loan reference' is necessary for the operation of the service, then it may be considered within the allowed scope. Since the feature does not explicitly confirm that 'loan reference' is required for their operations, the claim relies on an assumption not confirmed by the feature text."
+    }
+  ],
+  "summary": "No gaps were found against the reviewed RBI rules for the product 'GoldNow: Digital Top-up on Existing Gold Loans'.",
+  "trace": {
+    "llm_calls": 15,
+    "prompt_tokens": 10796,
+    "output_tokens": 868,
+    "llm_seconds": 89.7,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 25,
+    "retrieved": {
+      "0:Product Description": [
+        "KFS2024:5",
+        "DLD2025:6(iii)",
+        "DLD2025:26(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:23(i)",
+        "DLD2025:15(i)",
+        "DLD2025:16(i)",
+        "DLD2025:17(ii)",
+        "KFS2024:10",
+        "DLD2025:8(i)",
+        "DLD2025:29(i)",
+        "DLD2025:26(ii)",
+        "KFS2024:4",
+        "DLD2025:7(i)",
+        "DLD2025:27(ii)"
+      ],
+      "1:Disbursal and Repayment": [
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:14(i)",
+        "DLD2025:6",
+        "DLD2025:10(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:10(i)",
+        "DLD2025:8(iv)",
+        "KFS2024:7"
+      ],
+      "2:Know Your Customer (KYC) and Information Sharing (KFS)": [
+        "KFS2024:6",
+        "KFS2024:5",
+        "KFS2024:9",
+        "KFS2024:4",
+        "KFS2024:7",
+        "DLD2025:8(iv)",
+        "DLD2025:27(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:8(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:17(vi)",
+        "DLD2025:8(iii)",
+        "DLD2025:9(ii)",
+        "KFS2024:8"
+      ],
+      "3:Data Collection and Storage": [
+        "DLD2025:12(i)",
+        "DLD2025:13(iv)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:13(ii)",
+        "DLD2025:5(ii)",
+        "DLD2025:13(i)",
+        "DLD2025:12(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:10(ii)"
+      ],
+      "4:Cooling-off Period": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:26(i)",
+        "KFS2024:5",
+        "DLD2025:11(iv)",
+        "DLD2025:15(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:5(ii)",
+        "KFS2024:7",
+        "KFS2024:6",
+        "DLD2025:13(iv)",
+        "DLD2025:9(iv)"
+      ],
+      "5:Grievance Redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:11(i)",
+        "KFS2024:7",
+        "KFS2024:6",
+        "DLD2025:15(i)",
+        "DLD2025:17(v)",
+        "DLD2025:16(i)",
+        "DLD2025:11(iii)",
+        "DLD2025:27(ii)",
+        "DLD2025:27(i)",
+        "KFS2024:8",
+        "KFS2024:4",
+        "KFS2024:5",
+        "DLD2025:17(iv)",
+        "KFS2024:9"
+      ]
+    }
+  },
+  "seconds": 90.4
+}

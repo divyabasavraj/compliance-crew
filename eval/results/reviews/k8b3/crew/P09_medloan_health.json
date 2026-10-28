@@ -1,0 +1,191 @@
+{
+  "system": "crew",
+  "doc_id": "P09_medloan_health",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "APR and charges",
+      "rule_id": "KFS2024:7",
+      "issue": "The APR shown in the KFS covers interest and processing fee. Health insurance premium, which is mandatory and recovered by Arogya Finance on behalf of the insurer, is collected separately and is not included in the APR.",
+      "doc_evidence": "The APR shown in the KFS covers interest and processing fee. Health insurance premium, which is mandatory and recovered by Arogya Finance on behalf of the insurer, is collected separately and is not included in the APR.",
+      "severity": "medium",
+      "fix": "Update the APR disclosure to include all mandatory charges, including health insurance premiums, to ensure transparency and compliance with RBI guidelines.",
+      "verifier_note": "The RBI paragraph requires that charges such as health insurance premiums, recovered by REs on behalf of third-party service providers, must be included in the APR and disclosed separately. The product feature states that health insurance premium is not included in the APR, which violates the requirement of the RBI paragraph. The feature does not include the health insurance premium in the APR, which is explicitly required by the paragraph."
+    },
+    {
+      "feature": "Data storage",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "HealthPay Systems keeps a full copy of each borrower's medical records, bank statements and credit bureau report on its own servers to speed up repeat loans.",
+      "doc_evidence": "HealthPay Systems keeps a full copy of each borrower's medical records, bank statements and credit bureau report on its own servers to speed up repeat loans.",
+      "severity": "high",
+      "fix": "Implement encryption and access controls for stored data, and ensure that data storage practices comply with RBI and data protection regulations to prevent unauthorized access or breaches.",
+      "verifier_note": "The RBI paragraph prohibits LSPs from storing personal information of borrowers except for some basic minimal data. The product feature states that HealthPay Systems stores full copies of medical records, bank statements, and credit bureau reports, which are not considered basic minimal data. This storage of detailed personal information violates the RBI paragraph's restriction."
+    },
+    {
+      "feature": "Data storage",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "HealthPay Systems keeps a full copy of each borrower's medical records, bank statements and credit bureau report on its own servers to speed up repeat loans.",
+      "doc_evidence": "HealthPay Systems keeps a full copy of each borrower's medical records, bank statements and credit bureau report on its own servers to speed up repeat loans.",
+      "severity": "high",
+      "fix": "Implement encryption and access controls for stored data, and ensure that data storage practices comply with RBI and data protection regulations to prevent unauthorized access or breaches.",
+      "verifier_note": "The RBI paragraph requires that all data be stored only in servers located within India. The product feature states that HealthPay Systems keeps data on its own servers, which are not specified to be located in India. Since the location of the servers is not confirmed to be within India, the feature may violate the requirement of storing data only in Indian servers. The paragraph does not allow for data storage outside India unless it is deleted and brought back within 24 hours, which is not mentioned in the feature."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is paid directly into the hospital's bank account against the final bill.",
+      "doc_evidence": "The loan is paid directly into the hospital's bank account against the final bill.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly allows disbursal into the bank account of the end-beneficiary, which in this case is the hospital. The feature complies with the requirement that the loan be disbursed directly into the bank account of the end-beneficiary. There is no prohibition against disbursing to the hospital's account as long as it is the end-beneficiary. The paragraph does not forbid this action."
+    },
+    {
+      "feature": "APR and charges",
+      "rule_id": "KFS2024:7",
+      "issue": "The APR shown in the KFS covers interest and processing fee. Health insurance premium, which is mandatory and recovered by Arogya Finance on behalf of the insurer, is collected separately and is not included in the APR.",
+      "doc_evidence": "The APR shown in the KFS covers interest and processing fee. Health insurance premium, which is mandatory and recovered by Arogya Finance on behalf of the insurer, is collected separately and is not included in the APR.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that charges such as health insurance premiums, recovered by REs on behalf of third-party service providers, must be included in the APR and disclosed separately. The product feature states that health insurance premium is not included in the APR, which violates the requirement of the RBI paragraph. The feature does not include the health insurance premium in the APR, which is explicitly required by the paragraph."
+    },
+    {
+      "feature": "Data storage",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "HealthPay Systems keeps a full copy of each borrower's medical records, bank statements and credit bureau report on its own servers to speed up repeat loans.",
+      "doc_evidence": "HealthPay Systems keeps a full copy of each borrower's medical records, bank statements and credit bureau report on its own servers to speed up repeat loans.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph prohibits LSPs from storing personal information of borrowers except for some basic minimal data. The product feature states that HealthPay Systems stores full copies of medical records, bank statements, and credit bureau reports, which are not considered basic minimal data. This storage of detailed personal information violates the RBI paragraph's restriction."
+    },
+    {
+      "feature": "Data storage",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "HealthPay Systems keeps a full copy of each borrower's medical records, bank statements and credit bureau report on its own servers to speed up repeat loans.",
+      "doc_evidence": "HealthPay Systems keeps a full copy of each borrower's medical records, bank statements and credit bureau report on its own servers to speed up repeat loans.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that all data be stored only in servers located within India. The product feature states that HealthPay Systems keeps data on its own servers, which are not specified to be located in India. Since the location of the servers is not confirmed to be within India, the feature may violate the requirement of storing data only in Indian servers. The paragraph does not allow for data storage outside India unless it is deleted and brought back within 24 hours, which is not mentioned in the feature."
+    },
+    {
+      "feature": "Cooling-off",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product feature 'Cooling-off: Patients can exit within 3 days by repaying principal and proportionate APR, with no penalty' does not comply with the requirement that the cooling-off period shall be determined by the Board of the RE as laid down in their loan policy, subject to the period so determined not being less than one day.",
+      "doc_evidence": "Cooling-off: Patients can exit within 3 days by repaying principal and proportionate APR, with no penalty.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature specifies a cooling-off period of 3 days, which is consistent with the RBI requirement that the cooling-off period shall be determined by the Board of the RE as laid down in their loan policy, subject to the period not being less than one day. The feature does not contradict the requirement, as it adheres to the minimum period of one day and does not claim to determine the period itself. The paragraph does not prohibit a specific duration as long as it meets the minimum requirement."
+    },
+    {
+      "feature": "Consent",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The product feature states: \"Each consent screen explains why the data is being asked for at that step. Data is shared with the insurer only after the borrower gives explicit consent.\" This complies with the requirement to disclose the purpose of obtaining borrowers’ consent at each stage of interface with the borrowers.",
+      "doc_evidence": "Each consent screen explains why the data is being asked for at that step. Data is shared with the insurer only after the borrower gives explicit consent.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that each consent screen explains the purpose of data collection at each step, which aligns with the RBI paragraph's requirement to disclose the purpose of obtaining borrowers’ consent at each stage. The feature also ensures data is shared only after explicit consent, which is in line with the paragraph's intent. There is no indication that the feature violates the paragraph's requirements."
+    }
+  ],
+  "summary": "The compliance review of the MedLoan: Hospital Bill Financing product identified several findings against the reviewed RBI rules. The APR disclosed in the KFS includes interest and processing fees but does not account for mandatory health insurance premiums collected separately. Additionally, HealthPay Systems retains full copies of borrowers' medical records, bank statements, and credit bureau reports on its own servers, which may pose significant data privacy and security risks. These findings indicate potential non-compliance with regulatory requirements related to transparency and data handling.",
+  "trace": {
+    "llm_calls": 21,
+    "prompt_tokens": 12085,
+    "output_tokens": 1958,
+    "llm_seconds": 105.7,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 6,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 30,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:11(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:24(ii)",
+        "DLD2025:10(i)",
+        "KFS2024:7"
+      ],
+      "1:Product": [
+        "KFS2024:5",
+        "DLD2025:8(ii)",
+        "DLD2025:29(ii)",
+        "DLD2025:26(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(i)",
+        "DLD2025:20(i)",
+        "DLD2025:29(i)",
+        "DLD2025:16(i)",
+        "DLD2025:9(iv)",
+        "DLD2025:8(iii)",
+        "DLD2025:10(ii)",
+        "DLD2025:23(ii)",
+        "DLD2025:25(ii)"
+      ],
+      "2:APR and charges": [
+        "KFS2024:7",
+        "KFS2024:6",
+        "DLD2025:6(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:10(ii)",
+        "DLD2025:6(iv)",
+        "DLD2025:12(i)",
+        "DLD2025:10(i)",
+        "KFS2024:8",
+        "KFS2024:10",
+        "KFS2024:9",
+        "DLD2025:23(ii)"
+      ],
+      "3:Data storage": [
+        "DLD2025:13(ii)",
+        "DLD2025:13(i)",
+        "DLD2025:13(iv)",
+        "DLD2025:8(iv)",
+        "DLD2025:9(v)",
+        "DLD2025:13(iii)",
+        "DLD2025:14(i)",
+        "DLD2025:17(v)",
+        "DLD2025:5(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:6(iii)"
+      ],
+      "4:Cooling-off": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:26(i)",
+        "KFS2024:5",
+        "DLD2025:11(iv)",
+        "KFS2024:7",
+        "KFS2024:6",
+        "DLD2025:27(ii)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iv)"
+      ],
+      "5:Consent": [
+        "DLD2025:12(iii)",
+        "DLD2025:12(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:12(iv)",
+        "DLD2025:13(ii)",
+        "KFS2024:7",
+        "DLD2025:13(i)",
+        "DLD2025:8(v)",
+        "DLD2025:13(iii)",
+        "DLD2025:21(i)"
+      ]
+    }
+  },
+  "seconds": 106.2
+}

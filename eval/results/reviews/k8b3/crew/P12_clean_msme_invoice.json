@@ -1,0 +1,250 @@
+{
+  "system": "crew",
+  "doc_id": "P12_clean_msme_invoice",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature does not mention any fees, charges, or reimbursements payable to LSPs, which implies that the RE may not be directly paying such fees, which could lead to indirect charges to the borrower. However, the feature does not explicitly state that such fees are being charged to the borrower, so no finding is made.",
+      "doc_evidence": "Product: Term loans of ₹1,00,000 to ₹20,00,000 for traders, based on GST returns and bank statements.",
+      "severity": "low",
+      "fix": "Update the feature to explicitly mention any fees, charges, or reimbursements payable to LSPs, and clarify whether these are directly charged to the borrower or borne by the RE.",
+      "verifier_note": "The RBI paragraph explicitly requires that fees, charges, reimbursements, etc. payable to LSPs must be paid directly by the RE and not charged to or collected from the borrowers. The product feature does not mention any fees, charges, or reimbursements payable to LSPs, which could imply that the RE is not directly paying such fees. Since the feature does not confirm compliance with the requirement, it may violate the RBI paragraph. However, the claim states that no finding is made because the feature does not explicitly state that such fees are being charged to the borrower. This is a misinterpretation, as the absence of mention of fees payable to LSPs in the feature could be a violation of the RBI requirement. Therefore, the feature does not fully comply with the RBI paragraph."
+    },
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:17(i)",
+      "issue": "The feature states that 'Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.' However, the RBI requires that REs report all DLAs deployed or joined by them, whether their own or those of the LSPs, on the CIMS portal. The feature does not explicitly mention reporting the TradeCredit app as a DLA on the CIMS portal, which is a requirement under [DLD2025:17(i)].",
+      "doc_evidence": "Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.",
+      "severity": "high",
+      "fix": "Update the feature to explicitly state that the TradeCredit app is reported as a DLA on the RBI CIMS portal, in compliance with [DLD2025:17(i)].",
+      "verifier_note": "The RBI paragraph requires REs to report all DLAs (whether their own or those of LSPs) on the CIMS portal. The product feature states that Narmada Bank reported the TradeCredit app on the CIMS portal and reports all loans to credit information companies. However, the feature does not explicitly state that the TradeCredit app is a DLA or that it is reported as such on the CIMS portal. Since the paragraph requires reporting of DLAs, and the feature does not confirm that the TradeCredit app is a DLA being reported, it does not fully comply with the requirement. The feature may be compliant if the TradeCredit app is indeed a DLA, but the feature does not explicitly state this, making the claim valid."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature describes disbursal of loans into the borrower's bank account, which complies with the requirement that disbursement must always be made into the borrower's bank account, except for specific exceptions. No compliance gap is identified.",
+      "doc_evidence": "Product: Term loans of ₹1,00,000 to ₹20,00,000 for traders, based on GST returns and bank statements.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly states that loan disbursement must always be made into the borrower's bank account, except for specific exceptions such as statutory mandates, co-lending transactions, and specific end-use disbursals to end-beneficiaries. The product feature does not mention any exceptions or scenarios that would justify disbursing to a third-party account. Since the feature does not describe disbursing to a third-party account and aligns with the requirement to disburse to the borrower's account, there is no violation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The feature does not mention any ranking or promotion of loan offers by the LSP, which implies that the content displayed by the LSP is unbiased and does not directly or indirectly promote a product of a particular RE. No compliance gap is identified.",
+      "doc_evidence": "Product: Term loans of ₹1,00,000 to ₹20,00,000 for traders, based on GST returns and bank statements.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph prohibits the LSP from promoting or pushing a product of a particular RE, including through dark patterns, but allows ranking based on a publicly pre-disclosed metric. The product feature does not mention any ranking or promotion, so it does not violate the paragraph. The claim correctly identifies that there is no compliance gap."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The feature does not provide information on the digital view of loan offers from matching lenders, including the name(s) of the RE(s), amount, tenor, APR, monthly repayment obligation, and penal charges. This may indicate a non-compliance with the requirement to display such information for fair comparison. However, the feature does not explicitly state that such information is provided, so no finding is made.",
+      "doc_evidence": "Product: Term loans of ₹1,00,000 to ₹20,00,000 for traders, based on GST returns and bank statements.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the digital view of loan offers from matching lenders must include specific information such as the name(s) of the RE(s), amount, tenor, APR, monthly repayment obligation, and penal charges. The product feature does not mention providing any of this information. Since the feature does not state that such information is provided, it does not violate the requirement explicitly. However, the claim is based on the absence of information, which is not a violation as per the instructions. The feature does not mention providing the required information, so the claim cannot be confirmed as a violation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature does not mention any fees, charges, or reimbursements payable to LSPs, which implies that the RE may not be directly paying such fees, which could lead to indirect charges to the borrower. However, the feature does not explicitly state that such fees are being charged to the borrower, so no finding is made.",
+      "doc_evidence": "Product: Term loans of ₹1,00,000 to ₹20,00,000 for traders, based on GST returns and bank statements.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires that fees, charges, reimbursements, etc. payable to LSPs must be paid directly by the RE and not charged to or collected from the borrowers. The product feature does not mention any fees, charges, or reimbursements payable to LSPs, which could imply that the RE is not directly paying such fees. Since the feature does not confirm compliance with the requirement, it may violate the RBI paragraph. However, the claim states that no finding is made because the feature does not explicitly state that such fees are being charged to the borrower. This is a misinterpretation, as the absence of mention of fees payable to LSPs in the feature could be a violation of the RBI requirement. Therefore, the feature does not fully comply with the RBI paragraph."
+    },
+    {
+      "feature": "Offer Presentation",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The feature 'Offer Presentation' includes a ranking of loan offers based on APR, lowest first, which is a publicly pre-disclosed metric. While this is permissible under DLD2025:6(iv), the feature does not explicitly state that the ranking is based on a publicly pre-disclosed metric. This could be interpreted as potentially promoting a particular product, which may violate the requirement for the content to be unbiased and objective.",
+      "doc_evidence": "Offers are sorted by APR, lowest first, a ranking rule published on Ledgerly's website.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that the ranking is based on a publicly pre-disclosed metric (APR), which is allowed under DLD2025:6(iv). The paragraph explicitly permits ranking based on a publicly pre-disclosed metric and does not prohibit the feature as described. The claim that the feature does not explicitly state the ranking is based on a publicly pre-disclosed metric is not a violation, as the feature does mention the metric and the ranking rule is published on the website. The paragraph does not require explicit mention of the metric for the ranking to be permissible."
+    },
+    {
+      "feature": "Offer Presentation",
+      "rule_id": "DLD2025:6(i)",
+      "issue": "The feature 'Offer Presentation' mentions that lenders that did not match are named too. However, it does not explicitly state that the digital view of all loan offers matching the borrower’s request on the DLA meets the requirement of the borrower as required by DLD2025:6(i).",
+      "doc_evidence": "Lenders that did not match are named too.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the digital view of all loan offers matching the borrower’s request on the DLA meets the borrower's requirement. The product feature mentions that all matching offers are shown, but it does not explicitly confirm that these offers meet the borrower's requirements. The claim relies on what the feature leaves out, which is not a violation."
+    },
+    {
+      "feature": "Credit Limit Management",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The feature 'Credit Limit Management' states that 'Limits are increased only when the trader asks for an increase in the app; each request is assessed and recorded.' This complies with the requirement that there is no automatic increase in credit limit unless an explicit request is received, evaluated and kept on record from the borrower for such increase.",
+      "doc_evidence": "Limits are increased only when the trader asks for an increase in the app; each request is assessed and recorded.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that credit limits are only increased when the trader explicitly asks for an increase in the app, and each request is assessed and recorded. This directly aligns with the RBI requirement that there should be no automatic increase in credit limit unless an explicit request is received, evaluated, and kept on record. The feature does not allow for automatic increases, which is explicitly prohibited by the RBI paragraph. Therefore, the feature complies with the requirement."
+    },
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The feature describes a Default Loss Guarantee (DLG) of 5% of the amount disbursed in a fixed loan portfolio, which complies with the cap on DLG as per [DLD2025:23(i)] since it does not exceed five per cent of the total amount disbursed out of that loan portfolio at any given time.",
+      "doc_evidence": "Ledgerly gives Narmada Bank a DLG of 5% of the amount disbursed in a fixed loan portfolio, as a fixed deposit with a lien marked to the bank.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a DLG of 5% of the amount disbursed in a fixed loan portfolio, which aligns with the cap of five per cent of the total amount disbursed out of that loan portfolio at any given time as specified in [DLD2025:23(i)]. The feature does not exceed the cap and explicitly states the DLG is 5% of the disbursed amount. The paragraph does not prohibit this arrangement and allows for a DLG up to five per cent. Therefore, the feature complies with the requirement."
+    },
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The feature states that the Default Loss Guarantee is invoked within 90 days overdue, which is less than the maximum overdue period of 120 days specified in [DLD2025:26(i)].",
+      "doc_evidence": "It is invoked within 90 days overdue.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:26(i)] allows the invocation of DLG within a maximum overdue period of 120 days. The product feature specifies that the Default Loss Guarantee is invoked within 90 days overdue, which is within the allowed period. Therefore, the feature does not violate the paragraph."
+    },
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:24(i)",
+      "issue": "The feature does not mention the responsibility of the RE for recognizing individual loan assets in the portfolio as Non-Performing Asset (NPA) and consequent provisioning, which is required by [DLD2025:24(i)].",
+      "doc_evidence": "Default Loss Guarantee: Ledgerly gives Narmada Bank a DLG of 5% of the amount disbursed in a fixed loan portfolio, as a fixed deposit with a lien marked to the bank. It is invoked within 90 days overdue.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:24(i)] explicitly states that the responsibility for recognizing individual loan assets as NPA and consequent provisioning lies with the RE, irrespective of any DLG cover available at the portfolio level. The product feature describes a default loss guarantee (DLG) provided by Ledgerly to Narmada Bank, but it does not mention or imply that the RE is responsible for recognizing individual loan assets as NPA or provisioning. The feature does not conflict with the RBI paragraph because it does not perform an action that the paragraph forbids. The paragraph does not require the feature to mention the responsibility of the RE, and the feature does not violate any requirement of the paragraph."
+    },
+    {
+      "feature": "Recovery Process",
+      "rule_id": "DLD2025:9(v)",
+      "issue": "The feature states that 'any cash recovered is credited to the loan account the same day', which complies with the requirement that 'any recovery by cash shall be duly reflected in full in the borrower’s account on the same day'. However, the feature also states that 'Narmada Bank pays the agent's fee', which may imply that the fee is deducted from the recovery proceeds, which is not allowed as fees payable to LSPs must be paid directly by the RE and not charged from the recovery proceeds.",
+      "doc_evidence": "Any cash recovered is credited to the loan account the same day, and Narmada Bank pays the agent's fee.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that 'Narmada Bank pays the agent's fee', which implies that the fee is not deducted from the recovery proceeds. This complies with the RBI paragraph's requirement that fees payable to LSPs must be paid directly by the RE and not charged from the recovery proceeds. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:17(i)",
+      "issue": "The feature states that 'Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.' However, the RBI requires that REs report all DLAs deployed or joined by them, whether their own or those of the LSPs, on the CIMS portal. The feature does not explicitly mention reporting the TradeCredit app as a DLA on the CIMS portal, which is a requirement under [DLD2025:17(i)].",
+      "doc_evidence": "Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires REs to report all DLAs (whether their own or those of LSPs) on the CIMS portal. The product feature states that Narmada Bank reported the TradeCredit app on the CIMS portal and reports all loans to credit information companies. However, the feature does not explicitly state that the TradeCredit app is a DLA or that it is reported as such on the CIMS portal. Since the paragraph requires reporting of DLAs, and the feature does not confirm that the TradeCredit app is a DLA being reported, it does not fully comply with the requirement. The feature may be compliant if the TradeCredit app is indeed a DLA, but the feature does not explicitly state this, making the claim valid."
+    },
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "The feature states that 'Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.' However, the RBI requires that REs ensure that any lending done through their DLAs and/or DLAs of LSPs is reported to CICs irrespective of its nature/tenor. The feature does not explicitly mention reporting all loans to CICs, which is a requirement under [DLD2025:16(i)].",
+      "doc_evidence": "Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that Narmada Bank reports all loans to credit information companies, which directly complies with the requirement in [DLD2025:16(i)] that REs ensure all lending through DLAs and/or DLAs of LSPs is reported to CICs. The claim that the feature does not mention reporting all loans to CICs is incorrect, as the feature clearly states this. Therefore, the feature does not violate the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the TradeCredit product, specifically the Working Capital Loans for Small Traders, identified two findings against the reviewed RBI rules. A low-severity finding relates to the lack of explicit mention of fees, charges, or reimbursements payable to LSPs, which may lead to indirect charges to the borrower. A high-severity finding indicates that the feature does not explicitly mention reporting the TradeCredit app as a DLA on the RBI CIMS portal, which is a mandatory requirement under [DLD2025:17(i)].",
+  "trace": {
+    "llm_calls": 28,
+    "prompt_tokens": 16590,
+    "output_tokens": 4075,
+    "llm_seconds": 204.3,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 13,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 37,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:8(iii)",
+        "DLD2025:8(i)",
+        "KFS2024:5",
+        "DLD2025:20(iii)",
+        "DLD2025:27(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(v)",
+        "DLD2025:25(i)",
+        "DLD2025:16(i)",
+        "DLD2025:15(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:6(iv)",
+        "DLD2025:9(iv)"
+      ],
+      "1:Offer Presentation": [
+        "DLD2025:6(iii)",
+        "KFS2024:6",
+        "DLD2025:6(ii)",
+        "KFS2024:7",
+        "DLD2025:6(iv)",
+        "KFS2024:10",
+        "DLD2025:16(ii)",
+        "DLD2025:8(ii)",
+        "DLD2025:6(i)",
+        "KFS2024:8",
+        "DLD2025:17(iv)",
+        "DLD2025:9(v)",
+        "DLD2025:8(iii)"
+      ],
+      "2:Credit Limit Management": [
+        "DLD2025:7(ii)",
+        "KFS2024:6",
+        "DLD2025:29(i)",
+        "DLD2025:7(i)",
+        "DLD2025:16(ii)",
+        "KFS2024:5",
+        "KFS2024:10",
+        "DLD2025:23(ii)",
+        "DLD2025:25(i)",
+        "DLD2025:23(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:8(ii)",
+        "DLD2025:8(v)"
+      ],
+      "3:Default Loss Guarantee": [
+        "DLD2025:22(i)",
+        "DLD2025:23(i)",
+        "DLD2025:26(i)",
+        "DLD2025:24(ii)",
+        "DLD2025:23(ii)",
+        "DLD2025:20(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:19(ii)",
+        "DLD2025:16(ii)",
+        "DLD2025:19(iii)",
+        "DLD2025:25(ii)",
+        "DLD2025:24(iv)",
+        "DLD2025:27(i)",
+        "DLD2025:24(i)"
+      ],
+      "4:Recovery Process": [
+        "DLD2025:8(v)",
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:24(iii)",
+        "DLD2025:5(v)",
+        "KFS2024:7",
+        "DLD2025:11(iv)",
+        "DLD2025:8(iii)",
+        "DLD2025:6(iii)"
+      ],
+      "5:Credit Bureau Reporting": [
+        "DLD2025:17(vii)",
+        "DLD2025:16(i)",
+        "DLD2025:17(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:17(v)",
+        "DLD2025:17(ii)",
+        "KFS2024:10",
+        "DLD2025:17(iii)",
+        "DLD2025:8(iv)",
+        "DLD2025:17(iv)",
+        "DLD2025:11(iv)"
+      ]
+    }
+  },
+  "seconds": 204.8
+}

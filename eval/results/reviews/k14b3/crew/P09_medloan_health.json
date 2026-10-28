@@ -1,0 +1,171 @@
+{
+  "system": "crew",
+  "doc_id": "P09_medloan_health",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is disbursed directly into the hospital's bank account, which may be considered a third-party account unless explicitly covered under a statutory or regulatory mandate. The RBI directive explicitly requires that loan disbursal be made into the borrower's bank account, except in specific cases where the loan is disbursed directly into the end-beneficiary's account. The hospital, in this context, may not be the borrower, and the feature does not clarify that this is an exception under a statutory or regulatory mandate.",
+      "doc_evidence": "The loan is paid directly into the hospital's bank account against the final bill.",
+      "severity": "high",
+      "fix": "Clarify in the loan feature that the disbursement into the hospital's account is explicitly permitted under a statutory or regulatory mandate, or modify the process to ensure disbursement is made into the borrower's account as per RBI guidelines.",
+      "verifier_note": "The RBI paragraph allows disbursement into the end-beneficiary's account, but only if the loan is for a specific end use. The product feature states that the loan is paid directly into the hospital's bank account against the final bill. However, the feature does not clarify whether the hospital is the end-beneficiary or whether this disbursement is covered under a statutory or regulatory mandate. Since the feature does not confirm that the hospital is the end-beneficiary or that the disbursement is under an exception, it may be considered a violation of the RBI directive."
+    },
+    {
+      "feature": "apr_and_charges",
+      "rule_id": "KFS2024:7",
+      "issue": "The product feature states that health insurance premium is collected separately and is not included in the APR, even though it is recovered by the RE on behalf of the third-party service provider. According to RBI guidelines, such charges must be included in the APR and disclosed separately.",
+      "doc_evidence": "The APR shown in the KFS covers interest and processing fee. Health insurance premium, which is mandatory and recovered by Arogya Finance on behalf of the insurer, is collected separately and is not included in the APR.",
+      "severity": "medium",
+      "fix": "Revise the product feature to include health insurance premium in the APR calculation and disclose it separately as required by RBI guidelines.",
+      "verifier_note": "The RBI paragraph explicitly states that charges recovered by REs on behalf of third-party service providers, such as insurance charges, must be included in the APR and disclosed separately. The product feature mentions that health insurance premium is collected separately and not included in the APR, which directly contradicts the RBI guideline. Although the feature mentions that the charge is recovered by the RE on behalf of the insurer, it fails to include it in the APR as required by the RBI paragraph."
+    },
+    {
+      "feature": "data_storage",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The LSP is storing more than the minimal required data (medical records, bank statements, and credit bureau reports) which is not permitted under the guidelines.",
+      "doc_evidence": "HealthPay Systems keeps a full copy of each borrower's medical records, bank statements and credit bureau report on its own servers to speed up repeat loans.",
+      "severity": "medium",
+      "fix": "Review and limit the data stored by the LSP to only the minimal required data as per guidelines, and implement data minimization practices.",
+      "verifier_note": "The RBI paragraph explicitly prohibits the LSP from storing personal information of the borrower except for some basic minimal data (name, address, contact details). The product feature states that the LSP stores medical records, bank statements, and credit bureau reports, which are not considered basic minimal data as defined in the paragraph. Therefore, the feature is storing more than what is permitted."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is disbursed directly into the hospital's bank account, which may be considered a third-party account unless explicitly covered under a statutory or regulatory mandate. The RBI directive explicitly requires that loan disbursal be made into the borrower's bank account, except in specific cases where the loan is disbursed directly into the end-beneficiary's account. The hospital, in this context, may not be the borrower, and the feature does not clarify that this is an exception under a statutory or regulatory mandate.",
+      "doc_evidence": "The loan is paid directly into the hospital's bank account against the final bill.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph allows disbursement into the end-beneficiary's account, but only if the loan is for a specific end use. The product feature states that the loan is paid directly into the hospital's bank account against the final bill. However, the feature does not clarify whether the hospital is the end-beneficiary or whether this disbursement is covered under a statutory or regulatory mandate. Since the feature does not confirm that the hospital is the end-beneficiary or that the disbursement is under an exception, it may be considered a violation of the RBI directive."
+    },
+    {
+      "feature": "apr_and_charges",
+      "rule_id": "KFS2024:7",
+      "issue": "The product feature states that health insurance premium is collected separately and is not included in the APR, even though it is recovered by the RE on behalf of the third-party service provider. According to RBI guidelines, such charges must be included in the APR and disclosed separately.",
+      "doc_evidence": "The APR shown in the KFS covers interest and processing fee. Health insurance premium, which is mandatory and recovered by Arogya Finance on behalf of the insurer, is collected separately and is not included in the APR.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that charges recovered by REs on behalf of third-party service providers, such as insurance charges, must be included in the APR and disclosed separately. The product feature mentions that health insurance premium is collected separately and not included in the APR, which directly contradicts the RBI guideline. Although the feature mentions that the charge is recovered by the RE on behalf of the insurer, it fails to include it in the APR as required by the RBI paragraph."
+    },
+    {
+      "feature": "data_storage",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The LSP is storing more than the minimal required data (medical records, bank statements, and credit bureau reports) which is not permitted under the guidelines.",
+      "doc_evidence": "HealthPay Systems keeps a full copy of each borrower's medical records, bank statements and credit bureau report on its own servers to speed up repeat loans.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits the LSP from storing personal information of the borrower except for some basic minimal data (name, address, contact details). The product feature states that the LSP stores medical records, bank statements, and credit bureau reports, which are not considered basic minimal data as defined in the paragraph. Therefore, the feature is storing more than what is permitted."
+    }
+  ],
+  "summary": "The compliance review of the MedLoan: Hospital Bill Financing product identified three findings against RBI guidelines. First, the loan disbursement into the hospital's account may not comply with DLD2025:9(i) unless explicitly covered under a statutory or regulatory mandate. Second, the exclusion of health insurance premium from the APR, despite being collected on behalf of a third-party service provider, violates KFS2024:7. Third, the LSP is storing more data than required, which is not permitted under DLD2025:13(i).",
+  "trace": {
+    "llm_calls": 18,
+    "prompt_tokens": 11725,
+    "output_tokens": 1496,
+    "llm_seconds": 141.7,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 3,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 27,
+    "retrieved": {
+      "0:disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:17(v)",
+        "DLD2025:15(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:20(i)",
+        "DLD2025:11(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:24(ii)",
+        "DLD2025:10(i)",
+        "KFS2024:7"
+      ],
+      "1:apr_and_charges": [
+        "KFS2024:7",
+        "KFS2024:6",
+        "DLD2025:6(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:10(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:10(i)",
+        "KFS2024:8",
+        "DLD2025:5(ii)",
+        "DLD2025:14(i)",
+        "DLD2025:12(i)",
+        "KFS2024:10",
+        "KFS2024:9",
+        "DLD2025:23(ii)"
+      ],
+      "2:data_storage": [
+        "DLD2025:13(ii)",
+        "DLD2025:13(i)",
+        "DLD2025:13(iv)",
+        "DLD2025:8(iv)",
+        "DLD2025:9(v)",
+        "DLD2025:13(iii)",
+        "DLD2025:5(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:6(iii)"
+      ],
+      "3:cooling_off_period": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:26(i)",
+        "KFS2024:5",
+        "DLD2025:11(iv)",
+        "DLD2025:15(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:8(iv)",
+        "KFS2024:7",
+        "KFS2024:6",
+        "DLD2025:27(ii)",
+        "DLD2025:9(iv)"
+      ],
+      "4:consent": [
+        "DLD2025:12(iii)",
+        "DLD2025:12(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:12(iv)",
+        "DLD2025:13(ii)",
+        "DLD2025:15(i)",
+        "KFS2024:7",
+        "DLD2025:13(i)",
+        "DLD2025:8(v)",
+        "DLD2025:13(iii)",
+        "DLD2025:21(i)"
+      ],
+      "5:product_description": [
+        "KFS2024:5",
+        "DLD2025:8(ii)",
+        "DLD2025:29(ii)",
+        "DLD2025:26(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:16(i)",
+        "DLD2025:14(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:8(iii)",
+        "DLD2025:10(ii)",
+        "DLD2025:23(ii)",
+        "DLD2025:25(ii)"
+      ]
+    }
+  },
+  "seconds": 142.4
+}

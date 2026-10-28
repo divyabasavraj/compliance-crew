@@ -1,0 +1,177 @@
+{
+  "system": "crew",
+  "doc_id": "P30_clean_used_car",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal Process",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is disbursed directly into the dealer's bank account, which is a third-party account, and the RBI guidelines explicitly state that loan disbursal should be made into the borrower's bank account, except in specific cases where the loan is disbursed directly into the end-beneficiary's account. The dealer is not the borrower in this case, and the feature does not indicate that the dealer is the end-beneficiary.",
+      "doc_evidence": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "severity": "high",
+      "fix": "Amend the loan disbursal process to ensure that funds are transferred directly into the borrower's bank account, as mandated by RBI guidelines. If the dealer is to receive the funds, establish a clear process where the dealer is explicitly identified as the end-beneficiary, with proper documentation and verification.",
+      "verifier_note": "The feature describes disbursing the loan into the dealer's bank account, which is a third-party account. According to the RBI paragraph, loan disbursal should be made into the borrower's bank account, except in specific cases where the loan is disbursed directly into the end-beneficiary's account. The feature does not indicate that the dealer is the end-beneficiary, and the dealer is not the borrower. Therefore, the feature violates the RBI guidelines by disbursing the loan into a third-party account without meeting the exception criteria."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal Process",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan is disbursed directly into the dealer's bank account, which is a third-party account, and the RBI guidelines explicitly state that loan disbursal should be made into the borrower's bank account, except in specific cases where the loan is disbursed directly into the end-beneficiary's account. The dealer is not the borrower in this case, and the feature does not indicate that the dealer is the end-beneficiary.",
+      "doc_evidence": "The loan is paid directly into the dealer's bank account, because the loan is only for buying that car.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The feature describes disbursing the loan into the dealer's bank account, which is a third-party account. According to the RBI paragraph, loan disbursal should be made into the borrower's bank account, except in specific cases where the loan is disbursed directly into the end-beneficiary's account. The feature does not indicate that the dealer is the end-beneficiary, and the dealer is not the borrower. Therefore, the feature violates the RBI guidelines by disbursing the loan into a third-party account without meeting the exception criteria."
+    },
+    {
+      "feature": "Default Loss Guarantee (DLG)",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The product feature states that the DLG is invoked within 90 days overdue, but the RBI paragraph requires that the DLG be invoked within a maximum overdue period of 120 days, unless the loan dues are made good by the borrower before that.",
+      "doc_evidence": "Default loss guarantee: CarKey Mobility, a company under the Companies Act, 2013, provides a DLG of 5% of each portfolio as cash deposited with Pench Bank, invoked within 90 days overdue, under a Board-approved policy.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph allows the invocation of DLG within a maximum overdue period of 120 days, unless the loan dues are made good by the borrower before that. The product feature states that the DLG is invoked within 90 days overdue, which is within the 120-day maximum allowed by the RBI paragraph. Therefore, the feature complies with the requirement."
+    },
+    {
+      "feature": "Default Loss Guarantee (DLG)",
+      "rule_id": "DLD2025:23(ii)",
+      "issue": "The product feature does not explicitly state that the DLG portfolio is fixed and not dynamic, as required by the RBI paragraph.",
+      "doc_evidence": "Default loss guarantee: CarKey Mobility, a company under the Companies Act, 2013, provides a DLG of 5% of each portfolio as cash deposited with Pench Bank, invoked within 90 days overdue, under a Board-approved policy. The DLG runs for 7 years, longer than any loan in the portfolio. CarKey publishes its DLG portfolios and amounts on its website every month within seven working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the DLG portfolio be fixed and not dynamic. The product feature describes a DLG that runs for 7 years and mentions that CarKey publishes its DLG portfolios and amounts on its website every month. This implies that the portfolio may change over time, which could suggest that it is dynamic. However, the feature does not explicitly state that the portfolio is dynamic or that it changes, and it also does not explicitly confirm that it is fixed. Since the paragraph requires the portfolio to be fixed and not dynamic, and the feature does not explicitly confirm this, the claimed violation is based on the absence of explicit confirmation rather than an explicit contradiction. Therefore, the feature does not necessarily violate the paragraph."
+    },
+    {
+      "feature": "Default Loss Guarantee (DLG)",
+      "rule_id": "DLD2025:27(i)",
+      "issue": "The product feature states that CarKey publishes its DLG portfolios and amounts on its website every month within seven working days, which aligns with the requirement. However, the feature does not explicitly mention whether the name of the RE (Pench Bank) is disclosed as part of the disclosure, which is permitted under the RBI paragraph.",
+      "doc_evidence": "CarKey publishes its DLG portfolios and amounts on its website every month within seven working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph allows the RE's name to be disclosed or not, and the feature does not mention whether the RE's name is disclosed. Since the paragraph permits either case and the feature does not claim to violate this, there is no violation."
+    },
+    {
+      "feature": "Default Loss Guarantee (DLG)",
+      "rule_id": "DLD2025:27(ii)",
+      "issue": "The product feature states that CarKey publishes its DLG portfolios and amounts on its website every month within seven working days, which aligns with the requirement that disclosure be made on a monthly basis, no later than seven (7) working days following the conclusion of that month.",
+      "doc_evidence": "CarKey publishes its DLG portfolios and amounts on its website every month within seven working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that CarKey publishes its DLG portfolios and amounts on its website every month within seven working days, which aligns with the requirement that disclosure be made on a monthly basis, no later than seven (7) working days following the conclusion of that month."
+    },
+    {
+      "feature": "Default Loss Guarantee (DLG)",
+      "rule_id": "DLD2025:19(i)",
+      "issue": "The product feature states that the DLG is provided under a Board-approved policy, which aligns with the requirement that REs put in place a Board-approved policy before entering into any DLG arrangement.",
+      "doc_evidence": "Default loss guarantee: CarKey Mobility, a company under the Companies Act, 2013, provides a DLG of 5% of each portfolio as cash deposited with Pench Bank, invoked within 90 days overdue, under a Board-approved policy.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly mentions that the DLG is provided under a Board-approved policy, which directly complies with the requirement in the RBI paragraph that REs (including those acting as DLG providers) must put in place a Board-approved policy before entering into any DLG arrangement. The feature meets the requirement stated in the paragraph."
+    },
+    {
+      "feature": "Default Loss Guarantee (DLG)",
+      "rule_id": "DLD2025:18(i)",
+      "issue": "The product feature states that CarKey Mobility, a company under the Companies Act, 2013, provides the DLG, which aligns with the requirement that the LSP providing DLG shall be incorporated as a company under the Companies Act, 2013.",
+      "doc_evidence": "Default loss guarantee: CarKey Mobility, a company under the Companies Act, 2013, provides a DLG of 5% of each portfolio as cash deposited with Pench Bank, invoked within 90 days overdue, under a Board-approved policy.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that CarKey Mobility, which is a company under the Companies Act, 2013, provides the DLG. This aligns with the requirement in the RBI paragraph that the LSP providing DLG shall be incorporated as a company under the Companies Act, 2013. There is no indication that CarKey Mobility is not an eligible LSP or that it is not providing DLG in accordance with the rules. The feature does not violate the paragraph."
+    }
+  ],
+  "summary": "A high-risk compliance gap was identified under DLD2025:9(i). The loan is being disbursed directly into the dealer's bank account, which is a third-party account. According to RBI guidelines, loan disbursement should be made into the borrower's bank account, except in cases where the end-beneficiary is the recipient. In this scenario, the dealer is neither the borrower nor the end-beneficiary, which violates the specified guidelines.",
+  "trace": {
+    "llm_calls": 20,
+    "prompt_tokens": 12431,
+    "output_tokens": 2294,
+    "llm_seconds": 206.8,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 7,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 27,
+    "retrieved": {
+      "0:Product Description": [
+        "KFS2024:5",
+        "DLD2025:6(iii)",
+        "DLD2025:26(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:26(i)",
+        "DLD2025:15(i)",
+        "DLD2025:16(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:17(v)",
+        "DLD2025:9(i)",
+        "DLD2025:20(iii)",
+        "DLD2025:29(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:6(iv)",
+        "DLD2025:7(i)"
+      ],
+      "1:Disbursal Process": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:8(v)",
+        "DLD2025:6(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:7(ii)",
+        "KFS2024:7"
+      ],
+      "2:Default Loss Guarantee (DLG)": [
+        "DLD2025:26(i)",
+        "DLD2025:23(i)",
+        "DLD2025:23(ii)",
+        "DLD2025:26(ii)",
+        "DLD2025:22(i)",
+        "DLD2025:17(vi)",
+        "DLD2025:15(i)",
+        "DLD2025:5(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:16(i)",
+        "DLD2025:17(v)",
+        "DLD2025:17(vii)",
+        "DLD2025:27(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:18(i)",
+        "DLD2025:19(iii)",
+        "DLD2025:19(i)"
+      ],
+      "3:Data Collection and Storage": [
+        "DLD2025:13(iv)",
+        "DLD2025:12(i)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:17(v)",
+        "DLD2025:15(i)",
+        "DLD2025:14(i)",
+        "DLD2025:12(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:13(i)",
+        "DLD2025:17(iv)",
+        "DLD2025:17(iii)"
+      ],
+      "4:Credit Bureau Reporting and Grievance Redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:11(i)",
+        "KFS2024:6",
+        "DLD2025:17(i)",
+        "DLD2025:11(iii)",
+        "DLD2025:17(iv)",
+        "KFS2024:8",
+        "KFS2024:4",
+        "DLD2025:17(v)",
+        "KFS2024:7"
+      ]
+    }
+  },
+  "seconds": 207.3
+}

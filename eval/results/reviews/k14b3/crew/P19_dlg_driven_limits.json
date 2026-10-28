@@ -1,0 +1,167 @@
+{
+  "system": "crew",
+  "doc_id": "P19_dlg_driven_limits",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Credit Decision Process",
+      "rule_id": "DLD2025:7(i)",
+      "issue": "The product feature explicitly states that Satpura Finance does not perform its own credit check and does not collect information such as age, occupation, and income, which are required by RBI for assessing the borrower’s creditworthiness.",
+      "doc_evidence": "Because QuickLine Tech's DLG covers losses, Satpura Finance approves every applicant QuickLine sends without its own credit check. The app collects only name, phone and PAN; age, occupation and income are not asked.",
+      "severity": "high",
+      "fix": "Implement a credit assessment process that collects and evaluates required borrower information (age, occupation, income) as mandated by RBI, even if DLG is used for risk mitigation.",
+      "verifier_note": "The RBI paragraph [DLD2025:7(i)] explicitly requires that the RE (in this case, Satpura Finance) obtain information relating to the borrower’s economic profile, including age, occupation, and income, as part of assessing creditworthiness. The product feature explicitly states that Satpura Finance does not collect this information and relies solely on QuickLine Tech’s DLG, which does not perform its own credit check. This directly contradicts the requirement in the RBI paragraph, as the necessary information is not collected, thereby failing to comply with the regulation."
+    },
+    {
+      "feature": "Credit Decision Process",
+      "rule_id": "DLD2025:19(ii)",
+      "issue": "The product feature indicates that Satpura Finance relies entirely on the DLG arrangement for credit decisions, which violates the requirement that robust credit underwriting standards must be in place irrespective of DLG cover.",
+      "doc_evidence": "Because QuickLine Tech's DLG covers losses, Satpura Finance approves every applicant QuickLine sends without its own credit check.",
+      "severity": "high",
+      "fix": "Establish independent credit underwriting standards and processes that are not solely reliant on DLG arrangements, ensuring compliance with RBI's requirements for robust credit evaluation.",
+      "verifier_note": "The product feature describes a process where Satpura Finance approves every applicant sent by QuickLine Tech without conducting its own credit check, relying entirely on the DLG arrangement. This directly contradicts the RBI paragraph [DLD2025:19(ii)], which explicitly states that robust credit underwriting standards must be in place irrespective of DLG cover. The paragraph forbids using the DLG arrangement as a substitute for credit appraisal, which is exactly what the feature describes."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Product Description",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The product description does not mention providing a digital view of loan offers from matching lenders, including the name(s) of the RE(s), amount and tenor of loan, APR, monthly repayment obligation, and penal charges (if applicable), nor does it mention providing a link to the KFS for each RE.",
+      "doc_evidence": "1. Product: One-time personal loans of ₹5,000 to ₹40,000, tenor 3 to 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:6(iii)] applies to RE-LSP arrangements involving multiple lenders and requires the digital view of loan offers to include specific details and a link to the KFS. The product feature described is a one-time personal loan product from a single lender, not an RE-LSP arrangement involving multiple lenders. Therefore, the paragraph does not apply to this product, and the feature does not violate the paragraph."
+    },
+    {
+      "feature": "Credit Decision Process",
+      "rule_id": "DLD2025:7(i)",
+      "issue": "The product feature explicitly states that Satpura Finance does not perform its own credit check and does not collect information such as age, occupation, and income, which are required by RBI for assessing the borrower’s creditworthiness.",
+      "doc_evidence": "Because QuickLine Tech's DLG covers losses, Satpura Finance approves every applicant QuickLine sends without its own credit check. The app collects only name, phone and PAN; age, occupation and income are not asked.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:7(i)] explicitly requires that the RE (in this case, Satpura Finance) obtain information relating to the borrower’s economic profile, including age, occupation, and income, as part of assessing creditworthiness. The product feature explicitly states that Satpura Finance does not collect this information and relies solely on QuickLine Tech’s DLG, which does not perform its own credit check. This directly contradicts the requirement in the RBI paragraph, as the necessary information is not collected, thereby failing to comply with the regulation."
+    },
+    {
+      "feature": "Credit Decision Process",
+      "rule_id": "DLD2025:19(ii)",
+      "issue": "The product feature indicates that Satpura Finance relies entirely on the DLG arrangement for credit decisions, which violates the requirement that robust credit underwriting standards must be in place irrespective of DLG cover.",
+      "doc_evidence": "Because QuickLine Tech's DLG covers losses, Satpura Finance approves every applicant QuickLine sends without its own credit check.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a process where Satpura Finance approves every applicant sent by QuickLine Tech without conducting its own credit check, relying entirely on the DLG arrangement. This directly contradicts the RBI paragraph [DLD2025:19(ii)], which explicitly states that robust credit underwriting standards must be in place irrespective of DLG cover. The paragraph forbids using the DLG arrangement as a substitute for credit appraisal, which is exactly what the feature describes."
+    },
+    {
+      "feature": "Disbursal and Repayment Process",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product feature states that 'loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.' However, the RBI paragraph explicitly requires that 'all loan servicing, repayment, etc. is executed by the borrower directly in the RE’s bank account without any pass-through account/pool account of any third party, including the accounts of LSP.'",
+      "doc_evidence": "Loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that loan servicing and repayment be executed directly into the RE’s bank account without any pass-through or pool account of a third party, including LSP. The product feature states that repayment is made directly to Satpura Finance's account, which is the RE’s account. This complies with the requirement as there is no mention of a third-party account being used for pass-through or pooling. The feature does not violate the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the product 'QuickLine: Instant Credit Backed by Partner Guarantee' identified two high-priority gaps. First, the product explicitly states that Satpura Finance does not perform its own credit check and does not collect essential borrower information such as age, occupation, and income, which are required by RBI under DLD2025:7(i) for assessing creditworthiness. Second, the product relies entirely on the DLG arrangement for credit decisions, which violates the requirement under DLD2025:19(ii) that robust credit underwriting standards must be in place irrespective of DLG cover.",
+  "trace": {
+    "llm_calls": 17,
+    "prompt_tokens": 11657,
+    "output_tokens": 1670,
+    "llm_seconds": 155.3,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 4,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 24,
+    "retrieved": {
+      "0:Product Description": [
+        "KFS2024:5",
+        "DLD2025:10(ii)",
+        "DLD2025:12(iv)",
+        "DLD2025:26(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:10(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:14(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:9(i)",
+        "DLD2025:16(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:26(ii)",
+        "DLD2025:27(ii)"
+      ],
+      "1:Credit Decision Process": [
+        "DLD2025:19(ii)",
+        "DLD2025:20(ii)",
+        "DLD2025:12(i)",
+        "DLD2025:20(i)",
+        "DLD2025:25(i)",
+        "DLD2025:10(i)",
+        "DLD2025:15(i)",
+        "DLD2025:24(ii)",
+        "DLD2025:17(vi)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(i)",
+        "DLD2025:14(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:27(i)",
+        "DLD2025:19(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:7(i)",
+        "DLD2025:19(i)"
+      ],
+      "2:Default Loss Guarantee (DLG)": [
+        "DLD2025:23(i)",
+        "DLD2025:19(i)",
+        "DLD2025:23(ii)",
+        "DLD2025:27(i)",
+        "DLD2025:22(i)",
+        "DLD2025:17(vi)",
+        "DLD2025:20(ii)",
+        "DLD2025:19(iii)",
+        "DLD2025:8(iv)",
+        "DLD2025:15(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:21(i)",
+        "DLD2025:25(i)",
+        "DLD2025:25(ii)",
+        "DLD2025:19(ii)"
+      ],
+      "3:Disbursal and Repayment Process": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:20(iii)",
+        "DLD2025:29(ii)",
+        "DLD2025:6(ii)",
+        "DLD2025:5(ii)",
+        "DLD2025:11(i)",
+        "DLD2025:17(ii)"
+      ],
+      "4:Cooling-off Period": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:26(i)",
+        "KFS2024:5",
+        "KFS2024:7",
+        "DLD2025:15(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:11(iv)",
+        "KFS2024:6",
+        "DLD2025:9(iv)",
+        "DLD2025:9(v)"
+      ]
+    }
+  },
+  "seconds": 155.9
+}

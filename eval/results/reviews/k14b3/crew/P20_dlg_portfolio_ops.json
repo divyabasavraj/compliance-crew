@@ -1,0 +1,180 @@
+{
+  "system": "crew",
+  "doc_id": "P20_dlg_portfolio_ops",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "DLG Invocation and Reinstatement",
+      "rule_id": "DLD2025:24(iv)",
+      "issue": "Reinstatement of DLG after invocation",
+      "doc_evidence": "When Meridian later recovers money from a loan on which DLG was invoked, the recovered amount is used to top the DLG back up to its original level.",
+      "severity": "medium",
+      "fix": "Revise the DLG policy to ensure that reinstatement procedures are clearly defined and aligned with regulatory requirements, including proper documentation and approval processes.",
+      "verifier_note": "The RBI paragraph explicitly states that once the DLG amount is invoked by the RE, it shall not be reinstated, including through loan recovery. The product feature describes a process where the DLG is reinstated by using recovered funds to top it back up to its original level, which directly contradicts the prohibition outlined in the RBI paragraph."
+    },
+    {
+      "feature": "Borrower Account Management",
+      "rule_id": "DLD2025:24(ii)",
+      "issue": "The product feature states that 'Once DLG is invoked for a loan, Meridian marks the borrower's outstanding as reduced by the invoked amount.' This directly contradicts the requirement that 'the liability of the borrowers in respect of the underlying loan shall remain unaffected.'",
+      "doc_evidence": "Once DLG is invoked for a loan, Meridian marks the borrower's outstanding as reduced by the invoked amount.",
+      "severity": "high",
+      "fix": "Amend the product feature to ensure that invoking DLG does not reduce the borrower's outstanding liability, and update internal systems and processes to reflect this requirement.",
+      "verifier_note": "The product feature describes a process where invoking DLG reduces the borrower's outstanding balance, which directly contradicts the RBI paragraph that explicitly states the liability of the borrowers in respect of the underlying loan shall remain unaffected."
+    },
+    {
+      "feature": "DLG Agreement Tenor",
+      "rule_id": "DLD2025:26(ii)",
+      "issue": "The DLG agreement tenor is 12 months, while the loans in the portfolio have tenors of up to 24 months. This violates the requirement that the DLG agreement period must not be less than the longest tenor of the loan in the underlying loan portfolio.",
+      "doc_evidence": "4. Tenor: The DLG agreement runs for 12 months, while loans in the portfolio have tenors of up to 24 months.",
+      "severity": "high",
+      "fix": "Adjust the DLG agreement tenor to be at least 24 months to align with the longest loan tenor in the portfolio, and update all DLG agreements accordingly.",
+      "verifier_note": "The RBI paragraph [DLD2025:26(ii)] states that the DLG agreement period must not be less than the longest tenor of the loans in the underlying loan portfolio. The product feature indicates that the DLG agreement runs for 12 months, while the loans in the portfolio have tenors of up to 24 months. This means the DLG agreement period is less than the longest tenor of the loans in the portfolio, which violates the requirement."
+    },
+    {
+      "feature": "Disclosure Requirements",
+      "rule_id": "DLD2025:27(i)",
+      "issue": "The product feature states that PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter. However, the RBI paragraph requires that LSPs publish the total number of portfolios and the respective amount of each portfolio on which DLG has been offered. The feature does not specify that the amount of each portfolio is disclosed, only the total amount covered.",
+      "doc_evidence": "PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter.",
+      "severity": "medium",
+      "fix": "Revise the disclosure feature to ensure that PayNest publishes the total number of portfolios and the respective amount of each portfolio on which DLG has been offered, as required by RBI.",
+      "verifier_note": "The RBI paragraph requires that LSPs disclose the 'respective amount of each portfolio' on which DLG has been offered. The product feature only mentions that PayNest discloses the 'total amount covered,' not the amount of each individual portfolio. Therefore, the feature does not fully comply with the requirement specified in the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Default Loss Guarantee (DLG) Coverage",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The DLG cover provided by PayNest is 4% of each quarterly portfolio, but the RBI requires that the total DLG cover on any outstanding portfolio shall not exceed five per cent of the total amount disbursed out of that loan portfolio at any given time. The product feature does not explicitly state that the DLG cover is capped at 5% of the total amount disbursed, which could potentially violate this requirement.",
+      "doc_evidence": "Cover: PayNest provides DLG cover of 4% of each quarterly portfolio as a bank guarantee in favour of Meridian Finance.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph specifies that the total DLG cover on any outstanding portfolio shall not exceed five per cent of the total amount disbursed out of that loan portfolio at any given time. The product feature states that PayNest provides DLG cover of 4% of each quarterly portfolio, which is below the 5% cap specified in the RBI paragraph. Therefore, the feature complies with the requirement."
+    },
+    {
+      "feature": "DLG Invocation and Reinstatement",
+      "rule_id": "DLD2025:24(iv)",
+      "issue": "Reinstatement of DLG after invocation",
+      "doc_evidence": "When Meridian later recovers money from a loan on which DLG was invoked, the recovered amount is used to top the DLG back up to its original level.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that once the DLG amount is invoked by the RE, it shall not be reinstated, including through loan recovery. The product feature describes a process where the DLG is reinstated by using recovered funds to top it back up to its original level, which directly contradicts the prohibition outlined in the RBI paragraph."
+    },
+    {
+      "feature": "Borrower Account Management",
+      "rule_id": "DLD2025:24(ii)",
+      "issue": "The product feature states that 'Once DLG is invoked for a loan, Meridian marks the borrower's outstanding as reduced by the invoked amount.' This directly contradicts the requirement that 'the liability of the borrowers in respect of the underlying loan shall remain unaffected.'",
+      "doc_evidence": "Once DLG is invoked for a loan, Meridian marks the borrower's outstanding as reduced by the invoked amount.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a process where invoking DLG reduces the borrower's outstanding balance, which directly contradicts the RBI paragraph that explicitly states the liability of the borrowers in respect of the underlying loan shall remain unaffected."
+    },
+    {
+      "feature": "DLG Agreement Tenor",
+      "rule_id": "DLD2025:26(ii)",
+      "issue": "The DLG agreement tenor is 12 months, while the loans in the portfolio have tenors of up to 24 months. This violates the requirement that the DLG agreement period must not be less than the longest tenor of the loan in the underlying loan portfolio.",
+      "doc_evidence": "4. Tenor: The DLG agreement runs for 12 months, while loans in the portfolio have tenors of up to 24 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:26(ii)] states that the DLG agreement period must not be less than the longest tenor of the loans in the underlying loan portfolio. The product feature indicates that the DLG agreement runs for 12 months, while the loans in the portfolio have tenors of up to 24 months. This means the DLG agreement period is less than the longest tenor of the loans in the portfolio, which violates the requirement."
+    },
+    {
+      "feature": "Disclosure Requirements",
+      "rule_id": "DLD2025:27(i)",
+      "issue": "The product feature states that PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter. However, the RBI paragraph requires that LSPs publish the total number of portfolios and the respective amount of each portfolio on which DLG has been offered. The feature does not specify that the amount of each portfolio is disclosed, only the total amount covered.",
+      "doc_evidence": "PayNest publishes the number of DLG portfolios and the amount covered on its website once every quarter.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that LSPs disclose the 'respective amount of each portfolio' on which DLG has been offered. The product feature only mentions that PayNest discloses the 'total amount covered,' not the amount of each individual portfolio. Therefore, the feature does not fully comply with the requirement specified in the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the DLG Operations Manual for Meridian Finance x PayNest identified several gaps against the RBI guidelines. A medium severity issue was found regarding the reinstatement of DLG after invocation under DLD2025:24(iv). A high severity issue was identified under DLD2025:24(ii), as the product feature incorrectly reduces the borrower's outstanding liability upon DLG invocation, which contradicts the requirement that the borrower's liability remains unaffected. Another high severity issue was found under DLD2025:26(ii), as the DLG agreement tenor of 12 months is shorter than the maximum loan tenor of 24 months in the portfolio. A medium severity issue was also identified under DLD2025:27(i), as the product feature only discloses the total amount covered by DLG portfolios, not the amount for each individual portfolio as required.",
+  "trace": {
+    "llm_calls": 18,
+    "prompt_tokens": 10480,
+    "output_tokens": 1945,
+    "llm_seconds": 175.1,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 5,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 25,
+    "retrieved": {
+      "0:Default Loss Guarantee (DLG) Coverage": [
+        "DLD2025:23(i)",
+        "DLD2025:23(ii)",
+        "DLD2025:21(i)",
+        "DLD2025:27(i)",
+        "DLD2025:22(i)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:20(iii)",
+        "DLD2025:19(ii)",
+        "DLD2025:19(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:24(i)",
+        "DLD2025:25(i)"
+      ],
+      "1:DLG Invocation and Reinstatement": [
+        "DLD2025:26(i)",
+        "DLD2025:25(ii)",
+        "DLD2025:19(iii)",
+        "DLD2025:26(ii)",
+        "DLD2025:21(i)",
+        "DLD2025:24(iii)",
+        "DLD2025:20(i)",
+        "DLD2025:24(iv)",
+        "DLD2025:9(v)",
+        "DLD2025:19(i)",
+        "DLD2025:24(ii)",
+        "DLD2025:23(i)"
+      ],
+      "2:Borrower Account Management": [
+        "DLD2025:24(ii)",
+        "DLD2025:25(ii)",
+        "DLD2025:24(iii)",
+        "DLD2025:24(iv)",
+        "DLD2025:23(i)",
+        "DLD2025:26(i)",
+        "DLD2025:19(iii)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:17(iv)"
+      ],
+      "3:DLG Agreement Tenor": [
+        "DLD2025:26(ii)",
+        "DLD2025:23(ii)",
+        "KFS2024:5",
+        "DLD2025:23(i)",
+        "DLD2025:27(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:26(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:24(iii)",
+        "DLD2025:25(i)",
+        "DLD2025:24(ii)",
+        "DLD2025:24(i)"
+      ],
+      "4:Disclosure Requirements": [
+        "DLD2025:27(i)",
+        "DLD2025:19(iii)",
+        "DLD2025:23(i)",
+        "DLD2025:21(i)",
+        "DLD2025:25(ii)",
+        "DLD2025:23(ii)",
+        "DLD2025:5(iv)",
+        "DLD2025:16(i)",
+        "DLD2025:17(v)",
+        "DLD2025:8(iv)",
+        "DLD2025:24(iv)",
+        "DLD2025:20(ii)"
+      ]
+    }
+  },
+  "seconds": 175.6
+}

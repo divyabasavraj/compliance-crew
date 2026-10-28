@@ -1,0 +1,235 @@
+{
+  "system": "crew",
+  "doc_id": "P13_payroll_advance",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app reads the worker's SMS inbox for salary credit messages and bank alerts every week without explicit consent from the borrower. The feature does not mention obtaining prior and explicit consent with an audit trail, which is required under [DLD2025:12(i)].",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "high",
+      "fix": "Implement a consent mechanism that requires explicit, prior consent from the borrower for accessing SMS inbox data, with an audit trail to record and track consent.",
+      "verifier_note": "The product feature involves reading the worker's SMS inbox for salary credit messages and bank alerts every week. This is not explicitly allowed under [DLD2025:12(i)], which prohibits accessing mobile phone resources like contact list, call logs, telephony functions, and restricts access to camera, microphone, location, or other facilities to only on-boarding/KYC purposes with explicit consent. The feature does not mention obtaining prior and explicit consent with an audit trail, which is required by the paragraph. Therefore, the feature violates the paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The feature does not provide the borrower with an option to give or deny consent for the use of specific data, restrict disclosure to third parties, or revoke consent already granted. This is a violation of [DLD2025:12(ii)].",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "high",
+      "fix": "Add a granular consent option in the app that allows the borrower to give, deny, restrict, or revoke consent for specific data uses and third-party disclosures.",
+      "verifier_note": "The product feature collects data (SMS inbox and bank alerts) without providing the borrower with an option to give or deny consent for the use of specific data, restrict disclosure to third parties, or revoke consent already granted. This directly violates [DLD2025:12(ii)], which explicitly requires these options."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The purpose of obtaining the borrower's consent is not disclosed at each stage of interface with the borrower. The feature does not mention disclosing the purpose of data collection, which is required under [DLD2025:12(iii)].",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "high",
+      "fix": "Update the interface to clearly disclose the purpose of data collection at each stage, ensuring transparency and compliance with DLD2025:12(iii).",
+      "verifier_note": "The product feature mentions that the app reads the worker's SMS inbox for salary credit messages and bank alerts every week to check repayment capacity. However, it does not explicitly state that the purpose of obtaining the borrower's consent is disclosed at each stage of interface with the borrower, as required by [DLD2025:12(iii)]. The feature does not mention disclosing the purpose of data collection, which is a requirement under the paragraph. Therefore, the feature fails to comply with the requirement of disclosing the purpose of obtaining consent at each stage."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The feature states that 'Narmada Finance and Bridgework Labs each have a named nodal grievance officer, listed on both websites, in the app and in the KFS.' However, the RBI paragraph requires that the contact details of the nodal grievance redressal officers shall be 'prominently displayed on the websites of the RE, its LSP and on the DLA, as well as in the KFS provided to the borrower.' The feature does not explicitly mention that the contact details are prominently displayed, which is a requirement under DLD2025:11(ii).",
+      "doc_evidence": "Narmada Finance and Bridgework Labs each have a named nodal grievance officer, listed on both websites, in the app and in the KFS.",
+      "severity": "medium",
+      "fix": "Ensure the contact details of the nodal grievance officers are prominently displayed on the RE, LSP, and DLA websites, as well as in the KFS provided to the borrower.",
+      "verifier_note": "The product feature mentions that the named nodal grievance officers are 'listed on both websites, in the app and in the KFS.' However, the RBI paragraph explicitly requires that the contact details be 'prominently displayed' on the websites of the RE, its LSP, and on the DLA, as well as in the KFS. The feature does not explicitly mention that the contact details are prominently displayed, which is a specific requirement under DLD2025:11(ii). Therefore, the feature does not fully comply with the paragraph's requirement."
+    },
+    {
+      "feature": "Know Your Customer (KFS) and Information Disclosure",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "doc_evidence": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "severity": "high",
+      "fix": "Translate the KFS into Hindi and Odia, and add a confirmation step to ensure the borrower understands the content before proceeding.",
+      "verifier_note": "The RBI paragraph requires that the KFS be provided in a language understood by the borrowers and that an acknowledgement be obtained that the borrower has understood the contents. The product feature states that the KFS is shown in English only, which may not be understood by most users who are Hindi- and Odia-speaking. Additionally, there is no step to confirm that the borrower has understood the KFS. This directly violates the requirements of the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature describes that the loan amount is credited to the worker's own salary bank account, which appears compliant. However, the feature also states that Bridgework Labs deducts its ₹150 service fee from the amount before it is credited. This may imply that the LSP is involved in the disbursal process, which could be a violation of [DLD2025:9(i)] as it may involve the LSP's account in the disbursal process.",
+      "doc_evidence": "The loan amount is credited to the worker's own salary bank account within 10 minutes. Bridgework Labs deducts its ₹150 service fee from the amount before it is credited, so the worker receives the loan minus the fee.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits disbursal to a third-party account, including the accounts of LSPs, except as provided for. The product feature states that the loan is credited to the worker's own salary bank account, which complies with the requirement. The deduction of the service fee does not involve the LSP's account, and the feature does not mention any third-party account being used for disbursal. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature states that Bridgework Labs deducts its ₹150 service fee from the amount before it is credited. This implies that the LSP is charging the borrower directly, which is a violation of [DLD2025:9(iv)] as fees, charges, reimbursements, etc., payable to LSPs should be paid directly by the RE and not charged to or collected from the borrowers separately by LSP.",
+      "doc_evidence": "Bridgework Labs deducts its ₹150 service fee from the amount before it is credited, so the worker receives the loan minus the fee.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that Bridgework Labs deducts its ₹150 service fee from the loan amount before crediting it to the worker's account. This means the fee is not charged to or collected from the borrower separately by the LSP (Bridgework Labs), but rather deducted directly by the RE (Bridgework Labs). The RBI paragraph [DLD2025:9(iv)] requires that fees payable to LSPs be paid directly by the RE and not charged to or collected from the borrowers. Since the feature aligns with this requirement by having the RE (LSP) deduct the fee directly, it does not violate the paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app reads the worker's SMS inbox for salary credit messages and bank alerts every week without explicit consent from the borrower. The feature does not mention obtaining prior and explicit consent with an audit trail, which is required under [DLD2025:12(i)].",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature involves reading the worker's SMS inbox for salary credit messages and bank alerts every week. This is not explicitly allowed under [DLD2025:12(i)], which prohibits accessing mobile phone resources like contact list, call logs, telephony functions, and restricts access to camera, microphone, location, or other facilities to only on-boarding/KYC purposes with explicit consent. The feature does not mention obtaining prior and explicit consent with an audit trail, which is required by the paragraph. Therefore, the feature violates the paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The feature does not provide the borrower with an option to give or deny consent for the use of specific data, restrict disclosure to third parties, or revoke consent already granted. This is a violation of [DLD2025:12(ii)].",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature collects data (SMS inbox and bank alerts) without providing the borrower with an option to give or deny consent for the use of specific data, restrict disclosure to third parties, or revoke consent already granted. This directly violates [DLD2025:12(ii)], which explicitly requires these options."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The purpose of obtaining the borrower's consent is not disclosed at each stage of interface with the borrower. The feature does not mention disclosing the purpose of data collection, which is required under [DLD2025:12(iii)].",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature mentions that the app reads the worker's SMS inbox for salary credit messages and bank alerts every week to check repayment capacity. However, it does not explicitly state that the purpose of obtaining the borrower's consent is disclosed at each stage of interface with the borrower, as required by [DLD2025:12(iii)]. The feature does not mention disclosing the purpose of data collection, which is a requirement under the paragraph. Therefore, the feature fails to comply with the requirement of disclosing the purpose of obtaining consent at each stage."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product feature states that 'the loan is repaid in one instalment on salary day.' This implies that the repayment is executed directly in the RE’s bank account without any pass-through account or pool account of any third party, including the accounts of LSP. The feature as described complies with the requirement in DLD2025:9(ii).",
+      "doc_evidence": "The loan is repaid in one instalment on salary day.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph DLD2025:9(ii) requires that all loan servicing, repayment, etc., is executed directly in the RE’s bank account without any pass-through account or pool account of any third party, including the accounts of LSP. The product feature states that the loan is repaid in one instalment on salary day, but it does not explicitly state that the repayment is executed directly in the RE’s bank account. The claim relies on an assumption not stated in the feature text, which is that the repayment is done in the RE’s account. Since the feature does not confirm this, the claim cannot be confirmed as compliant with the RBI requirement."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The feature states that 'Narmada Finance and Bridgework Labs each have a named nodal grievance officer, listed on both websites, in the app and in the KFS.' However, the RBI paragraph requires that the contact details of the nodal grievance redressal officers shall be 'prominently displayed on the websites of the RE, its LSP and on the DLA, as well as in the KFS provided to the borrower.' The feature does not explicitly mention that the contact details are prominently displayed, which is a requirement under DLD2025:11(ii).",
+      "doc_evidence": "Narmada Finance and Bridgework Labs each have a named nodal grievance officer, listed on both websites, in the app and in the KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature mentions that the named nodal grievance officers are 'listed on both websites, in the app and in the KFS.' However, the RBI paragraph explicitly requires that the contact details be 'prominently displayed' on the websites of the RE, its LSP, and on the DLA, as well as in the KFS. The feature does not explicitly mention that the contact details are prominently displayed, which is a specific requirement under DLD2025:11(ii). Therefore, the feature does not fully comply with the paragraph's requirement."
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The feature 'Cooling-off: Workers can cancel within 3 days by repaying the principal and proportionate interest, with no penalty' does not comply with the requirement that the borrower shall be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial 'cooling-off period'. The feature does not explicitly state that the APR is to be paid without penalty, which is a requirement under this paragraph.",
+      "doc_evidence": "Cooling-off: Workers can cancel within 3 days by repaying the principal and proportionate interest, with no penalty.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that workers can cancel within 3 days by repaying the principal and proportionate interest, with no penalty. The RBI paragraph requires that the borrower be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during the cooling-off period. The feature mentions 'proportionate interest' but does not explicitly mention 'proportionate APR'. Since the paragraph explicitly allows for the payment of APR without penalty, and the feature does not mention APR, the claim that the feature does not comply with the requirement is based on what the feature does not mention. Therefore, the claim is not valid."
+    },
+    {
+      "feature": "Know Your Customer (KFS) and Information Disclosure",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "doc_evidence": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the KFS be provided in a language understood by the borrowers and that an acknowledgement be obtained that the borrower has understood the contents. The product feature states that the KFS is shown in English only, which may not be understood by most users who are Hindi- and Odia-speaking. Additionally, there is no step to confirm that the borrower has understood the KFS. This directly violates the requirements of the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the PayDay Bridge: Salary Advance for Factory Workers product identified several gaps against the reviewed RBI rules. The app reads the worker's SMS inbox for salary credit messages and bank alerts without explicit consent, violating [DLD2025:12(i)]. It also fails to provide the borrower with options to give, deny, restrict, or revoke consent for data use, violating [DLD2025:12(ii)]. The purpose of data collection is not disclosed at each interface stage, violating [DLD2025:12(iii)]. Additionally, the KFS is not available in Hindi or Odia, and there is no confirmation that the worker has understood it, violating [KFS2024:4]. While the feature mentions the presence of grievance officers, it does not ensure their contact details are prominently displayed as required under [DLD2025:11(ii)].",
+  "trace": {
+    "llm_calls": 24,
+    "prompt_tokens": 14324,
+    "output_tokens": 3421,
+    "llm_seconds": 170.9,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 9,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 33,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:10(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:10(i)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)",
+        "DLD2025:11(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:7(i)",
+        "DLD2025:25(ii)",
+        "DLD2025:26(i)"
+      ],
+      "1:Data Collection": [
+        "DLD2025:12(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:12(iii)",
+        "DLD2025:7(i)",
+        "DLD2025:12(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:16(i)",
+        "DLD2025:7(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:17(ii)"
+      ],
+      "2:Repayment": [
+        "KFS2024:5",
+        "DLD2025:27(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:10(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:20(i)",
+        "KFS2024:10",
+        "DLD2025:7(ii)",
+        "DLD2025:6(iv)",
+        "DLD2025:8(iv)",
+        "DLD2025:10(ii)",
+        "DLD2025:13(ii)",
+        "DLD2025:9(ii)",
+        "DLD2025:12(i)"
+      ],
+      "3:Grievance Redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:11(i)",
+        "DLD2025:17(iv)",
+        "KFS2024:7",
+        "DLD2025:11(iii)",
+        "DLD2025:11(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:17(v)",
+        "KFS2024:10",
+        "KFS2024:6"
+      ],
+      "4:Cooling-off Period": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:26(i)",
+        "KFS2024:5",
+        "DLD2025:11(iv)",
+        "DLD2025:27(ii)",
+        "KFS2024:7",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(v)"
+      ],
+      "5:Know Your Customer (KFS) and Information Disclosure": [
+        "KFS2024:4",
+        "KFS2024:6",
+        "KFS2024:8",
+        "KFS2024:5",
+        "DLD2025:13(iv)",
+        "DLD2025:8(iii)",
+        "DLD2025:8(i)",
+        "DLD2025:7(ii)",
+        "DLD2025:19(iv)",
+        "KFS2024:9"
+      ]
+    }
+  },
+  "seconds": 171.4
+}

@@ -1,0 +1,164 @@
+{
+  "system": "crew",
+  "doc_id": "P29_recovery_practices",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Recovery Process",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "The product feature does not comply with the requirement to communicate the particulars of the recovery agent to the borrower before the recovery agent contacts them.",
+      "doc_evidence": "When a borrower misses two EMIs, DriveFin assigns a recovery agency, which calls and visits the borrower. Borrowers are not sent the agency's name or the agent's details before the first contact.",
+      "severity": "medium",
+      "fix": "Update the borrower communication process to explicitly inform them of the recovery agent's details before any contact is made.",
+      "verifier_note": "The RBI paragraph [DLD2025:8(v)] explicitly requires that the particulars of the recovery agent be communicated to the borrower through email/SMS before the recovery agent contacts them. The product feature states that borrowers are not sent the agency's name or the agent's details before the first contact, which directly contradicts the requirement in the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app reads the phone's contact list during the loan period for recovery purposes, which is not permitted under the RBI guidelines.",
+      "doc_evidence": "During the loan, the app reads the phone's contact list so agents can reach family members if the borrower cannot be contacted.",
+      "severity": "high",
+      "fix": "Discontinue the practice of reading the phone's contact list during the loan period and implement alternative, compliant recovery methods.",
+      "verifier_note": "The RBI paragraph explicitly prohibits the DLA of RE/LSP from accessing mobile phone resources like the contact list. The product feature describes the app reading the contact list during the loan period for recovery purposes, which is not allowed under the guidelines."
+    },
+    {
+      "feature": "Repayment Mechanism",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product feature describes that EMIs are debited from the borrower's account to Shivalik Bank by NACH, which implies that the repayment is being processed through a third-party (LSP) mechanism. This may violate the requirement that all loan servicing and repayment must be executed directly in the RE’s bank account without any pass-through account or pool account of a third party, including the accounts of LSP.",
+      "doc_evidence": "5. Repayment: EMIs are debited from the borrower's account to Shivalik Bank by NACH.",
+      "severity": "high",
+      "fix": "Modify the repayment mechanism to ensure that EMIs are directly credited to the RE's bank account, eliminating any third-party pass-through or pooling arrangements.",
+      "verifier_note": "The RBI paragraph explicitly prohibits the use of any pass-through or pool account of a third party, including LSPs, for loan servicing and repayment. The product feature describes that EMIs are debited from the borrower's account to Shivalik Bank by NACH. This implies that the repayment is being processed through a third-party mechanism (NACH), which may be considered a pass-through or pool account of a third party, as the paragraph defines. Therefore, the feature may be violating the requirement that all loan servicing and repayment must be executed directly in the RE’s bank account without any pass-through account or pool account of a third party."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Recovery Process",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "The product feature does not comply with the requirement to communicate the particulars of the recovery agent to the borrower before the recovery agent contacts them.",
+      "doc_evidence": "When a borrower misses two EMIs, DriveFin assigns a recovery agency, which calls and visits the borrower. Borrowers are not sent the agency's name or the agent's details before the first contact.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:8(v)] explicitly requires that the particulars of the recovery agent be communicated to the borrower through email/SMS before the recovery agent contacts them. The product feature states that borrowers are not sent the agency's name or the agent's details before the first contact, which directly contradicts the requirement in the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app reads the phone's contact list during the loan period for recovery purposes, which is not permitted under the RBI guidelines.",
+      "doc_evidence": "During the loan, the app reads the phone's contact list so agents can reach family members if the borrower cannot be contacted.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits the DLA of RE/LSP from accessing mobile phone resources like the contact list. The product feature describes the app reading the contact list during the loan period for recovery purposes, which is not allowed under the guidelines."
+    },
+    {
+      "feature": "Repayment Mechanism",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product feature describes that EMIs are debited from the borrower's account to Shivalik Bank by NACH, which implies that the repayment is being processed through a third-party (LSP) mechanism. This may violate the requirement that all loan servicing and repayment must be executed directly in the RE’s bank account without any pass-through account or pool account of a third party, including the accounts of LSP.",
+      "doc_evidence": "5. Repayment: EMIs are debited from the borrower's account to Shivalik Bank by NACH.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits the use of any pass-through or pool account of a third party, including LSPs, for loan servicing and repayment. The product feature describes that EMIs are debited from the borrower's account to Shivalik Bank by NACH. This implies that the repayment is being processed through a third-party mechanism (NACH), which may be considered a pass-through or pool account of a third party, as the paragraph defines. Therefore, the feature may be violating the requirement that all loan servicing and repayment must be executed directly in the RE’s bank account without any pass-through account or pool account of a third party."
+    }
+  ],
+  "summary": "The compliance review of the AutoCredit Recovery Process identified three key findings. First, the product does not comply with the requirement to communicate the particulars of the recovery agent to the borrower before contact, as mandated by DLD2025:8(v). Second, the app's practice of reading the phone's contact list during the loan period for recovery purposes violates DLD2025:12(i), as it is not permitted under RBI guidelines. Third, the use of a third-party (LSP) mechanism for NACH-based EMI processing through Shivalik Bank may violate DLD2025:9(ii), which requires all loan servicing and repayment to be executed directly in the RE’s bank account without any pass-through or pool account of a third party.",
+  "trace": {
+    "llm_calls": 16,
+    "prompt_tokens": 10986,
+    "output_tokens": 1388,
+    "llm_seconds": 131.3,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 3,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 23,
+    "retrieved": {
+      "0:Product Description": [
+        "KFS2024:5",
+        "DLD2025:6(iii)",
+        "DLD2025:8(iii)",
+        "DLD2025:26(i)",
+        "DLD2025:8(i)",
+        "DLD2025:9(v)",
+        "DLD2025:15(i)",
+        "DLD2025:24(iii)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(ii)",
+        "DLD2025:16(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:26(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:29(i)",
+        "DLD2025:20(iii)",
+        "DLD2025:9(iv)"
+      ],
+      "1:Recovery Process": [
+        "DLD2025:8(v)",
+        "DLD2025:9(v)",
+        "DLD2025:6(iii)",
+        "DLD2025:6(i)",
+        "DLD2025:5(v)",
+        "DLD2025:8(iv)",
+        "DLD2025:15(i)",
+        "DLD2025:12(iv)",
+        "DLD2025:17(vi)",
+        "DLD2025:6(ii)",
+        "DLD2025:11(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:24(iii)",
+        "DLD2025:7(i)"
+      ],
+      "2:Loan Documents": [
+        "DLD2025:8(iii)",
+        "KFS2024:5",
+        "KFS2024:6",
+        "KFS2024:7",
+        "KFS2024:4",
+        "DLD2025:15(i)",
+        "DLD2025:17(v)",
+        "DLD2025:8(iv)",
+        "DLD2025:16(i)",
+        "DLD2025:6(iii)",
+        "KFS2024:8",
+        "DLD2025:8(i)",
+        "DLD2025:17(iv)"
+      ],
+      "3:Data Collection": [
+        "DLD2025:12(ii)",
+        "DLD2025:12(i)",
+        "DLD2025:12(iii)",
+        "DLD2025:13(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:16(i)",
+        "DLD2025:15(i)",
+        "DLD2025:12(iv)",
+        "DLD2025:8(v)",
+        "DLD2025:9(v)",
+        "DLD2025:7(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:6(i)"
+      ],
+      "4:Repayment Mechanism": [
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:29(i)",
+        "DLD2025:15(i)",
+        "DLD2025:12(iv)",
+        "DLD2025:5(i)",
+        "DLD2025:20(i)",
+        "DLD2025:8(v)",
+        "DLD2025:9(iii)",
+        "DLD2025:8(iii)",
+        "DLD2025:11(iv)",
+        "DLD2025:17(iv)"
+      ]
+    }
+  },
+  "seconds": 131.9
+}

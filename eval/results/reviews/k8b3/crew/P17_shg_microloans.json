@@ -1,0 +1,378 @@
+{
+  "system": "crew",
+  "doc_id": "P17_shg_microloans",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The feature does not mention anything about invoking DLG or the overdue period, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly requires that the Debt Liability Guarantee (DLG) be invoked within a maximum overdue period of 120 days. The product feature does not mention anything about invoking DLG or the overdue period, which means it fails to comply with the requirement in the paragraph. Therefore, the feature does not meet the requirement of the paragraph."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The feature does not mention anything about the digital view of loan offers or the inclusion of APR, monthly repayment obligation, and penal charges, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph requires that the digital view of loan offers include specific details such as APR, monthly repayment obligation, and penal charges. The product feature does not mention these elements, which are required by the paragraph. Therefore, the feature fails to comply with the paragraph's requirements."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:27(ii)",
+      "issue": "The feature does not mention anything about monthly disclosures or the timing of such disclosures, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph requires monthly disclosures to be made no later than seven working days after the end of the month. The product feature does not mention anything about monthly disclosures or their timing, which means it does not comply with the requirement. Therefore, the feature violates the paragraph."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "The feature does not mention anything about reporting to Credit Information Companies (CICs), so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph mandates that all lending through DLAs and DLAs of LSPs must be reported to CICs, irrespective of the nature or tenor of the loan. The product feature describes a loan product but does not explicitly state whether it is reported to CICs. Since the paragraph requires reporting and the feature does not confirm compliance, it could be seen as a violation. However, the claim states that there is no violation because the feature does not mention reporting, which is a misinterpretation. The paragraph does not exempt any lending from reporting, and the feature's omission of reporting is a potential violation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "KFS2024:6",
+      "issue": "The feature does not mention anything about the computation sheet of APR or the amortisation schedule, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph requires that the KFS include a computation sheet of APR and an amortisation schedule. The product feature does not mention these requirements, which means it fails to comply with the paragraph's requirement. Therefore, the feature violates the paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(iv)",
+      "issue": "The feature 'Insurance partner: Members' names, phone numbers and loan amounts are sent to an insurance company so it can call them with micro-insurance offers. Borrowers are not asked before this is shared.' clearly breaks the requirement of obtaining explicit consent before sharing personal information with any third party.",
+      "doc_evidence": "Insurance partner: Members' names, phone numbers and loan amounts are sent to an insurance company so it can call them with micro-insurance offers. Borrowers are not asked before this is shared.",
+      "severity": "high",
+      "fix": "Implement a mechanism to obtain explicit consent from borrowers before sharing their personal information with third parties, such as insurance companies.",
+      "verifier_note": "The RBI paragraph requires explicit consent from the borrower before sharing personal information with any third party, except in cases mandated by statutory or regulatory requirements. The product feature sends borrowers' names, phone numbers, and loan amounts to an insurance company without obtaining explicit consent. Since the feature does not mention any statutory or regulatory requirement that would exempt this sharing, it violates the RBI requirement."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(iv)",
+      "issue": "The feature states that if a complaint is rejected, the app tells the borrower the decision is final; borrowers are not told they can escalate to the RBI Ombudsman through the CMS portal.",
+      "doc_evidence": "If a complaint is rejected, the app tells the borrower the decision is final; borrowers are not told they can escalate to the RBI Ombudsman through the CMS portal.",
+      "severity": "medium",
+      "fix": "Update the grievance redressal process to inform borrowers that they can escalate rejected complaints to the RBI Ombudsman through the CMS portal.",
+      "verifier_note": "The RBI paragraph explicitly requires that borrowers must be informed they can escalate complaints to the RBI Ombudsman through the CMS portal if their complaint is rejected or if they are not satisfied with the reply. The product feature fails to inform borrowers of this right, thereby violating the requirement in the RBI paragraph."
+    },
+    {
+      "feature": "4. Privacy policy",
+      "rule_id": "DLD2025:14(i)",
+      "issue": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "doc_evidence": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "severity": "low",
+      "fix": "Publish the privacy policy on the website as planned and ensure it complies with RBI and data protection regulations.",
+      "verifier_note": "The RBI paragraph requires RE and LSPs to have a comprehensive privacy policy that is made available publicly on their website. The product feature states that Sakhi Digital has no privacy policy on its website and plans to publish one next year. This directly violates the requirement of having a privacy policy available publicly on the website, as the feature indicates the policy is not yet available. The paragraph does not allow for a future plan to publish a policy; it mandates the policy to be available now."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature describes disbursal of loans into the bank account of the borrower, which complies with the requirement. There is no indication that the disbursal is made to a third-party account, including the accounts of LSP, which would be a violation. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly states that loan disbursement must always be made into the borrower's bank account, except for specific exceptions such as statutory mandates, co-lending transactions, or disbursals for specific end use (where the loan is directly into the end-beneficiary's account). The product feature describes disbursal into the borrower's bank account, which is in compliance with the requirement. There is no mention of third-party accounts or LSP accounts, and the feature does not violate the paragraph. The paragraph allows for disbursement into the borrower's account, so the feature complies."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(v)",
+      "issue": "The feature does not mention anything about delinquent loans or recovery by cash, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly allows recovery by cash for delinquent loans, provided that the recovery is reflected in the borrower’s account and fees are paid directly by the RE. The product feature does not mention anything about delinquent loans or recovery by cash, which means it does not violate the paragraph. The claim is based on the absence of information in the feature, which is not a violation as per the instructions."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "The feature does not mention anything about a cooling-off period or processing fees, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph specifically addresses the cooling-off period and the retention of a one-time processing fee if the customer exits the loan during this period. The product feature does not mention anything about a cooling-off period or processing fees, which means it does not violate the paragraph because the paragraph does not require such details for this product. The feature is compliant as it does not fall under the scope of the paragraph's requirements."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The feature does not mention anything about the LSP promoting a particular product or using dark patterns, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The product feature describes the loan product offered to SHG members but does not mention any actions taken by the LSP (Loan Servicing Provider) in relation to promoting a product or using dark patterns. The RBI paragraph prohibits the LSP from promoting a product or using deceptive patterns, but the feature does not describe any such actions by the LSP. Therefore, there is no violation as the feature does not involve the LSP in any prohibited activity."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:24(ii)",
+      "issue": "The feature does not mention anything about NPAs or setting off the DLG amount against the underlying individual loans, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly prohibits setting off the amount of DLG against the underlying individual loans. The product feature does not mention anything about NPAs or setting off DLG against the underlying loans, which means it does not violate the paragraph. The claim is based on the absence of mention, which is not a violation as per the instructions."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The feature does not mention anything about invoking DLG or the overdue period, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly requires that the Debt Liability Guarantee (DLG) be invoked within a maximum overdue period of 120 days. The product feature does not mention anything about invoking DLG or the overdue period, which means it fails to comply with the requirement in the paragraph. Therefore, the feature does not meet the requirement of the paragraph."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:20(ii)",
+      "issue": "The feature does not mention anything about DLG arrangements or credit guarantee schemes, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly prohibits entering into DLG arrangements on loans covered by credit guarantee schemes. The product feature does not mention anything about DLG arrangements or credit guarantee schemes, so it does not violate the paragraph. The claim is based on the absence of mention, which is not a violation as per the instructions."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature does not mention anything about fees, charges, reimbursements, etc. payable to LSP, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly prohibits RE from charging borrowers for fees, charges, reimbursements, etc. payable to LSP. The product feature does not mention anything about fees, charges, or reimbursements payable to LSP, which means it does not violate the paragraph. The claim is based on the absence of information in the feature, which is not a violation as per the instructions."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The feature does not mention anything about the digital view of loan offers or the inclusion of APR, monthly repayment obligation, and penal charges, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph requires that the digital view of loan offers include specific details such as APR, monthly repayment obligation, and penal charges. The product feature does not mention these elements, which are required by the paragraph. Therefore, the feature fails to comply with the paragraph's requirements."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:27(ii)",
+      "issue": "The feature does not mention anything about monthly disclosures or the timing of such disclosures, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph requires monthly disclosures to be made no later than seven working days after the end of the month. The product feature does not mention anything about monthly disclosures or their timing, which means it does not comply with the requirement. Therefore, the feature violates the paragraph."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:29(i)",
+      "issue": "The feature does not mention anything about EMI programmes on Credit Cards or other loan products offered on Credit Cards, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The product feature describes a loan product offered to SHG members for small businesses, repaid weekly over 12 months. It does not mention EMI programmes on Credit Cards or other loan products offered on Credit Cards. The RBI paragraph explicitly states that loans offered on Debit Cards, including EMI programmes, are governed by these Directions. Since the product feature does not involve Credit Cards or EMI programmes, it does not violate the paragraph. The claim is based on the absence of specific mention, which is not a violation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:29(ii)",
+      "issue": "The feature does not mention anything about DLG arrangements or synthetic securitisation, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly states that DLG arrangements conforming to Chapter VI shall not be treated as synthetic securitisation. The product feature describes a loan product to SHG members and does not mention DLG arrangements or synthetic securitisation. Since the feature does not engage with the provisions of the paragraph, there is no violation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "The feature does not mention anything about the RE's website or the details required to be disclosed, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The product feature describes the loan product details but does not mention anything about the RE's website or the required disclosures. The paragraph requires the RE to maintain a website with specific details, including digital lending products and DLAs, and ensure DLAs/LSPs have links to the website. Since the feature does not mention the website or the required disclosures, it does not violate the paragraph. The claim is based on what the feature does not mention, which is not a violation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:15(i)",
+      "issue": "The feature does not mention anything about technology standards or cybersecurity, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph requires RE and LSPs to comply with technology standards and cybersecurity requirements. The product feature describes loan terms but does not mention compliance with technology standards or cybersecurity. Since the feature does not address these requirements, it does not violate the paragraph. The claim is based on what the feature does not mention, which is not a violation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "The feature does not mention anything about reporting to Credit Information Companies (CICs), so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph mandates that all lending through DLAs and DLAs of LSPs must be reported to CICs, irrespective of the nature or tenor of the loan. The product feature describes a loan product but does not explicitly state whether it is reported to CICs. Since the paragraph requires reporting and the feature does not confirm compliance, it could be seen as a violation. However, the claim states that there is no violation because the feature does not mention reporting, which is a misinterpretation. The paragraph does not exempt any lending from reporting, and the feature's omission of reporting is a potential violation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:20(iii)",
+      "issue": "The feature does not mention anything about NBFC-P2P or DLG arrangements, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly prohibits NBFC-P2P from entering into DLG arrangements for loans facilitated over their platform. The product feature describes a loan product offered to SHG members for small businesses, but it does not mention NBFC-P2P or DLG arrangements. Since the feature does not involve NBFC-P2P or DLG arrangements, it does not violate the restriction in the RBI paragraph. The claim is based on the absence of specific terms in the feature, which is not a violation as per the instructions."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "KFS2024:5",
+      "issue": "The feature does not mention anything about the KFS or its validity period, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The product feature describes the loan amount, target audience, and repayment terms, but does not mention the KFS or its validity period. Since the paragraph explicitly requires the KFS and its validity period for certain loans, and the feature does not address these requirements, it may be considered a violation. However, the claim states that there is no violation because the feature does not mention KFS or validity period, which is a factual claim based on the absence of information in the feature. The paragraph does not explicitly state that the feature must mention KFS or validity period, so the absence of such information in the feature does not constitute a violation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "KFS2024:6",
+      "issue": "The feature does not mention anything about the computation sheet of APR or the amortisation schedule, so there is no violation of this paragraph. Therefore, no finding is reported.",
+      "doc_evidence": "Product: Loans of ₹5,000 to ₹50,000 to individual SHG members for small businesses, repaid weekly over 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph requires that the KFS include a computation sheet of APR and an amortisation schedule. The product feature does not mention these requirements, which means it fails to comply with the paragraph's requirement. Therefore, the feature violates the paragraph."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature 'Weekly repayments go directly from the member's bank account to Godavari SFB by UPI autopay' does not comply with RBI paragraph DLD2025:9(ii), which requires that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "Weekly repayments go directly from the member's bank account to Godavari SFB by UPI autopay.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes repayments going directly from the member's bank account to Godavari SFB via UPI autopay. The RBI paragraph DLD2025:9(ii) requires that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account or pool account of any third party, including the accounts of LSP. The feature does not mention any third-party accounts or pass-through mechanisms, and the repayment is directly from the member's account to the RE’s bank account (Godavari SFB). Therefore, the feature complies with the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(iv)",
+      "issue": "The feature 'Insurance partner: Members' names, phone numbers and loan amounts are sent to an insurance company so it can call them with micro-insurance offers. Borrowers are not asked before this is shared.' clearly breaks the requirement of obtaining explicit consent before sharing personal information with any third party.",
+      "doc_evidence": "Insurance partner: Members' names, phone numbers and loan amounts are sent to an insurance company so it can call them with micro-insurance offers. Borrowers are not asked before this is shared.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires explicit consent from the borrower before sharing personal information with any third party, except in cases mandated by statutory or regulatory requirements. The product feature sends borrowers' names, phone numbers, and loan amounts to an insurance company without obtaining explicit consent. Since the feature does not mention any statutory or regulatory requirement that would exempt this sharing, it violates the RBI requirement."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(iv)",
+      "issue": "The feature states that if a complaint is rejected, the app tells the borrower the decision is final; borrowers are not told they can escalate to the RBI Ombudsman through the CMS portal.",
+      "doc_evidence": "If a complaint is rejected, the app tells the borrower the decision is final; borrowers are not told they can escalate to the RBI Ombudsman through the CMS portal.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires that borrowers must be informed they can escalate complaints to the RBI Ombudsman through the CMS portal if their complaint is rejected or if they are not satisfied with the reply. The product feature fails to inform borrowers of this right, thereby violating the requirement in the RBI paragraph."
+    },
+    {
+      "feature": "4. Privacy policy",
+      "rule_id": "DLD2025:14(i)",
+      "issue": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "doc_evidence": "Sakhi Digital has no privacy policy on its website; it plans to publish one next year.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires RE and LSPs to have a comprehensive privacy policy that is made available publicly on their website. The product feature states that Sakhi Digital has no privacy policy on its website and plans to publish one next year. This directly violates the requirement of having a privacy policy available publicly on the website, as the feature indicates the policy is not yet available. The paragraph does not allow for a future plan to publish a policy; it mandates the policy to be available now."
+    }
+  ],
+  "summary": "The compliance review of the SakhiCredit product, which provides digital loans for women's self-help groups, identified several findings against the reviewed RBI rules. The key findings include a high-risk issue related to the sharing of personal information without explicit consent, a medium-risk issue regarding the lack of information on escalation to the RBI Ombudsman, and a low-risk issue concerning the absence of a privacy policy. No gaps were found against the reviewed RBI rules in the other findings as the features did not violate the corresponding requirements.",
+  "trace": {
+    "llm_calls": 35,
+    "prompt_tokens": 19878,
+    "output_tokens": 5743,
+    "llm_seconds": 284.1,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 22,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 43,
+    "retrieved": {
+      "0:Disbursal": [
+        "KFS2024:5",
+        "DLD2025:6(iv)",
+        "DLD2025:24(ii)",
+        "DLD2025:26(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:29(i)",
+        "DLD2025:9(v)",
+        "KFS2024:6",
+        "DLD2025:8(iv)",
+        "DLD2025:15(i)",
+        "DLD2025:16(i)",
+        "DLD2025:20(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:27(ii)",
+        "DLD2025:29(ii)"
+      ],
+      "1:Repayment": [
+        "DLD2025:9(v)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)",
+        "DLD2025:10(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:16(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:29(i)"
+      ],
+      "2:Data Collection": [
+        "KFS2024:7",
+        "KFS2024:4",
+        "DLD2025:8(v)",
+        "DLD2025:6(iii)",
+        "DLD2025:6(ii)",
+        "DLD2025:12(i)",
+        "DLD2025:12(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(i)",
+        "DLD2025:13(ii)",
+        "DLD2025:12(iv)",
+        "DLD2025:13(iv)",
+        "DLD2025:13(iii)",
+        "DLD2025:6(iv)",
+        "DLD2025:9(iv)",
+        "DLD2025:18(i)",
+        "DLD2025:6",
+        "DLD2025:17(iv)",
+        "DLD2025:17(iii)",
+        "DLD2025:17(v)"
+      ],
+      "3:Grievance Redressal": [
+        "DLD2025:11(iv)",
+        "DLD2025:17(iv)",
+        "DLD2025:11(i)",
+        "DLD2025:17(iii)",
+        "DLD2025:8(iv)",
+        "DLD2025:11(iii)",
+        "DLD2025:17(v)",
+        "DLD2025:11(ii)",
+        "DLD2025:17(ii)",
+        "DLD2025:9(iv)"
+      ],
+      "4:4. Privacy policy": [
+        "DLD2025:14(i)",
+        "DLD2025:14(ii)",
+        "DLD2025:8(iv)",
+        "DLD2025:27(i)",
+        "DLD2025:13(ii)",
+        "DLD2025:5(ii)",
+        "DLD2025:13(i)",
+        "DLD2025:17(iv)",
+        "DLD2025:8(iii)",
+        "DLD2025:19(i)",
+        "DLD2025:11(ii)"
+      ]
+    }
+  },
+  "seconds": 284.6
+}

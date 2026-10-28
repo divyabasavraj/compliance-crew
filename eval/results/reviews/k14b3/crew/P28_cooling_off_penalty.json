@@ -1,0 +1,145 @@
+{
+  "system": "crew",
+  "doc_id": "P28_cooling_off_penalty",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "fees",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The product feature describes that a ₹199 'credit insights subscription' is added to every EMI after disbursal, and it is not included in the KFS. This violates the requirement that any fees, charges, reimbursements, etc. payable to LSPs must be paid directly by the RE and not charged to or collected from the borrowers separately by the LSP.",
+      "doc_evidence": "After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "high",
+      "fix": "Remove the ₹199 'credit insights subscription' fee from the EMI structure and ensure that all fees payable to LSPs are paid directly by the RE, as required by DLD2025:9(iv).",
+      "verifier_note": "The RBI paragraph [DLD2025:9(iv)] prohibits LSPs from charging fees, charges, or reimbursements directly to borrowers. The product feature describes a ₹199 'credit insights subscription' being added to every EMI after disbursal, and it is not included in the KFS. This implies that the charge is being collected from the borrower as part of their EMI, which violates the requirement that such fees must be paid directly by the RE and not charged to the borrower by the LSP."
+    },
+    {
+      "feature": "fees",
+      "rule_id": "KFS2024:8",
+      "issue": "The product feature describes that a ₹199 'credit insights subscription' is added to every EMI after disbursal, and it is not included in the KFS. This violates the requirement that any fees, charges, etc. which are not mentioned in the KFS cannot be charged by the REs to the borrower at any stage during the term of the loan without explicit consent of the borrower.",
+      "doc_evidence": "After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "high",
+      "fix": "Include the ₹199 'credit insights subscription' fee in the KFS and obtain explicit borrower consent before charging it, as mandated by KFS2024:8.",
+      "verifier_note": "The product feature describes a ₹199 'credit insights subscription' that is added to every EMI after disbursal, and it is explicitly stated that this charge is not included in the KFS. According to the RBI paragraph [KFS2024:8], any fees not mentioned in the KFS cannot be charged to the borrower without explicit consent. Since the feature does not mention that explicit consent was obtained from the borrower for this charge, it violates the requirement."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "fees",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The product feature describes that a ₹199 'credit insights subscription' is added to every EMI after disbursal, and it is not included in the KFS. This violates the requirement that any fees, charges, reimbursements, etc. payable to LSPs must be paid directly by the RE and not charged to or collected from the borrowers separately by the LSP.",
+      "doc_evidence": "After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:9(iv)] prohibits LSPs from charging fees, charges, or reimbursements directly to borrowers. The product feature describes a ₹199 'credit insights subscription' being added to every EMI after disbursal, and it is not included in the KFS. This implies that the charge is being collected from the borrower as part of their EMI, which violates the requirement that such fees must be paid directly by the RE and not charged to the borrower by the LSP."
+    },
+    {
+      "feature": "fees",
+      "rule_id": "KFS2024:8",
+      "issue": "The product feature describes that a ₹199 'credit insights subscription' is added to every EMI after disbursal, and it is not included in the KFS. This violates the requirement that any fees, charges, etc. which are not mentioned in the KFS cannot be charged by the REs to the borrower at any stage during the term of the loan without explicit consent of the borrower.",
+      "doc_evidence": "After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a ₹199 'credit insights subscription' that is added to every EMI after disbursal, and it is explicitly stated that this charge is not included in the KFS. According to the RBI paragraph [KFS2024:8], any fees not mentioned in the KFS cannot be charged to the borrower without explicit consent. Since the feature does not mention that explicit consent was obtained from the borrower for this charge, it violates the requirement."
+    },
+    {
+      "feature": "application_and_kfs",
+      "rule_id": "KFS2024:5",
+      "issue": "The product feature states that the KFS is valid for 3 working days. However, RBI's paragraph [KFS2024:5] specifies that the validity period of the KFS must be at least three working days for loans with a tenor of seven days or more, and one working day for loans with a tenor of less than seven days. The product feature does not specify the loan tenor, and thus, it is unclear whether the validity period of three working days is appropriate for all loan tenors.",
+      "doc_evidence": "4. KFS: The KFS has a unique proposal number and is valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that the KFS is valid for 3 working days, but does not specify the loan tenor. According to RBI paragraph [KFS2024:5], the validity period depends on the loan tenor. For loans with a tenor of seven days or more, the validity period must be at least three working days, which the product feature complies with. However, for loans with a tenor of less than seven days, the validity period must be one working day. Since the product feature does not specify the loan tenor, it is unclear whether it is being applied to the correct type of loan, and thus, it may not comply with the regulation for loans with a tenor of less than seven days. However, the paragraph does not explicitly forbid the feature as described, and the feature does not claim to apply to all loan tenors. The claim relies on the feature not specifying the loan tenor, which is not a violation as per the instructions."
+    }
+  ],
+  "summary": "The compliance review of the product 'RupeeRush: Instant Personal Loans' identified two high-severity findings. First, the ₹199 'credit insights subscription' fee is being added to every EMI after disbursal without being included in the KFS, which violates the requirement under DLD2025:9(iv) that such fees must be paid directly by the RE and not charged to the borrower. Second, the same fee is not mentioned in the KFS, violating KFS2024:8, which prohibits charging any fees not listed in the KFS without explicit borrower consent.",
+  "trace": {
+    "llm_calls": 14,
+    "prompt_tokens": 9527,
+    "output_tokens": 1587,
+    "llm_seconds": 148.4,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 4,
+      "gap_analyst": 4,
+      "verifier": 3,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 20,
+    "retrieved": {
+      "0:disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:14(i)",
+        "DLD2025:16(i)",
+        "DLD2025:5(vii)",
+        "DLD2025:20(iii)",
+        "DLD2025:5(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:6(iii)",
+        "DLD2025:20(ii)",
+        "KFS2024:10"
+      ],
+      "1:fees": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "KFS2024:5",
+        "DLD2025:26(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:29(i)",
+        "KFS2024:7",
+        "DLD2025:9(v)",
+        "KFS2024:8",
+        "DLD2025:15(i)",
+        "DLD2025:9(i)",
+        "DLD2025:8(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:6(iii)",
+        "DLD2025:19(iv)",
+        "KFS2024:10",
+        "DLD2025:16(ii)"
+      ],
+      "2:product_terms": [
+        "DLD2025:12(ii)",
+        "KFS2024:5",
+        "DLD2025:12(iv)",
+        "DLD2025:8(iii)",
+        "DLD2025:8(i)",
+        "DLD2025:15(i)",
+        "DLD2025:16(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:9(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:27(ii)",
+        "DLD2025:10(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:20(iii)"
+      ],
+      "3:application_and_kfs": [
+        "KFS2024:5",
+        "KFS2024:4",
+        "KFS2024:9",
+        "DLD2025:27(ii)",
+        "KFS2024:6",
+        "DLD2025:15(i)",
+        "DLD2025:17(v)",
+        "DLD2025:17(vi)",
+        "DLD2025:16(i)",
+        "KFS2024:8",
+        "KFS2024:10",
+        "KFS2024:7",
+        "DLD2025:26(i)",
+        "DLD2025:8(i)"
+      ]
+    }
+  },
+  "seconds": 148.8
+}

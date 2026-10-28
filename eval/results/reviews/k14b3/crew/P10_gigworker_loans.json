@@ -1,0 +1,155 @@
+{
+  "system": "crew",
+  "doc_id": "P10_gigworker_loans",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Repayment Mechanism",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product feature describes that repayments are deducted from the worker's earnings by GigWorks and held in GigWorks' account before being transferred to the lender at the end of the week. This implies that the repayment is not being made directly into the RE’s (Deccan Small Finance Bank) bank account, but is being passed through a third-party (GigWorks) account, which is prohibited under this rule.",
+      "doc_evidence": "2. Repayment: Daily repayments are deducted from the worker's earnings by GigWorks and held in GigWorks' account, which transfers the total to Deccan Small Finance Bank at the end of each week.",
+      "severity": "high",
+      "fix": "Amend the repayment mechanism to ensure that repayments are directly credited to the lender's (Deccan Small Finance Bank) bank account, without passing through GigWorks' account, in compliance with DLD2025:9(ii).",
+      "verifier_note": "The product feature describes a process where repayments are first held in GigWorks' account before being transferred to the lender (Deccan Small Finance Bank). This involves a pass-through account of a third party (GigWorks), which is explicitly prohibited under [DLD2025:9(ii)]. The rule requires that all loan servicing and repayment be executed directly into the RE’s bank account without any pass-through account of a third party."
+    },
+    {
+      "feature": "Cooling-off Period and Prepayment",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product does not provide a cooling-off period as required by RBI guidelines.",
+      "doc_evidence": "There is no cooling-off period. A loan, once taken, can be prepaid only after 3 months, with a 2% prepayment charge.",
+      "severity": "medium",
+      "fix": "Introduce a cooling-off period in the product terms and conditions, as mandated by RBI guidelines under DLD2025:10(i), allowing borrowers to cancel the loan within a specified period without penalty.",
+      "verifier_note": "The RBI paragraph explicitly requires a cooling-off period of at least one day, during which the borrower can exit the loan by paying the principal and proportionate APR without penalty. The product feature states there is no cooling-off period and that prepayment is only allowed after 3 months with a 2% charge. This directly contradicts the requirement in the RBI paragraph, as it fails to provide the mandated cooling-off period."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Repayment Mechanism",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product feature describes that repayments are deducted from the worker's earnings by GigWorks and held in GigWorks' account before being transferred to the lender at the end of the week. This implies that the repayment is not being made directly into the RE’s (Deccan Small Finance Bank) bank account, but is being passed through a third-party (GigWorks) account, which is prohibited under this rule.",
+      "doc_evidence": "2. Repayment: Daily repayments are deducted from the worker's earnings by GigWorks and held in GigWorks' account, which transfers the total to Deccan Small Finance Bank at the end of each week.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a process where repayments are first held in GigWorks' account before being transferred to the lender (Deccan Small Finance Bank). This involves a pass-through account of a third party (GigWorks), which is explicitly prohibited under [DLD2025:9(ii)]. The rule requires that all loan servicing and repayment be executed directly into the RE’s bank account without any pass-through account of a third party."
+    },
+    {
+      "feature": "Cooling-off Period and Prepayment",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product does not provide a cooling-off period as required by RBI guidelines.",
+      "doc_evidence": "There is no cooling-off period. A loan, once taken, can be prepaid only after 3 months, with a 2% prepayment charge.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires a cooling-off period of at least one day, during which the borrower can exit the loan by paying the principal and proportionate APR without penalty. The product feature states there is no cooling-off period and that prepayment is only allowed after 3 months with a 2% charge. This directly contradicts the requirement in the RBI paragraph, as it fails to provide the mandated cooling-off period."
+    }
+  ],
+  "summary": "The compliance review of the GigCredit product identified two findings. First, a high-risk issue under DLD2025:9(ii) was found, where repayments are collected by GigWorks and held in its account before being transferred to the lender, which violates the rule requiring direct repayment into the lender's account. Second, a medium-risk issue under DLD2025:10(i) was identified, as the product does not provide a cooling-off period as mandated by RBI guidelines.",
+  "trace": {
+    "llm_calls": 17,
+    "prompt_tokens": 11306,
+    "output_tokens": 1248,
+    "llm_seconds": 120.9,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 2,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 26,
+    "retrieved": {
+      "0:Product Description": [
+        "KFS2024:5",
+        "DLD2025:8(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:9(ii)",
+        "DLD2025:16(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:10(i)",
+        "DLD2025:16(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:26(i)",
+        "DLD2025:6(iv)"
+      ],
+      "1:Repayment Mechanism": [
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(iii)",
+        "DLD2025:6(ii)",
+        "KFS2024:6",
+        "DLD2025:7(i)",
+        "DLD2025:5(i)",
+        "DLD2025:17(iv)"
+      ],
+      "2:Cooling-off Period and Prepayment": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "KFS2024:5",
+        "DLD2025:7(ii)",
+        "DLD2025:26(i)",
+        "DLD2025:15(i)",
+        "DLD2025:8(ii)",
+        "DLD2025:5(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:14(i)",
+        "KFS2024:8",
+        "DLD2025:12(i)",
+        "DLD2025:24(ii)",
+        "DLD2025:27(ii)",
+        "KFS2024:10"
+      ],
+      "3:Underwriting and Credit Decisions": [
+        "DLD2025:7(i)",
+        "DLD2025:16(ii)",
+        "KFS2024:4",
+        "DLD2025:19(ii)",
+        "DLD2025:13(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:9(i)",
+        "KFS2024:6",
+        "KFS2024:10",
+        "DLD2025:6(iv)",
+        "KFS2024:9",
+        "DLD2025:20(iii)"
+      ],
+      "4:Data Collection and Permissions": [
+        "DLD2025:12(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:8(v)",
+        "DLD2025:12(iv)",
+        "DLD2025:10(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:13(ii)",
+        "KFS2024:8",
+        "DLD2025:12(iii)",
+        "KFS2024:5",
+        "DLD2025:10(i)",
+        "DLD2025:19(i)"
+      ],
+      "5:Data Storage and Cross-border Data Transfer": [
+        "DLD2025:13(iv)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:13(i)",
+        "DLD2025:17(v)",
+        "DLD2025:15(i)",
+        "DLD2025:16(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:12(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:17(iii)",
+        "DLD2025:12(iii)"
+      ]
+    }
+  },
+  "seconds": 121.6
+}

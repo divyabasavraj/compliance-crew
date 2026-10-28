@@ -1,0 +1,178 @@
+{
+  "system": "crew",
+  "doc_id": "P02_quickcash_payday",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature describes that loan amounts are credited to the QuickCash wallet held by QC Technologies (LSP), and the user can move the money to their bank account at any time. This violates the requirement that loan disbursement must be made directly into the borrower's bank account, except in specific cases outlined in the RBI directions.",
+      "doc_evidence": "Approved amounts are first credited to the QuickCash wallet held by QC Technologies, and the user can move the money to their bank account at any time with one tap.",
+      "severity": "high",
+      "fix": "Modify the product feature to ensure that loan disbursements are made directly into the borrower's bank account, in compliance with RBI directions.",
+      "verifier_note": "The product feature describes that loan amounts are credited to the QuickCash wallet held by QC Technologies (LSP), which is a third-party account. According to the RBI paragraph [DLD2025:9(i)], loan disbursement must be made directly into the borrower's bank account, except in specific cases outlined in the RBI directions. The feature does not mention any exception that would allow disbursement into an LSP's wallet, such as a statutory or regulatory mandate, co-lending transactions, or specific end-use scenarios where the loan is directly disbursed to the end-beneficiary's bank account. Therefore, the feature violates the requirement."
+    },
+    {
+      "feature": "fees",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The platform fee of 3% of the loan amount is collected by QC Technologies (LSP) from the borrower's account at disbursal, which violates the requirement that fees payable to LSPs must be paid directly by the RE and not charged to or collected from the borrower.",
+      "doc_evidence": "QuickCash also charges the borrower a platform fee of 3% of the loan amount, collected by QC Technologies from the borrower's account at disbursal, for the use of the app.",
+      "severity": "high",
+      "fix": "Revise the fee collection process to ensure that platform fees are paid directly by the regulated entity (RE) to QC Technologies (LSP), and not collected from the borrower at the time of disbursement.",
+      "verifier_note": "The RBI paragraph [DLD2025:9(iv)] explicitly states that fees payable to LSPs must be paid directly by the RE and not charged to or collected from the borrower. The product feature describes that the platform fee of 3% of the loan amount is collected by QC Technologies (LSP) from the borrower's account at disbursal. This directly violates the requirement stated in the RBI paragraph, as the fee is being collected from the borrower rather than being paid directly by the RE."
+    },
+    {
+      "feature": "key_facts_statement_kfs",
+      "rule_id": "KFS2024:5",
+      "issue": "The product feature states that the offer and KFS expire 30 minutes after they are shown, which is less than the minimum validity period required by the RBI.",
+      "doc_evidence": "For speed, the offer and KFS expire 30 minutes after they are shown; after that the user must apply again.",
+      "severity": "medium",
+      "fix": "Adjust the key facts statement (KFS) to ensure that the validity period is at least 30 minutes, as required by RBI guidelines, to allow sufficient time for the borrower to review and accept the offer.",
+      "verifier_note": "The RBI paragraph requires a validity period of at least three working days for loans with a tenor of seven days or more, and one working day for loans with a tenor of less than seven days. The product feature states that the offer and KFS expire 30 minutes after being shown, which is significantly shorter than the minimum validity periods required by the RBI. Therefore, the feature does not comply with the RBI's requirements."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature describes that loan amounts are credited to the QuickCash wallet held by QC Technologies (LSP), and the user can move the money to their bank account at any time. This violates the requirement that loan disbursement must be made directly into the borrower's bank account, except in specific cases outlined in the RBI directions.",
+      "doc_evidence": "Approved amounts are first credited to the QuickCash wallet held by QC Technologies, and the user can move the money to their bank account at any time with one tap.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes that loan amounts are credited to the QuickCash wallet held by QC Technologies (LSP), which is a third-party account. According to the RBI paragraph [DLD2025:9(i)], loan disbursement must be made directly into the borrower's bank account, except in specific cases outlined in the RBI directions. The feature does not mention any exception that would allow disbursement into an LSP's wallet, such as a statutory or regulatory mandate, co-lending transactions, or specific end-use scenarios where the loan is directly disbursed to the end-beneficiary's bank account. Therefore, the feature violates the requirement."
+    },
+    {
+      "feature": "repayment",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature describes repayment being done in one shot on salary day, but does not explicitly state that the loan disbursement is made into the borrower's bank account. While the feature focuses on repayment, the disbursement method is not clearly mentioned, which could imply a potential violation if the disbursement was not made into the borrower's account.",
+      "doc_evidence": "Salaried users can borrow ₹2,000 to ₹50,000 for 7 to 60 days, repaid in one shot on salary day.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:9(i)] specifically addresses the disbursement of loans into the borrower's bank account, with exceptions outlined. The product feature does not mention the disbursement method, but it also does not claim or imply that disbursement is made to a third-party account. Since the feature does not state that disbursement is made elsewhere, and the paragraph does not require disbursement details to be explicitly stated in every feature, the absence of disbursement information does not constitute a violation. The paragraph is about disbursement, not repayment, and the feature focuses on repayment, which is not covered by the paragraph."
+    },
+    {
+      "feature": "fees",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The platform fee of 3% of the loan amount is collected by QC Technologies (LSP) from the borrower's account at disbursal, which violates the requirement that fees payable to LSPs must be paid directly by the RE and not charged to or collected from the borrower.",
+      "doc_evidence": "QuickCash also charges the borrower a platform fee of 3% of the loan amount, collected by QC Technologies from the borrower's account at disbursal, for the use of the app.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:9(iv)] explicitly states that fees payable to LSPs must be paid directly by the RE and not charged to or collected from the borrower. The product feature describes that the platform fee of 3% of the loan amount is collected by QC Technologies (LSP) from the borrower's account at disbursal. This directly violates the requirement stated in the RBI paragraph, as the fee is being collected from the borrower rather than being paid directly by the RE."
+    },
+    {
+      "feature": "fees",
+      "rule_id": "KFS2024:8",
+      "issue": "The one-time processing fee of ₹99 retained on cancellation is not mentioned in the KFS, which violates the requirement that any fees not mentioned in the KFS cannot be charged to the borrower without explicit consent.",
+      "doc_evidence": "A one-time processing fee of ₹99, which is shown in the KFS, is retained on cancellation.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The one-time processing fee of ₹99 is explicitly mentioned in the KFS (as stated in the product feature), so it is not a fee that is not mentioned in the KFS. Therefore, the requirement in the RBI paragraph does not apply to this fee, and there is no violation."
+    },
+    {
+      "feature": "key_facts_statement_kfs",
+      "rule_id": "KFS2024:5",
+      "issue": "The product feature states that the offer and KFS expire 30 minutes after they are shown, which is less than the minimum validity period required by the RBI.",
+      "doc_evidence": "For speed, the offer and KFS expire 30 minutes after they are shown; after that the user must apply again.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires a validity period of at least three working days for loans with a tenor of seven days or more, and one working day for loans with a tenor of less than seven days. The product feature states that the offer and KFS expire 30 minutes after being shown, which is significantly shorter than the minimum validity periods required by the RBI. Therefore, the feature does not comply with the RBI's requirements."
+    }
+  ],
+  "summary": "The compliance review of the QuickCash: Instant Salary Advance product identified three findings against RBI regulations. First, loan disbursement is credited to the QuickCash wallet held by QC Technologies (LSP), violating the requirement that loans must be disbursed directly into the borrower's bank account. Second, a 3% platform fee is collected by QC Technologies (LSP) from the borrower at disbursal, which is not permitted as fees must be paid directly by the RE. Third, the product's offer and KFS expire 30 minutes after being shown, which is less than the minimum validity period required by the RBI.",
+  "trace": {
+    "llm_calls": 18,
+    "prompt_tokens": 12113,
+    "output_tokens": 2029,
+    "llm_seconds": 184.9,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 5,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 26,
+    "retrieved": {
+      "0:disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(v)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:16(ii)",
+        "DLD2025:8(iv)",
+        "DLD2025:12(i)",
+        "DLD2025:10(i)",
+        "DLD2025:13(ii)",
+        "DLD2025:19(i)"
+      ],
+      "1:repayment": [
+        "KFS2024:5",
+        "DLD2025:9(v)",
+        "DLD2025:27(ii)",
+        "DLD2025:10(i)",
+        "DLD2025:9(i)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:16(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:29(i)",
+        "DLD2025:7(ii)",
+        "DLD2025:26(i)",
+        "DLD2025:9(iv)",
+        "DLD2025:10(ii)",
+        "DLD2025:23(ii)"
+      ],
+      "2:fees": [
+        "KFS2024:8",
+        "DLD2025:9(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:10(ii)",
+        "DLD2025:10(i)",
+        "KFS2024:5",
+        "DLD2025:26(i)",
+        "DLD2025:11(iv)",
+        "DLD2025:16(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:19(iii)",
+        "DLD2025:23(i)",
+        "DLD2025:9(v)",
+        "KFS2024:6",
+        "KFS2024:7",
+        "DLD2025:13(iv)"
+      ],
+      "3:data_collection": [
+        "DLD2025:13(iv)",
+        "DLD2025:13(i)",
+        "DLD2025:13(ii)",
+        "DLD2025:12(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:17(v)",
+        "DLD2025:12(iii)",
+        "DLD2025:17(iv)",
+        "DLD2025:17(ii)"
+      ],
+      "4:key_facts_statement_kfs": [
+        "KFS2024:6",
+        "KFS2024:5",
+        "KFS2024:8",
+        "KFS2024:7",
+        "KFS2024:4",
+        "DLD2025:8(i)",
+        "KFS2024:9",
+        "DLD2025:6(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:6(i)",
+        "KFS2024:10",
+        "DLD2025:10(i)"
+      ]
+    }
+  },
+  "seconds": 185.4
+}

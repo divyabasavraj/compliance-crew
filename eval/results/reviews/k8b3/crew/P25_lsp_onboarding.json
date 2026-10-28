@@ -1,0 +1,212 @@
+{
+  "system": "crew",
+  "doc_id": "P25_lsp_onboarding",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Arrangement",
+      "rule_id": "DLD2025:21(i)",
+      "issue": "The arrangement between Ganga Finance and FastFunds lacks a legally enforceable contract, as the two parties have only agreed on a call and no written contract has been signed.",
+      "doc_evidence": "FastFunds will source borrowers, run the app and handle collections for Ganga Finance. The two sides agreed the terms on a call and will start lending next week; no written contract has been signed.",
+      "severity": "high",
+      "fix": "Draft and sign a legally enforceable contract between Ganga Finance and FastFunds, ensuring it covers all terms of their arrangement, including obligations, liabilities, and dispute resolution.",
+      "verifier_note": "The RBI paragraph explicitly requires that DLG arrangements must be backed by an explicit and legally enforceable contract between the RE and the DLG provider. The product feature states that no written contract has been signed, which directly violates the requirement of having a legally enforceable contract. The feature does not mention any exception or alternative form of contract that would satisfy the RBI's requirement."
+    },
+    {
+      "feature": "Arrangement",
+      "rule_id": "DLD2025:5(i)",
+      "issue": "The digital lending by Ganga Finance involving FastFunds is not carried out under a contractual agreement between the RE and the LSP, as no written contract has been signed.",
+      "doc_evidence": "FastFunds will source borrowers, run the app and handle collections for Ganga Finance. The two sides agreed the terms on a call and will start lending next week; no written contract has been signed.",
+      "severity": "high",
+      "fix": "Establish and sign a formal contractual agreement between the RE and the LSP (FastFunds) to ensure compliance with regulatory requirements and to define the terms of the digital lending arrangement.",
+      "verifier_note": "The RBI paragraph requires that digital lending by a RE involving an LSP must be carried out under a contractual agreement between the RE and the LSP. The product feature states that no written contract has been signed, which directly violates the requirement. The feature does not mention any exception or alternative arrangement that would satisfy the contractual agreement requirement."
+    },
+    {
+      "feature": "Due Diligence",
+      "rule_id": "DLD2025:5(ii)",
+      "issue": "Ganga Finance did not review FastFunds' technology, data privacy policies or past conduct before agreeing, because FastFunds is a well-known brand.",
+      "doc_evidence": "Ganga Finance did not review FastFunds' technology, data privacy policies or past conduct before agreeing, because FastFunds is a well-known brand.",
+      "severity": "medium",
+      "fix": "Conduct a thorough due diligence process on FastFunds, including reviewing their technology infrastructure, data privacy policies, and past conduct, before entering any partnership.",
+      "verifier_note": "The RBI paragraph requires RE to conduct enhanced due diligence, including reviewing the LSP's technical capabilities, data privacy policies, and past conduct. The product feature states that Ganga Finance did not review these aspects because FastFunds is a well-known brand. This directly violates the requirement to conduct enhanced due diligence, as the feature shows a failure to review key aspects mandated by the RBI paragraph."
+    },
+    {
+      "feature": "Collections",
+      "rule_id": "DLD2025:5(v)",
+      "issue": "Ganga Finance has given FastFunds no guidance or training on fair recovery practices.",
+      "doc_evidence": "Ganga Finance has given FastFunds no guidance or training on fair recovery practices.",
+      "severity": "medium",
+      "fix": "Provide FastFunds with comprehensive training on fair recovery practices, including compliance with RBI guidelines on borrower treatment and data privacy.",
+      "verifier_note": "The RBI paragraph requires that the RE (which is Ganga Finance in this context) must impart necessary guidance to the LSP (FastFunds) acting as a recovery agent. The product feature states that Ganga Finance has given FastFunds no guidance or training on fair recovery practices, which directly violates the requirement in the RBI paragraph. The feature does not comply with the paragraph's requirement to provide guidance."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The feature 'Data: FastFunds keeps only the borrower's name, phone and address needed for collections' does not provide the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data and if required, make the RE/LSP delete/ forget the data.",
+      "doc_evidence": "FastFunds keeps only the borrower's name, phone and address needed for collections.",
+      "severity": "high",
+      "fix": "Update the data collection feature to include clear consent mechanisms, allowing borrowers to opt-in or opt-out of data usage, restrict data sharing, manage data retention, and revoke consent, in line with RBI and data protection regulations.",
+      "verifier_note": "The RBI paragraph requires the borrower to be provided with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted, and make the RE/LSP delete/forget the data. The product feature only states that FastFunds keeps only the borrower's name, phone, and address needed for collections. It does not mention any mechanism for the borrower to give or deny consent, restrict disclosure, revoke consent, or request deletion. Therefore, the feature fails to comply with the requirements of the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Arrangement",
+      "rule_id": "DLD2025:21(i)",
+      "issue": "The arrangement between Ganga Finance and FastFunds lacks a legally enforceable contract, as the two parties have only agreed on a call and no written contract has been signed.",
+      "doc_evidence": "FastFunds will source borrowers, run the app and handle collections for Ganga Finance. The two sides agreed the terms on a call and will start lending next week; no written contract has been signed.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires that DLG arrangements must be backed by an explicit and legally enforceable contract between the RE and the DLG provider. The product feature states that no written contract has been signed, which directly violates the requirement of having a legally enforceable contract. The feature does not mention any exception or alternative form of contract that would satisfy the RBI's requirement."
+    },
+    {
+      "feature": "Arrangement",
+      "rule_id": "DLD2025:5(i)",
+      "issue": "The digital lending by Ganga Finance involving FastFunds is not carried out under a contractual agreement between the RE and the LSP, as no written contract has been signed.",
+      "doc_evidence": "FastFunds will source borrowers, run the app and handle collections for Ganga Finance. The two sides agreed the terms on a call and will start lending next week; no written contract has been signed.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that digital lending by a RE involving an LSP must be carried out under a contractual agreement between the RE and the LSP. The product feature states that no written contract has been signed, which directly violates the requirement. The feature does not mention any exception or alternative arrangement that would satisfy the contractual agreement requirement."
+    },
+    {
+      "feature": "Arrangement",
+      "rule_id": "DLD2025:5(vii)",
+      "issue": "The outsourcing agreement between Ganga Finance and FastFunds may dilute or absolve Ganga Finance of its obligations under statutory or regulatory provisions, as no written contract has been signed.",
+      "doc_evidence": "FastFunds will source borrowers, run the app and handle collections for Ganga Finance. The two sides agreed the terms on a call and will start lending next week; no written contract has been signed.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that outsourcing agreements must not dilute or absolve the RE (Ganga Finance) of its obligations. The product feature describes an arrangement where no written contract has been signed, which may imply a lack of formal accountability. However, the paragraph does not explicitly prohibit such arrangements unless they dilute or absolve the RE's obligations. The claim relies on the absence of a written contract as a basis for violation, but the paragraph does not state that lack of a written contract is a violation. Therefore, the claim is not sufficiently supported by the paragraph."
+    },
+    {
+      "feature": "Due Diligence",
+      "rule_id": "DLD2025:5(ii)",
+      "issue": "Ganga Finance did not review FastFunds' technology, data privacy policies or past conduct before agreeing, because FastFunds is a well-known brand.",
+      "doc_evidence": "Ganga Finance did not review FastFunds' technology, data privacy policies or past conduct before agreeing, because FastFunds is a well-known brand.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires RE to conduct enhanced due diligence, including reviewing the LSP's technical capabilities, data privacy policies, and past conduct. The product feature states that Ganga Finance did not review these aspects because FastFunds is a well-known brand. This directly violates the requirement to conduct enhanced due diligence, as the feature shows a failure to review key aspects mandated by the RBI paragraph."
+    },
+    {
+      "feature": "Collections",
+      "rule_id": "DLD2025:5(v)",
+      "issue": "Ganga Finance has given FastFunds no guidance or training on fair recovery practices.",
+      "doc_evidence": "Ganga Finance has given FastFunds no guidance or training on fair recovery practices.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the RE (which is Ganga Finance in this context) must impart necessary guidance to the LSP (FastFunds) acting as a recovery agent. The product feature states that Ganga Finance has given FastFunds no guidance or training on fair recovery practices, which directly violates the requirement in the RBI paragraph. The feature does not comply with the paragraph's requirement to provide guidance."
+    },
+    {
+      "feature": "Disbursal and Repayment",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature states that 'Loans are disbursed to borrowers' bank accounts and repaid directly to Ganga Finance.' This implies that the repayment is directly to Ganga Finance, which is the RE, and not through a third-party account. However, the RBI requires that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP. The feature does not explicitly state that repayment is done directly into the RE’s bank account, which could be interpreted as compliant, but the phrasing may be ambiguous. Since the feature does not clearly break the requirement, no finding is reported.",
+      "doc_evidence": "Loans are disbursed to borrowers' bank accounts and repaid directly to Ganga Finance.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires that all loan servicing, including repayment, must be executed by the borrower directly in the RE’s bank account without any pass-through account or third-party account, including the accounts of LSP. The product feature states that repayment is 'directly to Ganga Finance,' which is the RE. This aligns with the requirement that repayment is done directly into the RE’s bank account. The feature does not explicitly state that repayment is done directly into the RE’s bank account, but it is implied by the fact that Ganga Finance is the RE. The paragraph does not prohibit this, and the feature does not violate the requirement. The claim relies on an interpretation of the phrasing, but the feature does not clearly break the requirement."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The feature 'Data: FastFunds keeps only the borrower's name, phone and address needed for collections' does not provide the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data and if required, make the RE/LSP delete/ forget the data.",
+      "doc_evidence": "FastFunds keeps only the borrower's name, phone and address needed for collections.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires the borrower to be provided with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted, and make the RE/LSP delete/forget the data. The product feature only states that FastFunds keeps only the borrower's name, phone, and address needed for collections. It does not mention any mechanism for the borrower to give or deny consent, restrict disclosure, revoke consent, or request deletion. Therefore, the feature fails to comply with the requirements of the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the Partner Onboarding process for Ganga Finance and FastFunds identified several gaps against the reviewed RBI rules. Key findings include: (1) A lack of a legally enforceable contract between Ganga Finance and FastFunds, which is critical for both DLD2025:21(i) and DLD2025:5(i). (2) Insufficient due diligence on FastFunds' technology, data privacy policies, and past conduct, as noted in DLD2025:5(ii). (3) No guidance or training provided to FastFunds on fair recovery practices, as per DLD2025:5(v). (4) The data handling feature does not meet the requirements for data consent and control, as outlined in DLD2025:12(ii). These findings highlight significant compliance risks that require immediate attention.",
+  "trace": {
+    "llm_calls": 20,
+    "prompt_tokens": 11809,
+    "output_tokens": 2522,
+    "llm_seconds": 127.5,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 7,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 27,
+    "retrieved": {
+      "0:Arrangement": [
+        "DLD2025:21(i)",
+        "DLD2025:6(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:6(iii)",
+        "KFS2024:4",
+        "DLD2025:5(i)",
+        "DLD2025:20(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:12(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:5(vii)",
+        "DLD2025:17(iv)",
+        "DLD2025:6",
+        "DLD2025:24(iii)",
+        "DLD2025:9(iii)",
+        "KFS2024:5",
+        "DLD2025:9(i)"
+      ],
+      "1:Due Diligence": [
+        "DLD2025:5(ii)",
+        "DLD2025:19(iii)",
+        "DLD2025:5(iii)",
+        "DLD2025:5(v)",
+        "DLD2025:5(vii)",
+        "DLD2025:5(i)",
+        "DLD2025:19(iv)",
+        "DLD2025:5(vi)",
+        "DLD2025:17(vi)",
+        "DLD2025:12(iv)",
+        "DLD2025:15(i)",
+        "DLD2025:14(i)",
+        "DLD2025:19(i)",
+        "DLD2025:19(ii)"
+      ],
+      "2:Collections": [
+        "DLD2025:8(v)",
+        "DLD2025:5(v)",
+        "DLD2025:9(v)",
+        "DLD2025:24(iii)",
+        "DLD2025:6(iii)",
+        "DLD2025:12(iv)",
+        "KFS2024:7",
+        "DLD2025:9(iii)",
+        "KFS2024:6",
+        "DLD2025:9(i)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(ii)"
+      ],
+      "3:Disbursal and Repayment": [
+        "DLD2025:9(iv)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(ii)",
+        "DLD2025:8(ii)",
+        "DLD2025:6(iv)",
+        "DLD2025:6(ii)",
+        "DLD2025:6(iii)",
+        "KFS2024:4"
+      ],
+      "4:Data Collection": [
+        "DLD2025:13(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:12(i)",
+        "DLD2025:13(iv)",
+        "DLD2025:8(iii)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:17(v)",
+        "DLD2025:14(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:7(i)",
+        "DLD2025:8(iv)"
+      ]
+    }
+  },
+  "seconds": 127.9
+}

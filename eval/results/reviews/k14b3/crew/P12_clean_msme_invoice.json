@@ -1,0 +1,127 @@
+{
+  "system": "crew",
+  "doc_id": "P12_clean_msme_invoice",
+  "status": "reviewed",
+  "findings": [],
+  "candidates": [
+    {
+      "feature": "default_loss_guarantee",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The product feature specifies that the DLG is invoked within 90 days overdue, but RBI requires that DLG be invoked within a maximum overdue period of 120 days, unless the loan dues are made good by the borrower before that.",
+      "doc_evidence": "4. Default loss guarantee: Ledgerly gives Narmada Bank a DLG of 5% of the amount disbursed in a fixed loan portfolio, as a fixed deposit with a lien marked to the bank. It is invoked within 90 days overdue.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph allows invocation of DLG within a maximum overdue period of 120 days, unless the loan dues are made good by the borrower before that. The product feature specifies that the DLG is invoked within 90 days overdue, which is within the 120-day maximum allowed by the RBI. Therefore, the feature complies with the RBI requirement."
+    }
+  ],
+  "summary": "No gaps were found against the reviewed RBI rules for the product 'TradeCredit: Working Capital Loans for Small Traders'.",
+  "trace": {
+    "llm_calls": 15,
+    "prompt_tokens": 11367,
+    "output_tokens": 823,
+    "llm_seconds": 87.5,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 25,
+    "retrieved": {
+      "0:disbursal": [
+        "DLD2025:8(iii)",
+        "DLD2025:8(i)",
+        "KFS2024:5",
+        "DLD2025:20(iii)",
+        "DLD2025:27(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:16(ii)",
+        "DLD2025:5(ii)",
+        "DLD2025:5(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(i)",
+        "DLD2025:6(iv)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)"
+      ],
+      "1:repayment": [
+        "DLD2025:6(iii)",
+        "KFS2024:6",
+        "DLD2025:6(ii)",
+        "KFS2024:7",
+        "DLD2025:6(iv)",
+        "DLD2025:6(i)",
+        "DLD2025:5(ii)",
+        "KFS2024:8",
+        "DLD2025:17(iv)",
+        "DLD2025:9(v)",
+        "DLD2025:8(iii)"
+      ],
+      "2:credit_limit": [
+        "DLD2025:7(ii)",
+        "KFS2024:6",
+        "DLD2025:29(i)",
+        "DLD2025:7(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:16(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:5(ii)",
+        "DLD2025:23(ii)",
+        "DLD2025:23(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:8(ii)",
+        "DLD2025:8(v)"
+      ],
+      "3:default_loss_guarantee": [
+        "DLD2025:22(i)",
+        "DLD2025:23(i)",
+        "DLD2025:26(i)",
+        "DLD2025:24(ii)",
+        "DLD2025:23(ii)",
+        "KFS2024:5",
+        "DLD2025:8(v)",
+        "DLD2025:20(ii)",
+        "DLD2025:5(iv)",
+        "DLD2025:9(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:19(iii)",
+        "DLD2025:25(ii)",
+        "DLD2025:24(iv)",
+        "DLD2025:27(i)",
+        "DLD2025:24(i)"
+      ],
+      "4:recovery": [
+        "DLD2025:8(v)",
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:24(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:5(v)",
+        "KFS2024:7",
+        "DLD2025:11(iv)",
+        "DLD2025:8(iii)",
+        "DLD2025:6(iii)"
+      ],
+      "5:credit_bureau_reporting": [
+        "DLD2025:17(vii)",
+        "DLD2025:16(i)",
+        "DLD2025:17(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:17(v)",
+        "DLD2025:17(vi)",
+        "DLD2025:9(iii)",
+        "DLD2025:17(ii)",
+        "DLD2025:17(iii)",
+        "DLD2025:8(iv)",
+        "DLD2025:17(iv)",
+        "DLD2025:11(iv)"
+      ]
+    }
+  },
+  "seconds": 88.2
+}

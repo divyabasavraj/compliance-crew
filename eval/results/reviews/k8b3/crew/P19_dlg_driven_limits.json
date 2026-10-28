@@ -1,0 +1,171 @@
+{
+  "system": "crew",
+  "doc_id": "P19_dlg_driven_limits",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Product",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature does not explicitly mention the disbursement of loans into the borrower's bank account. The feature only states the loan amount and tenor, but does not confirm that disbursement is made into the borrower's bank account, which is a requirement under DLD2025:9(i).",
+      "doc_evidence": "Product: One-time personal loans of ₹5,000 to ₹40,000, tenor 3 to 12 months.",
+      "severity": "high",
+      "fix": "Update the product feature documentation to explicitly state that loan disbursement is made into the borrower's bank account, in compliance with DLD2025:9(i).",
+      "verifier_note": "The RBI paragraph DLD2025:9(i) explicitly requires that loan disbursement must always be made into the borrower's bank account, except for specific exceptions not applicable here. The product feature does not mention how the loan is disbursed, which is a requirement under the RBI directions. Therefore, the feature fails to comply with the requirement of disbursing loans into the borrower's bank account."
+    },
+    {
+      "feature": "Credit Decision",
+      "rule_id": "DLD2025:7(i)",
+      "issue": "The product feature states that 'the app collects only name, phone and PAN; age, occupation and income are not asked.' This directly contradicts RBI paragraph [DLD2025:7(i)] which requires RE to obtain at a minimum age, occupation and income details to assess the borrower’s creditworthiness.",
+      "doc_evidence": "the app collects only name, phone and PAN; age, occupation and income are not asked.",
+      "severity": "high",
+      "fix": "Revise the credit decision process to collect age, occupation, and income details as required by RBI paragraph [DLD2025:7(i)], and update the product feature description accordingly.",
+      "verifier_note": "The product feature states that age, occupation, and income are not collected, which directly contradicts the RBI paragraph [DLD2025:7(i)] that requires RE to obtain these details as a minimum for assessing creditworthiness. The feature does not comply with the requirement to collect age, occupation, and income details."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Product",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature does not explicitly mention the disbursement of loans into the borrower's bank account. The feature only states the loan amount and tenor, but does not confirm that disbursement is made into the borrower's bank account, which is a requirement under DLD2025:9(i).",
+      "doc_evidence": "Product: One-time personal loans of ₹5,000 to ₹40,000, tenor 3 to 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph DLD2025:9(i) explicitly requires that loan disbursement must always be made into the borrower's bank account, except for specific exceptions not applicable here. The product feature does not mention how the loan is disbursed, which is a requirement under the RBI directions. Therefore, the feature fails to comply with the requirement of disbursing loans into the borrower's bank account."
+    },
+    {
+      "feature": "Credit Decision",
+      "rule_id": "DLD2025:7(i)",
+      "issue": "The product feature states that 'the app collects only name, phone and PAN; age, occupation and income are not asked.' This directly contradicts RBI paragraph [DLD2025:7(i)] which requires RE to obtain at a minimum age, occupation and income details to assess the borrower’s creditworthiness.",
+      "doc_evidence": "the app collects only name, phone and PAN; age, occupation and income are not asked.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that age, occupation, and income are not collected, which directly contradicts the RBI paragraph [DLD2025:7(i)] that requires RE to obtain these details as a minimum for assessing creditworthiness. The feature does not comply with the requirement to collect age, occupation, and income details."
+    },
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The feature 'Default Loss Guarantee' states that QuickLine Tech provides a DLG of 5% of the disbursed portfolio as cash deposited with Satpura Finance, under a Board-approved DLG policy. This exceeds the cap on DLG as per [DLD2025:23(i)] which limits DLG cover to five per cent of the total amount disbursed out of that loan portfolio at any given time.",
+      "doc_evidence": "DLG: QuickLine Tech provides a DLG of 5% of the disbursed portfolio as cash deposited with Satpura Finance, under a Board-approved DLG policy.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that QuickLine Tech provides a DLG of 5% of the disbursed portfolio as cash deposited with Satpura Finance, which is exactly in line with the cap specified in [DLD2025:23(i)] that limits DLG cover to five per cent of the total amount disbursed out of that loan portfolio at any given time. The feature does not exceed the cap and complies with the requirement. The claim that it exceeds the cap is therefore false."
+    },
+    {
+      "feature": "Disbursal and Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature states that 'Loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.' This implies that repayments are made directly to Satpura Finance's account, which may involve a pass-through account or pool account of a third party, including the accounts of LSP, thereby violating the requirement that all loan servicing, repayment, etc. is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "Loans are disbursed into the borrower's bank account and repaid directly to Satpura Finance's account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits the use of any pass-through account or pool account of a third party, including the accounts of LSP, for loan servicing and repayment. The product feature states that repayments are made directly to Satpura Finance's account, which is the RE's bank account. Since the feature does not involve any third-party pass-through or pool account, it complies with the RBI requirement. The claim incorrectly assumes that the RE's own account constitutes a third-party account, which is not the case."
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product feature states that borrowers can exit within 2 days by repaying the principal and proportionate APR without penalty. This complies with the requirement that the borrower shall be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial 'cooling-off period', as the cooling-off period is not less than one day.",
+      "doc_evidence": "Borrowers can exit within 2 days by repaying the principal and proportionate APR without penalty.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature allows borrowers to exit within 2 days, which is within the minimum cooling-off period of 1 day as specified in the RBI paragraph. The feature complies with the requirement of providing an explicit option to exit without penalty during the cooling-off period. The paragraph does not prohibit this action and explicitly allows for a cooling-off period of at least one day."
+    }
+  ],
+  "summary": "The compliance review of the product 'QuickLine: Instant Credit Backed by Partner Guarantee' identified two significant gaps against the reviewed RBI rules. First, the product feature does not explicitly mention the disbursement of loans into the borrower's bank account, which is a requirement under DLD2025:9(i). Second, the product feature states that 'the app collects only name, phone and PAN; age, occupation and income are not asked,' which directly contradicts RBI paragraph DLD2025:7(i) that requires RE to obtain at a minimum age, occupation, and income details to assess the borrower’s creditworthiness.",
+  "trace": {
+    "llm_calls": 18,
+    "prompt_tokens": 11651,
+    "output_tokens": 1894,
+    "llm_seconds": 99.0,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 5,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 25,
+    "retrieved": {
+      "0:Product": [
+        "KFS2024:5",
+        "DLD2025:10(ii)",
+        "DLD2025:12(iv)",
+        "DLD2025:26(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:20(ii)",
+        "DLD2025:23(i)",
+        "DLD2025:20(iii)",
+        "DLD2025:23(ii)",
+        "DLD2025:12(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:26(ii)",
+        "DLD2025:27(ii)",
+        "DLD2025:16(i)"
+      ],
+      "1:Credit Decision": [
+        "DLD2025:19(ii)",
+        "DLD2025:20(ii)",
+        "DLD2025:12(i)",
+        "DLD2025:20(i)",
+        "DLD2025:25(i)",
+        "DLD2025:16(i)",
+        "DLD2025:7(ii)",
+        "DLD2025:9(ii)",
+        "DLD2025:17(v)",
+        "DLD2025:9(iii)",
+        "DLD2025:17(vi)",
+        "DLD2025:9(i)",
+        "DLD2025:27(i)",
+        "DLD2025:19(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:7(i)",
+        "DLD2025:19(i)"
+      ],
+      "2:Default Loss Guarantee": [
+        "DLD2025:23(i)",
+        "DLD2025:19(i)",
+        "DLD2025:23(ii)",
+        "DLD2025:27(i)",
+        "DLD2025:22(i)",
+        "DLD2025:20(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:19(ii)",
+        "DLD2025:20(iii)",
+        "DLD2025:21(i)",
+        "DLD2025:25(i)",
+        "DLD2025:25(ii)",
+        "DLD2025:19(iii)"
+      ],
+      "3:Disbursal and Repayment": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:6(ii)",
+        "DLD2025:5(ii)",
+        "DLD2025:11(i)",
+        "DLD2025:17(ii)"
+      ],
+      "4:Cooling-off Period": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:26(i)",
+        "KFS2024:5",
+        "KFS2024:7",
+        "DLD2025:27(ii)",
+        "KFS2024:6",
+        "DLD2025:11(iv)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(v)"
+      ]
+    }
+  },
+  "seconds": 99.4
+}

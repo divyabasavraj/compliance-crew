@@ -1,8 +1,6 @@
 # What a held-out split taught me about multi-agent systems
 
-*Draft. Numbers come from `docs/PROJECT_LOG.md`; v3 retrieval results are still pending (marked TODO).*
-
-Fintech teams in India check every new product feature against RBI directions by hand. The open-source tools I found for this are Q&A chatbots: you ask about a circular and get an answer. I wanted something that reads a product document before launch and lists the paragraphs it breaks, with citations. That became ComplianceCrew, a six-agent review crew running on Qwen3 8B on my laptop, at a cost of ₹0.
+Fintech teams in India check every new product feature against RBI directions by hand. The open-source tools I found for this are Q&A chatbots: you ask about a circular and get an answer. I wanted something that reads a product document before launch and lists the paragraphs it breaks, with citations. That became ComplianceCrew, a six-agent review crew that runs on Qwen3 8B on my laptop and Qwen3 14B on Kaggle's free GPUs, at a cost of ₹0.
 
 Demo: https://huggingface.co/spaces/Divya52/compliance-crew. Code: https://github.com/divyabasavraj/compliance-crew.
 
@@ -10,7 +8,7 @@ Demo: https://huggingface.co/spaces/Divya52/compliance-crew. Code: https://githu
 
 An Orchestrator splits the product doc into features. For each feature, a Researcher searches the RBI corpus (the Digital Lending Directions 2025 and the 2024 KFS circular), a Gap Analyst flags possible violations, and a Verifier checks each one against the cited paragraph. A Risk Assessor scores what survives, and a Report Writer summarises it.
 
-To measure any of this, I wrote 32 synthetic product docs with 68 planted violations and 5 fully compliant docs. Every doc also has features that look suspicious but are fine, such as disbursal to a dealer or an Aadhaar eKYC through a licensed agency. I tuned on P01–P12 and kept P13–P32 as a test split I did not look at while changing prompts.
+To measure any of this, I wrote 32 synthetic product docs with 68 planted violations and 5 fully compliant docs. Every doc also has features that look suspicious but are fine, such as disbursal to a dealer or an Aadhaar eKYC through a licensed agency. I tuned on P01 to P12 and kept P13 to P32 as a test split I did not look at while changing prompts.
 
 ## The first result was wrong
 
@@ -20,15 +18,19 @@ Two things explained most of it. A Verifier rule I had added ("an exception appl
 
 After fixing both, using dev docs only, the crew reached 0.78 recall and 0.45 precision on the held-out split, against 0.71 and 0.27 for the single agent. The multi-agent case turned out to be mostly about precision: half the false alarms (39 vs 80), at about 3.7× the time.
 
-## A bigger model moved the bottleneck
+## A bigger model moved the bottleneck to retrieval
 
 Most remaining misses came from the Gap Analyst, so I ran the same crew with Qwen3 14B on Kaggle's free T4 GPUs, with an 8B control on the same hardware. Precision went from 0.46 to 0.62 and false alarms from 36 to 20. Recall went up by only 2 violations, which is about run-to-run noise on 41.
 
 The miss attribution showed why. Gap Analyst misses fell from 6 to 1, but retrieval misses rose from 3 to 6. The Researcher also ran on 14B, wrote different search queries, and lost rules the 8B queries had found. One of those losses was a plain bug: a cap of 10 paragraphs that two section queries filled on their own, so every model-written query result was cut whenever the Orchestrator put two sections in one feature. I had written that cap before adding per-section queries.
 
-The fix was to make retrieval depend less on the model. The fixed per-section searches (no LLM involved) reach 34 of 41 test rules in their top 5 and 39 in their top 10. I raised that k and merged the pool in two tiers so the cap can only cut the deeper section hits. TODO: v3 results for 8B and 14B.
+The fix was to make retrieval depend less on the model. The fixed per-section searches (no LLM involved) reach 34 of 41 test rules in their top 5 and 39 in their top 10. I raised that k and merged the pool in two tiers so the cap can only cut the deeper section hits.
 
-## Security for agents, measured
+With that change, the 14B crew caught 37 of 41 held-out violations (0.90 recall, up from 0.80) at 0.79 precision, with 10 false alarms instead of 20. Retrieval misses fell from 6 to 1. On the dev docs it caught 26 of 27. One caveat: I picked k=10 from test-split ranks, because the dev docs were already at 27 of 27 with k=5 and could not tell the options apart. So this is a test number with retrieval tuned on it, and dev serves as the regression check.
+
+For 8B the same change came out even: it gained 3 violations on test and lost 3 on dev. All three dev losses had the right rule in the retrieved pool. The pools were up to 1.7× larger, and the 8B Gap Analyst stopped proposing it. More context helped the bigger model and diluted the smaller one, so the right retrieval depth depends on the model behind it.
+
+## Measuring the security layer
 
 Uploaded product docs can carry instructions aimed at the reviewer, and they often contain Aadhaar, PAN and UPI IDs. I reused the guard design from my earlier project PatchPilot (rules first, an LLM judge last) and added what agents need: checks on every message between agents, tool allow-lists enforced in code, Indian PII masking with the Aadhaar checksum, and an audit log.
 
@@ -40,4 +42,4 @@ I planned a server-backed demo on a free Hugging Face Space, and the Space creat
 
 ## What I would tell myself at the start
 
-Keep a held-out split from day one, and write the held-out attack set before you describe the fix to anyone. When you add a new source to a pool, check what an old cap now cuts.
+Keep a held-out split from day one, and write the held-out attack set before you describe the fix to anyone. Attribute every miss to the agent that lost it, because the bottleneck moves each time you fix one. When you add a new source to a pool, check what an old cap now cuts. And measure a change on every model you plan to ship, because a fix for one can hurt another.

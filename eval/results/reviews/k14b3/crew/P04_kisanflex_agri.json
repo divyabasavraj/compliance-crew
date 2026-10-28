@@ -1,0 +1,162 @@
+{
+  "system": "crew",
+  "doc_id": "P04_kisanflex_agri",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature describes that the credit is disbursed into the bank account of the agri-input dealer, not the borrower (farmer). According to RBI guidelines, loan disbursal should be made into the bank account of the borrower, except in specific cases where it is directly made to the end-beneficiary. In this case, the end-beneficiary (farmer) is not receiving the loan directly, but the agri-input dealer is, which may not be compliant with the requirement unless explicitly covered under a statutory or regulatory mandate.",
+      "doc_evidence": "Credit is paid directly into the bank account of the agri-input dealer when the farmer buys inputs, against an invoice uploaded in the app.",
+      "severity": "high",
+      "fix": "Amend the product feature to ensure that the loan is disbursed directly into the borrower's (farmer's) bank account, or provide a statutory or regulatory justification for disbursing to the agri-input dealer.",
+      "verifier_note": "The product feature describes a scenario where the loan is disbursed into the bank account of the agri-input dealer, not the borrower (farmer). According to the RBI paragraph, loan disbursal should be made into the bank account of the borrower, except in specific cases such as when it is directly made to the end-beneficiary. In this case, the end-beneficiary (farmer) is not receiving the loan directly, and the feature does not mention that this disbursal is covered under a statutory or regulatory mandate or that it is part of a co-lending transaction. Therefore, the feature does something the paragraph forbids."
+    },
+    {
+      "feature": "repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product feature describes repayment into a pooled collection account run by AgriNext (the LSP), which is then swept to the RE (Godavari Rural Bank) every Friday. This violates the requirement that all loan servicing and repayment must be executed directly into the RE’s bank account without any pass-through account or pool account of a third party, including the LSP.",
+      "doc_evidence": "3. Repayment collection: To make repayment easy in villages, farmers repay into a pooled collection account run by AgriNext, which sweeps the money to Godavari Rural Bank every Friday.",
+      "severity": "high",
+      "fix": "Modify the repayment process to ensure that all repayments are made directly into the RE's (Godavari Rural Bank) bank account, eliminating the use of any pooled or pass-through accounts managed by the LSP (AgriNext).",
+      "verifier_note": "The product feature describes repayment into a pooled collection account run by AgriNext (the LSP), which is then swept to the RE (Godavari Rural Bank) every Friday. This involves a pass-through account (the pooled collection account) of a third party (AgriNext, the LSP), which is explicitly prohibited by the RBI paragraph [DLD2025:9(ii)]."
+    },
+    {
+      "feature": "recovery_process",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The product feature allows AgriNext to deduct its 5% recovery fee from the cash collected before depositing the rest into the farmer's loan account. This implies that the LSP (AgriNext) is charging the borrower directly for the recovery fee, which is not permitted under the RBI guidelines.",
+      "doc_evidence": "Cash collected is deposited and credited to the farmer's loan account within seven working days. AgriNext deducts its 5% recovery fee from the cash collected before depositing the rest.",
+      "severity": "high",
+      "fix": "Revise the recovery process to ensure that the LSP (AgriNext) does not deduct any fees directly from the borrower's repayment. Instead, any service charges should be negotiated and agreed upon separately with the RE and not directly deducted from the borrower's account.",
+      "verifier_note": "The RBI paragraph [DLD2025:9(iv)] states that fees, charges, reimbursements, etc., payable to LSPs must be paid directly by the RE and not charged to or collected from the borrowers separately by the LSP. In the product feature, AgriNext (the LSP) is deducting its 5% recovery fee directly from the cash collected from the borrower before depositing the rest into the farmer's loan account. This implies that the LSP is collecting a fee directly from the borrower, which is explicitly prohibited by the RBI guideline."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature describes that the credit is disbursed into the bank account of the agri-input dealer, not the borrower (farmer). According to RBI guidelines, loan disbursal should be made into the bank account of the borrower, except in specific cases where it is directly made to the end-beneficiary. In this case, the end-beneficiary (farmer) is not receiving the loan directly, but the agri-input dealer is, which may not be compliant with the requirement unless explicitly covered under a statutory or regulatory mandate.",
+      "doc_evidence": "Credit is paid directly into the bank account of the agri-input dealer when the farmer buys inputs, against an invoice uploaded in the app.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a scenario where the loan is disbursed into the bank account of the agri-input dealer, not the borrower (farmer). According to the RBI paragraph, loan disbursal should be made into the bank account of the borrower, except in specific cases such as when it is directly made to the end-beneficiary. In this case, the end-beneficiary (farmer) is not receiving the loan directly, and the feature does not mention that this disbursal is covered under a statutory or regulatory mandate or that it is part of a co-lending transaction. Therefore, the feature does something the paragraph forbids."
+    },
+    {
+      "feature": "repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product feature describes repayment into a pooled collection account run by AgriNext (the LSP), which is then swept to the RE (Godavari Rural Bank) every Friday. This violates the requirement that all loan servicing and repayment must be executed directly into the RE’s bank account without any pass-through account or pool account of a third party, including the LSP.",
+      "doc_evidence": "3. Repayment collection: To make repayment easy in villages, farmers repay into a pooled collection account run by AgriNext, which sweeps the money to Godavari Rural Bank every Friday.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes repayment into a pooled collection account run by AgriNext (the LSP), which is then swept to the RE (Godavari Rural Bank) every Friday. This involves a pass-through account (the pooled collection account) of a third party (AgriNext, the LSP), which is explicitly prohibited by the RBI paragraph [DLD2025:9(ii)]."
+    },
+    {
+      "feature": "recovery_process",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The product feature allows AgriNext to deduct its 5% recovery fee from the cash collected before depositing the rest into the farmer's loan account. This implies that the LSP (AgriNext) is charging the borrower directly for the recovery fee, which is not permitted under the RBI guidelines.",
+      "doc_evidence": "Cash collected is deposited and credited to the farmer's loan account within seven working days. AgriNext deducts its 5% recovery fee from the cash collected before depositing the rest.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:9(iv)] states that fees, charges, reimbursements, etc., payable to LSPs must be paid directly by the RE and not charged to or collected from the borrowers separately by the LSP. In the product feature, AgriNext (the LSP) is deducting its 5% recovery fee directly from the cash collected from the borrower before depositing the rest into the farmer's loan account. This implies that the LSP is collecting a fee directly from the borrower, which is explicitly prohibited by the RBI guideline."
+    }
+  ],
+  "summary": "The compliance review of the KisanFlex: Crop Input Credit for Farmers product identified three high-priority findings against RBI guidelines. First, the credit is disbursed to the agri-input dealer rather than the borrower (farmer), which may not be compliant unless explicitly covered under a statutory or regulatory mandate. Second, repayments are directed into a pooled collection account managed by AgriNext (the LSP) before being transferred to the RE, violating the requirement for direct repayment into the RE’s bank account. Third, AgriNext is deducting a 5% recovery fee directly from the borrower’s funds before depositing the remaining amount into the farmer's loan account, which is not permitted under RBI guidelines.",
+  "trace": {
+    "llm_calls": 16,
+    "prompt_tokens": 11135,
+    "output_tokens": 1709,
+    "llm_seconds": 157.9,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 3,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 24,
+    "retrieved": {
+      "0:disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:16(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:5(ii)",
+        "DLD2025:7(ii)",
+        "DLD2025:6(iv)",
+        "DLD2025:8(v)",
+        "DLD2025:20(ii)",
+        "DLD2025:24(ii)"
+      ],
+      "1:repayment": [
+        "DLD2025:9(i)",
+        "DLD2025:9(v)",
+        "DLD2025:9(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:12(iv)",
+        "DLD2025:9(iii)",
+        "DLD2025:12(iii)",
+        "DLD2025:12(i)",
+        "DLD2025:12(ii)",
+        "KFS2024:6"
+      ],
+      "2:recovery_process": [
+        "DLD2025:9(v)",
+        "DLD2025:26(i)",
+        "DLD2025:8(v)",
+        "DLD2025:9(iv)",
+        "KFS2024:7",
+        "DLD2025:5(v)",
+        "DLD2025:24(iii)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(iii)",
+        "DLD2025:12(i)",
+        "DLD2025:16(i)",
+        "KFS2024:5",
+        "DLD2025:27(ii)",
+        "DLD2025:10(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:6(i)",
+        "DLD2025:11(i)",
+        "DLD2025:7(i)"
+      ],
+      "3:credit_bureau_reporting": [
+        "DLD2025:16(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:17(i)",
+        "DLD2025:29(i)",
+        "DLD2025:17(v)",
+        "DLD2025:15(i)",
+        "DLD2025:17(iii)",
+        "KFS2024:6",
+        "DLD2025:17(ii)",
+        "DLD2025:17(vii)",
+        "DLD2025:17(vi)"
+      ],
+      "4:1. Product": [
+        "DLD2025:16(ii)",
+        "DLD2025:6(iv)",
+        "DLD2025:10(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:20(i)",
+        "DLD2025:16(i)",
+        "DLD2025:14(i)",
+        "DLD2025:9(i)",
+        "DLD2025:29(i)",
+        "KFS2024:5",
+        "DLD2025:9(iv)",
+        "DLD2025:20(iii)",
+        "DLD2025:8(iii)"
+      ]
+    }
+  },
+  "seconds": 158.5
+}

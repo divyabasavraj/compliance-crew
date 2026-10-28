@@ -1,0 +1,125 @@
+{
+  "system": "crew",
+  "doc_id": "P21_dla_reporting",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "compliance_reporting",
+      "rule_id": "DLD2025:17(i)",
+      "issue": "The bank is not reporting the three partner LSP apps (CashKart, EasyEMI, and FarmFund) on the RBI CIMS portal, as they belong to the partners. However, the RBI explicitly requires that all DLAs, whether owned by the RE or LSPs, must be reported on the CIMS portal.",
+      "doc_evidence": "Only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners.",
+      "severity": "high",
+      "fix": "Immediately report the three partner LSP apps (CashKart, EasyEMI, and FarmFund) on the RBI CIMS portal as required under DLD2025:17(i). This is critical to avoid RBI penalties and ensure full compliance with regulatory requirements.",
+      "verifier_note": "The RBI paragraph [DLD2025:17(i)] explicitly requires that all DLAs, whether owned by the RE or LSPs, must be reported on the CIMS portal. The product feature states that the three partner LSP apps are not reported because they belong to the partners, which directly contradicts the requirement in the RBI paragraph. The bank's action of not reporting these DLAs violates the directive."
+    },
+    {
+      "feature": "compliance_reporting",
+      "rule_id": "DLD2025:17(ii)",
+      "issue": "The bank has not updated the CIMS portal with the fourth partner app, StudyCash, which went live last month. The RBI requires that REs update the list of DLAs on the CIMS portal as and when additional DLAs are deployed.",
+      "doc_evidence": "A fourth partner app, StudyCash, went live last month. The bank will add it to its records at the next annual review.",
+      "severity": "high",
+      "fix": "Update the CIMS portal with the fourth partner app, StudyCash, as it has gone live. Failure to do so may result in regulatory non-compliance and potential penalties from the RBI.",
+      "verifier_note": "The RBI paragraph requires that REs update the CIMS portal as and when additional DLAs are deployed. The feature states that the fourth partner app, StudyCash, went live last month and that the bank will add it to its records at the next annual review. This indicates that the bank has not updated the CIMS portal immediately upon deployment of the new DLA, as required by the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "compliance_reporting",
+      "rule_id": "DLD2025:17(i)",
+      "issue": "The bank is not reporting the three partner LSP apps (CashKart, EasyEMI, and FarmFund) on the RBI CIMS portal, as they belong to the partners. However, the RBI explicitly requires that all DLAs, whether owned by the RE or LSPs, must be reported on the CIMS portal.",
+      "doc_evidence": "Only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:17(i)] explicitly requires that all DLAs, whether owned by the RE or LSPs, must be reported on the CIMS portal. The product feature states that the three partner LSP apps are not reported because they belong to the partners, which directly contradicts the requirement in the RBI paragraph. The bank's action of not reporting these DLAs violates the directive."
+    },
+    {
+      "feature": "compliance_reporting",
+      "rule_id": "DLD2025:17(ii)",
+      "issue": "The bank has not updated the CIMS portal with the fourth partner app, StudyCash, which went live last month. The RBI requires that REs update the list of DLAs on the CIMS portal as and when additional DLAs are deployed.",
+      "doc_evidence": "A fourth partner app, StudyCash, went live last month. The bank will add it to its records at the next annual review.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that REs update the CIMS portal as and when additional DLAs are deployed. The feature states that the fourth partner app, StudyCash, went live last month and that the bank will add it to its records at the next annual review. This indicates that the bank has not updated the CIMS portal immediately upon deployment of the new DLA, as required by the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the digital apps used by Vasant Bank identified two high-priority gaps. First, the bank is not reporting three partner LSP apps (CashKart, EasyEMI, and FarmFund) on the RBI CIMS portal, despite the RBI's requirement that all DLAs, regardless of ownership, must be reported. Second, the bank has not updated the CIMS portal with the fourth partner app, StudyCash, which was deployed last month, violating the RBI's mandate to update the list of DLAs on the portal as and when new apps are launched.",
+  "trace": {
+    "llm_calls": 13,
+    "prompt_tokens": 8361,
+    "output_tokens": 1201,
+    "llm_seconds": 112.3,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 4,
+      "gap_analyst": 4,
+      "verifier": 2,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 19,
+    "retrieved": {
+      "0:disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(v)",
+        "DLD2025:16(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:6(iv)",
+        "KFS2024:4",
+        "KFS2024:7",
+        "DLD2025:8(ii)"
+      ],
+      "1:grievance_redressal": [
+        "DLD2025:8(iv)",
+        "DLD2025:17(iv)",
+        "DLD2025:11(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:16(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:11(i)",
+        "DLD2025:15(i)",
+        "DLD2025:14(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:17(i)"
+      ],
+      "2:compliance_reporting": [
+        "DLD2025:17(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:17(vii)",
+        "DLD2025:17(v)",
+        "DLD2025:16(ii)",
+        "DLD2025:12(iii)",
+        "DLD2025:27(ii)",
+        "KFS2024:6",
+        "DLD2025:19(iii)",
+        "DLD2025:16(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:17(iii)",
+        "DLD2025:27(i)",
+        "DLD2025:17(vi)",
+        "DLD2025:29(i)",
+        "DLD2025:5(iii)",
+        "DLD2025:6(iii)"
+      ],
+      "3:product_disclosure": [
+        "DLD2025:9(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:9(iii)",
+        "DLD2025:5(iv)",
+        "DLD2025:8(iv)",
+        "DLD2025:5(i)",
+        "DLD2025:15(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:16(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:6",
+        "DLD2025:6(i)",
+        "DLD2025:24(iv)"
+      ]
+    }
+  },
+  "seconds": 112.8
+}

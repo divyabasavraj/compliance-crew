@@ -1,0 +1,141 @@
+{
+  "system": "crew",
+  "doc_id": "P05_facefin_biometric",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "The product collects and stores biometric data (face template and fingerprint data) without explicitly stating that this is allowed under extant statutory guidelines.",
+      "doc_evidence": "Face login: To make login fast and secure, FaceFin stores each customer's face template and fingerprint data on its servers and uses them for every login and loan approval.",
+      "severity": "high",
+      "fix": "Explicitly state in the privacy policy and user agreement that the collection and storage of biometric data (face template and fingerprint data) is in compliance with extant statutory guidelines such as the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011, and the proposed Data Protection Bill, 2023.",
+      "verifier_note": "The product feature explicitly states that biometric data (face template and fingerprint data) is collected and stored by the company. According to the RBI paragraph [DLD2025:13(iii)], this is only allowed if it is permitted under extant statutory guidelines. The feature does not mention that this collection and storage is explicitly allowed under such guidelines, which is a requirement under the paragraph."
+    },
+    {
+      "feature": "Data Storage and Hosting",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "Data is stored outside India (in Singapore) and is only synced to India every quarter, which violates the requirement that data processed outside India must be deleted from foreign servers and brought back to India within 24 hours.",
+      "doc_evidence": "Data hosting: Our analytics and core lending systems run on a cloud provider's Singapore data centre, chosen for lower cost. A copy of the data is synced to India every quarter.",
+      "severity": "high",
+      "fix": "Implement a data transfer and storage policy that ensures all data processed outside India is deleted from foreign servers and transferred back to India within 24 hours, in compliance with RBI guidelines and the Information Technology Act, 2000.",
+      "verifier_note": "The product feature states that data is stored in Singapore and only synced to India every quarter. This does not meet the requirement in the RBI paragraph that data processed outside India must be deleted from foreign servers and brought back to India within 24 hours. The quarterly sync does not satisfy the 24-hour requirement, and the data remains stored outside India for extended periods."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "The product collects and stores biometric data (face template and fingerprint data) without explicitly stating that this is allowed under extant statutory guidelines.",
+      "doc_evidence": "Face login: To make login fast and secure, FaceFin stores each customer's face template and fingerprint data on its servers and uses them for every login and loan approval.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that biometric data (face template and fingerprint data) is collected and stored by the company. According to the RBI paragraph [DLD2025:13(iii)], this is only allowed if it is permitted under extant statutory guidelines. The feature does not mention that this collection and storage is explicitly allowed under such guidelines, which is a requirement under the paragraph."
+    },
+    {
+      "feature": "Data Storage and Hosting",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "Data is stored outside India (in Singapore) and is only synced to India every quarter, which violates the requirement that data processed outside India must be deleted from foreign servers and brought back to India within 24 hours.",
+      "doc_evidence": "Data hosting: Our analytics and core lending systems run on a cloud provider's Singapore data centre, chosen for lower cost. A copy of the data is synced to India every quarter.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that data is stored in Singapore and only synced to India every quarter. This does not meet the requirement in the RBI paragraph that data processed outside India must be deleted from foreign servers and brought back to India within 24 hours. The quarterly sync does not satisfy the 24-hour requirement, and the data remains stored outside India for extended periods."
+    }
+  ],
+  "summary": "The compliance review of FaceFin: One-Look Personal Loans identified two high-priority gaps. First, the product collects and stores biometric data (face template and fingerprint data) without explicitly stating that this is allowed under extant statutory guidelines, violating [DLD2025:13(iii)]. Second, the product stores data outside India (in Singapore) and syncs it to India only every quarter, which violates the requirement that data processed outside India must be deleted from foreign servers and brought back to India within 24 hours, as outlined in [DLD2025:13(iv)].",
+  "trace": {
+    "llm_calls": 15,
+    "prompt_tokens": 9726,
+    "output_tokens": 1147,
+    "llm_seconds": 109.9,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 2,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 23,
+    "retrieved": {
+      "0:Data Collection": [
+        "DLD2025:13(ii)",
+        "DLD2025:13(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:8(iv)",
+        "DLD2025:13(iv)",
+        "DLD2025:7(i)",
+        "DLD2025:7(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:13(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:14(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:12(iii)",
+        "DLD2025:8(iii)",
+        "DLD2025:12(i)",
+        "KFS2024:4",
+        "KFS2024:6",
+        "DLD2025:9(i)",
+        "KFS2024:7"
+      ],
+      "1:Data Storage and Hosting": [
+        "DLD2025:13(iv)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(ii)",
+        "DLD2025:12(iii)",
+        "DLD2025:13(iii)",
+        "DLD2025:17(v)",
+        "DLD2025:15(i)",
+        "DLD2025:12(iv)",
+        "DLD2025:8(iv)",
+        "DLD2025:8(iii)",
+        "DLD2025:5(ii)"
+      ],
+      "2:Consent Controls and Data Management": [
+        "DLD2025:12(ii)",
+        "DLD2025:12(iii)",
+        "DLD2025:12(i)",
+        "DLD2025:12(iv)",
+        "DLD2025:13(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iv)",
+        "DLD2025:14(ii)",
+        "DLD2025:13(iii)"
+      ],
+      "3:Privacy Policy and Transparency": [
+        "DLD2025:14(ii)",
+        "DLD2025:13(ii)",
+        "DLD2025:12(ii)",
+        "DLD2025:14(i)",
+        "DLD2025:13(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:12(iii)",
+        "DLD2025:12(i)",
+        "DLD2025:8(iii)"
+      ],
+      "4:Loan Product and Terms": [
+        "DLD2025:6(iv)",
+        "KFS2024:5",
+        "DLD2025:12(ii)",
+        "DLD2025:16(ii)",
+        "DLD2025:10(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:20(iii)",
+        "DLD2025:8(iv)",
+        "DLD2025:12(iv)",
+        "DLD2025:16(i)",
+        "DLD2025:14(i)",
+        "DLD2025:9(v)",
+        "DLD2025:27(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:6(iii)"
+      ]
+    }
+  },
+  "seconds": 110.5
+}

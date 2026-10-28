@@ -1,0 +1,178 @@
+{
+  "system": "crew",
+  "doc_id": "P01_studentpay_bnpl",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature describes disbursal of loan amounts directly into the bank account of the college or coaching institute (for course fees) and directly into the merchant's bank account (for laptops). This is a third-party account, and the RBI paragraph explicitly states that disbursal should be made into the bank account of the borrower, except in specific cases where the loan is disbursed directly into the bank account of the end-beneficiary. However, the feature does not indicate that the borrower is the end-beneficiary in these cases, and the disbursement is made to third-party accounts (colleges, coaching institutes, merchants), which is not permitted unless explicitly covered under statutory or regulatory mandates.",
+      "doc_evidence": "For course fees, the loan amount is paid directly into the bank account of the college or coaching institute. For laptops, the amount goes directly to the merchant's bank account at checkout.",
+      "severity": "high",
+      "fix": "Revise the product feature to ensure that disbursements are made directly into the borrower's bank account, or explicitly document that the borrower is the end-beneficiary in cases where disbursement is made to third parties, in compliance with RBI guidelines.",
+      "verifier_note": "The RBI paragraph allows disbursement into the end-beneficiary's bank account for specific end-use cases. However, the product feature describes disbursement into the bank accounts of colleges, coaching institutes, and merchants, which are third-party accounts and not the borrower's or end-beneficiary's accounts. The feature does not confirm that the borrower is the end-beneficiary in these cases, nor does it indicate that these disbursements are covered under statutory or regulatory mandates. Therefore, the feature appears to violate the RBI paragraph by disbursing to third-party accounts without meeting the exceptions outlined."
+    },
+    {
+      "feature": "data_collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product feature collects the phone's contact list and call logs in the background for credit scoring purposes, which is explicitly prohibited by RBI guidelines. The RBI paragraph states that REs and LSPs must not access mobile phone resources like contact lists and call logs, except for one-time access for on-boarding/KYC purposes with explicit consent.",
+      "doc_evidence": "To approve students with thin credit files, the app reads the phone's contact list and call logs in the background and checks how many contacts are already StudentPay customers. Students with many repaying friends get a higher limit.",
+      "severity": "high",
+      "fix": "Immediately discontinue the collection of phone contact lists and call logs in the background. Implement a one-time, opt-in process for KYC purposes only, with explicit user consent as mandated by RBI guidelines.",
+      "verifier_note": "The product feature collects contact list and call logs in the background for credit scoring purposes, which is explicitly prohibited by the RBI paragraph. The paragraph explicitly forbids access to mobile phone resources like contact list and call logs, except for one-time access during on-boarding/KYC with explicit consent. The feature does not meet this requirement as it accesses these resources for a different purpose (credit scoring) and not during on-boarding/KYC."
+    },
+    {
+      "feature": "4. Credit limit growth",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The product feature allows for an automatic increase in credit limit without requiring an explicit request from the borrower.",
+      "doc_evidence": "Every three months, if the student has repaid on time, the app automatically raises their credit limit by 25% and sends a congratulations notification. No action is needed from the student.",
+      "severity": "medium",
+      "fix": "Modify the product feature to require an explicit request from the borrower before any automatic increase in credit limit, ensuring compliance with regulatory expectations around borrower consent and control.",
+      "verifier_note": "The product feature allows for an automatic increase in credit limit without requiring an explicit request from the borrower, which directly contradicts the RBI paragraph that prohibits automatic increases unless an explicit request is received, evaluated, and kept on record."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature describes disbursal of loan amounts directly into the bank account of the college or coaching institute (for course fees) and directly into the merchant's bank account (for laptops). This is a third-party account, and the RBI paragraph explicitly states that disbursal should be made into the bank account of the borrower, except in specific cases where the loan is disbursed directly into the bank account of the end-beneficiary. However, the feature does not indicate that the borrower is the end-beneficiary in these cases, and the disbursement is made to third-party accounts (colleges, coaching institutes, merchants), which is not permitted unless explicitly covered under statutory or regulatory mandates.",
+      "doc_evidence": "For course fees, the loan amount is paid directly into the bank account of the college or coaching institute. For laptops, the amount goes directly to the merchant's bank account at checkout.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph allows disbursement into the end-beneficiary's bank account for specific end-use cases. However, the product feature describes disbursement into the bank accounts of colleges, coaching institutes, and merchants, which are third-party accounts and not the borrower's or end-beneficiary's accounts. The feature does not confirm that the borrower is the end-beneficiary in these cases, nor does it indicate that these disbursements are covered under statutory or regulatory mandates. Therefore, the feature appears to violate the RBI paragraph by disbursing to third-party accounts without meeting the exceptions outlined."
+    },
+    {
+      "feature": "data_collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The product feature collects the phone's contact list and call logs in the background for credit scoring purposes, which is explicitly prohibited by RBI guidelines. The RBI paragraph states that REs and LSPs must not access mobile phone resources like contact lists and call logs, except for one-time access for on-boarding/KYC purposes with explicit consent.",
+      "doc_evidence": "To approve students with thin credit files, the app reads the phone's contact list and call logs in the background and checks how many contacts are already StudentPay customers. Students with many repaying friends get a higher limit.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature collects contact list and call logs in the background for credit scoring purposes, which is explicitly prohibited by the RBI paragraph. The paragraph explicitly forbids access to mobile phone resources like contact list and call logs, except for one-time access during on-boarding/KYC with explicit consent. The feature does not meet this requirement as it accesses these resources for a different purpose (credit scoring) and not during on-boarding/KYC."
+    },
+    {
+      "feature": "4. Credit limit growth",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The product feature allows for an automatic increase in credit limit without requiring an explicit request from the borrower.",
+      "doc_evidence": "Every three months, if the student has repaid on time, the app automatically raises their credit limit by 25% and sends a congratulations notification. No action is needed from the student.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature allows for an automatic increase in credit limit without requiring an explicit request from the borrower, which directly contradicts the RBI paragraph that prohibits automatic increases unless an explicit request is received, evaluated, and kept on record."
+    }
+  ],
+  "summary": "The compliance review of the StudentPay product identified three key findings against the RBI guidelines. First, the product disburses loan amounts directly into third-party accounts (colleges, coaching institutes, and merchants), which is not permitted unless explicitly covered under statutory or regulatory mandates. Second, the product collects phone contact lists and call logs in the background for credit scoring, which is prohibited by RBI guidelines unless for one-time on-boarding/KYC purposes with explicit consent. Third, the product allows for an automatic increase in credit limit without an explicit request from the borrower, which is not in compliance with the requirement for explicit borrower requests.",
+  "trace": {
+    "llm_calls": 18,
+    "prompt_tokens": 13938,
+    "output_tokens": 1648,
+    "llm_seconds": 289.8,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 3,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 28,
+    "retrieved": {
+      "0:disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(v)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:12(ii)",
+        "DLD2025:17(vi)",
+        "KFS2024:8",
+        "DLD2025:6(iii)",
+        "DLD2025:10(i)",
+        "DLD2025:23(i)",
+        "DLD2025:8(iii)"
+      ],
+      "1:repayment": [
+        "DLD2025:8(iii)",
+        "KFS2024:6",
+        "DLD2025:6(iii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:17(v)",
+        "DLD2025:16(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)",
+        "DLD2025:29(i)",
+        "KFS2024:7"
+      ],
+      "2:data_collection": [
+        "DLD2025:12(i)",
+        "DLD2025:7(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:7(ii)",
+        "DLD2025:16(ii)",
+        "DLD2025:8(v)",
+        "DLD2025:16(i)",
+        "DLD2025:15(i)",
+        "DLD2025:12(iii)",
+        "DLD2025:8(iv)",
+        "DLD2025:10(i)",
+        "DLD2025:19(i)",
+        "DLD2025:19(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:17(ii)",
+        "KFS2024:6"
+      ],
+      "3:grievance_redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:11(i)",
+        "DLD2025:17(iv)",
+        "DLD2025:11(iii)",
+        "DLD2025:6(iii)",
+        "DLD2025:8(iii)",
+        "DLD2025:11(iv)",
+        "DLD2025:27(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:9(iv)"
+      ],
+      "4:1. Product overview": [
+        "DLD2025:6(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "KFS2024:5",
+        "DLD2025:9(i)",
+        "DLD2025:15(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:27(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:29(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:7(ii)",
+        "DLD2025:7(i)",
+        "DLD2025:10(i)",
+        "DLD2025:8(iii)"
+      ],
+      "5:4. Credit limit growth": [
+        "DLD2025:7(ii)",
+        "KFS2024:5",
+        "DLD2025:16(ii)",
+        "DLD2025:20(ii)",
+        "DLD2025:29(i)",
+        "DLD2025:20(i)",
+        "DLD2025:15(i)",
+        "DLD2025:16(i)",
+        "DLD2025:26(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:10(i)",
+        "DLD2025:19(iii)"
+      ]
+    }
+  },
+  "seconds": 290.6
+}

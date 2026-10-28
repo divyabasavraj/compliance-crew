@@ -1,0 +1,198 @@
+{
+  "system": "crew",
+  "doc_id": "P32_aadhaar_biometric",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "The product feature states that 'Data Collection' involves the collection of personal data through the KYCFast app by IDFlow Pvt Ltd (LSP). However, the RBI paragraph [DLD2025:13(iii)] explicitly prohibits the storage or collection of biometric data by RE and LSP unless allowed under extant statutory guidelines. The feature does not specify whether biometric data is being collected or stored, but the mere collection of personal data through a video KYC and biometric onboarding process may imply the collection of biometric data, which could violate the requirement to ensure that no biometric data is stored or collected unless permitted by law.",
+      "doc_evidence": "Product: Personal loans of ₹25,000 to ₹2,00,000, with fully digital onboarding.",
+      "severity": "high",
+      "fix": "Review and update the product feature to explicitly state whether biometric data is being collected or stored. Ensure compliance with RBI guidelines by ceasing the collection or storage of biometric data unless explicitly permitted by law.",
+      "verifier_note": "The RBI paragraph explicitly prohibits the storage or collection of biometric data by RE and LSP unless allowed under extant statutory guidelines. The product feature mentions the collection of personal data through a video KYC and biometric onboarding process, which implies the collection of biometric data. Since the feature does not specify whether biometric data is being collected or stored, and the paragraph forbids such collection unless permitted by law, the feature may violate the requirement if biometric data is indeed being collected. However, the feature does not explicitly confirm the collection of biometric data, so the violation is not definitively established based on the provided information."
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "The feature 'Fingerprint archive: IDFlow additionally saves a copy of each borrower's fingerprint scan on its own servers, to speed up repeat loans' violates the requirement that no biometric data should be stored or collected by the RE and LSP unless allowed under extant statutory guidelines. Storing fingerprint scans constitutes biometric data and is not explicitly permitted unless under statutory guidelines.",
+      "doc_evidence": "IDFlow additionally saves a copy of each borrower's fingerprint scan on its own servers, to speed up repeat loans.",
+      "severity": "high",
+      "fix": "Immediately stop storing fingerprint scans on IDFlow servers. Implement a policy to delete biometric data after the completion of the KYC process, ensuring no biometric data is retained unless permitted by law.",
+      "verifier_note": "The RBI paragraph explicitly prohibits the storage of biometric data by RE and LSP unless allowed under statutory guidelines. The feature 'Fingerprint archive' involves storing fingerprint scans, which is biometric data. The paragraph does not mention any exception for storing biometric data for speeding up repeat loans. Therefore, the feature violates the requirement unless it is explicitly permitted under statutory guidelines, which is not stated in the feature text."
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The feature 'Statements: IDFlow keeps full copies of borrowers' bank statements and salary slips on its servers after the loan is approved' violates the requirement that LSPs should not store personal information of the borrower except for some basic minimal data. Bank statements and salary slips are personal information and not limited to basic data.",
+      "doc_evidence": "IDFlow keeps full copies of borrowers' bank statements and salary slips on its servers after the loan is approved.",
+      "severity": "high",
+      "fix": "Stop storing full copies of bank statements and salary slips on IDFlow servers. Only retain minimal necessary data for loan processing and ensure all personal information is deleted or anonymized after the loan is approved.",
+      "verifier_note": "The RBI paragraph explicitly states that LSPs should not store personal information of borrowers except for some basic minimal data. The product feature mentions that IDFlow keeps full copies of borrowers' bank statements and salary slips on its servers after the loan is approved. Bank statements and salary slips are considered personal information and are not limited to basic data. Therefore, the feature violates the requirement by storing personal information beyond the basic minimal data allowed."
+    },
+    {
+      "feature": "Data Storage (5. Retention)",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.",
+      "doc_evidence": "Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.",
+      "severity": "high",
+      "fix": "Develop and publish a clear data retention and deletion policy, specifying the duration for which data is stored and the process for deletion. Ensure compliance with RBI guidelines and data protection laws.",
+      "verifier_note": "The RBI paragraph requires REs to have clear policy guidelines regarding data storage, including retention periods and data destruction protocols, and to disclose these policies prominently on their website and DLA. The product feature states that neither Narmada Bank nor IDFlow has a data retention or deletion policy, and data is kept indefinitely with nothing published about storage. This directly violates the requirement in the RBI paragraph to have and disclose such policies. The feature does not comply with the paragraph's mandate."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "The product feature states that 'Data Collection' involves the collection of personal data through the KYCFast app by IDFlow Pvt Ltd (LSP). However, the RBI paragraph [DLD2025:13(iii)] explicitly prohibits the storage or collection of biometric data by RE and LSP unless allowed under extant statutory guidelines. The feature does not specify whether biometric data is being collected or stored, but the mere collection of personal data through a video KYC and biometric onboarding process may imply the collection of biometric data, which could violate the requirement to ensure that no biometric data is stored or collected unless permitted by law.",
+      "doc_evidence": "Product: Personal loans of ₹25,000 to ₹2,00,000, with fully digital onboarding.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits the storage or collection of biometric data by RE and LSP unless allowed under extant statutory guidelines. The product feature mentions the collection of personal data through a video KYC and biometric onboarding process, which implies the collection of biometric data. Since the feature does not specify whether biometric data is being collected or stored, and the paragraph forbids such collection unless permitted by law, the feature may violate the requirement if biometric data is indeed being collected. However, the feature does not explicitly confirm the collection of biometric data, so the violation is not definitively established based on the provided information."
+    },
+    {
+      "feature": "KYC Compliance",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "The feature describes the use of Aadhaar-based eKYC through the bank's licensed KYC user agency, but it does not explicitly state whether biometric data is stored or collected. Since the RBI prohibits the storage of biometric data unless allowed under statutory guidelines, the absence of a clear statement on this aspect may lead to non-compliance.",
+      "doc_evidence": "Aadhaar-based eKYC is done through the bank's licensed KYC user agency under the Aadhaar Act; the bank receives only the eKYC response.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that the bank receives only the eKYC response and that Aadhaar-based eKYC is done through a licensed KYC user agency. This implies that biometric data is not stored or collected by the bank, as the eKYC process typically involves verification without storing biometric data. The RBI paragraph prohibits the storage of biometric data unless allowed under statutory guidelines, but the feature does not mention storing biometric data. Since the feature does not mention storing biometric data, it does not violate the RBI paragraph. The claim relies on the absence of a clear statement, which is not a violation as per the instructions."
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The feature 'Fingerprint archive: IDFlow additionally saves a copy of each borrower's fingerprint scan on its own servers, to speed up repeat loans' violates the requirement that all data must be stored only in servers located within India. The document does not specify whether the servers are located within India, which is a clear compliance gap.",
+      "doc_evidence": "IDFlow additionally saves a copy of each borrower's fingerprint scan on its own servers, to speed up repeat loans.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires that all data must be stored only in servers located within India. The product feature mentions that the fingerprint scan is stored on 'its own servers,' but it does not specify whether these servers are located within India. Since the feature does not confirm compliance with the requirement, it creates a compliance gap. However, the paragraph does not explicitly forbid storing data on servers located within India. Therefore, the feature does not necessarily violate the requirement unless the servers are not in India, which is not confirmed by the feature text."
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "The feature 'Fingerprint archive: IDFlow additionally saves a copy of each borrower's fingerprint scan on its own servers, to speed up repeat loans' violates the requirement that no biometric data should be stored or collected by the RE and LSP unless allowed under extant statutory guidelines. Storing fingerprint scans constitutes biometric data and is not explicitly permitted unless under statutory guidelines.",
+      "doc_evidence": "IDFlow additionally saves a copy of each borrower's fingerprint scan on its own servers, to speed up repeat loans.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits the storage of biometric data by RE and LSP unless allowed under statutory guidelines. The feature 'Fingerprint archive' involves storing fingerprint scans, which is biometric data. The paragraph does not mention any exception for storing biometric data for speeding up repeat loans. Therefore, the feature violates the requirement unless it is explicitly permitted under statutory guidelines, which is not stated in the feature text."
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The feature 'Statements: IDFlow keeps full copies of borrowers' bank statements and salary slips on its servers after the loan is approved' violates the requirement that LSPs should not store personal information of the borrower except for some basic minimal data. Bank statements and salary slips are personal information and not limited to basic data.",
+      "doc_evidence": "IDFlow keeps full copies of borrowers' bank statements and salary slips on its servers after the loan is approved.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that LSPs should not store personal information of borrowers except for some basic minimal data. The product feature mentions that IDFlow keeps full copies of borrowers' bank statements and salary slips on its servers after the loan is approved. Bank statements and salary slips are considered personal information and are not limited to basic data. Therefore, the feature violates the requirement by storing personal information beyond the basic minimal data allowed."
+    },
+    {
+      "feature": "Data Storage (5. Retention)",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.",
+      "doc_evidence": "Neither Narmada Bank nor IDFlow has a data retention or deletion policy; data is kept indefinitely and nothing is published about storage.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires REs to have clear policy guidelines regarding data storage, including retention periods and data destruction protocols, and to disclose these policies prominently on their website and DLA. The product feature states that neither Narmada Bank nor IDFlow has a data retention or deletion policy, and data is kept indefinitely with nothing published about storage. This directly violates the requirement in the RBI paragraph to have and disclose such policies. The feature does not comply with the paragraph's mandate."
+    },
+    {
+      "feature": "Data Storage (5. Retention)",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "All data is stored on servers in Hyderabad.",
+      "doc_evidence": "All data is stored on servers in Hyderabad.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that all data be stored only in servers located within India, which is satisfied by the product feature stating that all data is stored on servers in Hyderabad. The paragraph also allows for data processing outside India, but only if the data is deleted from servers outside India and brought back to India within 24 hours. The product feature does not mention any data processing outside India, so there is no violation."
+    }
+  ],
+  "summary": "The compliance review of the KYCFast product, which includes Video KYC and Biometric Onboarding, identified several high-risk issues against the reviewed RBI rules. The product feature 'Data Collection' may imply the collection of biometric data without explicit clarification, which could violate the prohibition on storing or collecting biometric data by RE and LSP unless permitted by law. Additionally, the 'Fingerprint archive' feature stores fingerprint scans, which constitutes biometric data and is not permitted unless under statutory guidelines. The 'Statements' feature stores full copies of bank statements and salary slips, which are considered personal information and exceed the permissible minimal data retention. Lastly, neither Narmada Bank nor IDFlow has a data retention or deletion policy, and data is kept indefinitely without any published guidelines on storage.",
+  "trace": {
+    "llm_calls": 18,
+    "prompt_tokens": 11799,
+    "output_tokens": 2443,
+    "llm_seconds": 124.6,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 4,
+      "gap_analyst": 4,
+      "verifier": 7,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 25,
+    "retrieved": {
+      "0:Data Collection": [
+        "DLD2025:12(iv)",
+        "DLD2025:12(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:8(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:14(i)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(i)",
+        "DLD2025:9(i)",
+        "DLD2025:10(i)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:6(iv)",
+        "DLD2025:9(ii)"
+      ],
+      "1:KYC Compliance": [
+        "DLD2025:12(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:8(v)",
+        "DLD2025:17(iv)",
+        "DLD2025:11(iv)",
+        "DLD2025:17(v)",
+        "DLD2025:16(ii)",
+        "DLD2025:14(i)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:18(i)",
+        "DLD2025:12(iii)",
+        "DLD2025:8(iii)"
+      ],
+      "2:Data Storage": [
+        "DLD2025:13(iv)",
+        "DLD2025:8(iv)",
+        "DLD2025:7(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(v)",
+        "KFS2024:4",
+        "DLD2025:8(iii)",
+        "KFS2024:5",
+        "DLD2025:10(i)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:13(i)",
+        "KFS2024:7",
+        "DLD2025:12(iii)",
+        "DLD2025:5(iv)",
+        "DLD2025:6(i)",
+        "DLD2025:9(i)",
+        "DLD2025:25(ii)",
+        "KFS2024:9",
+        "KFS2024:6"
+      ],
+      "3:Data Storage (5. Retention)": [
+        "DLD2025:13(ii)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(iv)",
+        "DLD2025:13(iii)",
+        "DLD2025:13(i)",
+        "DLD2025:12(i)",
+        "DLD2025:8(iii)",
+        "DLD2025:14(i)",
+        "DLD2025:17(v)",
+        "DLD2025:5(ii)",
+        "DLD2025:17(iii)",
+        "DLD2025:17(ii)",
+        "DLD2025:12(iv)"
+      ]
+    }
+  },
+  "seconds": 124.9
+}

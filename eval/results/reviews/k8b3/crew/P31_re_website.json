@@ -1,0 +1,123 @@
+{
+  "system": "crew",
+  "doc_id": "P31_re_website",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Website",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "The website of Saraswati Finance does not list EduPay, MediQuick or their apps, or what each is engaged for, and it has no link to RBI's CMS or Sachet portal.",
+      "doc_evidence": "Saraswati Finance's website has a page listing its own app. It does not list EduPay, MediQuick or their apps, or what each is engaged for, and it has no link to RBI's CMS or Sachet portal.",
+      "severity": "high",
+      "fix": "Update the website to include details about EduPay, MediQuick, and their respective apps, along with a clear link to RBI's CMS and Sachet portal.",
+      "verifier_note": "The RBI paragraph requires that REs maintain a website with details of their digital lending products, DLAs, LSPs, and their activities, along with links to RBI's CMS and Sachet Portal. The product feature states that Saraswati Finance's website does not list EduPay, MediQuick or their apps, and lacks links to RBI's CMS and Sachet Portal. This directly violates the requirement in the RBI paragraph."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The contact details of the nodal grievance redressal officer are given only in the KFS; they are not shown on the website or in either partner app.",
+      "doc_evidence": "Their contact details are given only in the KFS; they are not shown on the website or in either partner app.",
+      "severity": "medium",
+      "fix": "Display the nodal grievance redressal officer's contact details prominently on the website and in both partner apps.",
+      "verifier_note": "The RBI paragraph requires that contact details of the nodal grievance redressal officers be prominently displayed on the websites of the RE, its LSP, and on the DLA, as well as in the KFS. The product feature states that the contact details are only provided in the KFS and not on the website or in the partner apps, which violates the requirement to display them on the websites and partner apps. Therefore, the feature does not comply with the paragraph."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(iii)",
+      "issue": "Borrowers cannot lodge a complaint in the partner apps or on the website; they must visit a branch.",
+      "doc_evidence": "Borrowers cannot lodge a complaint in the partner apps or on the website; they must visit a branch.",
+      "severity": "high",
+      "fix": "Enable borrowers to lodge complaints directly through the partner apps and the website, ensuring a seamless and accessible grievance redressal process.",
+      "verifier_note": "The RBI paragraph requires that the facility of lodging a complaint be made available on the DLA and the website. The product feature states that borrowers cannot lodge a complaint in the partner apps or on the website, which directly violates the requirement. The paragraph does not provide an exception for this scenario, so the feature does not comply."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Website",
+      "rule_id": "DLD2025:8(iv)",
+      "issue": "The website of Saraswati Finance does not list EduPay, MediQuick or their apps, or what each is engaged for, and it has no link to RBI's CMS or Sachet portal.",
+      "doc_evidence": "Saraswati Finance's website has a page listing its own app. It does not list EduPay, MediQuick or their apps, or what each is engaged for, and it has no link to RBI's CMS or Sachet portal.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that REs maintain a website with details of their digital lending products, DLAs, LSPs, and their activities, along with links to RBI's CMS and Sachet Portal. The product feature states that Saraswati Finance's website does not list EduPay, MediQuick or their apps, and lacks links to RBI's CMS and Sachet Portal. This directly violates the requirement in the RBI paragraph."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The contact details of the nodal grievance redressal officer are given only in the KFS; they are not shown on the website or in either partner app.",
+      "doc_evidence": "Their contact details are given only in the KFS; they are not shown on the website or in either partner app.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that contact details of the nodal grievance redressal officers be prominently displayed on the websites of the RE, its LSP, and on the DLA, as well as in the KFS. The product feature states that the contact details are only provided in the KFS and not on the website or in the partner apps, which violates the requirement to display them on the websites and partner apps. Therefore, the feature does not comply with the paragraph."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(iii)",
+      "issue": "Borrowers cannot lodge a complaint in the partner apps or on the website; they must visit a branch.",
+      "doc_evidence": "Borrowers cannot lodge a complaint in the partner apps or on the website; they must visit a branch.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the facility of lodging a complaint be made available on the DLA and the website. The product feature states that borrowers cannot lodge a complaint in the partner apps or on the website, which directly violates the requirement. The paragraph does not provide an exception for this scenario, so the feature does not comply."
+    }
+  ],
+  "summary": "The compliance review of Saraswati Finance's Digital Lending Disclosures identified several gaps against the reviewed RBI rules. The website does not list EduPay, MediQuick, or their respective apps, nor does it provide a link to RBI's CMS or Sachet portal, which is a high-risk issue. Additionally, the contact details of the nodal grievance redressal officer are not visible on the website or partner apps, despite being present in the KFS. Finally, borrowers are unable to lodge complaints through the website or partner apps and must visit a branch, which is another high-risk finding.",
+  "trace": {
+    "llm_calls": 12,
+    "prompt_tokens": 7111,
+    "output_tokens": 1149,
+    "llm_seconds": 60.6,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 3,
+      "gap_analyst": 3,
+      "verifier": 3,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 16,
+    "retrieved": {
+      "0:Website": [
+        "DLD2025:8(iv)",
+        "DLD2025:17(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:17(iv)",
+        "DLD2025:16(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:14(i)",
+        "DLD2025:27(i)",
+        "DLD2025:11(iv)",
+        "DLD2025:17(i)",
+        "DLD2025:29(i)",
+        "DLD2025:19(iii)"
+      ],
+      "1:Grievance Redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:11(i)",
+        "DLD2025:17(iv)",
+        "DLD2025:11(iv)",
+        "DLD2025:11(iii)",
+        "DLD2025:8(iv)",
+        "DLD2025:8(v)",
+        "DLD2025:9(v)",
+        "DLD2025:17(iii)",
+        "KFS2024:8",
+        "DLD2025:27(i)",
+        "DLD2025:12(iv)",
+        "DLD2025:12(iii)"
+      ],
+      "2:Disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(v)",
+        "KFS2024:7",
+        "DLD2025:6(iv)",
+        "KFS2024:4",
+        "DLD2025:5(ii)",
+        "DLD2025:8(ii)"
+      ]
+    }
+  },
+  "seconds": 60.8
+}

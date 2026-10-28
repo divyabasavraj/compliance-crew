@@ -3,7 +3,7 @@ marked against the answer key, written to web/demo.json for the hosted UI.
 
 Nothing here calls a model; it reads the cached reviews in eval/results/reviews/<tag>/crew/.
 
-    uv run python eval/build_demo.py --run "Qwen3 8B=v2" --run "Qwen3 14B=k14b"
+    uv run python eval/build_demo.py --run "Qwen3 8B=v2" --run "Qwen3 14B=k14b3"
 """
 
 import argparse

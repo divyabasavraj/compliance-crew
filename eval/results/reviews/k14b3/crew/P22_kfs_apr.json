@@ -1,0 +1,158 @@
+{
+  "system": "crew",
+  "doc_id": "P22_kfs_apr",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Annual Percentage Rate (APR) and Fees",
+      "rule_id": "KFS2024:6",
+      "issue": "The KFS does not include an amortisation schedule of the loan over the loan tenor, as required by the RBI.",
+      "doc_evidence": "No amortisation schedule is provided.",
+      "severity": "medium",
+      "fix": "Include an amortisation schedule in the KFS to ensure compliance with RBI requirements and provide transparency to borrowers.",
+      "verifier_note": "The RBI paragraph explicitly requires the KFS to include an amortisation schedule of the loan over the loan tenor. The product feature states that no amortisation schedule is provided, which directly violates this requirement."
+    },
+    {
+      "feature": "Loan Agreement and Key Facts Statement (KFS) Content",
+      "rule_id": "KFS2024:9",
+      "issue": "The KFS is not included as a summary box in the loan agreement.",
+      "doc_evidence": "The KFS is a separate screen in the app and is not reproduced in the agreement.",
+      "severity": "medium",
+      "fix": "Integrate the KFS as a summary box within the loan agreement to ensure clarity and compliance with RBI guidelines.",
+      "verifier_note": "The RBI paragraph requires that the KFS be included as a summary box in the loan agreement. The product feature states that the KFS is a separate screen in the app and is not reproduced in the agreement. Therefore, the feature does not comply with the requirement stated in the paragraph."
+    },
+    {
+      "feature": "KFS Validity and Proposal Management",
+      "rule_id": "KFS2024:5",
+      "issue": "The product feature states that each KFS has a validity period of 3 working days. However, according to RBI's [KFS2024:5], the validity period must be at least three working days for loans with a tenor of seven days or more, and one working day for loans with a tenor of less than seven days. The product feature does not specify the loan tenor, which could lead to a violation if the loan tenor is less than seven days.",
+      "doc_evidence": "4. KFS validity: Each KFS has a unique proposal number and stays valid for 3 working days.",
+      "severity": "high",
+      "fix": "Specify the loan tenor in the product feature and ensure that the KFS validity period aligns with RBI's requirements to avoid potential regulatory violations.",
+      "verifier_note": "The product feature states that each KFS has a validity period of 3 working days, but it does not specify the loan tenor. According to RBI's [KFS2024:5], the validity period depends on the loan tenor. If the loan tenor is less than seven days, the validity period must be one working day, not three. Since the product feature does not mention the loan tenor and applies a fixed validity period of three working days, it could lead to a violation for loans with a tenor of less than seven days."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Annual Percentage Rate (APR) and Fees",
+      "rule_id": "KFS2024:6",
+      "issue": "The KFS does not include an amortisation schedule of the loan over the loan tenor, as required by the RBI.",
+      "doc_evidence": "No amortisation schedule is provided.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires the KFS to include an amortisation schedule of the loan over the loan tenor. The product feature states that no amortisation schedule is provided, which directly violates this requirement."
+    },
+    {
+      "feature": "Loan Agreement and Key Facts Statement (KFS) Content",
+      "rule_id": "KFS2024:9",
+      "issue": "The KFS is not included as a summary box in the loan agreement.",
+      "doc_evidence": "The KFS is a separate screen in the app and is not reproduced in the agreement.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the KFS be included as a summary box in the loan agreement. The product feature states that the KFS is a separate screen in the app and is not reproduced in the agreement. Therefore, the feature does not comply with the requirement stated in the paragraph."
+    },
+    {
+      "feature": "KFS Validity and Proposal Management",
+      "rule_id": "KFS2024:5",
+      "issue": "The product feature states that each KFS has a validity period of 3 working days. However, according to RBI's [KFS2024:5], the validity period must be at least three working days for loans with a tenor of seven days or more, and one working day for loans with a tenor of less than seven days. The product feature does not specify the loan tenor, which could lead to a violation if the loan tenor is less than seven days.",
+      "doc_evidence": "4. KFS validity: Each KFS has a unique proposal number and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that each KFS has a validity period of 3 working days, but it does not specify the loan tenor. According to RBI's [KFS2024:5], the validity period depends on the loan tenor. If the loan tenor is less than seven days, the validity period must be one working day, not three. Since the product feature does not mention the loan tenor and applies a fixed validity period of three working days, it could lead to a violation for loans with a tenor of less than seven days."
+    }
+  ],
+  "summary": "The compliance review of the HomeFix Loans Key Facts Statement (KFS) Design identified three findings. First, the KFS does not include an amortisation schedule as required by RBI's KFS2024:6. Second, the KFS is not presented as a summary box in the loan agreement, violating KFS2024:9. Third, the product feature specifies a validity period of 3 working days for the KFS, but does not clarify the loan tenor, which could result in non-compliance with KFS2024:5 if the loan tenor is less than seven days.",
+  "trace": {
+    "llm_calls": 16,
+    "prompt_tokens": 9836,
+    "output_tokens": 1401,
+    "llm_seconds": 130.4,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 3,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 23,
+    "retrieved": {
+      "0:Loan Product Details": [
+        "KFS2024:5",
+        "DLD2025:8(iii)",
+        "DLD2025:5(i)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:15(i)",
+        "DLD2025:9(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:6(iii)",
+        "DLD2025:26(i)",
+        "DLD2025:20(iii)"
+      ],
+      "1:Annual Percentage Rate (APR) and Fees": [
+        "KFS2024:6",
+        "KFS2024:7",
+        "DLD2025:10(ii)",
+        "DLD2025:6(iii)",
+        "KFS2024:8",
+        "DLD2025:10(i)",
+        "DLD2025:15(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:5(ii)",
+        "KFS2024:5",
+        "DLD2025:9(iv)",
+        "DLD2025:13(iv)",
+        "KFS2024:10",
+        "DLD2025:8(i)"
+      ],
+      "2:Loan Agreement and Key Facts Statement (KFS) Content": [
+        "KFS2024:9",
+        "KFS2024:4",
+        "KFS2024:5",
+        "DLD2025:5(i)",
+        "KFS2024:8",
+        "DLD2025:8(i)",
+        "DLD2025:16(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:6(iii)",
+        "KFS2024:7",
+        "KFS2024:6",
+        "DLD2025:26(ii)",
+        "DLD2025:5(iii)"
+      ],
+      "3:KFS Validity and Proposal Management": [
+        "KFS2024:5",
+        "KFS2024:4",
+        "DLD2025:27(ii)",
+        "KFS2024:9",
+        "DLD2025:8(i)",
+        "DLD2025:8(iii)",
+        "DLD2025:17(v)",
+        "DLD2025:5(ii)",
+        "KFS2024:6",
+        "KFS2024:7",
+        "DLD2025:6(iii)",
+        "DLD2025:27(i)",
+        "KFS2024:10"
+      ],
+      "4:Cooling-off Period and Cancellation Policy": [
+        "DLD2025:10(ii)",
+        "DLD2025:10(i)",
+        "KFS2024:5",
+        "KFS2024:7",
+        "DLD2025:11(iv)",
+        "DLD2025:15(i)",
+        "DLD2025:26(i)",
+        "DLD2025:9(iv)",
+        "DLD2025:13(iv)",
+        "KFS2024:8",
+        "KFS2024:10",
+        "DLD2025:8(i)"
+      ]
+    }
+  },
+  "seconds": 130.9
+}

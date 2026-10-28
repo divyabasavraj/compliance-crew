@@ -1,0 +1,124 @@
+{
+  "system": "crew",
+  "doc_id": "P11_clean_homeimprove",
+  "status": "reviewed",
+  "findings": [],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature allows disbursal to a registered contractor's bank account, which may be considered a third-party account. According to RBI guidelines, disbursal should be made into the borrower's bank account, except in cases where it is directly into the end-beneficiary's account. However, the feature does not explicitly confirm that the contractor is the end-beneficiary in all cases, which could potentially violate the rule.",
+      "doc_evidence": "Loans are paid into the borrower's own bank account. For contractor-led projects the borrower may opt to have the amount paid directly into the registered contractor's bank account, as the end-beneficiary.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature allows disbursal to a registered contractor's bank account, which may be considered a third-party account. However, the RBI paragraph explicitly allows disbursal directly into the end-beneficiary's account. The feature states that this option is available for contractor-led projects, implying that the contractor is the end-beneficiary in such cases. Since the feature does not explicitly confirm that the contractor is the end-beneficiary in all cases, there is ambiguity. However, the paragraph does not require explicit confirmation of the end-beneficiary status, only that the disbursal is made directly into the end-beneficiary's account. The feature does not violate the rule because it allows disbursal to the end-beneficiary (the contractor) in the context of contractor-led projects."
+    }
+  ],
+  "summary": "No gaps were found against the reviewed RBI rules for the product HomeFix: Home Improvement Loans.",
+  "trace": {
+    "llm_calls": 15,
+    "prompt_tokens": 10809,
+    "output_tokens": 872,
+    "llm_seconds": 89.5,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 26,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)",
+        "DLD2025:17(vi)",
+        "DLD2025:6(iii)",
+        "DLD2025:6(ii)",
+        "KFS2024:5",
+        "DLD2025:8(iii)",
+        "DLD2025:8(iv)"
+      ],
+      "1:Fees": [
+        "KFS2024:7",
+        "DLD2025:9(iv)",
+        "DLD2025:6(iii)",
+        "KFS2024:8",
+        "DLD2025:9(v)",
+        "DLD2025:8(ii)",
+        "DLD2025:15(i)",
+        "KFS2024:6",
+        "DLD2025:10(i)",
+        "DLD2025:9(i)",
+        "DLD2025:12(iv)",
+        "DLD2025:17(vi)",
+        "DLD2025:5(ii)",
+        "DLD2025:10(ii)",
+        "DLD2025:9(ii)",
+        "DLD2025:25(ii)",
+        "KFS2024:4"
+      ],
+      "2:Cooling-off Period": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "KFS2024:7",
+        "KFS2024:5",
+        "KFS2024:6",
+        "DLD2025:15(i)",
+        "DLD2025:26(i)",
+        "DLD2025:13(iv)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(ii)",
+        "DLD2025:11(iv)"
+      ],
+      "3:Know Your Customer (KYC) and Financial Services (KFS)": [
+        "KFS2024:5",
+        "DLD2025:9(v)",
+        "DLD2025:8(i)",
+        "DLD2025:10(i)",
+        "DLD2025:6(iv)",
+        "KFS2024:6",
+        "KFS2024:4",
+        "KFS2024:7",
+        "DLD2025:6(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:17(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:8(iii)",
+        "DLD2025:9(ii)",
+        "DLD2025:10(ii)",
+        "KFS2024:8",
+        "DLD2025:27(ii)",
+        "KFS2024:9"
+      ],
+      "4:Data Collection and Storage": [
+        "DLD2025:13(iv)",
+        "DLD2025:12(i)",
+        "DLD2025:12(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(i)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:8(iv)",
+        "DLD2025:6(iii)"
+      ],
+      "5:Grievance Redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:11(i)",
+        "DLD2025:11(iv)",
+        "DLD2025:11(iii)",
+        "DLD2025:17(iv)",
+        "DLD2025:8(iv)",
+        "KFS2024:7",
+        "KFS2024:8",
+        "KFS2024:6",
+        "KFS2024:4"
+      ]
+    }
+  },
+  "seconds": 90.2
+}

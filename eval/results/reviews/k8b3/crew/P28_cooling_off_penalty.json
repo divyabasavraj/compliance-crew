@@ -1,0 +1,169 @@
+{
+  "system": "crew",
+  "doc_id": "P28_cooling_off_penalty",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product feature states that borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge. This contradicts the requirement that borrowers should be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial cooling-off period.",
+      "doc_evidence": "Borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge.",
+      "severity": "high",
+      "fix": "Update the product feature to allow borrowers to exit the loan during the cooling-off period by repaying the principal and proportionate APR without any penalty. Ensure the cooling-off period is clearly communicated and documented.",
+      "verifier_note": "The product feature requires borrowers to pay a 4% foreclosure charge when exiting within 3 days, which is a penalty. The RBI paragraph explicitly prohibits any penalty during the cooling-off period. The feature violates the requirement of no penalty during the cooling-off period."
+    },
+    {
+      "feature": "Unlisted Charges",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature 'Unlisted charges' where a ₹199 'credit insights subscription' is added to every EMI after disbursal, not in the KFS and without borrower consent, violates the requirement that fees payable to LSPs must be paid directly by the RE and not charged to borrowers.",
+      "doc_evidence": "After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "high",
+      "fix": "Remove the 'credit insights subscription' charge from the loan product and ensure all fees payable to LSPs are directly paid by the RE. Obtain explicit borrower consent for any charges before disbursal.",
+      "verifier_note": "The RBI paragraph prohibits charging borrowers for fees payable to LSPs, requiring RE to pay these directly. The product feature adds a ₹199 charge to every EMI without borrower consent and it is not in the KFS, which violates the requirement that such fees must be paid directly by RE and not charged to borrowers. The feature does not mention that the charge is paid directly by RE, and instead charges borrowers, which is explicitly prohibited."
+    },
+    {
+      "feature": "Unlisted Charges",
+      "rule_id": "KFS2024:8",
+      "issue": "The feature 'Unlisted charges' where a ₹199 'credit insights subscription' is added to every EMI after disbursal, not in the KFS and without borrower consent, violates the requirement that any fees, charges, etc. not mentioned in the KFS cannot be charged by the REs to the borrower without explicit consent of the borrower.",
+      "doc_evidence": "After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "high",
+      "fix": "Include the 'credit insights subscription' charge in the KFS and obtain explicit borrower consent before charging it. Ensure all charges are transparent and disclosed in the loan agreement.",
+      "verifier_note": "The product feature describes a charge (₹199 'credit insights subscription') that is not mentioned in the KFS and is added to every EMI after disbursal without borrower consent. This directly violates the RBI paragraph which states that any fees, charges, etc. not mentioned in the KFS cannot be charged by the REs to the borrower at any stage during the term of the loan without explicit consent of the borrower."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product feature states that borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge. This contradicts the requirement that borrowers should be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial cooling-off period.",
+      "doc_evidence": "Borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature requires borrowers to pay a 4% foreclosure charge when exiting within 3 days, which is a penalty. The RBI paragraph explicitly prohibits any penalty during the cooling-off period. The feature violates the requirement of no penalty during the cooling-off period."
+    },
+    {
+      "feature": "Unlisted Charges",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature 'Unlisted charges' where a ₹199 'credit insights subscription' is added to every EMI after disbursal, not in the KFS and without borrower consent, violates the requirement that fees payable to LSPs must be paid directly by the RE and not charged to borrowers.",
+      "doc_evidence": "After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph prohibits charging borrowers for fees payable to LSPs, requiring RE to pay these directly. The product feature adds a ₹199 charge to every EMI without borrower consent and it is not in the KFS, which violates the requirement that such fees must be paid directly by RE and not charged to borrowers. The feature does not mention that the charge is paid directly by RE, and instead charges borrowers, which is explicitly prohibited."
+    },
+    {
+      "feature": "Unlisted Charges",
+      "rule_id": "KFS2024:8",
+      "issue": "The feature 'Unlisted charges' where a ₹199 'credit insights subscription' is added to every EMI after disbursal, not in the KFS and without borrower consent, violates the requirement that any fees, charges, etc. not mentioned in the KFS cannot be charged by the REs to the borrower without explicit consent of the borrower.",
+      "doc_evidence": "After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a charge (₹199 'credit insights subscription') that is not mentioned in the KFS and is added to every EMI after disbursal without borrower consent. This directly violates the RBI paragraph which states that any fees, charges, etc. not mentioned in the KFS cannot be charged by the REs to the borrower at any stage during the term of the loan without explicit consent of the borrower."
+    },
+    {
+      "feature": "Loan Agreement and Proposal",
+      "rule_id": "KFS2024:5",
+      "issue": "The KFS has a unique proposal number and is valid for 3 working days.",
+      "doc_evidence": "The KFS has a unique proposal number and is valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the RBI paragraph. The paragraph requires a validity period of at least three working days for loans with a tenor of seven days or more, and the product feature specifies a validity period of 3 working days, which is in line with the requirement. The feature also mentions a unique proposal number, which is required by the paragraph. There is no indication that the feature violates any requirement of the paragraph."
+    }
+  ],
+  "summary": "The compliance review of the RupeeRush: Instant Personal Loans product identified several critical non-compliance issues with the reviewed RBI rules. The product feature allowing borrowers to exit within 3 days by repaying the principal plus full first month's interest and a 4% foreclosure charge contradicts the requirement for an explicit exit option during the cooling-off period. Additionally, the 'Unlisted charges' feature, which adds a ₹199 'credit insights subscription' to every EMI without disclosure in the KFS and without borrower consent, violates the rules on fees payable to LSPs and the prohibition on charging undisclosed fees. These findings highlight significant gaps in the product's compliance with RBI regulations.",
+  "trace": {
+    "llm_calls": 17,
+    "prompt_tokens": 10585,
+    "output_tokens": 1570,
+    "llm_seconds": 82.7,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 4,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 24,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:5(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:6(iii)",
+        "DLD2025:20(ii)",
+        "KFS2024:10"
+      ],
+      "1:Cooling-off Period": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "KFS2024:5",
+        "DLD2025:26(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:24(ii)",
+        "DLD2025:11(iv)",
+        "KFS2024:7",
+        "DLD2025:9(v)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)"
+      ],
+      "2:Unlisted Charges": [
+        "DLD2025:9(iv)",
+        "DLD2025:29(i)",
+        "KFS2024:7",
+        "DLD2025:9(v)",
+        "KFS2024:8",
+        "DLD2025:8(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:19(iv)",
+        "KFS2024:10",
+        "KFS2024:5"
+      ],
+      "3:Loan Agreement and Proposal": [
+        "KFS2024:5",
+        "KFS2024:4",
+        "KFS2024:9",
+        "DLD2025:27(ii)",
+        "KFS2024:6",
+        "DLD2025:26(ii)",
+        "DLD2025:26(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:14(i)",
+        "DLD2025:15(i)",
+        "DLD2025:16(i)",
+        "KFS2024:8",
+        "KFS2024:10",
+        "KFS2024:7",
+        "DLD2025:8(i)"
+      ],
+      "4:1. Product": [
+        "DLD2025:12(ii)",
+        "KFS2024:5",
+        "DLD2025:12(iv)",
+        "DLD2025:8(iii)",
+        "DLD2025:8(i)",
+        "DLD2025:14(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:27(ii)",
+        "DLD2025:10(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:20(iii)"
+      ]
+    }
+  },
+  "seconds": 83.1
+}

@@ -1,0 +1,47 @@
+{
+  "model": "qwen3:8b",
+  "tag": "k14b3",
+  "split": "dev",
+  "docs": 12,
+  "results": {
+    "crew_no_verifier": {
+      "recall": 0.963,
+      "precision": 0.711,
+      "caught": 26,
+      "planted": 27,
+      "unique_flags": 38,
+      "false_alarms": 11,
+      "clean_doc_false_alarms": 2,
+      "citation_validity": 1.0,
+      "missed": [
+        "P04-b"
+      ],
+      "sec_per_doc": 156.8,
+      "llm_calls_per_doc": 16.8,
+      "tokens_per_doc": 13237
+    },
+    "crew": {
+      "recall": 0.963,
+      "precision": 0.794,
+      "caught": 26,
+      "planted": 27,
+      "unique_flags": 34,
+      "false_alarms": 7,
+      "clean_doc_false_alarms": 0,
+      "citation_validity": 1.0,
+      "missed": [
+        "P04-b"
+      ],
+      "sec_per_doc": 156.8,
+      "llm_calls_per_doc": 16.8,
+      "tokens_per_doc": 13237,
+      "miss_stages": {
+        "not_retrieved": [],
+        "analyst_missed": [
+          "P04-b"
+        ],
+        "verifier_rejected": []
+      }
+    }
+  }
+}

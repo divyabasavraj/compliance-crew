@@ -1,0 +1,143 @@
+{
+  "system": "crew",
+  "doc_id": "P16_edu_marketplace",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "Disbursal is made into the training institute's bank account, which is a third-party account, and not into the borrower's bank account, except for specific end-use cases where the loan is disbursed directly into the end-beneficiary's bank account.",
+      "doc_evidence": "The course fee is paid by the lender directly into the training institute's bank account.",
+      "severity": "high",
+      "fix": "Ensure that loan disbursements are made directly into the borrower's bank account, unless there is a specific end-use case that requires disbursement into a third-party account (e.g., training institute). In such cases, ensure proper documentation and verification of the end-use.",
+      "verifier_note": "The product feature describes a disbursement made directly into the training institute's bank account, which is a third-party account. According to the RBI paragraph, disbursement should be made into the borrower's bank account, except for specific end-use cases where the loan is disbursed directly into the end-beneficiary's bank account. The feature does not mention that the training institute is the end-beneficiary, and therefore, it appears to be violating the rule by disbursing into a third-party account without meeting the exception criteria."
+    },
+    {
+      "feature": "data_collection",
+      "rule_id": "DLD2025:6(ii)",
+      "issue": "The mechanism used by the LSP to match borrowers with lenders is not consistently applied for similarly placed borrowers, and the rules are not documented.",
+      "doc_evidence": "Which lenders are shown depends on a rule set the sales team adjusts weekly. Borrowers with the same profile may see different lenders on different days, and the rules are not written down anywhere.",
+      "severity": "medium",
+      "fix": "Document and standardize the rules and mechanisms used by the LSP to match borrowers with lenders, ensuring consistent application across all similarly placed borrowers.",
+      "verifier_note": "The RBI paragraph requires that the LSP follow a consistent approach for similarly placed borrowers and that any mechanism and changes to it be properly documented. The product feature indicates that borrowers with the same profile may see different lenders on different days, which suggests inconsistency. Additionally, the rules are not documented anywhere, which violates the requirement for proper documentation."
+    },
+    {
+      "feature": "data_collection (3. Offer display)",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "Upskill Credit stores borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years, which goes against the requirement that LSPs should not store personal information of borrowers except for some basic minimal data required for their operations.",
+      "doc_evidence": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "severity": "high",
+      "fix": "Stop storing borrowers' bank statements, salary slips, and credit bureau reports on internal servers. Instead, ensure that only minimal necessary data is retained, and all other data is securely deleted or anonymized in accordance with RBI and data protection regulations.",
+      "verifier_note": "The RBI paragraph [DLD2025:13(i)] prohibits LSPs from storing personal information of borrowers except for some basic minimal data required for their operations. The product feature states that Upskill Credit stores borrowers' bank statements, salary slips, and credit bureau reports on its own servers for three years. These documents contain personal information that is not considered basic minimal data, and the storage is for the purpose of improving matching models, which is not explicitly stated as a required operation under the RE-LSP agreement. Therefore, the feature does something the paragraph forbids."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "Disbursal is made into the training institute's bank account, which is a third-party account, and not into the borrower's bank account, except for specific end-use cases where the loan is disbursed directly into the end-beneficiary's bank account.",
+      "doc_evidence": "The course fee is paid by the lender directly into the training institute's bank account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a disbursement made directly into the training institute's bank account, which is a third-party account. According to the RBI paragraph, disbursement should be made into the borrower's bank account, except for specific end-use cases where the loan is disbursed directly into the end-beneficiary's bank account. The feature does not mention that the training institute is the end-beneficiary, and therefore, it appears to be violating the rule by disbursing into a third-party account without meeting the exception criteria."
+    },
+    {
+      "feature": "data_collection",
+      "rule_id": "DLD2025:6(ii)",
+      "issue": "The mechanism used by the LSP to match borrowers with lenders is not consistently applied for similarly placed borrowers, and the rules are not documented.",
+      "doc_evidence": "Which lenders are shown depends on a rule set the sales team adjusts weekly. Borrowers with the same profile may see different lenders on different days, and the rules are not written down anywhere.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the LSP follow a consistent approach for similarly placed borrowers and that any mechanism and changes to it be properly documented. The product feature indicates that borrowers with the same profile may see different lenders on different days, which suggests inconsistency. Additionally, the rules are not documented anywhere, which violates the requirement for proper documentation."
+    },
+    {
+      "feature": "data_collection (3. Offer display)",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "Upskill Credit stores borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years, which goes against the requirement that LSPs should not store personal information of borrowers except for some basic minimal data required for their operations.",
+      "doc_evidence": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:13(i)] prohibits LSPs from storing personal information of borrowers except for some basic minimal data required for their operations. The product feature states that Upskill Credit stores borrowers' bank statements, salary slips, and credit bureau reports on its own servers for three years. These documents contain personal information that is not considered basic minimal data, and the storage is for the purpose of improving matching models, which is not explicitly stated as a required operation under the RE-LSP agreement. Therefore, the feature does something the paragraph forbids."
+    }
+  ],
+  "summary": "The compliance review of SkillLoan, a marketplace for course loans, identified three key findings against the RBI guidelines. First, loan disbursal is made into the training institute's bank account, a third-party account, which is not in line with the requirement unless it is for specific end-use cases. Second, the matching mechanism between borrowers and lenders is not consistently applied, and the rules are not documented. Third, Upskill Credit stores borrowers' bank statements, salary slips, and credit bureau reports on its own servers for three years, which violates the requirement that LSPs should not store personal information beyond basic minimal data required for their operations.",
+  "trace": {
+    "llm_calls": 12,
+    "prompt_tokens": 8689,
+    "output_tokens": 1342,
+    "llm_seconds": 123.6,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 3,
+      "gap_analyst": 3,
+      "verifier": 3,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 17,
+    "retrieved": {
+      "0:disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iii)",
+        "DLD2025:17(vi)",
+        "DLD2025:12(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:10(ii)",
+        "DLD2025:11(iv)",
+        "DLD2025:17(iv)",
+        "DLD2025:6(ii)",
+        "DLD2025:6(iv)"
+      ],
+      "1:data_collection": [
+        "DLD2025:6(iii)",
+        "DLD2025:6(i)",
+        "DLD2025:6(iv)",
+        "DLD2025:10(ii)",
+        "DLD2025:6(ii)",
+        "DLD2025:7(i)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:16(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:14(i)",
+        "DLD2025:8(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:20(iii)",
+        "DLD2025:8(ii)",
+        "DLD2025:12(iii)",
+        "DLD2025:23(ii)",
+        "KFS2024:5",
+        "DLD2025:6",
+        "DLD2025:8(v)",
+        "KFS2024:4"
+      ],
+      "2:data_collection (3. Offer display)": [
+        "DLD2025:6(iii)",
+        "KFS2024:6",
+        "DLD2025:6(iv)",
+        "KFS2024:7",
+        "DLD2025:6(i)",
+        "DLD2025:13(iv)",
+        "DLD2025:13(ii)",
+        "KFS2024:5",
+        "DLD2025:8(iii)",
+        "DLD2025:16(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:13(i)",
+        "DLD2025:13(iii)",
+        "KFS2024:8",
+        "DLD2025:9(iv)",
+        "DLD2025:10(i)",
+        "DLD2025:6(ii)",
+        "DLD2025:7(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:12(iii)",
+        "DLD2025:8(iv)"
+      ]
+    }
+  },
+  "seconds": 124.0
+}

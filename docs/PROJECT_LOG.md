@@ -355,3 +355,37 @@ What it shows:
 - **Next:**
   - `[NEXT]` Download the v3 output (`uvx kaggle kernels output divyabasavraj25/compliance-crew-14b -p <dir>`), rescore `k8b3`/`k14b3` per split, compare with `k8b`/`k14b`, then update README, `web/demo.json` and the blog draft.
   - `[NEXT]` Decide whether to host full live reviews (needs a server + free LLM key) or keep the demo static.
+
+---
+
+## Day 5: 2026-10-28: v3 results, write-ups, ship
+**Goal for the day:** close the four remaining milestone 8 items: (1) download and score the Kaggle v3 run, (2) put the numbers in the README, `web/demo.json` and the blog and redeploy the Space, (3) final pass on the blog, (4) log and push.
+
+### Steps
+1. 12:50  Kaggle kernel `divyabasavraj25/compliance-crew-14b` (version 3, pinned `bfed9df`): status COMPLETE, both tags finished all 32 docs (crew time ≈ 32 × 142 s for 8B and 32 × 148 s for 14B, in parallel on 2× T4; cost ₹0). Downloaded into a scratch dir, checked every file parses as JSON, copied `review.k8b3.all.json`, `review.k14b3.all.json` and `eval/results/reviews/k8b3`, `k14b3` into the repo. Rescored per split from the cache (`eval_review.py --tag <t> --split dev|test --systems crew`, no model calls).
+   - `[RESULT]` Crew + Verifier, same Kaggle T4 hardware:
+
+| Run | Test recall | Test precision | Test false alarms | Test clean-doc alarms | Dev recall | Dev precision | Sec/doc |
+|---|---|---|---|---|---|---|---|
+| 8B v2 (`k8b`) | 0.76 (31/41) | 0.46 | 36 | 4 | – | – | 80 |
+| 14B v2 (`k14b`) | 0.80 (33/41) | 0.62 | 20 | 2 | – | – | 118 |
+| 8B v3 (`k8b3`) | 0.83 (34/41) | 0.48 | 37 | 7 | 0.78 (21/27) | 0.45 | 126 / 168 |
+| **14B v3 (`k14b3`)** | **0.90 (37/41)** | **0.79** | **10** | **1** | **0.96 (26/27)** | **0.79** | 142 / 157 |
+| 8B v2, Mac (`v2`, reference) | 0.78 (32/41) | 0.45 | 39 | 9 | 0.89 (24/27) | 0.62 | 185 / 218 |
+
+   - `[RESULT]` Where the test misses happen: 14B v3 retrieval 1 (P20-d), Gap Analyst 3 (P13-a, P15-a, P28-a), Verifier 0 (v2: 6 / 1 / 1). 8B v3 retrieval 2 (P16-b, P20-d), Gap Analyst 4, Verifier 1 (P13-a).
+   - The retrieval fix did what it was built for on 14B: 5 of its 6 retrieval misses are back (P13-a now reaches the Gap Analyst but is not flagged), and precision rose further (false alarms 20 → 10), most likely because the Gap Analyst sees the rule that actually applies instead of a near miss.
+2. 12:52  `[FAILURE]` **8B v3 regresses on dev**: 21/27 vs 24/27 for the Mac v2 run, precision 0.62 → 0.45. Losses: P04-b, P06-b, P08-a, all at the Gap Analyst. Checked the traces: in all three the rule **was in the feature's retrieved pool in both versions**, and the v3 pools are 1.3–1.7× larger (e.g. P08-a "Disbursal" 10 → 16 paragraphs). Mean pool size: v2 8.1 (max 10), 8B v3 12.9 (max 22), 14B v3 13.9 (max 24). The 8B Gap Analyst stops proposing the right rule when it has more to read. Lesson: a retrieval change is also a context-size change for every downstream agent; measure it per model. Caveat: there is no Kaggle 8B v2 dev run, and the Mac and Kaggle 8B runs already differed by 1 on test, so 1 of the 3 could be hardware noise.
+   - `[DECISION]` Keep the v3 code (it is the best configuration measured, and the cap fix is a real bug fix). Report the 8B trade-off openly. The README headline stays the Mac 8B v2 table (the local default as measured); 14B v3 is the "best measured" row. Not done today: a per-model `SECTION_K`/`MAX_PARAGRAPHS` (8B at the v2 depth), which would need another Kaggle run to measure.
+3. 12:53  README: "Does a bigger model help?" now covers v2 and v3 for both models with dev and test, the 8B trade-off, and the honesty note (k chosen on test ranks). Caught my own slip before commit: wrote "8 compliant docs", the benchmark has 5. Summary line names 14B v3 as the best setup; link to the write-up.
+4. 12:54  `web/demo.json` rebuilt: `--run "Qwen3 8B=v2" --run "Qwen3 14B=k14b3"`. The 14B run now covers all 32 docs (v2 14B was test-only), 352 KB.
+5. 12:55  Blog: v3 section written from the numbers above, draft note removed, final pass with the humanizer skill (headings made literal, ranges written out, one not-X-but-Y removed), renamed `docs/BLOG_DRAFT.md` → `docs/BLOG.md` and linked from the README. 55 tests pass.
+6. 12:56  `[FAILURE]` Space redeploy (`deploy/push_space.sh`) was blocked by the session's permission check (it publishes to a public surface). Left for the user to run or approve; the live Space still shows the 14B v2 reviews.
+
+### End of day
+- **Done:** v3 results scored and attributed for both models; README, demo data and blog updated; blog final in `docs/BLOG.md`; 55 tests pass; pushed to GitHub.
+- **Not done:** Space redeploy (needs the user's approval); posting the blog outside the repo.
+- **Next:**
+  - `[NEXT]` Run `deploy/push_space.sh` so the hosted demo shows the 14B v3 reviews.
+  - `[NEXT]` Optional: per-model retrieval depth (8B at k=5 / cap 10, 14B at v3), measured on Kaggle on both splits.
+  - `[NEXT]` Optional, carried over: live full reviews (server + free LLM key), fresh held-out attack set, reversed-text injection (H16).

@@ -1,0 +1,155 @@
+{
+  "system": "crew",
+  "doc_id": "P21_dla_reporting",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature does not explicitly mention that the contact details of the nodal grievance redressal officers are prominently displayed on the DLA (partner LSP apps). The feature only mentions that the bank's website lists the grievance officer's details, but it does not confirm that this information is also prominently displayed on the DLA platforms (CashKart, EasyEMI, and FarmFund).",
+      "doc_evidence": "The bank's website lists all its digital lending products, all four partner LSPs and their apps, the grievance officer's details and a link to RBI's CMS and Sachet portals.",
+      "severity": "medium",
+      "fix": "Ensure that the contact details of the nodal grievance redressal officers are prominently displayed on all DLA platforms (CashKart, EasyEMI, and FarmFund) as per the requirement.",
+      "verifier_note": "The RBI paragraph requires that contact details of the nodal grievance redressal officers be prominently displayed on the DLA (partner LSP apps) as well as on the websites of the RE, its LSP, and the DLA. The product feature mentions that the grievance officer's details are listed on the bank's website, but it does not confirm that these details are prominently displayed on the DLA platforms (CashKart, EasyEMI, and FarmFund). Therefore, the feature fails to meet the requirement of the RBI paragraph regarding the DLA platforms."
+    },
+    {
+      "feature": "CIMS Reporting",
+      "rule_id": "DLD2025:17(i)",
+      "issue": "The feature 'CIMS Reporting' states that only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners. This clearly breaks the requirement that RE shall report all DLAs deployed/ joined by them, whether their own or those of the LSPs, on the CIMS portal.",
+      "doc_evidence": "Only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners.",
+      "severity": "high",
+      "fix": "Register all DLAs, including the three partner LSP apps, on the RBI CIMS portal to ensure compliance with the reporting requirements.",
+      "verifier_note": "The RBI paragraph requires RE to report all DLAs deployed/joined by them, including those of LSPs. The product feature states that only the bank's own app has been reported, and the three partner LSP apps are not reported because they belong to the partners. This directly violates the requirement to report all DLAs, including those of LSPs."
+    },
+    {
+      "feature": "App Management",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The feature describes that the bank lends through its own app and three partner LSP apps, and plans to add a fourth partner app. This implies that the flow of funds between the borrower's account and the RE may be controlled indirectly by the LSPs, which violates the requirement that the flow of funds should not be controlled by third parties, including LSPs.",
+      "doc_evidence": "Apps: Vasant Bank lends through its own app and through the three LSP apps listed above. New app: A fourth partner app, StudyCash, went live last month. The bank will add it to its records at the next annual review.",
+      "severity": "high",
+      "fix": "Implement a mechanism to ensure that the flow of funds between the borrower's account and the RE is directly controlled by the bank, and not indirectly through LSPs.",
+      "verifier_note": "The RBI paragraph explicitly prohibits the flow of funds between the borrower's account and the RE from being controlled by third parties, including LSPs. The product feature states that the bank lends through its own app and three LSP apps, and plans to add a fourth partner app. While the feature does not explicitly state that the LSPs control the flow of funds, the use of LSP apps could imply indirect control over the flow of funds. However, the paragraph does not provide an exception for the use of LSP apps, and the feature does not confirm that the flow of funds is not controlled by the LSPs. Therefore, the feature may imply a violation of the requirement."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature 'Disbursal: All loans are disbursed directly into borrowers' bank accounts' does not comply with RBI paragraph DLD2025:9(i), which explicitly prohibits disbursal to third-party accounts, including LSP accounts, except in specific cases. The feature does not address the possibility of disbursal to third-party accounts, which could violate the requirement that disbursal must be directly into the borrower's bank account.",
+      "doc_evidence": "Disbursal: All loans are disbursed directly into borrowers' bank accounts.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly allows disbursal to third-party accounts in specific cases such as statutory mandates, co-lending transactions, and specific end-use scenarios, provided the loan is disbursed directly into the end-beneficiary's account. The product feature states that all loans are disbursed directly into borrowers' bank accounts, which aligns with the requirement that disbursal must be into the borrower's account, except in the specified exceptions. Since the feature does not mention or allow for third-party accounts in the allowed exceptions, it does not violate the RBI paragraph. The claim relies on an assumption that the feature does not address third-party accounts, but the feature does not need to address them because the RBI paragraph allows them in specific cases."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature does not explicitly mention that the contact details of the nodal grievance redressal officers are prominently displayed on the DLA (partner LSP apps). The feature only mentions that the bank's website lists the grievance officer's details, but it does not confirm that this information is also prominently displayed on the DLA platforms (CashKart, EasyEMI, and FarmFund).",
+      "doc_evidence": "The bank's website lists all its digital lending products, all four partner LSPs and their apps, the grievance officer's details and a link to RBI's CMS and Sachet portals.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that contact details of the nodal grievance redressal officers be prominently displayed on the DLA (partner LSP apps) as well as on the websites of the RE, its LSP, and the DLA. The product feature mentions that the grievance officer's details are listed on the bank's website, but it does not confirm that these details are prominently displayed on the DLA platforms (CashKart, EasyEMI, and FarmFund). Therefore, the feature fails to meet the requirement of the RBI paragraph regarding the DLA platforms."
+    },
+    {
+      "feature": "CIMS Reporting",
+      "rule_id": "DLD2025:17(i)",
+      "issue": "The feature 'CIMS Reporting' states that only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners. This clearly breaks the requirement that RE shall report all DLAs deployed/ joined by them, whether their own or those of the LSPs, on the CIMS portal.",
+      "doc_evidence": "Only the bank's own app, Vasant Loans, has been reported on the RBI CIMS portal. The three partner LSP apps are not reported because they belong to the partners.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires RE to report all DLAs deployed/joined by them, including those of LSPs. The product feature states that only the bank's own app has been reported, and the three partner LSP apps are not reported because they belong to the partners. This directly violates the requirement to report all DLAs, including those of LSPs."
+    },
+    {
+      "feature": "App Management",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The feature describes that the bank lends through its own app and three partner LSP apps, and plans to add a fourth partner app. This implies that the flow of funds between the borrower's account and the RE may be controlled indirectly by the LSPs, which violates the requirement that the flow of funds should not be controlled by third parties, including LSPs.",
+      "doc_evidence": "Apps: Vasant Bank lends through its own app and through the three LSP apps listed above. New app: A fourth partner app, StudyCash, went live last month. The bank will add it to its records at the next annual review.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits the flow of funds between the borrower's account and the RE from being controlled by third parties, including LSPs. The product feature states that the bank lends through its own app and three LSP apps, and plans to add a fourth partner app. While the feature does not explicitly state that the LSPs control the flow of funds, the use of LSP apps could imply indirect control over the flow of funds. However, the paragraph does not provide an exception for the use of LSP apps, and the feature does not confirm that the flow of funds is not controlled by the LSPs. Therefore, the feature may imply a violation of the requirement."
+    }
+  ],
+  "summary": "The compliance review of the Digital Apps used by Vasant Bank identified three key findings against the reviewed RBI rules. First, the product feature does not explicitly mention that the contact details of the nodal grievance redressal officers are prominently displayed on the DLA (partner LSP apps), only stating that the bank's website lists this information. Second, the 'CIMS Reporting' feature fails to report the three partner LSP apps on the RBI CIMS portal, as the requirement mandates that all DLAs, including those of LSPs, must be reported. Third, the feature implies that the flow of funds between the borrower's account and the RE may be indirectly controlled by LSPs, which violates the requirement that the flow of funds should not be controlled by third parties, including LSPs.",
+  "trace": {
+    "llm_calls": 15,
+    "prompt_tokens": 9726,
+    "output_tokens": 1918,
+    "llm_seconds": 97.9,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 4,
+      "gap_analyst": 4,
+      "verifier": 4,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 21,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(v)",
+        "DLD2025:6(iv)",
+        "KFS2024:4",
+        "DLD2025:5(ii)",
+        "KFS2024:7",
+        "DLD2025:8(ii)"
+      ],
+      "1:Grievance Redressal": [
+        "DLD2025:8(iv)",
+        "DLD2025:17(iv)",
+        "DLD2025:11(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:16(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:14(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:17(i)",
+        "DLD2025:11(i)"
+      ],
+      "2:CIMS Reporting": [
+        "DLD2025:17(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:17(vii)",
+        "DLD2025:17(v)",
+        "DLD2025:16(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:15(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:8(iv)",
+        "DLD2025:17(iii)",
+        "DLD2025:27(i)",
+        "DLD2025:17(vi)"
+      ],
+      "3:App Management": [
+        "DLD2025:9(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:9(iii)",
+        "DLD2025:5(iv)",
+        "DLD2025:8(iv)",
+        "DLD2025:12(iii)",
+        "DLD2025:16(ii)",
+        "DLD2025:27(ii)",
+        "KFS2024:6",
+        "DLD2025:19(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:15(i)",
+        "DLD2025:9(i)",
+        "DLD2025:5(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:6",
+        "DLD2025:6(i)",
+        "DLD2025:24(iv)",
+        "DLD2025:17(ii)",
+        "DLD2025:29(i)",
+        "DLD2025:5(iii)"
+      ]
+    }
+  },
+  "seconds": 98.2
+}

@@ -2,9 +2,11 @@
 
 A multi-agent system that reviews an Indian fintech product document **before launch**. It finds gaps against the RBI Digital Lending Directions 2025 and the KFS circular 2024, and writes a cited report. A security layer sits around it, so an uploaded document or an outside agent cannot steer the review or leak personal data.
 
-Runs fully locally on Qwen3 8B (Ollama). Cost: ₹0.
+Runs fully locally on Qwen3 8B (Ollama); the best measured setup is Qwen3 14B on Kaggle's free GPUs (0.90 recall, 0.79 precision on held-out docs). Cost: ₹0.
 
 **Demo:** https://huggingface.co/spaces/Divya52/compliance-crew. Browse the real crew reviews of all 32 benchmark docs, each finding marked against the answer key, or run the security check on your own PDF. The check runs this repo's Python guard code in your browser, so nothing is uploaded.
+
+**Write-up:** [What a held-out split taught me about multi-agent systems](docs/BLOG.md).
 
 > Decision support only, not legal advice.
 
@@ -62,18 +64,22 @@ The benchmark has 32 synthetic product docs with 68 planted violations and 5 ful
 - The first crew version looked much better on the dev docs it was tuned on (0.85 vs 0.67 recall). On the held-out docs it was *worse* than the single agent (0.61 vs 0.63). The v2 fixes came from analysing that failure. See `docs/PROJECT_LOG.md`, Day 3.
 - Of the 9 crew misses on test, 3 come from retrieval, 6 from the Gap Analyst and 0 from the Verifier.
 
-### Does a bigger model help? Qwen3 14B vs 8B
-Same v2 code, same test split, run on Kaggle (free, 2× T4, one GPU per model) so both models share the hardware. All agents use the named model.
+### Does a bigger model help? Qwen3 14B vs 8B, then a retrieval fix (v3)
+Run on Kaggle (free, 2× T4, one GPU per model) so both models share the hardware. All agents use the named model. v2 is the code above; v3 changes only the Researcher: fixed per-section searches at k=10 instead of 5, and a two-tier pool so the paragraph cap can never drop a model-written query's hits (a v2 bug).
 
-| Crew + Verifier, test split | Recall | Precision | False alarms | Clean-doc alarms | Sec/doc (T4) |
-|---|---|---|---|---|---|
-| Qwen3 8B (control) | 0.76 (31/41) | 0.46 | 36 | 4 | 80 |
-| **Qwen3 14B** | **0.80 (33/41)** | **0.62** | **20** | **2** | 118 |
+| Crew + Verifier | Test recall | Test precision | Test false alarms | Dev recall | Dev precision | Sec/doc (T4) |
+|---|---|---|---|---|---|---|
+| Qwen3 8B, v2 (control) | 0.76 (31/41) | 0.46 | 36 | – | – | 80 |
+| Qwen3 14B, v2 | 0.80 (33/41) | 0.62 | 20 | – | – | 118 |
+| Qwen3 8B, v3 | 0.83 (34/41) | 0.48 | 37 | 0.78 (21/27) | 0.45 | 126 |
+| **Qwen3 14B, v3** | **0.90 (37/41)** | **0.79** | **10** | **0.96 (26/27)** | **0.79** | 142 |
 
-- The 14B crew has **44% fewer false alarms** at 1.5× the time per doc. The recall gain is only +2 violations. The 8B runs on Kaggle and on the Mac differ by 1, so 2 is close to noise on 41 violations.
-- 14B fixes the Gap Analyst bottleneck: Gap Analyst misses fall from 6 to 1. But the Researcher's 14B search queries miss rules the 8B queries found, so retrieval misses rise from 3 to 6. **Retrieval is now the bottleneck.**
+- **14B v3 is the best configuration measured**: +4 violations on test and half the false alarms of 14B v2. Retrieval misses fall from 6 to 1 (P20-d, which no section search reaches). Across all 5 fully compliant docs (dev + test) it raises 1 false alarm.
+- With v2, 14B fixed the Gap Analyst (misses 6 → 1) but its search queries lost rules the 8B queries found, so retrieval misses rose from 3 to 6. v3 makes retrieval depend less on the model, and that recovered them.
+- **v3 is a trade-off for 8B.** Test improves by 3, but dev drops by 3 against the Mac v2 run (24/27 → 21/27). All three dev losses were retrieved in both versions; the feature pools are 1.3–1.7× larger in v3 and the 8B Gap Analyst stops proposing the rule. The small model does worse with more context. (There is no Kaggle 8B v2 dev run, so hardware noise of ~1 violation is not ruled out.)
+- Honesty note: k=10 was chosen from test-split ranks (dev was already 27/27 at k=5 and could not tell k values apart), so v3 test numbers are "test, retrieval tuned on it". Dev is the regression check.
 
-Full tables (v1/v2/Kaggle 8B/14B × dev/test/all): `uv run python eval/summarize.py`.
+Full tables (v1/v2/v3, Mac and Kaggle, 8B/14B × dev/test/all): `uv run python eval/summarize.py`.
 
 ### Security layer
 | Check | Result |
@@ -109,7 +115,7 @@ uv run pytest
 
 ### Web UI
 ```bash
-uv run python eval/build_demo.py --run "Qwen3 8B=v2" --run "Qwen3 14B=k14b"   # web/demo.json from cached reviews
+uv run python eval/build_demo.py --run "Qwen3 8B=v2" --run "Qwen3 14B=k14b3"   # web/demo.json from cached reviews
 uv run compliance-crew serve        # http://localhost:8000: benchmark reviews, security check, live review (local Ollama: CC_LIVE=1)
 CC_LLM=gemini GEMINI_API_KEY=... uv run compliance-crew serve   # live reviews on the Gemini free tier (synthetic docs only)
 deploy/push_space.sh                # the static demo (no server; guards run in the browser)

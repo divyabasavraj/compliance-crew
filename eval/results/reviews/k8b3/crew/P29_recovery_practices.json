@@ -1,0 +1,229 @@
+{
+  "system": "crew",
+  "doc_id": "P29_recovery_practices",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Recovery Process",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "Borrowers are not sent the recovery agency's name or the agent's details before the first contact.",
+      "doc_evidence": "Borrowers are not sent the agency's name or the agent's details before the first contact.",
+      "severity": "medium",
+      "fix": "Update the recovery process to include sending the recovery agency's name and agent's details to the borrower before the first contact.",
+      "verifier_note": "The RBI paragraph requires that the particulars of the recovery agent be communicated to the borrower through email/SMS before the recovery agent contacts the borrower. The product feature states that borrowers are not sent the agency's name or the agent's details before the first contact, which directly violates the requirement in the RBI paragraph. Therefore, the feature does something the paragraph forbids."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The feature 'Data Collection' described in the product context involves the app reading the phone's contact list so agents can reach family members if the borrower cannot be contacted. This is a violation of RBI paragraph [DLD2025:12(i)], which explicitly states that RE shall ensure that DLA of RE/LSP desist from accessing mobile phone resources like contact list, call logs, telephony functions, etc.",
+      "doc_evidence": "During the loan, the app reads the phone's contact list so agents can reach family members if the borrower cannot be contacted.",
+      "severity": "high",
+      "fix": "Disable the app's ability to access the phone's contact list and ensure that no mobile phone resources are accessed without explicit borrower consent.",
+      "verifier_note": "The product feature involves the app reading the phone's contact list, which is explicitly prohibited by RBI paragraph [DLD2025:12(i)]. The paragraph states that DLA of RE/LSP must desist from accessing mobile phone resources like the contact list. The feature does not meet the exception for on-boarding/KYC requirements, as it is for contacting family members during the loan, not for KYC purposes."
+    },
+    {
+      "feature": "Loan Disbursal",
+      "rule_id": "DLD2025:8(i)",
+      "issue": "The feature does not mention the provision of a Key Fact Statement (KFS) as required by the RBI. There is no evidence that the KFS is provided to the borrower.",
+      "doc_evidence": "Loan Disbursal: Product: Used-car loans of ₹1,00,000 to ₹8,00,000, tenor 1 to 5 years.",
+      "severity": "high",
+      "fix": "Ensure that the Key Fact Statement (KFS) is provided to the borrower in a clear and accessible format, either through email, SMS, or in-person, as required by RBI guidelines.",
+      "verifier_note": "The RBI paragraph explicitly requires RE to provide a Key Fact Statement (KFS) as per the specified circular. The product feature does not mention the provision of a KFS, which is a requirement under the RBI paragraph. Therefore, the feature fails to comply with the requirement."
+    },
+    {
+      "feature": "Loan Disbursal",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The feature does not mention the invocation of DLG within 120 days of overdue payments. There is no evidence that DLG is invoked within the required timeframe.",
+      "doc_evidence": "Loan Disbursal: Product: Used-car loans of ₹1,00,000 to ₹8,00,000, tenor 1 to 5 years.",
+      "severity": "high",
+      "fix": "Implement a system to automatically invoke the Debt Liability Guarantee (DLG) within 120 days of overdue payments, with clear documentation and alerts for non-compliance.",
+      "verifier_note": "The RBI paragraph explicitly requires that the Debt Liability Guarantee (DLG) must be invoked within a maximum overdue period of 120 days. The product feature does not mention anything about the invocation of DLG or the timeframe for such invocation. Since the feature does not address this requirement, it fails to comply with the RBI regulation. Therefore, the claim that the feature does not mention the invocation of DLG within the required timeframe is valid."
+    },
+    {
+      "feature": "3. Loan documents",
+      "rule_id": "DLD2025:8(iii)",
+      "issue": "The product feature states that the KFS, sanction letter and terms are emailed and sent by SMS link automatically after signing. However, the RBI paragraph requires that digitally signed documents, including the KFS, summary of loan product, sanction letter, terms and conditions, account statements, privacy policies of the RE / LSP with respect to storage and usage of borrowers’ data, etc., shall automatically flow to the borrower on the registered and verified email/ SMS upon execution of the loan contract/ transactions. The feature does not explicitly mention the automatic flow of all required documents as per the RBI paragraph.",
+      "doc_evidence": "The KFS, sanction letter and terms are emailed and sent by SMS link automatically after signing.",
+      "severity": "high",
+      "fix": "Update the product feature to explicitly mention the automatic flow of all required documents, including the KFS, sanction letter, terms and conditions, privacy policies, etc., to the borrower's registered email and SMS upon loan execution.",
+      "verifier_note": "The product feature mentions the automatic emailing and SMS linking of KFS, sanction letter, and terms, which are part of the required documents under the RBI paragraph. However, it does not explicitly mention the automatic flow of all required documents, including the summary of loan product, account statements, privacy policies, etc. The RBI paragraph requires that all these documents automatically flow to the borrower. Since the feature does not cover all required documents, it fails to comply with the RBI paragraph's requirement."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Recovery Process",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "Borrowers are not sent the recovery agency's name or the agent's details before the first contact.",
+      "doc_evidence": "Borrowers are not sent the agency's name or the agent's details before the first contact.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the particulars of the recovery agent be communicated to the borrower through email/SMS before the recovery agent contacts the borrower. The product feature states that borrowers are not sent the agency's name or the agent's details before the first contact, which directly violates the requirement in the RBI paragraph. Therefore, the feature does something the paragraph forbids."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The feature 'Data Collection' described in the product context involves the app reading the phone's contact list so agents can reach family members if the borrower cannot be contacted. This is a violation of RBI paragraph [DLD2025:12(i)], which explicitly states that RE shall ensure that DLA of RE/LSP desist from accessing mobile phone resources like contact list, call logs, telephony functions, etc.",
+      "doc_evidence": "During the loan, the app reads the phone's contact list so agents can reach family members if the borrower cannot be contacted.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature involves the app reading the phone's contact list, which is explicitly prohibited by RBI paragraph [DLD2025:12(i)]. The paragraph states that DLA of RE/LSP must desist from accessing mobile phone resources like the contact list. The feature does not meet the exception for on-boarding/KYC requirements, as it is for contacting family members during the loan, not for KYC purposes."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature 'EMIs are debited from the borrower's account to Shivalik Bank by NACH' does not comply with the requirement that all loan servicing, repayment, etc. is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "EMIs are debited from the borrower's account to Shivalik Bank by NACH.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes EMIs being debited from the borrower's account to Shivalik Bank by NACH. The RBI paragraph requires that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account or pool account of any third party, including the accounts of LSP. The feature does not explicitly state that the RE’s bank account is used, and it involves a third-party (NACH) and possibly a third-party bank (Shivalik Bank). However, the paragraph does not explicitly prohibit the use of NACH or third-party banks as long as the RE’s bank account is used. Since the feature does not confirm that the RE’s bank account is used, it may not fully comply, but the claim relies on what is not stated in the feature. Therefore, the claim is based on an omission, not a direct violation."
+    },
+    {
+      "feature": "Loan Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature describes loan disbursement into the borrower's bank account, which complies with the requirement that disbursement must always be made into the borrower's bank account, except for specific exceptions. There is no violation here.",
+      "doc_evidence": "Loan Disbursal: Product: Used-car loans of ₹1,00,000 to ₹8,00,000, tenor 1 to 5 years.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that loan disbursement must always be made into the borrower's bank account, except for specific exceptions such as statutory mandates, co-lending transactions, and specific end-use disbursals to the end-beneficiary. The product feature does not mention any disbursement to third-party accounts or exceptions. Therefore, the feature complies with the requirement that disbursement must be into the borrower's account, and there is no violation."
+    },
+    {
+      "feature": "Loan Disbursal",
+      "rule_id": "DLD2025:8(i)",
+      "issue": "The feature does not mention the provision of a Key Fact Statement (KFS) as required by the RBI. There is no evidence that the KFS is provided to the borrower.",
+      "doc_evidence": "Loan Disbursal: Product: Used-car loans of ₹1,00,000 to ₹8,00,000, tenor 1 to 5 years.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires RE to provide a Key Fact Statement (KFS) as per the specified circular. The product feature does not mention the provision of a KFS, which is a requirement under the RBI paragraph. Therefore, the feature fails to comply with the requirement."
+    },
+    {
+      "feature": "Loan Disbursal",
+      "rule_id": "DLD2025:8(iii)",
+      "issue": "The feature does not mention the inclusion of a link to the KFS in the digital view of loan offers from matching lenders. There is no evidence that such a link is provided.",
+      "doc_evidence": "Loan Disbursal: Product: Used-car loans of ₹1,00,000 to ₹8,00,000, tenor 1 to 5 years.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that digitally signed documents, including the KFS, automatically flow to the borrower upon execution of the loan contract. The product feature describes the loan amount and tenor but does not mention the inclusion of a link to the KFS in the digital view of loan offers. Since the feature does not address the inclusion of the KFS link as required by the RBI paragraph, it fails to comply with the requirement. However, the claim is based on what the feature does not mention, not on what it explicitly forbids. The paragraph does not explicitly allow or forbid the omission of the KFS link, but the feature does not fulfill the requirement. Therefore, the claim is based on an omission, not a direct violation of a prohibition."
+    },
+    {
+      "feature": "Loan Disbursal",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The feature does not mention the invocation of DLG within 120 days of overdue payments. There is no evidence that DLG is invoked within the required timeframe.",
+      "doc_evidence": "Loan Disbursal: Product: Used-car loans of ₹1,00,000 to ₹8,00,000, tenor 1 to 5 years.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires that the Debt Liability Guarantee (DLG) must be invoked within a maximum overdue period of 120 days. The product feature does not mention anything about the invocation of DLG or the timeframe for such invocation. Since the feature does not address this requirement, it fails to comply with the RBI regulation. Therefore, the claim that the feature does not mention the invocation of DLG within the required timeframe is valid."
+    },
+    {
+      "feature": "Loan Disbursal",
+      "rule_id": "DLD2025:26(ii)",
+      "issue": "The feature does not mention the period for which the DLG agreement remains in force. There is no evidence that the DLG agreement's duration is aligned with the longest tenor of the loan.",
+      "doc_evidence": "Loan Disbursal: Product: Used-car loans of ₹1,00,000 to ₹8,00,000, tenor 1 to 5 years.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the DLG agreement's duration must not be less than the longest tenor of the loan in the underlying loan portfolio. The product feature specifies the loan tenor as 1 to 5 years, which implies the longest tenor is 5 years. However, the feature does not explicitly state the duration of the DLG agreement. Since the paragraph requires the DLG agreement's duration to be at least as long as the longest loan tenor, and the feature does not confirm this, it may violate the requirement. However, the feature does not explicitly state that the DLG agreement's duration is aligned with the longest tenor, so the claim is based on what is not mentioned. Therefore, the claim is not valid as a violation."
+    },
+    {
+      "feature": "3. Loan documents",
+      "rule_id": "DLD2025:8(iii)",
+      "issue": "The product feature states that the KFS, sanction letter and terms are emailed and sent by SMS link automatically after signing. However, the RBI paragraph requires that digitally signed documents, including the KFS, summary of loan product, sanction letter, terms and conditions, account statements, privacy policies of the RE / LSP with respect to storage and usage of borrowers’ data, etc., shall automatically flow to the borrower on the registered and verified email/ SMS upon execution of the loan contract/ transactions. The feature does not explicitly mention the automatic flow of all required documents as per the RBI paragraph.",
+      "doc_evidence": "The KFS, sanction letter and terms are emailed and sent by SMS link automatically after signing.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature mentions the automatic emailing and SMS linking of KFS, sanction letter, and terms, which are part of the required documents under the RBI paragraph. However, it does not explicitly mention the automatic flow of all required documents, including the summary of loan product, account statements, privacy policies, etc. The RBI paragraph requires that all these documents automatically flow to the borrower. Since the feature does not cover all required documents, it fails to comply with the RBI paragraph's requirement."
+    }
+  ],
+  "summary": "The compliance review of the AutoCredit Recovery Process identified several gaps against the reviewed RBI rules. The key findings include: (1) Borrowers are not informed of the recovery agency's name or agent details before the first contact, violating DLD2025:8(v). (2) The 'Data Collection' feature allows the app to access the phone's contact list, which is prohibited under DLD2025:12(i). (3) The feature does not provide a Key Fact Statement (KFS) as required by DLD2025:8(i). (4) There is no evidence that the Debt Liability Guarantee (DLG) is invoked within 120 days of overdue payments, violating DLD2025:26(i). (5) The feature does not ensure the automatic flow of all required documents, including the KFS, to the borrower upon execution of the loan contract, as mandated by DLD2025:8(iii).",
+  "trace": {
+    "llm_calls": 22,
+    "prompt_tokens": 13576,
+    "output_tokens": 3100,
+    "llm_seconds": 156.3,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 9,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 29,
+    "retrieved": {
+      "0:Recovery Process": [
+        "DLD2025:8(v)",
+        "DLD2025:9(v)",
+        "DLD2025:6(iii)",
+        "DLD2025:6(i)",
+        "DLD2025:5(v)",
+        "DLD2025:13(i)",
+        "DLD2025:11(ii)",
+        "DLD2025:8(iv)",
+        "DLD2025:12(i)",
+        "DLD2025:14(i)",
+        "DLD2025:6(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:24(iii)",
+        "DLD2025:7(i)"
+      ],
+      "1:Data Collection": [
+        "DLD2025:12(ii)",
+        "DLD2025:12(i)",
+        "DLD2025:12(iii)",
+        "DLD2025:13(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:8(v)",
+        "DLD2025:9(v)",
+        "DLD2025:16(i)",
+        "DLD2025:12(iv)",
+        "DLD2025:7(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:6(i)"
+      ],
+      "2:Repayment": [
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:29(i)",
+        "DLD2025:8(v)",
+        "DLD2025:9(iii)",
+        "DLD2025:8(iii)",
+        "DLD2025:11(iv)",
+        "DLD2025:17(iv)"
+      ],
+      "3:Loan Disbursal": [
+        "KFS2024:5",
+        "DLD2025:6(iii)",
+        "DLD2025:8(iii)",
+        "DLD2025:26(i)",
+        "DLD2025:8(i)",
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:24(iii)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:26(ii)",
+        "DLD2025:29(i)",
+        "DLD2025:20(iii)",
+        "DLD2025:9(iv)"
+      ],
+      "4:3. Loan documents": [
+        "DLD2025:8(iii)",
+        "KFS2024:5",
+        "KFS2024:6",
+        "KFS2024:7",
+        "KFS2024:4",
+        "DLD2025:8(v)",
+        "DLD2025:9(v)",
+        "DLD2025:5(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:6(iii)",
+        "KFS2024:8",
+        "DLD2025:8(iv)",
+        "DLD2025:8(i)",
+        "DLD2025:17(iv)"
+      ]
+    }
+  },
+  "seconds": 156.7
+}

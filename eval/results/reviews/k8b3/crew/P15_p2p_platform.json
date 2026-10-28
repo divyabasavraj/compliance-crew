@@ -1,0 +1,184 @@
+{
+  "system": "crew",
+  "doc_id": "P15_p2p_platform",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature describes that the RE shall ensure that in no case, disbursal is made to a third-party account, including the accounts of LSP, except as provided for in these Directions. However, the product feature does not explicitly state that the loan is disbursed directly into the bank account of the end-beneficiary, which is a requirement under [DLD2025:9(i)].",
+      "doc_evidence": "Borrowers list loan requests of ₹10,000 to ₹5,00,000; individual lenders on the platform choose which requests to fund.",
+      "severity": "high",
+      "fix": "Update the product feature to explicitly state that disbursal is made directly into the end-beneficiary's bank account, in compliance with DLD2025:9(i).",
+      "verifier_note": "The product feature does not explicitly state that the loan is disbursed directly into the bank account of the end-beneficiary, which is a requirement under [DLD2025:9(i)]. The paragraph explicitly requires that disbursal be made into the borrower's bank account, except for specific exceptions. The feature does not confirm compliance with this requirement, thus potentially violating the paragraph."
+    },
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:20(iii)",
+      "issue": "LendCircle offers a default loss guarantee for loans facilitated over its platform, which is prohibited under RBI guidelines. NBFC-P2P shall not enter into DLG arrangements for the loans facilitated over its platform.",
+      "doc_evidence": "LendCircle offers a default loss guarantee: it will reimburse lenders for up to 3% of the principal in each loan pool that goes bad.",
+      "severity": "high",
+      "fix": "Immediately discontinue the default loss guarantee feature and revise all marketing and product documentation to remove any reference to such guarantees, as it is prohibited under RBI guidelines.",
+      "verifier_note": "The RBI paragraph explicitly prohibits NBFC-P2P from entering into DLG (Debt-Lending Guarantee) arrangements for loans facilitated over their platform. The product feature describes a default loss guarantee, which is a form of DLG arrangement. Since the feature involves offering a guarantee for loans facilitated over the platform, it directly violates the prohibition stated in the RBI paragraph."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The feature describes that borrowers repay into an escrow account maintained by a bank trustee, which implies that the flow of funds between the borrower's bank account and the RE is controlled indirectly by a third-party (the bank trustee), thereby violating the requirement that such flow shall not be controlled either directly or indirectly by a third-party, including the LSP.",
+      "doc_evidence": "Borrowers repay into an escrow account maintained by a bank trustee, as required for P2P platforms.",
+      "severity": "high",
+      "fix": "Modify the repayment process to ensure that funds are directly transferred from the borrower's account to the RE, without any third-party control, including the LSP or bank trustee.",
+      "verifier_note": "The RBI paragraph explicitly prohibits the flow of funds between the borrower's bank account and the RE from being controlled directly or indirectly by a third-party, including the LSP. The product feature describes repayment into an escrow account maintained by a bank trustee, which is a third-party. This implies indirect control by the bank trustee, which is prohibited by the RBI paragraph. Therefore, the feature violates the requirement."
+    },
+    {
+      "feature": "Marketing and Claims",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The app home screen says: \"LendCircle: guaranteed returns, approved and backed by the RBI.\"",
+      "doc_evidence": "The app home screen says: \"LendCircle: guaranteed returns, approved and backed by the RBI.\"",
+      "severity": "high",
+      "fix": "Remove the claim ",
+      "verifier_note": "The RBI paragraph explicitly prohibits the use of dark patterns or deceptive practices to promote a particular loan offer. The product feature claims that LendCircle is 'guaranteed returns, approved and backed by the RBI,' which could be interpreted as a deceptive promotion of a specific product, potentially misleading borrowers. The paragraph allows for ranking based on pre-disclosed metrics but does not permit direct promotion or endorsement of a product. The feature does not mention any pre-disclosed metric or objective ranking, and the claim of being 'approved and backed by the RBI' could be seen as promoting a specific product, which is prohibited."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature describes that the RE shall ensure that in no case, disbursal is made to a third-party account, including the accounts of LSP, except as provided for in these Directions. However, the product feature does not explicitly state that the loan is disbursed directly into the bank account of the end-beneficiary, which is a requirement under [DLD2025:9(i)].",
+      "doc_evidence": "Borrowers list loan requests of ₹10,000 to ₹5,00,000; individual lenders on the platform choose which requests to fund.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature does not explicitly state that the loan is disbursed directly into the bank account of the end-beneficiary, which is a requirement under [DLD2025:9(i)]. The paragraph explicitly requires that disbursal be made into the borrower's bank account, except for specific exceptions. The feature does not confirm compliance with this requirement, thus potentially violating the paragraph."
+    },
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:20(iii)",
+      "issue": "LendCircle offers a default loss guarantee for loans facilitated over its platform, which is prohibited under RBI guidelines. NBFC-P2P shall not enter into DLG arrangements for the loans facilitated over its platform.",
+      "doc_evidence": "LendCircle offers a default loss guarantee: it will reimburse lenders for up to 3% of the principal in each loan pool that goes bad.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits NBFC-P2P from entering into DLG (Debt-Lending Guarantee) arrangements for loans facilitated over their platform. The product feature describes a default loss guarantee, which is a form of DLG arrangement. Since the feature involves offering a guarantee for loans facilitated over the platform, it directly violates the prohibition stated in the RBI paragraph."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The feature describes that borrowers repay into an escrow account maintained by a bank trustee, which implies that the flow of funds between the borrower's bank account and the RE is controlled indirectly by a third-party (the bank trustee), thereby violating the requirement that such flow shall not be controlled either directly or indirectly by a third-party, including the LSP.",
+      "doc_evidence": "Borrowers repay into an escrow account maintained by a bank trustee, as required for P2P platforms.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits the flow of funds between the borrower's bank account and the RE from being controlled directly or indirectly by a third-party, including the LSP. The product feature describes repayment into an escrow account maintained by a bank trustee, which is a third-party. This implies indirect control by the bank trustee, which is prohibited by the RBI paragraph. Therefore, the feature violates the requirement."
+    },
+    {
+      "feature": "Marketing and Claims",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The app home screen says: \"LendCircle: guaranteed returns, approved and backed by the RBI.\"",
+      "doc_evidence": "The app home screen says: \"LendCircle: guaranteed returns, approved and backed by the RBI.\"",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits the use of dark patterns or deceptive practices to promote a particular loan offer. The product feature claims that LendCircle is 'guaranteed returns, approved and backed by the RBI,' which could be interpreted as a deceptive promotion of a specific product, potentially misleading borrowers. The paragraph allows for ranking based on pre-disclosed metrics but does not permit direct promotion or endorsement of a product. The feature does not mention any pre-disclosed metric or objective ranking, and the claim of being 'approved and backed by the RBI' could be seen as promoting a specific product, which is prohibited."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The feature states that 'No phone permissions beyond one-time camera access for KYC' are used. However, the RBI paragraph requires that RE shall ensure that DLA of RE/LSP desist from accessing mobile phone resources like file and media, contact list, call logs, telephony functions, etc. A one-time access can be taken for camera, microphone, location or any other facility necessary for the purpose of on-boarding/KYC requirements only, with the explicit consent of the borrower. The feature does not explicitly mention that explicit consent is obtained for the one-time camera access, which is required by the RBI.",
+      "doc_evidence": "No phone permissions beyond one-time camera access for KYC.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that 'No phone permissions beyond one-time camera access for KYC' are used, which aligns with the RBI paragraph's requirement that one-time access to camera is allowed for KYC purposes. The RBI paragraph does not explicitly require the feature to mention that explicit consent is obtained for the one-time camera access, as the paragraph only mandates that such access must be with explicit consent. Since the feature does not contradict the RBI paragraph and the claim relies on an assumption not explicitly stated in the feature, the feature does not violate the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of LendCircle: Peer-to-Peer Personal Loans identified several critical non-compliance issues with the Reserve Bank of India (RBI) guidelines. The product feature does not explicitly state that loan disbursal is made directly into the end-beneficiary's bank account, violating DLD2025:9(i). Additionally, the offering of a default loss guarantee for loans facilitated on the platform is prohibited under DLD2025:20(iii). The use of an escrow account maintained by a bank trustee for repayments violates DLD2025:9(iii) as it indirectly controls the flow of funds. Lastly, the app's home screen claims 'guaranteed returns, approved and backed by the RBI,' which is misleading and non-compliant with DLD2025:6(iv).",
+  "trace": {
+    "llm_calls": 18,
+    "prompt_tokens": 11392,
+    "output_tokens": 1995,
+    "llm_seconds": 103.2,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 5,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 25,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:8(iii)",
+        "DLD2025:6(iii)",
+        "DLD2025:6(iv)",
+        "DLD2025:6(ii)",
+        "DLD2025:6(i)",
+        "DLD2025:20(iii)",
+        "DLD2025:9(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iv)",
+        "DLD2025:24(ii)",
+        "DLD2025:12(iii)",
+        "DLD2025:8(i)",
+        "DLD2025:8(iv)"
+      ],
+      "1:Default Loss Guarantee": [
+        "DLD2025:6(iv)",
+        "DLD2025:8(v)",
+        "DLD2025:6(iii)",
+        "DLD2025:10(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:20(iii)",
+        "DLD2025:5(ii)",
+        "DLD2025:24(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:9(ii)",
+        "DLD2025:6(ii)",
+        "DLD2025:23(i)",
+        "DLD2025:6(i)",
+        "DLD2025:6"
+      ],
+      "2:Repayment": [
+        "DLD2025:9(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:5(ii)",
+        "DLD2025:20(iii)",
+        "DLD2025:8(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:6(ii)"
+      ],
+      "3:Marketing and Claims": [
+        "DLD2025:6(iv)",
+        "DLD2025:14(i)",
+        "DLD2025:9(i)",
+        "DLD2025:17(vi)",
+        "DLD2025:19(i)",
+        "DLD2025:20(iii)",
+        "DLD2025:8(iv)",
+        "DLD2025:16(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:21(i)",
+        "DLD2025:17(v)",
+        "DLD2025:20(ii)",
+        "DLD2025:6(iii)"
+      ],
+      "4:Data Collection": [
+        "DLD2025:12(i)",
+        "DLD2025:13(i)",
+        "DLD2025:8(iii)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:13(iv)",
+        "DLD2025:12(ii)",
+        "DLD2025:20(iii)",
+        "DLD2025:14(i)",
+        "DLD2025:14(ii)",
+        "DLD2025:12(iv)",
+        "DLD2025:12(iii)",
+        "DLD2025:17(iii)"
+      ]
+    }
+  },
+  "seconds": 103.6
+}

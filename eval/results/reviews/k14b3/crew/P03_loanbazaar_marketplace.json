@@ -1,0 +1,143 @@
+{
+  "system": "crew",
+  "doc_id": "P03_loanbazaar_marketplace",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Offer Matching and Display",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The product feature does not display APR and penal charges on the offer cards, which is required by the RBI guidelines.",
+      "doc_evidence": "To keep the screen simple, the APR and penal charges are not shown on the card; borrowers can find them in the KFS after they choose an offer.",
+      "severity": "high",
+      "fix": "Update the offer cards to explicitly display the Annual Percentage Rate (APR) and penal charges as mandated by RBI guidelines.",
+      "verifier_note": "The RBI paragraph requires that the digital view of loan offers include APR and penal charges (if applicable) in a way that enables the borrower to make a fair comparison. The product feature does not display APR and penal charges on the offer cards, but instead directs borrowers to the KFS after they choose an offer. This approach does not enable a fair comparison between offers as required by the guideline."
+    },
+    {
+      "feature": "Offer Matching and Display",
+      "rule_id": "DLD2025:6(i)",
+      "issue": "The product feature does not disclose the names of unmatched lenders in the digital view, which is required by the RBI guidelines.",
+      "doc_evidence": "Lenders that did not make an offer are not listed.",
+      "severity": "medium",
+      "fix": "Revise the digital interface to disclose the names of unmatched lenders in the digital view as required by RBI guidelines.",
+      "verifier_note": "The RBI paragraph [DLD2025:6(i)] explicitly requires that the digital view disclose the names of unmatched lenders. The product feature states that lenders that did not make an offer are not listed, which means the names of unmatched lenders are not disclosed in the digital view. This directly violates the requirement stated in the RBI paragraph."
+    },
+    {
+      "feature": "Offer Matching and Display (3. Recommended lender)",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The product feature describes that the offer from FastLend NBFC, which pays LoanBazaar the highest commission, is pinned at the top with a 'Best for you' badge and is pre-selected. This may be considered as promoting a particular RE's product, which could be seen as a dark pattern or deceptive pattern designed to mislead borrowers into choosing a particular loan offer.",
+      "doc_evidence": "3. Recommended lender: The offer from FastLend NBFC, which pays LoanBazaar the highest commission, is pinned at the top with a 'Best for you' badge and is pre-selected, so the borrower only has to press Continue.",
+      "severity": "high",
+      "fix": "Remove the 'Best for you' badge and pre-selection of FastLend NBFC's offer, and ensure that all lenders are displayed fairly without bias or undue influence.",
+      "verifier_note": "The product feature describes that the offer from FastLend NBFC, which pays the highest commission, is pinned at the top with a 'Best for you' badge and is pre-selected. This directly promotes a particular RE's product based on commission, which is a form of bias and could be considered a dark pattern or deceptive pattern as described in the RBI paragraph. The paragraph explicitly prohibits promoting a particular product, even if the ranking is based on a pre-disclosed metric. However, the feature does not mention that the ranking is based on a publicly pre-disclosed metric, and the promotion is based on commission, which is not a neutral or objective metric."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Offer Matching and Display",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The product feature does not display APR and penal charges on the offer cards, which is required by the RBI guidelines.",
+      "doc_evidence": "To keep the screen simple, the APR and penal charges are not shown on the card; borrowers can find them in the KFS after they choose an offer.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the digital view of loan offers include APR and penal charges (if applicable) in a way that enables the borrower to make a fair comparison. The product feature does not display APR and penal charges on the offer cards, but instead directs borrowers to the KFS after they choose an offer. This approach does not enable a fair comparison between offers as required by the guideline."
+    },
+    {
+      "feature": "Offer Matching and Display",
+      "rule_id": "DLD2025:6(i)",
+      "issue": "The product feature does not disclose the names of unmatched lenders in the digital view, which is required by the RBI guidelines.",
+      "doc_evidence": "Lenders that did not make an offer are not listed.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:6(i)] explicitly requires that the digital view disclose the names of unmatched lenders. The product feature states that lenders that did not make an offer are not listed, which means the names of unmatched lenders are not disclosed in the digital view. This directly violates the requirement stated in the RBI paragraph."
+    },
+    {
+      "feature": "Offer Matching and Display (3. Recommended lender)",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The product feature describes that the offer from FastLend NBFC, which pays LoanBazaar the highest commission, is pinned at the top with a 'Best for you' badge and is pre-selected. This may be considered as promoting a particular RE's product, which could be seen as a dark pattern or deceptive pattern designed to mislead borrowers into choosing a particular loan offer.",
+      "doc_evidence": "3. Recommended lender: The offer from FastLend NBFC, which pays LoanBazaar the highest commission, is pinned at the top with a 'Best for you' badge and is pre-selected, so the borrower only has to press Continue.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes that the offer from FastLend NBFC, which pays the highest commission, is pinned at the top with a 'Best for you' badge and is pre-selected. This directly promotes a particular RE's product based on commission, which is a form of bias and could be considered a dark pattern or deceptive pattern as described in the RBI paragraph. The paragraph explicitly prohibits promoting a particular product, even if the ranking is based on a pre-disclosed metric. However, the feature does not mention that the ranking is based on a publicly pre-disclosed metric, and the promotion is based on commission, which is not a neutral or objective metric."
+    }
+  ],
+  "summary": "The compliance review of LoanBazaar: Personal Loan Marketplace identified three key findings against the RBI guidelines. First, the product does not display the Annual Percentage Rate (APR) and penal charges on the offer cards, which is a high-priority issue under DLD2025:6(iii). Second, the product fails to disclose the names of unmatched lenders in the digital view, which is a medium-priority issue under DLD2025:6(i). Third, the product feature promotes the offer from FastLend NBFC, which pays the highest commission, by pinning it at the top with a 'Best for you' badge and pre-selecting it, potentially misleading borrowers. This is a high-priority issue under DLD2025:6(iv) and may be considered a dark pattern or deceptive practice.",
+  "trace": {
+    "llm_calls": 12,
+    "prompt_tokens": 9289,
+    "output_tokens": 1254,
+    "llm_seconds": 117.8,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 3,
+      "gap_analyst": 3,
+      "verifier": 3,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 17,
+    "retrieved": {
+      "0:Offer Matching and Display": [
+        "DLD2025:6(iii)",
+        "DLD2025:6(ii)",
+        "DLD2025:6(i)",
+        "DLD2025:7(i)",
+        "DLD2025:12(iii)",
+        "KFS2024:6",
+        "KFS2024:8",
+        "KFS2024:4",
+        "DLD2025:6(iv)",
+        "DLD2025:8(ii)",
+        "DLD2025:8(iv)",
+        "DLD2025:16(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:14(i)",
+        "KFS2024:5",
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:7(ii)",
+        "KFS2024:7",
+        "DLD2025:29(i)",
+        "DLD2025:9(iv)"
+      ],
+      "1:Offer Matching and Display (3. Recommended lender)": [
+        "DLD2025:10(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:6(iv)",
+        "DLD2025:8(v)",
+        "DLD2025:7(i)",
+        "DLD2025:6(ii)",
+        "DLD2025:8(iv)",
+        "KFS2024:4",
+        "DLD2025:14(i)",
+        "DLD2025:17(iv)",
+        "DLD2025:8(ii)",
+        "DLD2025:17(v)",
+        "DLD2025:5(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:7(ii)",
+        "DLD2025:9(ii)",
+        "DLD2025:5(vi)",
+        "DLD2025:23(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:19(i)",
+        "DLD2025:16(i)"
+      ],
+      "2:Data Collection and Transparency": [
+        "DLD2025:8(iv)",
+        "DLD2025:17(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:27(i)",
+        "DLD2025:17(i)",
+        "DLD2025:16(i)",
+        "DLD2025:17(v)",
+        "DLD2025:11(iv)",
+        "DLD2025:5(v)",
+        "DLD2025:14(i)",
+        "DLD2025:8(iii)",
+        "DLD2025:16(ii)",
+        "DLD2025:6(ii)"
+      ]
+    }
+  },
+  "seconds": 118.2
+}

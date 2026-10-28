@@ -1,0 +1,57 @@
+{
+  "model": "qwen3:8b",
+  "tag": "k14b3",
+  "split": "test",
+  "docs": 20,
+  "results": {
+    "crew_no_verifier": {
+      "recall": 0.902,
+      "precision": 0.544,
+      "caught": 37,
+      "planted": 41,
+      "unique_flags": 68,
+      "false_alarms": 31,
+      "clean_doc_false_alarms": 8,
+      "citation_validity": 1.0,
+      "missed": [
+        "P13-a",
+        "P15-a",
+        "P20-d",
+        "P28-a"
+      ],
+      "sec_per_doc": 142.0,
+      "llm_calls_per_doc": 15.8,
+      "tokens_per_doc": 11999
+    },
+    "crew": {
+      "recall": 0.902,
+      "precision": 0.787,
+      "caught": 37,
+      "planted": 41,
+      "unique_flags": 47,
+      "false_alarms": 10,
+      "clean_doc_false_alarms": 1,
+      "citation_validity": 1.0,
+      "missed": [
+        "P13-a",
+        "P15-a",
+        "P20-d",
+        "P28-a"
+      ],
+      "sec_per_doc": 142.0,
+      "llm_calls_per_doc": 15.8,
+      "tokens_per_doc": 11999,
+      "miss_stages": {
+        "not_retrieved": [
+          "P20-d"
+        ],
+        "analyst_missed": [
+          "P13-a",
+          "P15-a",
+          "P28-a"
+        ],
+        "verifier_rejected": []
+      }
+    }
+  }
+}
