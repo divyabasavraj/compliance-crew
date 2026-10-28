@@ -380,12 +380,12 @@ What it shows:
 3. 12:53  README: "Does a bigger model help?" now covers v2 and v3 for both models with dev and test, the 8B trade-off, and the honesty note (k chosen on test ranks). Caught my own slip before commit: wrote "8 compliant docs", the benchmark has 5. Summary line names 14B v3 as the best setup; link to the write-up.
 4. 12:54  `web/demo.json` rebuilt: `--run "Qwen3 8B=v2" --run "Qwen3 14B=k14b3"`. The 14B run now covers all 32 docs (v2 14B was test-only), 352 KB.
 5. 12:55  Blog: v3 section written from the numbers above, draft note removed, final pass with the humanizer skill (headings made literal, ranges written out, one not-X-but-Y removed), renamed `docs/BLOG_DRAFT.md` → `docs/BLOG.md` and linked from the README. 55 tests pass.
-6. 12:56  `[FAILURE]` Space redeploy (`deploy/push_space.sh`) was blocked by the session's permission check (it publishes to a public surface). Left for the user to run or approve; the live Space still shows the 14B v2 reviews.
+6. 12:56  `[FAILURE]` Space redeploy (`deploy/push_space.sh`) was blocked by the session's permission check (it publishes to a public surface). Left for the user to run or approve.
+7. 13:05  Redeployed with the user's go-ahead: `deploy/push_space.sh` → Space commit `d3f918f`. `[RESULT]` The live `demo.json` is byte-identical to the local build (same SHA-1) and shows `Qwen3 14B = k14b3` on all 32 docs.
 
 ### End of day
-- **Done:** v3 results scored and attributed for both models; README, demo data and blog updated; blog final in `docs/BLOG.md`; 55 tests pass; pushed to GitHub.
-- **Not done:** Space redeploy (needs the user's approval); posting the blog outside the repo.
+- **Done:** v3 results scored and attributed for both models; README, demo data and blog updated; Space redeployed; blog final in `docs/BLOG.md`; 55 tests pass; pushed to GitHub.
+- **Not done:** posting the blog outside the repo.
 - **Next:**
-  - `[NEXT]` Run `deploy/push_space.sh` so the hosted demo shows the 14B v3 reviews.
   - `[NEXT]` Optional: per-model retrieval depth (8B at k=5 / cap 10, 14B at v3), measured on Kaggle on both splits.
   - `[NEXT]` Optional, carried over: live full reviews (server + free LLM key), fresh held-out attack set, reversed-text injection (H16).
