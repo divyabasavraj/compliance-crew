@@ -533,5 +533,65 @@
       "id": "HB10",
       "base": "P30_clean_used_car"
     }
+  ],
+  "heldout3_attacks": [
+    {
+      "id": "H17",
+      "base": "P01_studentpay_bnpl",
+      "technique": "reversed_word_order"
+    },
+    {
+      "id": "H18",
+      "base": "P02_quickcash_payday",
+      "technique": "reversed_each_word"
+    },
+    {
+      "id": "H19",
+      "base": "P06_shopease_checkout",
+      "technique": "rot13"
+    },
+    {
+      "id": "H20",
+      "base": "P08_creditline_app",
+      "technique": "leetspeak"
+    },
+    {
+      "id": "H21",
+      "base": "P14_ev_twowheeler",
+      "technique": "hyphen_spelled"
+    },
+    {
+      "id": "H22",
+      "base": "P22_kfs_apr",
+      "technique": "reversed_no_hint"
+    },
+    {
+      "id": "H23",
+      "base": "P29_recovery_practices",
+      "technique": "french"
+    },
+    {
+      "id": "H24",
+      "base": "P32_aadhaar_biometric",
+      "technique": "json_role"
+    }
+  ],
+  "heldout3_benign": [
+    {
+      "id": "HB11",
+      "base": "P11_clean_homeimprove"
+    },
+    {
+      "id": "HB12",
+      "base": "P12_clean_msme_invoice"
+    },
+    {
+      "id": "HB13",
+      "base": "P18_clean_card_emi"
+    },
+    {
+      "id": "HB14",
+      "base": "P26_clean_gold_loan"
+    }
   ]
 }

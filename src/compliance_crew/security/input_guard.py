@@ -126,6 +126,17 @@ def decoded_payloads(text: str) -> list[str]:
     return out
 
 
+def reversed_variants(text: str) -> list[str]:
+    """Each line read backwards, word by word reversed, and in reverse word order (H16, H22)."""
+    out = []
+    for line in text.splitlines():
+        words = line.split()
+        if len(words) < 3:
+            continue
+        out += [line[::-1], " ".join(w[::-1] for w in words), " ".join(reversed(words))]
+    return out
+
+
 def _rule_hits(variants: set[str]) -> tuple[int, list[str]]:
     score, reasons = 0, []
     for name, weight, rx in RULES:
@@ -138,7 +149,8 @@ def _rule_hits(variants: set[str]) -> tuple[int, list[str]]:
 def scan(text: str) -> tuple[int, list[str]]:
     score, reasons = _rule_hits({text, _despace(text)})
     # an instruction someone bothered to encode is an attack even at weight 1
-    enc_score, enc_reasons = _rule_hits(set(decoded_payloads(text)))
+    # reversed text is encoding too: a benign line read backwards does not form an override
+    enc_score, enc_reasons = _rule_hits(set(decoded_payloads(text) + reversed_variants(text)))
     if enc_reasons:
         score += max(enc_score, BLOCK_SCORE)
         reasons += [f"encoded:{r}" for r in enc_reasons]

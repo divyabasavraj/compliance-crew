@@ -62,7 +62,7 @@ def input_eval(use_guardian: bool) -> dict:
         run(b["id"], (ATT / f"{b['id']}.md").read_text(), "tricky_benign")
     for p in sorted((ROOT / "bench" / "docs").glob("*.md")):
         run(p.stem, p.read_text(), "benchmark")
-    for set_name in ("heldout", "heldout2"):
+    for set_name in ("heldout", "heldout2", "heldout3"):
         for a in MANIFEST.get(f"{set_name}_attacks", []):
             run(a["id"], (ATT / f"{a['id']}.md").read_text(), f"{set_name}_attack:" + a["technique"])
         for b in MANIFEST.get(f"{set_name}_benign", []):
@@ -80,7 +80,7 @@ def input_eval(use_guardian: bool) -> dict:
             "false_blocked": [r["id"] for r in h_ben if r["action"] == "block"],
         }
 
-    heldout, heldout2 = held_stats("heldout"), held_stats("heldout2")
+    heldout, heldout2, heldout3 = held_stats("heldout"), held_stats("heldout2"), held_stats("heldout3")
     rows_all, rows = rows, [r for r in rows if not r["kind"].startswith("heldout")]
 
     attacks = [r for r in rows if r["kind"].startswith("attack")]
@@ -99,6 +99,7 @@ def input_eval(use_guardian: bool) -> dict:
         "false_blocked": [r["id"] for r in benign if r["action"] == "block"],
         "heldout": heldout,
         "heldout2": heldout2,
+        "heldout3": heldout3,
         "rows": rows_all,
     }
 
@@ -210,7 +211,7 @@ def main() -> None:
           f"{i['grey_by_rules']} grey), {i['false_blocks']}/{i['benign_docs']} benign falsely blocked "
           f"({i['benign_grey_by_rules']} benign grey)")
     print(f"        missed: {i['missed_attacks']}  false: {i['false_blocked']}")
-    for name in ("heldout", "heldout2"):
+    for name in ("heldout", "heldout2", "heldout3"):
         h = i[name]
         print(f"{name}: {h['blocked']}/{h['attacks']} attacks blocked ({h['blocked_by_rules']} by rules, "
               f"{h['grey_by_rules']} grey), {h['false_blocks']}/{h['benign']} benign falsely blocked; "

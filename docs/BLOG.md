@@ -34,7 +34,7 @@ For 8B the same change came out even: it gained 3 violations on test and lost 3 
 
 Uploaded product docs can carry instructions aimed at the reviewer, and they often contain Aadhaar, PAN and UPI IDs. I reused the guard design from my earlier project PatchPilot (rules first, an LLM judge last) and added what agents need: checks on every message between agents, tool allow-lists enforced in code, Indian PII masking with the Aadhaar checksum, and an audit log.
 
-My regex rules blocked 17 of the 18 attacks I wrote them against and 1 of 8 held-out attacks. Adding a small Guardian model raised the held-out result to 6 of 8. After a fix driven by those two misses, a second held-out set written before the fix went from 3 of 8 blocked to 7 of 8, with 0 false blocks on 52 benign docs. The remaining miss is an instruction written backwards.
+My regex rules blocked 17 of the 18 attacks I wrote them against and 1 of 8 held-out attacks. Adding a small Guardian model raised the held-out result to 6 of 8. After a fix driven by those two misses, a second held-out set written before the fix went from 3 of 8 blocked to 7 of 8, with 0 false blocks on 52 benign docs. The remaining miss was an instruction written backwards. Before fixing that one I wrote a third held-out set (reversed word order, ROT13, leetspeak, French and others): 7 of 8 blocked, 0 false blocks. The miss there is a backwards instruction with a misspelled verb, which the rules cannot match and the Guardian does not decode.
 
 ## Shipping on ₹0
 

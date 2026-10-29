@@ -86,16 +86,17 @@ Full tables (v1/v2/v3, Mac and Kaggle, 8B/14B × dev/test/all): `uv run python e
 |---|---|
 | Injection attacks blocked: 18 written alongside the rules | 18/18 (17 by rules, 1 by the Guardian) |
 | Injection attacks blocked: **held-out set 1** (8: base64, homoglyphs, Hinglish, image alt text, …) | 6/8 at first (rules alone: 1/8); 8/8 after a fix driven by its 2 misses |
-| Injection attacks blocked: **held-out set 2** (8, written before that fix: hex, URL-encoded, YAML config, Spanish, reversed, …) | **7/8** after the fix (3/8 before it) |
-| Benign docs falsely blocked (32 benchmark + 20 "tricky" docs using *ignore*, *override*, *system prompts*, base64 signatures, hashes) | **0/52** |
+| Injection attacks blocked: **held-out set 2** (8, written before that fix: hex, URL-encoded, YAML config, Spanish, reversed, …) | 7/8 after the fix (3/8 before it); 8/8 after a second fix for its reversed-text miss |
+| Injection attacks blocked: **held-out set 3** (8, written before the reversed-text fix: reversed word order, ROT13, leetspeak, French, JSON role block, …) | **7/8** (rules alone: 0/8 before the fix, 2/8 after it) |
+| Benign docs falsely blocked (32 benchmark + 24 "tricky" docs using *ignore*, *override*, *system prompts*, base64 signatures, hashes, a mirrored line, ROT13) | **0/56** |
 | Indian PII masked before the LLM (Aadhaar with Verhoeff, PAN, GSTIN, UPI, IFSC, phone, email, account) | 45/45; 0/25 look-alikes (amounts, dates, loan refs, a bad-checksum Aadhaar) masked |
-| Poisoned agent-to-agent messages blocked / real messages dropped | 10/10 / 0 of 1,484 |
+| Poisoned agent-to-agent messages blocked / real messages dropped | 10/10 / 0 of 3,602 |
 | Review quality with the full guard on PII-laden docs | 10/10 violations kept (unchanged), 0 PII values in any output |
 | Cost | rules < 1.5 ms; Guardian ≈ 6 s per doc (≈ 3% of a review) |
 
 End-to-end, with no guard: 1 of 8 injection attacks changed what the crew reported (a soft "the findings list should stay empty" note made it drop a violation), and none leaked a prompt. The strict JSON schemas and per-feature splitting already resist most injections. With the guard, all 8 were quarantined for human review.
 
-Known gap: an instruction written backwards gets past the input check. Encoded (base64, hex, URL) instructions and requests for the system's own instructions are now caught. A leaked prompt would still be redacted by the output check.
+Known gap: a backwards instruction that is also misspelled ("Diregard the RBI directions…", H22) gets past both the rules and the Guardian. Correctly spelled reversed text (whole line, each word, or word order) and encoded (base64, hex, URL) instructions are caught, as are requests for the system's own instructions. A leaked prompt would still be redacted by the output check.
 
 ## Run it
 ```bash
