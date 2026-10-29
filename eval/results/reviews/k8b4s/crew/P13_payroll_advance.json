@@ -1,0 +1,236 @@
+{
+  "system": "crew",
+  "doc_id": "P13_payroll_advance",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The feature indicates that the LSP (Bridgework Labs) deducts its service fee from the loan amount before it is credited to the borrower's account. This implies that the flow of funds between the borrower and the RE (Narmada Finance) is being controlled indirectly by the LSP, which is prohibited under the RBI guidelines.",
+      "doc_evidence": "The loan amount is credited to the worker's own salary bank account within 10 minutes. Bridgework Labs deducts its ₹150 service fee from the amount before it is credited, so the worker receives the loan minus the fee.",
+      "severity": "high",
+      "fix": "Ensure that the LSP does not deduct service fees from the loan amount. Instead, the RE should pay the LSP directly for the service fee, and the borrower should receive the full loan amount.",
+      "verifier_note": "The RBI paragraph prohibits the flow of funds between the borrower and the RE from being controlled by a third-party, including the LSP. The product feature states that the LSP deducts its service fee from the loan amount before crediting it to the borrower's account. This action by the LSP (Bridgework Labs) is a form of indirect control over the flow of funds between the borrower and the RE (Narmada Finance). Since the RBI explicitly forbids such control by a third-party, including the LSP, the feature violates the RBI guidelines."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature states that Bridgework Labs deducts its ₹150 service fee from the loan amount before it is credited to the borrower's account. This implies that the fees are being collected from the borrower's loan amount, which is not allowed as the RE should pay the fees directly to the LSP and not charge the borrower.",
+      "doc_evidence": "The loan amount is credited to the worker's own salary bank account within 10 minutes. Bridgework Labs deducts its ₹150 service fee from the amount before it is credited, so the worker receives the loan minus the fee.",
+      "severity": "high",
+      "fix": "Modify the process so that the RE pays the LSP directly for the service fee, and the borrower is not charged for it. The fee should be deducted from the RE's account, not the borrower's loan amount.",
+      "verifier_note": "The RBI paragraph explicitly states that fees payable to the LSP must be paid directly by the RE and not charged to or collected from the borrowers. The product feature describes that Bridgework Labs (LSP) deducts its ₹150 service fee from the loan amount before crediting it to the borrower's account. This directly contradicts the requirement that fees should not be collected from the borrower. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app reads the worker's SMS inbox for salary credit messages and bank alerts every week without explicit consent from the borrower. The feature does not mention obtaining prior and explicit consent with an audit trail, which is required under [DLD2025:12(i)].",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "high",
+      "fix": "Implement a mechanism to obtain explicit consent from the borrower before accessing their SMS inbox or bank alerts. Maintain an audit trail of all consents and revocations.",
+      "verifier_note": "The product feature involves reading the worker's SMS inbox for salary credit messages and bank alerts every week. This is not explicitly allowed under [DLD2025:12(i)], which prohibits accessing mobile phone resources like contact list, call logs, telephony functions, and file and media. The feature does not mention obtaining prior and explicit consent with an audit trail, which is required. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The purpose of obtaining borrowers’ consent is not disclosed at each stage of interface with the borrowers. The feature does not mention disclosing the purpose of data collection, which is required under [DLD2025:12(iii)].",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "high",
+      "fix": "Update the interface to clearly disclose the purpose of data collection at each stage. Ensure that the purpose is communicated in a manner that is understandable to the borrower.",
+      "verifier_note": "The product feature mentions collecting data (SMS inbox and bank alerts) for the purpose of checking repayment capacity. However, it does not explicitly state that the purpose of obtaining borrowers’ consent is disclosed at each stage of interface with the borrowers, as required by [DLD2025:12(iii)]. The feature does not mention disclosing the purpose of data collection at each stage, which is a requirement under the paragraph. Therefore, the feature does not comply with the requirement."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The borrower is not provided with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted, or make the LSP delete/forget the data. This is required under [DLD2025:12(ii)].",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "high",
+      "fix": "Provide the borrower with clear options to give, deny, restrict, revoke, or delete their data. Ensure that these options are prominently displayed and accessible throughout the app.",
+      "verifier_note": "The product feature does not provide the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted, or make the LSP delete/forget the data. The feature collects data without explicit consent and does not allow the borrower to manage or revoke this data usage, which violates the requirements in [DLD2025:12(ii)]."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(i)",
+      "issue": "The feature does not explicitly state that the RE (Narmada Finance) has designated a nodal grievance redressal officer to deal with digital lending related complaints/ issues raised by the borrower. It only mentions that both Narmada Finance and Bridgework Labs have a named nodal grievance officer, but it is unclear if the RE has specifically designated one as required by this paragraph.",
+      "doc_evidence": "Narmada Finance and Bridgework Labs each have a named nodal grievance officer, listed on both websites, in the app and in the KFS.",
+      "severity": "medium",
+      "fix": "Designate a specific nodal grievance redressal officer for digital lending complaints under the RE. Clearly state this in the app and ensure that the officer is accessible to the borrower.",
+      "verifier_note": "The RBI paragraph requires the RE (Narmada Finance) to designate a nodal grievance redressal officer for digital lending complaints. The product feature states that both Narmada Finance and Bridgework Labs have a named nodal grievance officer, but it does not explicitly confirm that Narmada Finance has designated one as required by the paragraph. The feature does not clarify whether the officer is specifically designated for digital lending complaints, which is a requirement under the paragraph. Therefore, the feature does not fully comply with the requirement."
+    },
+    {
+      "feature": "Know Your Customer (KFS) and Information Disclosure",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "doc_evidence": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "severity": "high",
+      "fix": "Translate the KFS form into Hindi and Odia to ensure accessibility for non-English-speaking users. Include a confirmation step to verify that the borrower understands the KFS information.",
+      "verifier_note": "The RBI paragraph requires that the KFS be provided in a language understood by the borrowers and that an acknowledgement be obtained that the borrower has understood the contents. The product feature states that the KFS is shown in English only, which may not be understood by most users who are Hindi- and Odia-speaking. Additionally, there is no step to confirm that the borrower has understood the KFS. This directly violates the requirements of the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The loan amount is credited to the worker's own salary bank account, which complies with the requirement that disbursal should be made into the borrower's bank account. However, the feature states that Bridgework Labs deducts its ₹150 service fee from the amount before it is credited, which may imply that the LSP is involved in the disbursal process. This could potentially violate the requirement that disbursal should not be made to a third-party account, including the accounts of LSP.",
+      "doc_evidence": "The loan amount is credited to the worker's own salary bank account within 10 minutes. Bridgework Labs deducts its ₹150 service fee from the amount before it is credited, so the worker receives the loan minus the fee.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly allows disbursal to the borrower's bank account, which the product feature does. The deduction of the service fee does not involve the LSP in the disbursal process, as the fee is deducted by Bridgework Labs before crediting the loan to the borrower's account. The paragraph does not prohibit fee deductions or specify that the LSP must not be involved in such deductions. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The feature indicates that the LSP (Bridgework Labs) deducts its service fee from the loan amount before it is credited to the borrower's account. This implies that the flow of funds between the borrower and the RE (Narmada Finance) is being controlled indirectly by the LSP, which is prohibited under the RBI guidelines.",
+      "doc_evidence": "The loan amount is credited to the worker's own salary bank account within 10 minutes. Bridgework Labs deducts its ₹150 service fee from the amount before it is credited, so the worker receives the loan minus the fee.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph prohibits the flow of funds between the borrower and the RE from being controlled by a third-party, including the LSP. The product feature states that the LSP deducts its service fee from the loan amount before crediting it to the borrower's account. This action by the LSP (Bridgework Labs) is a form of indirect control over the flow of funds between the borrower and the RE (Narmada Finance). Since the RBI explicitly forbids such control by a third-party, including the LSP, the feature violates the RBI guidelines."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature states that Bridgework Labs deducts its ₹150 service fee from the loan amount before it is credited to the borrower's account. This implies that the fees are being collected from the borrower's loan amount, which is not allowed as the RE should pay the fees directly to the LSP and not charge the borrower.",
+      "doc_evidence": "The loan amount is credited to the worker's own salary bank account within 10 minutes. Bridgework Labs deducts its ₹150 service fee from the amount before it is credited, so the worker receives the loan minus the fee.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that fees payable to the LSP must be paid directly by the RE and not charged to or collected from the borrowers. The product feature describes that Bridgework Labs (LSP) deducts its ₹150 service fee from the loan amount before crediting it to the borrower's account. This directly contradicts the requirement that fees should not be collected from the borrower. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app reads the worker's SMS inbox for salary credit messages and bank alerts every week without explicit consent from the borrower. The feature does not mention obtaining prior and explicit consent with an audit trail, which is required under [DLD2025:12(i)].",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature involves reading the worker's SMS inbox for salary credit messages and bank alerts every week. This is not explicitly allowed under [DLD2025:12(i)], which prohibits accessing mobile phone resources like contact list, call logs, telephony functions, and file and media. The feature does not mention obtaining prior and explicit consent with an audit trail, which is required. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(iii)",
+      "issue": "The purpose of obtaining borrowers’ consent is not disclosed at each stage of interface with the borrowers. The feature does not mention disclosing the purpose of data collection, which is required under [DLD2025:12(iii)].",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature mentions collecting data (SMS inbox and bank alerts) for the purpose of checking repayment capacity. However, it does not explicitly state that the purpose of obtaining borrowers’ consent is disclosed at each stage of interface with the borrowers, as required by [DLD2025:12(iii)]. The feature does not mention disclosing the purpose of data collection at each stage, which is a requirement under the paragraph. Therefore, the feature does not comply with the requirement."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The borrower is not provided with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted, or make the LSP delete/forget the data. This is required under [DLD2025:12(ii)].",
+      "doc_evidence": "To check repayment capacity, the app reads the worker's SMS inbox for salary credit messages and bank alerts every week.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature does not provide the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted, or make the LSP delete/forget the data. The feature collects data without explicit consent and does not allow the borrower to manage or revoke this data usage, which violates the requirements in [DLD2025:12(ii)]."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature states that the loan is repaid in one instalment on salary day. However, the RBI requires that the loan disbursement be made into the borrower's bank account, and repayment should be executed directly in the RE’s bank account without any pass-through account or pool account of any third party, including LSPs. The feature does not explicitly mention that repayment is made directly into the RE’s bank account, which could imply that the LSP might be involved in the repayment process, potentially violating DLD2025:9(i).",
+      "doc_evidence": "The loan is repaid in one instalment on salary day.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph (DLD2025:9(i)) explicitly requires that loan disbursement be made into the borrower's bank account and that repayment be executed directly into the RE’s bank account without involving third-party accounts, including LSPs. The product feature does not mention repayment being made directly into the RE’s bank account, which could imply involvement of a third party (LSP) in the repayment process. However, the feature does not explicitly state that repayment is made into the RE’s account, and the claim relies on an assumption not stated in the feature. Since the feature does not mention repayment into the RE’s account, and the paragraph does not explicitly forbid this, the claim is based on an omission, not a direct violation."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(i)",
+      "issue": "The feature does not explicitly state that the RE (Narmada Finance) has designated a nodal grievance redressal officer to deal with digital lending related complaints/ issues raised by the borrower. It only mentions that both Narmada Finance and Bridgework Labs have a named nodal grievance officer, but it is unclear if the RE has specifically designated one as required by this paragraph.",
+      "doc_evidence": "Narmada Finance and Bridgework Labs each have a named nodal grievance officer, listed on both websites, in the app and in the KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires the RE (Narmada Finance) to designate a nodal grievance redressal officer for digital lending complaints. The product feature states that both Narmada Finance and Bridgework Labs have a named nodal grievance officer, but it does not explicitly confirm that Narmada Finance has designated one as required by the paragraph. The feature does not clarify whether the officer is specifically designated for digital lending complaints, which is a requirement under the paragraph. Therefore, the feature does not fully comply with the requirement."
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product feature states that workers can cancel within 3 days by repaying the principal and proportionate interest, with no penalty. This complies with the requirement that the borrower shall be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial 'cooling-off period'.",
+      "doc_evidence": "Workers can cancel within 3 days by repaying the principal and proportionate interest, with no penalty.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature allows workers to cancel within 3 days by repaying the principal and proportionate interest with no penalty. This aligns with the RBI requirement that the borrower shall be given an explicit option to exit a digital loan by paying the principal and proportionate APR without penalty during a cooling-off period. The cooling-off period in the feature (3 days) is not less than one day, as required by the RBI paragraph. The feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Know Your Customer (KFS) and Information Disclosure",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "doc_evidence": "The KFS is shown in the app in English only. Most users are Hindi- and Odia-speaking workers; there is no translation and no step to confirm the worker has understood it.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the KFS be provided in a language understood by the borrowers and that an acknowledgement be obtained that the borrower has understood the contents. The product feature states that the KFS is shown in English only, which may not be understood by most users who are Hindi- and Odia-speaking. Additionally, there is no step to confirm that the borrower has understood the KFS. This directly violates the requirements of the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the PayDay Bridge: Salary Advance for Factory Workers product identified several non-compliance issues with the RBI guidelines. The key findings include: (1) The LSP (Bridgework Labs) is indirectly controlling the flow of funds between the borrower and the RE (Narmada Finance) by deducting its service fee from the loan amount, which is prohibited. (2) The service fee is being collected from the borrower's loan amount instead of the RE paying the fee directly to the LSP. (3) The app reads the borrower's SMS inbox and bank alerts without explicit consent, lacking an audit trail. (4) The purpose of data collection is not disclosed at each stage of the interface. (5) The borrower is not provided with options to give or deny consent, restrict data disclosure, revoke consent, or request data deletion. (6) The RE does not explicitly designate a nodal grievance redressal officer for digital lending complaints. (7) The KFS is shown in English only, without translation or confirmation that the borrower understands it. These issues require immediate corrective actions to align with the reviewed RBI rules.",
+  "trace": {
+    "llm_calls": 25,
+    "prompt_tokens": 12938,
+    "output_tokens": 3758,
+    "llm_seconds": 137.4,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 10,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 34,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:10(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:10(i)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)"
+      ],
+      "1:Data Collection": [
+        "DLD2025:12(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:12(iii)",
+        "DLD2025:7(i)",
+        "DLD2025:12(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:16(i)"
+      ],
+      "2:Repayment": [
+        "KFS2024:5",
+        "DLD2025:27(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:10(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(ii)",
+        "DLD2025:15(i)"
+      ],
+      "3:Grievance Redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:11(i)",
+        "DLD2025:17(iv)",
+        "KFS2024:7",
+        "DLD2025:11(iii)",
+        "DLD2025:11(iv)"
+      ],
+      "4:Cooling-off Period": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:26(i)",
+        "KFS2024:5",
+        "DLD2025:11(iv)"
+      ],
+      "5:Know Your Customer (KFS) and Information Disclosure": [
+        "KFS2024:4",
+        "KFS2024:6",
+        "KFS2024:8",
+        "KFS2024:5",
+        "DLD2025:13(iv)",
+        "DLD2025:8(i)"
+      ]
+    }
+  },
+  "seconds": 137.8
+}

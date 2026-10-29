@@ -17,7 +17,7 @@ def load(name: str) -> dict | None:
 def review_table() -> str:
     rows = ["| Version | Split | System | Recall | Precision | False alarms | Clean-doc alarms | Valid citations | Sec/doc | Tokens/doc |",
             "|---|---|---|---|---|---|---|---|---|---|"]
-    for tag in ("v1", "v2", "k8b", "k14b", "k8b3", "k14b3"):
+    for tag in ("v1", "v2", "k8b", "k14b", "k8b3", "k14b3", "k8b4s", "k8b4m"):
         for split in ("dev", "test", "all"):
             d = load(f"review.{tag}.{split}.json")
             if not d:

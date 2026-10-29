@@ -1,0 +1,209 @@
+{
+  "system": "crew",
+  "doc_id": "P06_shopease_checkout",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:16(ii)",
+      "issue": "The feature states that Coastal Finance does not report small, short-term deferred payments to credit information companies. However, according to [DLD2025:16(ii)], REs engaged in structured digital lending products involving short term, unsecured/secured credits or deferred payments need to be reported to CICs by the RE, and LSPs associated with such products must abide by the outsourcing guidelines.",
+      "doc_evidence": "Because these are small, short-term deferred payments, Coastal Finance does not report them to credit information companies. Only loans above ₹25,000 or longer than 6 months are reported.",
+      "severity": "high",
+      "fix": "Implement a system to report all small, short-term deferred payments to credit information companies (CICs) as mandated by DLD2025:16(ii). Ensure that LSPs associated with such products comply with outsourcing guidelines.",
+      "verifier_note": "The RBI paragraph [DLD2025:16(ii)] explicitly requires REs engaged in structured digital lending products involving short term, unsecured/secured credits or deferred payments to report these to CICs. The product feature claims that Coastal Finance does not report small, short-term deferred payments to credit information companies, which directly contradicts the requirement in the RBI paragraph. Therefore, the feature violates the RBI directive."
+    },
+    {
+      "feature": "Fees",
+      "rule_id": "KFS2024:8",
+      "issue": "The product feature states that ShopEase later plans to add a monthly 'account maintenance fee' of ₹49 for active users; this is not in the KFS and will be added to the bill automatically. This violates KFS2024:8, which mandates that any fees, charges, etc. which are not mentioned in the KFS, cannot be charged by the REs to the borrower at any stage during the term of the loan, without explicit consent of the borrower.",
+      "doc_evidence": "ShopEase later plans to add a monthly 'account maintenance fee' of ₹49 for active users; this is not in the KFS and will be added to the bill automatically.",
+      "severity": "high",
+      "fix": "Update the KFS to include the monthly 'account maintenance fee' of ₹49 and obtain explicit consent from borrowers before charging any fees not mentioned in the KFS.",
+      "verifier_note": "The product feature mentions that ShopEase plans to add a monthly 'account maintenance fee' of ₹49 for active users, which is not in the KFS and will be added to the bill automatically. This directly violates KFS2024:8, which prohibits charging any fees not mentioned in the KFS without explicit consent. The feature does not mention obtaining explicit consent from the borrower, and the fee is added automatically, which is not allowed under the RBI paragraph."
+    },
+    {
+      "feature": "Marketing",
+      "rule_id": "DLD2025:17(vi)",
+      "issue": "The marketing material states: 'ShopEase PayLater: an RBI-approved credit app.' This implies that the RBI has approved the app, which misrepresents the inclusion of the DLA on the CIMS portal. According to [DLD2025:17(vi)], the inclusion of a third-party DLA on the CIMS portal should not be construed as conferring any form of registration, authorization, or endorsement by the Reserve Bank, and should not be misrepresented in any marketing materials.",
+      "doc_evidence": "ShopEase PayLater: an RBI-approved credit app.",
+      "severity": "high",
+      "fix": "Revise marketing materials to remove any implication that the RBI has approved the app. Clarify that inclusion on the CIMS portal does not equate to endorsement or authorization.",
+      "verifier_note": "The product feature states that ShopEase is listed on the RBI CIMS portal by Coastal Finance, which is a third-party DLA. The RBI paragraph explicitly prohibits the inclusion of third-party DLAs on the CIMS portal from being construed as conferring any form of registration, authorization, or endorsement by the RBI. The marketing material claims that the app is 'RBI-approved,' which directly misrepresents the inclusion of the DLA on the portal. This violates the prohibition in [DLD2025:17(vi)] against misrepresentation in marketing materials."
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product feature states that Shoppers who change their mind can cancel within 2 days of purchase by paying back the principal with no extra charge. However, the RBI paragraph requires the borrower to be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial 'cooling-off period'. The feature does not mention the APR or the explicit option to exit, which is a clear non-compliance.",
+      "doc_evidence": "Shoppers who change their mind can cancel within 2 days of purchase by paying back the principal with no extra charge.",
+      "severity": "high",
+      "fix": "Update the product feature to explicitly state that borrowers can exit the loan during the cooling-off period by paying the principal and the proportionate APR without penalty.",
+      "verifier_note": "The product feature allows cancellation within 2 days by paying back the principal with no extra charge. The RBI paragraph requires the borrower to be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial 'cooling-off period'. The feature does not mention the APR or the explicit option to exit, which is a clear non-compliance."
+    },
+    {
+      "feature": "Data Collection and Sharing",
+      "rule_id": "DLD2025:12(iv)",
+      "issue": "The product feature states that users are not asked separately for consent for data sharing with advertising partners, and this is covered by accepting the app's terms of use. This does not meet the requirement of obtaining explicit consent before sharing personal information with any third party, except for cases where such sharing is required as per statutory or regulatory requirement.",
+      "doc_evidence": "Users are not asked separately; this is covered by accepting the app's terms of use.",
+      "severity": "high",
+      "fix": "Revise the data collection and sharing process to obtain explicit consent from users before sharing personal information with advertising partners, separate from the terms of use.",
+      "verifier_note": "The RBI paragraph requires explicit consent from the borrower before sharing personal information with any third party, except in cases mandated by statutory or regulatory requirements. The product feature states that users are not asked separately for consent, and this is covered by accepting the app's terms of use. Since the terms of use are not explicitly stated to cover data sharing with advertising partners, and the feature does not mention any statutory or regulatory requirement that would exempt this sharing, the feature does not meet the requirement of obtaining explicit consent. Therefore, the feature violates the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature states that 'ShopEase earns a merchant discount from sellers.' This implies that the LSP (ShopEase Commerce Pvt Ltd) is receiving a benefit from the seller, which could be interpreted as a form of indirect promotion of a particular RE's product, potentially violating the requirement that the LSP's content be unbiased and not promote a particular RE's product.",
+      "doc_evidence": "ShopEase earns a merchant discount from sellers.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph prohibits disbursals to third-party accounts, including LSPs, except as provided. The product feature does not involve loan disbursal or any activity that would violate the RBI's restriction on third-party accounts. The feature describes a payment splitting mechanism and merchant discount, which is unrelated to the loan disbursement rules. The claim about the LSP receiving a merchant discount does not directly relate to the RBI paragraph's requirements regarding loan disbursal. The paragraph does not address merchant discounts or LSPs' financial arrangements with sellers."
+    },
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:16(ii)",
+      "issue": "The feature states that Coastal Finance does not report small, short-term deferred payments to credit information companies. However, according to [DLD2025:16(ii)], REs engaged in structured digital lending products involving short term, unsecured/secured credits or deferred payments need to be reported to CICs by the RE, and LSPs associated with such products must abide by the outsourcing guidelines.",
+      "doc_evidence": "Because these are small, short-term deferred payments, Coastal Finance does not report them to credit information companies. Only loans above ₹25,000 or longer than 6 months are reported.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:16(ii)] explicitly requires REs engaged in structured digital lending products involving short term, unsecured/secured credits or deferred payments to report these to CICs. The product feature claims that Coastal Finance does not report small, short-term deferred payments to credit information companies, which directly contradicts the requirement in the RBI paragraph. Therefore, the feature violates the RBI directive."
+    },
+    {
+      "feature": "Fees",
+      "rule_id": "KFS2024:8",
+      "issue": "The product feature states that ShopEase later plans to add a monthly 'account maintenance fee' of ₹49 for active users; this is not in the KFS and will be added to the bill automatically. This violates KFS2024:8, which mandates that any fees, charges, etc. which are not mentioned in the KFS, cannot be charged by the REs to the borrower at any stage during the term of the loan, without explicit consent of the borrower.",
+      "doc_evidence": "ShopEase later plans to add a monthly 'account maintenance fee' of ₹49 for active users; this is not in the KFS and will be added to the bill automatically.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature mentions that ShopEase plans to add a monthly 'account maintenance fee' of ₹49 for active users, which is not in the KFS and will be added to the bill automatically. This directly violates KFS2024:8, which prohibits charging any fees not mentioned in the KFS without explicit consent. The feature does not mention obtaining explicit consent from the borrower, and the fee is added automatically, which is not allowed under the RBI paragraph."
+    },
+    {
+      "feature": "Marketing",
+      "rule_id": "DLD2025:17(vi)",
+      "issue": "The marketing material states: 'ShopEase PayLater: an RBI-approved credit app.' This implies that the RBI has approved the app, which misrepresents the inclusion of the DLA on the CIMS portal. According to [DLD2025:17(vi)], the inclusion of a third-party DLA on the CIMS portal should not be construed as conferring any form of registration, authorization, or endorsement by the Reserve Bank, and should not be misrepresented in any marketing materials.",
+      "doc_evidence": "ShopEase PayLater: an RBI-approved credit app.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that ShopEase is listed on the RBI CIMS portal by Coastal Finance, which is a third-party DLA. The RBI paragraph explicitly prohibits the inclusion of third-party DLAs on the CIMS portal from being construed as conferring any form of registration, authorization, or endorsement by the RBI. The marketing material claims that the app is 'RBI-approved,' which directly misrepresents the inclusion of the DLA on the portal. This violates the prohibition in [DLD2025:17(vi)] against misrepresentation in marketing materials."
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product feature states that Shoppers who change their mind can cancel within 2 days of purchase by paying back the principal with no extra charge. However, the RBI paragraph requires the borrower to be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial 'cooling-off period'. The feature does not mention the APR or the explicit option to exit, which is a clear non-compliance.",
+      "doc_evidence": "Shoppers who change their mind can cancel within 2 days of purchase by paying back the principal with no extra charge.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature allows cancellation within 2 days by paying back the principal with no extra charge. The RBI paragraph requires the borrower to be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial 'cooling-off period'. The feature does not mention the APR or the explicit option to exit, which is a clear non-compliance."
+    },
+    {
+      "feature": "Data Collection and Sharing",
+      "rule_id": "DLD2025:12(iv)",
+      "issue": "The product feature states that users are not asked separately for consent for data sharing with advertising partners, and this is covered by accepting the app's terms of use. This does not meet the requirement of obtaining explicit consent before sharing personal information with any third party, except for cases where such sharing is required as per statutory or regulatory requirement.",
+      "doc_evidence": "Users are not asked separately; this is covered by accepting the app's terms of use.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires explicit consent from the borrower before sharing personal information with any third party, except in cases mandated by statutory or regulatory requirements. The product feature states that users are not asked separately for consent, and this is covered by accepting the app's terms of use. Since the terms of use are not explicitly stated to cover data sharing with advertising partners, and the feature does not mention any statutory or regulatory requirement that would exempt this sharing, the feature does not meet the requirement of obtaining explicit consent. Therefore, the feature violates the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the ShopEase PayLater: Checkout Financing for E-commerce product identified multiple high-risk non-compliance issues against the reviewed RBI rules. The key findings include: (1) Failure to report short-term deferred payments to credit information companies, violating DLD2025:16(ii). (2) Introducing an unapproved monthly account maintenance fee without explicit borrower consent, violating KFS2024:8. (3) Misrepresentation of RBI approval by implying the app is RBI-approved, violating DLD2025:17(vi). (4) Lack of explicit exit option with APR during the cooling-off period, violating DLD2025:10(i). (5) Failure to obtain explicit consent for data sharing with advertising partners, violating DLD2025:12(iv). These findings highlight significant gaps in compliance with RBI regulations and require immediate corrective actions.",
+  "trace": {
+    "llm_calls": 21,
+    "prompt_tokens": 13352,
+    "output_tokens": 2533,
+    "llm_seconds": 119.5,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 6,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 30,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:6(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:16(ii)",
+        "DLD2025:27(ii)",
+        "DLD2025:25(ii)",
+        "DLD2025:10(i)",
+        "DLD2025:9(i)",
+        "DLD2025:15(i)",
+        "DLD2025:16(i)",
+        "DLD2025:9(iv)",
+        "DLD2025:10(ii)",
+        "DLD2025:20(iii)",
+        "DLD2025:9(ii)"
+      ],
+      "1:Credit Bureau Reporting": [
+        "DLD2025:16(ii)",
+        "DLD2025:16(i)",
+        "KFS2024:10",
+        "KFS2024:8",
+        "DLD2025:9(iv)",
+        "DLD2025:17(vii)",
+        "DLD2025:17(v)",
+        "DLD2025:17(ii)",
+        "DLD2025:29(i)",
+        "DLD2025:17(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:19(ii)"
+      ],
+      "2:Fees": [
+        "DLD2025:10(ii)",
+        "KFS2024:5",
+        "KFS2024:8",
+        "DLD2025:6(iii)",
+        "DLD2025:9(i)",
+        "DLD2025:10(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:9(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:9(iv)",
+        "DLD2025:27(ii)",
+        "DLD2025:8(iii)",
+        "KFS2024:6",
+        "DLD2025:7(ii)"
+      ],
+      "3:Marketing": [
+        "DLD2025:17(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:17(v)",
+        "DLD2025:17(vi)",
+        "DLD2025:17(i)",
+        "DLD2025:7(ii)",
+        "DLD2025:17(vii)",
+        "DLD2025:14(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:9(i)"
+      ],
+      "4:Cooling-off Period": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:26(i)",
+        "DLD2025:11(iv)",
+        "KFS2024:5",
+        "DLD2025:29(ii)",
+        "KFS2024:7",
+        "DLD2025:13(iv)",
+        "KFS2024:10",
+        "DLD2025:9(iv)",
+        "DLD2025:13(ii)"
+      ],
+      "5:Data Collection and Sharing": [
+        "DLD2025:6(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:6(iv)",
+        "DLD2025:9(v)",
+        "DLD2025:12(iv)",
+        "DLD2025:12(iii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iv)",
+        "DLD2025:12(i)",
+        "DLD2025:13(i)"
+      ]
+    }
+  },
+  "seconds": 120.1
+}

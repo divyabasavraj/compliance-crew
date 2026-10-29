@@ -1,0 +1,175 @@
+{
+  "system": "crew",
+  "doc_id": "P07_dlg_partnership",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The product feature describes a default loss guarantee (DLG) cover of up to 10% of the total amount disbursed in each quarterly portfolio, which exceeds the RBI's cap of five per cent of the total amount disbursed out of that loan portfolio at any given time.",
+      "doc_evidence": "CredBridge will cover losses up to 10% of the total amount disbursed in each quarterly portfolio.",
+      "severity": "high",
+      "fix": "Reduce the DLG cover from 10% to 5% of the total amount disbursed in each quarterly portfolio to comply with RBI's cap.",
+      "verifier_note": "The RBI paragraph explicitly states that the total amount of DLG cover on any outstanding portfolio shall not exceed five per cent of the total amount disbursed out of that loan portfolio at any given time. The product feature describes a DLG cover of up to 10% of the total amount disbursed in each quarterly portfolio, which exceeds the RBI's cap of five per cent. Therefore, the feature violates the RBI regulation."
+    },
+    {
+      "feature": "Default Loss Guarantee (3. Form of DLG)",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The product feature states that Coastal Finance will invoke the DLG once a loan has been overdue for 180 days. However, RBI requires that the RE shall invoke DLG within a maximum overdue period of 120 days, unless the loan dues are made good by the borrower before that. The feature described clearly breaks this requirement.",
+      "doc_evidence": "Coastal Finance will invoke the DLG once a loan has been overdue for 18,0 days.",
+      "severity": "high",
+      "fix": "Modify the product feature to invoke DLG within 120 days of loan overdue, unless the borrower has made good the dues before that period.",
+      "verifier_note": "The product feature states that Coastal Finance will invoke the DLG once a loan has been overdue for 180 days, which exceeds the RBI requirement of invoking DLG within a maximum overdue period of 120 days. The RBI paragraph explicitly forbids invoking DLG after 120 days unless the loan dues are made good by the borrower. The feature violates this requirement by invoking DLG after 180 days."
+    },
+    {
+      "feature": "Default Loss Guarantee (5. Board policy and due diligence)",
+      "rule_id": "DLD2025:19(iii)",
+      "issue": "The product feature does not comply with the requirement to obtain adequate information to satisfy itself that the entity extending DLG would be able to honour it. The feature only mentions that CredBridge gives an auditor-certified declaration of its total DLG outstanding and past default rates, but it does not include the number of RE and the respective number of portfolios against which DLG has been provided.",
+      "doc_evidence": "CredBridge gives an auditor-certified declaration of its total DLG outstanding and past default rates at signing and at every renewal.",
+      "severity": "high",
+      "fix": "Include the number of REs and the respective number of portfolios against which DLG has been provided in the board policy and due diligence documentation.",
+      "verifier_note": "The RBI paragraph requires that the declaration include the number of RE and the respective number of portfolios against which DLG has been provided. The product feature only mentions that CredBridge provides the total DLG outstanding and past default rates, but does not mention the number of RE and the respective number of portfolios. Therefore, the feature fails to meet the requirement of the paragraph."
+    },
+    {
+      "feature": "Default Loss Guarantee (5. Board policy and due diligence)",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The product feature does not specify the timeline for DLG invocation, which is a mandatory requirement under the RBI directions.",
+      "doc_evidence": "The DLG agreement stays in force for 5 years, longer than the longest loan tenor in the portfolio (3 years).",
+      "severity": "high",
+      "fix": "Specify the timeline for DLG invocation in the product feature, ensuring it aligns with RBI's mandatory requirements.",
+      "verifier_note": "The RBI paragraph requires that DLG be invoked within a maximum overdue period of 120 days unless the loan dues are made good by the borrower. The product feature does not mention anything about the timeline for invoking DLG, which is a mandatory requirement. Therefore, the feature fails to comply with the RBI directions."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The product feature describes a default loss guarantee (DLG) cover of up to 10% of the total amount disbursed in each quarterly portfolio, which exceeds the RBI's cap of five per cent of the total amount disbursed out of that loan portfolio at any given time.",
+      "doc_evidence": "CredBridge will cover losses up to 10% of the total amount disbursed in each quarterly portfolio.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that the total amount of DLG cover on any outstanding portfolio shall not exceed five per cent of the total amount disbursed out of that loan portfolio at any given time. The product feature describes a DLG cover of up to 10% of the total amount disbursed in each quarterly portfolio, which exceeds the RBI's cap of five per cent. Therefore, the feature violates the RBI regulation."
+    },
+    {
+      "feature": "Default Loss Guarantee (3. Form of DLG)",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The product feature states that Coastal Finance will invoke the DLG once a loan has been overdue for 180 days. However, RBI requires that the RE shall invoke DLG within a maximum overdue period of 120 days, unless the loan dues are made good by the borrower before that. The feature described clearly breaks this requirement.",
+      "doc_evidence": "Coastal Finance will invoke the DLG once a loan has been overdue for 18,0 days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that Coastal Finance will invoke the DLG once a loan has been overdue for 180 days, which exceeds the RBI requirement of invoking DLG within a maximum overdue period of 120 days. The RBI paragraph explicitly forbids invoking DLG after 120 days unless the loan dues are made good by the borrower. The feature violates this requirement by invoking DLG after 180 days."
+    },
+    {
+      "feature": "Default Loss Guarantee (5. Board policy and due diligence)",
+      "rule_id": "DLD2025:19(iii)",
+      "issue": "The product feature does not comply with the requirement to obtain adequate information to satisfy itself that the entity extending DLG would be able to honour it. The feature only mentions that CredBridge gives an auditor-certified declaration of its total DLG outstanding and past default rates, but it does not include the number of RE and the respective number of portfolios against which DLG has been provided.",
+      "doc_evidence": "CredBridge gives an auditor-certified declaration of its total DLG outstanding and past default rates at signing and at every renewal.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the declaration include the number of RE and the respective number of portfolios against which DLG has been provided. The product feature only mentions that CredBridge provides the total DLG outstanding and past default rates, but does not mention the number of RE and the respective number of portfolios. Therefore, the feature fails to meet the requirement of the paragraph."
+    },
+    {
+      "feature": "Default Loss Guarantee (5. Board policy and due diligence)",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The product feature does not specify the timeline for DLG invocation, which is a mandatory requirement under the RBI directions.",
+      "doc_evidence": "The DLG agreement stays in force for 5 years, longer than the longest loan tenor in the portfolio (3 years).",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that DLG be invoked within a maximum overdue period of 120 days unless the loan dues are made good by the borrower. The product feature does not mention anything about the timeline for invoking DLG, which is a mandatory requirement. Therefore, the feature fails to comply with the RBI directions."
+    },
+    {
+      "feature": "Default Loss Guarantee (5. Board policy and due diligence)",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The product feature does not specify the cap on DLG cover, which is a mandatory requirement under the RBI directions.",
+      "doc_evidence": "The DLG agreement stays in force for 5 years, longer than the longest loan tenor in the portfolio (3 years).",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires that the total amount of DLG cover on any outstanding portfolio shall not exceed five per cent of the total amount disbursed out of that loan portfolio at any given time. The product feature does not mention or specify this cap on DLG cover. Since the feature does not address the cap requirement, it fails to comply with the RBI directions. However, the claim is based on what the feature does not mention, which is not a violation under the given rules."
+    },
+    {
+      "feature": "Default Loss Guarantee (7. Disclosure)",
+      "rule_id": "DLD2025:27(i)",
+      "issue": "The product feature states that CredBridge publishes on its website, every month within seven working days, the number of portfolios and the amount of each portfolio covered by DLG. This complies with the requirement that LSPs with whom the RE has a DLG arrangement shall publish on their website the total number of portfolios and the respective amount of each portfolio on which DLG has been offered.",
+      "doc_evidence": "CredBridge publishes on its website, every month within seven working days, the number of portfolios and the amount of each portfolio covered by DLG.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the RBI paragraph. The paragraph requires LSPs with a DLG arrangement to publish on their website the total number of portfolios and the respective amount of each portfolio on which DLG has been offered. The product feature states that CredBridge (an LSP) publishes this information on its website, every month within seven working days. This meets the requirement of the paragraph. The paragraph also allows for the name of the RE to be optionally disclosed, which is not relevant here. There is no indication that the feature violates the paragraph."
+    },
+    {
+      "feature": "Default Loss Guarantee (7. Disclosure)",
+      "rule_id": "DLD2025:27(ii)",
+      "issue": "The product feature states that CredBridge publishes the information every month within seven working days, which complies with the requirement that the disclosure for any given month be provided no later than seven (7) working days following the conclusion of that month.",
+      "doc_evidence": "CredBridge publishes on its website, every month within seven working days, the number of portfolios and the amount of each portfolio covered by DLG.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the requirement in the RBI paragraph. The feature states that CredBridge publishes the information every month within seven working days, which aligns with the requirement that the disclosure for any given month be provided no later than seven (7) working days following the conclusion of that month. There is no indication that the feature violates the requirement."
+    }
+  ],
+  "summary": "The compliance review of the Partnership Term Sheet between Coastal Finance and CredBridge (DLG arrangement) identified several non-compliance issues with the Reserve Bank of India (RBI) regulations. The product feature exceeds the RBI's cap on default loss guarantee (DLG) coverage, as it allows up to 10% of the total amount disbursed in each quarterly portfolio, which is higher than the permissible limit of five per cent. Additionally, the DLG invocation is triggered after 180 days of loan overdue, which is beyond the RBI's requirement of 120 days. The feature also fails to specify the timeline for DLG invocation, which is a mandatory requirement. Furthermore, the product does not provide sufficient information to verify that the entity extending DLG (CredBridge) is capable of honouring the guarantee, as it lacks details on the number of REs and portfolios against which DLG has been provided.",
+  "trace": {
+    "llm_calls": 18,
+    "prompt_tokens": 9832,
+    "output_tokens": 2254,
+    "llm_seconds": 84.8,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 4,
+      "gap_analyst": 4,
+      "verifier": 7,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 26,
+    "retrieved": {
+      "0:Default Loss Guarantee": [
+        "DLD2025:20(ii)",
+        "DLD2025:23(i)",
+        "DLD2025:25(i)",
+        "DLD2025:23(ii)",
+        "DLD2025:25(ii)",
+        "DLD2025:27(i)",
+        "DLD2025:21(i)",
+        "DLD2025:19(ii)",
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)"
+      ],
+      "1:Default Loss Guarantee (3. Form of DLG)": [
+        "DLD2025:22(i)",
+        "DLD2025:23(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:21(i)",
+        "DLD2025:19(iii)",
+        "DLD2025:26(i)",
+        "DLD2025:26(ii)",
+        "DLD2025:24(iv)",
+        "DLD2025:20(iii)",
+        "DLD2025:16(i)"
+      ],
+      "2:Default Loss Guarantee (5. Board policy and due diligence)": [
+        "DLD2025:19(i)",
+        "DLD2025:19(iii)",
+        "DLD2025:19(ii)",
+        "DLD2025:23(i)",
+        "DLD2025:21(i)",
+        "DLD2025:26(ii)",
+        "KFS2024:5",
+        "DLD2025:26(i)",
+        "DLD2025:23(ii)",
+        "DLD2025:19(iv)"
+      ],
+      "3:Default Loss Guarantee (7. Disclosure)": [
+        "DLD2025:27(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:26(i)",
+        "DLD2025:23(i)",
+        "DLD2025:19(iii)",
+        "DLD2025:5(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:23(ii)",
+        "DLD2025:21(i)",
+        "DLD2025:17(i)"
+      ]
+    }
+  },
+  "seconds": 85.1
+}

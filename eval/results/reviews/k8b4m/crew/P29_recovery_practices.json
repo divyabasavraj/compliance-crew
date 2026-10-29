@@ -1,0 +1,184 @@
+{
+  "system": "crew",
+  "doc_id": "P29_recovery_practices",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Recovery Process",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "Borrowers are not sent the recovery agency's name or the agent's details before the first contact.",
+      "doc_evidence": "Borrowers are not sent the agency's name or the agent's details before the first contact.",
+      "severity": "high",
+      "fix": "Update the recovery process to include sending the recovery agency's name and agent's details to the borrower before the first contact.",
+      "verifier_note": "The RBI paragraph requires that the particulars of the recovery agent be communicated to the borrower through email/SMS before the recovery agent contacts the borrower. The product feature states that borrowers are not sent the agency's name or the agent's details before the first contact, which directly violates the requirement in the RBI paragraph. Therefore, the feature does something the paragraph forbids."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The feature 'Data Collection' described in the product context allows the app to read the phone's contact list so agents can reach family members if the borrower cannot be contacted. This violates the RBI requirement that RE/LSP desist from accessing mobile phone resources like contact list, unless for on-boarding/KYC purposes with explicit consent.",
+      "doc_evidence": "During the loan, the app reads the phone's contact list so agents can reach family members if the borrower cannot be contacted.",
+      "severity": "high",
+      "fix": "Revise the 'Data Collection' feature to ensure it does not access the phone's contact list unless for on-boarding/KYC purposes with explicit borrower consent.",
+      "verifier_note": "The RBI paragraph explicitly prohibits DLA of RE/LSP from accessing mobile phone resources like contact list, except for on-boarding/KYC purposes with explicit consent. The product feature allows the app to read the contact list during the loan for agents to reach family members if the borrower cannot be contacted. This is not for on-boarding/KYC purposes and does not mention explicit consent. Therefore, the feature violates the RBI requirement."
+    },
+    {
+      "feature": "3. Loan documents",
+      "rule_id": "DLD2025:8(iii)",
+      "issue": "The product feature states that the KFS, sanction letter and terms are emailed and sent by SMS link automatically after signing. However, the RBI paragraph requires that digitally signed documents, including the KFS, summary of loan product, sanction letter, terms and conditions, account statements, privacy policies of the RE / LSP with respect to storage and usage of borrowers’ data, etc., shall automatically flow to the borrower on the registered and verified email/ SMS upon execution of the loan contract/ transactions. The feature does not explicitly mention the automatic flow of all required documents as per the RBI paragraph.",
+      "doc_evidence": "The KFS, sanction letter and terms are emailed and sent by SMS link automatically after signing.",
+      "severity": "high",
+      "fix": "Update the loan document flow feature to explicitly include all required documents as per RBI guidelines, such as KFS, summary of loan product, sanction letter, terms and conditions, etc., and ensure they are automatically sent to the borrower's verified email/SMS.",
+      "verifier_note": "The product feature mentions the automatic emailing and SMS linking of KFS, sanction letter, and terms, which are part of the required documents under the RBI paragraph. However, it does not explicitly mention the automatic flow of all required documents, including the summary of loan product, account statements, privacy policies, etc. The RBI paragraph requires that all these documents automatically flow to the borrower. Since the feature does not cover all required documents, it does not fully comply with the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Recovery Process",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "Borrowers are not sent the recovery agency's name or the agent's details before the first contact.",
+      "doc_evidence": "Borrowers are not sent the agency's name or the agent's details before the first contact.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the particulars of the recovery agent be communicated to the borrower through email/SMS before the recovery agent contacts the borrower. The product feature states that borrowers are not sent the agency's name or the agent's details before the first contact, which directly violates the requirement in the RBI paragraph. Therefore, the feature does something the paragraph forbids."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The feature 'Data Collection' described in the product context allows the app to read the phone's contact list so agents can reach family members if the borrower cannot be contacted. This violates the RBI requirement that RE/LSP desist from accessing mobile phone resources like contact list, unless for on-boarding/KYC purposes with explicit consent.",
+      "doc_evidence": "During the loan, the app reads the phone's contact list so agents can reach family members if the borrower cannot be contacted.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits DLA of RE/LSP from accessing mobile phone resources like contact list, except for on-boarding/KYC purposes with explicit consent. The product feature allows the app to read the contact list during the loan for agents to reach family members if the borrower cannot be contacted. This is not for on-boarding/KYC purposes and does not mention explicit consent. Therefore, the feature violates the RBI requirement."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature 'EMIs are debited from the borrower's account to Shivalik Bank by NACH' does not comply with RBI paragraph [DLD2025:9(ii)], which requires that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "EMIs are debited from the borrower's account to Shivalik Bank by NACH.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes EMIs being debited from the borrower's account to Shivalik Bank by NACH. The RBI paragraph [DLD2025:9(ii)] requires that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account or pool account of any third party, including the accounts of LSP. The feature does not explicitly state that the RE’s bank account is used, and it does not clarify whether Shivalik Bank is the RE’s bank account. Therefore, the feature may not fully comply with the requirement that all repayment is executed directly in the RE’s bank account. However, the claim relies on facts not in the feature text, such as whether Shivalik Bank is the RE’s bank account, which is not confirmed in the feature. Thus, the claim cannot be definitively confirmed as a violation based solely on the provided feature text."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The feature 'EMIs are debited from the borrower's account to Shivalik Bank by NACH' does not comply with RBI paragraph [DLD2025:9(iii)], which prohibits the flow of funds between the bank accounts of the borrower and the RE from being controlled either directly or indirectly by a third-party, including the LSP.",
+      "doc_evidence": "EMIs are debited from the borrower's account to Shivalik Bank by NACH.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes the use of NACH (National Automated Clearing House) for debiting EMIs from the borrower's account to Shivalik Bank. The RBI paragraph [DLD2025:9(iii)] prohibits the flow of funds between the borrower's account and the RE (Real Estate) from being controlled by a third-party, including the LSP (Loan Servicing Provider). The feature does not mention any third-party control over the flow of funds, and NACH is a standard mechanism for automated fund transfers. Since the paragraph explicitly prohibits third-party control, and the feature does not indicate such control, it does not violate the paragraph."
+    },
+    {
+      "feature": "Loan Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature describes loan disbursement into the borrower's bank account, which complies with the requirement that disbursement must always be made into the borrower's bank account, except for specific exceptions. There is no violation here.",
+      "doc_evidence": "Loan Disbursal: Product: Used-car loans of ₹1,00,000 to ₹8,00,000, tenor 1 to 5 years.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that loan disbursement must always be made into the borrower's bank account, except for specific exceptions such as statutory mandates, co-lending transactions, and specific end-use disbursals to the end-beneficiary. The product feature does not mention any disbursement to third-party accounts or exceptions. Therefore, the feature complies with the requirement as described."
+    },
+    {
+      "feature": "3. Loan documents",
+      "rule_id": "DLD2025:8(iii)",
+      "issue": "The product feature states that the KFS, sanction letter and terms are emailed and sent by SMS link automatically after signing. However, the RBI paragraph requires that digitally signed documents, including the KFS, summary of loan product, sanction letter, terms and conditions, account statements, privacy policies of the RE / LSP with respect to storage and usage of borrowers’ data, etc., shall automatically flow to the borrower on the registered and verified email/ SMS upon execution of the loan contract/ transactions. The feature does not explicitly mention the automatic flow of all required documents as per the RBI paragraph.",
+      "doc_evidence": "The KFS, sanction letter and terms are emailed and sent by SMS link automatically after signing.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature mentions the automatic emailing and SMS linking of KFS, sanction letter, and terms, which are part of the required documents under the RBI paragraph. However, it does not explicitly mention the automatic flow of all required documents, including the summary of loan product, account statements, privacy policies, etc. The RBI paragraph requires that all these documents automatically flow to the borrower. Since the feature does not cover all required documents, it does not fully comply with the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the AutoCredit Recovery Process identified several gaps against the reviewed RBI rules. The key findings include: (1) Borrowers are not sent the recovery agency's name or the agent's details before the first contact, violating DLD2025:8(v). (2) The 'Data Collection' feature allows the app to access the phone's contact list, which is not permitted under RBI rules unless for on-boarding/KYC purposes with explicit consent, as per DLD2025:12(i). (3) The product feature does not explicitly ensure the automatic flow of all required documents, including the KFS, sanction letter, and terms, as mandated by RBI regulations under DLD2025:8(iii).",
+  "trace": {
+    "llm_calls": 19,
+    "prompt_tokens": 12164,
+    "output_tokens": 2257,
+    "llm_seconds": 105.8,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 6,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 26,
+    "retrieved": {
+      "0:Recovery Process": [
+        "DLD2025:8(v)",
+        "DLD2025:9(v)",
+        "DLD2025:6(iii)",
+        "DLD2025:6(i)",
+        "DLD2025:5(v)",
+        "DLD2025:13(i)",
+        "DLD2025:11(ii)",
+        "DLD2025:8(iv)",
+        "DLD2025:12(i)",
+        "DLD2025:14(i)",
+        "DLD2025:6(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:24(iii)",
+        "DLD2025:7(i)"
+      ],
+      "1:Data Collection": [
+        "DLD2025:12(ii)",
+        "DLD2025:12(i)",
+        "DLD2025:12(iii)",
+        "DLD2025:13(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:8(v)",
+        "DLD2025:9(v)",
+        "DLD2025:12(iv)",
+        "DLD2025:7(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:6(i)"
+      ],
+      "2:Repayment": [
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:6(iii)",
+        "DLD2025:7(ii)",
+        "DLD2025:29(i)",
+        "DLD2025:8(v)",
+        "DLD2025:6(iv)",
+        "DLD2025:9(iii)",
+        "DLD2025:8(iii)",
+        "DLD2025:11(iv)",
+        "DLD2025:17(iv)"
+      ],
+      "3:Loan Disbursal": [
+        "KFS2024:5",
+        "DLD2025:6(iii)",
+        "DLD2025:8(iii)",
+        "DLD2025:26(i)",
+        "DLD2025:8(i)",
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:24(iii)",
+        "DLD2025:16(i)",
+        "DLD2025:26(ii)",
+        "DLD2025:29(i)",
+        "DLD2025:20(iii)",
+        "DLD2025:9(iv)"
+      ],
+      "4:3. Loan documents": [
+        "DLD2025:8(iii)",
+        "KFS2024:5",
+        "KFS2024:6",
+        "KFS2024:7",
+        "KFS2024:4",
+        "DLD2025:8(v)",
+        "DLD2025:9(v)",
+        "DLD2025:5(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:6(iii)",
+        "KFS2024:8",
+        "DLD2025:8(iv)",
+        "DLD2025:8(i)",
+        "DLD2025:17(iv)"
+      ]
+    }
+  },
+  "seconds": 106.1
+}

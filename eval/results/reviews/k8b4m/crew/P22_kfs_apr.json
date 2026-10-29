@@ -1,0 +1,198 @@
+{
+  "system": "crew",
+  "doc_id": "P22_kfs_apr",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Product Offering",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature does not explicitly mention that loan disbursement shall always be made into the bank account of the borrower. The feature only describes the product offering without addressing the disbursement mechanism, which is a requirement under DLD2025:9(i).",
+      "doc_evidence": "Product: Home repair loans of ₹50,000 to ₹5,00,000, tenor 1 to 5 years.",
+      "severity": "high",
+      "fix": "Update the product feature to explicitly state that loan disbursement will always be made into the borrower's bank account, in compliance with DLD2025:9(i).",
+      "verifier_note": "The RBI paragraph explicitly requires that loan disbursement must always be made into the borrower's bank account, except for specific exceptions. The product feature does not mention the disbursement mechanism at all, which means it does not address the requirement. Since the feature does not explicitly state that disbursement will be made into the borrower's account, it fails to comply with the requirement in DLD2025:9(i)."
+    },
+    {
+      "feature": "Interest Rates and APR",
+      "rule_id": "KFS2024:6",
+      "issue": "The KFS does not include a computation sheet of annual percentage rate (APR) and an amortisation schedule of the loan over the loan tenor, which is a requirement under KFS2024:6.",
+      "doc_evidence": "The KFS shows an APR of 13.5%, computed from the interest rate only. The 2% processing fee charged by Aravalli is shown separately and is not included in the APR. No amortisation schedule is provided.",
+      "severity": "high",
+      "fix": "Include a computation sheet of annual percentage rate (APR) and an amortisation schedule of the loan over the loan tenor in the KFS, as required under KFS2024:6.",
+      "verifier_note": "The product feature states that the KFS shows an APR of 13.5%, computed from the interest rate only, and does not include the 2% processing fee in the APR. However, the RBI paragraph (KFS2024:6) requires the APR to include all charges levied by the RE, and also mandates the inclusion of a computation sheet of APR and an amortisation schedule. The product feature fails to include the amortisation schedule and does not include all charges in the APR calculation, thereby violating the requirements of KFS2024:6."
+    },
+    {
+      "feature": "Interest Rates and APR",
+      "rule_id": "KFS2024:8",
+      "issue": "The KFS does not mention the 2% processing fee, which may result in the RE charging the borrower without explicit consent, violating KFS2024:8.",
+      "doc_evidence": "The 2% processing fee charged by Aravalli is shown separately and is not included in the APR.",
+      "severity": "high",
+      "fix": "Mention the 2% processing fee in the KFS and ensure that the RE obtains explicit consent from the borrower before charging this fee, in compliance with KFS2024:8.",
+      "verifier_note": "The KFS does not mention the 2% processing fee, which is a fee that the RE is charging the borrower. According to KFS2024:8, any fees not mentioned in the KFS cannot be charged without explicit consent. The feature does not state that the borrower has given explicit consent for this fee, so the RE is charging a fee not mentioned in the KFS without explicit consent, which violates KFS2024:8."
+    },
+    {
+      "feature": "Loan Agreement and Documentation",
+      "rule_id": "KFS2024:9",
+      "issue": "The KFS is not included as a summary box to be exhibited as part of the loan agreement. The KFS is a separate screen in the app and is not reproduced in the agreement.",
+      "doc_evidence": "The KFS is a separate screen in the app and is not reproduced in the agreement.",
+      "severity": "medium",
+      "fix": "Include the KFS as a summary box in the loan agreement, ensuring it is clearly exhibited to the borrower as part of the formal documentation.",
+      "verifier_note": "The RBI paragraph requires the KFS to be included as a summary box in the loan agreement. The product feature states that the KFS is a separate screen in the app and is not reproduced in the agreement, which directly violates the requirement. The feature does not comply with the paragraph's mandate."
+    },
+    {
+      "feature": "Cooling-off Period and Cancellation",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product feature states that borrowers can cancel within 3 days. However, according to [DLD2025:10(i)], the borrower shall be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial 'cooling-off period'. The cooling-off period shall be determined by the Board of the RE as laid down in their loan policy, subject to the period so determined not being less than one day. The feature does not mention that the borrower can exit the loan without any penalty, which is a requirement under [DLD2025:10(i)].",
+      "doc_evidence": "Borrowers can cancel within 3 days. The processing fee is retained on cancellation, which is stated in the KFS.",
+      "severity": "high",
+      "fix": "Update the product feature to explicitly state that borrowers can exit the loan without any penalty during the cooling-off period, as required under DLD2025:10(i).",
+      "verifier_note": "The product feature allows cancellation within 3 days, which satisfies the minimum cooling-off period of one day as required by [DLD2025:10(i)]. However, the feature states that a processing fee is retained on cancellation, which implies a penalty. The RBI paragraph explicitly requires that the borrower can exit the loan without any penalty during the cooling-off period. Since the feature includes a penalty (processing fee), it violates the requirement of no penalty during the cooling-off period."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Product Offering",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature does not explicitly mention that loan disbursement shall always be made into the bank account of the borrower. The feature only describes the product offering without addressing the disbursement mechanism, which is a requirement under DLD2025:9(i).",
+      "doc_evidence": "Product: Home repair loans of ₹50,000 to ₹5,00,000, tenor 1 to 5 years.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires that loan disbursement must always be made into the borrower's bank account, except for specific exceptions. The product feature does not mention the disbursement mechanism at all, which means it does not address the requirement. Since the feature does not explicitly state that disbursement will be made into the borrower's account, it fails to comply with the requirement in DLD2025:9(i)."
+    },
+    {
+      "feature": "Interest Rates and APR",
+      "rule_id": "KFS2024:6",
+      "issue": "The KFS does not include a computation sheet of annual percentage rate (APR) and an amortisation schedule of the loan over the loan tenor, which is a requirement under KFS2024:6.",
+      "doc_evidence": "The KFS shows an APR of 13.5%, computed from the interest rate only. The 2% processing fee charged by Aravalli is shown separately and is not included in the APR. No amortisation schedule is provided.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that the KFS shows an APR of 13.5%, computed from the interest rate only, and does not include the 2% processing fee in the APR. However, the RBI paragraph (KFS2024:6) requires the APR to include all charges levied by the RE, and also mandates the inclusion of a computation sheet of APR and an amortisation schedule. The product feature fails to include the amortisation schedule and does not include all charges in the APR calculation, thereby violating the requirements of KFS2024:6."
+    },
+    {
+      "feature": "Interest Rates and APR",
+      "rule_id": "KFS2024:8",
+      "issue": "The KFS does not mention the 2% processing fee, which may result in the RE charging the borrower without explicit consent, violating KFS2024:8.",
+      "doc_evidence": "The 2% processing fee charged by Aravalli is shown separately and is not included in the APR.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The KFS does not mention the 2% processing fee, which is a fee that the RE is charging the borrower. According to KFS2024:8, any fees not mentioned in the KFS cannot be charged without explicit consent. The feature does not state that the borrower has given explicit consent for this fee, so the RE is charging a fee not mentioned in the KFS without explicit consent, which violates KFS2024:8."
+    },
+    {
+      "feature": "Loan Agreement and Documentation",
+      "rule_id": "KFS2024:9",
+      "issue": "The KFS is not included as a summary box to be exhibited as part of the loan agreement. The KFS is a separate screen in the app and is not reproduced in the agreement.",
+      "doc_evidence": "The KFS is a separate screen in the app and is not reproduced in the agreement.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires the KFS to be included as a summary box in the loan agreement. The product feature states that the KFS is a separate screen in the app and is not reproduced in the agreement, which directly violates the requirement. The feature does not comply with the paragraph's mandate."
+    },
+    {
+      "feature": "Key Facts Statement (KFS) Validity",
+      "rule_id": "KFS2024:5",
+      "issue": "The KFS validity period of 3 working days is compliant with the requirement that the KFS shall have a validity period of at least three working days for loans having tenor of seven days or more.",
+      "doc_evidence": "Each KFS has a unique proposal number and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that each KFS has a validity period of 3 working days. The RBI paragraph requires a validity period of at least three working days for loans with a tenor of seven days or more. The feature's validity period of 3 working days meets the minimum requirement specified in the paragraph. There is no indication that the feature violates the paragraph, as it complies with the requirement for loans with a tenor of seven days or more."
+    },
+    {
+      "feature": "Cooling-off Period and Cancellation",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product feature states that borrowers can cancel within 3 days. However, according to [DLD2025:10(i)], the borrower shall be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial 'cooling-off period'. The cooling-off period shall be determined by the Board of the RE as laid down in their loan policy, subject to the period so determined not being less than one day. The feature does not mention that the borrower can exit the loan without any penalty, which is a requirement under [DLD2025:10(i)].",
+      "doc_evidence": "Borrowers can cancel within 3 days. The processing fee is retained on cancellation, which is stated in the KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature allows cancellation within 3 days, which satisfies the minimum cooling-off period of one day as required by [DLD2025:10(i)]. However, the feature states that a processing fee is retained on cancellation, which implies a penalty. The RBI paragraph explicitly requires that the borrower can exit the loan without any penalty during the cooling-off period. Since the feature includes a penalty (processing fee), it violates the requirement of no penalty during the cooling-off period."
+    }
+  ],
+  "summary": "The compliance review of the HomeFix Loans: Key Facts Statement Design identified several gaps against the reviewed RBI rules. The product feature does not explicitly mention that loan disbursement shall always be made into the borrower's bank account, violating DLD2025:9(i). Additionally, the KFS does not include a computation sheet of annual percentage rate (APR) and an amortisation schedule, which is required under KFS2024:6. The KFS also fails to mention the 2% processing fee, which may result in the RE charging the borrower without explicit consent, violating KFS2024:8. The KFS is not included as a summary box in the loan agreement, violating KFS2024:9. Lastly, the product feature does not mention that borrowers can exit the loan without penalty during the cooling-off period, violating DLD2025:10(i).",
+  "trace": {
+    "llm_calls": 19,
+    "prompt_tokens": 11045,
+    "output_tokens": 2251,
+    "llm_seconds": 105.0,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 6,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 26,
+    "retrieved": {
+      "0:Product Offering": [
+        "KFS2024:5",
+        "DLD2025:8(iii)",
+        "DLD2025:5(i)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:20(i)",
+        "DLD2025:16(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:10(i)",
+        "DLD2025:26(i)"
+      ],
+      "1:Interest Rates and APR": [
+        "KFS2024:6",
+        "KFS2024:7",
+        "DLD2025:10(ii)",
+        "DLD2025:6(iii)",
+        "KFS2024:8",
+        "DLD2025:10(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:25(i)",
+        "KFS2024:5",
+        "DLD2025:9(iv)",
+        "DLD2025:13(iv)",
+        "KFS2024:10",
+        "DLD2025:8(i)"
+      ],
+      "2:Loan Agreement and Documentation": [
+        "KFS2024:9",
+        "KFS2024:4",
+        "KFS2024:5",
+        "DLD2025:5(i)",
+        "KFS2024:8",
+        "KFS2024:10",
+        "DLD2025:8(i)",
+        "DLD2025:6(iii)",
+        "KFS2024:7",
+        "KFS2024:6",
+        "DLD2025:26(ii)",
+        "DLD2025:5(iii)"
+      ],
+      "3:Key Facts Statement (KFS) Validity": [
+        "KFS2024:5",
+        "KFS2024:4",
+        "DLD2025:27(ii)",
+        "KFS2024:9",
+        "DLD2025:8(i)",
+        "DLD2025:10(ii)",
+        "KFS2024:10",
+        "KFS2024:6",
+        "KFS2024:7",
+        "DLD2025:6(iii)",
+        "DLD2025:27(i)"
+      ],
+      "4:Cooling-off Period and Cancellation": [
+        "DLD2025:10(ii)",
+        "DLD2025:10(i)",
+        "KFS2024:5",
+        "KFS2024:7",
+        "DLD2025:11(iv)",
+        "DLD2025:26(i)",
+        "DLD2025:13(iv)",
+        "KFS2024:8",
+        "KFS2024:10",
+        "DLD2025:8(i)"
+      ]
+    }
+  },
+  "seconds": 105.4
+}

@@ -1,0 +1,372 @@
+{
+  "system": "crew",
+  "doc_id": "P05_facefin_biometric",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "The product feature does not mention any processing fee retained by the RE if the customer exits the loan during the cooling-off period. Since the feature does not explicitly state this, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "low",
+      "fix": "Document the processing fee retained by the RE if the customer exits the loan during the cooling-off period in the product feature.",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly allows the RE to retain a reasonable one-time processing fee if the customer exits the loan during the cooling-off period, provided it is disclosed upfront in KFS. The product feature does not mention any processing fee, which could be seen as a failure to disclose this fee as required. However, the claim states that the feature complies with the regulation because it does not explicitly state the fee, which is incorrect. The regulation requires disclosure, and the absence of such disclosure in the feature constitutes a violation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The product feature does not mention any data storage by the LSP beyond basic minimal data. Since the feature does not explicitly state that the LSP stores personal information, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "low",
+      "fix": "Update the product feature to explicitly state that the LSP does not store personal information beyond basic minimal data.",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly requires that LSPs engaged by REs do not store personal information of borrowers beyond basic minimal data. The product feature does not mention any data storage by the LSP, which means it does not address the requirement of the RBI paragraph. Since the feature does not state that the LSP stores personal information, it fails to comply with the regulation's requirement that LSPs do not store such data. Therefore, the feature does not comply with the regulation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The product feature does not mention any data processing outside India or the deletion of data processed outside India within 24 hours. Since the feature does not explicitly state this, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "low",
+      "fix": "Update the product feature to explicitly state that data processed outside India is deleted within 24 hours and not stored beyond that.",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph requires that data be stored only in servers located within India and, if processed outside India, must be deleted from servers outside India and brought back to India within 24 hours. The product feature does not mention any data processing outside India or the deletion of such data within 24 hours. Since the feature does not address these requirements, it fails to comply with the regulation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "KFS2024:5",
+      "issue": "The product feature does not mention any unique proposal number or validity period for the KFS. Since the feature does not explicitly state this, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "low",
+      "fix": "Document the unique proposal number and validity period for the KFS in the product feature.",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph (KFS2024:5) explicitly requires that the KFS must have a unique proposal number and a validity period, which is not mentioned in the product feature. The feature does not comply with the regulation as it fails to include these required elements."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product feature does not mention any option for the borrower to give or deny consent for data usage. Since the feature does not explicitly state this, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "low",
+      "fix": "Update the product feature to explicitly state that the borrower has the option to give or deny consent for data usage.",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph requires that borrowers be provided with an option to give or deny consent for data usage. The product feature does not mention any such option, which is a direct violation of the regulation. The claim that the feature complies is incorrect."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:16(ii)",
+      "issue": "The product feature does not mention any reporting to CICs or adherence to outsourcing guidelines. Since the feature does not explicitly state this, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "low",
+      "fix": "Update the product feature to explicitly state that reporting to CICs and adherence to outsourcing guidelines are followed.",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly requires that REs report structured digital lending products, including unsecured personal loans, to CICs and ensure adherence to outsourcing guidelines. The product feature does not mention reporting to CICs or adherence to outsourcing guidelines, which are mandatory under the regulation. Therefore, the feature fails to comply with the requirement."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product feature does not mention any servicing or repayment executed through a third-party account. Since the feature does not explicitly state this, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "low",
+      "fix": "Document the servicing or repayment executed through a third-party account in the product feature.",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly prohibits loan servicing and repayment from being executed through any third-party account, including pass-through or pool accounts. The product feature does not mention any servicing or repayment mechanism, which means it does not explicitly state that the servicing and repayment are executed directly in the RE’s bank account. Since the feature does not address this requirement, it fails to comply with the regulation. Therefore, the feature does not comply with the paragraph."
+    },
+    {
+      "feature": "Authentication and Biometric Data",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "The product feature states that 'FaceFin stores each customer's face template and fingerprint data on its servers and uses them for every login and loan approval.' This directly contradicts RBI paragraph [DLD2025:13(iii)] which prohibits REs and LSPs from storing or collecting biometric data unless allowed under extant statutory guidelines.",
+      "doc_evidence": "FaceFin stores each customer's face template and fingerprint data on its servers and uses them for every login and loan approval.",
+      "severity": "high",
+      "fix": "Stop storing or collecting biometric data and ensure compliance with RBI guidelines on biometric data handling.",
+      "verifier_note": "The RBI paragraph explicitly prohibits REs and LSPs from storing or collecting biometric data unless allowed under extant statutory guidelines. The product feature states that FaceFin stores face templates and fingerprint data on its servers, which directly violates the prohibition in the RBI paragraph. There is no indication in the feature that this storage is allowed under extant statutory guidelines."
+    },
+    {
+      "feature": "Data Hosting and Jurisdiction",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The product feature states that \"Our analytics and core lending systems run on a cloud provider's Singapore data centre, chosen for lower cost. A copy of the data is synced to India every quarter.\" This clearly breaks the requirement that all data must be stored only in servers located within India, and if processed outside India, it must be deleted from servers outside India and brought back to India within 24 hours of processing.",
+      "doc_evidence": "Our analytics and core lending systems run on a cloud provider's Singapore data centre, chosen for lower cost. A copy of the data is synced to India every quarter.",
+      "severity": "high",
+      "fix": "Ensure all data is stored only in India and delete data processed outside India within 24 hours, and bring it back to India.",
+      "verifier_note": "The product feature states that data is stored in Singapore data centres, which is outside India, and only a copy is synced to India every quarter. This does not meet the requirement that all data must be stored only in servers located within India. The feature does not mention deleting data from servers outside India and bringing it back within 24 hours of processing, which is required if data is processed outside India. The feature does not comply with the RBI paragraph's requirement for data storage within India."
+    },
+    {
+      "feature": "Credit Assessment and Data Collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product feature states: \"Before every loan we collect and keep on record the borrower's age, occupation, employer and monthly income from salary slips.\" This does not provide the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data and if required, make the RE/LSP delete/ forget the data. The feature fails to comply with the requirement of providing the borrower with these options.",
+      "doc_evidence": "Before every loan we collect and keep on record the borrower's age, occupation, employer and monthly income from salary slips.",
+      "severity": "high",
+      "fix": "Update the product feature to provide the borrower with options to give or deny consent, restrict disclosure, revoke consent, and delete data as required.",
+      "verifier_note": "The RBI paragraph requires the borrower to be provided with options to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted, and make the RE/LSP delete/forget the data. The product feature does not mention any of these options, and thus fails to comply with the requirement. The feature only describes data collection and retention without addressing the borrower's rights to consent, restrict, revoke, or delete data."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature states that the loan is disbursed into the borrower's bank account, which complies with the requirement that disbursement must always be made into the borrower's bank account. No finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly requires that loan disbursement must always be made into the borrower's bank account, except for specific exceptions not applicable here. The product feature does not mention how the loan is disbursed, so there is no evidence it violates the requirement. The claim relies on an assumption not stated in the feature text."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The product feature does not mention any control over the flow of funds between the borrower's and RE's bank accounts by a third party, including the LSP. However, since the feature does not explicitly state that the flow is controlled by a third party, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly prohibits the flow of funds between the borrower's and RE's bank accounts from being controlled by a third-party, including the LSP. The product feature does not mention any such control, which means it does not violate the regulation. However, the claim is based on the absence of mention rather than the actual compliance. Since the feature does not state that the flow is controlled by a third party, it is not a violation. The paragraph does not require the feature to explicitly state that the flow is not controlled by a third party; it only prohibits such control. Therefore, the feature complies with the regulation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "The product feature does not mention any processing fee retained by the RE if the customer exits the loan during the cooling-off period. Since the feature does not explicitly state this, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly allows the RE to retain a reasonable one-time processing fee if the customer exits the loan during the cooling-off period, provided it is disclosed upfront in KFS. The product feature does not mention any processing fee, which could be seen as a failure to disclose this fee as required. However, the claim states that the feature complies with the regulation because it does not explicitly state the fee, which is incorrect. The regulation requires disclosure, and the absence of such disclosure in the feature constitutes a violation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The product feature does not mention any data storage by the LSP beyond basic minimal data. Since the feature does not explicitly state that the LSP stores personal information, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly requires that LSPs engaged by REs do not store personal information of borrowers beyond basic minimal data. The product feature does not mention any data storage by the LSP, which means it does not address the requirement of the RBI paragraph. Since the feature does not state that the LSP stores personal information, it fails to comply with the regulation's requirement that LSPs do not store such data. Therefore, the feature does not comply with the regulation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The product feature does not mention any data processing outside India or the deletion of data processed outside India within 24 hours. Since the feature does not explicitly state this, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph requires that data be stored only in servers located within India and, if processed outside India, must be deleted from servers outside India and brought back to India within 24 hours. The product feature does not mention any data processing outside India or the deletion of such data within 24 hours. Since the feature does not address these requirements, it fails to comply with the regulation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:20(i)",
+      "issue": "The product feature does not mention any DLG arrangements for revolving credit facilities offered through digital lending channel and credit cards. Since the feature does not explicitly state this, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph prohibits RE from entering into DLG arrangements for revolving credit facilities offered through digital lending channels and credit cards. The product feature describes unsecured personal loans with fixed terms (6 to 36 months) and does not mention any revolving credit facilities, DLG arrangements, or digital lending channels. Since the feature does not involve the prohibited activities, it complies with the regulation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:20(iii)",
+      "issue": "The product feature does not mention any DLG arrangements for loans facilitated over a P2P platform. Since the feature does not explicitly state this, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph prohibits NBFC-P2P from entering into DLG arrangements for loans facilitated over their platform. The product feature describes unsecured personal loans but does not mention any DLG arrangements or P2P platform involvement. Since the feature does not mention DLG arrangements, it does not violate the regulation. The claim relies on what the feature leaves out, which is not a violation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The product feature does not mention any DLG cover on the outstanding portfolio. Since the feature does not explicitly state this, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph (DLD2025:23(i)) requires that the total amount of DLG cover on any outstanding portfolio shall not exceed five per cent of the total amount disbursed out of that loan portfolio. The product feature does not mention any DLG cover, which means it does not violate the regulation because the regulation does not require DLG cover to be present, only that if it is present, it must not exceed five per cent. Since the feature does not mention DLG cover, it is not in violation of the regulation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:20(ii)",
+      "issue": "The product feature does not mention any DLG arrangements on loans covered by credit guarantee schemes administered by trust funds. Since the feature does not explicitly state this, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph prohibits entering into DLG arrangements on loans covered by credit guarantee schemes. The product feature does not mention any DLG arrangements, which means it does not violate the regulation because it does not engage in the prohibited activity. The claim is based on the absence of mention, which is not a violation as per the instructions."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "KFS2024:5",
+      "issue": "The product feature does not mention any unique proposal number or validity period for the KFS. Since the feature does not explicitly state this, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph (KFS2024:5) explicitly requires that the KFS must have a unique proposal number and a validity period, which is not mentioned in the product feature. The feature does not comply with the regulation as it fails to include these required elements."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The product feature does not mention any promotion of a particular RE's product or use of dark patterns. Since the feature does not explicitly state this, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph prohibits the LSP from promoting a particular RE's product or using dark patterns. The product feature does not mention any promotion or dark patterns, and therefore does not violate the regulation. The claim is based on the absence of prohibited elements, which is allowed under the regulation."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product feature does not mention any option for the borrower to give or deny consent for data usage. Since the feature does not explicitly state this, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph requires that borrowers be provided with an option to give or deny consent for data usage. The product feature does not mention any such option, which is a direct violation of the regulation. The claim that the feature complies is incorrect."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:16(ii)",
+      "issue": "The product feature does not mention any reporting to CICs or adherence to outsourcing guidelines. Since the feature does not explicitly state this, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly requires that REs report structured digital lending products, including unsecured personal loans, to CICs and ensure adherence to outsourcing guidelines. The product feature does not mention reporting to CICs or adherence to outsourcing guidelines, which are mandatory under the regulation. Therefore, the feature fails to comply with the requirement."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product feature does not mention any servicing or repayment executed through a third-party account. Since the feature does not explicitly state this, no finding is reported as the feature complies with the regulation.",
+      "doc_evidence": "Product: Unsecured personal loans of ₹20,000 to ₹3,00,000 for 6 to 36 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The RBI paragraph explicitly prohibits loan servicing and repayment from being executed through any third-party account, including pass-through or pool accounts. The product feature does not mention any servicing or repayment mechanism, which means it does not explicitly state that the servicing and repayment are executed directly in the RE’s bank account. Since the feature does not address this requirement, it fails to comply with the regulation. Therefore, the feature does not comply with the paragraph."
+    },
+    {
+      "feature": "Authentication and Biometric Data",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "The product feature states that 'FaceFin stores each customer's face template and fingerprint data on its servers and uses them for every login and loan approval.' This directly contradicts RBI paragraph [DLD2025:13(iii)] which prohibits REs and LSPs from storing or collecting biometric data unless allowed under extant statutory guidelines.",
+      "doc_evidence": "FaceFin stores each customer's face template and fingerprint data on its servers and uses them for every login and loan approval.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits REs and LSPs from storing or collecting biometric data unless allowed under extant statutory guidelines. The product feature states that FaceFin stores face templates and fingerprint data on its servers, which directly violates the prohibition in the RBI paragraph. There is no indication in the feature that this storage is allowed under extant statutory guidelines."
+    },
+    {
+      "feature": "Data Hosting and Jurisdiction",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The product feature states that \"Our analytics and core lending systems run on a cloud provider's Singapore data centre, chosen for lower cost. A copy of the data is synced to India every quarter.\" This clearly breaks the requirement that all data must be stored only in servers located within India, and if processed outside India, it must be deleted from servers outside India and brought back to India within 24 hours of processing.",
+      "doc_evidence": "Our analytics and core lending systems run on a cloud provider's Singapore data centre, chosen for lower cost. A copy of the data is synced to India every quarter.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that data is stored in Singapore data centres, which is outside India, and only a copy is synced to India every quarter. This does not meet the requirement that all data must be stored only in servers located within India. The feature does not mention deleting data from servers outside India and bringing it back within 24 hours of processing, which is required if data is processed outside India. The feature does not comply with the RBI paragraph's requirement for data storage within India."
+    },
+    {
+      "feature": "Consent Management",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product feature 'Consent controls: In the Privacy Centre, borrowers can switch off consent for specific data uses, block sharing with third parties, choose how long data is kept, withdraw consent, and request deletion of their data' does not explicitly mention the requirement to 'make the RE/LSP delete/forget the data' as mandated by the RBI. The feature allows withdrawal of consent and request for deletion, but the wording does not clearly state that the RE/LSP must delete or forget the data as a direct consequence of the borrower's request.",
+      "doc_evidence": "Consent controls: In the Privacy Centre, borrowers can switch off consent for specific data uses, block sharing with third parties, choose how long data is kept, withdraw consent, and request deletion of their data.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature allows borrowers to 'request deletion of their data', which aligns with the RBI requirement to 'make the RE/LSP delete/forget the data'. The feature does not explicitly state the wording 'make the RE/LSP delete/forget the data', but it does provide the equivalent functionality. The RBI paragraph does not require exact wording, only that the borrower can request deletion. Therefore, the feature complies with the requirement."
+    },
+    {
+      "feature": "Privacy Policy and Data Practices",
+      "rule_id": "DLD2025:14(ii)",
+      "issue": "The product feature does not explicitly mention providing borrowers with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data and if required, make the RE/LSP delete/ forget the data.",
+      "doc_evidence": "A full privacy policy is published on the website and in the app, listing the third parties that collect data through the app and the data storage, retention and destruction rules.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the privacy policy disclose details of third parties allowed to collect personal information through the DLA. The product feature does comply with this requirement by listing third parties that collect data through the app. The claimed violation refers to additional features (consent options, data retention, revoking consent, etc.) that are not explicitly mentioned in the RBI paragraph. Since the paragraph does not require these additional features, the feature does not violate the paragraph."
+    },
+    {
+      "feature": "Credit Assessment and Data Collection",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product feature states: \"Before every loan we collect and keep on record the borrower's age, occupation, employer and monthly income from salary slips.\" This does not provide the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data and if required, make the RE/LSP delete/ forget the data. The feature fails to comply with the requirement of providing the borrower with these options.",
+      "doc_evidence": "Before every loan we collect and keep on record the borrower's age, occupation, employer and monthly income from salary slips.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires the borrower to be provided with options to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted, and make the RE/LSP delete/forget the data. The product feature does not mention any of these options, and thus fails to comply with the requirement. The feature only describes data collection and retention without addressing the borrower's rights to consent, restrict, revoke, or delete data."
+    }
+  ],
+  "summary": "The compliance review of the FaceFin: One-Look Personal Loans product identified several non-compliance issues with RBI regulations. The product feature stores biometric data, which is prohibited unless allowed under statutory guidelines. It also stores data in Singapore and does not delete it within 24 hours, violating the requirement for data to be stored only in India. Additionally, the product does not provide borrowers with the necessary options to give or deny consent for data usage, which is a critical compliance failure. These issues are categorized as high risk and require immediate corrective action.",
+  "trace": {
+    "llm_calls": 34,
+    "prompt_tokens": 19190,
+    "output_tokens": 5554,
+    "llm_seconds": 252.8,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 19,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 43,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:6(iv)",
+        "KFS2024:5",
+        "DLD2025:12(ii)",
+        "DLD2025:16(ii)",
+        "DLD2025:10(ii)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iii)",
+        "DLD2025:23(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:20(i)",
+        "DLD2025:13(iv)",
+        "DLD2025:13(i)",
+        "DLD2025:20(iii)"
+      ],
+      "1:Authentication and Biometric Data": [
+        "DLD2025:13(ii)",
+        "DLD2025:13(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:8(iv)",
+        "DLD2025:13(iv)",
+        "DLD2025:12(iv)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(iii)",
+        "DLD2025:8(iii)",
+        "DLD2025:6(iii)",
+        "DLD2025:12(i)"
+      ],
+      "2:Data Hosting and Jurisdiction": [
+        "DLD2025:13(iv)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(ii)",
+        "DLD2025:12(iii)",
+        "DLD2025:13(iii)",
+        "DLD2025:17(iv)",
+        "DLD2025:12(iv)",
+        "DLD2025:17(v)",
+        "DLD2025:8(iv)",
+        "DLD2025:8(iii)",
+        "DLD2025:5(ii)"
+      ],
+      "3:Consent Management": [
+        "DLD2025:12(ii)",
+        "DLD2025:12(iii)",
+        "DLD2025:12(i)",
+        "DLD2025:12(iv)",
+        "DLD2025:13(i)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iv)",
+        "DLD2025:14(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:8(iv)"
+      ],
+      "4:Privacy Policy and Data Practices": [
+        "DLD2025:14(ii)",
+        "DLD2025:13(ii)",
+        "DLD2025:12(ii)",
+        "DLD2025:14(i)",
+        "DLD2025:13(i)",
+        "DLD2025:13(iv)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:12(iii)",
+        "DLD2025:8(iv)",
+        "DLD2025:12(i)",
+        "DLD2025:8(iii)"
+      ],
+      "5:Credit Assessment and Data Collection": [
+        "DLD2025:7(i)",
+        "DLD2025:7(ii)",
+        "DLD2025:12(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:16(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:13(ii)",
+        "KFS2024:4",
+        "KFS2024:6",
+        "DLD2025:8(iii)",
+        "DLD2025:9(i)",
+        "KFS2024:7"
+      ]
+    }
+  },
+  "seconds": 253.3
+}

@@ -1,0 +1,215 @@
+{
+  "system": "crew",
+  "doc_id": "P28_cooling_off_penalty",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The feature 'Cooling-off: Borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge' does not comply with the requirement that borrowers should be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial cooling-off period.",
+      "doc_evidence": "Cooling-off: Borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge.",
+      "severity": "high",
+      "fix": "Modify the 'Cooling-off' feature to allow borrowers to exit the loan by repaying the principal and proportionate APR without any penalty during the initial cooling-off period. Ensure the option is clearly presented and explicitly available to the borrower.",
+      "verifier_note": "The product feature requires borrowers to pay a 4% foreclosure charge when exiting within 3 days, which is a penalty. This violates the RBI requirement that borrowers should be allowed to exit by paying the principal and proportionate APR without any penalty during the cooling-off period. The feature does not comply with the explicit option to exit without penalty."
+    },
+    {
+      "feature": "Unlisted Charges",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature 'Unlisted charges' where a ₹199 'credit insights subscription' is added to every EMI after disbursal, not in the KFS and without borrower consent, violates the requirement that fees, charges, reimbursements, etc., payable to LSPs must be paid directly by the RE and not charged to or collected from the borrowers separately by LSP.",
+      "doc_evidence": "After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "high",
+      "fix": "Remove the 'credit insights subscription' charge from the EMIs and ensure that all fees payable to LSPs are directly paid by the RE. Obtain explicit borrower consent for any charges that are not part of the KFS.",
+      "verifier_note": "The product feature adds a ₹199 'credit insights subscription' to every EMI after disbursal, which is not in the KFS and without borrower consent. This directly violates the RBI requirement that fees, charges, reimbursements, etc., payable to LSPs must be paid directly by the RE and not charged to or collected from the borrowers separately by LSP. The feature does not comply with the requirement that such charges must be paid directly by the RE and not collected from borrowers."
+    },
+    {
+      "feature": "Unlisted Charges",
+      "rule_id": "KFS2024:8",
+      "issue": "The feature 'Unlisted charges' where a ₹199 'credit insights subscription' is added to every EMI after disbursal, not in the KFS and without borrower consent, violates the requirement that any fees, charges, etc., not mentioned in the KFS cannot be charged by the REs to the borrower at any stage during the term of the loan, without explicit consent of the borrower.",
+      "doc_evidence": "After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "high",
+      "fix": "Ensure that all fees, charges, and reimbursements are clearly listed in the KFS and not charged to the borrower without prior consent. Remove the 'credit insights subscription' from the EMIs and disclose it in the KFS.",
+      "verifier_note": "The product feature describes a charge (₹199 'credit insights subscription') that is not mentioned in the KFS and is added to every EMI after disbursal without borrower consent. This directly violates the RBI paragraph which explicitly prohibits charging such fees without explicit consent of the borrower. The feature does not mention any exception or condition that would allow this charge, and the paragraph does not permit such charges."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product feature does not mention providing the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data and if required, make the RE/LSP delete/ forget the data.",
+      "doc_evidence": "Product: Personal loans of ₹5,000 to ₹1,00,000 for 3 to 12 months.",
+      "severity": "high",
+      "fix": "Add a section in the product feature that allows borrowers to give or deny consent for data usage, restrict data sharing, control data retention, revoke consent, and request deletion of personal data. Ensure this is clearly communicated and accessible.",
+      "verifier_note": "The RBI paragraph explicitly requires the borrower to be provided with specific options regarding data consent, restriction of disclosure, data retention, revocation of consent, and deletion of data. The product feature does not mention any of these requirements, thereby failing to comply with the RBI paragraph."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:8(i)",
+      "issue": "The product feature does not mention providing a Key Fact Statement (KFS) as per instructions contained in circular no. DOR.STR.REC.13/13.03.00/2024-25 on ‘Key Facts Statement (KFS) for Loans & Advances’ dated April 15, 2024, as amended from time to time.",
+      "doc_evidence": "Product: Personal loans of ₹5,000 to ₹1,00,000 for 3 to 12 months.",
+      "severity": "high",
+      "fix": "Include a Key Fact Statement (KFS) as per the RBI circular DOR.STR.REC.13/13.03.00/2024-25. Ensure the KFS is clearly presented to the borrower before disbursal and includes all relevant terms and conditions.",
+      "verifier_note": "The RBI paragraph explicitly requires that the RE (RBI entity) provide a Key Fact Statement (KFS) as per the specified circular. The product feature does not mention providing the KFS, which is a requirement under the paragraph. Therefore, the feature fails to comply with the requirement of the paragraph."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature does not mention ensuring that the loan is disbursed into the bank account of the borrower, except for disbursals covered exclusively under statutory or regulatory mandate, flow of money between REs for co-lending transactions, and disbursals for specific end use, provided the loan is disbursed directly into the bank account of the end-beneficiary.",
+      "doc_evidence": "Product: Personal loans of ₹5,000 to ₹1,00,000 for 3 to 12 months.",
+      "severity": "high",
+      "fix": "Ensure that all loan disbursements are made directly into the borrower's bank account, unless explicitly mandated by law or for co-lending transactions. Provide clear documentation and justification for any exceptions.",
+      "verifier_note": "The RBI paragraph explicitly requires that loan disbursement must always be made into the borrower's bank account, except for specific exceptions such as statutory mandates, co-lending transactions, and specific end-use disbursals (which must still go to the end-beneficiary). The product feature does not mention any of these requirements or exceptions, which means it fails to comply with the RBI's disbursement rules. Therefore, the feature does not meet the paragraph's requirements."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The feature 'Cooling-off: Borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge' does not comply with the requirement that borrowers should be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial cooling-off period.",
+      "doc_evidence": "Cooling-off: Borrowers who want to exit within 3 days must repay the principal plus the full first month's interest and a 4% foreclosure charge.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature requires borrowers to pay a 4% foreclosure charge when exiting within 3 days, which is a penalty. This violates the RBI requirement that borrowers should be allowed to exit by paying the principal and proportionate APR without any penalty during the cooling-off period. The feature does not comply with the explicit option to exit without penalty."
+    },
+    {
+      "feature": "Unlisted Charges",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature 'Unlisted charges' where a ₹199 'credit insights subscription' is added to every EMI after disbursal, not in the KFS and without borrower consent, violates the requirement that fees, charges, reimbursements, etc., payable to LSPs must be paid directly by the RE and not charged to or collected from the borrowers separately by LSP.",
+      "doc_evidence": "After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature adds a ₹199 'credit insights subscription' to every EMI after disbursal, which is not in the KFS and without borrower consent. This directly violates the RBI requirement that fees, charges, reimbursements, etc., payable to LSPs must be paid directly by the RE and not charged to or collected from the borrowers separately by LSP. The feature does not comply with the requirement that such charges must be paid directly by the RE and not collected from borrowers."
+    },
+    {
+      "feature": "Unlisted Charges",
+      "rule_id": "KFS2024:8",
+      "issue": "The feature 'Unlisted charges' where a ₹199 'credit insights subscription' is added to every EMI after disbursal, not in the KFS and without borrower consent, violates the requirement that any fees, charges, etc., not mentioned in the KFS cannot be charged by the REs to the borrower at any stage during the term of the loan, without explicit consent of the borrower.",
+      "doc_evidence": "After disbursal, a ₹199 \"credit insights subscription\" is added to every EMI. It is not in the KFS and borrowers are not asked to agree to it.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a charge (₹199 'credit insights subscription') that is not mentioned in the KFS and is added to every EMI after disbursal without borrower consent. This directly violates the RBI paragraph which explicitly prohibits charging such fees without explicit consent of the borrower. The feature does not mention any exception or condition that would allow this charge, and the paragraph does not permit such charges."
+    },
+    {
+      "feature": "Loan Agreement and Proposal",
+      "rule_id": "KFS2024:5",
+      "issue": "The KFS has a unique proposal number and is valid for 3 working days.",
+      "doc_evidence": "The KFS has a unique proposal number and is valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the RBI paragraph. The paragraph requires a validity period of at least three working days for loans with a tenor of seven days or more, and the product feature states the KFS is valid for 3 working days, which meets the requirement. There is no indication that the feature violates any provision of the paragraph."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:12(ii)",
+      "issue": "The product feature does not mention providing the borrower with an option to give or deny consent for use of specific data, restrict disclosure to third parties, data retention, revoke consent already granted to collect personal data and if required, make the RE/LSP delete/ forget the data.",
+      "doc_evidence": "Product: Personal loans of ₹5,000 to ₹1,00,000 for 3 to 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires the borrower to be provided with specific options regarding data consent, restriction of disclosure, data retention, revocation of consent, and deletion of data. The product feature does not mention any of these requirements, thereby failing to comply with the RBI paragraph."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:8(i)",
+      "issue": "The product feature does not mention providing a Key Fact Statement (KFS) as per instructions contained in circular no. DOR.STR.REC.13/13.03.00/2024-25 on ‘Key Facts Statement (KFS) for Loans & Advances’ dated April 15, 2024, as amended from time to time.",
+      "doc_evidence": "Product: Personal loans of ₹5,000 to ₹1,00,000 for 3 to 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires that the RE (RBI entity) provide a Key Fact Statement (KFS) as per the specified circular. The product feature does not mention providing the KFS, which is a requirement under the paragraph. Therefore, the feature fails to comply with the requirement of the paragraph."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature does not mention ensuring that the loan is disbursed into the bank account of the borrower, except for disbursals covered exclusively under statutory or regulatory mandate, flow of money between REs for co-lending transactions, and disbursals for specific end use, provided the loan is disbursed directly into the bank account of the end-beneficiary.",
+      "doc_evidence": "Product: Personal loans of ₹5,000 to ₹1,00,000 for 3 to 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires that loan disbursement must always be made into the borrower's bank account, except for specific exceptions such as statutory mandates, co-lending transactions, and specific end-use disbursals (which must still go to the end-beneficiary). The product feature does not mention any of these requirements or exceptions, which means it fails to comply with the RBI's disbursement rules. Therefore, the feature does not meet the paragraph's requirements."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The product feature does not mention ensuring that all loan servicing, repayment, etc. is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "Product: Personal loans of ₹5,000 to ₹1,00,000 for 3 to 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires that all loan servicing, repayment, etc., must be executed by the borrower directly in the RE’s bank account without any pass-through account or pool account of any third party, including the accounts of LSP. The product feature does not mention anything about the method of servicing or repayment, and therefore, it does not violate the RBI paragraph. The claim relies on the absence of information in the product feature, which is not a violation as per the instructions."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The product feature does not mention ensuring that the flow of funds between the bank accounts of the borrower and the RE shall not be controlled either directly or indirectly by a third-party, including the LSP.",
+      "doc_evidence": "Product: Personal loans of ₹5,000 to ₹1,00,000 for 3 to 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits the flow of funds between the borrower's bank accounts and the RE from being controlled by a third-party, including the LSP. The product feature does not mention anything about controlling the flow of funds, which means it does not violate the paragraph because it does not do something the paragraph forbids. The claim relies on the feature not mentioning something, which is not a violation."
+    }
+  ],
+  "summary": "The compliance review of the product 'RupeeRush: Instant Personal Loans' identified several non-compliance issues with the RBI rules. The key findings include: (1) The 'Cooling-off' feature does not provide borrowers with an explicit option to exit the loan without penalty during the initial cooling-off period. (2) The 'Unlisted charges' feature, which adds a ₹199 'credit insights subscription' to every EMI without borrower consent and not in the KFS, violates the requirement that fees and charges must be paid directly by the RE and not charged to borrowers. (3) The product does not provide borrowers with an option to give or deny consent for data usage, restrict disclosure, revoke consent, or request data deletion. (4) The product does not include a Key Fact Statement (KFS) as required by RBI guidelines. (5) The loan disbursement feature does not ensure that the loan is disbursed into the borrower's bank account, except under specific exceptions. These findings indicate significant gaps in compliance with RBI regulations.",
+  "trace": {
+    "llm_calls": 22,
+    "prompt_tokens": 11190,
+    "output_tokens": 2980,
+    "llm_seconds": 109.4,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 9,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 29,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(iv)"
+      ],
+      "1:Cooling-off Period": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "KFS2024:5",
+        "DLD2025:26(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:9(v)",
+        "KFS2024:7",
+        "KFS2024:8",
+        "DLD2025:9(ii)"
+      ],
+      "2:Unlisted Charges": [
+        "DLD2025:9(iv)",
+        "DLD2025:29(i)",
+        "KFS2024:7",
+        "DLD2025:9(v)",
+        "KFS2024:8",
+        "DLD2025:8(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:17(ii)"
+      ],
+      "3:Loan Agreement and Proposal": [
+        "KFS2024:5",
+        "KFS2024:4",
+        "KFS2024:9",
+        "DLD2025:27(ii)",
+        "KFS2024:6",
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:5(ii)",
+        "DLD2025:14(i)",
+        "DLD2025:17(v)"
+      ],
+      "4:1. Product": [
+        "DLD2025:12(ii)",
+        "KFS2024:5",
+        "DLD2025:12(iv)",
+        "DLD2025:8(iii)",
+        "DLD2025:8(i)",
+        "DLD2025:14(i)",
+        "DLD2025:5(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(ii)"
+      ]
+    }
+  },
+  "seconds": 109.7
+}

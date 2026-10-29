@@ -1,0 +1,223 @@
+{
+  "system": "crew",
+  "doc_id": "P04_kisanflex_agri",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature describes that 'Credit is paid directly into the bank account of the agri-input dealer when the farmer buys inputs, against an invoice uploaded in the app.' This directly contravenes RBI's requirement that disbursement of loan by the RE shall always be made into the bank account of the borrower, except for disbursals covered exclusively under statutory or regulatory mandate, flow of money between REs for co-lending transactions, and disbursals for specific end use, provided the loan is disbursed directly into the bank account of the end-beneficiary. The feature involves disbursal to a third-party account (agri-input dealer), which is not permitted unless specifically allowed.",
+      "doc_evidence": "Credit is paid directly into the bank account of the agri-input dealer when the farmer buys inputs, against an invoice uploaded in the app.",
+      "severity": "high",
+      "fix": "Modify the disbursement process to ensure that all loan amounts are directly credited into the borrower's bank account. Only disbursements to third parties should be made under specific statutory or regulatory mandates.",
+      "verifier_note": "The RBI paragraph explicitly states that disbursement should always be made into the borrower's bank account, except for specific exceptions such as statutory mandates, co-lending transactions, and specific end-use disbursals where the end-beneficiary's account is used. The product feature describes disbursing credit directly into the agri-input dealer's account, which is a third-party account. This is not allowed unless it falls under one of the specified exceptions. The feature does not mention any statutory mandate, co-lending transaction, or specific end-use scenario that would justify disbursing to the agri-input dealer. Therefore, the feature violates the RBI requirement."
+    },
+    {
+      "feature": "Repayment Collection",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature describes that farmers repay into a pooled collection account run by AgriNext, which sweeps the money to Godavari Rural Bank every Friday. This involves the use of a third-party pool account, which is not allowed as per RBI guidelines.",
+      "doc_evidence": "To make repayment easy in villages, farmers repay into a pooled collection account run by AgriNext, which sweeps the money to Godavari Rural Bank every Friday.",
+      "severity": "high",
+      "fix": "Stop using third-party pooled collection accounts and ensure that all repayments are made directly into the borrower's bank account.",
+      "verifier_note": "The RBI paragraph explicitly prohibits the use of any third-party pool account for loan servicing and repayment, requiring that all such activities be executed directly in the RE’s bank account. The product feature describes farmers repaying into a pooled collection account run by AgriNext, which is a third-party account. This directly violates the RBI guideline as stated in DLD2025:9(ii)."
+    },
+    {
+      "feature": "Repayment Collection",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The feature describes that farmers repay into a pooled collection account run by AgriNext, which sweeps the money to Godavari Rural Bank every Friday. This involves the flow of funds between the borrower's account and the RE being controlled indirectly by a third-party (AgriNext), which is not allowed as per RBI guidelines.",
+      "doc_evidence": "To make repayment easy in villages, farmers repay into a pooled collection account run by AgriNext, which sweeps the money to Godavari Rural Bank every Friday.",
+      "severity": "high",
+      "fix": "Ensure that all repayment processes are conducted directly between the borrower and the RE, without any third-party control over the flow of funds.",
+      "verifier_note": "The RBI paragraph prohibits the flow of funds between the borrower's account and the RE from being controlled by a third-party, including the LSP. The product feature describes a pooled collection account run by AgriNext, which acts as an intermediary to sweep funds to the RE (Godavari Rural Bank). This constitutes indirect control by a third-party (AgriNext), which is explicitly forbidden by the RBI guidelines. The feature does not mention any exception or condition that would allow this control, so the claim of violation is valid."
+    },
+    {
+      "feature": "Field Recovery",
+      "rule_id": "DLD2025:9(v)",
+      "issue": "The feature 'Field Recovery' allows AgriNext to deduct its 5% recovery fee from the cash collected before depositing the rest. This is a violation as per RBI paragraph DLD2025:9(v), which states that fees, charges, etc., payable to LSPs for such recovery should be paid directly by the RE and not charged by LSP to the borrower either directly or indirectly from the recovery proceeds.",
+      "doc_evidence": "AgriNext deducts its 5% recovery fee from the cash collected before depositing the rest.",
+      "severity": "high",
+      "fix": "Stop deducting any fees or charges from the recovery proceeds. All fees payable to LSPs must be directly paid by the RE, and not charged to the borrower.",
+      "verifier_note": "The product feature allows AgriNext to deduct its 5% recovery fee from the cash collected before depositing the rest. This directly contradicts the RBI paragraph which explicitly states that fees, charges, etc., payable to LSPs for such recovery should be paid directly by the RE and not charged by LSP to the borrower either directly or indirectly from the recovery proceeds. The feature does something the paragraph forbids."
+    },
+    {
+      "feature": "Recovery Agent Communication",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "The product feature does not fully comply with the requirement as it only communicates the recovery agent's name and ID card details by SMS before the first visit, but does not explicitly mention the communication of the recovery agent's particulars through email/SMS before the recovery agent contacts the borrower for recovery.",
+      "doc_evidence": "When a loan becomes overdue, the assigned recovery agent visits the farmer. The farmer receives the agent's name and ID card details by SMS before the first visit.",
+      "severity": "medium",
+      "fix": "Ensure that the recovery agent's details are communicated to the borrower through multiple channels (email and SMS) before the recovery agent contacts the borrower.",
+      "verifier_note": "The RBI paragraph requires that the particulars of the recovery agent be communicated to the borrower through email/SMS before the recovery agent contacts the borrower for recovery. The product feature only mentions communication via SMS before the first visit, which may not cover all instances of recovery agent contact. The feature does not explicitly state that the communication occurs before the recovery agent contacts the borrower for recovery in all cases, which is a requirement in the RBI paragraph."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature states that farmers get short-term credit to buy seeds, fertiliser and pesticide from partner agri-input dealers, repayable after harvest. This implies that the loan may be disbursed directly to the agri-input dealers rather than the borrower's bank account, which violates the requirement that disbursement must always be made into the borrower's bank account unless specifically mandated by statute or regulation.",
+      "doc_evidence": "Farmers get short-term credit of ₹10,000 to ₹1,50,000 to buy seeds, fertiliser and pesticide from partner agri-input dealers, repayable after harvest.",
+      "severity": "high",
+      "fix": "Ensure that all disbursements are made directly into the borrower's bank account, and clearly state in the product documentation that the loan is disbursed to the borrower, not to third parties.",
+      "verifier_note": "The RBI paragraph explicitly states that disbursement must always be made into the borrower's bank account, except for specific exceptions such as statutory mandates, co-lending transactions, or disbursals for specific end use where the loan is directly disbursed to the end-beneficiary. The product feature describes credit being given to farmers to purchase inputs from partner dealers, which implies the loan may be disbursed to the dealers rather than the borrower's account. This would violate the requirement unless the feature explicitly states that the loan is disbursed directly to the end-beneficiary (the farmer) or falls under an exception. Since the feature does not mention such exceptions or direct disbursement to the farmer, it violates the RBI requirement."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature does not explicitly state whether fees, charges, or reimbursements payable to the LSP (AgriNext Solutions) are paid directly by the RE (Godavari Rural Bank) or if they are charged to or collected from the borrowers. This lack of clarity may imply that such charges are being passed on to the borrowers, which is prohibited under the RBI guidelines.",
+      "doc_evidence": "Farmers get short-term credit of ₹10,000 to ₹1,50,000 to buy seeds, fertiliser and pesticide from partner agri-input dealers, repayable after harvest.",
+      "severity": "medium",
+      "fix": "Clearly state in the product documentation that all fees, charges, or reimbursements payable to the LSP are directly paid by the RE and not charged to the borrower.",
+      "verifier_note": "The RBI paragraph explicitly requires that fees, charges, reimbursements, etc. payable to the LSP must be paid directly by the RE and not charged to or collected from the borrowers. The product feature does not mention anything about how fees, charges, or reimbursements payable to the LSP (AgriNext Solutions) are handled. Since the feature does not state whether these are paid directly by the RE or passed on to borrowers, it fails to comply with the requirement of the RBI paragraph. The claim is based on what the feature does not mention, which is not a violation unless the feature explicitly states something prohibited. However, the absence of information about how these fees are handled creates ambiguity, which may imply non-compliance."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature describes that 'Credit is paid directly into the bank account of the agri-input dealer when the farmer buys inputs, against an invoice uploaded in the app.' This directly contravenes RBI's requirement that disbursement of loan by the RE shall always be made into the bank account of the borrower, except for disbursals covered exclusively under statutory or regulatory mandate, flow of money between REs for co-lending transactions, and disbursals for specific end use, provided the loan is disbursed directly into the bank account of the end-beneficiary. The feature involves disbursal to a third-party account (agri-input dealer), which is not permitted unless specifically allowed.",
+      "doc_evidence": "Credit is paid directly into the bank account of the agri-input dealer when the farmer buys inputs, against an invoice uploaded in the app.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that disbursement should always be made into the borrower's bank account, except for specific exceptions such as statutory mandates, co-lending transactions, and specific end-use disbursals where the end-beneficiary's account is used. The product feature describes disbursing credit directly into the agri-input dealer's account, which is a third-party account. This is not allowed unless it falls under one of the specified exceptions. The feature does not mention any statutory mandate, co-lending transaction, or specific end-use scenario that would justify disbursing to the agri-input dealer. Therefore, the feature violates the RBI requirement."
+    },
+    {
+      "feature": "Repayment Collection",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature describes that farmers repay into a pooled collection account run by AgriNext, which sweeps the money to Godavari Rural Bank every Friday. This involves the use of a third-party pool account, which is not allowed as per RBI guidelines.",
+      "doc_evidence": "To make repayment easy in villages, farmers repay into a pooled collection account run by AgriNext, which sweeps the money to Godavari Rural Bank every Friday.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits the use of any third-party pool account for loan servicing and repayment, requiring that all such activities be executed directly in the RE’s bank account. The product feature describes farmers repaying into a pooled collection account run by AgriNext, which is a third-party account. This directly violates the RBI guideline as stated in DLD2025:9(ii)."
+    },
+    {
+      "feature": "Repayment Collection",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The feature describes that farmers repay into a pooled collection account run by AgriNext, which sweeps the money to Godavari Rural Bank every Friday. This involves the flow of funds between the borrower's account and the RE being controlled indirectly by a third-party (AgriNext), which is not allowed as per RBI guidelines.",
+      "doc_evidence": "To make repayment easy in villages, farmers repay into a pooled collection account run by AgriNext, which sweeps the money to Godavari Rural Bank every Friday.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph prohibits the flow of funds between the borrower's account and the RE from being controlled by a third-party, including the LSP. The product feature describes a pooled collection account run by AgriNext, which acts as an intermediary to sweep funds to the RE (Godavari Rural Bank). This constitutes indirect control by a third-party (AgriNext), which is explicitly forbidden by the RBI guidelines. The feature does not mention any exception or condition that would allow this control, so the claim of violation is valid."
+    },
+    {
+      "feature": "Field Recovery",
+      "rule_id": "DLD2025:9(v)",
+      "issue": "The feature 'Field Recovery' allows AgriNext to deduct its 5% recovery fee from the cash collected before depositing the rest. This is a violation as per RBI paragraph DLD2025:9(v), which states that fees, charges, etc., payable to LSPs for such recovery should be paid directly by the RE and not charged by LSP to the borrower either directly or indirectly from the recovery proceeds.",
+      "doc_evidence": "AgriNext deducts its 5% recovery fee from the cash collected before depositing the rest.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature allows AgriNext to deduct its 5% recovery fee from the cash collected before depositing the rest. This directly contradicts the RBI paragraph which explicitly states that fees, charges, etc., payable to LSPs for such recovery should be paid directly by the RE and not charged by LSP to the borrower either directly or indirectly from the recovery proceeds. The feature does something the paragraph forbids."
+    },
+    {
+      "feature": "Recovery Agent Communication",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "The product feature does not fully comply with the requirement as it only communicates the recovery agent's name and ID card details by SMS before the first visit, but does not explicitly mention the communication of the recovery agent's particulars through email/SMS before the recovery agent contacts the borrower for recovery.",
+      "doc_evidence": "When a loan becomes overdue, the assigned recovery agent visits the farmer. The farmer receives the agent's name and ID card details by SMS before the first visit.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the particulars of the recovery agent be communicated to the borrower through email/SMS before the recovery agent contacts the borrower for recovery. The product feature only mentions communication via SMS before the first visit, which may not cover all instances of recovery agent contact. The feature does not explicitly state that the communication occurs before the recovery agent contacts the borrower for recovery in all cases, which is a requirement in the RBI paragraph."
+    },
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "The feature 'Credit Bureau Reporting' as described in the product context does not comply with the requirement that all lending done through DLAs and/or DLAs of LSPs must be reported to CICs irrespective of its nature/tenor. The product context states that all loans, irrespective of tenor or amount, are reported by Godavari Rural Bank to all four credit information companies every month. This appears to comply with the requirement, but the feature does not explicitly mention reporting of structured digital lending products over a merchant platform, which is covered under [DLD2025:16(ii)].",
+      "doc_evidence": "All loans, irrespective of tenor or amount, are reported by Godavari Rural Bank to all four credit information companies every month.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that all loans, irrespective of tenor or amount, are reported to all four credit information companies every month. This directly complies with the requirement in [DLD2025:16(i)] that lending done through DLAs and/or DLAs of LSPs must be reported to CICs irrespective of its nature/tenor. The claim that the feature does not comply is therefore false. The feature does not need to mention structured digital lending products over a merchant platform because that is covered under a different section ([DLD2025:16(ii)]), and the claim relies on what the feature leaves out, which is not a violation."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature states that farmers get short-term credit to buy seeds, fertiliser and pesticide from partner agri-input dealers, repayable after harvest. This implies that the loan may be disbursed directly to the agri-input dealers rather than the borrower's bank account, which violates the requirement that disbursement must always be made into the borrower's bank account unless specifically mandated by statute or regulation.",
+      "doc_evidence": "Farmers get short-term credit of ₹10,000 to ₹1,50,000 to buy seeds, fertiliser and pesticide from partner agri-input dealers, repayable after harvest.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that disbursement must always be made into the borrower's bank account, except for specific exceptions such as statutory mandates, co-lending transactions, or disbursals for specific end use where the loan is directly disbursed to the end-beneficiary. The product feature describes credit being given to farmers to purchase inputs from partner dealers, which implies the loan may be disbursed to the dealers rather than the borrower's account. This would violate the requirement unless the feature explicitly states that the loan is disbursed directly to the end-beneficiary (the farmer) or falls under an exception. Since the feature does not mention such exceptions or direct disbursement to the farmer, it violates the RBI requirement."
+    },
+    {
+      "feature": "1. Product",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature does not explicitly state whether fees, charges, or reimbursements payable to the LSP (AgriNext Solutions) are paid directly by the RE (Godavari Rural Bank) or if they are charged to or collected from the borrowers. This lack of clarity may imply that such charges are being passed on to the borrowers, which is prohibited under the RBI guidelines.",
+      "doc_evidence": "Farmers get short-term credit of ₹10,000 to ₹1,50,000 to buy seeds, fertiliser and pesticide from partner agri-input dealers, repayable after harvest.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires that fees, charges, reimbursements, etc. payable to the LSP must be paid directly by the RE and not charged to or collected from the borrowers. The product feature does not mention anything about how fees, charges, or reimbursements payable to the LSP (AgriNext Solutions) are handled. Since the feature does not state whether these are paid directly by the RE or passed on to borrowers, it fails to comply with the requirement of the RBI paragraph. The claim is based on what the feature does not mention, which is not a violation unless the feature explicitly states something prohibited. However, the absence of information about how these fees are handled creates ambiguity, which may imply non-compliance."
+    }
+  ],
+  "summary": "The compliance review of the KisanFlex: Crop Input Credit for Farmers product identified several significant gaps against the reviewed RBI rules. The product's feature of disbursing credit directly into the bank account of agri-input dealers violates RBI's requirement that disbursements must be made into the borrower's account unless specifically allowed. Additionally, the use of a pooled collection account run by AgriNext and the indirect control over the flow of funds between the borrower and the RE through a third party are non-compliant. The feature allowing AgriNext to deduct a 5% recovery fee from the cash collected also violates RBI guidelines. There are also medium-level gaps in the communication of recovery agent details and the clarity on fees payable to LSPs.",
+  "trace": {
+    "llm_calls": 23,
+    "prompt_tokens": 12660,
+    "output_tokens": 3229,
+    "llm_seconds": 119.7,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 8,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 32,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:29(i)"
+      ],
+      "1:Repayment Collection": [
+        "DLD2025:9(i)",
+        "DLD2025:9(v)",
+        "DLD2025:9(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:12(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:12(iii)"
+      ],
+      "2:Field Recovery": [
+        "DLD2025:9(v)",
+        "DLD2025:26(i)",
+        "DLD2025:8(v)",
+        "DLD2025:9(iv)",
+        "KFS2024:7",
+        "DLD2025:10(ii)",
+        "DLD2025:5(v)",
+        "DLD2025:12(i)",
+        "DLD2025:24(iii)"
+      ],
+      "3:Recovery Agent Communication": [
+        "DLD2025:8(v)",
+        "DLD2025:5(v)",
+        "DLD2025:9(v)",
+        "DLD2025:24(iii)",
+        "DLD2025:6(iii)",
+        "DLD2025:8(iv)"
+      ],
+      "4:Credit Bureau Reporting": [
+        "DLD2025:16(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:17(i)",
+        "DLD2025:29(i)",
+        "DLD2025:17(v)",
+        "KFS2024:10",
+        "DLD2025:19(ii)"
+      ],
+      "5:1. Product": [
+        "DLD2025:16(ii)",
+        "DLD2025:6(iv)",
+        "DLD2025:10(i)",
+        "DLD2025:27(ii)",
+        "DLD2025:6(iii)",
+        "KFS2024:7",
+        "DLD2025:9(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iv)"
+      ]
+    }
+  },
+  "seconds": 120.0
+}

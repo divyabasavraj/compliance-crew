@@ -1,0 +1,194 @@
+{
+  "system": "crew",
+  "doc_id": "P12_clean_msme_invoice",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:17(i)",
+      "issue": "The feature states that 'Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.' However, the RBI requires that REs report all DLAs deployed or joined by them, whether their own or those of the LSPs, on the CIMS portal. The feature does not explicitly mention reporting the TradeCredit app as a DLA on the CIMS portal, which is a requirement under [DLD2025:17(i)].",
+      "doc_evidence": "Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.",
+      "severity": "high",
+      "fix": "Update the feature description to explicitly state that the TradeCredit app is reported as a DLA on the RBI CIMS portal, in compliance with [DLD2025:17(i)]. Ensure that all DLAs, including those of LSPs, are reported as required.",
+      "verifier_note": "The RBI paragraph requires REs to report all DLAs (whether their own or those of LSPs) on the CIMS portal. The product feature states that Narmada Bank reported the TradeCredit app on the CIMS portal and reports all loans to credit information companies. However, the feature does not explicitly state that the TradeCredit app is a DLA or that it is reported as such on the CIMS portal. Since the paragraph requires reporting of DLAs, and the feature does not confirm that the TradeCredit app is a DLA being reported, it does not fully comply with the requirement. The feature may be compliant if the TradeCredit app is indeed a DLA, but the feature does not explicitly state this, making the claim valid."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature describes disbursal of loans into the borrower's bank account, which complies with the requirement that disbursement must always be made into the borrower's bank account, except for specific exceptions. There is no indication that the disbursal is made to a third-party account, including the accounts of LSP, which is required to be avoided. Therefore, no finding is applicable.",
+      "doc_evidence": "Product: Term loans of ₹1,00,000 to ₹20,00,000 for traders, based on GST returns and bank statements.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "[evidence re-anchored to the feature text] The product feature describes disbursal of loans into the borrower's bank account, which aligns with the RBI requirement that disbursement must always be made into the borrower's bank account, except for specific exceptions. The feature does not mention any third-party accounts or LSP accounts, and there is no indication that the disbursal is made to such accounts. The RBI paragraph explicitly prohibits disbursal to third-party accounts unless specified exceptions apply. Since the feature does not mention any exceptions and complies with the requirement to disburse into the borrower's account, there is no violation."
+    },
+    {
+      "feature": "Offer Presentation",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The feature 'Offer Presentation' ranks loan offers based on APR, lowest first, using a ranking rule published on Ledgerly's website. While ranking based on a publicly pre-disclosed metric is permissible, the feature does not explicitly state that the ranking is based on a publicly pre-disclosed metric, which could be interpreted as promoting a particular product indirectly.",
+      "doc_evidence": "Offers are sorted by APR, lowest first, a ranking rule published on Ledgerly's website.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly allows ranking of loan offers based on a publicly pre-disclosed metric, as long as it is not construed as promoting a particular product. The product feature states that the ranking is based on a published rule, which satisfies the condition of a 'publicly pre-disclosed metric'. The claim that this could be interpreted as promoting a product indirectly is not supported by the paragraph, which allows such ranking. The feature does not engage in any prohibited activity, and the paragraph does not forbid the use of APR as a metric if it is pre-disclosed."
+    },
+    {
+      "feature": "Credit Limit Management",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The feature 'Credit Limit Management' states that 'Limits are increased only when the trader asks for an increase in the app; each request is assessed and recorded.' This complies with the requirement that there should be no automatic increase in credit limit unless an explicit request is received, evaluated and kept on record from the borrower for such increase.",
+      "doc_evidence": "Limits are increased only when the trader asks for an increase in the app; each request is assessed and recorded.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that credit limits are only increased when the trader explicitly asks for an increase in the app, and each request is assessed and recorded. This directly aligns with the RBI requirement that there should be no automatic increase in credit limit unless an explicit request is received, evaluated, and kept on record. The feature does not allow for automatic increases, which is explicitly prohibited by the RBI paragraph. Therefore, the feature complies with the requirement."
+    },
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The product feature states that Ledgerly gives Narmada Bank a DLG of 5% of the amount disbursed in a fixed loan portfolio, as a fixed deposit with a lien marked to the bank. This exceeds the cap on DLG as per [DLD2025:23(i)] which limits DLG cover to five per cent of the total amount disbursed out of that loan portfolio at any given time.",
+      "doc_evidence": "Ledgerly gives Narmada Bank a DLG of 5% of the amount disbursed in a fixed loan portfolio, as a fixed deposit with a lien marked to the bank.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that Ledgerly provides a DLG of 5% of the amount disbursed in a fixed loan portfolio, which aligns exactly with the cap specified in [DLD2025:23(i)]. The paragraph does not prohibit this level of DLG; it merely sets a maximum limit. Since the feature does not exceed the cap, it complies with the requirement."
+    },
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The product feature states that the DLG is invoked within 90 days overdue, which is less than the maximum overdue period of 120 days specified in [DLD2025:26(i)].",
+      "doc_evidence": "It is invoked within 90 days overdue.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:26(i)] states that the DLG should be invoked within a maximum overdue period of 120 days, unless the loan dues are made good by the borrower before that. The product feature specifies that the DLG is invoked within 90 days overdue, which is within the allowed 120-day period. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Recovery Process",
+      "rule_id": "DLD2025:9(v)",
+      "issue": "The feature states that 'any cash recovered is credited to the loan account the same day', which complies with the requirement that 'any recovery by cash shall be duly reflected in full in the borrower’s account on the same day'. However, the feature also states that 'Narmada Bank pays the agent's fee', which may imply that the fee is deducted from the recovery proceeds, which is not allowed as fees payable to LSPs must be paid directly by the RE and not charged from the recovery proceeds.",
+      "doc_evidence": "Any cash recovered is credited to the loan account the same day, and Narmada Bank pays the agent's fee.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that 'Narmada Bank pays the agent's fee', which implies that the fee is not deducted from the recovery proceeds. This complies with the RBI paragraph's requirement that fees payable to LSPs must be paid directly by the RE and not charged from the recovery proceeds. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:17(i)",
+      "issue": "The feature states that 'Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.' However, the RBI requires that REs report all DLAs deployed or joined by them, whether their own or those of the LSPs, on the CIMS portal. The feature does not explicitly mention reporting the TradeCredit app as a DLA on the CIMS portal, which is a requirement under [DLD2025:17(i)].",
+      "doc_evidence": "Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires REs to report all DLAs (whether their own or those of LSPs) on the CIMS portal. The product feature states that Narmada Bank reported the TradeCredit app on the CIMS portal and reports all loans to credit information companies. However, the feature does not explicitly state that the TradeCredit app is a DLA or that it is reported as such on the CIMS portal. Since the paragraph requires reporting of DLAs, and the feature does not confirm that the TradeCredit app is a DLA being reported, it does not fully comply with the requirement. The feature may be compliant if the TradeCredit app is indeed a DLA, but the feature does not explicitly state this, making the claim valid."
+    },
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "The feature states that 'Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.' However, the RBI requires that REs ensure that any lending done through their DLAs and/or DLAs of LSPs is reported to CICs irrespective of its nature/tenor. The feature does not explicitly mention reporting all loans to CICs, which is a requirement under [DLD2025:16(i)].",
+      "doc_evidence": "Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that Narmada Bank reports all loans to credit information companies, which directly complies with the requirement in [DLD2025:16(i)] that REs ensure all lending through DLAs and/or DLAs of LSPs is reported to CICs. The claim that the feature does not mention reporting all loans to CICs is incorrect, as the feature clearly states this. Therefore, the feature does not violate the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the TradeCredit product, specifically the Working Capital Loans for Small Traders, identified a high-risk gap related to the reporting of DLAs on the RBI CIMS portal. The feature states that 'Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.' However, this does not explicitly mention reporting the TradeCredit app as a DLA on the CIMS portal, which is a requirement under [DLD2025:17(i)]. The review found that the feature does not meet the RBI's requirement for REs to report all DLAs deployed or joined by them, whether their own or those of the LSPs, on the CIMS portal.",
+  "trace": {
+    "llm_calls": 23,
+    "prompt_tokens": 14070,
+    "output_tokens": 2866,
+    "llm_seconds": 134.0,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 8,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 32,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:8(iii)",
+        "DLD2025:8(i)",
+        "KFS2024:5",
+        "DLD2025:20(iii)",
+        "DLD2025:27(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:25(i)",
+        "DLD2025:25(ii)",
+        "DLD2025:6(iv)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iv)"
+      ],
+      "1:Offer Presentation": [
+        "DLD2025:6(iii)",
+        "KFS2024:6",
+        "DLD2025:6(ii)",
+        "KFS2024:7",
+        "DLD2025:6(iv)",
+        "KFS2024:10",
+        "DLD2025:16(ii)",
+        "DLD2025:6(i)",
+        "KFS2024:8",
+        "DLD2025:17(iv)",
+        "DLD2025:9(v)",
+        "DLD2025:8(iii)"
+      ],
+      "2:Credit Limit Management": [
+        "DLD2025:7(ii)",
+        "KFS2024:6",
+        "DLD2025:29(i)",
+        "DLD2025:7(i)",
+        "DLD2025:16(ii)",
+        "KFS2024:5",
+        "KFS2024:10",
+        "DLD2025:23(ii)",
+        "DLD2025:27(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:23(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:8(ii)",
+        "DLD2025:8(v)"
+      ],
+      "3:Default Loss Guarantee": [
+        "DLD2025:22(i)",
+        "DLD2025:23(i)",
+        "DLD2025:26(i)",
+        "DLD2025:24(ii)",
+        "DLD2025:23(ii)",
+        "DLD2025:20(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:19(ii)",
+        "DLD2025:8(v)",
+        "DLD2025:19(iii)",
+        "DLD2025:25(ii)",
+        "DLD2025:24(iv)",
+        "DLD2025:27(i)"
+      ],
+      "4:Recovery Process": [
+        "DLD2025:8(v)",
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:24(iii)",
+        "DLD2025:5(v)",
+        "KFS2024:7",
+        "DLD2025:11(iv)",
+        "DLD2025:8(iii)",
+        "DLD2025:6(iii)"
+      ],
+      "5:Credit Bureau Reporting": [
+        "DLD2025:17(vii)",
+        "DLD2025:16(i)",
+        "DLD2025:17(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:17(v)",
+        "DLD2025:17(ii)",
+        "KFS2024:10",
+        "DLD2025:17(iii)",
+        "DLD2025:8(iv)",
+        "DLD2025:17(iv)",
+        "DLD2025:11(iv)"
+      ]
+    }
+  },
+  "seconds": 134.5
+}

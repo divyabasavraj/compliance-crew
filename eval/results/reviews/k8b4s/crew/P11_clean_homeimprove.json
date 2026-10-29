@@ -1,0 +1,211 @@
+{
+  "system": "crew",
+  "doc_id": "P11_clean_homeimprove",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product feature states that borrowers may exit within 3 days by repaying principal and proportionate APR, without penalty. This complies with the requirement that the borrower shall be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial 'cooling-off period'. However, the cooling-off period is not explicitly determined by the Board of the RE as laid down in their loan policy, which is a requirement under this paragraph.",
+      "doc_evidence": "Borrowers may exit within 3 days by repaying principal and proportionate APR, without penalty.",
+      "severity": "high",
+      "fix": "Define and disclose the cooling-off period as per the RE's loan policy, ensuring it is clearly communicated to borrowers and included in the product documentation.",
+      "verifier_note": "The product feature allows borrowers to exit within 3 days by repaying principal and proportionate APR without penalty, which complies with the requirement of providing an explicit option to exit during the cooling-off period. However, the cooling-off period is not explicitly determined by the Board of the RE as laid down in their loan policy, which is a requirement under the paragraph. The feature does not mention or confirm that the cooling-off period is determined by the Board of the RE, so it fails to meet this requirement."
+    },
+    {
+      "feature": "Know Your Customer (KFS) and APR Disclosure",
+      "rule_id": "KFS2024:6",
+      "issue": "The product feature mentions the inclusion of the APR computation sheet and amortisation schedule, which aligns with the requirement. However, it does not explicitly state that the APR includes all charges levied by the RE, which is a mandatory requirement under the regulation.",
+      "doc_evidence": "Each KFS has a unique proposal number, is in the borrower's chosen language, includes the APR computation sheet and amortisation schedule, and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "Update the APR disclosure to explicitly state that the APR includes all charges levied by the RE, and ensure this is reflected in the product feature and documentation.",
+      "verifier_note": "The RBI paragraph explicitly states that the APR must include all charges levied by the RE. The product feature mentions the inclusion of the APR computation sheet and amortisation schedule but does not explicitly state that the APR includes all charges levied by the RE. Since the paragraph requires this, and the feature does not confirm it, the claim is valid. However, the feature does not explicitly state that the APR includes all charges, which is a mandatory requirement. Therefore, the feature does not fully comply with the paragraph."
+    },
+    {
+      "feature": "Know Your Customer (KFS) and APR Disclosure",
+      "rule_id": "KFS2024:4",
+      "issue": "The product feature states that the KFS is in the borrower's chosen language, which complies with the requirement. However, it does not explicitly mention that the contents of the KFS are explained to the borrower and that an acknowledgment is obtained that the borrower has understood the KFS.",
+      "doc_evidence": "Each KFS has a unique proposal number, is in the borrower's chosen language, includes the APR computation sheet and amortisation schedule, and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "Revise the KFS feature to include a section where the contents are explained to the borrower and an acknowledgment is obtained that the borrower has understood the KFS.",
+      "verifier_note": "The RBI paragraph requires that the contents of the KFS are explained to the borrower and an acknowledgment is obtained that the borrower has understood the KFS. The product feature does not mention this explanation or acknowledgment, which is a requirement under the paragraph. Therefore, the feature fails to comply with the paragraph's requirements."
+    },
+    {
+      "feature": "Data Collection and Storage",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "The feature does not mention that clear policy guidelines regarding the storage of customer data including the type of data that can be stored, the length of time for which data can be stored, restrictions on the use of data, data destruction protocol, standards for handling security breach, etc., are put in place and disclosed by the RE and the LSP engaged by the RE prominently on their website and DLA at all times. This is a requirement under [DLD2025:13(ii)].",
+      "doc_evidence": "RenovatePro stores only the borrower's name, address and phone number. All data is on servers in India. Consent is explicit, purpose is shown at each step, and borrowers can withdraw consent and ask for deletion.",
+      "severity": "high",
+      "fix": "Implement and disclose clear policy guidelines on data collection, storage, usage, destruction, and security breach handling, prominently displayed on the RE's website and DLA.",
+      "verifier_note": "The product feature does not mention the requirement to put in place and disclose clear policy guidelines regarding the storage of customer data, including the type of data that can be stored, the length of time for which data can be stored, restrictions on the use of data, data destruction protocol, standards for handling security breach, etc., as mandated by [DLD2025:13(ii)]. The feature only describes what data is stored and where, but does not address the broader policy guidelines required by the regulation."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature allows the loan to be disbursed into the registered contractor's bank account for contractor-led projects, which is a third-party account. This directly violates the requirement that disbursement should always be made into the borrower's bank account unless specified otherwise.",
+      "doc_evidence": "Loans are paid into the borrower's own bank account. For contractor-led projects the borrower may opt to have the amount paid directly into the registered contractor's bank account, as the end-beneficiary.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly allows disbursement into the end-beneficiary's account, which in the case of contractor-led projects is the registered contractor's bank account. The feature complies with the paragraph by specifying that the end-beneficiary (the contractor) receives the funds directly. The paragraph does not prohibit this scenario and actually permits it under the condition that the loan is disbursed directly into the end-beneficiary's account. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Fees",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature states that 'RenovatePro's sourcing fee is paid by Malabar Housing Finance. The borrower pays only the charges listed in the KFS, and the APR includes all of them.' This implies that the fees payable to LSP (RenovatePro) are being paid by the RE (Malabar Housing Finance), which complies with DLD2025:9(iv). However, the feature does not explicitly state that the RE ensures that any fees, charges, reimbursements, etc. payable to LSP are paid directly by the RE and are not charged to or collected from the borrowers separately by LSP. Therefore, the feature does not clearly comply with DLD2025:9(iv).",
+      "doc_evidence": "RenovatePro's sourcing fee is paid by Malabar Housing Finance. The borrower pays only the charges listed in the KFS, and the APR includes all of them.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that RenovatePro's sourcing fee is paid by Malabar Housing Finance, which is the RE, and that the borrower pays only the charges listed in the KFS, with APR including all of them. This aligns with DLD2025:9(iv), which requires that fees payable to LSP are paid directly by the RE and not charged to borrowers. The feature does not explicitly mention the RE ensuring this, but it implicitly satisfies the requirement by stating that the RE (Malabar Housing Finance) pays the LSP's fee. Since the paragraph does not require explicit mention of the RE's ensuring action, and the feature complies with the requirement, the claim that the feature does not clearly comply is false."
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product feature states that borrowers may exit within 3 days by repaying principal and proportionate APR, without penalty. This complies with the requirement that the borrower shall be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial 'cooling-off period'. However, the cooling-off period is not explicitly determined by the Board of the RE as laid down in their loan policy, which is a requirement under this paragraph.",
+      "doc_evidence": "Borrowers may exit within 3 days by repaying principal and proportionate APR, without penalty.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature allows borrowers to exit within 3 days by repaying principal and proportionate APR without penalty, which complies with the requirement of providing an explicit option to exit during the cooling-off period. However, the cooling-off period is not explicitly determined by the Board of the RE as laid down in their loan policy, which is a requirement under the paragraph. The feature does not mention or confirm that the cooling-off period is determined by the Board of the RE, so it fails to meet this requirement."
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(ii)",
+      "issue": "The product feature mentions that a ₹500 processing fee is retained on exit, and this is disclosed upfront in the KFS. This complies with the requirement that the RE may retain a reasonable one-time processing fee, if the customer exits the loan during the cooling-off period, and that this, if applicable, shall be disclosed to the customer upfront in KFS.",
+      "doc_evidence": "A ₹500 processing fee is retained on exit, and this is disclosed upfront in the KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the RBI paragraph. The feature states that a ₹500 processing fee is retained on exit during the cooling-off period, and this is disclosed upfront in the KFS. The RBI paragraph allows the RE to retain a reasonable one-time processing fee if the customer exits during the cooling-off period, provided it is disclosed upfront in the KFS. The feature meets both conditions."
+    },
+    {
+      "feature": "Know Your Customer (KFS) and APR Disclosure",
+      "rule_id": "KFS2024:5",
+      "issue": "The KFS validity period is stated as 3 working days, which complies with the requirement of at least three working days for loans with a tenor of seven days or more. However, the paragraph requires the validity period to be at least three working days for such loans, and the product feature does not explicitly state the loan tenor. Therefore, the feature does not clearly break the requirement as the validity period is in line with the regulation.",
+      "doc_evidence": "Each KFS has a unique proposal number, is in the borrower's chosen language, includes the APR computation sheet and amortisation schedule, and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that the KFS validity period is 3 working days, which complies with the requirement of at least three working days for loans with a tenor of seven days or more. The paragraph does not require the product feature to explicitly state the loan tenor, only that the validity period must be at least three working days for such loans. Since the feature meets the validity period requirement, it does not violate the paragraph."
+    },
+    {
+      "feature": "Know Your Customer (KFS) and APR Disclosure",
+      "rule_id": "KFS2024:6",
+      "issue": "The product feature mentions the inclusion of the APR computation sheet and amortisation schedule, which aligns with the requirement. However, it does not explicitly state that the APR includes all charges levied by the RE, which is a mandatory requirement under the regulation.",
+      "doc_evidence": "Each KFS has a unique proposal number, is in the borrower's chosen language, includes the APR computation sheet and amortisation schedule, and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly states that the APR must include all charges levied by the RE. The product feature mentions the inclusion of the APR computation sheet and amortisation schedule but does not explicitly state that the APR includes all charges levied by the RE. Since the paragraph requires this, and the feature does not confirm it, the claim is valid. However, the feature does not explicitly state that the APR includes all charges, which is a mandatory requirement. Therefore, the feature does not fully comply with the paragraph."
+    },
+    {
+      "feature": "Know Your Customer (KFS) and APR Disclosure",
+      "rule_id": "KFS2024:4",
+      "issue": "The product feature states that the KFS is in the borrower's chosen language, which complies with the requirement. However, it does not explicitly mention that the contents of the KFS are explained to the borrower and that an acknowledgment is obtained that the borrower has understood the KFS.",
+      "doc_evidence": "Each KFS has a unique proposal number, is in the borrower's chosen language, includes the APR computation sheet and amortisation schedule, and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the contents of the KFS are explained to the borrower and an acknowledgment is obtained that the borrower has understood the KFS. The product feature does not mention this explanation or acknowledgment, which is a requirement under the paragraph. Therefore, the feature fails to comply with the paragraph's requirements."
+    },
+    {
+      "feature": "Data Collection and Storage",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The feature states that RenovatePro stores only the borrower's name, address and phone number. However, the RBI requires that the RE ensures that the LSP does not store personal information of the borrower except for some basic minimal data (viz., name, address, contact details of the customer, etc.) that may be required to carry out their operations or service within the scope of the RE-LSP agreement. The responsibility regarding data privacy and security of the customer’s personal information on an ongoing basis shall be that of the RE. The feature does not clarify whether the RE (Malabar Housing Finance) is taking responsibility for data privacy and security, which is a requirement under [DLD2025:13(i)].",
+      "doc_evidence": "RenovatePro stores only the borrower's name, address and phone number.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that RenovatePro stores only the borrower's name, address, and phone number, which aligns with the RBI requirement that LSPs store only basic minimal data. The feature also mentions that all data is stored on servers in India, which is not explicitly required by the RBI paragraph but does not conflict with it. The claim that the feature does not clarify whether the RE (Malabar Housing Finance) is taking responsibility for data privacy and security is not supported by the feature text. The feature does not mention the RE's responsibility, but the RBI paragraph explicitly states that the responsibility for data privacy and security is that of the RE. The feature does not contradict this requirement; it simply does not mention it. Therefore, the claim is based on what the feature does not mention, which is not a violation."
+    },
+    {
+      "feature": "Data Collection and Storage",
+      "rule_id": "DLD2025:13(ii)",
+      "issue": "The feature does not mention that clear policy guidelines regarding the storage of customer data including the type of data that can be stored, the length of time for which data can be stored, restrictions on the use of data, data destruction protocol, standards for handling security breach, etc., are put in place and disclosed by the RE and the LSP engaged by the RE prominently on their website and DLA at all times. This is a requirement under [DLD2025:13(ii)].",
+      "doc_evidence": "RenovatePro stores only the borrower's name, address and phone number. All data is on servers in India. Consent is explicit, purpose is shown at each step, and borrowers can withdraw consent and ask for deletion.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature does not mention the requirement to put in place and disclose clear policy guidelines regarding the storage of customer data, including the type of data that can be stored, the length of time for which data can be stored, restrictions on the use of data, data destruction protocol, standards for handling security breach, etc., as mandated by [DLD2025:13(ii)]. The feature only describes what data is stored and where, but does not address the broader policy guidelines required by the regulation."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature states that 'Contact details of the nodal grievance redressal officers shall be prominently displayed on the websites of the RE, its LSP and on the DLA, as well as in the KFS provided to the borrower.' However, the feature only mentions that 'contact details of the nodal grievance redressal officers are shown on the app, both websites and in the KFS.' The feature does not explicitly state that the contact details are 'prominently displayed' as required by the RBI paragraph.",
+      "doc_evidence": "Contact details of the nodal grievance redressal officers are shown on the app, both websites and in the KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that contact details be 'prominently displayed' on the websites of the RE, its LSP, and on the DLA, as well as in the KFS. The product feature mentions that the contact details are 'shown on the app, both websites and in the KFS,' but does not explicitly state that they are 'prominently displayed.' Since the feature does not confirm the 'prominent display' requirement, it may not fully comply with the RBI paragraph. However, the feature does mention display on the required platforms, and the claim relies on the absence of the word 'prominently,' which is not explicitly addressed in the feature text. Therefore, the claim is based on what the feature does not mention, and the feature does not necessarily violate the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the HomeFix: Home Improvement Loans product identified several gaps against the reviewed RBI rules. The key findings include: (1) The product feature allows borrowers to exit within 3 days without penalty, but the cooling-off period is not explicitly determined by the RE as required. (2) The APR computation sheet and amortisation schedule are included, but it does not explicitly state that the APR includes all charges levied by the RE. (3) The KFS is in the borrower's chosen language, but it does not mention that the contents are explained to the borrower and an acknowledgment is obtained. (4) The product does not mention clear policy guidelines regarding customer data storage, handling, and security breach protocols as required by [DLD2025:13(ii)].",
+  "trace": {
+    "llm_calls": 25,
+    "prompt_tokens": 13265,
+    "output_tokens": 3715,
+    "llm_seconds": 136.3,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 10,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 35,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)"
+      ],
+      "1:Fees": [
+        "KFS2024:7",
+        "DLD2025:9(iv)",
+        "DLD2025:6(iii)",
+        "KFS2024:8",
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:17(v)",
+        "KFS2024:6"
+      ],
+      "2:Cooling-off Period": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "KFS2024:7",
+        "KFS2024:5",
+        "KFS2024:6",
+        "DLD2025:26(i)",
+        "DLD2025:13(iv)"
+      ],
+      "3:Know Your Customer (KFS) and APR Disclosure": [
+        "KFS2024:5",
+        "DLD2025:9(v)",
+        "DLD2025:8(i)",
+        "DLD2025:10(i)",
+        "DLD2025:6(iv)",
+        "KFS2024:6",
+        "KFS2024:4",
+        "KFS2024:7",
+        "DLD2025:6(iii)",
+        "DLD2025:10(ii)"
+      ],
+      "4:Data Collection and Storage": [
+        "DLD2025:13(iv)",
+        "DLD2025:12(i)",
+        "DLD2025:12(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(i)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(iv)"
+      ],
+      "5:Grievance Redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:11(i)",
+        "DLD2025:11(iv)",
+        "DLD2025:11(iii)",
+        "DLD2025:17(iv)",
+        "DLD2025:8(iv)"
+      ]
+    }
+  },
+  "seconds": 136.7
+}

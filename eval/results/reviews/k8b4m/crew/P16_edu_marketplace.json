@@ -1,0 +1,168 @@
+{
+  "system": "crew",
+  "doc_id": "P16_edu_marketplace",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The course fee is paid by the lender directly into the training institute's bank account.",
+      "doc_evidence": "The course fee is paid by the lender directly into the training institute's bank account.",
+      "severity": "medium",
+      "fix": "Implement a third-party payment gateway or a direct bank transfer mechanism with proper documentation and audit trails to ensure transparency and compliance with RBI guidelines.",
+      "verifier_note": "The RBI paragraph prohibits disbursal to third-party accounts, including the accounts of LSPs, except for specific exceptions. The product feature describes disbursal into the training institute's bank account, which is a third-party account. Unless the training institute is explicitly exempted (e.g., as an end-beneficiary for a specific end use), this would violate the RBI directive. The feature does not mention any exception or exemption, so it appears to violate the RBI paragraph."
+    },
+    {
+      "feature": "Matching",
+      "rule_id": "DLD2025:6(ii)",
+      "issue": "The mechanism adopted by the LSP for matching borrowers with lenders is not consistent and is not properly documented. The sales team adjusts the rule set weekly, and the rules are not written down anywhere, which violates the requirement for a consistent approach and proper documentation.",
+      "doc_evidence": "Borrowers with the same profile may see different lenders on different days, and the rules are not written down anywhere.",
+      "severity": "high",
+      "fix": "Document the matching rules in a centralized system, and ensure that the sales team follows a standardized process for rule adjustments, with regular audits to ensure consistency and compliance.",
+      "verifier_note": "The product feature describes a mechanism where the sales team adjusts the rule set weekly and the rules are not written down. This directly contradicts the RBI paragraph which requires a consistent approach for similarly placed borrowers and proper documentation of the mechanism and any changes. The feature does not meet the requirements of the paragraph."
+    },
+    {
+      "feature": "Product",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The product feature does not provide the name(s) of the RE(s) extending the loan offer, amount and tenor of loan, APR, monthly repayment obligation and penal charges (if applicable), in a way which enables the borrower to make a fair comparison between various offers. A link to the KFS shall also be provided in respect of each of the RE.",
+      "doc_evidence": "Learners choose a course and see loan offers from partner lenders for the course fee, ₹20,000 to ₹3,00,000.",
+      "severity": "high",
+      "fix": "Revise the product feature to include all required details such as RE names, loan amount, tenor, APR, repayment obligations, and penal charges, along with a direct link to the KFS for each loan offer.",
+      "verifier_note": "The product feature does not explicitly mention the name(s) of the RE(s) extending the loan offer, amount and tenor of loan, APR, monthly repayment obligation and penal charges (if applicable), nor does it state that these details are provided in a way enabling fair comparison. It also does not mention providing a link to the KFS for each RE. Therefore, the feature does not comply with the requirements of the RBI paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The course fee is paid by the lender directly into the training institute's bank account.",
+      "doc_evidence": "The course fee is paid by the lender directly into the training institute's bank account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph prohibits disbursal to third-party accounts, including the accounts of LSPs, except for specific exceptions. The product feature describes disbursal into the training institute's bank account, which is a third-party account. Unless the training institute is explicitly exempted (e.g., as an end-beneficiary for a specific end use), this would violate the RBI directive. The feature does not mention any exception or exemption, so it appears to violate the RBI paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "doc_evidence": "Upskill Credit keeps borrowers' bank statements, salary slips and credit bureau reports on its own servers for three years to improve its matching models.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that all data be stored only in servers located within India. The product feature states that Upskill Credit stores data on its own servers, which implies the servers are located in India. However, the feature does not explicitly confirm the location of the servers. Since the paragraph explicitly allows storage in India, and the feature does not mention any processing outside India or deletion within 24 hours, there is no violation."
+    },
+    {
+      "feature": "Offer Display",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The feature describes that offers are ranked by APR, lowest first, which is a publicly pre-disclosed metric for such ranking. However, the RBI paragraph explicitly states that ranking based on such a metric shall not be construed as promoting a particular product. The feature does not indicate whether this ranking is being used to promote a particular product or not, which could potentially be seen as indirect promotion.",
+      "doc_evidence": "Offers are ranked by APR, lowest first, and the app states this ranking rule at the top of the list.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly allows ranking based on a publicly pre-disclosed metric for such ranking, and states that such ranking shall not be construed as promoting a particular product. The product feature describes the ranking metric (APR) and states the ranking rule at the top of the list, which aligns with the paragraph's allowance. The claim that the feature does not indicate whether this ranking is being used to promote a particular product is unfounded, as the paragraph explicitly allows such ranking and does not require additional disclaimers. The feature does not violate the paragraph."
+    },
+    {
+      "feature": "Matching",
+      "rule_id": "DLD2025:6(ii)",
+      "issue": "The mechanism adopted by the LSP for matching borrowers with lenders is not consistent and is not properly documented. The sales team adjusts the rule set weekly, and the rules are not written down anywhere, which violates the requirement for a consistent approach and proper documentation.",
+      "doc_evidence": "Borrowers with the same profile may see different lenders on different days, and the rules are not written down anywhere.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a mechanism where the sales team adjusts the rule set weekly and the rules are not written down. This directly contradicts the RBI paragraph which requires a consistent approach for similarly placed borrowers and proper documentation of the mechanism and any changes. The feature does not meet the requirements of the paragraph."
+    },
+    {
+      "feature": "Product",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The product feature does not provide the name(s) of the RE(s) extending the loan offer, amount and tenor of loan, APR, monthly repayment obligation and penal charges (if applicable), in a way which enables the borrower to make a fair comparison between various offers. A link to the KFS shall also be provided in respect of each of the RE.",
+      "doc_evidence": "Learners choose a course and see loan offers from partner lenders for the course fee, ₹20,000 to ₹3,00,000.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature does not explicitly mention the name(s) of the RE(s) extending the loan offer, amount and tenor of loan, APR, monthly repayment obligation and penal charges (if applicable), nor does it state that these details are provided in a way enabling fair comparison. It also does not mention providing a link to the KFS for each RE. Therefore, the feature does not comply with the requirements of the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the SkillLoan product, a marketplace for course loans, identified several gaps against the reviewed RBI rules. The findings include: (1) The course fee is paid directly by the lender into the training institute's bank account, which may not align with the required transparency and accountability standards. (2) The mechanism for matching borrowers with lenders is inconsistent and not properly documented, as the sales team frequently adjusts the rule set without written documentation. (3) The product feature fails to provide essential loan details such as the name(s) of the RE(s), loan amount, tenor, APR, monthly repayment obligation, and penal charges, which are necessary for borrowers to make informed comparisons. Additionally, a link to the KFS is not provided for each loan offer. These issues require immediate attention to ensure compliance with RBI regulations.",
+  "trace": {
+    "llm_calls": 18,
+    "prompt_tokens": 10528,
+    "output_tokens": 1790,
+    "llm_seconds": 85.2,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 5,
+      "gap_analyst": 5,
+      "verifier": 5,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 25,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(v)",
+        "DLD2025:9(iii)",
+        "DLD2025:10(ii)",
+        "DLD2025:11(iv)",
+        "DLD2025:17(iv)",
+        "DLD2025:6(ii)",
+        "DLD2025:6(iv)"
+      ],
+      "1:Data Collection": [
+        "DLD2025:13(iv)",
+        "DLD2025:13(ii)",
+        "KFS2024:5",
+        "DLD2025:8(iii)",
+        "DLD2025:16(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:12(iv)",
+        "DLD2025:12(iii)",
+        "DLD2025:8(iv)",
+        "KFS2024:7"
+      ],
+      "2:Offer Display": [
+        "DLD2025:6(iii)",
+        "KFS2024:6",
+        "DLD2025:6(iv)",
+        "KFS2024:7",
+        "DLD2025:6(i)",
+        "DLD2025:16(ii)",
+        "KFS2024:8",
+        "DLD2025:9(iv)",
+        "DLD2025:10(i)",
+        "DLD2025:6(ii)",
+        "DLD2025:7(i)"
+      ],
+      "3:Matching": [
+        "DLD2025:6(iii)",
+        "DLD2025:6(ii)",
+        "DLD2025:6(i)",
+        "DLD2025:6(iv)",
+        "DLD2025:7(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:10(i)",
+        "DLD2025:23(ii)",
+        "KFS2024:5",
+        "DLD2025:6",
+        "DLD2025:8(v)",
+        "KFS2024:4"
+      ],
+      "4:Product": [
+        "DLD2025:6(iii)",
+        "DLD2025:6(i)",
+        "DLD2025:6(iv)",
+        "DLD2025:10(ii)",
+        "DLD2025:6(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:9(iv)",
+        "DLD2025:5(ii)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:8(iv)",
+        "DLD2025:16(ii)"
+      ]
+    }
+  },
+  "seconds": 85.7
+}

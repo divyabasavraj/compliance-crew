@@ -1,0 +1,252 @@
+{
+  "system": "crew",
+  "doc_id": "P12_clean_msme_invoice",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:8(iii)",
+      "issue": "The product feature does not mention the automatic flow of digitally signed documents, including the Key Fact Statement (KFS), summary of loan product, sanction letter, terms and conditions, account statements, privacy policies of the RE / LSP with respect to storage and usage of borrowers’ data, etc., to the borrower on the registered and verified email/SMS upon execution of the loan contract/transactions.",
+      "doc_evidence": "Product: Term loans of ₹1,00,000 to ₹20,00,000 for traders, based on GST returns and bank statements.",
+      "severity": "high",
+      "fix": "Update the product feature to explicitly mention the automatic flow of digitally signed documents, including the Key Fact Statement (KFS), summary of loan product, sanction letter, terms and conditions, account statements, and privacy policies to the borrower via registered and verified email/SMS upon execution of the loan contract.",
+      "verifier_note": "The RBI paragraph explicitly requires that digitally signed documents, including the Key Fact Statement (KFS), summary of loan product, sanction letter, terms and conditions, account statements, privacy policies of the RE / LSP with respect to storage and usage of borrowers’ data, etc., must automatically flow to the borrower on the registered and verified email/SMS upon execution of the loan contract/transactions. The product feature does not mention this requirement, which is a violation of the RBI paragraph."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:8(i)",
+      "issue": "The product feature does not mention the provision of a Key Fact Statement (KFS) as per circular no. DOR.STR.REC.13/13.03.00/2024-25 on 'Key Facts Statement (KFS) for Loans & Advances' dated April 15, 2024, as amended from time to time.",
+      "doc_evidence": "Product: Term loans of ₹1,00,000 to ₹20,00,000 for traders, based on GST returns and bank statements.",
+      "severity": "high",
+      "fix": "Include the provision of a Key Fact Statement (KFS) as per circular no. DOR.STR.REC.13/13.03.00/2024-25 on 'Key Facts Statement (KFS) for Loans & Advances' dated April 15, 2024, in the product feature.",
+      "verifier_note": "The RBI paragraph explicitly requires that the RE (RBI entity) must provide a Key Fact Statement (KFS) as per the specified circular. The product feature does not mention the provision of a KFS, which is a requirement under the paragraph. Therefore, the feature fails to comply with the requirement of the paragraph."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "KFS2024:5",
+      "issue": "The product feature does not mention the provision of a unique proposal number and a validity period of at least three working days for loans having a tenor of seven days or more, and a validity period of one working day for loans having a tenor of less than seven days.",
+      "doc_evidence": "Product: Term loans of ₹1,00,000 to ₹20,00,000 for traders, based on GST returns and bank statements.",
+      "severity": "medium",
+      "fix": "Ensure the product feature includes the provision of a unique proposal number and a validity period of at least three working days for loans with a tenor of seven days or more, and one working day for loans with a tenor of less than seven days.",
+      "verifier_note": "The product feature does not mention the requirement for a unique proposal number or the validity periods for loans based on their tenor, which are explicitly mandated in the RBI paragraph. Since the feature does not include these elements, it fails to comply with the requirements stated in the paragraph."
+    },
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The feature states that Ledgerly gives Narmada Bank a DLG of 5% of the amount disbursed in a fixed loan portfolio, which is in line with the cap of 5% of the total amount disbursed. However, the paragraph also specifies that the DLG cover should be specified upfront, and the feature does not explicitly mention that the 5% DLG is specified upfront.",
+      "doc_evidence": "Ledgerly gives Narmada Bank a DLG of 5% of the amount disbursed in a fixed loan portfolio",
+      "severity": "medium",
+      "fix": "Amend the product feature to explicitly state that the 5% Default Loss Guarantee (DLG) is specified upfront in the loan contract.",
+      "verifier_note": "The RBI paragraph requires that the DLG cover be specified upfront. The product feature does not explicitly mention that the 5% DLG is specified upfront, which is a requirement under the paragraph. Therefore, the feature fails to comply with the requirement of upfront specification."
+    },
+    {
+      "feature": "Recovery Process",
+      "rule_id": "DLD2025:9(v)",
+      "issue": "The product feature states that any cash recovered is credited to the loan account the same day, which complies with the requirement that any recovery by cash shall be duly reflected in full in the borrower’s account on the same day. However, the feature does not explicitly state that the RE pays the agent's fee directly and not charged by the LSP from the recovery proceeds, which is a requirement under this paragraph.",
+      "doc_evidence": "Any cash recovered is credited to the loan account the same day, and Narmada Bank pays the agent's fee.",
+      "severity": "medium",
+      "fix": "Update the product feature to explicitly state that the RE pays the agent's fee directly and not charged by the LSP from the recovery proceeds, as required under DLD2025:9(v).",
+      "verifier_note": "The product feature does credit the cash recovered to the loan account the same day, which complies with the requirement in the RBI paragraph. However, the feature does not explicitly state that the RE (Narmada Bank) pays the agent's fee directly and not charged by the LSP from the recovery proceeds. The paragraph requires that fees, charges, etc., payable to LSPs for such recovery are paid directly by the RE and are not charged by the LSP to the borrower either directly or indirectly from the recovery proceeds. Since the feature does not explicitly state that the RE pays the agent's fee directly, it may be considered a violation."
+    },
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:17(vii)",
+      "issue": "The feature states that Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies. However, the RBI directive [DLD2025:17(vii)] requires that the reporting in respect of all DLAs on the CIMS portal is completed by June 15, 2025. The feature does not mention the completion of this reporting by the deadline, which is a compliance requirement.",
+      "doc_evidence": "Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.",
+      "severity": "high",
+      "fix": "Update the product feature to explicitly mention the completion of reporting all DLAs on the RBI CIMS portal by June 15, 2025, as required under DLD2025:17(vii).",
+      "verifier_note": "The RBI directive [DLD2025:17(vii)] requires that the reporting in respect of all DLAs on the CIMS portal is completed by June 15, 2025. The product feature states that Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies. However, the feature does not explicitly mention the completion of this reporting by the deadline. Since the paragraph explicitly requires completion by the deadline, and the feature does not confirm this, it violates the requirement."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:8(iii)",
+      "issue": "The product feature does not mention the automatic flow of digitally signed documents, including the Key Fact Statement (KFS), summary of loan product, sanction letter, terms and conditions, account statements, privacy policies of the RE / LSP with respect to storage and usage of borrowers’ data, etc., to the borrower on the registered and verified email/SMS upon execution of the loan contract/transactions.",
+      "doc_evidence": "Product: Term loans of ₹1,00,000 to ₹20,00,000 for traders, based on GST returns and bank statements.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires that digitally signed documents, including the Key Fact Statement (KFS), summary of loan product, sanction letter, terms and conditions, account statements, privacy policies of the RE / LSP with respect to storage and usage of borrowers’ data, etc., must automatically flow to the borrower on the registered and verified email/SMS upon execution of the loan contract/transactions. The product feature does not mention this requirement, which is a violation of the RBI paragraph."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:8(i)",
+      "issue": "The product feature does not mention the provision of a Key Fact Statement (KFS) as per circular no. DOR.STR.REC.13/13.03.00/2024-25 on 'Key Facts Statement (KFS) for Loans & Advances' dated April 15, 2024, as amended from time to time.",
+      "doc_evidence": "Product: Term loans of ₹1,00,000 to ₹20,00,000 for traders, based on GST returns and bank statements.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly requires that the RE (RBI entity) must provide a Key Fact Statement (KFS) as per the specified circular. The product feature does not mention the provision of a KFS, which is a requirement under the paragraph. Therefore, the feature fails to comply with the requirement of the paragraph."
+    },
+    {
+      "feature": "Disbursal",
+      "rule_id": "KFS2024:5",
+      "issue": "The product feature does not mention the provision of a unique proposal number and a validity period of at least three working days for loans having a tenor of seven days or more, and a validity period of one working day for loans having a tenor of less than seven days.",
+      "doc_evidence": "Product: Term loans of ₹1,00,000 to ₹20,00,000 for traders, based on GST returns and bank statements.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature does not mention the requirement for a unique proposal number or the validity periods for loans based on their tenor, which are explicitly mandated in the RBI paragraph. Since the feature does not include these elements, it fails to comply with the requirements stated in the paragraph."
+    },
+    {
+      "feature": "Offer Presentation",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The feature 'Offer Presentation' does not comply with the requirement that the digital view of loan offers from matching lenders shall include the name(s) of the RE(s) extending the loan offer, amount and tenor of loan, APR, monthly repayment obligation and penal charges (if applicable), in a way which enables the borrower to make a fair comparison between various offers. A link to the KFS shall also be provided in respect of each of the RE.",
+      "doc_evidence": "Ledgerly shows all matching offers with lender name, amount, tenor, APR, monthly repayment and penal charges, and a link to each lender's KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature includes all the required elements: lender name, amount, tenor, APR, monthly repayment, penal charges (if applicable), and a link to each lender's KFS. It also sorts offers by APR, lowest first, which supports fair comparison. The paragraph does not prohibit sorting by APR or ranking, and there is no indication that lenders who did not match are excluded from the requirement. The feature complies with the RBI paragraph."
+    },
+    {
+      "feature": "Offer Presentation",
+      "rule_id": "DLD2025:6(iv)",
+      "issue": "The feature 'Offer Presentation' does not comply with the requirement that the content displayed by the LSP shall be unbiased, objective and shall not directly/indirectly promote or push a product of a particular RE, including the use of dark patterns/deceptive patterns designed to mislead borrowers into choosing a particular loan offer. However, ranking of loan offers based on a publicly pre-disclosed metric for such ranking shall not be construed as promoting a particular product.",
+      "doc_evidence": "Offers are sorted by APR, lowest first, a ranking rule published on Ledgerly's website.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature sorts offers by APR, lowest first, using a ranking rule published on Ledgerly's website. This aligns with the RBI paragraph's exception that ranking based on a publicly pre-disclosed metric is not considered promoting a particular product. The feature does not use dark patterns or deceptive methods to push a product, and it displays all matching and non-matching lenders objectively. Therefore, the feature complies with the requirement."
+    },
+    {
+      "feature": "Credit Limit Management",
+      "rule_id": "DLD2025:7(ii)",
+      "issue": "The feature 'Credit Limit Management' states that 'Limits are increased only when the trader asks for an increase in the app; each request is assessed and recorded.' This complies with the requirement that there is no automatic increase in credit limit unless an explicit request is received, evaluated and kept on record from the borrower for such increase.",
+      "doc_evidence": "Limits are increased only when the trader asks for an increase in the app; each request is assessed and recorded.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that credit limits are only increased when the trader explicitly asks for an increase in the app, and each request is assessed and recorded. This directly aligns with the RBI requirement that there should be no automatic increase in credit limit unless an explicit request is received, evaluated, and kept on record. The feature does not allow for automatic increases, which is explicitly prohibited by the RBI paragraph. Therefore, the feature complies with the requirement."
+    },
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:26(i)",
+      "issue": "The feature describes that the Default Loss Guarantee (DLG) is invoked within 90 days overdue, which is less than the maximum overdue period of 120 days required by RBI.",
+      "doc_evidence": "It is invoked within 90 days overdue.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that DLG be invoked within a maximum overdue period of 120 days, unless the loan dues are made good by the borrower. The product feature states that the DLG is invoked within 90 days overdue, which is within the 120-day limit. Therefore, the feature complies with the RBI requirement."
+    },
+    {
+      "feature": "Default Loss Guarantee",
+      "rule_id": "DLD2025:23(i)",
+      "issue": "The feature states that Ledgerly gives Narmada Bank a DLG of 5% of the amount disbursed in a fixed loan portfolio, which is in line with the cap of 5% of the total amount disbursed. However, the paragraph also specifies that the DLG cover should be specified upfront, and the feature does not explicitly mention that the 5% DLG is specified upfront.",
+      "doc_evidence": "Ledgerly gives Narmada Bank a DLG of 5% of the amount disbursed in a fixed loan portfolio",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the DLG cover be specified upfront. The product feature does not explicitly mention that the 5% DLG is specified upfront, which is a requirement under the paragraph. Therefore, the feature fails to comply with the requirement of upfront specification."
+    },
+    {
+      "feature": "Recovery Process",
+      "rule_id": "DLD2025:8(v)",
+      "issue": "The product feature states that the trader is told by SMS and email who the recovery agent is before the agent makes contact. This complies with the requirement to communicate the particulars of the recovery agent to the borrower through email/SMS before the agent contacts the borrower for recovery.",
+      "doc_evidence": "If a loan defaults, the trader is told by SMS and email who the recovery agent is before the agent makes contact.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that the trader is informed by SMS and email of the recovery agent before the agent makes contact, which directly complies with the RBI paragraph's requirement to communicate the recovery agent's particulars to the borrower through email/SMS before contact. There is no indication that the feature violates the paragraph."
+    },
+    {
+      "feature": "Recovery Process",
+      "rule_id": "DLD2025:9(v)",
+      "issue": "The product feature states that any cash recovered is credited to the loan account the same day, which complies with the requirement that any recovery by cash shall be duly reflected in full in the borrower’s account on the same day. However, the feature does not explicitly state that the RE pays the agent's fee directly and not charged by the LSP from the recovery proceeds, which is a requirement under this paragraph.",
+      "doc_evidence": "Any cash recovered is credited to the loan account the same day, and Narmada Bank pays the agent's fee.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature does credit the cash recovered to the loan account the same day, which complies with the requirement in the RBI paragraph. However, the feature does not explicitly state that the RE (Narmada Bank) pays the agent's fee directly and not charged by the LSP from the recovery proceeds. The paragraph requires that fees, charges, etc., payable to LSPs for such recovery are paid directly by the RE and are not charged by the LSP to the borrower either directly or indirectly from the recovery proceeds. Since the feature does not explicitly state that the RE pays the agent's fee directly, it may be considered a violation."
+    },
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:17(vii)",
+      "issue": "The feature states that Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies. However, the RBI directive [DLD2025:17(vii)] requires that the reporting in respect of all DLAs on the CIMS portal is completed by June 15, 2025. The feature does not mention the completion of this reporting by the deadline, which is a compliance requirement.",
+      "doc_evidence": "Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI directive [DLD2025:17(vii)] requires that the reporting in respect of all DLAs on the CIMS portal is completed by June 15, 2025. The product feature states that Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies. However, the feature does not explicitly mention the completion of this reporting by the deadline. Since the paragraph explicitly requires completion by the deadline, and the feature does not confirm this, it violates the requirement."
+    },
+    {
+      "feature": "Credit Bureau Reporting",
+      "rule_id": "DLD2025:16(i)",
+      "issue": "The feature states that Narmada Bank reports all loans to credit information companies. However, the RBI directive [DLD2025:16(i)] requires that any lending done through their DLAs and/or DLAs of LSPs is reported by them to CICs irrespective of its nature/tenor. The feature does not explicitly confirm that all lending through DLAs is reported to CICs, which is a compliance requirement.",
+      "doc_evidence": "Narmada Bank has reported the TradeCredit app on the RBI CIMS portal and reports all loans to credit information companies.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that Narmada Bank reports all loans to credit information companies. The RBI directive [DLD2025:16(i)] requires that any lending done through their DLAs and/or DLAs of LSPs is reported to CICs irrespective of its nature/tenor. The feature does not explicitly confirm that all lending through DLAs is reported to CICs, which is a compliance requirement. However, the feature does mention reporting all loans to CICs, which could be interpreted as including lending through DLAs. The claim relies on the assumption that 'all loans' necessarily includes lending through DLAs, which is not explicitly confirmed in the feature text. Therefore, the claim is based on an inference not directly supported by the feature text."
+    }
+  ],
+  "summary": "The compliance review of the TradeCredit: Working Capital Loans for Small Traders product identified several gaps against the reviewed RBI rules. The product feature does not adequately address the automatic flow of digitally signed documents, including the Key Fact Statement (KFS), as required by DLD2025:8(iii) and DLD2025:8(i). Additionally, it lacks provisions for a unique proposal number and validity period for loans with specific tenors, as outlined in KFS2024:5. The DLG cover of 5% is not explicitly stated to be specified upfront, which is a requirement under DLD2025:23(i). The product feature also does not clarify that the RE pays the agent's fee directly, as required by DLD2025:9(v). Lastly, the feature does not mention the completion of reporting on the RBI CIMS portal by the mandated deadline of June 15, 2025, as per DLD2025:17(vii).",
+  "trace": {
+    "llm_calls": 27,
+    "prompt_tokens": 14260,
+    "output_tokens": 4034,
+    "llm_seconds": 148.0,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 12,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 36,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:8(iii)",
+        "DLD2025:8(i)",
+        "KFS2024:5",
+        "DLD2025:20(iii)",
+        "DLD2025:27(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:25(i)",
+        "DLD2025:25(ii)",
+        "DLD2025:6(iv)"
+      ],
+      "1:Offer Presentation": [
+        "DLD2025:6(iii)",
+        "KFS2024:6",
+        "DLD2025:6(ii)",
+        "KFS2024:7",
+        "DLD2025:6(iv)",
+        "KFS2024:10",
+        "DLD2025:16(ii)"
+      ],
+      "2:Credit Limit Management": [
+        "DLD2025:7(ii)",
+        "KFS2024:6",
+        "DLD2025:29(i)",
+        "DLD2025:7(i)",
+        "DLD2025:16(ii)",
+        "KFS2024:5",
+        "KFS2024:10",
+        "DLD2025:23(ii)",
+        "DLD2025:27(ii)",
+        "DLD2025:16(i)"
+      ],
+      "3:Default Loss Guarantee": [
+        "DLD2025:22(i)",
+        "DLD2025:23(i)",
+        "DLD2025:26(i)",
+        "DLD2025:24(ii)",
+        "DLD2025:23(ii)",
+        "DLD2025:20(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:19(ii)",
+        "DLD2025:8(v)"
+      ],
+      "4:Recovery Process": [
+        "DLD2025:8(v)",
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:24(iii)",
+        "DLD2025:5(v)"
+      ],
+      "5:Credit Bureau Reporting": [
+        "DLD2025:17(vii)",
+        "DLD2025:16(i)",
+        "DLD2025:17(i)",
+        "DLD2025:16(ii)",
+        "DLD2025:17(v)",
+        "DLD2025:17(ii)",
+        "KFS2024:10"
+      ]
+    }
+  },
+  "seconds": 148.3
+}

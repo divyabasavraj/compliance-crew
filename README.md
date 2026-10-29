@@ -76,7 +76,14 @@ Run on Kaggle (free, 2× T4, one GPU per model) so both models share the hardwar
 
 - **14B v3 is the best configuration measured**: +4 violations on test and half the false alarms of 14B v2. Retrieval misses fall from 6 to 1 (P20-d, which no section search reaches). Across all 5 fully compliant docs (dev + test) it raises 1 false alarm.
 - With v2, 14B fixed the Gap Analyst (misses 6 → 1) but its search queries lost rules the 8B queries found, so retrieval misses rose from 3 to 6. v3 makes retrieval depend less on the model, and that recovered them.
-- **v3 is a trade-off for 8B.** Test improves by 3, but dev drops by 3 against the Mac v2 run (24/27 → 21/27). All three dev losses were retrieved in both versions; the feature pools are 1.3–1.7× larger in v3 and the 8B Gap Analyst stops proposing the rule. The small model does worse with more context. (There is no Kaggle 8B v2 dev run, so hardware noise of ~1 violation is not ruled out.)
+- **For 8B, v3 is a small net gain.** Against the Mac v2 run it looked like a trade-off (test +3, dev −3: 24/27 → 21/27), and I first blamed the 1.3–1.7× larger pools for diluting the 8B Gap Analyst. A follow-up Kaggle run put 8B back at the v2 depth on the same hardware: dev 22/27, test 32/41. So against a same-hardware baseline, v3 costs 1 on dev and gains 2 on test. A middle depth (k=10, cap 14) gave 23/27 and 31/41. Differences of 1–2 violations between these runs are within run-to-run noise (the same 8B code gave 24 and 22 on dev on Mac and Kaggle), so one v3 depth stays the default for both models.
+
+| Qwen3 8B, Kaggle T4 | Dev recall | Test recall | Dev / test precision |
+|---|---|---|---|
+| v2 depth (k=5, cap 10) | 0.81 (22/27) | 0.78 (32/41) | 0.51 / 0.44 |
+| middle (k=10, cap 14) | 0.85 (23/27) | 0.76 (31/41) | 0.50 / 0.52 |
+| v3 depth (k=10, cap 24) | 0.78 (21/27) | 0.83 (34/41) | 0.45 / 0.48 |
+
 - Honesty note: k=10 was chosen from test-split ranks (dev was already 27/27 at k=5 and could not tell k values apart), so v3 test numbers are "test, retrieval tuned on it". Dev is the regression check.
 
 Full tables (v1/v2/v3, Mac and Kaggle, 8B/14B × dev/test/all): `uv run python eval/summarize.py`.

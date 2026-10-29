@@ -418,3 +418,24 @@ What it shows:
    - Message check now runs on 3,602 real agent messages (the v3 Kaggle runs added traces): 0 dropped.
 9. 21:22  `[RESULT]` The output check now reports **2 redactions on 168 real reports** (0 on 64 before). Both are in `k14b3/P08`: the evidence quotes `support@flexline.example` and the email recognizer masks it. `[DECISION]` Expected behaviour, no code change: the guard cannot tell a role address from a personal one, and masking a quoted company email costs nothing.
 10. 21:24  README security table (set 3 row, 0/56 benign, 3,602 messages, the known gap is now misspelled reversed text) and the blog security paragraph updated. Files: `README.md`, `docs/BLOG.md`.
+11. 21:57  Kaggle run 3 COMPLETE (kernel version 4, ~50 min, ₹0). Downloaded to a scratch dir, every per-doc JSON parses, 32/32 docs for both tags. Copied `review.k8b4s.all.json`, `review.k8b4m.all.json` and `eval/results/reviews/k8b4s`, `k8b4m` into the repo and rescored per split from the cache. `eval/summarize.py` prints the new tags.
+   - `[RESULT]` Qwen3 8B, crew + Verifier, Kaggle T4:
+
+| Run | Depth (k / cap) | Dev recall | Dev precision | Dev clean-doc alarms | Test recall | Test precision | Test false alarms | Sec/doc dev / test |
+|---|---|---|---|---|---|---|---|---|
+| `k8b4s` | 5 / 10 (v2 depth) | 0.81 (22/27) | 0.51 | 10 | 0.78 (32/41) | 0.44 | 40 | 116 / 86 |
+| `k8b4m` | 10 / 14 | 0.85 (23/27) | 0.50 | 3 | 0.76 (31/41) | 0.52 | 29 | 148 / 103 |
+| `k8b3` | 10 / 24 (v3) | 0.78 (21/27) | 0.45 | 5 | **0.83 (34/41)** | 0.48 | 37 | 168 / 126 |
+| `v2` (Mac) | 5 / 10 | 0.89 (24/27) | 0.62 | 3 | 0.78 (32/41) | 0.45 | 39 | 218 / 185 |
+
+   - Dev misses: `k8b4s` P02-a, P02-b, P05-b (Verifier), P07-b, P08-a (Gap Analyst). Of the three Day 5 "dilution" losses (P04-b, P06-b, P08-a), the v2 depth recovers P04-b and P06-b but still misses P08-a, and it loses P05-b instead.
+   - `[FAILURE]` (of reasoning, Day 5 step 2) The "larger pools dilute the 8B Gap Analyst" explanation compared a Kaggle run against a Mac run. On the same hardware, v3 depth costs 8B **1** dev violation and gains **2** on test. The same v2-depth code scored 24/27 on Mac and 22/27 on Kaggle, so ±2 is run-to-run noise at this benchmark size. Lesson: get a same-hardware baseline before writing an explanation, and do not build a mechanism on a 3-violation difference.
+   - `[DECISION]` **No per-model depth.** One v3 default (k=10, cap 24) for both models: it has the best 8B test recall and the best 14B result, and the dev cost is within noise. The `CC_SECTION_K` / `CC_MAX_PARAGRAPHS` overrides stay for experiments.
+12. 22:05  README ("For 8B, v3 is a small net gain" plus the depth table) and the blog 8B paragraph rewritten to the corrected finding. Files: `README.md`, `docs/BLOG.md`, `docs/PROJECT_LOG.md`, `eval/summarize.py`.
+
+### End of day
+- **Done:** reversed-text injection fix with a fresh held-out set 3 (set 2 8/8, set 3 7/8, 0/56 false blocks, 60 tests pass); 8B retrieval depth measured on Kaggle (no per-model depth needed; Day 5 explanation corrected); README, blog and log updated; pushed.
+- **Not done:** posting the blog (user, later); live full reviews (needs a server + an LLM key: user decision); Space not redeployed (demo data unchanged today, so no need).
+- **Next:**
+  - `[NEXT]` Optional: misspelled reversed injection (H22): fuzzy verb matching in the rules or a "decode this" pre-pass for the Guardian, measured on a fresh set 4 written first.
+  - `[NEXT]` Optional: repeat runs (same config, different seeds) to put an error bar on recall; 1–2 violation differences are currently noise.

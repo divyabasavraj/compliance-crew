@@ -1,0 +1,196 @@
+{
+  "system": "crew",
+  "doc_id": "P08_creditline_app",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Grievance redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature states that 'Contact details of the nodal grievance redressal officers shall be prominently displayed on the websites of the RE, its LSP and on the DLA, as well as in the KFS provided to the borrower.' However, the feature describes that 'There is no named grievance officer; the support team handles all issues, and contact details are not included in the KFS.' This clearly breaks the requirement of DLD2025:11(ii) as it does not provide contact details of the nodal grievance redressal officers in the KFS.",
+      "doc_evidence": "There is no named grievance officer; the support team handles all issues, and contact details are not included in the KFS.",
+      "severity": "high",
+      "fix": "Assign a named grievance officer and include their contact details in the KFS and on the DLA, RE, and LSP websites.",
+      "verifier_note": "The RBI paragraph requires that contact details of the nodal grievance redressal officers be prominently displayed on the websites of the RE, its LSP, and on the DLA, as well as in the KFS provided to the borrower. The product feature states that there is no named grievance officer, and contact details are not included in the KFS. This directly violates the requirement of DLD2025:11(ii) by failing to provide contact details of the nodal grievance redressal officers in the KFS."
+    },
+    {
+      "feature": "Loan documents",
+      "rule_id": "DLD2025:8(iii)",
+      "issue": "The product feature states that 'Documents are not sent by email or SMS.' This directly contradicts the requirement in [DLD2025:8(iii)] which mandates that digitally signed documents, including the KFS, sanction letter, and terms, shall automatically flow to the borrower on the registered and verified email/SMS upon execution of the loan contract/transactions.",
+      "doc_evidence": "Documents are not sent by email or SMS.",
+      "severity": "high",
+      "fix": "Implement a system to automatically send digitally signed loan documents (KFS, sanction letter, terms) to the borrower's registered email/SMS upon loan execution.",
+      "verifier_note": "The RBI paragraph [DLD2025:8(iii)] explicitly requires that digitally signed documents, including KFS, sanction letter, and terms, must automatically flow to the borrower on the registered and verified email/SMS upon execution of the loan contract. The product feature states that documents are not sent by email or SMS, which directly contradicts this requirement. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The feature 'Location tracking: For fraud prevention, the app tracks the user's location continuously while the credit line is active.' does not comply with RBI's requirement that data collection by DLA and DLA of LSP must be need-based and with prior and explicit consent of the borrower having audit trail. Continuous location tracking without explicit consent for purposes beyond on-boarding/KYC is not permitted.",
+      "doc_evidence": "Location tracking: For fraud prevention, the app tracks the user's location continuously while the credit line is active.",
+      "severity": "high",
+      "fix": "Modify the location tracking feature to collect location data only with explicit borrower consent and ensure audit trails are maintained for all data collection activities.",
+      "verifier_note": "The RBI paragraph explicitly allows one-time access to location for on-boarding/KYC purposes with explicit consent. The product feature describes continuous location tracking for fraud prevention, which is not explicitly permitted by the RBI paragraph. The paragraph does not allow continuous tracking beyond the one-time access for on-boarding/KYC. Therefore, the feature violates the RBI requirement."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature states: \"Product: A revolving credit line of ₹10,000 to ₹2,00,000 that users can draw from and repay any time.\" This implies that the loan is disbursed directly to the borrower's account, which complies with the requirement that disbursement must be made into the borrower's bank account. However, the feature does not explicitly state that the disbursement is made into the borrower's bank account, which is a mandatory requirement under DLD2025:9(i).",
+      "doc_evidence": "Product: A revolving credit line of ₹10,000 to ₹2,00,000 that users can draw from and repay any time.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature does not explicitly state that disbursement is made into the borrower's bank account. However, the claim relies on an assumption that the feature implies disbursement to the borrower's account, which is not stated in the feature text. Since the feature does not mention the disbursement method, and the claim is based on an unstated assumption, it does not constitute a violation."
+    },
+    {
+      "feature": "Default loss guarantee",
+      "rule_id": "DLD2025:22(i)",
+      "issue": "The feature 'Default loss guarantee' as described by the product does not comply with RBI paragraph DLD2025:22(i), which specifies that DLG must be in the form of cash deposited with the RE, fixed deposit with a Scheduled Commercial Bank with a lien marked in favour of the RE, or bank guarantee in favour of the RE. The product's description mentions a cash deposit with the bank, which is acceptable, but the feature is described as a 'DLG of 5% on the credit line portfolio, as a cash deposit with the bank', which may not clearly satisfy the requirement for DLG to be in one or more of the specified forms.",
+      "doc_evidence": "FlexLine Fintech provides Indus Valley Bank a DLG of 5% on the credit line portfolio, as a cash deposit with the bank.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a 'DLG of 5% on the credit line portfolio, as a cash deposit with the bank'. This aligns with the RBI paragraph's requirement that DLG must be in the form of 'cash deposited with the RE'. The feature does not mention any other forms (fixed deposit or bank guarantee) but explicitly states the cash deposit form, which is acceptable. The paragraph does not prohibit this form and allows it. Therefore, the feature complies with the RBI paragraph."
+    },
+    {
+      "feature": "Grievance redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature states that 'Contact details of the nodal grievance redressal officers shall be prominently displayed on the websites of the RE, its LSP and on the DLA, as well as in the KFS provided to the borrower.' However, the feature describes that 'There is no named grievance officer; the support team handles all issues, and contact details are not included in the KFS.' This clearly breaks the requirement of DLD2025:11(ii) as it does not provide contact details of the nodal grievance redressal officers in the KFS.",
+      "doc_evidence": "There is no named grievance officer; the support team handles all issues, and contact details are not included in the KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that contact details of the nodal grievance redressal officers be prominently displayed on the websites of the RE, its LSP, and on the DLA, as well as in the KFS provided to the borrower. The product feature states that there is no named grievance officer, and contact details are not included in the KFS. This directly violates the requirement of DLD2025:11(ii) by failing to provide contact details of the nodal grievance redressal officers in the KFS."
+    },
+    {
+      "feature": "Loan documents",
+      "rule_id": "DLD2025:8(iii)",
+      "issue": "The product feature states that 'Documents are not sent by email or SMS.' This directly contradicts the requirement in [DLD2025:8(iii)] which mandates that digitally signed documents, including the KFS, sanction letter, and terms, shall automatically flow to the borrower on the registered and verified email/SMS upon execution of the loan contract/transactions.",
+      "doc_evidence": "Documents are not sent by email or SMS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:8(iii)] explicitly requires that digitally signed documents, including KFS, sanction letter, and terms, must automatically flow to the borrower on the registered and verified email/SMS upon execution of the loan contract. The product feature states that documents are not sent by email or SMS, which directly contradicts this requirement. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Data collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The feature 'Location tracking: For fraud prevention, the app tracks the user's location continuously while the credit line is active.' does not comply with RBI's requirement that data collection by DLA and DLA of LSP must be need-based and with prior and explicit consent of the borrower having audit trail. Continuous location tracking without explicit consent for purposes beyond on-boarding/KYC is not permitted.",
+      "doc_evidence": "Location tracking: For fraud prevention, the app tracks the user's location continuously while the credit line is active.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly allows one-time access to location for on-boarding/KYC purposes with explicit consent. The product feature describes continuous location tracking for fraud prevention, which is not explicitly permitted by the RBI paragraph. The paragraph does not allow continuous tracking beyond the one-time access for on-boarding/KYC. Therefore, the feature violates the RBI requirement."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature states that 'Repayments go directly into Indus Valley Bank's account via UPI or net banking. FlexLine never handles borrower funds.' This directly complies with the requirement that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "Repayments go directly into Indus Valley Bank's account via UPI or net banking. FlexLine never handles borrower funds.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph prohibits the use of any pass-through account or pool account of any third party, including the accounts of LSP, for loan servicing and repayment. The product feature states that repayments go directly into Indus Valley Bank's account via UPI or net banking, and FlexLine never handles borrower funds. This directly complies with the requirement by ensuring that the borrower's funds go directly into the RE’s bank account without involving any third-party accounts. There is no violation."
+    }
+  ],
+  "summary": "The compliance review of the FlexLine: Revolving Credit Line App identified several critical non-compliance issues with the RBI rules. The product feature fails to provide contact details of the nodal grievance redressal officers in the KFS, violating DLD2025:11(ii). Additionally, the app does not send digitally signed documents via email or SMS, which is a direct violation of DLD2025:8(iii). Lastly, the continuous location tracking feature for fraud prevention does not comply with RBI's data collection requirements, as it lacks explicit borrower consent and is not need-based, violating DLD2025:12(i).",
+  "trace": {
+    "llm_calls": 21,
+    "prompt_tokens": 13492,
+    "output_tokens": 2369,
+    "llm_seconds": 113.1,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 6,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 30,
+    "retrieved": {
+      "0:Disbursal": [
+        "DLD2025:20(i)",
+        "DLD2025:6(iv)",
+        "DLD2025:7(ii)",
+        "DLD2025:29(i)",
+        "DLD2025:16(i)",
+        "DLD2025:20(ii)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(ii)",
+        "DLD2025:13(iv)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(iv)"
+      ],
+      "1:Default loss guarantee": [
+        "DLD2025:23(i)",
+        "DLD2025:22(i)",
+        "DLD2025:25(i)",
+        "DLD2025:19(iii)",
+        "DLD2025:20(ii)",
+        "DLD2025:20(i)",
+        "DLD2025:16(i)",
+        "DLD2025:23(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:27(i)",
+        "DLD2025:19(ii)",
+        "DLD2025:29(ii)",
+        "DLD2025:15(i)"
+      ],
+      "2:Grievance redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:11(i)",
+        "DLD2025:11(iv)",
+        "KFS2024:9",
+        "DLD2025:17(iv)",
+        "DLD2025:11(iii)",
+        "KFS2024:8",
+        "KFS2024:4",
+        "DLD2025:8(v)",
+        "DLD2025:17(v)"
+      ],
+      "3:Loan documents": [
+        "DLD2025:8(iii)",
+        "KFS2024:7",
+        "KFS2024:4",
+        "KFS2024:5",
+        "KFS2024:8",
+        "DLD2025:13(iv)",
+        "DLD2025:13(iii)",
+        "DLD2025:15(i)",
+        "DLD2025:16(i)",
+        "DLD2025:6",
+        "DLD2025:20(i)",
+        "DLD2025:12(i)",
+        "KFS2024:6",
+        "DLD2025:6(iii)"
+      ],
+      "4:Data collection": [
+        "DLD2025:12(i)",
+        "DLD2025:7(ii)",
+        "DLD2025:7(i)",
+        "DLD2025:17(ii)",
+        "DLD2025:8(v)",
+        "DLD2025:20(i)",
+        "DLD2025:16(i)",
+        "DLD2025:17(i)",
+        "DLD2025:12(iii)",
+        "DLD2025:12(ii)",
+        "DLD2025:17(iv)",
+        "DLD2025:16(ii)",
+        "DLD2025:6(ii)",
+        "DLD2025:29(i)"
+      ],
+      "5:Repayment": [
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:6(i)",
+        "DLD2025:7(ii)",
+        "DLD2025:11(iv)",
+        "DLD2025:20(iii)"
+      ]
+    }
+  },
+  "seconds": 113.7
+}

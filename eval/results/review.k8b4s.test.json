@@ -1,0 +1,72 @@
+{
+  "model": "qwen3:8b",
+  "tag": "k8b4s",
+  "split": "test",
+  "docs": 20,
+  "results": {
+    "crew_no_verifier": {
+      "recall": 0.78,
+      "precision": 0.256,
+      "caught": 32,
+      "planted": 41,
+      "unique_flags": 125,
+      "false_alarms": 93,
+      "clean_doc_false_alarms": 26,
+      "citation_validity": 1.0,
+      "missed": [
+        "P15-b",
+        "P16-b",
+        "P17-b",
+        "P19-b",
+        "P20-a",
+        "P20-b",
+        "P20-d",
+        "P21-b",
+        "P32-b"
+      ],
+      "sec_per_doc": 85.8,
+      "llm_calls_per_doc": 19.0,
+      "tokens_per_doc": 11873
+    },
+    "crew": {
+      "recall": 0.78,
+      "precision": 0.444,
+      "caught": 32,
+      "planted": 41,
+      "unique_flags": 72,
+      "false_alarms": 40,
+      "clean_doc_false_alarms": 9,
+      "citation_validity": 1.0,
+      "missed": [
+        "P15-b",
+        "P16-b",
+        "P17-b",
+        "P19-b",
+        "P20-a",
+        "P20-b",
+        "P20-d",
+        "P21-b",
+        "P32-b"
+      ],
+      "sec_per_doc": 85.8,
+      "llm_calls_per_doc": 19.0,
+      "tokens_per_doc": 11873,
+      "miss_stages": {
+        "not_retrieved": [
+          "P16-b",
+          "P17-b",
+          "P19-b",
+          "P20-d"
+        ],
+        "analyst_missed": [
+          "P15-b",
+          "P20-a",
+          "P20-b",
+          "P21-b",
+          "P32-b"
+        ],
+        "verifier_rejected": []
+      }
+    }
+  }
+}

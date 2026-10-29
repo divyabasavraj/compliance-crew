@@ -1,0 +1,237 @@
+{
+  "system": "crew",
+  "doc_id": "P26_clean_gold_loan",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature does not explicitly mention that the contact details of the nodal grievance redressal officers are prominently displayed on the DLA, which is a requirement under [DLD2025:11(ii)]. The feature only states that the nodal grievance officers are named on the websites and in the KFS, but it does not confirm their prominence on the DLA.",
+      "doc_evidence": "The KFS, sanction letter and terms are emailed automatically after signing. Nodal grievance officers of both companies are named on both websites, in the app and in the KFS.",
+      "severity": "medium",
+      "fix": "Ensure that the contact details of the nodal grievance redressal officers are prominently displayed on the DLA, as required by [DLD2025:11(ii)]. This can be achieved by placing the details in a clearly visible section of the DLA and using bold or highlighted formatting.",
+      "verifier_note": "The RBI paragraph [DLD2025:11(ii)] explicitly requires that contact details of the nodal grievance redressal officers be prominently displayed on the DLA. The product feature does not mention anything about the DLA, and therefore does not comply with this requirement. The feature only mentions the websites and KFS, but not the DLA, which is a specific requirement in the paragraph."
+    },
+    {
+      "feature": "KFS (Know Your Customer and Financial Services)",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is shown in the customer's chosen language (English, Marathi, Kannada or Hindi), which complies with the requirement that the KFS shall be written in a language understood by such borrowers. However, the feature does not explicitly state that the contents of the KFS are explained to the borrower and an acknowledgment is obtained that he/she has understood the same.",
+      "doc_evidence": "A KFS in the customer's chosen language (English, Marathi, Kannada or Hindi) with a unique proposal number, APR computation sheet including all charges, and repayment schedule is shown before signing, and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "Update the feature to explicitly state that the contents of the KFS are explained to the borrower and an acknowledgment is obtained that the borrower has understood the same. This can be done by adding a step in the process where the borrower is informed and signs an acknowledgment form.",
+      "verifier_note": "The RBI paragraph requires that the contents of the KFS are explained to the borrower and an acknowledgment is obtained that he/she has understood the same. The product feature does not mention this explanation or acknowledgment, which is a required action under the paragraph. Therefore, the feature fails to comply with the requirement."
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The feature 'Cooling-off: Customers can exit within 3 days by repaying principal and proportionate APR without penalty' does not comply with the requirement that the cooling-off period shall be determined by the Board of the RE as laid down in their loan policy, subject to the period so determined not being less than one day.",
+      "doc_evidence": "Cooling-off: Customers can exit within 3 days by repaying principal and proportionate APR without penalty.",
+      "severity": "high",
+      "fix": "Revise the cooling-off period policy to ensure it is determined by the RE Board as per their loan policy and is not less than one day. Update the feature to reflect the actual cooling-off period as per the RE Board's policy.",
+      "verifier_note": "The product feature states that the cooling-off period is 3 days, which is a specific duration. The RBI paragraph requires that the cooling-off period be determined by the Board of the RE as per their loan policy, with the condition that the period is not less than one day. The feature does not mention that the 3-day period is determined by the Board of the RE, which is a requirement in the RBI paragraph. Therefore, the feature does not comply with the requirement that the cooling-off period be determined by the Board of the RE."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal and Repayment",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature states that 'Disbursal and repayment: Top-ups are credited to the customer's bank account. Repayments go directly to Sahyadri Bank's account; AurumTech never handles funds and is paid its fee by the bank.' This complies with DLD2025:9(i) as it ensures that disbursal is made into the borrower's bank account and repayment is executed directly in the RE’s bank account without any pass-through account or involvement of LSP in handling funds.",
+      "doc_evidence": "Disbursal and repayment: Top-ups are credited to the customer's bank account. Repayments go directly to Sahyadri Bank's account; AurumTech never handles funds and is paid its fee by the bank.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph (DLD2025:9(i)) explicitly prohibits disbursal to third-party accounts, including LSP accounts, except for specific exceptions. The product feature states that repayments go directly to Sahyadri Bank's account, which is the RE's bank account. This complies with the requirement that disbursal must be made into the borrower's bank account and that repayments go directly to the RE's account without involving third-party accounts or LSPs. The feature does not involve disbursal to third-party accounts, and it aligns with the RBI directions. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Disbursal and Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature states that 'Disbursal and repayment: Top-ups are credited to the customer's bank account. Repayments go directly to Sahyadri Bank's account; AurumTech never handles funds and is paid its fee by the bank.' This complies with DLD2025:9(ii) as it ensures that all loan servicing, repayment, etc. is executed by the borrower directly in the RE’s bank account without any pass-through account or involvement of LSP.",
+      "doc_evidence": "Disbursal and repayment: Top-ups are credited to the customer's bank account. Repayments go directly to Sahyadri Bank's account; AurumTech never handles funds and is paid its fee by the bank.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph (DLD2025:9(ii)) explicitly requires that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account or involvement of LSP. The product feature states that repayments go directly to Sahyadri Bank's account, which is the RE’s bank account, and that AurumTech never handles funds. This complies with the requirement that there is no pass-through account or involvement of LSP. The feature does not mention any third-party accounts or LSP involvement, which aligns with the paragraph's prohibition. Therefore, the feature does not violate the paragraph."
+    },
+    {
+      "feature": "Disbursal and Repayment",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature states that 'Disbursal and repayment: Top-ups are credited to the customer's bank account. Repayments go directly to Sahyadri Bank's account; AurumTech never handles funds and is paid its fee by the bank.' This complies with DLD2025:9(iv) as it ensures that any fees, charges, reimbursements, etc. payable to LSP are paid directly by the RE and are not charged to or collected from the borrowers separately by LSP.",
+      "doc_evidence": "Disbursal and repayment: Top-ups are credited to the customer's bank account. Repayments go directly to Sahyadri Bank's account; AurumTech never handles funds and is paid its fee by the bank.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that repayments go directly to Sahyadri Bank's account and that AurumTech never handles funds, which implies that fees, charges, etc., payable to LSP (AurumTech) are paid directly by the RE (Sahyadri Bank). This aligns with DLD2025:9(iv), which requires that such payments are made directly by the RE and not charged to or collected from borrowers. The feature does not mention any fees being charged to borrowers, and it explicitly states that AurumTech is paid its fee by the bank. Therefore, the feature complies with the requirement."
+    },
+    {
+      "feature": "Disbursal and Repayment",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The feature states that 'Disbursal and repayment: Top-ups are credited to the customer's bank account. Repayments go directly to Sahyadri Bank's account; AurumTech never handles funds and is paid its fee by the bank.' This complies with DLD2025:9(iii) as it ensures that the flow of funds between the bank accounts of the borrower and the RE is not controlled either directly or indirectly by a third-party, including the LSP.",
+      "doc_evidence": "Disbursal and repayment: Top-ups are credited to the customer's bank account. Repayments go directly to Sahyadri Bank's account; AurumTech never handles funds and is paid its fee by the bank.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph prohibits the flow of funds between the borrower's and RE's accounts from being controlled by a third-party, including the LSP. The product feature states that repayments go directly to Sahyadri Bank's account and AurumTech never handles funds. This aligns with the requirement that the flow of funds is not controlled by a third-party. The feature does not mention any third-party control, and the claim is based on the feature's compliance with the paragraph. The paragraph does not explicitly allow what the feature does, but the feature does not violate the paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(i)",
+      "issue": "The LSP (AurumTech Pvt Ltd) stores only name, phone and loan reference, which is minimal data. However, the RBI requires that LSPs do not store personal information of the borrower except for some basic minimal data (viz., name, address, contact details of the customer, etc.) that may be required to carry out their operations or service within the scope of the RE-LSP agreement. The feature does not explicitly state whether the LSP stores address or other contact details, which may be required for operations. The feature only mentions name, phone, and loan reference, which may not be sufficient to ensure compliance with the requirement to store only minimal data.",
+      "doc_evidence": "AurumTech stores only name, phone and loan reference; all other data is stored by the bank on servers in India.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that AurumTech stores only name, phone, and loan reference. The RBI paragraph requires LSPs to store only basic minimal data (name, address, contact details, etc.) required for their operations. The feature does not mention storing address or other contact details, which may be required for operations. The claim is based on what the feature does not mention, which is not a violation. Therefore, the feature does not explicitly violate the RBI paragraph."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature does not explicitly mention that the contact details of the nodal grievance redressal officers are prominently displayed on the DLA, which is a requirement under [DLD2025:11(ii)]. The feature only states that the nodal grievance officers are named on the websites and in the KFS, but it does not confirm their prominence on the DLA.",
+      "doc_evidence": "The KFS, sanction letter and terms are emailed automatically after signing. Nodal grievance officers of both companies are named on both websites, in the app and in the KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph [DLD2025:11(ii)] explicitly requires that contact details of the nodal grievance redressal officers be prominently displayed on the DLA. The product feature does not mention anything about the DLA, and therefore does not comply with this requirement. The feature only mentions the websites and KFS, but not the DLA, which is a specific requirement in the paragraph."
+    },
+    {
+      "feature": "KFS (Know Your Customer and Financial Services)",
+      "rule_id": "KFS2024:5",
+      "issue": "The KFS validity period is stated as 'stays valid for 3 working days', which is consistent with the requirement for loans with a tenor of seven days or more. However, the feature does not explicitly mention the loan tenor, which is a necessary condition for determining the validity period. The absence of this information may lead to ambiguity in compliance.",
+      "doc_evidence": "It is included as a summary box in the agreement.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that the KFS 'stays valid for 3 working days', which aligns with the requirement for loans with a tenor of seven days or more. The paragraph does not require the feature to explicitly mention the loan tenor, as the validity period is determined by the tenor. The feature does not need to state the tenor because the validity period is already tied to the tenor in the paragraph. The claim relies on the feature not mentioning the tenor, which is not a violation since the paragraph does not require the feature to include the tenor explicitly."
+    },
+    {
+      "feature": "KFS (Know Your Customer and Financial Services)",
+      "rule_id": "KFS2024:9",
+      "issue": "The KFS is included as a summary box in the agreement, which complies with the requirement that the KFS shall also be included as a summary box to be exhibited as part of the loan agreement.",
+      "doc_evidence": "It is included as a summary box in the agreement.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that the KFS is included as a summary box in the agreement, which directly complies with the requirement in the RBI paragraph. The feature does not violate the paragraph, as it meets the condition of including the KFS as a summary box in the loan agreement."
+    },
+    {
+      "feature": "KFS (Know Your Customer and Financial Services)",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is shown in the customer's chosen language (English, Marathi, Kannada or Hindi), which complies with the requirement that the KFS shall be written in a language understood by such borrowers. However, the feature does not explicitly state that the contents of the KFS are explained to the borrower and an acknowledgment is obtained that he/she has understood the same.",
+      "doc_evidence": "A KFS in the customer's chosen language (English, Marathi, Kannada or Hindi) with a unique proposal number, APR computation sheet including all charges, and repayment schedule is shown before signing, and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the contents of the KFS are explained to the borrower and an acknowledgment is obtained that he/she has understood the same. The product feature does not mention this explanation or acknowledgment, which is a required action under the paragraph. Therefore, the feature fails to comply with the requirement."
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The feature 'Cooling-off: Customers can exit within 3 days by repaying principal and proportionate APR without penalty' does not comply with the requirement that the cooling-off period shall be determined by the Board of the RE as laid down in their loan policy, subject to the period so determined not being less than one day.",
+      "doc_evidence": "Cooling-off: Customers can exit within 3 days by repaying principal and proportionate APR without penalty.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that the cooling-off period is 3 days, which is a specific duration. The RBI paragraph requires that the cooling-off period be determined by the Board of the RE as per their loan policy, with the condition that the period is not less than one day. The feature does not mention that the 3-day period is determined by the Board of the RE, which is a requirement in the RBI paragraph. Therefore, the feature does not comply with the requirement that the cooling-off period be determined by the Board of the RE."
+    },
+    {
+      "feature": "Product Overview",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The product feature does not provide the digital view of loan offers from matching lenders, including the name(s) of the RE(s) extending the loan offer, amount and tenor of loan, APR, monthly repayment obligation and penal charges (if applicable), in a way which enables the borrower to make a fair comparison between various offers. A link to the KFS shall also be provided in respect of each of the RE.",
+      "doc_evidence": "Product: Customers with a gold loan at Sahyadri Bank can take a top-up of up to ₹1,00,000 against the same pledged gold, tenor up to 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes a specific loan offer from Sahyadri Bank for a gold loan top-up. It does not mention any digital view of loan offers from multiple lenders, nor does it provide details such as the name(s) of the RE(s), amount, tenor, APR, monthly repayment obligation, penal charges, or a link to the KFS. The feature is focused on a single lender's offer, not a comparison of offers from multiple lenders. Therefore, it does not violate the RBI paragraph as it does not provide the required digital view of loan offers from multiple lenders."
+    }
+  ],
+  "summary": "The compliance review of the product 'GoldNow: Digital Top-up on Existing Gold Loans' identified three key findings against the reviewed RBI rules. First, the product feature does not explicitly mention that the contact details of the nodal grievance redressal officers are prominently displayed on the DLA, as required by [DLD2025:11(ii)]. Second, while the KFS is shown in the customer's chosen language, it does not explicitly state that the contents of the KFS are explained to the borrower and an acknowledgment is obtained. Third, the cooling-off period of 3 days does not comply with the requirement that the cooling-off period shall be determined by the Board of the RE as per their loan policy, and must not be less than one day.",
+  "trace": {
+    "llm_calls": 26,
+    "prompt_tokens": 15435,
+    "output_tokens": 4003,
+    "llm_seconds": 182.3,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 11,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 35,
+    "retrieved": {
+      "0:Disbursal and Repayment": [
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:8(iii)",
+        "DLD2025:10(ii)",
+        "DLD2025:6(iii)",
+        "DLD2025:10(i)",
+        "DLD2025:8(iv)",
+        "KFS2024:7"
+      ],
+      "1:Data Collection": [
+        "DLD2025:12(i)",
+        "DLD2025:13(iv)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:13(ii)",
+        "DLD2025:12(iii)",
+        "DLD2025:13(i)",
+        "DLD2025:15(i)",
+        "DLD2025:10(ii)"
+      ],
+      "2:Grievance Redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:11(i)",
+        "KFS2024:7",
+        "KFS2024:6",
+        "DLD2025:11(iii)",
+        "DLD2025:17(iv)",
+        "DLD2025:11(iv)",
+        "KFS2024:8",
+        "KFS2024:4",
+        "KFS2024:5",
+        "KFS2024:9"
+      ],
+      "3:KFS (Know Your Customer and Financial Services)": [
+        "KFS2024:6",
+        "KFS2024:5",
+        "KFS2024:9",
+        "KFS2024:4",
+        "KFS2024:7",
+        "DLD2025:6(iii)",
+        "DLD2025:27(ii)",
+        "DLD2025:10(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:8(i)",
+        "DLD2025:9(ii)",
+        "KFS2024:8"
+      ],
+      "4:Cooling-off Period": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:26(i)",
+        "KFS2024:5",
+        "DLD2025:11(iv)",
+        "DLD2025:15(i)",
+        "KFS2024:7",
+        "DLD2025:9(ii)",
+        "KFS2024:6",
+        "DLD2025:13(iv)",
+        "DLD2025:9(iv)"
+      ],
+      "5:Product Overview": [
+        "KFS2024:5",
+        "DLD2025:6(iii)",
+        "DLD2025:26(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:23(i)",
+        "DLD2025:15(i)",
+        "DLD2025:16(i)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)",
+        "DLD2025:17(v)",
+        "DLD2025:29(i)",
+        "DLD2025:26(ii)",
+        "KFS2024:4"
+      ]
+    }
+  },
+  "seconds": 182.6
+}

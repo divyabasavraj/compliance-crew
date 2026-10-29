@@ -1,0 +1,231 @@
+{
+  "system": "crew",
+  "doc_id": "P26_clean_gold_loan",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Disbursal and Repayment",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature states that 'Top-ups are credited to the customer's bank account.' This complies with the requirement that disbursement of loan by the RE shall always be made into the bank account of the borrower. However, the feature also mentions that 'Repayments go directly to Sahyadri Bank's account,' which is in line with the requirement that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account. Therefore, there is no compliance gap under DLD2025:9(i).",
+      "doc_evidence": "Top-ups are credited to the customer's bank account. Repayments go directly to Sahyadri Bank's account;",
+      "severity": "low",
+      "fix": "Ensure that all documentation and feature descriptions clearly state that repayments are made to the RE’s bank account, and that there is no ambiguity in the repayment process.",
+      "verifier_note": "The product feature states that 'Top-ups are credited to the customer's bank account,' which complies with the requirement that disbursement of loan by the RE shall always be made into the bank account of the borrower. However, the feature also mentions that 'Repayments go directly to Sahyadri Bank's account,' which is not in line with the requirement that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account. The RBI paragraph explicitly requires that repayments be made to the borrower's account, not to the RE's bank account. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature states that 'Nodal grievance officers of both companies are named on both websites, in the app and in the KFS.' However, the RBI paragraph requires that 'contact details of the nodal grievance redressal officers shall be prominently displayed on the websites of the RE, its LSP and on the DLA, as well as in the KFS provided to the borrower.' The feature only mentions the names of the nodal grievance officers but does not specify their contact details, which is a clear non-compliance with the requirement.",
+      "doc_evidence": "Nodal grievance officers of both companies are named on both websites, in the app and in the KFS.",
+      "severity": "high",
+      "fix": "Update the feature to include the contact details of the nodal grievance officers on all platforms, including websites, app, and KFS, as required by RBI.",
+      "verifier_note": "The RBI paragraph requires that contact details of the nodal grievance redressal officers be prominently displayed, not just their names. The product feature mentions the names of the nodal grievance officers but does not specify their contact details, which is a deviation from the requirement. Therefore, the feature does not fully comply with the RBI paragraph."
+    },
+    {
+      "feature": "KFS (Know Your Customer and Financial Services)",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is provided in the customer's chosen language, which complies with the requirement that the KFS shall be written in a language understood by the borrowers. However, the feature does not explicitly mention that the contents of the KFS are explained to the borrower and an acknowledgment is obtained that the borrower has understood the same.",
+      "doc_evidence": "A KFS in the customer's chosen language (English, Marathi, Kannada or Hindi) with a unique proposal number, APR computation sheet including all charges, and repayment schedule is shown before signing",
+      "severity": "medium",
+      "fix": "Revise the KFS to explicitly state that the contents are explained to the borrower and an acknowledgment is obtained that the borrower has understood the same.",
+      "verifier_note": "The RBI paragraph requires that the contents of the KFS are explained to the borrower and an acknowledgment is obtained that the borrower has understood the same. The product feature does not mention this explanation or acknowledgment, which is a required action under the RBI paragraph. Therefore, the feature fails to comply with the requirement."
+    },
+    {
+      "feature": "Product Overview",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The digital view of loan offers from matching lenders shall include the name(s) of the RE(s) extending the loan offer, amount and tenor of loan, APR, monthly repayment obligation and penal charges (if applicable), in a way which enables the borrower to make a fair comparison between various offers. A link to the KFS shall also be provided in respect of each of the RE.",
+      "doc_evidence": "Product: Customers with a gold loan at Sahyadri Bank can take a top-up of up to ₹1,00,000 against the same pledged gold, tenor up to 12 months.",
+      "severity": "medium",
+      "fix": "Ensure that the digital view of loan offers includes all required details such as RE name, loan amount, tenor, APR, monthly repayment, penal charges, and a link to the KFS for each RE.",
+      "verifier_note": "The product feature does not provide the digital view of loan offers as required by the RBI paragraph. It only describes a top-up facility for a gold loan at Sahyadri Bank, which does not include the required details such as name of RE, amount, tenor, APR, monthly repayment obligation, penal charges, or a link to KFS. The feature does not comply with the requirements of the paragraph."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal and Repayment",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The feature states that 'Top-ups are credited to the customer's bank account.' This complies with the requirement that disbursement of loan by the RE shall always be made into the bank account of the borrower. However, the feature also mentions that 'Repayments go directly to Sahyadri Bank's account,' which is in line with the requirement that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account. Therefore, there is no compliance gap under DLD2025:9(i).",
+      "doc_evidence": "Top-ups are credited to the customer's bank account. Repayments go directly to Sahyadri Bank's account;",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that 'Top-ups are credited to the customer's bank account,' which complies with the requirement that disbursement of loan by the RE shall always be made into the bank account of the borrower. However, the feature also mentions that 'Repayments go directly to Sahyadri Bank's account,' which is not in line with the requirement that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account. The RBI paragraph explicitly requires that repayments be made to the borrower's account, not to the RE's bank account. Therefore, the feature violates the RBI paragraph."
+    },
+    {
+      "feature": "Disbursal and Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature states that 'Repayments go directly to Sahyadri Bank's account;' this complies with the requirement that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP. Therefore, there is no compliance gap under DLD2025:9(ii).",
+      "doc_evidence": "Repayments go directly to Sahyadri Bank's account;",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that repayments go directly to Sahyadri Bank's account, which is the RE's bank account. This complies with the requirement that all loan servicing, repayment, etc., is executed by the borrower directly in the RE’s bank account without any pass-through account or pool account of any third party, including the accounts of LSP. The feature does not involve any third-party accounts or pass-through mechanisms for repayment."
+    },
+    {
+      "feature": "Disbursal and Repayment",
+      "rule_id": "DLD2025:9(iv)",
+      "issue": "The feature states that 'AurumTech never handles funds and is paid its fee by the bank.' This complies with the requirement that any fees, charges, reimbursements, etc., payable to LSP are paid directly by the RE and are not charged to or collected from the borrowers separately by LSP. Therefore, there is no compliance gap under DLD2025:9(iv).",
+      "doc_evidence": "AurumTech never handles funds and is paid its fee by the bank.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph (DLD2025:9(iv)) requires that fees, charges, reimbursements, etc., payable to LSP are paid directly by the RE and not charged to or collected from borrowers. The product feature states that 'AurumTech never handles funds and is paid its fee by the bank.' This aligns with the requirement because the fee is paid directly by the bank (acting as RE) and not collected from the borrower. The feature does not mention any charging or collection from borrowers, so it complies with the paragraph."
+    },
+    {
+      "feature": "Disbursal and Repayment",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The feature states that 'Top-ups are credited to the customer's bank account.' This complies with the requirement that the flow of funds between the bank accounts of the borrower and the RE shall not be controlled either directly or indirectly by a third-party, including the LSP. Therefore, there is no compliance gap under DLD2025:9(iii).",
+      "doc_evidence": "Top-ups are credited to the customer's bank account.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph prohibits third-party control over the flow of funds between the borrower's account and the RE. The product feature states that repayments go directly to Sahyadri Bank's account and that AurumTech never handles funds. This aligns with the requirement that the flow of funds is not controlled by a third-party, including the LSP. The feature does not mention any third-party control over the flow of funds, and the claim that there is no compliance gap is valid."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app takes a one-time selfie for KYC with consent. AurumTech stores only name, phone and loan reference; all other data is stored by the bank on servers in India.",
+      "doc_evidence": "The app takes a one-time selfie for KYC with consent. AurumTech stores only name, phone and loan reference; all other data is stored by the bank on servers in India.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the RBI paragraph. The app takes a one-time selfie for KYC with consent, which is allowed. AurumTech stores only name, phone, and loan reference, which aligns with the requirement that data collection is need-based and with prior and explicit consent. The paragraph explicitly allows one-time access to camera for KYC purposes, and the feature does not mention any access to mobile phone resources like file and media, contact list, call logs, telephony functions, etc. The feature also does not mention storing any other data, which is consistent with the paragraph's requirement that data collection is need-based."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:13(iii)",
+      "issue": "The app takes a one-time selfie for KYC with consent. AurumTech stores only name, phone and loan reference; all other data is stored by the bank on servers in India.",
+      "doc_evidence": "The app takes a one-time selfie for KYC with consent. AurumTech stores only name, phone and loan reference; all other data is stored by the bank on servers in India.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph prohibits the storage of biometric data by RE and LSP unless allowed under statutory guidelines. The product feature states that the app takes a one-time selfie for KYC (which is biometric data) but does not mention whether this is allowed under statutory guidelines. The feature also states that AurumTech stores only name, phone, and loan reference, implying that the selfie is not stored. Since the feature does not explicitly state that the selfie is stored or whether it is allowed under statutory guidelines, there is no clear violation. The claim relies on facts not in the feature text."
+    },
+    {
+      "feature": "Grievance Redressal",
+      "rule_id": "DLD2025:11(ii)",
+      "issue": "The product feature states that 'Nodal grievance officers of both companies are named on both websites, in the app and in the KFS.' However, the RBI paragraph requires that 'contact details of the nodal grievance redressal officers shall be prominently displayed on the websites of the RE, its LSP and on the DLA, as well as in the KFS provided to the borrower.' The feature only mentions the names of the nodal grievance officers but does not specify their contact details, which is a clear non-compliance with the requirement.",
+      "doc_evidence": "Nodal grievance officers of both companies are named on both websites, in the app and in the KFS.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that contact details of the nodal grievance redressal officers be prominently displayed, not just their names. The product feature mentions the names of the nodal grievance officers but does not specify their contact details, which is a deviation from the requirement. Therefore, the feature does not fully comply with the RBI paragraph."
+    },
+    {
+      "feature": "KFS (Know Your Customer and Financial Services)",
+      "rule_id": "KFS2024:5",
+      "issue": "The KFS validity period is stated as '3 working days', which is consistent with the requirement for loans with a tenor of seven days or more. However, the feature does not explicitly mention the loan tenor, which is a necessary condition to determine the validity period. The absence of tenor information may lead to ambiguity in compliance.",
+      "doc_evidence": "KFS: A KFS in the customer's chosen language (English, Marathi, Kannada or Hindi) with a unique proposal number, APR computation sheet including all charges, and repayment schedule is shown before signing, and stays valid for 3 working days.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature states that the KFS validity period is '3 working days', which aligns with the requirement for loans with a tenor of seven days or more. The paragraph does not require the feature to explicitly mention the loan tenor, only that the validity period is set based on the tenor. Since the feature correctly applies the 3 working day validity period for loans with a tenor of seven days or more, and the paragraph does not require the tenor to be mentioned in the feature, the claim that the absence of tenor information leads to ambiguity is unfounded. The feature complies with the requirement."
+    },
+    {
+      "feature": "KFS (Know Your Customer and Financial Services)",
+      "rule_id": "KFS2024:9",
+      "issue": "The KFS is included as a summary box in the agreement, which complies with the requirement that the KFS shall be included as a summary box to be exhibited as part of the loan agreement.",
+      "doc_evidence": "It is included as a summary box in the agreement.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that the KFS is included as a summary box in the agreement, which directly complies with the requirement in the RBI paragraph. There is no indication that the feature violates the paragraph, as it fulfills the stated requirement."
+    },
+    {
+      "feature": "KFS (Know Your Customer and Financial Services)",
+      "rule_id": "KFS2024:4",
+      "issue": "The KFS is provided in the customer's chosen language, which complies with the requirement that the KFS shall be written in a language understood by the borrowers. However, the feature does not explicitly mention that the contents of the KFS are explained to the borrower and an acknowledgment is obtained that the borrower has understood the same.",
+      "doc_evidence": "A KFS in the customer's chosen language (English, Marathi, Kannada or Hindi) with a unique proposal number, APR computation sheet including all charges, and repayment schedule is shown before signing",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the contents of the KFS are explained to the borrower and an acknowledgment is obtained that the borrower has understood the same. The product feature does not mention this explanation or acknowledgment, which is a required action under the RBI paragraph. Therefore, the feature fails to comply with the requirement."
+    },
+    {
+      "feature": "Cooling-off Period",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product feature states that customers can exit within 3 days by repaying principal and proportionate APR without penalty. This complies with the requirement that the borrower shall be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial 'cooling-off period', as the cooling-off period is at least one day.",
+      "doc_evidence": "Customers can exit within 3 days by repaying principal and proportionate APR without penalty.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature allows customers to exit within 3 days by repaying principal and proportionate APR without penalty, which aligns with the RBI requirement that the borrower shall be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial 'cooling-off period'. The cooling-off period in the feature is 3 days, which is more than the minimum one day required by the RBI paragraph. The feature does not violate the RBI paragraph as it complies with the requirement of allowing exit without penalty during the cooling-off period."
+    },
+    {
+      "feature": "Product Overview",
+      "rule_id": "DLD2025:6(iii)",
+      "issue": "The digital view of loan offers from matching lenders shall include the name(s) of the RE(s) extending the loan offer, amount and tenor of loan, APR, monthly repayment obligation and penal charges (if applicable), in a way which enables the borrower to make a fair comparison between various offers. A link to the KFS shall also be provided in respect of each of the RE.",
+      "doc_evidence": "Product: Customers with a gold loan at Sahyadri Bank can take a top-up of up to ₹1,00,000 against the same pledged gold, tenor up to 12 months.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature does not provide the digital view of loan offers as required by the RBI paragraph. It only describes a top-up facility for a gold loan at Sahyadri Bank, which does not include the required details such as name of RE, amount, tenor, APR, monthly repayment obligation, penal charges, or a link to KFS. The feature does not comply with the requirements of the paragraph."
+    }
+  ],
+  "summary": "The compliance review of the product 'GoldNow: Digital Top-up on Existing Gold Loans' identified several findings against the reviewed RBI rules. The feature complies with DLD2025:9(i) as it correctly directs disbursement to the borrower's bank account and repayment to the RE's bank account. However, there is a high-risk non-compliance with DLD2025:11(ii) as the feature only mentions the names of nodal grievance officers without their contact details. Medium-risk findings include non-compliance with KFS2024:4 regarding the explanation and acknowledgment of the KFS contents, and DLD2025:6(iii) for not providing a link to the KFS for each RE in the digital loan offers.",
+  "trace": {
+    "llm_calls": 27,
+    "prompt_tokens": 14054,
+    "output_tokens": 3924,
+    "llm_seconds": 143.4,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 12,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 36,
+    "retrieved": {
+      "0:Disbursal and Repayment": [
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:9(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:8(iii)"
+      ],
+      "1:Data Collection": [
+        "DLD2025:12(i)",
+        "DLD2025:13(iv)",
+        "DLD2025:12(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:12(iv)",
+        "DLD2025:13(ii)",
+        "DLD2025:12(iii)"
+      ],
+      "2:Grievance Redressal": [
+        "DLD2025:11(ii)",
+        "DLD2025:8(iii)",
+        "DLD2025:11(i)",
+        "KFS2024:7",
+        "KFS2024:6",
+        "DLD2025:11(iii)",
+        "DLD2025:17(iv)",
+        "DLD2025:11(iv)"
+      ],
+      "3:KFS (Know Your Customer and Financial Services)": [
+        "KFS2024:6",
+        "KFS2024:5",
+        "KFS2024:9",
+        "KFS2024:4",
+        "KFS2024:7",
+        "DLD2025:6(iii)",
+        "DLD2025:27(ii)",
+        "DLD2025:10(ii)",
+        "DLD2025:8(iii)"
+      ],
+      "4:Cooling-off Period": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:26(i)",
+        "KFS2024:5",
+        "DLD2025:11(iv)",
+        "DLD2025:15(i)"
+      ],
+      "5:Product Overview": [
+        "KFS2024:5",
+        "DLD2025:6(iii)",
+        "DLD2025:26(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:23(i)",
+        "DLD2025:15(i)",
+        "DLD2025:16(i)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(v)"
+      ]
+    }
+  },
+  "seconds": 143.8
+}

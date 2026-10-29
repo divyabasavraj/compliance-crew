@@ -1,0 +1,56 @@
+{
+  "model": "qwen3:8b",
+  "tag": "k8b4m",
+  "split": "dev",
+  "docs": 12,
+  "results": {
+    "crew_no_verifier": {
+      "recall": 0.889,
+      "precision": 0.283,
+      "caught": 24,
+      "planted": 27,
+      "unique_flags": 92,
+      "false_alarms": 66,
+      "clean_doc_false_alarms": 17,
+      "citation_validity": 1.0,
+      "missed": [
+        "P04-b",
+        "P07-b",
+        "P08-a"
+      ],
+      "sec_per_doc": 147.8,
+      "llm_calls_per_doc": 22.4,
+      "tokens_per_doc": 16936
+    },
+    "crew": {
+      "recall": 0.852,
+      "precision": 0.5,
+      "caught": 23,
+      "planted": 27,
+      "unique_flags": 50,
+      "false_alarms": 25,
+      "clean_doc_false_alarms": 3,
+      "citation_validity": 1.0,
+      "missed": [
+        "P02-b",
+        "P04-b",
+        "P07-b",
+        "P08-a"
+      ],
+      "sec_per_doc": 147.8,
+      "llm_calls_per_doc": 22.4,
+      "tokens_per_doc": 16936,
+      "miss_stages": {
+        "not_retrieved": [],
+        "analyst_missed": [
+          "P04-b",
+          "P07-b",
+          "P08-a"
+        ],
+        "verifier_rejected": [
+          "P02-b"
+        ]
+      }
+    }
+  }
+}

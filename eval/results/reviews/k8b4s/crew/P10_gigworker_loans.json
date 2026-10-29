@@ -1,0 +1,185 @@
+{
+  "system": "crew",
+  "doc_id": "P10_gigworker_loans",
+  "status": "reviewed",
+  "findings": [
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature describes that daily repayments are deducted from the worker's earnings by GigWorks and held in GigWorks' account, which transfers the total to Deccan Small Finance Bank at the end of each week. This implies the use of a third-party account (GigWorks' account) for repayment, which violates the requirement that all loan servicing, repayment, etc. is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "Daily repayments are deducted from the worker's earnings by GigWorks and held in GigWorks' account, which transfers the total to Deccan Small Finance Bank at the end of each week.",
+      "severity": "high",
+      "fix": "Modify the repayment process to ensure that all repayments are directly deducted from the borrower's account and credited to Deccan Small Finance Bank's account, without using any third-party account such as GigWorks'. Implement a direct debit mechanism between the borrower and the RE's bank account.",
+      "verifier_note": "The RBI paragraph explicitly prohibits the use of any third-party account, including pass-through or pool accounts, for loan servicing and repayment. The product feature describes daily repayments being held in GigWorks' account before being transferred to the RE’s bank account. This use of a third-party account (GigWorks) for holding repayments violates the requirement that all loan servicing and repayment must be executed directly in the RE’s bank account without any third-party involvement."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The feature describes that repayments are held in GigWorks' account before being transferred to Deccan Small Finance Bank, which implies that the flow of funds between the borrower's account and the RE's account is controlled indirectly by a third-party (GigWorks), violating the requirement that the flow of funds between the bank accounts of the borrower and the RE shall not be controlled either directly or indirectly by a third-party, including the LSP.",
+      "doc_evidence": "Daily repayments are deducted from the worker's earnings by GigWorks and held in GigWorks' account, which transfers the total to Deccan Small Finance Bank at the end of each week.",
+      "severity": "high",
+      "fix": "Ensure that the flow of funds between the borrower's account and the RE's account is directly controlled by the RE's bank, without any involvement or control by third parties like GigWorks. This includes modifying the repayment process to eliminate any intermediary accounts.",
+      "verifier_note": "The RBI paragraph prohibits any third-party, including the LSP, from controlling the flow of funds between the borrower's account and the RE's account. The product feature describes that GigWorks holds the repayments in its account before transferring to the RE. This implies that GigWorks, as a third-party, is indirectly controlling the flow of funds, which violates the RBI requirement. The feature does not explicitly state that GigWorks is an LSP or that it is exempt from this rule, so the claim is valid."
+    },
+    {
+      "feature": "Prepayment Charges",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product feature states that there is no cooling-off period. A loan, once taken, can be prepaid only after 3 months, with a 2% prepayment charge. This does not provide the borrower with an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial cooling-off period, which is required by RBI.",
+      "doc_evidence": "3. Cooling-off: There is no cooling-off period. A loan, once taken, can be prepaid only after 3 months, with a 2% prepayment charge.",
+      "severity": "high",
+      "fix": "Introduce a cooling-off period of at least 30 days during which the borrower can prepay the loan without any prepayment charges. Update the product documentation and user interface to clearly communicate this option to the borrower.",
+      "verifier_note": "The RBI paragraph requires that the borrower be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial cooling-off period. The product feature states there is no cooling-off period and that prepayment is only allowed after 3 months with a 2% charge. This does not provide the required explicit option during a cooling-off period, thus violating the RBI requirement."
+    }
+  ],
+  "candidates": [
+    {
+      "feature": "Disbursal",
+      "rule_id": "DLD2025:9(i)",
+      "issue": "The product feature states that 'Disbursal ... repaid through daily deductions.' This implies that the loan is being repaid through daily deductions from the borrower's account, which may involve third-party accounts or mechanisms not directly under the RE's control. This could violate the requirement that 'disbursement of loan by the RE shall always be made into the bank account of the borrower' and that 'in no case, disbursal is made to a third-party account, including the accounts of LSP.'",
+      "doc_evidence": "Product: Gig workers get loans of ₹5,000 to ₹60,000 for 3 to 12 months, repaid through daily deductions.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature describes repayment through daily deductions from the borrower's account, which does not involve disbursal to a third-party account. The RBI paragraph prohibits disbursal to third-party accounts, not repayment mechanisms. The feature does not mention disbursal to third-party accounts, and the paragraph does not prohibit repayment through daily deductions. Therefore, the feature does not violate the RBI paragraph."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(ii)",
+      "issue": "The feature describes that daily repayments are deducted from the worker's earnings by GigWorks and held in GigWorks' account, which transfers the total to Deccan Small Finance Bank at the end of each week. This implies the use of a third-party account (GigWorks' account) for repayment, which violates the requirement that all loan servicing, repayment, etc. is executed by the borrower directly in the RE’s bank account without any pass-through account/ pool account of any third party, including the accounts of LSP.",
+      "doc_evidence": "Daily repayments are deducted from the worker's earnings by GigWorks and held in GigWorks' account, which transfers the total to Deccan Small Finance Bank at the end of each week.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph explicitly prohibits the use of any third-party account, including pass-through or pool accounts, for loan servicing and repayment. The product feature describes daily repayments being held in GigWorks' account before being transferred to the RE’s bank account. This use of a third-party account (GigWorks) for holding repayments violates the requirement that all loan servicing and repayment must be executed directly in the RE’s bank account without any third-party involvement."
+    },
+    {
+      "feature": "Repayment",
+      "rule_id": "DLD2025:9(iii)",
+      "issue": "The feature describes that repayments are held in GigWorks' account before being transferred to Deccan Small Finance Bank, which implies that the flow of funds between the borrower's account and the RE's account is controlled indirectly by a third-party (GigWorks), violating the requirement that the flow of funds between the bank accounts of the borrower and the RE shall not be controlled either directly or indirectly by a third-party, including the LSP.",
+      "doc_evidence": "Daily repayments are deducted from the worker's earnings by GigWorks and held in GigWorks' account, which transfers the total to Deccan Small Finance Bank at the end of each week.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph prohibits any third-party, including the LSP, from controlling the flow of funds between the borrower's account and the RE's account. The product feature describes that GigWorks holds the repayments in its account before transferring to the RE. This implies that GigWorks, as a third-party, is indirectly controlling the flow of funds, which violates the RBI requirement. The feature does not explicitly state that GigWorks is an LSP or that it is exempt from this rule, so the claim is valid."
+    },
+    {
+      "feature": "Prepayment Charges",
+      "rule_id": "DLD2025:10(i)",
+      "issue": "The product feature states that there is no cooling-off period. A loan, once taken, can be prepaid only after 3 months, with a 2% prepayment charge. This does not provide the borrower with an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial cooling-off period, which is required by RBI.",
+      "doc_evidence": "3. Cooling-off: There is no cooling-off period. A loan, once taken, can be prepaid only after 3 months, with a 2% prepayment charge.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph requires that the borrower be given an explicit option to exit a digital loan by paying the principal and the proportionate APR without any penalty during an initial cooling-off period. The product feature states there is no cooling-off period and that prepayment is only allowed after 3 months with a 2% charge. This does not provide the required explicit option during a cooling-off period, thus violating the RBI requirement."
+    },
+    {
+      "feature": "Underwriting",
+      "rule_id": "DLD2025:7(i)",
+      "issue": "The product feature states: 'Credit decisions use earnings history on the gig platform, age, occupation and declared income, all stored for audit.' This directly complies with DLD2025:7(i), which requires RE to obtain age, occupation, and income details for creditworthiness assessment and keep them for audit. No finding is required.",
+      "doc_evidence": "Credit decisions use earnings history on the gig platform, age, occupation and declared income, all stored for audit.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature includes age, occupation, and declared income, which are required by the RBI paragraph. It also mentions that these details are stored for audit, which aligns with the requirement to keep them on record for audit purposes. The feature does not mention earnings history on the gig platform, which is not part of the RBI paragraph's requirements. Since the RBI paragraph does not prohibit or require the use of earnings history on a gig platform, the feature does not violate the paragraph."
+    },
+    {
+      "feature": "Underwriting",
+      "rule_id": "DLD2025:19(ii)",
+      "issue": "The product feature states: 'Credit decisions use earnings history on the gig platform, age, occupation and declared income, all stored for audit.' This does not explicitly mention robust credit underwriting standards or that the DLG arrangement does not act as a substitute for credit appraisal requirements. Therefore, it may not fully comply with DLD2025:19(ii).",
+      "doc_evidence": "Credit decisions use earnings history on the gig platform, age, occupation and declared income, all stored for audit.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The RBI paragraph DLD2025:19(ii) requires that DLG arrangements do not act as a substitute for credit appraisal requirements and that robust credit underwriting standards are put in place. The product feature mentions credit decisions based on certain data points but does not explicitly state that robust credit underwriting standards are in place. However, the feature does not contradict the requirement, as it does not mention anything that would act as a substitute for credit appraisal. The claim relies on the absence of explicit mention of 'robust credit underwriting standards' and 'DLG arrangement not acting as a substitute for credit appraisal requirements,' which are not necessarily required to be explicitly stated in the feature. The paragraph does not explicitly forbid the absence of such explicit mention, so the feature does not violate the paragraph."
+    },
+    {
+      "feature": "Data Collection",
+      "rule_id": "DLD2025:12(i)",
+      "issue": "The app asks for one-time location access during onboarding to verify the worker's city for KYC, with explicit consent. It does not access contacts, call logs or files.",
+      "doc_evidence": "The app asks for one-time location access during onboarding to verify the worker's city for KYC, with explicit consent. It does not access contacts, call logs or files.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature complies with the RBI paragraph. The feature mentions one-time location access for KYC with explicit consent, which is allowed. It also states that it does not access contacts, call logs, or files, which aligns with the paragraph's requirement that DLA should not access mobile phone resources like contact list, call logs, etc. The paragraph explicitly allows one-time access to location for onboarding/KYC purposes, so the feature does not violate the paragraph."
+    },
+    {
+      "feature": "Data Storage",
+      "rule_id": "DLD2025:13(iv)",
+      "issue": "The feature 'Data location: All data is stored on servers in India. A fraud-scoring vendor processes some data in Ireland; the data is deleted there and returned to India within 24 hours.' does not fully comply with the requirement that data processed outside India must be deleted from servers outside India and brought back to India within 24 hours of processing. The feature states that data is deleted and returned within 24 hours, which appears to comply, but the phrasing is ambiguous and may not clearly satisfy the RBI's requirement for explicit compliance.",
+      "doc_evidence": "Data location: All data is stored on servers in India. A fraud-scoring vendor processes some data in Ireland; the data is deleted there and returned to India within 24 hours.",
+      "severity": "medium",
+      "fix": "",
+      "verifier_note": "The product feature explicitly states that data processed outside India (in Ireland) is deleted there and returned to India within 24 hours, which directly complies with the RBI requirement. The paragraph does not prohibit this action and does not contain any ambiguity that would make the feature non-compliant. The claim that the phrasing is ambiguous is not supported by the text of the feature or the RBI paragraph."
+    }
+  ],
+  "summary": "The compliance review of the GigCredit product, which offers loans to delivery and ride-hailing partners, identified several critical non-compliance issues with the Reserve Bank of India (RBI) regulations. The product's repayment mechanism involves the use of a third-party account (GigWorks' account) for transferring funds to the RE's bank account, which violates the requirement that all loan servicing and repayment must be executed directly by the borrower in the RE's bank account. Additionally, the flow of funds between the borrower's account and the RE's account is indirectly controlled by a third-party, which is not permitted under RBI rules. Furthermore, the product does not provide a cooling-off period during which the borrower can exit the loan without penalty, which is a mandatory requirement under RBI guidelines.",
+  "trace": {
+    "llm_calls": 23,
+    "prompt_tokens": 11754,
+    "output_tokens": 2984,
+    "llm_seconds": 110.4,
+    "by_agent": {
+      "orchestrator": 1,
+      "researcher": 6,
+      "gap_analyst": 6,
+      "verifier": 8,
+      "risk_assessor": 1,
+      "report_writer": 1
+    },
+    "tool_calls": 32,
+    "retrieved": {
+      "0:Disbursal": [
+        "KFS2024:5",
+        "DLD2025:8(iii)",
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:10(ii)",
+        "DLD2025:9(ii)",
+        "DLD2025:6(iv)",
+        "DLD2025:9(iii)",
+        "DLD2025:6(ii)"
+      ],
+      "1:Repayment": [
+        "DLD2025:9(v)",
+        "DLD2025:9(i)",
+        "DLD2025:9(ii)",
+        "DLD2025:9(iv)",
+        "DLD2025:6(iii)",
+        "DLD2025:9(iii)"
+      ],
+      "2:Prepayment Charges": [
+        "DLD2025:10(i)",
+        "DLD2025:10(ii)",
+        "KFS2024:5",
+        "DLD2025:7(ii)",
+        "DLD2025:26(i)",
+        "KFS2024:8",
+        "DLD2025:9(i)",
+        "DLD2025:9(iii)",
+        "DLD2025:9(ii)"
+      ],
+      "3:Underwriting": [
+        "DLD2025:7(i)",
+        "DLD2025:16(ii)",
+        "KFS2024:4",
+        "DLD2025:19(ii)",
+        "DLD2025:13(ii)",
+        "DLD2025:16(i)",
+        "DLD2025:29(i)",
+        "DLD2025:12(ii)"
+      ],
+      "4:Data Collection": [
+        "DLD2025:12(i)",
+        "DLD2025:12(ii)",
+        "DLD2025:8(v)",
+        "DLD2025:12(iv)",
+        "DLD2025:10(ii)",
+        "DLD2025:15(i)",
+        "DLD2025:8(iv)",
+        "DLD2025:17(iii)"
+      ],
+      "5:Data Storage": [
+        "DLD2025:13(iv)",
+        "DLD2025:13(ii)",
+        "DLD2025:13(iii)",
+        "DLD2025:13(i)",
+        "DLD2025:17(v)",
+        "DLD2025:17(iv)"
+      ]
+    }
+  },
+  "seconds": 110.7
+}
