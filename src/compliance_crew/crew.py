@@ -11,6 +11,7 @@ get rejected. Candidates before verification are kept, which gives the "multi-ag
 Verifier" result from the same run.
 """
 
+import os
 import time
 
 from pydantic import BaseModel, Field
@@ -24,6 +25,9 @@ from .tools import Toolbox, best_matching_sentence, evidence_in_doc, normalize_r
 
 MAX_PARAGRAPHS = 24  # v3 (was 10); paragraphs average ~90 tokens, so 24 fit the 8k context
 SECTION_K = 10  # v3 (was 5): model-free section queries reach 39/41 test rules at k=10 vs 34 at k=5
+# overrides for measuring retrieval depth per model (Day 5: larger v3 pools diluted the 8B Gap Analyst)
+SECTION_K = int(os.getenv("CC_SECTION_K", SECTION_K))
+MAX_PARAGRAPHS = int(os.getenv("CC_MAX_PARAGRAPHS", MAX_PARAGRAPHS))
 MAX_SECTIONS_PER_FEATURE = 2  # v2: one merged 6-section DLG feature hid 2 of 3 violations in P07
 DISCLAIMER = "Decision support only, not legal advice. Findings need review by a compliance officer."
 
