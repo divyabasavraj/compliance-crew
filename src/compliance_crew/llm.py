@@ -20,6 +20,9 @@ OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 MODEL = os.getenv("CC_MODEL", "gemini-2.5-flash" if PROVIDER == "gemini" else "qwen3:8b")
 NUM_CTX = 8192
+# sampling: greedy by default (every reported number); overridable for repeat runs with error bars
+TEMPERATURE = float(os.getenv("CC_TEMPERATURE", "0"))
+SEED = int(os.getenv("CC_SEED", "0"))
 
 T = TypeVar("T", bound=BaseModel)
 
@@ -74,7 +77,7 @@ def _ollama(system: str, user: str, schema: type[BaseModel], model: str) -> tupl
         "format": schema.model_json_schema(),
         "stream": False,
         "think": False,
-        "options": {"temperature": 0, "seed": 0, "num_ctx": NUM_CTX},
+        "options": {"temperature": TEMPERATURE, "seed": SEED, "num_ctx": NUM_CTX},
     }
     resp = httpx.post(f"{OLLAMA_URL}/api/chat", json=payload, timeout=900)
     resp.raise_for_status()
