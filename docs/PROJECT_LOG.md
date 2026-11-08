@@ -439,3 +439,12 @@ What it shows:
 - **Next:**
   - `[NEXT]` Optional: misspelled reversed injection (H22): fuzzy verb matching in the rules or a "decode this" pre-pass for the Guardian, measured on a fresh set 4 written first.
   - `[NEXT]` Optional: repeat runs (same config, different seeds) to put an error bar on recall; 1–2 violation differences are currently noise.
+
+## Day 7: 2026-11-08: error bars on recall (Kaggle repeat runs)
+**Goal for the day:** close the Day 6 `[NEXT]` on error bars: rerun the headline 14B v3 config several times, so recall and precision come with a spread instead of one number.
+
+### Steps
+1. 18:05  Start of session: working tree clean, nothing unpushed (last commit `e80ccdc`).
+2. 18:10  `[DECISION]` Every agent call uses `temperature 0, seed 0` (greedy), and under greedy decoding the seed does nothing, so plain repeats on the same T4 would most likely reproduce `k14b3` exactly and give no error bar. The run therefore has two parts: one exact repeat at temperature 0 (`k14b5r0`, checks determinism on the same hardware) and five sampled runs at temperature 0.7 (Qwen3's recommended non-thinking setting) with seeds 1–5 (`k14b5s1`–`s5`). The sampled spread is how much the score moves when the model's choices are perturbed. It is an upper bound on rerun noise, not the greedy system's own variance. 14B only: it is the headline row.
+3. 18:12  `llm.py`: `CC_TEMPERATURE` and `CC_SEED` override the Ollama sampling options (defaults unchanged). 60 tests pass. Commit `d8ca013`, pushed. Files: `src/compliance_crew/llm.py`.
+4. 18:15  `kaggle/run.py` rewritten for run 4: one queue of three runs per T4, both queues in parallel, all 32 docs, crew only, v3 depth, pinned `d8ca013`. Kernel version 5 pushed (expected ~4 h). Files: `kaggle/run.py`.
